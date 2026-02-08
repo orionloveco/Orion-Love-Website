@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Orion Love Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
+        }
+
+        .about-intro {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 3/4;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        .about-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--off-white);
+            border-left: 3px solid var(--accent);
+        }
+
+        .credentials h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credentials li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+        }
+
+        .credentials li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        .values-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            padding: 2.5rem 2rem;
+            background: var(--off-white);
+            border-top: 4px solid var(--primary);
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .approach-section {
+            padding: 5rem 0;
+            background: var(--off-white);
+        }
+
+        .approach-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .approach-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .approach-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .approach-list li {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .approach-list li:last-child {
+            border-bottom: none;
+        }
+
+        .approach-list strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .approach-list p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        @media (max-width: 968px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Orion Love</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Search Homes</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-intro">
+            <div class="about-image">
+                <p>Professional Photo</p>
+            </div>
+            <div class="about-text">
+                <h1>I'm Orion Love</h1>
+                <p>
+                    I work with sellers who want clarity, not hype. My process is grounded in reality—what buyers are actually doing, what homes are actually selling for, and what preparation actually matters.
+                </p>
+                <p>
+                    Most agents tell you what you want to hear. I tell you what you need to know. That includes honest pricing, clear feedback on showings, and transparent communication from listing to closing.
+                </p>
+                <p>
+                    I don't ask for your trust. I earn it through preparation, follow-through, and results. When we're done, you'll know exactly why your home sold.
+                </p>
+                <div class="credentials">
+                    <h4>Credentials & Affiliations</h4>
+                    <ul>
+                        <li>Licensed Real Estate Broker, Colorado</li>
+                        <li>Keller Williams Realty</li>
+                        <li>Grand Junction Area Realtor Association</li>
+                        <li>Serving Grand Junction and Western Colorado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2>What Guides My Work</h2>
+                <p class="section-intro">These aren't marketing slogans. This is how I operate.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Preparation Over Hope</h3>
+                    <p>Most problems in real estate are preventable. I focus on what we can control before the sign goes up.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Reality Over Optimism</h3>
+                    <p>I price homes based on what buyers are paying, not what sellers hope they'll pay. Accurate pricing gets results.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Communication Over Silence</h3>
+                    <p>You'll get weekly updates, honest feedback after showings, and clear answers to your questions. Always.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="approach-section">
+        <div class="container">
+            <div class="approach-content">
+                <h2>How I Work</h2>
+                <ul class="approach-list">
+                    <li>
+                        <strong>Market Knowledge</strong>
+                        <p>I'll walk you through competitor homes in person. You'll see what buyers see—the condition, layout, upgrades, and pricing. This removes the guesswork.</p>
+                    </li>
+                    <li>
+                        <strong>Strategic Pricing</strong>
+                        <p>Your home is priced based on recent sales data and current buyer behavior. I provide market updates every 30 days, so you always know where you stand.</p>
+                    </li>
+                    <li>
+                        <strong>Professional Presentation</strong>
+                        <p>High-quality photos, staging guidance, and clean marketing materials. First impressions happen online, so we get it right.</p>
+                    </li>
+                    <li>
+                        <strong>Clear Communication</strong>
+                        <p>Weekly updates on showings and buyer feedback. Direct answers to your questions. You're never left wondering what's happening.</p>
+                    </li>
+                    <li>
+                        <strong>Negotiation</strong>
+                        <p>I qualify buyers before presenting offers, review terms carefully, and navigate inspection and appraisal issues with your best interests in mind.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">List-to-Sale Price Ratio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Avg Days on Market</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Communication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Work Together?</h2>
+                <p>Let's discuss your home sale and create a clear plan.</p>
+                <a href="contact.html" class="btn btn-primary-light">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo-footer">Orion Love</h3>
+                    <p>Clear communication. Honest feedback. Results you can trust.</p>
+                    <p class="footer-location">Serving Grand Junction and surrounding areas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Search Homes</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+                        <li><a href="tel:9706446781">(970) 644-6781</a></li>
+                        <li><a href="http://www.orionloveco.kw.com" target="_blank">orionloveco.kw.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+                <p><a href="privacy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Search - Orion Love Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .search-hero {
+            margin-top: 80px;
+            padding: 3rem 0;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .search-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .search-interface {
+            background: var(--white);
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .advanced-filters {
+            display: none;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .advanced-filters.active {
+            display: block;
+        }
+
+        .toggle-advanced {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            text-decoration: underline;
+            font-size: 0.95rem;
+        }
+
+        .toggle-advanced:hover {
+            color: var(--accent);
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .results-container {
+            padding: 3rem 0;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .results-count {
+            font-size: 1.15rem;
+            color: var(--gray);
+        }
+
+        .results-count strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--light-gray);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .view-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sort-group select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--light-gray);
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .map-container {
+            height: 500px;
+            background: var(--light-gray);
+            margin-bottom: 3rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        .map-placeholder {
+            text-align: center;
+        }
+
+        .map-placeholder h3 {
+            margin-bottom: 1rem;
+        }
+
+        .listings-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .pagination button {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid var(--light-gray);
+            background: var(--white);
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .pagination button.active {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .save-search {
+            background: var(--off-white);
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+
+        .save-search h3 {
+            margin-bottom: 1rem;
+        }
+
+        .save-search p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .results-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .listings-display {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Orion Love</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html" class="active">Search Homes</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="search-hero">
+        <div class="container">
+            <h1>Find Your Home in Grand Junction</h1>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9);">
+                Search the latest listings with detailed filters and real-time data
+            </p>
+
+            <div class="search-interface">
+                <form id="searchForm">
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label for="searchLocation">Location</label>
+                            <input type="text" id="searchLocation" placeholder="City, ZIP, or Address">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="propertyType">Property Type</label>
+                            <select id="propertyType">
+                                <option value="">All Types</option>
+                                <option value="house">Single Family</option>
+                                <option value="condo">Condo</option>
+                                <option value="townhouse">Townhouse</option>
+                                <option value="multi">Multi-Family</option>
+                                <option value="land">Land</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="minPrice">Min Price</label>
+                            <select id="minPrice">
+                                <option value="">No Min</option>
+                                <option value="100000">$100,000</option>
+                                <option value="200000">$200,000</option>
+                                <option value="300000">$300,000</option>
+                                <option value="400000">$400,000</option>
+                                <option value="500000">$500,000</option>
+                                <option value="750000">$750,000</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="maxPrice">Max Price</label>
+                            <select id="maxPrice">
+                                <option value="">No Max</option>
+                                <option value="200000">$200,000</option>
+                                <option value="300000">$300,000</option>
+                                <option value="400000">$400,000</option>
+                                <option value="500000">$500,000</option>
+                                <option value="750000">$750,000</option>
+                                <option value="1000000">$1,000,000</option>
+                                <option value="1500000">$1,500,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="beds">Bedrooms</label>
+                            <select id="beds">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="baths">Bathrooms</label>
+                            <select id="baths">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="toggle-advanced" onclick="toggleAdvanced()">
+                        + Show Advanced Filters
+                    </button>
+
+                    <div class="advanced-filters" id="advancedFilters">
+                        <div class="filters-grid">
+                            <div class="filter-group">
+                                <label for="sqft">Min Square Feet</label>
+                                <input type="number" id="sqft" placeholder="e.g. 1500">
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="lotSize">Min Lot Size (acres)</label>
+                                <input type="number" id="lotSize" step="0.1" placeholder="e.g. 0.25">
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="yearBuilt">Min Year Built</label>
+                                <input type="number" id="yearBuilt" placeholder="e.g. 2000">
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="garage">Garage Spaces</label>
+                                <select id="garage">
+                                    <option value="">Any</option>
+                                    <option value="1">1+</option>
+                                    <option value="2">2+</option>
+                                    <option value="3">3+</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="status">Listing Status</label>
+                                <select id="status">
+                                    <option value="active">Active Only</option>
+                                    <option value="pending">Include Pending</option>
+                                    <option value="sold">Include Sold</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="daysOnMarket">Days on Market</label>
+                                <select id="daysOnMarket">
+                                    <option value="">Any</option>
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30">Last 30 days</option>
+                                    <option value="90">Last 90 days</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-actions">
+                        <button type="submit" class="btn btn-accent">Search Properties</button>
+                        <button type="button" class="btn btn-outline" onclick="resetFilters()">Clear Filters</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-container">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-count">
+                    Showing <strong id="resultsCount">24</strong> properties
+                </div>
+                <div class="sort-group">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="sqft">Square Feet</option>
+                        <option value="beds">Bedrooms</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="toggleView('grid')">Grid</button>
+                    <button class="view-btn" onclick="toggleView('map')">Map</button>
+                </div>
+            </div>
+
+            <div class="map-container" id="mapView" style="display: none;">
+                <div class="map-placeholder">
+                    <h3>Interactive Map View</h3>
+                    <p>IDX map integration displays here</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">
+                        Connect your IDX provider's map widget to show property locations
+                    </p>
+                </div>
+            </div>
+
+            <div class="listings-display" id="gridView">
+                <!-- Sample listings - replace with IDX data -->
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="Property">
+                        <div class="listing-badge">New</div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$425,000</div>
+                        <h3 class="listing-address">2847 Mesa Avenue</h3>
+                        <p class="listing-location">Grand Junction, CO 81501</p>
+                        <div class="listing-details">
+                            <span>3 Beds</span>
+                            <span>2 Baths</span>
+                            <span>1,850 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800" alt="Property">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$365,000</div>
+                        <h3 class="listing-address">1523 Redlands Parkway</h3>
+                        <p class="listing-location">Grand Junction, CO 81507</p>
+                        <div class="listing-details">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>2,100 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800" alt="Property">
+                        <div class="listing-badge">Price Reduced</div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$289,000</div>
+                        <h3 class="listing-address">945 Horizon Drive</h3>
+                        <p class="listing-location">Clifton, CO 81520</p>
+                        <div class="listing-details">
+                            <span>3 Beds</span>
+                            <span>2 Baths</span>
+                            <span>1,650 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Property">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$515,000</div>
+                        <h3 class="listing-address">3421 Canyon View Court</h3>
+                        <p class="listing-location">Grand Junction, CO 81506</p>
+                        <div class="listing-details">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>2,450 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800" alt="Property">
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$395,000</div>
+                        <h3 class="listing-address">876 Monument Drive</h3>
+                        <p class="listing-location">Fruita, CO 81521</p>
+                        <div class="listing-details">
+                            <span>3 Beds</span>
+                            <span>2.5 Baths</span>
+                            <span>1,975 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800" alt="Property">
+                        <div class="listing-badge">New</div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-price">$675,000</div>
+                        <h3 class="listing-address">2109 Bookcliff Avenue</h3>
+                        <p class="listing-location">Grand Junction, CO 81503</p>
+                        <div class="listing-details">
+                            <span>5 Beds</span>
+                            <span>4 Baths</span>
+                            <span>3,200 sqft</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button disabled>« Previous</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>Next »</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="save-search">
+        <div class="container">
+            <h3>Save Your Search</h3>
+            <p>Get instant alerts when new properties match your criteria</p>
+            <a href="contact.html" class="btn btn-primary">Create Alert</a>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo-footer">Orion Love</h3>
+                    <p>Clear communication. Honest feedback. Results you can trust.</p>
+                    <p class="footer-location">Serving Grand Junction and surrounding areas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Search Homes</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+                        <li><a href="tel:9706446781">(970) 644-6781</a></li>
+                        <li><a href="http://www.orionloveco.kw.com" target="_blank">orionloveco.kw.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+                <p><a href="privacy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Toggle advanced filters
+        function toggleAdvanced() {
+            const advanced = document.getElementById('advancedFilters');
+            const btn = document.querySelector('.toggle-advanced');
+            advanced.classList.toggle('active');
+            btn.textContent = advanced.classList.contains('active') 
+                ? '- Hide Advanced Filters' 
+                : '+ Show Advanced Filters';
+        }
+
+        // Toggle view
+        function toggleView(view) {
+            const gridView = document.getElementById('gridView');
+            const mapView = document.getElementById('mapView');
+            const buttons = document.querySelectorAll('.view-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (view === 'grid') {
+                gridView.style.display = 'grid';
+                mapView.style.display = 'none';
+                buttons[0].classList.add('active');
+            } else {
+                gridView.style.display = 'none';
+                mapView.style.display = 'flex';
+                buttons[1].classList.add('active');
+            }
+        }
+
+        // Reset filters
+        function resetFilters() {
+            document.getElementById('searchForm').reset();
+        }
+
+        // Search form submission
+        document.getElementById('searchForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In production, this would trigger IDX search
+            alert('Search functionality connects to your IDX provider API');
+        });
+
+        // Note: In production, integrate with your IDX provider's JavaScript API
+        // Common providers: IDX Broker, Showcase IDX, iHomefinder, etc.
+    </script>
+</body>
+</html>
