@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Services - Orion Love Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .buyers-hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .buyers-hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .buyers-intro {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .buyers-main {
+            padding: 5rem 0;
+        }
+
+        .buyer-promise {
+            padding: 4rem 0;
+            background: var(--off-white);
+        }
+
+        .promise-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .promise-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .promise-item {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        .promise-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        .promise-item p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .service-block {
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .service-block:last-child {
+            border-bottom: none;
+        }
+
+        .service-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+        .service-icon-large {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .service-header-text h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .service-header-text p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .service-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            background: var(--off-white);
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .detail-item h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+
+        .detail-item p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .detail-item ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .detail-item li {
+            color: var(--gray);
+            padding: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .detail-item li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .service-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .service-icon-large {
+                margin: 0 auto;
+            }
+
+            .service-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Orion Love</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Sellers</a></li>
+                <li><a href="buyers.html" class="active">Buyers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="buyers-hero">
+        <div class="container">
+            <h1>Buyer Representation Services</h1>
+            <p class="buyers-intro">
+                Professional guidance through every step of the home buying process.
+            </p>
+        </div>
+    </section>
+
+    <section class="buyer-promise">
+        <div class="container">
+            <div class="promise-content">
+                <h2>What I Provide to Buyers</h2>
+                <p style="color: var(--gray); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    As your buyer's agent, I represent your interests throughout the entire transaction. Here's what that includes.
+                </p>
+                <div class="promise-grid">
+                    <div class="promise-item">
+                        <h3>Exclusive Buyer Representation</h3>
+                        <p>I work for you, not the seller. Your interests come first in every decision and negotiation.</p>
+                    </div>
+                    <div class="promise-item">
+                        <h3>Full MLS Access</h3>
+                        <p>Access to all properties listed on the Multiple Listing Service, including new listings the moment they hit the market.</p>
+                    </div>
+                    <div class="promise-item">
+                        <h3>No Cost to You</h3>
+                        <p>Buyer's agent commission is typically paid by the seller. You get professional representation at no direct cost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="buyers-main">
+        <div class="container">
+            
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">🔍</div>
+                    <div class="service-header-text">
+                        <h2>Property Search & Access</h2>
+                        <p>I help you find properties that match your criteria and budget.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>MLS Search</h4>
+                        <p>Full access to the Multiple Listing Service with immediate alerts when properties matching your criteria become available.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Property Showings</h4>
+                        <p>I schedule and coordinate showings at times that work for you, including evenings and weekends.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Off-Market Opportunities</h4>
+                        <p>Access to pocket listings and properties not yet on the public market through professional networks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">📊</div>
+                    <div class="service-header-text">
+                        <h2>Market Analysis & Valuation</h2>
+                        <p>Understand what properties are actually worth.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Comparative Market Analysis</h4>
+                        <p>Detailed analysis of recent sales, active listings, and market trends to help you make informed offers.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Neighborhood Information</h4>
+                        <p>Data on schools, crime rates, property taxes, HOA fees, and local amenities for areas you're considering.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Market Conditions</h4>
+                        <p>Current market analysis including inventory levels, average days on market, and pricing trends.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">✍️</div>
+                    <div class="service-header-text">
+                        <h2>Offer Preparation & Negotiation</h2>
+                        <p>I prepare and submit competitive offers on your behalf.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Purchase Agreement</h4>
+                        <p>Preparation of all required paperwork including purchase agreements, disclosures, and addendums.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Offer Strategy</h4>
+                        <p>Guidance on offer price, contingencies, earnest money, and terms to make your offer competitive.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Negotiation</h4>
+                        <p>Negotiating on your behalf for price, repairs, closing costs, and other contract terms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">🏠</div>
+                    <div class="service-header-text">
+                        <h2>Due Diligence Period</h2>
+                        <p>Coordination of inspections and reviews during your contingency period.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Inspector Referrals</h4>
+                        <p>Recommendations for qualified home inspectors, specialists, and contractors as needed.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Inspection Review</h4>
+                        <p>Review of inspection reports and guidance on requesting repairs or renegotiating based on findings.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Appraisal Coordination</h4>
+                        <p>Working with your lender's appraiser and addressing any appraisal issues that arise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">💰</div>
+                    <div class="service-header-text">
+                        <h2>Financing & Lender Coordination</h2>
+                        <p>Support throughout the financing process.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Lender Referrals</h4>
+                        <p>Connections to trusted mortgage lenders and loan officers who can help you get pre-approved.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Financing Guidance</h4>
+                        <p>General information about loan types, down payments, and closing costs to help you plan.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Timeline Management</h4>
+                        <p>Tracking financing deadlines and coordinating with your lender to keep the transaction on schedule.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">📋</div>
+                    <div class="service-header-text">
+                        <h2>Transaction Management</h2>
+                        <p>Managing all the details from contract to closing.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Deadline Tracking</h4>
+                        <p>Monitoring all contract deadlines for contingencies, inspections, financing, and closing.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Vendor Coordination</h4>
+                        <p>Coordinating between lender, title company, inspectors, and other parties involved in the transaction.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Document Management</h4>
+                        <p>Organizing and delivering all required documents, disclosures, and paperwork throughout the process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-header">
+                    <div class="service-icon-large">✅</div>
+                    <div class="service-header-text">
+                        <h2>Closing & Beyond</h2>
+                        <p>Final steps to transfer ownership and move into your new home.</p>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <div class="detail-item">
+                        <h4>Final Walkthrough</h4>
+                        <p>Scheduling and attending the final walkthrough to verify property condition before closing.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Closing Preparation</h4>
+                        <p>Review of closing disclosure, title documents, and final settlement statement before signing.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Post-Closing Support</h4>
+                        <p>Assistance with utility transfers, contractor referrals, and any post-closing questions.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Buy a Home?</h2>
+                <p>Get started with a buyer consultation to discuss your needs and timeline.</p>
+                <a href="contact.html" class="btn btn-primary-light">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo-footer">Orion Love</h3>
+                    <p>Clear communication. Honest feedback. Results you can trust.</p>
+                    <p class="footer-location">Serving Grand Junction and surrounding areas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Sellers</a></li>
+                        <li><a href="buyers.html">Buyers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/cdn-cgi/l/email-protection#4d223f2422236321223b28632e220d2a202c2421632e2220"><span class="__cf_email__" data-cfemail="e38c918a8c8dcd8f8c9586cd808ca3848e828a8fcd808c8e">[email&#160;protected]</span></a></li>
+                        <li><a href="tel:9706446781">(970) 644-6781</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+                <p><a hr
