@@ -405,17 +405,12 @@
             try {
                 // FollowUpBoss API endpoint
                 // REPLACE 'YOUR_API_KEY' with your actual FollowUpBoss API key
-                const response = await fetch('https://api.followupboss.com/v1/events', {
+                const response = await fetch('https://followupboss-api.orion-love-co.workers.dev', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Basic ' + btoa('YOUR_API_KEY:')
                     },
-                    body: JSON.stringify({
-                        source: formData.source,
-                        person: formData.person,
-                        message: `Inquiry Type: ${formData.inquiry}\n\nMessage: ${formData.message}`
-                    })
+                    body: JSON.stringify(formData)
                 });
 
                 if (response.ok) {
