@@ -314,11 +314,10 @@
                         </div>
 
                         <div class="consent-section">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="consent" name="consent">
-                                <label for="consent">
+                            <div class="consent-text-only">
+                                <p>
                                     By submitting this form, I agree to be contacted by Orion Love via call, email, and text for real estate services. Your information will not be shared or sold. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <a href="privacy.html" target="_blank">Privacy Policy</a>.
-                                </label>
+                                </p>
                             </div>
                         </div>
 
@@ -401,10 +400,6 @@
                     showMessage('Please fill in all required fields.', 'error');
                     return;
                 }
-            }
-            if (!document.getElementById('consent').checked) {
-                showMessage('Please accept the consent checkbox before submitting.', 'error');
-                return;
             }
 
             // Disable button while submitting
