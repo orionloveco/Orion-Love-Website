@@ -424,6 +424,8 @@ section {
     gap: 2.5rem;
 }
 
+
+
 .listing-card {
     background: var(--white);
     overflow: hidden;
@@ -705,4 +707,18 @@ section {
     .process-steps {
         grid-template-columns: 1fr;
     }
+}
+
+.consent-text-only p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--gray);
+    font-style: italic; /* This makes it italicized */
+    margin: 0;
+}
+
+.consent-text-only a {
+    color: var(--primary);
+    text-decoration: underline;
+    font-style: normal; /* Optional: keeps the link from being italic if you prefer */
 }
