@@ -28,7 +28,7 @@ async function handleRequest(request) {
     const formData = await request.json()
 
     // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.message) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         { 
@@ -47,10 +47,14 @@ async function handleRequest(request) {
       person: {
         firstName: formData.firstName,
         lastName: formData.lastName,
-        emails: [{ value: formData.email }],
-        phones: [{ value: formData.phone }]
+        emails: [{ value: formData.email }]
       },
-      message: `Inquiry Type: ${formData.inquiry || 'General Inquiry'}\n\nMessage: ${formData.message}`
+      message: `Inquiry Type: ${formData.inquiry || 'General Inquiry'}\n\nMessage: ${formData.message}
+    }
+      
+    // Only add phone if provided
+    if (formData.phone && formData.phone.trim()) {
+    fubData.person.phones = [{ value: formData.phone }];
     }
 
     // Send to FollowUpBoss API
