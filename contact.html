@@ -292,7 +292,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone">
                             </div>
                         </div>
 
@@ -394,7 +394,7 @@
             e.preventDefault();
 
             // Basic client-side validation
-            const required = ['firstName', 'lastName', 'email', 'phone', 'message'];
+            const required = ['firstName', 'lastName', 'email', 'message'];
             for (const id of required) {
                 if (!document.getElementById(id).value.trim()) {
                     showMessage('Please fill in all required fields.', 'error');
