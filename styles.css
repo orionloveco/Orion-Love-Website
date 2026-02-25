@@ -913,3 +913,35 @@ section {
     transition: none !important;
   }
 }
+
+/* =========================
+   Reveal animation system (CSS-only visibility + IO triggers)
+   - Visible by default when JS fails
+   - If JS runs, it will add .is-visible as elements enter view
+========================= */
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Only apply the “hidden before reveal” effect when JS is present */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
