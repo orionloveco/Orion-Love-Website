@@ -1,179 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion Love - Grand Junction Real Estate Expert</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orion Love - Grand Junction Real Estate Expert</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.usp-card, .usp-grid > *, .process-steps > *, .step')
+          .forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+      }, 100);
+    });
+  </script>
 </head>
-    <script src="script.js"></script>
-<script>
-// Force all cards to show immediately
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        const cards = document.querySelectorAll('.usp-card, .usp-grid > *, .process-steps > *, .step');
-        cards.forEach(card => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        });
-    }, 100);
-});
-</script>
+
 <body>
-    <header class="main-header">
-        <nav class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-main">Orion Love | Colorado Realtor®</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Sellers</a></li>
-                <li><a href="buyers.html">Buyers</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="btn-nav">Contact</a></li>
-            </ul>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Sell Your Grand Junction Home With Clear Pricing and No Guesswork</h1>
-            <p class="hero-subtitle">Local market knowledge, honest communication, and a proven process, so you always know where you stand.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary">Get a Local Home Value</a>
-                <a href="buyers.html" class="btn btn-primary">Buying a Home?</a>
-            </div>
-            <p class="hero-trust">
-            Serving Grand Junction, Fruita, the Redlands, and Mesa County
-            </p>
-        </div>
+<header class="main-header">
+  <nav class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="services.html">Sellers</a></li>
+      <li><a href="buyers.html">Buyers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-    </section>
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Sell Your Grand Junction Home With Clear Pricing and No Guesswork</h1>
+    <p class="hero-subtitle">
+      Local market knowledge, honest communication, and a proven process — so you always know where you stand.
+    </p>
+    <div class="hero-cta">
+      <a href="contact.html" class="btn btn-primary">Get a Local Home Value</a>
+      <a href="buyers.html" class="btn btn-primary">Buying a Home?</a>
+    </div>
+    <p class="hero-trust">
+      Serving Grand Junction, Fruita, the Redlands, and Mesa County
+    </p>
+  </div>
+</section>
 
-    <section class="usp-section">
-        <div class="container">
-            <div class="section-header centered">
-                <h2>Why Grand Junction Sellers Choose Orion Love</h2>
-                <p class="section-intro">Selling here isn’t about hype, it’s about pricing right, preparing well, and communicating clearly.</p>
-            </div>
-            <div class="usp-grid">
-                <div class="usp-card">
-                    <div class="usp-icon">📍</div>
-                    <h3>Local Market Knowledge That Matters</h3>
-                    <p>I analyze recent Mesa County sales and tour competing homes with you, so pricing is based on what buyers are actually choosing — not guesses.</p>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon">📊</div>
-                    <h3>Pricing backed by Real Data</h3>
-                    <p>Online estimates don’t reflect Grand Junction neighborhoods. I use real sales data, buyer behavior, and feedback to guide pricing decisions.</p>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon">💬</div>
-                    <h3>Clear, Consistent Communication</h3>
-                    <p>Weekly updates, honest feedback after showings, and direct answers — so you’re never left wondering what’s next.</p>
-                </div>
-                <div class="usp-card">
-                    <div class="usp-icon">🎯</div>
-                    <h3>Preparation Before the Listing Goes Live</h3>
-                    <p>Strategic prep, professional photography, and guidance on what actually impacts value, not unnecessary fixes.</p>
-                </div>
-            </div>
-            <div class="cta-center">
-                <a href="services.html" class="btn btn-primary">See How It Works</a>
-            </div>
-        </div>
-    </section>
+<section class="usp-section">
+  <div class="container">
+    <div class="section-header centered">
+      <h2>Why Grand Junction Sellers Choose Orion Love</h2>
+      <p class="section-intro">
+        Selling here isn’t about hype — it’s about pricing right, preparing well, and communicating clearly.
+      </p>
+    </div>
 
+    <div class="usp-grid">
+      <div class="usp-card">
+        <div class="usp-icon">📍</div>
+        <h3>Local Market Knowledge That Matters</h3>
+        <p>I analyze recent Mesa County sales and tour competing homes with you, so pricing is based on what buyers are actually choosing.</p>
+      </div>
 
-    <section class="cta-banner">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Thinking About Selling in Grand Junction?</h2>
-                <p>Get a clear, data-backed view of what homes like yours are selling for, without pressure or obligation.</p>
-                <a href="contact.html" class="btn btn-primary-light">Request a Local Home Value</a>
-            </div>
-        </div>
-    </section>
+      <div class="usp-card">
+        <div class="usp-icon">📊</div>
+        <h3>Pricing Backed by Real Data</h3>
+        <p>I use real sales data, buyer behavior, and local feedback — not automated estimates — to guide pricing decisions.</p>
+      </div>
 
-    <section class="buyers-cta" style="padding: 4rem 0; background: var(--accent);">
-        <div class="container">
-            <div class="cta-content" style="text-align: center;">
-                <h2>Buying a Home?</h2>
-                <p>Let's find the right property without the pressure.</p>
-                <a href="buyers.html" class="btn btn-primary">Learn About Buyer Services</a>
-            </div>
-        </div>
-    </section>
+      <div class="usp-card">
+        <div class="usp-icon">💬</div>
+        <h3>Clear, Consistent Communication</h3>
+        <p>Weekly updates, honest showing feedback, and direct answers — so you’re never left wondering what’s next.</p>
+      </div>
 
-    <section class="process-preview">
-        <div class="container">
-            <div class="section-header centered">
-                <h2>A Simple, Proven Selling Process</h2>
-                <p class="section-intro">Clear steps. Clear expectations. Less stress.</p>
-            </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>The Local Market Review</h3>
-                    <p>We review recent sales, current competition, and neighborhood trends, so expectations are grounded in reality from day one.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Strategic Preparation</h3>
-                    <p>Guidance on presentation, photography, and positioning, focusing only on changes that impact buyer perception.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Market Effectively</h3>
-                    <p>MLS exposure, online platforms, and targeted agent outreach, with an emphasis on what actually drives showings locally.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Close with Confidence</h3>
-                    <p>Weekly updates, honest feedback, and clear communication through closing.</p>
-                </div>
-            </div>
-            <div class="cta-center">
-                <a href="services.html" class="btn btn-secondary">Learn More About My Services</a>
-            </div>
-        </div>
-    </section>
+      <div class="usp-card">
+        <div class="usp-icon">🎯</div>
+        <h3>Preparation Before the Listing Goes Live</h3>
+        <p>Strategic prep, professional photography, and guidance on what actually impacts value — not unnecessary fixes.</p>
+      </div>
+    </div>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3 class="logo-footer">Orion Love</h3>
-                    <p>Helping Grand Junction homeowners sell with clarity, confidence, and honest communication.</p>
-                    <p class="footer-location">Serving Grand Junction, Fruita, the Redlands, and surrounding Mesa County areas</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Sellers</a></li>
-                        <li><a href="buyers.html">Buyers</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="/cdn-cgi/l/email-protection#b2ddc0dbdddc9cdeddc4d79cd1ddf2d5dfd3dbde9cd1dddf"><span class="__cf_email__" data-cfemail="3f504d565051115350495a115c507f58525e5653115c5052">[email&#160;protected]</span></a></li>
-                        <li><a href="tel:9706446781">(970) 644-6781</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
-                <p><a hr
+    <div class="cta-center">
+      <a href="services.html" class="btn btn-primary">See How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Thinking About Selling in Grand Junction?</h2>
+      <p>Get a clear, data-backed view of what homes like yours are selling for — without pressure or obligation.</p>
+      <a href="contact.html" class="btn btn-primary-light">Request a Local Home Value</a>
+    </div>
+  </div>
+</section>
+
+<section class="buyers-cta">
+  <div class="container">
+    <div class="cta-content centered">
+      <h2>Buying a Home?</h2>
+      <p>Let’s find the right property without the pressure.</p>
+      <a href="buyers.html" class="btn btn-primary">Learn About Buyer Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="process-preview">
+  <div class="container">
+    <div class="section-header centered">
+      <h2>A Simple, Proven Selling Process</h2>
+      <p class="section-intro">Clear steps. Clear expectations. Less stress.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>The Local Market Review</h3>
+        <p>We review recent sales, current competition, and neighborhood trends so expectations are grounded in reality.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Strategic Preparation</h3>
+        <p>Guidance on presentation, photography, and positioning — focused only on what impacts buyer perception.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Market Effectively</h3>
+        <p>MLS exposure, online platforms, and targeted outreach designed to drive real showings locally.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Close with Confidence</h3>
+        <p>Clear communication, honest feedback, and support through closing.</p>
+      </div>
+    </div>
+
+    <div class="cta-center">
+      <a href="services.html" class="btn btn-secondary">Learn More About My Services</a>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="logo-footer">Orion Love</h3>
+        <p>Helping Grand Junction homeowners sell with clarity, confidence, and honest communication.</p>
+        <p class="footer-location">Serving Grand Junction, Fruita, the Redlands, and Mesa County</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
