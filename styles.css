@@ -417,7 +417,7 @@ section {
     background: var(--white);
 }
 
-.section-header {
+.featured-listings .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
