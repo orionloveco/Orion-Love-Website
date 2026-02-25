@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <script src="script.js"></script>
+<script>
+// Force all cards to show immediately
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const cards = document.querySelectorAll('.usp-card, .usp-grid > *, .process-steps > *, .step');
+        cards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        });
+    }, 100);
+});
+</script>
 <body>
     <header class="main-header">
         <nav class="container">
