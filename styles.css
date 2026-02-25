@@ -722,3 +722,9 @@ section {
     text-decoration: underline;
     font-style: normal; /* Optional: keeps the link from being italic if you prefer */
 }
+
+.hero-trust {
+    margin-top: 1.25rem; /* increase if needed */
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
