@@ -821,3 +821,95 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   Global reveal animation (CSS-only)
+   - Visible by default (no disappearing grids)
+   - Animates in on load
+========================= */
+
+/* Use the same keyframes you already have */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Always visible baseline (prevents “grid not showing”) */
+.usp-card,
+.step,
+.promise-item,
+.detail-item,
+.service-block,
+.stat,
+.value-card,
+.approach-list li,
+.listing-card {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animate on load (no JS needed) */
+.usp-card,
+.step,
+.promise-item,
+.detail-item,
+.service-block,
+.stat,
+.value-card,
+.approach-list li,
+.listing-card {
+  animation: fadeInUp 0.7s ease both;
+}
+
+/* Optional: small stagger so it feels polished */
+.usp-card:nth-child(1),
+.step:nth-child(1),
+.promise-item:nth-child(1),
+.detail-item:nth-child(1),
+.stat:nth-child(1),
+.value-card:nth-child(1),
+.approach-list li:nth-child(1),
+.listing-card:nth-child(1) { animation-delay: 0.05s; }
+
+.usp-card:nth-child(2),
+.step:nth-child(2),
+.promise-item:nth-child(2),
+.detail-item:nth-child(2),
+.stat:nth-child(2),
+.value-card:nth-child(2),
+.approach-list li:nth-child(2),
+.listing-card:nth-child(2) { animation-delay: 0.12s; }
+
+.usp-card:nth-child(3),
+.step:nth-child(3),
+.promise-item:nth-child(3),
+.detail-item:nth-child(3),
+.stat:nth-child(3),
+.value-card:nth-child(3),
+.approach-list li:nth-child(3),
+.listing-card:nth-child(3) { animation-delay: 0.19s; }
+
+.usp-card:nth-child(4),
+.step:nth-child(4),
+.promise-item:nth-child(4),
+.detail-item:nth-child(4),
+.stat:nth-child(4),
+.value-card:nth-child(4),
+.approach-list li:nth-child(4),
+.listing-card:nth-child(4) { animation-delay: 0.26s; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .usp-card,
+  .step,
+  .promise-item,
+  .detail-item,
+  .service-block,
+  .stat,
+  .value-card,
+  .approach-list li,
+  .listing-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
