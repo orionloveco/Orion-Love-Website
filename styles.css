@@ -774,3 +774,32 @@ section {
     font-size: 0.9rem;
     opacity: 0.9;
 }
+
+/* Force single column ONLY for How I Work */
+.how-work-list{
+  grid-template-columns: 1fr !important;
+}
+
+/* Keep the gold-lined card look, but layout content horizontally */
+.how-work-list .usp-card{
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Icon alignment */
+.how-work-list .usp-icon{
+  margin-top: 0.25rem;
+}
+
+/* Readability constraint */
+.how-work-list .usp-card p{
+  max-width: 720px;
+}
+
+@media (max-width:768px){
+  .how-work-list .usp-card{
+    grid-template-columns: 40px 1fr;
+  }
+}
