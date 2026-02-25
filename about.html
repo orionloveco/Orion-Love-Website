@@ -184,6 +184,20 @@
     </style>
 </head>
     <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    const cards = document.querySelectorAll(
+      '.values-grid > *, .value-card, .approach-list > li, .stats-grid > *, .stat'
+    );
+
+    cards.forEach(card => {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    });
+  }, 100);
+});
+</script>
 <body>
     <header class="main-header">
         <nav class="container">
