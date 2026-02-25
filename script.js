@@ -122,8 +122,6 @@ if ('IntersectionObserver' in window) {
 const style = document.createElement('style');
 style.textContent = `
     .usp-card, .listing-card, .process-card, .step, .value-card, .service-card {
-        opacity: 0;
-        transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .usp-card.animate-in, .listing-card.animate-in, .process-card.animate-in, 
