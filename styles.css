@@ -417,6 +417,11 @@ section {
     line-height: 1.7;
 }
 
+.usp-card {
+    opacity: 1;
+    transform: none;
+}
+
 .cta-center {
     text-align: center;
     margin-top: 3rem;
