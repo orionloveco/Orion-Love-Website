@@ -18,7 +18,7 @@
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
-        document.querySelectorAll('.usp-card, .promise-item, .service-block, .detail-item')
+        document.querySelectorAll('.promise-item, .service-block, .detail-item')
           .forEach(el => {
             el.style.opacity = '1';
             el.style.transform = 'none';
@@ -48,10 +48,6 @@
       color: rgba(255,255,255,0.9);
     }
 
-    .buyers-main {
-      padding: 5rem 0;
-    }
-
     .buyer-promise {
       padding: 4rem 0;
       background: var(--off-white);
@@ -75,6 +71,10 @@
       background: var(--white);
       padding: 2.5rem 2rem;
       border-top: 3px solid var(--accent);
+    }
+
+    .buyers-main {
+      padding: 5rem 0;
     }
 
     .service-block {
@@ -106,6 +106,12 @@
       justify-content: center;
       font-size: 2rem;
       flex-shrink: 0;
+    }
+
+    .service-header-text p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
     .service-details {
@@ -171,9 +177,9 @@
 
 <section class="buyers-hero">
   <div class="container">
-    <h1>Buyer Representation Services</h1>
+    <h1>Buy a Home in Grand Junction With a Clear Plan</h1>
     <p class="buyers-intro">
-      Professional guidance through every step of the home buying process.
+      Local guidance, realistic pricing insight, and strong negotiation — so you don’t overpay or miss the right opportunity.
     </p>
   </div>
 </section>
@@ -181,23 +187,23 @@
 <section class="buyer-promise">
   <div class="container">
     <div class="promise-content">
-      <h2>What I Provide to Buyers</h2>
+      <h2>What You Get When You Work With Me</h2>
       <p class="buyers-intro" style="color: var(--gray);">
-        As your buyer’s agent, I represent your interests from the first showing through closing.
+        Buying in Grand Junction requires local context. I help you understand what’s worth pursuing, what’s overpriced, and how to win without rushing.
       </p>
 
       <div class="promise-grid">
         <div class="promise-item">
-          <h3>Exclusive Representation</h3>
-          <p>I work for you — not the seller — protecting your interests in every decision.</p>
+          <h3>Exclusive Buyer Representation</h3>
+          <p>I work for you — not the seller — providing honest advice on price, condition, and resale potential.</p>
         </div>
         <div class="promise-item">
           <h3>Full Market Access</h3>
-          <p>Immediate access to all MLS listings, including new homes the moment they hit the market.</p>
+          <p>From Redlands to Fruita and Palisade, you’ll see every option — including new listings and off-market opportunities when available.</p>
         </div>
         <div class="promise-item">
-          <h3>No Direct Cost</h3>
-          <p>Buyer representation is typically paid by the seller, giving you professional guidance without extra fees.</p>
+          <h3>No Direct Cost to You</h3>
+          <p>In most transactions, the seller pays the buyer’s agent commission. You get full representation without extra fees.</p>
         </div>
       </div>
     </div>
@@ -207,9 +213,149 @@
 <section class="buyers-main">
   <div class="container">
 
-    <!-- Service blocks unchanged, just structurally safe -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">🔍</div>
+        <div class="service-header-text">
+          <h2>Property Search & Access</h2>
+          <p>Homes that fit your budget and make sense in today’s Grand Junction market.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>MLS Search</h4>
+          <p>Real-time alerts for Mesa County listings, price reductions, and new opportunities.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Efficient Showings</h4>
+          <p>Back-to-back tours so you can compare homes and make confident decisions.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Off-Market Opportunities</h4>
+          <p>Access to local agent networks when homes are available before going public.</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- (Your service blocks continue exactly as you wrote them — omitted here for brevity in explanation but INCLUDED in the actual page above) -->
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">📊</div>
+        <div class="service-header-text">
+          <h2>Market Analysis & Valuation</h2>
+          <p>Understanding real value — not national averages.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>Comparative Market Analysis</h4>
+          <p>Recent sales, active listings, and buyer behavior broken down by neighborhood.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Neighborhood Insight</h4>
+          <p>HOAs, irrigation, taxes, school zones, and long-term livability factors.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Current Market Conditions</h4>
+          <p>Inventory levels, days on market, and strategy guidance based on today’s conditions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">✍️</div>
+        <div class="service-header-text">
+          <h2>Offer Strategy & Negotiation</h2>
+          <p>Winning offers without unnecessary risk.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>Clean Contracts</h4>
+          <p>Well-structured offers that reduce friction and protect you.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Strategic Terms</h4>
+          <p>Guidance on price, contingencies, appraisal risk, and timing.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Negotiation</h4>
+          <p>Focused on protecting your bottom line during inspections and appraisal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">🏠</div>
+        <div class="service-header-text">
+          <h2>Due Diligence</h2>
+          <p>Where good representation saves you money.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>Trusted Inspectors</h4>
+          <p>Local professionals familiar with common Grand Junction issues.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Inspection Strategy</h4>
+          <p>Clear guidance on what to negotiate and what’s normal.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Appraisal Support</h4>
+          <p>Strategy and renegotiation help if values come in low.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">💰</div>
+        <div class="service-header-text">
+          <h2>Financing Coordination</h2>
+          <p>Keeping your deal on track.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>Local Lenders</h4>
+          <p>Connections to reliable lenders who close on time.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Financing Guidance</h4>
+          <p>Clear explanations of loan types, down payments, and costs.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Timeline Management</h4>
+          <p>Coordination between lender deadlines and contract dates.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <div class="service-icon-large">✅</div>
+        <div class="service-header-text">
+          <h2>Closing & Beyond</h2>
+          <p>Support through closing — and after.</p>
+        </div>
+      </div>
+      <div class="service-details">
+        <div class="detail-item">
+          <h4>Final Walkthrough</h4>
+          <p>Verifying condition and completed repairs before closing.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Closing Prep</h4>
+          <p>Reviewing documents so there are no surprises.</p>
+        </div>
+        <div class="detail-item">
+          <h4>Post-Closing Support</h4>
+          <p>Utilities, contractor referrals, and local resources.</p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -217,8 +363,8 @@
 <section class="cta-banner">
   <div class="container">
     <div class="cta-content">
-      <h2>Ready to Buy a Home?</h2>
-      <p>Schedule a buyer consultation to discuss your goals and timeline.</p>
+      <h2>Ready to Buy in Grand Junction?</h2>
+      <p>Let’s build a plan that fits your goals and this market.</p>
       <a href="contact.html" class="btn btn-primary-light">Schedule a Consultation</a>
     </div>
   </div>
