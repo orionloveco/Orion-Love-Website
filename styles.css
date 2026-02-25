@@ -422,6 +422,32 @@ section {
     transform: none;
 }
 
+.usp-list{
+  display:flex;
+  flex-direction:column;
+  gap:1.75rem;
+}
+
+.usp-row{
+  display:grid;
+  grid-template-columns: 56px 1fr;
+  align-items:flex-start;
+}
+
+.usp-row .usp-icon{
+  margin-top: 0.25rem;
+}
+
+.usp-row .usp-content p{
+  max-width: 700px;
+}
+
+@media (max-width:768px){
+  .usp-row{
+    grid-template-columns: 40px 1fr;
+  }
+}
+
 .cta-center {
     text-align: center;
     margin-top: 3rem;
