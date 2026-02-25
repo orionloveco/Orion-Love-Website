@@ -803,3 +803,35 @@ section {
     grid-template-columns: 40px 1fr;
   }
 }
+
+/* Fix weird icon placement ONLY in the How I Work section */
+.how-work-list .usp-icon{
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* overrides common global icon styles */
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+
+  /* optional: makes it look intentional */
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Make sure the row aligns from the top */
+.how-work-list .usp-card{
+  align-items: flex-start;
+}
+
+@media (max-width:768px){
+  .how-work-list .usp-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+}
