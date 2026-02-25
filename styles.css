@@ -347,6 +347,10 @@ section {
     max-width: 700px;
 }
 
+.section-header h2 {
+    margin-bottom: 0.25rem;
+}
+
 .section-header.centered .section-intro {
     margin-left: auto;
     margin-right: auto;
