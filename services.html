@@ -17,6 +17,19 @@
   <script>document.documentElement.classList.add('js');</script>
   <script src="script.js" defer></script>
 
+  <!-- Optional: Force animated cards/sections to show (prevents "invisible grid" issues) -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.usp-card, .usp-grid > *, .process-steps > *, .step, .detail-item, .investment-item')
+          .forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+      }, 100);
+    });
+  </script>
+
   <style>
     .services-hero {
       margin-top: 80px;
@@ -33,7 +46,7 @@
 
     .services-intro {
       font-size: 1.15rem;
-      max-width: 820px;
+      max-width: 800px;
       margin: 0 auto;
       color: rgba(255,255,255,0.9);
     }
@@ -46,6 +59,10 @@
       margin-bottom: 4rem;
       padding-bottom: 4rem;
       border-bottom: 1px solid var(--light-gray);
+    }
+
+    .service-block:last-child {
+      border-bottom: none;
     }
 
     .service-header {
@@ -66,6 +83,17 @@
       align-items: center;
       justify-content: center;
       font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .service-header-text h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .service-header-text p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
     .service-details {
@@ -81,57 +109,90 @@
       border-left: 3px solid var(--accent);
     }
 
+    .detail-item h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .detail-item p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .detail-item ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .detail-item li {
+      color: var(--gray);
+      padding: 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .detail-item li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 0.75rem;
+    }
+
     .investment-section {
       padding: 4rem 0;
       background: var(--off-white);
     }
 
-    .seller-faq-section {
-      padding: 4rem 0;
-    }
-
-    .seller-faq-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 3rem;
-    }
-
-    .seller-faq-accordion {
-      display: grid;
-      gap: 1rem;
+    .investment-content {
       max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .seller-faq-item {
-      border: 1px solid var(--light-gray);
-      border-radius: 12px;
-      overflow: hidden;
+    .investment-content h2 {
+      margin-bottom: 2rem;
+    }
+
+    .investment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: left;
+    }
+
+    .investment-item {
       background: var(--white);
+      padding: 2rem;
     }
 
-    .seller-faq-question {
-      padding: 1.25rem 1.5rem;
-      cursor: pointer;
-      font-weight: 600;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .investment-item h4 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
     }
 
-    .seller-faq-question::after {
-      content: "+";
-      color: var(--accent);
-      font-size: 1.5rem;
+    .investment-item p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
-    .seller-faq-item[open] .seller-faq-question::after {
-      content: "–";
+    .fee-note {
+      background: var(--white);
+      padding: 2rem;
+      border-left: 4px solid var(--primary);
+      text-align: left;
     }
 
-    .seller-faq-answer {
-      padding: 0 1.5rem 1.5rem;
+    .fee-note h4 {
+      margin-bottom: 1rem;
+    }
+
+    .fee-note p {
+      color: var(--gray);
+      line-height: 1.7;
     }
 
     @media (max-width: 768px) {
@@ -139,251 +200,260 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
+
       .service-icon-large {
         margin: 0 auto;
+      }
+
+      .service-details {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
+  <header class="main-header">
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Orion Love | Colorado Realtor®</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buyers.html">Buyers</a></li>
+        <li><a href="services.html" class="active" aria-current="page">Sellers</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-<header class="main-header">
-  <nav class="container">
-    <a href="index.html" class="logo">
-      <span class="logo-main">Orion Love | Colorado Realtor®</span>
-    </a>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="buyers.html">Buyers</a></li>
-      <li><a href="services.html" class="active">Sellers</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle"><span></span><span></span><span></span></button>
-  </nav>
-</header>
+  <section class="services-hero">
+    <div class="container">
+      <h1>Sell Smarter. Sell with Confidence.</h1>
+      <p class="services-intro">
+        This is what sellers get when they work with me. No surprises, no hidden costs, no upsells.
+      </p>
+    </div>
+  </section>
 
-<section class="services-hero">
-  <div class="container">
-    <h1>Sell Smarter. Sell with Confidence.</h1>
-    <p class="services-intro">
-      A clear strategy, honest communication, and professional marketing — without surprises or upsells.
-    </p>
-  </div>
-</section>
+  <section class="services-main">
+    <div class="container">
 
-<section class="services-main">
-  <div class="container">
+      <div class="service-block">
+        <div class="service-header">
+          <div class="service-icon-large">📊</div>
+          <div class="service-header-text">
+            <h2>Accurate Market Analysis</h2>
+            <p>Pricing is the most important decision you'll make. I base it on real data, not hope.</p>
+          </div>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <h4>Comparative Market Analysis</h4>
+            <p>We tour competing homes together. You'll see what buyers see—condition, layout, upgrades, pricing. This removes guesswork and builds confidence in our strategy.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Monthly Market Updates</h4>
+            <p>Every 30 days, I provide updated market analysis showing new listings, sold properties, and price trends. You'll always know where your home stands.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Strategic Positioning</h4>
+            <p>We discuss timing, initial pricing, and adjustment strategy. The goal is to attract serious buyers while maximizing your return.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">📊</div>
-        <div>
-          <h2>Accurate Pricing & Strategy</h2>
-          <p>Pricing is the single most important decision. We base it on real data, not guesswork.</p>
+      <div class="service-block">
+        <div class="service-header">
+          <div class="service-icon-large">📸</div>
+          <div class="service-header-text">
+            <h2>Professional Marketing</h2>
+            <p>First impressions happen online. Your home gets professional treatment from day one.</p>
+          </div>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <h4>Photography &amp; Video</h4>
+            <ul>
+              <li>Professional photographer</li>
+              <li>High-resolution images</li>
+              <li>Video walkthrough</li>
+              <li>Aerial drone footage (when applicable)</li>
+            </ul>
+            <p style="margin-top: 1rem;">Paid upfront. No cost to you.</p>
+          </div>
+          <div class="detail-item">
+            <h4>MLS &amp; Syndication</h4>
+            <ul>
+              <li>Full MLS listing</li>
+              <li>Zillow, Realtor.com, Trulia</li>
+              <li>Major real estate portals</li>
+              <li>Agent network distribution</li>
+            </ul>
+          </div>
+          <div class="detail-item">
+            <h4>Digital Marketing</h4>
+            <ul>
+              <li>Social media promotion</li>
+              <li>Targeted online advertising</li>
+              <li>Email outreach to buyers</li>
+              <li>Agent network notifications</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-header">
+          <div class="service-icon-large">🏠</div>
+          <div class="service-header-text">
+            <h2>Property Preparation</h2>
+            <p>Most issues are preventable. We address them before buyers find them.</p>
+          </div>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <h4>Staging Consultation</h4>
+            <p>I walk through your home and provide clear guidance on what helps and what hurts. Simple adjustments make a difference.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Pre-Listing Inspection</h4>
+            <p>Optional but recommended. Finding issues early means negotiating from strength, not scrambling during buyer inspections.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Vendor Coordination</h4>
+            <p>Need repairs, cleaning, or touch-ups? I coordinate trusted contractors to get work done quickly and correctly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-header">
+          <div class="service-icon-large">💬</div>
+          <div class="service-header-text">
+            <h2>Clear Communication</h2>
+            <p>You'll never wonder what's happening. I keep you informed every step of the way.</p>
+          </div>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <h4>Weekly Updates</h4>
+            <p>Every week, you get a summary of showing activity, buyer feedback, market changes, and next steps. No silence.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Honest Feedback</h4>
+            <p>After showings, I share what buyers said—both good and bad. If there's an issue, we address it. If pricing needs adjustment, I'll tell you.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Direct Access</h4>
+            <p>Call, text, or email. I respond to all inquiries within 24 hours, usually faster. You won't be left waiting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-header">
+          <div class="service-icon-large">🤝</div>
+          <div class="service-header-text">
+            <h2>Negotiation &amp; Closing</h2>
+            <p>Getting an offer is one thing. Closing the deal is another. I handle both.</p>
+          </div>
+        </div>
+        <div class="service-details">
+          <div class="detail-item">
+            <h4>Buyer Qualification</h4>
+            <p>Before presenting an offer, I verify buyer financing and review their track record. No wasting time on weak offers.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Contract Review</h4>
+            <p>We review all terms, conditions, contingencies, and timelines together. You'll understand exactly what you're agreeing to.</p>
+          </div>
+          <div class="detail-item">
+            <h4>Transaction Management</h4>
+            <p>I coordinate inspection, appraisal, title, and closing. You'll know what's happening and when. No surprises at closing.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="investment-section">
+    <div class="container">
+      <div class="investment-content">
+        <h2>What You Pay For</h2>
+
+        <div class="investment-grid">
+          <div class="fee-note">
+            <h4>Commission Structure</h4>
+            <p>Standard commission rates apply. I&rsquo;ll explain the breakdown clearly during our initial consultation—no hidden fees or surprise charges.</p>
+          </div>
+          <div class="fee-note">
+            <h4>Marketing Costs</h4>
+            <p>Professional photography, video, and advertising are paid upfront by me. You don&rsquo;t pay extra for quality marketing.</p>
+          </div>
+          <div class="fee-note">
+            <h4>No Hidden Fees</h4>
+            <p>Everything included in the service is covered. No transaction fees, admin charges, or upsells.</p>
+          </div>
+        </div>
+
+        <div class="fee-note" style="margin-top: 0;">
+          <h4>Transparent Pricing</h4>
+          <p>During our consultation, I&rsquo;ll provide a clear breakdown of all costs, commission structure, and what&rsquo;s included. You&rsquo;ll have everything in writing before making a decision.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">📸</div>
-        <div>
-          <h2>Professional Marketing</h2>
-          <p>Your home is presented professionally from day one — photography, video, and digital exposure included.</p>
-        </div>
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Let&rsquo;s Discuss Your Home Sale</h2>
+        <p>Schedule a consultation to walk through your home and create a clear plan.</p>
+        <a href="contact.html" class="btn btn-primary-light">Get Started</a>
       </div>
     </div>
+  </section>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">🤝</div>
-        <div>
-          <h2>Negotiation & Closing</h2>
-          <p>Strong offers, clean contracts, and smooth closings — handled start to finish.</p>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="logo-footer">Orion Love</h3>
+          <p>Clear communication. Honest feedback. Results you can trust.</p>
+          <p class="footer-location">Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Sellers</a></li>
+            <li><a href="buyers.html">Buyers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:9706446781">(970) 644-6781</a></li>
+            <li><a href="http://www.orionloveco.kw.com" target="_blank" rel="noopener">orionloveco.kw.com</a></li>
+          </ul>
         </div>
       </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+      </div>
     </div>
-
-  </div>
-</section>
-
-<section class="seller-faq-section" id="seller-faq">
-  <div class="container">
-    <div class="seller-faq-header">
-      <h2>Grand Junction Home Seller FAQs</h2>
-      <p>Clear answers to the most common questions sellers ask before listing.</p>
-    </div>
-
-    <div class="seller-faq-accordion">
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">How does the home selling process work in Grand Junction?</summary>
-        <div class="seller-faq-answer">
-          <p>The process begins with pricing your home based on local market data, preparing the property, and launching professional marketing.</p>
-          <p>Once under contract, the transaction moves through inspections, appraisal, and closing, with timelines and negotiations handled throughout.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">How long does it take to sell a home in Grand Junction?</summary>
-        <div class="seller-faq-answer">
-          <p>Most well-priced homes sell within a few weeks, though timing depends on price, condition, location, and market demand.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">How do I know what my home is worth?</summary>
-        <div class="seller-faq-answer">
-          <p>Your home’s value is based on recent comparable sales, current competition, condition, and buyer demand.</p>
-          <p>Online estimates are a starting point, but a local analysis provides the most accurate pricing.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What happens if I price my home too high?</summary>
-        <div class="seller-faq-answer">
-          <p>Overpricing usually leads to fewer showings and longer time on market.</p>
-          <p>Homes priced correctly from the start tend to attract stronger offers and sell faster.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Do I need to make repairs before selling?</summary>
-        <div class="seller-faq-answer">
-          <p>Not always. Minor cosmetic updates can help, but many sellers choose to sell as-is and negotiate after inspections.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Is staging worth it when selling a home?</summary>
-        <div class="seller-faq-answer">
-          <p>Staging helps buyers visualize the space and often leads to faster sales and stronger offers.</p>
-          <p>Even light staging and decluttering can make a noticeable difference.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What costs do sellers typically pay at closing?</summary>
-        <div class="seller-faq-answer">
-          <p>Seller costs may include commission, title fees, prorated property taxes, HOA dues, and negotiated buyer credits.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">How much are real estate commissions in Grand Junction?</summary>
-        <div class="seller-faq-answer">
-          <p>Commission rates vary based on services and agreement terms and are paid at closing.</p>
-          <p>They typically cover marketing, negotiation, and transaction management.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What happens during the home inspection?</summary>
-        <div class="seller-faq-answer">
-          <p>The buyer hires an inspector to evaluate the home’s condition.</p>
-          <p>Requests may include repairs, credits, or further negotiation.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What if the appraisal comes in low?</summary>
-        <div class="seller-faq-answer">
-          <p>If the appraisal is low, options include renegotiating the price, disputing the appraisal, or the buyer bringing additional funds.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Can I sell my home while I’m still living in it?</summary>
-        <div class="seller-faq-answer">
-          <p>Yes. Showings are scheduled in advance and managed to minimize disruption.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What disclosures are required when selling in Colorado?</summary>
-        <div class="seller-faq-answer">
-          <p>Sellers complete a property disclosure outlining known issues with the home.</p>
-          <p>Honest disclosures protect sellers and help transactions move smoothly.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Can I sell my home as-is?</summary>
-        <div class="seller-faq-answer">
-          <p>Yes. Buyers still have inspection rights, but repairs are not required unless negotiated.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What should I consider besides price when reviewing offers?</summary>
-        <div class="seller-faq-answer">
-          <p>Important factors include financing strength, contingencies, timelines, and appraisal risk.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What happens if a buyer backs out?</summary>
-        <div class="seller-faq-answer">
-          <p>If a buyer cancels within a contingency, earnest money may be returned.</p>
-          <p>Outside contingencies, sellers may be entitled to the deposit.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">How long is the closing process?</summary>
-        <div class="seller-faq-answer">
-          <p>Most closings take around 30 days, though timelines vary based on financing and inspections.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">What if my home doesn’t sell?</summary>
-        <div class="seller-faq-answer">
-          <p>The most common adjustments include price, presentation, or marketing strategy.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">When is the best time to sell a home in Grand Junction?</summary>
-        <div class="seller-faq-answer">
-          <p>Spring and early summer are popular, but homes sell year-round when priced correctly.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Can I sell my home if I still have a mortgage?</summary>
-        <div class="seller-faq-answer">
-          <p>Yes. The mortgage is paid off at closing using the sale proceeds.</p>
-        </div>
-      </details>
-
-      <details class="seller-faq-item">
-        <summary class="seller-faq-question">Why should I use a local Grand Junction real estate agent?</summary>
-        <div class="seller-faq-answer">
-          <p>A local agent understands neighborhood pricing, buyer behavior, and market trends.</p>
-          <p>This helps you price accurately, market effectively, and negotiate confidently.</p>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<section class="cta-banner">
-  <div class="container">
-    <h2>Let’s Talk About Your Home</h2>
-    <p>Schedule a consultation and get a clear plan — no pressure.</p>
-    <a href="contact.html" class="btn btn-primary-light">Get Started</a>
-  </div>
-</section>
-
-<footer class="main-footer">
-  <div class="container">
-    <p>&copy; 2025 Orion Love Real Estate</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
