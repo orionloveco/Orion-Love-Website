@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grand Junction Real Estate FAQ | Orion Love</title>
+
+  <title>Grand Junction Real Estate FAQs | Orion Love</title>
 
   <!-- SEO -->
   <meta name="description" content="Grand Junction real estate FAQs for buyers and sellers. Local answers about pricing, timelines, inspections, negotiations, and the Mesa County market." />
@@ -20,119 +21,65 @@
   <script>document.documentElement.classList.add('js');</script>
   <script src="script.js" defer></script>
 
-  <!-- FAQ Schema (20 Q&As: 10 Buyers + 10 Sellers) -->
+  <!-- FAQ Schema (40 Buyers + 40 Sellers = 80 total Q&As) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is now a good time to buy a home in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "It depends on your goals, budget, and timeline. Inventory levels, interest rates, and neighborhood trends all play a role. A local analysis helps determine whether waiting or acting now makes sense for you." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much money do I need to buy a home in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Costs vary based on price, loan type, and down payment. In addition to your down payment, buyers should plan for closing costs, inspections, and reserves depending on lender requirements." }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the best neighborhoods to buy in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Popular areas include the Redlands, North Grand Junction, Fruita, and Palisade. The best neighborhood depends on commute, lifestyle, budget, and long-term plans." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to get pre-approved before house hunting?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. A pre-approval helps you understand your budget and strengthens your offer in competitive situations. Most sellers expect buyers to be financially prepared before scheduling showings." }
-      },
-      {
-        "@type": "Question",
-        "name": "How competitive is the Grand Junction housing market?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Market conditions change throughout the year. Some homes receive multiple offers, while others allow room for negotiation. Local pricing strategy matters more than market headlines." }
-      },
-      {
-        "@type": "Question",
-        "name": "What inspections should I get when buying a home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A general home inspection is standard. Depending on the property, additional inspections may include sewer scopes, radon testing, roof inspections, or structural evaluations." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I negotiate price or repairs?",
-        "acceptedAnswer": { "@type": "Answer", "text": "In many cases, yes. Negotiation depends on market conditions, the home’s condition, and how the offer is structured. Strategy matters more than simply offering less." }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if the appraisal comes in low?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Options may include renegotiating price, adjusting terms, increasing down payment, or disputing the appraisal. The right response depends on contract terms and current market leverage." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to buy a home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "From offer to closing, most transactions take 30–45 days. The search phase can be shorter or longer depending on availability and decision timing." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a buyer representation agreement?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Buyer representation agreements outline duties, responsibilities, and compensation. I explain how they work so you can decide with confidence before moving forward." }
-      },
+      /* =========================
+         BUYER FAQs (20)
+      ========================= */
+      { "@type":"Question","name":"Is now a good time to buy a home in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"It depends on your goals, budget, and timeline. Inventory, interest rates, and neighborhood trends all matter. A local review helps you decide whether acting now or waiting makes sense for you."}},
+      { "@type":"Question","name":"How much money do I need to buy a home in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"The amount varies by price, loan type, and down payment. Many buyers also plan for closing costs, inspections, and lender-required reserves."}},
+      { "@type":"Question","name":"What are the best neighborhoods to buy in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Popular options include the Redlands, North Grand Junction, Fruita, and Palisade. The best fit depends on commute, lifestyle, budget, and long-term plans."}},
+      { "@type":"Question","name":"Should I get pre-approved before touring homes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pre-approval helps you shop confidently and strengthens your offer. Many sellers and listing agents expect it before scheduling showings."}},
+      { "@type":"Question","name":"How competitive is the Grand Junction housing market right now?","acceptedAnswer":{"@type":"Answer","text":"It varies by price range and neighborhood. Some homes move quickly while others allow negotiation. Strategy should be based on the specific home and current local data."}},
+      { "@type":"Question","name":"What’s the typical timeline from offer to closing?","acceptedAnswer":{"@type":"Answer","text":"Many purchases close in about 30–45 days once under contract, though timing can vary based on loan type, appraisal, inspections, and title work."}},
+      { "@type":"Question","name":"What inspections should I consider when buying?","acceptedAnswer":{"@type":"Answer","text":"A general home inspection is common. Depending on the property, you may also consider sewer scope, radon, roof, HVAC, pest, or structural evaluations."}},
+      { "@type":"Question","name":"Can I negotiate price, repairs, or closing costs?","acceptedAnswer":{"@type":"Answer","text":"Often yes. What’s negotiable depends on market conditions, the home’s condition, and how your offer is structured. Strong terms matter as much as price."}},
+      { "@type":"Question","name":"What happens if the appraisal comes in low?","acceptedAnswer":{"@type":"Answer","text":"Options can include renegotiating price, adjusting terms, increasing down payment, disputing the appraisal, or using contract protections depending on how the offer is written."}},
+      { "@type":"Question","name":"Should I buy a home as-is?","acceptedAnswer":{"@type":"Answer","text":"It depends on risk tolerance and condition. “As-is” doesn’t remove disclosure requirements, but it may limit repair negotiations. An inspection is still important."}},
+      { "@type":"Question","name":"What are common buyer mistakes in Mesa County?","acceptedAnswer":{"@type":"Answer","text":"Common issues include focusing only on list price, skipping inspection strategy, ignoring HOA/irrigation details, or not understanding neighborhood-specific resale factors."}},
+      { "@type":"Question","name":"How do HOAs work in Grand Junction and Fruita?","acceptedAnswer":{"@type":"Answer","text":"HOAs vary widely. Fees and rules can cover anything from landscaping to amenities and can also include restrictions on rentals, parking, or exterior changes."}},
+      { "@type":"Question","name":"Are there first-time buyer programs available?","acceptedAnswer":{"@type":"Answer","text":"Some buyers may qualify for down payment assistance or specific loan programs depending on income, credit, and property type. A local lender can confirm eligibility."}},
+      { "@type":"Question","name":"Should I wait for interest rates to drop?","acceptedAnswer":{"@type":"Answer","text":"Rates matter, but so do price, inventory, and competition. Sometimes waiting helps; other times it increases competition. A local plan should consider your timing and budget."}},
+      { "@type":"Question","name":"How do I know if a home is overpriced?","acceptedAnswer":{"@type":"Answer","text":"We compare it to recent closed sales, current competition, and buyer activity—not just list prices. Condition, location, and updates also change value."}},
+      { "@type":"Question","name":"What is earnest money and how much is typical?","acceptedAnswer":{"@type":"Answer","text":"Earnest money shows good faith and is applied toward closing in most cases. Amounts vary by price and terms. Your contract will specify timing and protections."}},
+      { "@type":"Question","name":"What contingencies should I consider?","acceptedAnswer":{"@type":"Answer","text":"Common contingencies include inspection, appraisal, financing, and sale of another property. The right set depends on your goals and the home’s situation."}},
+      { "@type":"Question","name":"Can I buy if I need to sell my current home first?","acceptedAnswer":{"@type":"Answer","text":"Possibly. Options may include a sale contingency, coordinating timing, or exploring bridge-style solutions depending on your lender and risk tolerance."}},
+      { "@type":"Question","name":"How do I handle multiple offer situations?","acceptedAnswer":{"@type":"Answer","text":"We focus on strong terms, clean timelines, and clear communication. The best offer isn’t always the highest—it’s the one most likely to close smoothly."}},
+      { "@type":"Question","name":"Do I need a buyer representation agreement?","acceptedAnswer":{"@type":"Answer","text":"Buyer representation agreements outline duties, responsibilities, and compensation. I explain how they work upfront so you can make an informed decision."}},
 
-      {
-        "@type": "Question",
-        "name": "How much is my home worth in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Home value depends on recent sales, condition, location, and current buyer demand. Online estimates often miss local nuances, which is why a market-specific analysis is important." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is now a good time to sell in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Timing depends on your goals, competition, and pricing strategy. Some price ranges move faster than others, and preparation can significantly impact results." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to sell a home in Grand Junction?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Days on market vary by neighborhood and price point. Proper pricing and presentation often shorten the timeline." }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I fix before listing my home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not every improvement adds value. Strategic preparation focuses on repairs and updates that impact buyer perception, not unnecessary upgrades." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does it cost to sell a home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Costs may include agent compensation, title fees, and potential repairs or concessions. These vary by transaction and are reviewed upfront." }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you price a home correctly?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Pricing is based on recent comparable sales, current competition, and buyer behavior — not just list prices or online estimates." }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I sell my home before buying another?",
-        "acceptedAnswer": { "@type": "Answer", "text": "That depends on financing, risk tolerance, and market conditions. There are several strategies available, including contingencies and timing coordination." }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens during showings?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Buyers tour the home with their agents. Feedback is collected and reviewed to adjust strategy if needed." }
-      },
-      {
-        "@type": "Question",
-        "name": "How do offers and negotiations work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Offers include price, terms, timelines, and contingencies. The strongest offer is not always the highest — terms and reliability matter." }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if my home doesn’t sell?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We reassess pricing, presentation, and marketing strategy based on buyer feedback and current market conditions." }
-      }
+      /* =========================
+         SELLER FAQs (20)
+      ========================= */
+      { "@type":"Question","name":"How much is my home worth in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Value depends on recent comparable sales, condition, location, and buyer demand. A local market analysis is more reliable than automated estimates alone."}},
+      { "@type":"Question","name":"Is now a good time to sell in Mesa County?","acceptedAnswer":{"@type":"Answer","text":"Timing depends on your goals, competition, and price point. Preparation and pricing strategy often have more impact than the season alone."}},
+      { "@type":"Question","name":"How long does it take to sell a home in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Days on market vary by neighborhood and price range. Homes that are priced well and presented well typically attract stronger interest sooner."}},
+      { "@type":"Question","name":"What should I fix before listing?","acceptedAnswer":{"@type":"Answer","text":"Focus on issues that hurt buyer confidence: deferred maintenance, obvious repairs, and presentation. Not every upgrade pays off—strategy matters."}},
+      { "@type":"Question","name":"Should I remodel my kitchen or bathroom before selling?","acceptedAnswer":{"@type":"Answer","text":"Sometimes small updates help more than full remodels. We look at your price range, competition, and what buyers are rewarding right now."}},
+      { "@type":"Question","name":"How do you price a home correctly?","acceptedAnswer":{"@type":"Answer","text":"Pricing is based on recent closed sales, current competition, and buyer behavior, adjusted for condition and location. The goal is to attract qualified buyers quickly."}},
+      { "@type":"Question","name":"What’s the difference between list price and market value?","acceptedAnswer":{"@type":"Answer","text":"List price is a strategy. Market value is what buyers are willing to pay based on comparable sales and current demand. The best strategy aligns both."}},
+      { "@type":"Question","name":"How do showings work once my home is listed?","acceptedAnswer":{"@type":"Answer","text":"Buyers tour with their agents, and we gather feedback to measure interest. Showing volume and feedback guide any needed pricing or presentation adjustments."}},
+      { "@type":"Question","name":"Do I need to be out of the house during showings?","acceptedAnswer":{"@type":"Answer","text":"It’s strongly recommended. Buyers are more comfortable and tend to stay longer when the home is vacant during the showing window."}},
+      { "@type":"Question","name":"What are common seller closing costs?","acceptedAnswer":{"@type":"Answer","text":"Costs vary but may include agent compensation, title-related fees, and negotiated concessions or repairs. We review a net sheet upfront for clarity."}},
+      { "@type":"Question","name":"Will I have to pay buyer closing costs?","acceptedAnswer":{"@type":"Answer","text":"Sometimes buyers request concessions as part of negotiation. Whether it makes sense depends on price, terms, competition, and your overall net."}},
+      { "@type":"Question","name":"How do offers and counteroffers work?","acceptedAnswer":{"@type":"Answer","text":"An offer includes price and terms. We evaluate strength, reliability, and risk, then negotiate via counters or acceptance depending on your goals."}},
+      { "@type":"Question","name":"What happens during the inspection period?","acceptedAnswer":{"@type":"Answer","text":"The buyer completes inspections and may request repairs or credits. We negotiate based on what’s reasonable and what protects your bottom line."}},
+      { "@type":"Question","name":"What if the appraisal comes in low as a seller?","acceptedAnswer":{"@type":"Answer","text":"Options may include renegotiating price, providing comps, or adjusting terms depending on the contract. Strategy depends on buyer strength and market leverage."}},
+      { "@type":"Question","name":"Should I accept the highest offer?","acceptedAnswer":{"@type":"Answer","text":"Not always. The best offer balances price with reliability, financing strength, timelines, and risk. Clean terms can be worth more than a slightly higher number."}},
+      { "@type":"Question","name":"What if my home doesn’t sell?","acceptedAnswer":{"@type":"Answer","text":"We reassess pricing, presentation, and marketing based on buyer feedback and data. A clear adjustment plan often produces a new wave of activity."}},
+      { "@type":"Question","name":"When should I do a price reduction?","acceptedAnswer":{"@type":"Answer","text":"If showing activity is low or feedback points to price, a strategic adjustment can reposition the listing. Timing depends on your market segment and competition."}},
+      { "@type":"Question","name":"How should I prepare my home for photos?","acceptedAnswer":{"@type":"Answer","text":"Declutter, deep clean, maximize light, and stage key rooms simply. First impressions online drive showings—photo prep matters."}},
+      { "@type":"Question","name":"Do I need professional photography?","acceptedAnswer":{"@type":"Answer","text":"In most cases, yes. Professional photos and strong presentation typically increase interest and reduce time on market."}},
+      { "@type":"Question","name":"Can I sell and buy at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes, with a clear plan. We coordinate timing, negotiate terms strategically, and work with your lender to reduce stress and avoid costly gaps."}}
     ]
   }
   </script>
 
-  <!-- Page-specific styles (keeps your global design system) -->
   <style>
+    /* Hero matches your other service pages */
     .faq-hero {
       margin-top: 80px;
       padding: 4rem 0;
@@ -142,77 +89,99 @@
     }
     .faq-hero h1 { color: var(--white); margin-bottom: 1rem; }
     .faq-hero p {
-      font-size: 1.15rem;
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
+      font-size: 1.15rem;
       color: rgba(255,255,255,0.9);
     }
 
-    .faq-wrap { padding: 5rem 0; background: var(--white); }
+    /* Two-column layout for accordions */
+    .faq-section {
+      padding: 5rem 0;
+      background: var(--white);
+    }
 
-    /* cards that match your usp-card feel but for FAQs */
-    .faq-grid {
+    .faq-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
       margin-top: 3rem;
     }
 
-    .faq-card {
-      background: var(--white);
-      border-top: 3px solid var(--accent);
-      padding: 2rem;
-      border: 1px solid var(--light-gray);
+    .faq-col {
+      background: var(--off-white);
+      padding: 2.5rem 2rem;
+      border-left: 3px solid var(--accent);
     }
 
-    .faq-card h3 {
-      font-size: 1.35rem;
+    .faq-col h2 {
       margin-bottom: 0.75rem;
     }
 
-    .faq-card p {
+    .faq-col .section-intro {
+      margin-bottom: 2rem;
+      max-width: 100%;
+    }
+
+    /* Accordion styling */
+    .faq-accordion { margin-top: 1.25rem; }
+
+    .faq-item {
+      border: 1px solid var(--light-gray);
+      border-top: 3px solid var(--accent);
+      background: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 1.25rem 1.25rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary);
+      list-style: none;
+      position: relative;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .faq-item[open] summary::after { content: "–"; }
+
+    .faq-item p {
+      padding: 0 1.25rem 1.25rem;
       color: var(--gray);
       line-height: 1.75;
       font-size: 0.98rem;
     }
 
-    /* subtle anchor chips */
-    .faq-jump {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-    }
-    .faq-jump a {
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.35);
-      color: rgba(255,255,255,0.95);
-      padding: 0.6rem 1rem;
-      font-weight: 600;
-      transition: all 0.25s ease;
-    }
-    .faq-jump a:hover {
-      border-color: var(--accent);
-      color: var(--white);
-      transform: translateY(-1px);
+    .faq-item summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
-    /* Make sure headings don’t hide behind fixed header when jumping */
-    .faq-anchor {
-      scroll-margin-top: 110px;
+    /* Optional: one-open-at-a-time hint line */
+    .faq-note {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-top: 0.75rem;
     }
 
-    /* Intro blocks match your section-header pattern */
-    .faq-intro {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .faq-grid { grid-template-columns: 1fr; }
+    /* Responsive */
+    @media (max-width: 968px) {
+      .faq-columns { grid-template-columns: 1fr; }
+      .faq-col { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -239,142 +208,90 @@
 
 <section class="faq-hero">
   <div class="container">
-    <h1>Grand Junction Real Estate FAQ</h1>
+    <h1>Grand Junction Real Estate FAQs</h1>
     <p>
-      Practical, local answers for buying and selling in Grand Junction, Fruita, Palisade, and Mesa County.
-      If you want advice tailored to your exact situation, I’m happy to walk through it with you.
+      Clear, local answers for buyers and sellers in Grand Junction, Fruita, Palisade, and across Mesa County.
+      Want advice tailored to your situation? I’m happy to help.
     </p>
-
-    <div class="faq-jump" aria-label="Jump to FAQ sections">
-      <a href="#buyers-faq">Buyer FAQs</a>
-      <a href="#sellers-faq">Seller FAQs</a>
-    </div>
   </div>
 </section>
 
-<section class="faq-wrap">
+<section class="faq-section">
   <div class="container">
 
-    <!-- Buyers FAQ -->
-    <div id="buyers-faq" class="section-header centered faq-anchor">
-      <h2>Home Buyer FAQs</h2>
+    <div class="section-header centered">
+      <h2>Buyer & Seller Questions — Side by Side</h2>
       <p class="section-intro">
-        Common questions from buyers purchasing homes in Grand Junction, Fruita, Palisade, and across Mesa County.
+        Browse the most common questions I hear from clients. These answers are general information —
+        your situation may differ, and I’m happy to walk through specifics.
       </p>
     </div>
 
-    <div class="faq-grid">
-      <div class="faq-card">
-        <h3>Is now a good time to buy a home in Grand Junction?</h3>
-        <p>It depends on your goals, budget, and timeline. Inventory levels, interest rates, and neighborhood trends all play a role. A local analysis helps determine whether waiting or acting now makes sense for you.</p>
+    <div class="faq-columns">
+
+      <!-- BUYERS -->
+      <div class="faq-col">
+        <h2>Buyer FAQs</h2>
+        <p class="section-intro">Top questions from buyers purchasing in Grand Junction and Mesa County.</p>
+
+        <div class="faq-accordion" id="buyers-accordion">
+          <details class="faq-item"><summary>Is now a good time to buy a home in Grand Junction?</summary><p>It depends on your goals, budget, and timeline. Inventory, interest rates, and neighborhood trends all matter. A local review helps you decide whether acting now or waiting makes sense for you.</p></details>
+          <details class="faq-item"><summary>How much money do I need to buy a home in Grand Junction?</summary><p>The amount varies by price, loan type, and down payment. Many buyers also plan for closing costs, inspections, and lender-required reserves.</p></details>
+          <details class="faq-item"><summary>What are the best neighborhoods to buy in Grand Junction?</summary><p>Popular options include the Redlands, North Grand Junction, Fruita, and Palisade. The best fit depends on commute, lifestyle, budget, and long-term plans.</p></details>
+          <details class="faq-item"><summary>Should I get pre-approved before touring homes?</summary><p>Yes. Pre-approval helps you shop confidently and strengthens your offer. Many sellers and listing agents expect it before scheduling showings.</p></details>
+          <details class="faq-item"><summary>How competitive is the Grand Junction housing market right now?</summary><p>It varies by price range and neighborhood. Some homes move quickly while others allow negotiation. Strategy should be based on the specific home and current local data.</p></details>
+          <details class="faq-item"><summary>What’s the typical timeline from offer to closing?</summary><p>Many purchases close in about 30–45 days once under contract, though timing can vary based on loan type, appraisal, inspections, and title work.</p></details>
+          <details class="faq-item"><summary>What inspections should I consider when buying?</summary><p>A general home inspection is common. Depending on the property, you may also consider sewer scope, radon, roof, HVAC, pest, or structural evaluations.</p></details>
+          <details class="faq-item"><summary>Can I negotiate price, repairs, or closing costs?</summary><p>Often yes. What’s negotiable depends on market conditions, the home’s condition, and how your offer is structured. Strong terms matter as much as price.</p></details>
+          <details class="faq-item"><summary>What happens if the appraisal comes in low?</summary><p>Options can include renegotiating price, adjusting terms, increasing down payment, disputing the appraisal, or using contract protections depending on how the offer is written.</p></details>
+          <details class="faq-item"><summary>Should I buy a home as-is?</summary><p>It depends on risk tolerance and condition. “As-is” doesn’t remove disclosure requirements, but it may limit repair negotiations. An inspection is still important.</p></details>
+          <details class="faq-item"><summary>What are common buyer mistakes in Mesa County?</summary><p>Common issues include focusing only on list price, skipping inspection strategy, ignoring HOA/irrigation details, or not understanding neighborhood-specific resale factors.</p></details>
+          <details class="faq-item"><summary>How do HOAs work in Grand Junction and Fruita?</summary><p>HOAs vary widely. Fees and rules can cover anything from landscaping to amenities and can also include restrictions on rentals, parking, or exterior changes.</p></details>
+          <details class="faq-item"><summary>Are there first-time buyer programs available?</summary><p>Some buyers may qualify for down payment assistance or specific loan programs depending on income, credit, and property type. A local lender can confirm eligibility.</p></details>
+          <details class="faq-item"><summary>Should I wait for interest rates to drop?</summary><p>Rates matter, but so do price, inventory, and competition. A local plan should consider your timing, budget, and what’s happening in your target neighborhoods.</p></details>
+          <details class="faq-item"><summary>How do I know if a home is overpriced?</summary><p>We compare it to recent closed sales, current competition, and buyer activity—not just list prices. Condition, location, and updates also change value.</p></details>
+          <details class="faq-item"><summary>What is earnest money and how much is typical?</summary><p>Earnest money shows good faith and is applied toward closing in most cases. Amounts vary by price and terms. Your contract will specify timing and protections.</p></details>
+          <details class="faq-item"><summary>What contingencies should I consider?</summary><p>Common contingencies include inspection, appraisal, financing, and sale of another property. The right set depends on your goals and the home’s situation.</p></details>
+          <details class="faq-item"><summary>Can I buy if I need to sell my current home first?</summary><p>Possibly. Options may include a sale contingency, coordinating timing, or exploring bridge-style solutions depending on your lender and risk tolerance.</p></details>
+          <details class="faq-item"><summary>How do I handle multiple offer situations?</summary><p>We focus on strong terms, clean timelines, and clear communication. The best offer isn’t always the highest—it’s the one most likely to close smoothly.</p></details>
+          <details class="faq-item"><summary>Do I need a buyer representation agreement?</summary><p>Buyer representation agreements outline duties, responsibilities, and compensation. I explain how they work upfront so you can make an informed decision.</p></details>
+        </div>
+
+        <p class="faq-note">Tip: Click any question to expand the answer.</p>
       </div>
 
-      <div class="faq-card">
-        <h3>How much money do I need to buy a home in Grand Junction?</h3>
-        <p>Costs vary based on price, loan type, and down payment. In addition to your down payment, buyers should plan for closing costs, inspections, and reserves depending on lender requirements.</p>
+      <!-- SELLERS -->
+      <div class="faq-col">
+        <h2>Seller FAQs</h2>
+        <p class="section-intro">Top questions from homeowners selling in Grand Junction and Mesa County.</p>
+
+        <div class="faq-accordion" id="sellers-accordion">
+          <details class="faq-item"><summary>How much is my home worth in Grand Junction?</summary><p>Value depends on recent comparable sales, condition, location, and buyer demand. A local market analysis is more reliable than automated estimates alone.</p></details>
+          <details class="faq-item"><summary>Is now a good time to sell in Mesa County?</summary><p>Timing depends on your goals, competition, and price point. Preparation and pricing strategy often have more impact than the season alone.</p></details>
+          <details class="faq-item"><summary>How long does it take to sell a home in Grand Junction?</summary><p>Days on market vary by neighborhood and price range. Homes that are priced well and presented well typically attract stronger interest sooner.</p></details>
+          <details class="faq-item"><summary>What should I fix before listing?</summary><p>Focus on issues that hurt buyer confidence: deferred maintenance, obvious repairs, and presentation. Not every upgrade pays off—strategy matters.</p></details>
+          <details class="faq-item"><summary>Should I remodel my kitchen or bathroom before selling?</summary><p>Sometimes small updates help more than full remodels. We look at your price range, competition, and what buyers are rewarding right now.</p></details>
+          <details class="faq-item"><summary>How do you price a home correctly?</summary><p>Pricing is based on recent closed sales, current competition, and buyer behavior, adjusted for condition and location. The goal is to attract qualified buyers quickly.</p></details>
+          <details class="faq-item"><summary>What’s the difference between list price and market value?</summary><p>List price is a strategy. Market value is what buyers are willing to pay based on comparable sales and current demand. The best strategy aligns both.</p></details>
+          <details class="faq-item"><summary>How do showings work once my home is listed?</summary><p>Buyers tour with their agents, and we gather feedback to measure interest. Showing volume and feedback guide any needed pricing or presentation adjustments.</p></details>
+          <details class="faq-item"><summary>Do I need to be out of the house during showings?</summary><p>It’s strongly recommended. Buyers are more comfortable and tend to stay longer when the home is vacant during the showing window.</p></details>
+          <details class="faq-item"><summary>What are common seller closing costs?</summary><p>Costs vary but may include agent compensation, title-related fees, and negotiated concessions or repairs. We review a net sheet upfront for clarity.</p></details>
+          <details class="faq-item"><summary>Will I have to pay buyer closing costs?</summary><p>Sometimes buyers request concessions as part of negotiation. Whether it makes sense depends on price, terms, competition, and your overall net.</p></details>
+          <details class="faq-item"><summary>How do offers and counteroffers work?</summary><p>An offer includes price and terms. We evaluate strength, reliability, and risk, then negotiate via counters or acceptance depending on your goals.</p></details>
+          <details class="faq-item"><summary>What happens during the inspection period?</summary><p>The buyer completes inspections and may request repairs or credits. We negotiate based on what’s reasonable and what protects your bottom line.</p></details>
+          <details class="faq-item"><summary>What if the appraisal comes in low as a seller?</summary><p>Options may include renegotiating price, providing comps, or adjusting terms depending on the contract. Strategy depends on buyer strength and market leverage.</p></details>
+          <details class="faq-item"><summary>Should I accept the highest offer?</summary><p>Not always. The best offer balances price with reliability, financing strength, timelines, and risk. Clean terms can be worth more than a slightly higher number.</p></details>
+          <details class="faq-item"><summary>What if my home doesn’t sell?</summary><p>We reassess pricing, presentation, and marketing based on buyer feedback and data. A clear adjustment plan often produces a new wave of activity.</p></details>
+          <details class="faq-item"><summary>When should I do a price reduction?</summary><p>If showing activity is low or feedback points to price, a strategic adjustment can reposition the listing. Timing depends on your market segment and competition.</p></details>
+          <details class="faq-item"><summary>How should I prepare my home for photos?</summary><p>Declutter, deep clean, maximize light, and stage key rooms simply. First impressions online drive showings—photo prep matters.</p></details>
+          <details class="faq-item"><summary>Do I need professional photography?</summary><p>In most cases, yes. Professional photos and strong presentation typically increase interest and reduce time on market.</p></details>
+          <details class="faq-item"><summary>Can I sell and buy at the same time?</summary><p>Yes, with a clear plan. We coordinate timing, negotiate terms strategically, and work with your lender to reduce stress and avoid costly gaps.</p></details>
+        </div>
+
+        <p class="faq-note">Tip: Click any question to expand the answer.</p>
       </div>
 
-      <div class="faq-card">
-        <h3>What are the best neighborhoods to buy in Grand Junction?</h3>
-        <p>Popular areas include the Redlands, North Grand Junction, Fruita, and Palisade. The best neighborhood depends on commute, lifestyle, budget, and long-term plans.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Do I need to get pre-approved before house hunting?</h3>
-        <p>Yes. A pre-approval helps you understand your budget and strengthens your offer in competitive situations. Most sellers expect buyers to be financially prepared before scheduling showings.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How competitive is the Grand Junction housing market?</h3>
-        <p>Market conditions change throughout the year. Some homes receive multiple offers, while others allow room for negotiation. Local pricing strategy matters more than market headlines.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>What inspections should I get when buying a home?</h3>
-        <p>A general home inspection is standard. Depending on the property, additional inspections may include sewer scopes, radon testing, roof inspections, or structural evaluations.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Can I negotiate price or repairs?</h3>
-        <p>In many cases, yes. Negotiation depends on market conditions, the home’s condition, and how the offer is structured. Strategy matters more than simply offering less.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>What happens if the appraisal comes in low?</h3>
-        <p>Options may include renegotiating price, adjusting terms, increasing down payment, or disputing the appraisal. The right response depends on contract terms and current market leverage.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How long does it take to buy a home?</h3>
-        <p>From offer to closing, most transactions take 30–45 days. The search phase can be shorter or longer depending on availability and decision timing.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Do I need a buyer representation agreement?</h3>
-        <p>Buyer representation agreements outline duties, responsibilities, and compensation. I explain how they work so you can decide with confidence before moving forward.</p>
-      </div>
     </div>
-
-    <!-- Sellers FAQ -->
-    <div id="sellers-faq" class="section-header centered faq-anchor" style="margin-top: 5rem;">
-      <h2>Home Seller FAQs</h2>
-      <p class="section-intro">
-        Questions from Grand Junction homeowners preparing to sell — plus clear, local context on pricing and timing.
-      </p>
-    </div>
-
-    <div class="faq-grid">
-      <div class="faq-card">
-        <h3>How much is my home worth in Grand Junction?</h3>
-        <p>Home value depends on recent sales, condition, location, and current buyer demand. Online estimates often miss local nuances, which is why a market-specific analysis is important.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Is now a good time to sell in Grand Junction?</h3>
-        <p>Timing depends on your goals, competition, and pricing strategy. Some price ranges move faster than others, and preparation can significantly impact results.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How long does it take to sell a home in Grand Junction?</h3>
-        <p>Days on market vary by neighborhood and price point. Proper pricing and presentation often shorten the timeline.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>What should I fix before listing my home?</h3>
-        <p>Not every improvement adds value. Strategic preparation focuses on repairs and updates that impact buyer perception, not unnecessary upgrades.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How much does it cost to sell a home?</h3>
-        <p>Costs may include agent compensation, title fees, and potential repairs or concessions. These vary by transaction and are reviewed upfront.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How do you price a home correctly?</h3>
-        <p>Pricing is based on recent comparable sales, current competition, and buyer behavior — not just list prices or online estimates.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Should I sell my home before buying another?</h3>
-        <p>That depends on financing, risk tolerance, and market conditions. There are several strategies available, including contingencies and timing coordination.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>What happens during showings?</h3>
-        <p>Buyers tour the home with their agents. Feedback is collected and reviewed to adjust strategy if needed.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>How do offers and negotiations work?</h3>
-        <p>Offers include price, terms, timelines, and contingencies. The strongest offer is not always the highest — terms and reliability matter.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>What happens if my home doesn’t sell?</h3>
-        <p>We reassess pricing, presentation, and marketing strategy based on buyer feedback and current market conditions.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -421,6 +338,25 @@
     </div>
   </div>
 </footer>
+
+<!-- Optional: keep only one accordion item open at a time per column -->
+<script>
+  function oneOpenOnly(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.querySelectorAll('details.faq-item').forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          container.querySelectorAll('details.faq-item[open]').forEach((openItem) => {
+            if (openItem !== item) openItem.removeAttribute('open');
+          });
+        }
+      });
+    });
+  }
+  oneOpenOnly('buyers-accordion');
+  oneOpenOnly('sellers-accordion');
+</script>
 
 </body>
 </html>
