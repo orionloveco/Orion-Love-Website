@@ -945,3 +945,17 @@ section {
     transition: none !important;
   }
 }
+
+/* Buyers CTA section (light background, dark text) */
+.buyers-cta {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.buyers-cta .cta-content h2 {
+  color: var(--primary);
+}
+
+.buyers-cta .cta-content p {
+  color: var(--gray);
+}
