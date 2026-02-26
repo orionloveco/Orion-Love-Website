@@ -959,3 +959,16 @@ section {
 .buyers-cta .cta-content p {
   color: var(--gray);
 }
+
+/* Center the column titles + intro text inside the FAQ cards */
+.faq-col h2,
+.faq-col .section-intro {
+  text-align: center;
+}
+
+/* Let the intro line truly center (override the global max-width) */
+.faq-col .section-intro {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
