@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,40 +17,37 @@
   <script>document.documentElement.classList.add('js');</script>
   <script src="script.js" defer></script>
 
-  <!-- Lucide (match index icons approach) -->
+  <!-- Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Page-specific styles (kept small + consistent with your new CSS) -->
+  <!-- Small page-specific styles ONLY for layout (keeps consistency) -->
   <style>
-    /* About hero uses the same “photo hero” system as index */
-    .about-hero.hero {
-      min-height: auto;
-      padding: clamp(4.25rem, 7vw, 6rem) 0;
+    /* Hero stays simple like index; tighter height so it doesn’t swallow the page */
+    .about-hero.hero{
+      min-height: 58vh;
       background:
         linear-gradient(rgba(2, 12, 69, 0.72), rgba(2, 12, 69, 0.72)),
         url("images/headshot.jpg") center/cover no-repeat;
     }
-
-    .about-hero .hero-content {
+    .about-hero .hero-content{
+      padding: clamp(4rem, 7vw, 5.5rem) 1.25rem 3rem;
       max-width: 980px;
-      padding: 0 1.25rem;
     }
+    .about-hero .hero-subtitle{ max-width: 70ch; }
 
-    .about-hero .hero-subtitle {
-      max-width: 70ch;
+    /* Intro section right under hero */
+    .about-intro-section{
+      background: rgba(255,255,255,0.45);
+      border-bottom: 1px solid var(--sand);
     }
-
-    /* Split intro section (image + copy) */
-    .about-intro {
+    .about-intro-grid{
       display: grid;
       grid-template-columns: 1fr 1.25fr;
-      gap: 2rem;
+      gap: 1.25rem;
       align-items: start;
-      margin-top: 2.25rem;
-      text-align: left;
     }
 
-    .about-card {
+    .about-card{
       background: rgba(255,255,255,0.75);
       border: 1px solid rgba(230, 224, 211, 0.9);
       border-radius: 20px;
@@ -58,21 +55,20 @@
       overflow: hidden;
       position: relative;
     }
-
-    .about-card::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
+    /* “$30k card trick” style glow */
+    .about-card::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
       background: radial-gradient(600px 200px at 50% -40%, rgba(184,150,58,0.16), transparent 70%);
-      pointer-events: none;
+      pointer-events:none;
     }
 
-    .about-photo {
+    .about-photo{
       aspect-ratio: 4 / 5;
       overflow: hidden;
     }
-
-    .about-photo img {
+    .about-photo img{
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -80,30 +76,28 @@
       transform: scale(1.02);
     }
 
-    .about-copy {
+    .about-copy{
       padding: 1.75rem 1.6rem;
       position: relative;
       z-index: 1;
     }
-
-    .about-copy p {
+    .about-copy p{
       color: rgba(14, 21, 48, 0.78);
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 1rem;
       font-size: 1.03rem;
     }
 
-    .credentials {
+    .credentials{
       margin-top: 1.25rem;
-      padding: 1.25rem 1.25rem;
+      padding: 1.1rem 1.15rem;
       background: rgba(244,241,232,0.65);
       border: 1px solid rgba(230,224,211,0.9);
       border-radius: 16px;
       position: relative;
       z-index: 1;
     }
-
-    .credentials h4 {
+    .credentials h4{
       margin-bottom: 0.75rem;
       color: var(--primary);
       font-family: "Raleway", sans-serif;
@@ -111,17 +105,15 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-
-    .credentials ul { list-style: none; padding: 0; margin: 0; }
-    .credentials li {
+    .credentials ul{ list-style:none; margin:0; padding:0; }
+    .credentials li{
       padding: 0.45rem 0;
       color: rgba(14, 21, 48, 0.78);
-      display: flex;
+      display:flex;
       gap: 0.6rem;
-      align-items: flex-start;
+      align-items:flex-start;
     }
-
-    .credentials li svg {
+    .credentials li svg{
       width: 18px;
       height: 18px;
       stroke: var(--accent);
@@ -130,68 +122,58 @@
       margin-top: 2px;
     }
 
-    /* Values section backgrounds align with index */
-    .values-section { background: rgba(255,255,255,0.45); }
+    /* Make the how-work list spacing match your refined cards */
+    .approach-section{ background: var(--white); }
 
-    /* “How I Work” list uses your existing .how-work-list styling in styles.css */
-    .approach-section { background: var(--white); }
-
-    /* Stats section now matches your index CTA style (soft, not harsh navy block) */
-    .stats-section {
+    /* Stats section: use cards instead of the old “dark block” feel */
+    .stats-section{
       background: linear-gradient(180deg, rgba(2,12,69,0.05), rgba(2,12,69,0.10));
       border-top: 1px solid var(--sand);
       border-bottom: 1px solid var(--sand);
       padding: clamp(3rem, 5vw, 4rem) 0;
     }
-
-    .stats-grid {
-      display: grid;
+    .stats-grid{
+      display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25rem;
     }
-
-    .stat {
+    .stat{
       background: rgba(255,255,255,0.75);
       border: 1px solid rgba(230, 224, 211, 0.9);
       border-radius: 20px;
       padding: 1.6rem 1.5rem;
       box-shadow: var(--shadow-card);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
-
-    .stat::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
+    .stat::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
       background: radial-gradient(600px 200px at 50% -40%, rgba(184,150,58,0.14), transparent 70%);
-      pointer-events: none;
+      pointer-events:none;
     }
-
-    .stat-number {
-      font-family: "Cinzel", serif;
-      font-size: 1.65rem;
-      font-weight: 700;
+    .stat-number{
+      font-family:"Cinzel", serif;
+      font-size:1.65rem;
+      font-weight:700;
       color: var(--primary);
-      margin-bottom: 0.35rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom:0.35rem;
+      position:relative;
+      z-index:1;
     }
-
-    .stat-label {
+    .stat-label{
       color: rgba(14, 21, 48, 0.78);
-      line-height: 1.5;
-      position: relative;
-      z-index: 1;
+      line-height:1.5;
+      position:relative;
+      z-index:1;
     }
 
-    @media (max-width: 968px) {
-      .about-intro {
-        grid-template-columns: 1fr;
-      }
-      .about-photo { aspect-ratio: 16 / 10; }
-      .stats-grid { grid-template-columns: 1fr; }
+    @media (max-width: 968px){
+      .about-intro-grid{ grid-template-columns: 1fr; }
+      .about-photo{ aspect-ratio: 16 / 10; }
+      .stats-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -219,7 +201,7 @@
   </nav>
 </header>
 
-<!-- About hero (consistent with index hero system) -->
+<!-- HERO (simple + consistent) -->
 <section class="hero about-hero">
   <div class="hero-overlay"></div>
 
@@ -236,9 +218,13 @@
     </div>
 
     <p class="hero-trust">Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+  </div>
+</section>
 
-    <!-- Intro grid -->
-    <div class="about-intro">
+<!-- INTRO CARDS (moved out of hero so spacing is clean) -->
+<section class="about-intro-section">
+  <div class="container">
+    <div class="about-intro-grid">
       <div class="about-card">
         <div class="about-photo">
           <img src="images/headshot.jpg" alt="Orion Love Real Estate Professional" />
@@ -273,10 +259,10 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
+<!-- VALUES (uses your index usp-grid styles + lucide icons) -->
 <section class="values-section">
   <div class="container">
     <div class="section-header centered">
@@ -291,37 +277,30 @@
       <div class="usp-card">
         <div class="usp-icon" aria-hidden="true"><i data-lucide="compass"></i></div>
         <h3>Strategy Before Listing</h3>
-        <p>
-          We start with a plan — what to improve, what to leave alone, and what will actually move the needle for buyers in this price range.
-        </p>
+        <p>We start with a plan — what to improve, what to leave alone, and what will actually move the needle for buyers in this price range.</p>
       </div>
 
       <div class="usp-card">
         <div class="usp-icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div>
         <h3>Pricing With Real Buyer Data</h3>
-        <p>
-          We price based on what’s selling today in Grand Junction — not last season and not the neighbor’s opinion — to protect your leverage.
-        </p>
+        <p>We price based on what’s selling today in Grand Junction — not last season and not the neighbor’s opinion — to protect your leverage.</p>
       </div>
 
       <div class="usp-card">
         <div class="usp-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
         <h3>Communication You Don’t Have to Chase</h3>
-        <p>
-          Weekly updates, honest feedback after showings, and clear answers to your questions — always.
-        </p>
+        <p>Weekly updates, honest feedback after showings, and clear answers to your questions — always.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW I WORK (kept consistent; uses your .how-work-list CSS) -->
 <section class="approach-section">
   <div class="container">
     <div class="section-header centered">
       <h2>How I Work</h2>
-      <p class="section-intro">
-        A clear, repeatable process — built around preparation, buyer behavior, and steady communication.
-      </p>
+      <p class="section-intro">A clear, repeatable process — built around preparation, buyer behavior, and steady communication.</p>
     </div>
 
     <div class="usp-grid usp-list how-work-list">
@@ -329,9 +308,7 @@
         <div class="usp-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
         <div class="usp-content">
           <h3>Market Knowledge</h3>
-          <p>
-            I walk you through real competing homes — active listings, pending sales, and recent closings — so you understand exactly what buyers are comparing your home to.
-          </p>
+          <p>I walk you through real competing homes — active listings, pending sales, and recent closings — so you understand exactly what buyers compare your home to.</p>
         </div>
       </div>
 
@@ -339,9 +316,7 @@
         <div class="usp-icon" aria-hidden="true"><i data-lucide="tool"></i></div>
         <div class="usp-content">
           <h3>Positioning &amp; Preparation</h3>
-          <p>
-            We focus on the changes that actually influence value here — presentation, cleanliness, lighting, and first impressions — not unnecessary updates.
-          </p>
+          <p>We focus on the changes that actually influence value here — presentation, cleanliness, lighting, and first impressions — not unnecessary updates.</p>
         </div>
       </div>
 
@@ -349,9 +324,7 @@
         <div class="usp-icon" aria-hidden="true"><i data-lucide="camera"></i></div>
         <div class="usp-content">
           <h3>Marketing That Reaches Buyers</h3>
-          <p>
-            Professional photography, video-first exposure, and clean messaging designed for how buyers shop online before they ever schedule a showing.
-          </p>
+          <p>Professional photography, video-first exposure, and clean messaging designed for how buyers shop online before they ever schedule a showing.</p>
         </div>
       </div>
 
@@ -359,9 +332,7 @@
         <div class="usp-icon" aria-hidden="true"><i data-lucide="trending-up"></i></div>
         <div class="usp-content">
           <h3>Clear Feedback &amp; Smart Adjustments</h3>
-          <p>
-            Honest feedback after showings and weekly updates on traffic and interest, so we can adjust early and protect your leverage.
-          </p>
+          <p>Honest feedback after showings and weekly updates on traffic and interest, so we can adjust early and protect your leverage.</p>
         </div>
       </div>
 
@@ -369,15 +340,14 @@
         <div class="usp-icon" aria-hidden="true"><i data-lucide="handshake"></i></div>
         <div class="usp-content">
           <h3>Negotiation &amp; Deal Management</h3>
-          <p>
-            From offer review through inspections and appraisal, I manage the details and protect your position so you can move forward with confidence.
-          </p>
+          <p>From offer review through inspections and appraisal, I manage details and protect your position so you can move forward with confidence.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- STATS (converted to refined cards) -->
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
@@ -401,10 +371,7 @@
   <div class="container">
     <div class="cta-content">
       <h2>Want a Clear Plan to Sell?</h2>
-      <p>
-        If you’re thinking about selling in Grand Junction, I’ll walk you through pricing, preparation, and what today’s buyers are responding to —
-        so you can make the right move with confidence.
-      </p>
+      <p>If you’re thinking about selling in Grand Junction, I’ll walk you through pricing, preparation, and what today’s buyers are responding to — so you can make the right move with confidence.</p>
       <a href="contact.html" class="btn btn-primary-light">Get in Touch</a>
     </div>
   </div>
@@ -446,7 +413,6 @@
   </div>
 </footer>
 
-<!-- Lucide init -->
 <script>
   if (window.lucide) lucide.createIcons();
 </script>
