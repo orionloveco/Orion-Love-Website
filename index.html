@@ -3,45 +3,751 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orion Love - Grand Junction Real Estate Expert</title>
+  <title>Orion Love | Grand Junction Colorado Realtor®</title>
 
-  <!-- Fonts (single combined request) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Scripts -->
-  <script>document.documentElement.classList.add('js');</script>
-  <script src="script.js" defer></script>
-
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Safety: force any reveal/opacity issues visible -->
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelectorAll('.usp-card, .usp-grid > *, .process-steps > *, .step')
-          .forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-          });
-      }, 100);
-    });
-  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --warm:    #f2ede3;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 16px 56px rgba(12,26,61,0.14);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── NAV ────────────────────────────────────── */
+    .main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    .main-header.scrolled {
+      background: rgba(12, 26, 61, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
+    }
+    .main-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .logo { text-decoration: none; }
+    .logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+      align-items: center;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
+    .btn-nav {
+      background: transparent !important;
+      border: 1px solid rgba(184,146,58,0.55) !important;
+      color: var(--gold-lt) !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      transition: background 0.22s, border-color 0.22s !important;
+    }
+    .btn-nav:hover {
+      background: rgba(184,146,58,0.12) !important;
+      border-color: var(--gold-lt) !important;
+    }
+    .mobile-toggle { display: none; }
+
+    /* ── BUTTONS ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-lt);
+      color: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-navy:hover {
+      background: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ── SECTION LABEL ──────────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-label::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-label span {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .section-label.centered {
+      justify-content: center;
+    }
+    .section-label.centered::before,
+    .section-label.centered::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── DIVIDER ────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--sand);
+    }
+    .divider-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ── HERO ───────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
+        url("images/hero.jpg") center / cover no-repeat;
+      overflow: hidden;
+    }
+    /* Subtle gold atmospheric glow */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 65% 55% at 60% 45%, rgba(184,146,58,0.11), transparent 65%);
+      pointer-events: none;
+    }
+    /* Bottom separator line */
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
+    }
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 1.1s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(184,146,58,0.55), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+      padding-top: 80px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: "";
+      height: 1px;
+      width: 36px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8.5vw, 7rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 1.75rem;
+      max-width: 14ch;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.25s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-subtitle {
+      max-width: 50ch;
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.85;
+      margin-bottom: 2.75rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+
+    .hero-trust {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+
+    /* ── USP SECTION ────────────────────────────── */
+    .usp-section {
+      padding: clamp(5rem, 9vw, 8rem) 0;
+      background: var(--cream);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .section-header .lead {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .usp-card {
+      position: relative;
+      padding: 2.25rem 1.75rem;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+    .usp-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .usp-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.22);
+    }
+    .usp-card:hover::before { opacity: 1; }
+
+    .usp-icon {
+      width: 48px; height: 48px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      transition: background 0.25s;
+    }
+    .usp-card:hover .usp-icon { background: rgba(184,146,58,0.18); }
+    .usp-icon svg { width: 22px; height: 22px; stroke: var(--gold); }
+
+    .usp-card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .usp-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    .cta-center { text-align: center; }
+
+    /* ── DARK CTA BANNER ────────────────────────── */
+    .cta-band {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4rem, 7vw, 6rem) 0;
+    }
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    .cta-band-copy h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+    .cta-band-copy h2 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .cta-band-copy p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 52ch;
+    }
+    .btn-gold-outline {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 2.4rem;
+      border-radius: 50px;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt);
+      white-space: nowrap;
+      transition: all 0.25s;
+    }
+    .btn-gold-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,146,58,0.35);
+    }
+
+    /* ── BUYERS CTA ─────────────────────────────── */
+    .buyers-section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--white);
+    }
+    .buyers-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .buyers-copy h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .buyers-copy h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .buyers-copy p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+    .buyers-visual {
+      position: relative;
+    }
+    .buyers-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+    .buyers-card-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .buyers-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .buyers-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .buyers-list li svg {
+      width: 18px; height: 18px;
+      stroke: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    /* Offset decorative border */
+    .buyers-visual::after {
+      content: "";
+      position: absolute;
+      inset: 1.1rem -1.1rem -1.1rem 1.1rem;
+      border: 1px solid rgba(184,146,58,0.2);
+      border-radius: var(--radius-lg);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ── PROCESS SECTION ────────────────────────── */
+    .process-section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--cream);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    /* Connecting line behind the steps */
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), rgba(184,146,58,0.3));
+      z-index: 0;
+    }
+    .process-step {
+      padding: 0 1.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--gold);
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+      box-shadow: var(--shadow-sm);
+    }
+    .process-step:hover .step-num {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+    .process-step h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .main-footer {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(184,146,58,0.15);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo-footer {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer-links h4, .footer-contact h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.52);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.28);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 1024px) {
+      .usp-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+      .process-grid::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .cta-band-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .buyers-inner { grid-template-columns: 1fr; }
+      .buyers-visual::after { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-menu { display: none; }
+      .mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .mobile-toggle span {
+        display: block;
+        width: 24px; height: 1.5px;
+        background: var(--white);
+        border-radius: 2px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero { min-height: 100svh; }
+      .hero-title { font-size: 2.8rem; }
+      .usp-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="main-header">
-  <nav class="container">
+<!-- NAV -->
+<header class="main-header" id="mainHeader">
+  <nav>
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
-
     <ul class="nav-menu">
       <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="services.html">Sellers</a></li>
@@ -50,157 +756,186 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
-
     <button class="mobile-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-overlay"></div>
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
   <div class="hero-content">
-    <h1 class="hero-title">Sell Your Home Without the Confusion</h1>
+    <div class="hero-eyebrow">
+      <span>Grand Junction · Western Colorado</span>
+    </div>
+
+    <h1 class="hero-title">Sell Without<br>the <em>Confusion.</em></h1>
+
     <p class="hero-subtitle">
-      Local market knowledge, honest communication, and a proven process — so you always know where you stand.
+      Local market knowledge, honest communication, and a clear process —
+      so you always know exactly where you stand.
     </p>
 
     <div class="hero-cta">
       <a href="contact.html" class="btn btn-primary">Get a Local Home Value</a>
-      <a href="buyers.html" class="btn btn-primary">Buying a Home?</a>
+      <a href="buyers.html" class="btn btn-outline">Buying a Home?</a>
     </div>
 
-    <p class="hero-trust">
-      Serving Grand Junction, Fruita, Palisade, and Western Colorado
-    </p>
+    <p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Western Colorado</p>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
+<!-- USP -->
 <section class="usp-section">
   <div class="container">
-    <div class="section-header centered">
-      <h2>Why Grand Junction Sellers Choose Orion Love</h2>
-      <p class="section-intro">
-        Selling here isn’t about hype — it’s about pricing right, preparing well, and communicating clearly.
+    <div class="section-header reveal">
+      <div class="section-label centered"><span>Why Sellers Choose Orion</span></div>
+      <h2>Grand Junction Real Estate<br>Done Differently</h2>
+      <p class="lead">
+        Selling here isn't about hype — it's about pricing right, preparing well, and communicating clearly.
       </p>
     </div>
 
     <div class="usp-grid">
-      <div class="usp-card">
-        <div class="usp-icon" aria-hidden="true">
-          <i data-lucide="map-pin"></i>
-        </div>
+      <div class="usp-card reveal" style="transition-delay:0.05s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
         <h3>Local Market Knowledge That Matters</h3>
-        <p>
-          I analyze recent Mesa County sales and tour competing homes with you, so pricing is based on what buyers are actually choosing.
-        </p>
+        <p>I analyze recent Mesa County sales and tour competing homes with you, so pricing is grounded in what buyers are actually choosing — not estimates.</p>
       </div>
 
-      <div class="usp-card">
-        <div class="usp-icon" aria-hidden="true">
-          <i data-lucide="bar-chart-3"></i>
-        </div>
+      <div class="usp-card reveal" style="transition-delay:0.13s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div>
         <h3>Pricing Backed by Real Data</h3>
-        <p>
-          I use real sales data, buyer behavior, and local feedback — not automated estimates — to guide pricing decisions.
-        </p>
+        <p>Real sales data, buyer behavior, and local feedback — not automated guesses — guide every pricing decision to protect your leverage.</p>
       </div>
 
-      <div class="usp-card">
-        <div class="usp-icon" aria-hidden="true">
-          <i data-lucide="message-square"></i>
+      <div class="usp-card reveal" style="transition-delay:0.21s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
+        <h3>Communication You Don't Chase</h3>
+        <p>Weekly updates, honest showing feedback, and direct answers — so you're never left wondering what's happening with your home.</p>
+      </div>
+
+      <div class="usp-card reveal" style="transition-delay:0.29s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="target"></i></div>
+        <h3>Preparation Before Going Live</h3>
+        <p>Strategic prep, professional photography, and guidance on what actually impacts buyer perception — not unnecessary fixes that eat into profit.</p>
+      </div>
+    </div>
+
+    <div class="cta-center reveal" style="transition-delay:0.1s">
+      <a href="services.html" class="btn btn-navy">See How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider"><div class="divider-diamond"></div></div>
+
+<!-- DARK CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <div class="cta-band-copy">
+        <div class="section-label"><span>For Sellers</span></div>
+        <h2>Thinking About Selling<br>in <em>Grand Junction?</em></h2>
+        <p>
+          Get a clear, data-backed view of what homes like yours are selling for —
+          without pressure or obligation.
+        </p>
+      </div>
+      <a href="contact.html" class="btn-gold-outline">Request a Home Value</a>
+    </div>
+  </div>
+</section>
+
+<!-- BUYERS -->
+<section class="buyers-section">
+  <div class="container">
+    <div class="buyers-inner">
+      <div class="buyers-copy reveal">
+        <div class="section-label"><span>For Buyers</span></div>
+        <h2>Find the Right Home<br>Without the <em>Pressure.</em></h2>
+        <p>
+          Whether you're relocating to Grand Junction or buying local, I help you
+          navigate the process with honest guidance and clear expectations —
+          so you make a confident decision, not just a fast one.
+        </p>
+        <a href="buyers.html" class="btn btn-primary">Learn About Buyer Services</a>
+      </div>
+
+      <div class="buyers-visual reveal" style="transition-delay:0.15s">
+        <div class="buyers-card">
+          <div class="buyers-card-title">What to Expect as a Buyer</div>
+          <ul class="buyers-list">
+            <li><i data-lucide="check-circle"></i> Clear-eyed market education before you make offers</li>
+            <li><i data-lucide="check-circle"></i> Honest feedback on every property — even the ones you love</li>
+            <li><i data-lucide="check-circle"></i> Guidance on inspections, contingencies, and negotiations</li>
+            <li><i data-lucide="check-circle"></i> No pressure — just a straightforward path to the right home</li>
+          </ul>
         </div>
-        <h3>Clear, Consistent Communication</h3>
-        <p>
-          Weekly updates, honest showing feedback, and direct answers — so you’re never left wondering what’s next.
-        </p>
-      </div>
-
-      <div class="usp-card">
-        <div class="usp-icon" aria-hidden="true">
-          <i data-lucide="target"></i>
-        </div>
-        <h3>Preparation Before the Listing Goes Live</h3>
-        <p>
-          Strategic prep, professional photography, and guidance on what actually impacts value — not unnecessary fixes.
-        </p>
       </div>
     </div>
-
-    <div class="cta-center">
-      <a href="services.html" class="btn btn-primary">See How It Works</a>
-    </div>
   </div>
 </section>
 
-<section class="cta-banner">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Thinking About Selling in Grand Junction?</h2>
-      <p>Get a clear, data-backed view of what homes like yours are selling for — without pressure or obligation.</p>
-      <a href="contact.html" class="btn btn-primary-light">Request a Local Home Value</a>
-    </div>
-  </div>
-</section>
+<!-- DIVIDER -->
+<div class="divider"><div class="divider-diamond"></div></div>
 
-<section class="buyers-cta">
+<!-- PROCESS -->
+<section class="process-section">
   <div class="container">
-    <div class="cta-content centered">
-      <h2>Buying a Home?</h2>
-      <p>Let’s find the right property without the pressure.</p>
-      <a href="buyers.html" class="btn btn-primary">Learn About Buyer Services</a>
-    </div>
-  </div>
-</section>
-
-<section class="process-preview">
-  <div class="container">
-    <div class="section-header centered">
+    <div class="section-header reveal">
+      <div class="section-label centered"><span>The Process</span></div>
       <h2>A Simple, Proven Selling Process</h2>
-      <p class="section-intro">Clear steps. Clear expectations. Less stress.</p>
+      <p class="lead">Clear steps. Clear expectations. Less stress from listing to closing.</p>
     </div>
 
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
+    <div class="process-grid">
+      <div class="process-step reveal" style="transition-delay:0.05s">
+        <div class="step-num">1</div>
         <h3>The Local Market Review</h3>
-        <p>We review recent sales, current competition, and neighborhood trends so expectations are grounded in reality.</p>
+        <p>We review recent sales, current competition, and neighborhood trends — so expectations are grounded in reality.</p>
       </div>
 
-      <div class="step">
-        <div class="step-number">2</div>
+      <div class="process-step reveal" style="transition-delay:0.13s">
+        <div class="step-num">2</div>
         <h3>Strategic Preparation</h3>
-        <p>Guidance on presentation, photography, and positioning — focused only on what impacts buyer perception.</p>
+        <p>Guidance on presentation, photography, and positioning — focused only on what moves buyers, nothing unnecessary.</p>
       </div>
 
-      <div class="step">
-        <div class="step-number">3</div>
+      <div class="process-step reveal" style="transition-delay:0.21s">
+        <div class="step-num">3</div>
         <h3>Market Effectively</h3>
-        <p>MLS exposure, online platforms, and targeted outreach designed to drive real showings locally.</p>
+        <p>MLS exposure, online platforms, and video-first marketing designed to drive real showings from serious buyers.</p>
       </div>
 
-      <div class="step">
-        <div class="step-number">4</div>
+      <div class="process-step reveal" style="transition-delay:0.29s">
+        <div class="step-num">4</div>
         <h3>Close with Confidence</h3>
-        <p>Clear communication, honest feedback, and support through closing.</p>
+        <p>Clear communication, honest feedback, and steady support through offer, inspection, and closing.</p>
       </div>
     </div>
 
-    <div class="cta-center">
-      <a href="services.html" class="btn btn-secondary">Learn More About My Services</a>
+    <div class="cta-center reveal" style="margin-top:3.5rem; transition-delay:0.1s">
+      <a href="services.html" class="btn btn-navy">Learn More About My Services</a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="main-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Helping Grand Junction homeowners sell with clarity, confidence, and honest communication.</p>
-        <p class="footer-location">Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+        <p>Helping Grand Junction homeowners sell<br>with clarity, confidence, and honest communication.</p>
+        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
-
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
@@ -212,7 +947,6 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
@@ -221,16 +955,32 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
-<!-- IMPORTANT: this is what you were missing -->
 <script>
   if (window.lucide) lucide.createIcons();
+
+  // Sticky nav
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
