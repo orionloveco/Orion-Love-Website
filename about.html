@@ -136,35 +136,53 @@
       min-height: 75vh;
       display: flex;
       align-items: flex-end;
+      /* Face positioned on the right — image anchored right-center */
       background:
-        linear-gradient(175deg, rgba(8,18,50,0.78) 0%, rgba(12,26,61,0.62) 60%, rgba(12,26,61,0.82) 100%),
-        url("images/headshot.jpg") center 25% / cover no-repeat;
+        url("images/headshot.jpg") right center / cover no-repeat;
       overflow: hidden;
     }
+    /* Directional overlay: heavy navy on the left (text legibility),
+       fading to near-transparent on the right (face visible) */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(184,146,58,0.10), transparent 65%);
+      background:
+        linear-gradient(
+          to right,
+          rgba(8, 18, 50, 0.92) 0%,
+          rgba(8, 18, 50, 0.85) 35%,
+          rgba(8, 18, 50, 0.45) 60%,
+          rgba(8, 18, 50, 0.15) 80%,
+          rgba(8, 18, 50, 0.05) 100%
+        ),
+        /* Top-to-bottom darkening so footer area stays readable */
+        linear-gradient(
+          to bottom,
+          rgba(8, 18, 50, 0.25) 0%,
+          rgba(8, 18, 50, 0.0) 40%,
+          rgba(8, 18, 50, 0.55) 100%
+        );
       pointer-events: none;
+      z-index: 1;
     }
-    /* Decorative rule lines */
+    /* Gold separator line at bottom of hero */
     .hero::after {
       content: "";
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
+      z-index: 3;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: 0 clamp(1.25rem,4vw,2.5rem) clamp(3.5rem,7vw,5rem);
       max-width: 1120px;
       margin: 0 auto;
-      padding-top: 100px;
+      padding: 100px clamp(1.25rem,4vw,2.5rem) clamp(3.5rem,7vw,5rem);
     }
 
     .hero-eyebrow {
@@ -197,6 +215,8 @@
       color: var(--white);
       line-height: 1.0;
       margin-bottom: 1.5rem;
+      /* Constrain to left side — face lives in the right 40% */
+      max-width: 11ch;
       opacity: 0;
       animation: fadeUp 0.9s 0.25s forwards;
     }
@@ -1053,7 +1073,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#b9d6cbd0d6d797d5d6cfdc97dad6f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="d9b6abb0b6b7f7b5b6afbcf7bab699beb4b8b0b5f7bab6b4">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -1064,7 +1084,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Lucide icons
   if (window.lucide) lucide.createIcons();
 
@@ -1083,7 +1103,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => observer.observe(el));
 </script>
 
