@@ -824,3 +824,367 @@ section {
   .process-steps { grid-template-columns: 1fr; }
   .search-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================
+   LUXURY HOME PAGE OVERRIDES
+   Works with your Orion Love tokens:
+   --primary, --accent, --cream, --sand, --slate, --text, --border
+========================= */
+
+/* Global polish */
+body {
+  color: var(--text);
+  background: var(--cream);
+  letter-spacing: 0.01em;
+}
+
+.container {
+  max-width: 1180px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Type hierarchy */
+h1, h2, h3 {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.02em;
+}
+
+p, a, li {
+  font-family: "Raleway", sans-serif;
+}
+
+.section-header.centered h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.section-intro {
+  max-width: 62ch;
+  margin: 0.75rem auto 0;
+  color: color-mix(in srgb, var(--text) 78%, white);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* Optional: Allura accent (use sparingly) */
+.accent-script {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+/* Header/nav feel more premium */
+.main-header {
+  background: color-mix(in srgb, var(--cream) 92%, white);
+  border-bottom: 1px solid color-mix(in srgb, var(--sand) 70%, white);
+  backdrop-filter: blur(8px);
+}
+
+.logo-main {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.nav-menu a {
+  color: color-mix(in srgb, var(--text) 86%, white);
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+.btn-nav {
+  border: 1px solid color-mix(in srgb, var(--accent) 65%, var(--sand));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 14%, white),
+    color-mix(in srgb, var(--accent) 8%, var(--cream))
+  );
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+}
+
+/* Hero: quieter luxury + depth */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+      1200px 600px at 20% 10%,
+      color-mix(in srgb, var(--accent) 16%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--primary) 7%, var(--cream)),
+      var(--cream)
+    );
+  border-bottom: 1px solid color-mix(in srgb, var(--sand) 70%, white);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 12, 69, 0.20),
+    rgba(2, 12, 69, 0.06),
+    rgba(244, 241, 232, 0.92)
+  );
+}
+
+.hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3.25rem, 5vw, 4.5rem);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.06;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+.hero-subtitle {
+  max-width: 60ch;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--text) 78%, white);
+}
+
+.hero-trust {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--text) 68%, white);
+}
+
+/* Buttons: less “basic”, more premium */
+.btn {
+  border-radius: 999px;
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--primary) 92%, white),
+    var(--primary)
+  );
+  color: var(--cream);
+  box-shadow: 0 10px 24px rgba(2, 12, 69, 0.18);
+  border: 1px solid color-mix(in srgb, var(--primary) 80%, black);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 14px 30px rgba(2, 12, 69, 0.22);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--sand));
+}
+
+.btn-primary-light {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 16%, white),
+    color-mix(in srgb, var(--accent) 10%, var(--cream))
+  );
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--sand));
+  color: var(--primary);
+}
+
+/* USP cards: editorial grid + soft luxury */
+.usp-section {
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+.usp-grid {
+  gap: 1.25rem;
+}
+
+.usp-card {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--cream) 92%, white),
+    var(--cream)
+  );
+  border: 1px solid color-mix(in srgb, var(--sand) 75%, white);
+  border-radius: 20px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 10px 24px rgba(14, 21, 48, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.usp-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    700px 240px at 20% 0%,
+    color-mix(in srgb, var(--accent) 18%, transparent),
+    transparent 55%
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.usp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--sand));
+  background: radial-gradient(circle at 30% 25%,
+    color-mix(in srgb, var(--accent) 22%, white),
+    color-mix(in srgb, var(--accent) 10%, var(--cream))
+  );
+  box-shadow: 0 10px 18px rgba(184, 150, 58, 0.10);
+  margin-bottom: 0.9rem;
+}
+
+.usp-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: var(--primary);
+}
+
+.usp-card p {
+  color: color-mix(in srgb, var(--text) 78%, white);
+  line-height: 1.7;
+}
+
+/* CTA banner: more “boutique” */
+.cta-banner {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--primary) 6%, var(--cream)),
+    color-mix(in srgb, var(--primary) 10%, var(--cream))
+  );
+  border-top: 1px solid color-mix(in srgb, var(--sand) 70%, white);
+  border-bottom: 1px solid color-mix(in srgb, var(--sand) 70%, white);
+}
+
+.cta-banner .cta-content {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(2.75rem, 5vw, 3.5rem) 0;
+}
+
+.cta-banner h2 {
+  color: var(--primary);
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  margin-bottom: 0.5rem;
+}
+
+.cta-banner p {
+  max-width: 66ch;
+  margin: 0 auto 1.25rem;
+  color: color-mix(in srgb, var(--text) 78%, white);
+  line-height: 1.7;
+}
+
+/* Process steps: less “boxy”, more refined */
+.process-preview {
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+.process-steps {
+  gap: 1.25rem;
+}
+
+.step {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--cream) 94%, white),
+    var(--cream)
+  );
+  border: 1px solid color-mix(in srgb, var(--sand) 75%, white);
+  border-radius: 20px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: 0 10px 24px rgba(14, 21, 48, 0.05);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--sand));
+  background: color-mix(in srgb, var(--accent) 10%, var(--cream));
+  margin-bottom: 0.75rem;
+}
+
+.step h3 {
+  color: var(--primary);
+  font-size: 1.12rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: color-mix(in srgb, var(--text) 78%, white);
+  line-height: 1.7;
+}
+
+/* Footer: more elegant */
+.main-footer {
+  border-top: 1px solid color-mix(in srgb, var(--sand) 70%, white);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--primary) 4%, var(--cream)),
+    var(--cream)
+  );
+}
+
+.logo-footer {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* Motion: subtle, premium */
+.usp-card, .step {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.usp-card:hover, .step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(14, 21, 48, 0.10);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--sand));
+}
+
+/* Mobile polish */
+@media (max-width: 720px) {
+  .hero-cta {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+  }
+  .btn {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+  }
+}
