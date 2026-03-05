@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Orion Love | Grand Junction Realtor®</title>
+  <title>Contact Orion Love | Start Your Journey | Grand Junction Realtor®</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -646,6 +646,61 @@
         background: var(--white); border-radius: 2px;
       }
     }
+
+    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12, 26, 61, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .nav-menu li { list-style: none; }
+      .nav-menu a {
+        font-size: 1.4rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+      }
+      .mobile-toggle { z-index: 100; }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0; transform: scaleX(0);
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+      .mobile-toggle span {
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+    }
   </style>
 </head>
 
@@ -674,7 +729,7 @@
 <!-- HERO -->
 <section class="contact-hero">
   <div class="container">
-    <div class="hero-eyebrow"><span>Get in Touch</span></div>
+    <div class="hero-eyebrow"><span>Get in Touch · Grand Junction</span></div>
     <h1>Let's Get <em>Started.</em></h1>
     <p>
       Thinking about selling, buying, or just want clarity on your options?
@@ -697,7 +752,7 @@
             <div class="info-icon"><i data-lucide="mail"></i></div>
             <div class="info-text">
               <div class="info-label">Email</div>
-              <div class="info-value"><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></div>
+              <div class="info-value"><a href="/cdn-cgi/l/email-protection#5738253e3839793b38213279343817303a363e3b7934383a"><span class="__cf_email__" data-cfemail="e18e93888e8fcf8d8e9784cf828ea1868c80888dcf828e8c">[email&#160;protected]</span></a></div>
             </div>
           </div>
 
@@ -839,7 +894,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#78170a1117165614170e1d561b17381f15191114561b1715"><span class="__cf_email__" data-cfemail="dab5a8b3b5b4f4b6b5acbff4b9b59abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -854,7 +909,46 @@
 <script>
   if (window.lucide) lucide.createIcons();
 
-  // Scroll reveal
+  // Mobile menu
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -866,62 +960,62 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // ── Contact form → Cloudflare Worker → FollowUpBoss ──
+  // Contact form
   const contactForm = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
   const submitBtn   = document.getElementById('submitBtn');
 
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const required = ['firstName', 'lastName', 'email', 'message'];
-    for (const id of required) {
-      if (!document.getElementById(id).value.trim()) {
-        showMessage('Please fill in all required fields.', 'error');
-        return;
-      }
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-
-    const formData = {
-      firstName: document.getElementById('firstName').value.trim(),
-      lastName:  document.getElementById('lastName').value.trim(),
-      email:     document.getElementById('email').value.trim(),
-      phone:     document.getElementById('phone').value.trim(),
-      inquiry:   document.getElementById('inquiry').value,
-      message:   document.getElementById('message').value.trim()
-    };
-
-    try {
-      const WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
-
-      const response = await fetch(WORKER_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      const requiredIds = ['firstName', 'lastName', 'email', 'message'];
+      let valid = true;
+      requiredIds.forEach(id => {
+        const field = document.getElementById(id);
+        if (!field?.value.trim()) { field?.classList.add('error'); valid = false; }
       });
+      if (!valid) { showMessage('Please fill in all required fields.', 'error'); return; }
 
-      let result = {};
-      try { result = await response.json(); } catch (_) {}
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
 
-      if (response.ok && result.success) {
-        showMessage('Thank you for reaching out. I\'ll be in touch within 24 hours.', 'success');
-        contactForm.reset();
-      } else {
-        throw new Error(result.error || 'Server returned ' + response.status);
+      const formData = {
+        firstName: document.getElementById('firstName')?.value.trim(),
+        lastName:  document.getElementById('lastName')?.value.trim(),
+        email:     document.getElementById('email')?.value.trim(),
+        phone:     document.getElementById('phone')?.value.trim() || '',
+        inquiry:   document.getElementById('inquiry')?.value || '',
+        message:   document.getElementById('message')?.value.trim(),
+      };
+
+      try {
+        const WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
+        const response = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        let result = {};
+        try { result = await response.json(); } catch (_) {}
+        if (response.ok && result.success) {
+          showMessage("Thank you for reaching out. I'll be in touch within 24 hours.", 'success');
+          contactForm.reset();
+        } else {
+          throw new Error(result.error || 'Server error');
+        }
+      } catch (err) {
+        console.error('Form error:', err.message);
+        showMessage('Something went wrong. Please call or email me directly at (970) 644-6781.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Start the Conversation';
       }
-    } catch (err) {
-      console.error('Form submission error:', err.message);
-      showMessage('Something went wrong. Please call or email me directly at (970) 644-6781.', 'error');
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
-    }
-  });
+    });
+  }
 
   function showMessage(text, type) {
+    if (!formMessage) return;
     formMessage.textContent = text;
     formMessage.className = 'form-message ' + type;
     formMessage.style.display = 'block';
