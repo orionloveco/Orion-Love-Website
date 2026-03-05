@@ -634,23 +634,35 @@
       .cta-band-inner { grid-template-columns: 1fr; gap: 2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
-    @media (max-width: 640px) {
-      .form-row { grid-template-columns: 1fr; }
-      .nav-menu { display: none; }
-      .mobile-toggle {
-        display: flex; flex-direction: column; gap: 5px;
-        background: none; border: none; cursor: pointer; padding: 6px;
-      }
-      .mobile-toggle span {
-        display: block; width: 24px; height: 1.5px;
-        background: var(--white); border-radius: 2px;
-      }
-    }
 
     /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
+
     @media (max-width: 640px) {
-      .nav-menu {
-        display: none;
+      .form-row { grid-template-columns: 1fr; }
+      /* Mobile nav */
+      .nav-menu { display: none; }
+      .mobile-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 200;
+      }
+      .mobile-toggle span {
+        display: block;
+        width: 24px; height: 1.5px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+      .mobile-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .mobile-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .mobile-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      .nav-menu.active {
+        display: flex;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(12, 26, 61, 0.98);
@@ -659,14 +671,12 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        z-index: 99;
+        z-index: 150;
+        list-style: none;
       }
-      .nav-menu.active {
-        display: flex;
-      }
-      .nav-menu li { list-style: none; }
-      .nav-menu a {
-        font-size: 1.4rem;
+      .nav-menu.active li { list-style: none; }
+      .nav-menu.active a {
+        font-size: 1.5rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -675,8 +685,8 @@
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;
       }
-      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
-      .nav-menu .btn-nav {
+      .nav-menu.active a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu.active .btn-nav {
         border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
@@ -686,19 +696,7 @@
         text-transform: uppercase;
         font-weight: 600;
         opacity: 1;
-      }
-      .mobile-toggle { z-index: 100; }
-      .mobile-toggle.active span:nth-child(1) {
-        transform: translateY(6.5px) rotate(45deg);
-      }
-      .mobile-toggle.active span:nth-child(2) {
-        opacity: 0; transform: scaleX(0);
-      }
-      .mobile-toggle.active span:nth-child(3) {
-        transform: translateY(-6.5px) rotate(-45deg);
-      }
-      .mobile-toggle span {
-        transition: transform 0.25s ease, opacity 0.2s ease;
+        color: var(--gold-lt);
       }
     }
   </style>
@@ -707,7 +705,7 @@
 <body>
 
 <!-- NAV -->
-<header class="main-header">
+<header class="main-header" id="mainHeader">
   <nav>
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
@@ -945,9 +943,11 @@
   }
 
   const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
 
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
