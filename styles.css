@@ -1,16 +1,86 @@
 /* =========================
-   Design Tokens
+   Design Tokens (Orion Love Brand)
 ========================= */
 :root {
-  --primary: #020C45;
-  --accent: #CD9703;
+  /* Brand */
+  --primary: #020C45;   /* Navy */
+  --accent:  #B8963A;   /* Gold */
+  --cream:   #F4F1E8;   /* Cream (primary light bg) */
+  --sand:    #E6E0D3;   /* Warm neutral */
+  --slate:   #4A5675;   /* Muted slate */
 
+  /* System aliases (keep your existing CSS working) */
   --black: #000000;
   --white: #FFFFFF;
 
-  --gray: #606060;
-  --light-gray: #E5E5E5;
-  --off-white: #F8F8F8;
+  --gray: var(--slate);       /* replaces #606060 */
+  --light-gray: var(--sand);  /* replaces #E5E5E5 */
+  --off-white: var(--cream);  /* replaces #F8F8F8 */
+
+  /* Optional “nice to have” tokens */
+  --border: var(--sand);
+  --text: #0E1530;            /* softer than pure black */
+  --muted: var(--slate);
+  --shadow: 0 15px 40px rgba(2, 12, 69, 0.12);
+}
+
+/* =========================
+   Small opinionated tweaks (optional but helps the palette)
+========================= */
+
+/* Global text feels better slightly softer than pure black */
+body {
+  color: var(--text);
+  background: var(--cream);
+}
+
+/* Sections that were white can stay white */
+.featured-listings,
+.search-card,
+.usp-card,
+.listing-card {
+  background: var(--white);
+}
+
+/* Replace any leftover “gold” hover colors you hard-coded */
+.btn-accent:hover {
+  background: #A68433; /* darker gold hover */
+}
+
+/* Consistent primary hover (instead of #03155a) */
+.btn-primary:hover {
+  background: #03155a; /* keep if you like it */
+  /* OR try: background: #041A6B; */
+  box-shadow: 0 10px 25px rgba(2, 12, 69, 0.18);
+}
+
+/* Make borders warmer everywhere (uses your new sand token) */
+.listing-card,
+.search-input,
+.search-select,
+.btn-outline,
+.quick-links,
+.listing-details {
+  border-color: var(--border);
+}
+
+/* Your “off-white sections” now use the brand cream */
+.usp-section,
+.process-preview {
+  background: var(--off-white);
+}
+
+/* Footer: gold accent stays on-brand */
+.logo-footer,
+.footer-links a:hover,
+.footer-contact a:hover,
+.footer-bottom a:hover,
+.view-all:hover,
+.nav-menu a:not(.btn-nav)::after,
+.listing-badge,
+.step-number {
+  color: var(--accent);
+  background: var(--accent);
 }
 
 /* =========================
@@ -24,7 +94,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  color: var(--black);
+  color: var(--text);
   line-height: 1.6;
   background: var(--white);
 }
