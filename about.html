@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Orion Love | Local Grand Junction Realtor®</title>
+  <title>About Orion Love | Grand Junction Real Estate Guide & Realtor®</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -138,7 +138,7 @@
       align-items: flex-end;
       /* Face positioned on the right — image anchored right-center */
       background:
-        url("images/headshot.jpg") 20% 25% / cover no-repeat;
+        url("images/headshot.jpg") 20% 18% / cover no-repeat;
       overflow: hidden;
     }
     /* Overlay: left side darkened for text, right side open for face */
@@ -809,6 +809,61 @@
       .step-num-wrap { flex-direction: row; align-items: center; gap: 1rem; }
       .step-line { display: none; }
     }
+
+    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12, 26, 61, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .nav-menu li { list-style: none; }
+      .nav-menu a {
+        font-size: 1.4rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+      }
+      .mobile-toggle { z-index: 100; }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0; transform: scaleX(0);
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+      .mobile-toggle span {
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+    }
   </style>
 </head>
 
@@ -838,22 +893,22 @@
 <section class="hero" aria-label="Hero">
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span>Grand Junction Realtor®</span>
+      <span>Your Guide · Grand Junction Realtor®</span>
     </div>
 
-    <h1 class="hero-title"><em>Orion Love</em></h1>
+    <h1 class="hero-title">Strategy Over<br><em>Hype.</em></h1>
 
     <p class="hero-subtitle">
-      I help Grand Junction sellers make confident decisions with clear strategy, strong presentation,
-      and honest communication — so you always understand the "why" behind the results.
+      Real estate in Western Colorado rewards preparation and honest strategy.
+      I bring the local knowledge and clear communication to get you there.
     </p>
 
     <div class="hero-cta">
-      <a href="contact.html" class="btn btn-primary">Talk Through a Sale Plan</a>
-      <a href="services.html" class="btn btn-outline">Seller Services</a>
+      <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
+      <a href="services.html" class="btn btn-outline">How It Works</a>
     </div>
 
-    <p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Western Colorado</p>
+    <p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Mesa County · Western Colorado</p>
   </div>
 </section>
 
@@ -870,20 +925,20 @@
 
       <div class="intro-copy reveal" style="transition-delay:0.15s">
         <div class="section-label"><span>About Orion</span></div>
-        <h2>Strategy over <em>hype.</em><br>Clarity over guesswork.</h2>
+        <h2>Steady direction.<br><em>No guesswork.</em></h2>
 
         <p>
-          I work with sellers who want <strong>clarity, not hype.</strong> My approach is grounded in strategy —
-          understanding how buyers behave, what homes are actually selling for in Grand Junction, and what
-          preparation makes a measurable difference.
+          I work with sellers and buyers who want <strong>clarity, not noise.</strong> My approach is built on local knowledge —
+          understanding how Mesa County buyers move, what homes are actually closing for in Grand Junction, and
+          which decisions make a measurable difference.
         </p>
         <p>
-          I focus on marketing, presentation, and positioning. That means thoughtful pricing, video-first
-          exposure, clear feedback from showings, and consistent communication from listing to closing.
+          From the Redlands to Fruita, Orchard Mesa to Palisade — I know this market at street level.
+          That means honest pricing, video-first exposure, and clear direction from the first conversation to closing day.
         </p>
         <p>
           I don't ask for trust. I earn it through preparation, follow-through, and transparency.
-          When your home sells, you'll understand exactly why it did.
+          When you arrive at closing day, you'll know every step of how you got there.
         </p>
 
         <div class="credentials">
@@ -909,10 +964,10 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label" style="justify-content:center"><span>My Philosophy</span></div>
-      <h2>What Guides My Work</h2>
+      <h2>What Guides<br><em>My Work</em></h2>
       <p class="lead">
-        Selling here isn't one-size-fits-all. Some homes move fast. Others need sharper positioning.
-        My approach stays the same: prepare well, price with purpose, and market like it matters.
+        Every home in Mesa County has its own story and its own market position.
+        My approach stays constant: understand the market clearly, prepare with purpose, and execute together.
       </p>
     </div>
 
@@ -920,19 +975,19 @@
       <div class="value-card reveal" style="transition-delay:0.05s">
         <div class="value-icon"><i data-lucide="compass"></i></div>
         <h3>Strategy Before Listing</h3>
-        <p>We start with a plan — what to improve, what to leave alone, and what will actually move the needle for buyers in this price range.</p>
+        <p>Before a single photo is taken, we build a clear plan — what to prepare, what to leave, and what will genuinely move Grand Junction buyers in your price range.</p>
       </div>
 
       <div class="value-card reveal" style="transition-delay:0.15s">
         <div class="value-icon"><i data-lucide="bar-chart-3"></i></div>
         <h3>Pricing With Real Buyer Data</h3>
-        <p>We price based on what's selling today in Grand Junction — not last season, not a neighbor's opinion — to protect your leverage.</p>
+        <p>Pricing is built on recent Mesa County closed sales and active buyer behavior — not last season's numbers, not a neighbor's opinion, not an algorithm.</p>
       </div>
 
       <div class="value-card reveal" style="transition-delay:0.25s">
         <div class="value-icon"><i data-lucide="message-square"></i></div>
         <h3>Communication You Don't Chase</h3>
-        <p>Weekly updates, honest feedback after showings, and clear answers to your questions — always, without you having to ask twice.</p>
+        <p>Weekly updates, honest feedback after every showing, and direct answers — always. You'll never wonder what's happening or what comes next.</p>
       </div>
     </div>
   </div>
@@ -947,8 +1002,8 @@
         <div class="section-label"><span>The Process</span></div>
         <h2>How I Work</h2>
         <p>
-          A clear, repeatable process — built around preparation, buyer behavior, and steady communication.
-          No surprises. No scrambling. Just a clean path from listing to closing.
+          A deliberate, navigated process built around local knowledge and honest communication.
+          Every step mapped out. No surprises. No scrambling. Just a clear route from first conversation to closing day.
         </p>
       </div>
 
@@ -959,8 +1014,8 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Market Knowledge</h3>
-            <p>I walk you through real competing homes — active listings, pending sales, and recent closings — so you understand exactly what buyers compare your home to.</p>
+            <h3>The Local Market Review</h3>
+            <p>Active listings, pending sales, and recent closings in your Mesa County neighborhood — so you know exactly what buyers are comparing your home against before we price it.</p>
           </div>
         </div>
 
@@ -970,8 +1025,8 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Positioning &amp; Preparation</h3>
-            <p>We focus on the changes that actually influence value here — presentation, cleanliness, lighting, and first impressions — not unnecessary updates.</p>
+            <h3>Strategic Preparation</h3>
+            <p>We focus on the preparation that actually moves Grand Junction buyers — presentation, lighting, first impressions — nothing that doesn't earn its cost.</p>
           </div>
         </div>
 
@@ -981,8 +1036,8 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Marketing That Reaches Buyers</h3>
-            <p>Professional photography, video-first exposure, and clean messaging designed for how buyers shop online before they ever schedule a showing.</p>
+            <h3>Market Effectively</h3>
+            <p>Professional photography, video-first exposure, and clean messaging built for how Mesa County buyers shop — online first, before they ever schedule a showing.</p>
           </div>
         </div>
 
@@ -992,8 +1047,8 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Clear Feedback &amp; Smart Adjustments</h3>
-            <p>Honest feedback after showings and weekly updates on traffic and interest, so we can adjust early and protect your leverage.</p>
+            <h3>Clear Feedback &amp; Adjustments</h3>
+            <p>Honest feedback after every showing, weekly updates on traffic and interest — so we course-correct early and protect your position.</p>
           </div>
         </div>
 
@@ -1003,8 +1058,8 @@
             <div class="step-line"></div>
           </div>
           <div class="step-body">
-            <h3>Negotiation &amp; Deal Management</h3>
-            <p>From offer review through inspections and appraisal, I manage details and protect your position so you can move forward with confidence.</p>
+            <h3>Negotiation &amp; Closing</h3>
+            <p>From offer review through inspections and appraisal, I manage every detail so you cross the finish line on solid ground — nothing left to chance.</p>
           </div>
         </div>
       </div>
@@ -1038,12 +1093,12 @@
   <div class="container">
     <div class="cta-inner reveal">
       <div class="section-label" style="justify-content:center"><span>Ready to Start?</span></div>
-      <h2>Want a Clear Plan to Sell?</h2>
+      <h2>Want a Clear Plan?</h2>
       <p>
-        If you're thinking about selling in Grand Junction, I'll walk you through pricing, preparation,
-        and what today's buyers are responding to — so you can make the right move with confidence.
+        If you're thinking about selling in Grand Junction, Fruita, Palisade, or anywhere in Mesa County —
+        I'll give you a clear, honest view of where you stand and what it takes to move forward with confidence.
       </p>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
     </div>
   </div>
 </section>
@@ -1054,7 +1109,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Clear communication.<br>Honest feedback.<br>Results you can trust.</p>
+        <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
         <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
       <div class="footer-links">
@@ -1082,17 +1137,49 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Lucide icons
+<script>
   if (window.lucide) lucide.createIcons();
 
-  // Sticky nav bg on scroll
+  // Mobile menu
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   const header = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
