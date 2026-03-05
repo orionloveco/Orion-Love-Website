@@ -652,15 +652,60 @@
       .fee-full { grid-template-columns: 1fr; gap: 1.75rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
+    
+
+    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
     @media (max-width: 640px) {
-      .nav-menu { display: none; }
-      .mobile-toggle {
-        display: flex; flex-direction: column; gap: 5px;
-        background: none; border: none; cursor: pointer; padding: 6px;
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12, 26, 61, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .nav-menu li { list-style: none; }
+      .nav-menu a {
+        font-size: 1.4rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+      }
+      .mobile-toggle { z-index: 100; }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0; transform: scaleX(0);
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
       }
       .mobile-toggle span {
-        display: block; width: 24px; height: 1.5px;
-        background: var(--white); border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
       }
     }
   </style>
@@ -691,11 +736,11 @@
 <!-- HERO -->
 <section class="services-hero">
   <div class="container">
-    <div class="hero-eyebrow"><span>Seller Services</span></div>
-    <h1>Sell <em>Smarter.</em><br>Sell with Confidence.</h1>
+    <div class="hero-eyebrow"><span>Seller Services · Grand Junction</span></div>
+    <h1>Sell with a<br><em>Clear Plan.</em></h1>
     <p>
-      This is exactly what sellers get when they work with me — no surprises,
-      no hidden costs, no upsells. Just a clear plan and steady execution.
+      Every seller in Grand Junction deserves a clear plan — honest positioning,
+      deliberate preparation, and an agent who knows the Mesa County market.
     </p>
     <div class="hero-cta">
       <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
@@ -715,23 +760,23 @@
         <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
         <h2>Accurate <em>Market Analysis</em></h2>
         <p>
-          Pricing is the most important decision you'll make. I base it on real data
-          — not automated estimates, not guesswork — so you go to market with confidence
-          and protect your leverage from day one.
+          Pricing is the single most important decision in your sale. I base it on real
+          Mesa County data — not national averages, not automated estimates — so you
+          enter the market with a position you can defend.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Comparative Market Analysis</h4>
-          <p>We tour competing homes together. You'll see what buyers see — condition, layout, upgrades, pricing. This removes guesswork and builds genuine confidence in our strategy.</p>
+          <p>We review active competition and recent closings in your specific Grand Junction neighborhood — Redlands, Fruita, Palisade, Orchard Mesa — so pricing reflects what buyers here are actually choosing.</p>
         </div>
         <div class="detail-card">
-          <h4>Monthly Market Updates</h4>
-          <p>Every 30 days, you receive updated analysis showing new listings, sold properties, and price trends. You'll always know exactly where your home stands.</p>
+          <h4>Monthly Market Bearings</h4>
+          <p>Every 30 days, you receive updated data on Mesa County new listings, closed sales, and price trends — so your strategy stays grounded in what's happening now.</p>
         </div>
         <div class="detail-card">
           <h4>Strategic Positioning</h4>
-          <p>We discuss timing, initial pricing, and adjustment strategy. The goal is to attract serious buyers while protecting your bottom line — not just chasing a quick sale.</p>
+          <p>We discuss timing, initial price point, and adjustment strategy. The goal is to attract serious Grand Junction buyers early — protecting your leverage, not chasing a fast close at the wrong number.</p>
         </div>
       </div>
     </div>
@@ -743,9 +788,9 @@
         <div class="service-icon"><i data-lucide="camera"></i></div>
         <h2>Professional <em>Marketing</em></h2>
         <p>
-          First impressions happen online. Before a buyer ever schedules a showing,
-          they've already formed an opinion. Your home gets professional treatment
-          that makes that first impression count.
+          Mesa County buyers shop online before they ever call an agent.
+          Your home's first impression is formed before a single showing is scheduled —
+          and it needs to be right.
         </p>
       </div>
       <div class="service-details">
@@ -787,23 +832,23 @@
         <div class="service-icon"><i data-lucide="home"></i></div>
         <h2>Property <em>Preparation</em></h2>
         <p>
-          Most issues are preventable. We address them before buyers find them —
-          focusing only on changes that genuinely impact buyer perception and value,
-          not unnecessary fixes that eat into your return.
+          Most obstacles in a Grand Junction home sale are preventable. We address them
+          before buyers find them — focusing only on preparation that genuinely moves
+          the needle, nothing that doesn't earn its cost.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
-          <h4>Staging Consultation</h4>
-          <p>I walk through your home and provide clear, practical guidance on what helps and what hurts. Simple, targeted adjustments make a measurable difference to buyers.</p>
+          <h4>Staging &amp; Presentation</h4>
+          <p>A walk-through with clear, practical direction — what helps, what hurts, and what Grand Junction buyers in your price range respond to most.</p>
         </div>
         <div class="detail-card">
           <h4>Pre-Listing Inspection</h4>
-          <p>Optional but often worth it. Finding issues early means negotiating from a position of strength — not scrambling to respond during buyer inspections.</p>
+          <p>Optional but often worth it. Identifying issues before listing means you negotiate from strength — not scrambling when a buyer's inspector finds something first.</p>
         </div>
         <div class="detail-card">
           <h4>Vendor Coordination</h4>
-          <p>Need repairs, cleaning, or touch-ups? I coordinate trusted local contractors to get work done quickly and correctly — without you managing the logistics.</p>
+          <p>Repairs, cleaning, touch-ups — I connect you with trusted Grand Junction contractors who deliver quality work on a listing timeline, without you managing the logistics.</p>
         </div>
       </div>
     </div>
@@ -815,19 +860,19 @@
         <div class="service-icon"><i data-lucide="message-square"></i></div>
         <h2>Clear <em>Communication</em></h2>
         <p>
-          You'll never wonder what's happening with your home. I keep you informed
-          at every step — with weekly updates, honest showing feedback, and direct
-          answers whenever you need them.
+          You'll never be left wondering. Every stage of your sale comes with
+          clear direction, honest showing feedback, and direct communication —
+          without you having to chase it.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Weekly Updates</h4>
-          <p>Every week, you receive a summary of showing activity, buyer feedback, market changes, and recommended next steps. No silence. No chasing me down.</p>
+          <p>Every week: showing activity, buyer feedback, Mesa County market changes, and a clear next step. No silence. No guessing. No chasing me down.</p>
         </div>
         <div class="detail-card">
           <h4>Honest Showing Feedback</h4>
-          <p>After showings, I share what buyers actually said — the good and the bad. If there's an issue, we address it. If pricing needs adjustment, I'll tell you directly.</p>
+          <p>After every showing, I share what buyers actually said — the good and the critical. If something needs to change, I tell you directly and we course-correct early.</p>
         </div>
         <div class="detail-card">
           <h4>Direct Access</h4>
@@ -843,15 +888,15 @@
         <div class="service-icon"><i data-lucide="handshake"></i></div>
         <h2>Negotiation &amp; <em>Closing</em></h2>
         <p>
-          Getting an offer is one thing. Getting to closing — on your terms — is another.
-          I manage every detail from offer through keys, so nothing falls through
-          and there are no surprises at the closing table.
+          Receiving an offer is one step. Closing on your terms is the goal.
+          I manage every detail from offer through keys so nothing falls through
+          and there are no surprises at the table.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Buyer Qualification</h4>
-          <p>Before presenting an offer, I verify buyer financing and review their track record. No wasting time on weak offers that won't make it to the finish line.</p>
+          <p>Before presenting any offer, I verify buyer financing and assess their track record. No wasted time on offers that won't survive the route to closing.</p>
         </div>
         <div class="detail-card">
           <h4>Contract Review</h4>
@@ -875,24 +920,24 @@
     <div class="investment-header reveal">
       <div class="section-label centered"><span>Transparency</span></div>
       <h2>What You Pay For</h2>
-      <p>No hidden fees. No surprise charges. Everything spelled out before you sign anything.</p>
+      <p>No hidden fees. No surprise charges. Every cost mapped out clearly before you commit to anything.</p>
     </div>
 
     <div class="fee-grid">
       <div class="fee-card reveal" style="transition-delay:0.05s">
         <div class="fee-icon"><i data-lucide="percent"></i></div>
         <h4>Commission Structure</h4>
-        <p>Standard commission rates apply. I'll explain the full breakdown clearly during our initial consultation — before you make any decision.</p>
+        <p>Standard rates apply. I walk through the full breakdown during our first conversation — before you make any commitment.</p>
       </div>
       <div class="fee-card reveal" style="transition-delay:0.13s">
         <div class="fee-icon"><i data-lucide="camera"></i></div>
         <h4>Marketing Costs</h4>
-        <p>Professional photography, video, and advertising are paid upfront by me. You don't pay extra for quality marketing — it's part of the service.</p>
+        <p>Professional photography, video, and digital advertising are covered upfront. Quality marketing is part of the route — not an add-on you pay extra for.</p>
       </div>
       <div class="fee-card reveal" style="transition-delay:0.21s">
         <div class="fee-icon"><i data-lucide="shield-check"></i></div>
         <h4>No Hidden Fees</h4>
-        <p>No transaction fees, no admin charges, no upsells. Everything included in the service is covered. What I quote is what you pay.</p>
+        <p>No transaction fees, no admin charges, no upsells. What I quote is what you pay — everything else is already on the map.</p>
       </div>
     </div>
 
@@ -901,7 +946,7 @@
         <h4>Full Transparency, In Writing</h4>
         <p>
           During our consultation, I provide a clear breakdown of all costs, commission structure, and exactly what's included —
-          everything in writing before you make a decision.
+          everything documented before you make a single decision.
         </p>
       </div>
       <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
@@ -916,10 +961,10 @@
       <div class="section-label centered"><span>Ready to Start?</span></div>
       <h2>Let's Discuss Your <em>Home Sale</em></h2>
       <p>
-        Schedule a consultation to walk through your home, review pricing strategy,
-        and create a clear plan for your sale.
+        Schedule a consultation — we'll review your Mesa County market position,
+        walk through a pricing strategy, and map out a clear route to closing day.
       </p>
-      <a href="contact.html" class="btn btn-primary">Get Started</a>
+      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
     </div>
   </div>
 </section>
@@ -930,7 +975,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Clear communication. Honest feedback.<br>Results you can trust.</p>
+        <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
         <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
       <div class="footer-links">
@@ -947,7 +992,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#85eaf7eceaebabe9eaf3e0abe6eac5e2e8e4ece9abe6eae8"><span class="__cf_email__" data-cfemail="bcd3ced5d3d292d0d3cad992dfd3fcdbd1ddd5d092dfd3d1">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -961,13 +1006,46 @@
 <script>
   if (window.lucide) lucide.createIcons();
 
-  // Sticky nav
+  // Mobile menu
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   const header = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
