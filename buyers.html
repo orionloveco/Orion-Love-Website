@@ -1,156 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homes for Sale in Grand Junction, CO | Orion Love</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Scripts -->
-  <script>document.documentElement.classList.add('js');</script>
-  <script src="script.js" defer></script>
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        document.querySelectorAll('.promise-item, .service-block, .detail-item')
-          .forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-          });
-      }, 100);
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    .buyers-hero {
-      margin-top: 80px;
-      padding: 4rem 0;
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
     }
 
-    .buyers-hero h1 {
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── NAV ────────────────────────────────────── */
+    .main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    .main-header.scrolled {
+      background: rgba(12, 26, 61, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
+    }
+    .main-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .logo { text-decoration: none; }
+    .logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: 500;
       color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+      align-items: center;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
+    .btn-nav {
+      background: transparent !important;
+      border: 1px solid rgba(184,146,58,0.55) !important;
+      color: var(--gold-lt) !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      transition: background 0.22s !important;
+    }
+    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
+    .mobile-toggle { display: none; }
+
+    /* ── BUTTONS ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
+    }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.82);
+      transition: all 0.25s;
+    }
+    .btn-outline-white:hover {
+      border-color: var(--gold-lt);
+      color: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+    .btn-gold-outline {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 2.4rem;
+      border-radius: 50px;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt);
+      white-space: nowrap;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .btn-gold-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTION LABEL ──────────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.1rem;
+    }
+    .section-label::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-label span {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .section-label.centered { justify-content: center; }
+    .section-label.centered::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── DIVIDER ────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px; background: var(--sand);
+    }
+    .divider-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ── HERO ───────────────────────────────────── */
+    .buyers-hero {
+      position: relative;
+      padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
+      background: var(--navy);
+      overflow: hidden;
+      text-align: center;
+    }
+    .buyers-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
+      pointer-events: none;
+    }
+    .buyers-hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ""; height: 1px; width: 36px;
+      background: var(--gold); opacity: 0.6;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+    .buyers-hero h1 {
+      font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.25s forwards;
+    }
+    .buyers-hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .buyers-hero p {
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 54ch;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.85;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── PROMISE / USP STRIP ────────────────────── */
+    .promise-section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--white);
+    }
+    .promise-header {
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+    .promise-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      font-weight: 300;
       margin-bottom: 1rem;
     }
-
-    .buyers-intro {
-      font-size: 1.15rem;
-      max-width: 800px;
+    .promise-header .lead {
+      max-width: 56ch;
       margin: 0 auto;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .buyer-promise {
-      padding: 4rem 0;
-      background: var(--off-white);
-    }
-
-    .promise-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.85;
     }
 
     .promise-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-      text-align: left;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
-
-    .promise-item {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      border-top: 3px solid var(--accent);
+    .promise-card {
+      position: relative;
+      padding: 2.25rem 2rem;
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
     }
-
-    .buyers-main {
-      padding: 5rem 0;
+    .promise-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-
-    .service-block {
-      margin-bottom: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid var(--light-gray);
+    .promise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.22);
     }
-
-    .service-block:last-child {
-      border-bottom: none;
-    }
-
-    .service-header {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
-    .service-icon-large {
-      width: 80px;
-      height: 80px;
-      background: var(--accent);
-      color: var(--white);
-      border-radius: 50%;
+    .promise-card:hover::before { opacity: 1; }
+    .promise-icon {
+      width: 48px; height: 48px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      flex-shrink: 0;
+      margin-bottom: 1.4rem;
+      transition: background 0.25s;
+    }
+    .promise-card:hover .promise-icon { background: rgba(184,146,58,0.18); }
+    .promise-icon svg { width: 22px; height: 22px; stroke: var(--gold); }
+    .promise-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .promise-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
     }
 
-    .service-header-text p {
-      color: var(--gray);
-      font-size: 1.05rem;
-      line-height: 1.7;
+    /* ── SERVICE BLOCKS ─────────────────────────── */
+    .buyers-main {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--cream);
+    }
+
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      padding: clamp(3.5rem, 6vw, 5rem) 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .service-block:first-child { padding-top: 0; }
+    .service-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .service-block:nth-child(even) .service-meta { order: 2; }
+    .service-block:nth-child(even) .service-details { order: 1; }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+    }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--gold); }
+
+    .service-meta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .service-meta h2 em { font-style: italic; color: var(--gold); }
+    .service-meta > p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.9;
     }
 
     .service-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .detail-card {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      padding: 1.6rem 1.75rem;
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      position: relative;
+      overflow: hidden;
+    }
+    .detail-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.28s;
+    }
+    .detail-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.2);
+    }
+    .detail-card:hover::before { opacity: 1; }
+    .detail-card h4 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+    .detail-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    /* ── COMPENSATION CALLOUT ───────────────────── */
+    .compensation-band {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+    }
+    .compensation-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .compensation-inner {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    .compensation-copy h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--white);
+      font-weight: 300;
+      margin-bottom: 0.65rem;
+    }
+    .compensation-copy h3 em { font-style: italic; color: var(--gold-lt); }
+    .compensation-copy p {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      max-width: 58ch;
     }
 
-    .detail-item {
-      background: var(--off-white);
-      padding: 2rem;
-      border-left: 3px solid var(--accent);
+    /* ── CTA ────────────────────────────────────── */
+    .cta-band {
+      background: var(--cream);
+      border-top: 1px solid var(--sand);
+      padding: clamp(4rem, 7vw, 6rem) 0;
+      text-align: center;
     }
-
-    .detail-item h4 {
-      color: var(--primary);
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-inner h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--navy);
+      font-weight: 300;
       margin-bottom: 1rem;
     }
-
-    .detail-item p {
-      color: var(--gray);
-      line-height: 1.7;
-      font-size: 0.95rem;
+    .cta-inner h2 em { font-style: italic; color: var(--gold); }
+    .cta-inner p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+      max-width: 52ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    @media (max-width: 768px) {
-      .service-header {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+    /* ── FOOTER ─────────────────────────────────── */
+    .main-footer {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(184,146,58,0.15);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo-footer {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; }
+    .footer-links h4, .footer-contact h4 {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a {
+      text-decoration: none; color: rgba(255,255,255,0.52);
+      font-size: 0.9rem; transition: color 0.2s;
+    }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center; }
 
-      .service-icon-large {
-        margin: 0 auto;
-      }
+    /* ── ANIMATIONS ─────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
 
-      .service-details {
-        grid-template-columns: 1fr;
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 980px) {
+      .promise-grid { grid-template-columns: 1fr; }
+      .service-block { grid-template-columns: 1fr; gap: 2.5rem; }
+      .service-block:nth-child(even) .service-meta { order: 0; }
+      .service-block:nth-child(even) .service-details { order: 0; }
+      .compensation-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 700px) {
+      .promise-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-menu { display: none; }
+      .mobile-toggle {
+        display: flex; flex-direction: column; gap: 5px;
+        background: none; border: none; cursor: pointer; padding: 6px;
+      }
+      .mobile-toggle span {
+        display: block; width: 24px; height: 1.5px;
+        background: var(--white); border-radius: 2px;
       }
     }
   </style>
@@ -158,8 +611,9 @@
 
 <body>
 
-<header class="main-header">
-  <nav class="container">
+<!-- NAV -->
+<header class="main-header" id="mainHeader">
+  <nav>
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
@@ -177,189 +631,222 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="buyers-hero">
   <div class="container">
-    <h1>Buy a Home in Grand Junction With a Clear Plan</h1>
-    <p class="buyers-intro">
-      Local guidance, realistic pricing insight, and strong negotiation — so you don’t overpay or miss the right opportunity.
+    <div class="hero-eyebrow"><span>Buyer Services</span></div>
+    <h1>Buy with a <em>Clear Plan.</em></h1>
+    <p>
+      Local guidance, realistic pricing insight, and strong negotiation —
+      so you don't overpay, don't rush, and don't miss the right opportunity.
     </p>
+    <div class="hero-cta">
+      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+      <a href="#services" class="btn-outline-white">See What's Included</a>
+    </div>
   </div>
 </section>
 
-<section class="buyer-promise">
+<!-- PROMISE -->
+<section class="promise-section">
   <div class="container">
-    <div class="section-header centered">
-      <h2>What You Get When You Work With Me</h2>
-      <p class="section-intro">
-        Buying in Grand Junction requires local context. I help you understand what’s worth pursuing, what’s overpriced, and how to win without rushing.
+    <div class="promise-header reveal">
+      <div class="section-label centered"><span>What You Get</span></div>
+      <h2>Buying in Grand Junction<br>Requires Local Context</h2>
+      <p class="lead">
+        I help you understand what's worth pursuing, what's overpriced, and how to
+        win without rushing — from your first showing to the day you get the keys.
       </p>
     </div>
 
-    <div class="usp-grid">
-      <div class="usp-card">
-        <div class="usp-icon">🤝</div>
+    <div class="promise-grid">
+      <div class="promise-card reveal" style="transition-delay:0.05s">
+        <div class="promise-icon"><i data-lucide="handshake"></i></div>
         <h3>Exclusive Buyer Representation</h3>
-        <p>I work for you — not the seller — providing honest advice on price, condition, and resale potential.</p>
+        <p>I work for you — not the seller. Honest advice on price, condition, and long-term resale potential, without any divided loyalty.</p>
       </div>
 
-      <div class="usp-card">
-        <div class="usp-icon">🏡</div>
+      <div class="promise-card reveal" style="transition-delay:0.14s">
+        <div class="promise-icon"><i data-lucide="map"></i></div>
         <h3>Full Market Access</h3>
-        <p>From Redlands to Fruita and Palisade, you’ll see every option — including new listings and off-market opportunities when available.</p>
+        <p>From the Redlands to Fruita and Palisade, you'll see every option — including new listings and off-market opportunities when they're available.</p>
       </div>
 
-      <div class="usp-card">
-        <div class="usp-icon">💵</div>
-        <h3>Compensation</h3>
-        <p>Buyer representation is typically compensated through the transaction as outlined in the purchase contract. I’ll explain how compensation works upfront so there are no surprises.</p>
+      <div class="promise-card reveal" style="transition-delay:0.23s">
+        <div class="promise-icon"><i data-lucide="info"></i></div>
+        <h3>Transparent Compensation</h3>
+        <p>Buyer representation is typically covered through the transaction. I'll explain exactly how compensation works upfront — no guesswork, no surprises.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="buyers-main">
+<div class="divider"><div class="divider-diamond"></div></div>
+
+<!-- SERVICE BLOCKS -->
+<section class="buyers-main" id="services">
   <div class="container">
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">🔍</div>
-        <div class="service-header-text">
-          <h2>Property Search & Access</h2>
-          <p>Homes that fit your budget and make sense in today’s Grand Junction market.</p>
-        </div>
+    <!-- 1. Property Search -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>01</span></div>
+        <div class="service-icon"><i data-lucide="search"></i></div>
+        <h2>Property Search <em>&amp; Access</em></h2>
+        <p>
+          Homes that fit your budget and make genuine sense in today's Grand Junction market.
+          Not a filtered algorithm — a real person tracking what's available and what's worth your time.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>MLS Search</h4>
-          <p>Real-time alerts for Mesa County listings, price reductions, and new opportunities.</p>
+          <p>Real-time alerts for Mesa County listings, price reductions, and new opportunities the moment they hit the market.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Efficient Showings</h4>
-          <p>Back-to-back tours so you can compare homes and make confident decisions.</p>
+          <p>Back-to-back tours so you can compare homes side by side and make confident decisions without decision fatigue.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Off-Market Opportunities</h4>
-          <p>Access to local agent networks when homes are available before going public.</p>
+          <p>Access to local agent networks when homes are available before they go public — giving you a head start on the right property.</p>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">📊</div>
-        <div class="service-header-text">
-          <h2>Market Analysis & Valuation</h2>
-          <p>Understanding real value — not national averages.</p>
-        </div>
+    <!-- 2. Market Analysis -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>02</span></div>
+        <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h2>Market Analysis <em>&amp; Valuation</em></h2>
+        <p>
+          Understanding real value in Grand Junction — not national averages, not automated
+          estimates. Neighborhood-level data so you know exactly what you're walking into.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Comparative Market Analysis</h4>
-          <p>Recent sales, active listings, and buyer behavior broken down by neighborhood.</p>
+          <p>Recent sales, active listings, and buyer behavior broken down by neighborhood so you can offer with clarity, not anxiety.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Neighborhood Insight</h4>
-          <p>HOAs, irrigation, taxes, school zones, and long-term livability factors.</p>
+          <p>HOAs, irrigation rights, property taxes, school zones, and long-term livability factors that don't show up in listing photos.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Current Market Conditions</h4>
-          <p>Inventory levels, days on market, and strategy guidance based on today’s conditions.</p>
+          <p>Inventory levels, days on market, and strategy guidance based on what's actually happening — not national trends.</p>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">✍️</div>
-        <div class="service-header-text">
-          <h2>Offer Strategy & Negotiation</h2>
-          <p>Winning offers without unnecessary risk.</p>
-        </div>
+    <!-- 3. Offer Strategy -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>03</span></div>
+        <div class="service-icon"><i data-lucide="pen-line"></i></div>
+        <h2>Offer Strategy <em>&amp; Negotiation</em></h2>
+        <p>
+          Winning offers without unnecessary risk. I structure offers that are competitive
+          and clean — protecting you without overexposing you to appraisal gaps or
+          waived contingencies you'll regret.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Clean Contracts</h4>
-          <p>Well-structured offers that reduce friction and protect you.</p>
+          <p>Well-structured offers that reduce friction for sellers while keeping your protections firmly in place.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Strategic Terms</h4>
-          <p>Guidance on price, contingencies, appraisal risk, and timing.</p>
+          <p>Guidance on price, contingencies, appraisal risk, and timing so every term in the contract works in your favor.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Negotiation</h4>
-          <p>Focused on protecting your bottom line during inspections and appraisal.</p>
+          <p>Focused on protecting your bottom line through inspections, appraisal, and any curveballs between offer and closing.</p>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">🏠</div>
-        <div class="service-header-text">
-          <h2>Due Diligence</h2>
-          <p>Where good representation saves you money.</p>
-        </div>
+    <!-- 4. Due Diligence -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>04</span></div>
+        <div class="service-icon"><i data-lucide="shield-check"></i></div>
+        <h2>Due <em>Diligence</em></h2>
+        <p>
+          This is where good representation saves you real money. I help you know what
+          to push on, what's normal wear, and when to walk away — before you're locked in.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Trusted Inspectors</h4>
-          <p>Local professionals familiar with common Grand Junction issues.</p>
+          <p>Local professionals who know the common issues in Grand Junction homes — older irrigation, adobe soil, flat roofs — and won't miss them.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Inspection Strategy</h4>
-          <p>Clear guidance on what to negotiate and what’s normal.</p>
+          <p>Clear guidance on what's worth negotiating, what's cosmetic, and what's a legitimate reason to rethink the deal.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Appraisal Support</h4>
-          <p>Strategy and renegotiation help if values come in low.</p>
+          <p>Strategy and renegotiation guidance if values come in low — so a low appraisal doesn't automatically blow up the deal.</p>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">💰</div>
-        <div class="service-header-text">
-          <h2>Financing Coordination</h2>
-          <p>Keeping your deal on track.</p>
-        </div>
+    <!-- 5. Financing -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>05</span></div>
+        <div class="service-icon"><i data-lucide="landmark"></i></div>
+        <h2>Financing <em>Coordination</em></h2>
+        <p>
+          Keeping your deal on track means keeping your lender on track. I work with
+          local lenders I trust and manage the timeline so financing issues don't cost you
+          the home.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
-          <h4>Local Lenders</h4>
-          <p>Connections to reliable lenders who close on time.</p>
+        <div class="detail-card">
+          <h4>Local Lender Connections</h4>
+          <p>Referrals to reliable local lenders who know the Grand Junction market and close on time — no last-minute delays.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Financing Guidance</h4>
-          <p>Clear explanations of loan types, down payments, and costs.</p>
+          <p>Clear explanations of loan types, down payment options, and true closing costs so you're not surprised at the table.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Timeline Management</h4>
-          <p>Coordination between lender deadlines and contract dates.</p>
+          <p>Coordination between lender deadlines and contract dates so nothing slips through and you don't lose the earnest money.</p>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
-      <div class="service-header">
-        <div class="service-icon-large">✅</div>
-        <div class="service-header-text">
-          <h2>Closing & Beyond</h2>
-          <p>Support through closing — and after.</p>
-        </div>
+    <!-- 6. Closing -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>06</span></div>
+        <div class="service-icon"><i data-lucide="key"></i></div>
+        <h2>Closing <em>&amp; Beyond</em></h2>
+        <p>
+          I stay involved through the final walkthrough, closing table, and the first weeks
+          after you have the keys — so you have a trusted resource when questions come up.
+        </p>
       </div>
       <div class="service-details">
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Final Walkthrough</h4>
-          <p>Verifying condition and completed repairs before closing.</p>
+          <p>Verifying condition and that agreed-upon repairs are complete before you sign anything at the closing table.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Closing Prep</h4>
-          <p>Reviewing documents so there are no surprises.</p>
+          <p>Reviewing documents with you ahead of time so nothing is a surprise — and you understand exactly what you're signing.</p>
         </div>
-        <div class="detail-item">
+        <div class="detail-card">
           <h4>Post-Closing Support</h4>
-          <p>Utilities, contractor referrals, and local resources.</p>
+          <p>Utility setup, contractor referrals, and local resources so the transition into your new home is as smooth as possible.</p>
         </div>
       </div>
     </div>
@@ -367,25 +854,48 @@
   </div>
 </section>
 
-<section class="cta-banner">
+<!-- COMPENSATION CALLOUT -->
+<section class="compensation-band">
   <div class="container">
-    <div class="cta-content">
-      <h2>Ready to Buy in Grand Junction?</h2>
-      <p>Let’s build a plan that fits your goals and this market.</p>
-      <a href="contact.html" class="btn btn-primary-light">Schedule a Consultation</a>
+    <div class="compensation-inner reveal">
+      <div class="compensation-copy">
+        <div class="section-label"><span>Compensation</span></div>
+        <h3>How Buyer Representation <em>Works</em></h3>
+        <p>
+          Buyer agent compensation is typically covered through the transaction as outlined in the purchase contract.
+          Before we tour a single home, I'll walk you through exactly how it works — in plain language, with everything in writing.
+          No surprises. No ambiguity.
+        </p>
+      </div>
+      <a href="contact.html" class="btn-gold-outline">Let's Talk</a>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-label centered"><span>Ready to Start?</span></div>
+      <h2>Ready to Buy in <em>Grand Junction?</em></h2>
+      <p>
+        Let's build a plan that fits your goals and makes sense in this market —
+        before you spend a single weekend touring homes.
+      </p>
+      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="main-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Clear communication. Honest feedback. Results you can trust.</p>
-        <p class="footer-location">Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+        <p>Clear communication. Honest feedback.<br>Results you can trust.</p>
+        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
-
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
@@ -397,7 +907,6 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
@@ -406,12 +915,31 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
