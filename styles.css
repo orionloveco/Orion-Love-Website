@@ -2,8 +2,8 @@
    Orion Love Brand Styles (Luxury + Stable)
    - No color-mix()
    - No conflicting hero systems
-   - Photo hero + elegant overlays
-   - Consistent spacing + premium cards/buttons
+   - Photo hero + elegant overlays (Luxury Hero Trick INCLUDED)
+   - Premium cards/buttons (Luxury Card Trick INCLUDED)
 ========================================================= */
 
 /* =========================
@@ -48,7 +48,6 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-
 a { color: inherit; }
 
 .container {
@@ -88,9 +87,7 @@ p { color: var(--text); }
 section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
 
 .section-header { margin-bottom: 2rem; }
-
 .section-header.centered { text-align: center; }
-
 .section-header h2 { margin-bottom: 0.35rem; }
 
 .section-intro {
@@ -99,7 +96,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   margin-top: 0.6rem;
   max-width: 62ch;
 }
-
 .section-header.centered .section-intro {
   margin-left: auto;
   margin-right: auto;
@@ -176,11 +172,8 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   background: var(--accent);
   transition: width 0.25s ease;
 }
-
 .nav-menu a:not(.btn-nav):hover::after,
-.nav-menu a.active::after {
-  width: 100%;
-}
+.nav-menu a.active::after { width: 100%; }
 
 .btn-nav {
   border: 1px solid var(--sand);
@@ -204,7 +197,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   border: none;
   cursor: pointer;
 }
-
 .mobile-toggle span {
   width: 26px;
   height: 2px;
@@ -230,7 +222,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
   will-change: transform;
 }
-
 .btn:hover { transform: translateY(-1px); }
 
 .btn-primary {
@@ -294,9 +285,11 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   inset: 0;
   z-index: 0;
   pointer-events: none;
+
+  /* ✅ Luxury Hero Lighting Trick (4 lines) */
   background:
-    radial-gradient(900px 420px at 20% 15%, rgba(184, 150, 58, 0.10), transparent 60%),
-    linear-gradient(180deg, rgba(2,12,69,0.25), rgba(2,12,69,0.10), rgba(2,12,69,0.35));
+    radial-gradient(900px 450px at 50% -20%, rgba(184,150,58,0.25), transparent 60%),
+    linear-gradient(rgba(2,12,69,0.75), rgba(2,12,69,0.75));
 }
 
 .hero-content {
@@ -310,6 +303,9 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   color: var(--white);
   margin-bottom: 1rem;
   line-height: 1.05;
+
+  /* ✅ Optional hero polish */
+  letter-spacing: 0.03em;
 }
 
 .hero-subtitle {
@@ -360,6 +356,7 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
+/* Soft gold glow you already had */
 .usp-card::before {
   content: "";
   position: absolute;
@@ -369,31 +366,45 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   pointer-events: none;
 }
 
+/* ✅ Luxury Card Trick (6 lines) */
+.usp-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(600px 200px at 50% -40%, rgba(184,150,58,0.18), transparent 70%);
+  pointer-events: none;
+}
+
 .usp-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+  /* ✅ Optional upgraded hover (premium lift) */
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2,12,69,0.12);
   border-color: rgba(184,150,58,0.22);
 }
 
-.usp-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  margin: 0 auto 0.9rem;
-  border: 1px solid rgba(184,150,58,0.40);
-  background: radial-gradient(circle at 30% 25%, rgba(184,150,58,0.22), rgba(244,241,232,0.55));
-  box-shadow: 0 10px 18px rgba(184, 150, 58, 0.10);
+/* Lucide icon badge */
+.usp-icon{
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(184,150,58,0.35);
+  background: rgba(184,150,58,0.08);
 }
 
-/* If you still use emoji icons in HTML, keep them looking ok */
-.usp-icon:not(:empty) {
-  width: auto;
-  height: auto;
-  border: none;
-  background: none;
-  box-shadow: none;
-  font-size: 2.25rem;
-  margin-bottom: 0.9rem;
+.usp-icon svg{
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+  stroke-width: 1.8; /* ✅ Optional icon weight polish */
+}
+
+.usp-card:hover .usp-icon{
+  background: rgba(184,150,58,0.14);
+  border-color: rgba(184,150,58,0.55);
 }
 
 .usp-card h3 {
@@ -446,7 +457,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   border-top: 1px solid var(--sand);
   border-bottom: 1px solid var(--sand);
 }
-
 .buyers-cta .cta-content h2 { color: var(--primary); }
 .buyers-cta .cta-content p { color: rgba(14, 21, 48, 0.75); }
 
@@ -525,7 +535,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   line-height: 1.7;
   margin-bottom: 0.75rem;
 }
-
 .footer-location { font-weight: 600; }
 
 .footer-links h4,
@@ -548,7 +557,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   text-decoration: none;
   transition: color 0.25s ease;
 }
-
 .footer-links a:hover,
 .footer-contact a:hover { color: rgba(184,150,58,0.95); }
 
@@ -578,7 +586,6 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   font-style: italic;
   margin: 0;
 }
-
 .consent-text-only a {
   color: var(--primary);
   text-decoration: underline;
@@ -606,12 +613,19 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   height: 56px;
   display: grid;
   place-items: center;
-  font-size: 1.75rem;
   margin: 0 !important;
   border-radius: 14px;
   background: rgba(255,255,255,0.85);
   border: 1px solid rgba(230, 224, 211, 0.9);
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Ensure lucide icons also render nicely in how-work-list */
+.how-work-list .usp-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+  stroke-width: 1.8;
 }
 
 .how-work-list .usp-card p { max-width: 720px; }
@@ -621,13 +635,11 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
 ========================= */
 .reveal { opacity: 1; transform: none; }
 
-/* Only hide before reveal when JS is present */
 .js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -670,59 +682,17 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
     transition: left 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
-
   .nav-menu.active { left: 0; }
   .mobile-toggle { display: flex; }
 
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
-  }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 360px; }
 
-  .hero-cta .btn {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
 }
 
 @media (max-width: 640px) {
   .process-steps { grid-template-columns: 1fr; }
   .usp-grid { grid-template-columns: 1fr; }
-}
-
-.usp-icon{
-  width:48px;
-  height:48px;
-  margin:0 auto 1rem;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-  border:1px solid rgba(184,150,58,0.35);
-  background:rgba(184,150,58,0.08);
-}
-
-.usp-icon svg{
-  width:22px;
-  height:22px;
-  stroke:var(--primary);
-  stroke-width:1.8;
-}
-
-.usp-card:hover .usp-icon{
-  background:rgba(184,150,58,0.14);
-  border-color:rgba(184,150,58,0.55);
 }
