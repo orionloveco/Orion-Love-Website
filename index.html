@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Orion Love - Grand Junction Real Estate Expert</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">  <!-- Styles -->
-  
-  <link rel="stylesheet" href="styles.css">
+  <!-- Fonts (single combined request) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- Scripts -->
   <script>document.documentElement.classList.add('js');</script>
   <script src="script.js" defer></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Safety: force any reveal/opacity issues visible -->
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
@@ -27,7 +32,6 @@
       }, 100);
     });
   </script>
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -37,6 +41,7 @@
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
+
     <ul class="nav-menu">
       <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="services.html">Sellers</a></li>
@@ -45,6 +50,7 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
+
     <button class="mobile-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -58,10 +64,12 @@
     <p class="hero-subtitle">
       Local market knowledge, honest communication, and a proven process — so you always know where you stand.
     </p>
+
     <div class="hero-cta">
       <a href="contact.html" class="btn btn-primary">Get a Local Home Value</a>
       <a href="buyers.html" class="btn btn-primary">Buying a Home?</a>
     </div>
+
     <p class="hero-trust">
       Serving Grand Junction, Fruita, Palisade, and Western Colorado
     </p>
@@ -79,35 +87,43 @@
 
     <div class="usp-grid">
       <div class="usp-card">
-        <div class="usp-icon">
-  <i data-lucide="map-pin"></i>
-</div>
+        <div class="usp-icon" aria-hidden="true">
+          <i data-lucide="map-pin"></i>
+        </div>
         <h3>Local Market Knowledge That Matters</h3>
-        <p>I analyze recent Mesa County sales and tour competing homes with you, so pricing is based on what buyers are actually choosing.</p>
+        <p>
+          I analyze recent Mesa County sales and tour competing homes with you, so pricing is based on what buyers are actually choosing.
+        </p>
       </div>
 
       <div class="usp-card">
-        <div class="usp-icon">
-  <i data-lucide="bar-chart-3"></i>
-</div>
+        <div class="usp-icon" aria-hidden="true">
+          <i data-lucide="bar-chart-3"></i>
+        </div>
         <h3>Pricing Backed by Real Data</h3>
-        <p>I use real sales data, buyer behavior, and local feedback — not automated estimates — to guide pricing decisions.</p>
+        <p>
+          I use real sales data, buyer behavior, and local feedback — not automated estimates — to guide pricing decisions.
+        </p>
       </div>
 
       <div class="usp-card">
-        <div class="usp-icon">
-  <i data-lucide="message-square"></i>
-</div>
+        <div class="usp-icon" aria-hidden="true">
+          <i data-lucide="message-square"></i>
+        </div>
         <h3>Clear, Consistent Communication</h3>
-        <p>Weekly updates, honest showing feedback, and direct answers — so you’re never left wondering what’s next.</p>
+        <p>
+          Weekly updates, honest showing feedback, and direct answers — so you’re never left wondering what’s next.
+        </p>
       </div>
 
       <div class="usp-card">
-        <div class="usp-icon">
-  <i data-lucide="target"></i>
-</div>
+        <div class="usp-icon" aria-hidden="true">
+          <i data-lucide="target"></i>
+        </div>
         <h3>Preparation Before the Listing Goes Live</h3>
-        <p>Strategic prep, professional photography, and guidance on what actually impacts value — not unnecessary fixes.</p>
+        <p>
+          Strategic prep, professional photography, and guidance on what actually impacts value — not unnecessary fixes.
+        </p>
       </div>
     </div>
 
@@ -211,6 +227,11 @@
     </div>
   </div>
 </footer>
+
+<!-- IMPORTANT: this is what you were missing -->
+<script>
+  if (window.lucide) lucide.createIcons();
+</script>
 
 </body>
 </html>
