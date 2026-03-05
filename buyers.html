@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homes for Sale in Grand Junction, CO | Orion Love</title>
+  <title>Buy a Home in Grand Junction, CO | Navigate the Market | Orion Love</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -595,15 +595,60 @@
     @media (max-width: 700px) {
       .promise-grid { grid-template-columns: 1fr; }
     }
+    
+
+    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
     @media (max-width: 640px) {
-      .nav-menu { display: none; }
-      .mobile-toggle {
-        display: flex; flex-direction: column; gap: 5px;
-        background: none; border: none; cursor: pointer; padding: 6px;
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12, 26, 61, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .nav-menu li { list-style: none; }
+      .nav-menu a {
+        font-size: 1.4rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+      }
+      .mobile-toggle { z-index: 100; }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0; transform: scaleX(0);
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
       }
       .mobile-toggle span {
-        display: block; width: 24px; height: 1.5px;
-        background: var(--white); border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
       }
     }
   </style>
@@ -634,15 +679,15 @@
 <!-- HERO -->
 <section class="buyers-hero">
   <div class="container">
-    <div class="hero-eyebrow"><span>Buyer Services</span></div>
-    <h1>Buy with a <em>Clear Plan.</em></h1>
+    <div class="hero-eyebrow"><span>Buyer Services · Grand Junction</span></div>
+    <h1>Buy with a<br><em>Clear Plan.</em></h1>
     <p>
-      Local guidance, realistic pricing insight, and strong negotiation —
-      so you don't overpay, don't rush, and don't miss the right opportunity.
+      Buying in Grand Junction rewards preparation and local knowledge.
+      I provide the market insight, honest guidance, and clear strategy to get you there.
     </p>
     <div class="hero-cta">
       <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
-      <a href="#services" class="btn-outline-white">See What's Included</a>
+      <a href="#services" class="btn-outline-white">See the Buyer's Path</a>
     </div>
   </div>
 </section>
@@ -651,11 +696,11 @@
 <section class="promise-section">
   <div class="container">
     <div class="promise-header reveal">
-      <div class="section-label centered"><span>What You Get</span></div>
-      <h2>Buying in Grand Junction<br>Requires Local Context</h2>
+      <div class="section-label centered"><span>Why Sellers Choose Orion</span></div>
+      <h2>The Grand Junction Market<br>Rewards <em>Local Knowledge</em></h2>
       <p class="lead">
-        I help you understand what's worth pursuing, what's overpriced, and how to
-        win without rushing — from your first showing to the day you get the keys.
+        From the Redlands to Fruita, Palisade to Orchard Mesa — every neighborhood has its own
+        rhythm, pricing patterns, and considerations. I help you read them clearly and move with confidence.
       </p>
     </div>
 
@@ -663,19 +708,19 @@
       <div class="promise-card reveal" style="transition-delay:0.05s">
         <div class="promise-icon"><i data-lucide="handshake"></i></div>
         <h3>Exclusive Buyer Representation</h3>
-        <p>I work for you — not the seller. Honest advice on price, condition, and long-term resale potential, without any divided loyalty.</p>
+        <p>I work for you — not the seller. Honest guidance on price, condition, resale potential, and what the market really looks like in your target Mesa County neighborhoods.</p>
       </div>
 
       <div class="promise-card reveal" style="transition-delay:0.14s">
         <div class="promise-icon"><i data-lucide="map"></i></div>
         <h3>Full Market Access</h3>
-        <p>From the Redlands to Fruita and Palisade, you'll see every option — including new listings and off-market opportunities when they're available.</p>
+        <p>Grand Junction, Fruita, Palisade, Clifton, Orchard Mesa — you'll see every option across Mesa County, including new listings and off-market opportunities when they surface.</p>
       </div>
 
       <div class="promise-card reveal" style="transition-delay:0.23s">
         <div class="promise-icon"><i data-lucide="info"></i></div>
         <h3>Transparent Compensation</h3>
-        <p>Buyer representation is typically covered through the transaction. I'll explain exactly how compensation works upfront — no guesswork, no surprises.</p>
+        <p>Buyer representation is typically covered through the transaction. I explain exactly how compensation works before we tour a single home — no ambiguity, no surprises.</p>
       </div>
     </div>
   </div>
@@ -694,14 +739,14 @@
         <div class="service-icon"><i data-lucide="search"></i></div>
         <h2>Property Search <em>&amp; Access</em></h2>
         <p>
-          Homes that fit your budget and make genuine sense in today's Grand Junction market.
-          Not a filtered algorithm — a real person tracking what's available and what's worth your time.
+          Homes that fit your goals and make genuine sense in today's Mesa County market.
+          Not a filtered algorithm — a local agent who knows the market and what's worth your attention.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>MLS Search</h4>
-          <p>Real-time alerts for Mesa County listings, price reductions, and new opportunities the moment they hit the market.</p>
+          <p>Real-time alerts for Mesa County listings, price reductions, and new inventory the moment it surfaces — so you never miss a promising opportunity.</p>
         </div>
         <div class="detail-card">
           <h4>Efficient Showings</h4>
@@ -721,18 +766,18 @@
         <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
         <h2>Market Analysis <em>&amp; Valuation</em></h2>
         <p>
-          Understanding real value in Grand Junction — not national averages, not automated
-          estimates. Neighborhood-level data so you know exactly what you're walking into.
+          Real value in Grand Junction is neighborhood-specific. What's true in the Redlands
+          isn't true in Clifton. I give you the local data to navigate clearly, not national averages.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Comparative Market Analysis</h4>
-          <p>Recent sales, active listings, and buyer behavior broken down by neighborhood so you can offer with clarity, not anxiety.</p>
+          <p>Recent closings, active competition, and buyer patterns broken down by Grand Junction neighborhood — so every offer you make is grounded, not guessed.</p>
         </div>
         <div class="detail-card">
           <h4>Neighborhood Insight</h4>
-          <p>HOAs, irrigation rights, property taxes, school zones, and long-term livability factors that don't show up in listing photos.</p>
+          <p>HOAs, irrigation water rights, property taxes, Mesa County school zones, and livability factors that listing photos never show — but matter enormously long-term.</p>
         </div>
         <div class="detail-card">
           <h4>Current Market Conditions</h4>
@@ -748,9 +793,9 @@
         <div class="service-icon"><i data-lucide="pen-line"></i></div>
         <h2>Offer Strategy <em>&amp; Negotiation</em></h2>
         <p>
-          Winning offers without unnecessary risk. I structure offers that are competitive
-          and clean — protecting you without overexposing you to appraisal gaps or
-          waived contingencies you'll regret.
+          In Mesa County, the best offer isn't always the highest — it's the one most likely
+          to navigate cleanly to closing. I structure offers that are competitive, clean,
+          and built to protect you from offer through closing.
         </p>
       </div>
       <div class="service-details">
@@ -776,14 +821,15 @@
         <div class="service-icon"><i data-lucide="shield-check"></i></div>
         <h2>Due <em>Diligence</em></h2>
         <p>
-          This is where good representation saves you real money. I help you know what
-          to push on, what's normal wear, and when to walk away — before you're locked in.
+          This is where a knowledgeable guide saves you real money. I help you understand
+          what to negotiate, what's standard in Grand Junction homes, and when the path
+          ahead isn't worth taking.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Trusted Inspectors</h4>
-          <p>Local professionals who know the common issues in Grand Junction homes — older irrigation, adobe soil, flat roofs — and won't miss them.</p>
+          <p>Inspectors who know Mesa County construction, adobe soil movement, older irrigation systems, and the issues common to Grand Junction homes at every age and price point.</p>
         </div>
         <div class="detail-card">
           <h4>Inspection Strategy</h4>
@@ -803,9 +849,9 @@
         <div class="service-icon"><i data-lucide="landmark"></i></div>
         <h2>Financing <em>Coordination</em></h2>
         <p>
-          Keeping your deal on track means keeping your lender on track. I work with
-          local lenders I trust and manage the timeline so financing issues don't cost you
-          the home.
+          Financing delays are one of the most common ways a Grand Junction purchase falls apart.
+          I work with local lenders I trust and stay on top of every timeline so the route
+          to closing stays clear.
         </p>
       </div>
       <div class="service-details">
@@ -831,8 +877,9 @@
         <div class="service-icon"><i data-lucide="key"></i></div>
         <h2>Closing <em>&amp; Beyond</em></h2>
         <p>
-          I stay involved through the final walkthrough, closing table, and the first weeks
-          after you have the keys — so you have a trusted resource when questions come up.
+          Getting to closing day is the destination — but the journey doesn't stop there.
+          I stay with you through the final walkthrough, the table, and the first weeks
+          in your new Grand Junction home.
         </p>
       </div>
       <div class="service-details">
@@ -862,12 +909,12 @@
         <div class="section-label"><span>Compensation</span></div>
         <h3>How Buyer Representation <em>Works</em></h3>
         <p>
-          Buyer agent compensation is typically covered through the transaction as outlined in the purchase contract.
-          Before we tour a single home, I'll walk you through exactly how it works — in plain language, with everything in writing.
-          No surprises. No ambiguity.
+          Buyer representation compensation is typically covered through the purchase contract.
+          Before we tour a single home in Mesa County, I walk you through exactly how it works —
+          plain language, everything in writing. The route is clear before we take a single step.
         </p>
       </div>
-      <a href="contact.html" class="btn-gold-outline">Let's Talk</a>
+      <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
     </div>
   </div>
 </section>
@@ -879,8 +926,8 @@
       <div class="section-label centered"><span>Ready to Start?</span></div>
       <h2>Ready to Buy in <em>Grand Junction?</em></h2>
       <p>
-        Let's build a plan that fits your goals and makes sense in this market —
-        before you spend a single weekend touring homes.
+        Let's map out a clear path before you spend a single weekend touring homes —
+        one grounded in Mesa County data, honest guidance, and a strategy built for you.
       </p>
       <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
     </div>
@@ -893,7 +940,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Clear communication. Honest feedback.<br>Results you can trust.</p>
+        <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
         <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
       <div class="footer-links">
@@ -910,7 +957,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#ea8598838584c486859c8fc48985aa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="b3dcc1dadcdd9ddfdcc5d69dd0dcf3d4ded2dadf9dd0dcde">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -923,6 +970,41 @@
 
 <script>
   if (window.lucide) lucide.createIcons();
+
+  // Mobile menu
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 
   const header = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => {
