@@ -472,11 +472,10 @@
 
     /* ── COMPENSATION CALLOUT ───────────────────── */
     .compensation-band {
-      /* PHOTO SLOT: replace url() with a Grand Junction neighborhood photo */
-      background-image: url("images/gj-neighborhood.jpg");
-      background-size: cover;
-      background-position: center;
-      background: var(--navy);
+      /* PHOTO SLOT */
+      background:
+        linear-gradient(rgba(8,18,50,0.80), rgba(8,18,50,0.80)),
+        url("images/gj-neighborhood.jpg") center / cover no-repeat;
       position: relative;
       overflow: hidden;
       padding: clamp(3rem, 5vw, 4.5rem) 0;
