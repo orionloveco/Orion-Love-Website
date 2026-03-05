@@ -700,3 +700,24 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   .process-steps { grid-template-columns: 1fr; }
   .usp-grid { grid-template-columns: 1fr; }
 }
+
+.usp-icon{
+  width:48px;
+  height:48px;
+  margin:0 auto 1rem;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  border:1px solid rgba(184,150,58,0.35);
+  background:rgba(184,150,58,0.08);
+}
+
+.usp-icon svg{
+  width:22px;
+  height:22px;
+  stroke:var(--primary);
+  stroke-width:1.8;
+}
