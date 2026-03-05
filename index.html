@@ -238,7 +238,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 65% 55% at 60% 45%, rgba(184,146,58,0.11), transparent 65%);
+      background: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
       pointer-events: none;
     }
     /* Bottom separator line */
@@ -753,7 +753,23 @@
         z-index: 99;
       }
       .nav-menu.active {
-        display: flex;
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgb(12, 26, 61) !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 9999 !important;
+        list-style: none;
+        margin: 0;
+        padding: 0;
       }
       .nav-menu li { list-style: none; }
       .nav-menu a {
@@ -778,7 +794,7 @@
         font-weight: 600;
         opacity: 1;
       }
-      .mobile-toggle { z-index: 100; }
+      .mobile-toggle { z-index: 10000 !important; }
       .mobile-toggle.active span:nth-child(1) {
         transform: translateY(6.5px) rotate(45deg);
       }
@@ -1019,45 +1035,92 @@
 <script>
   if (window.lucide) lucide.createIcons();
 
-  // Mobile menu
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+
   if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = navMenu.classList.toggle('active');
-      mobileToggle.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
     });
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
-    document.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('active') &&
-          !navMenu.contains(e.target) &&
-          !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
   const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
 
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
