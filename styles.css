@@ -721,3 +721,8 @@ section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
   stroke:var(--primary);
   stroke-width:1.8;
 }
+
+.usp-card:hover .usp-icon{
+  background:rgba(184,150,58,0.14);
+  border-color:rgba(184,150,58,0.55);
+}
