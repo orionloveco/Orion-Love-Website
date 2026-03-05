@@ -9,78 +9,23 @@
   --sand:    #E6E0D3;   /* Warm neutral */
   --slate:   #4A5675;   /* Muted slate */
 
-  /* System aliases (keep your existing CSS working) */
+  /* System aliases (keeps older CSS working) */
   --black: #000000;
   --white: #FFFFFF;
 
-  --gray: var(--slate);       /* replaces #606060 */
-  --light-gray: var(--sand);  /* replaces #E5E5E5 */
-  --off-white: var(--cream);  /* replaces #F8F8F8 */
-
-  /* Optional “nice to have” tokens */
-  --border: var(--sand);
-  --text: #0E1530;            /* softer than pure black */
+  --text:  #0E1530;         /* softer than pure black */
   --muted: var(--slate);
-  --shadow: 0 15px 40px rgba(2, 12, 69, 0.12);
-}
 
-/* =========================
-   Small opinionated tweaks (optional but helps the palette)
-========================= */
+  --gray: var(--slate);
+  --light-gray: var(--sand);
+  --off-white: var(--cream);
 
-/* Global text feels better slightly softer than pure black */
-body {
-  color: var(--text);
-  background: var(--cream);
-}
+  --border: var(--sand);
 
-/* Sections that were white can stay white */
-.featured-listings,
-.search-card,
-.usp-card,
-.listing-card {
-  background: var(--white);
-}
-
-/* Replace any leftover “gold” hover colors you hard-coded */
-.btn-accent:hover {
-  background: #A68433; /* darker gold hover */
-}
-
-/* Consistent primary hover (instead of #03155a) */
-.btn-primary:hover {
-  background: #03155a; /* keep if you like it */
-  /* OR try: background: #041A6B; */
-  box-shadow: 0 10px 25px rgba(2, 12, 69, 0.18);
-}
-
-/* Make borders warmer everywhere (uses your new sand token) */
-.listing-card,
-.search-input,
-.search-select,
-.btn-outline,
-.quick-links,
-.listing-details {
-  border-color: var(--border);
-}
-
-/* Your “off-white sections” now use the brand cream */
-.usp-section,
-.process-preview {
-  background: var(--off-white);
-}
-
-/* Footer: gold accent stays on-brand */
-.logo-footer,
-.footer-links a:hover,
-.footer-contact a:hover,
-.footer-bottom a:hover,
-.view-all:hover,
-.nav-menu a:not(.btn-nav)::after,
-.listing-badge,
-.step-number {
-  color: var(--accent);
-  background: var(--accent);
+  /* Shadows */
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.05);
+  --shadow-card: 0 15px 40px rgba(2, 12, 69, 0.12);
+  --shadow-hover: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -96,7 +41,7 @@ body {
   font-family: 'Raleway', sans-serif;
   color: var(--text);
   line-height: 1.6;
-  background: var(--white);
+  background: var(--cream); /* brand background */
 }
 
 .container {
@@ -170,7 +115,7 @@ section {
   top: 0;
   width: 100%;
   background: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-soft);
   z-index: 1000;
   transition: all 0.3s ease;
 }
@@ -182,9 +127,7 @@ section {
   padding: 1.25rem 2rem;
 }
 
-.logo {
-  text-decoration: none;
-}
+.logo { text-decoration: none; }
 
 .logo-main {
   font-family: 'Cinzel', serif;
@@ -238,7 +181,6 @@ section {
   border-radius: 0;
   transition: all 0.3s ease;
 }
-
 .btn-nav:hover {
   background: var(--accent);
   transform: translateY(-2px);
@@ -283,7 +225,7 @@ section {
 .btn-primary:hover {
   background: #03155a;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(2, 12, 69, 0.2);
+  box-shadow: 0 10px 25px rgba(2, 12, 69, 0.18);
 }
 
 .btn-primary-light {
@@ -310,13 +252,13 @@ section {
   font-weight: 600;
 }
 .btn-accent:hover {
-  background: #b68503;
+  background: #A68433; /* brand-consistent darker gold */
 }
 
 .btn-outline {
   background: transparent;
   color: var(--primary);
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--border);
   padding: 0.75rem 1.5rem;
   font-size: 0.9rem;
 }
@@ -358,18 +300,12 @@ section {
   z-index: 1;
 }
 
-.hero-title {
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease;
-}
-
+.hero-title { color: var(--white); margin-bottom: 1.5rem; }
 .hero-subtitle {
   font-size: 1.35rem;
   margin-bottom: 2.5rem;
   color: rgba(255,255,255,0.95);
   font-weight: 300;
-  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-cta {
@@ -377,7 +313,6 @@ section {
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease 0.4s both;
 }
 
 .hero-trust {
@@ -386,24 +321,18 @@ section {
   opacity: 0.9;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* =========================
    Hero Search
 ========================= */
 .hero-search {
   width: 100%;
   padding: 2rem 0 3rem;
-  animation: fadeInUp 0.8s ease 0.6s both;
 }
 
 .search-card {
   background: var(--white);
   padding: 2.5rem;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-card);
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -423,9 +352,10 @@ section {
 .search-input,
 .search-select {
   padding: 1rem;
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--border);
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
+  background: var(--white);
 }
 
 .search-input:focus,
@@ -441,7 +371,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   padding-top: 1rem;
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid var(--border);
 }
 
 .quick-links span {
@@ -457,16 +387,12 @@ section {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-.quick-links a:hover {
-  color: var(--accent);
-}
+.quick-links a:hover { color: var(--accent); }
 
 /* =========================
    USP Cards (Shared)
 ========================= */
-.usp-section {
-  background: var(--off-white);
-}
+.usp-section { background: var(--off-white); }
 
 .usp-grid {
   display: grid;
@@ -485,7 +411,7 @@ section {
 
 .usp-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-hover);
 }
 
 .usp-icon {
@@ -511,9 +437,7 @@ section {
 /* =========================
    Featured Listings
 ========================= */
-.featured-listings {
-  background: var(--white);
-}
+.featured-listings { background: var(--white); }
 
 .featured-listings .section-header {
   display: flex;
@@ -531,7 +455,7 @@ section {
   background: var(--white);
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--border);
 }
 
 .listing-card:hover {
@@ -552,9 +476,7 @@ section {
   transition: transform 0.5s ease;
 }
 
-.listing-card:hover .listing-image img {
-  transform: scale(1.05);
-}
+.listing-card:hover .listing-image img { transform: scale(1.05); }
 
 .listing-badge {
   position: absolute;
@@ -567,9 +489,7 @@ section {
   font-weight: 600;
 }
 
-.listing-content {
-  padding: 1.75rem;
-}
+.listing-content { padding: 1.75rem; }
 
 .listing-price {
   font-family: 'Cinzel', serif;
@@ -595,7 +515,7 @@ section {
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid var(--border);
 }
 
 .listing-details span {
@@ -619,10 +539,7 @@ section {
   margin: 0 auto;
 }
 
-.cta-content h2 {
-  color: var(--white);
-  margin-bottom: 1rem;
-}
+.cta-content h2 { color: var(--white); margin-bottom: 1rem; }
 
 .cta-content p {
   font-size: 1.15rem;
@@ -633,9 +550,7 @@ section {
 /* =========================
    Process Preview
 ========================= */
-.process-preview {
-  background: var(--off-white);
-}
+.process-preview { background: var(--off-white); }
 
 .process-steps {
   display: grid;
@@ -643,10 +558,7 @@ section {
   gap: 2.5rem;
 }
 
-.step {
-  text-align: center;
-  padding: 2rem;
-}
+.step { text-align: center; padding: 2rem; }
 
 .step-number {
   width: 70px;
@@ -663,9 +575,7 @@ section {
   margin: 0 auto 1.5rem;
 }
 
-.step h3 {
-  margin-bottom: 1rem;
-}
+.step h3 { margin-bottom: 1rem; }
 
 .step p {
   color: var(--gray);
@@ -701,9 +611,7 @@ section {
   margin-bottom: 0.75rem;
 }
 
-.footer-location {
-  font-weight: 600;
-}
+.footer-location { font-weight: 600; }
 
 .footer-links h4,
 .footer-contact h4 {
@@ -714,14 +622,10 @@ section {
 }
 
 .footer-links ul,
-.footer-contact ul {
-  list-style: none;
-}
+.footer-contact ul { list-style: none; }
 
 .footer-links li,
-.footer-contact li {
-  margin-bottom: 0.75rem;
-}
+.footer-contact li { margin-bottom: 0.75rem; }
 
 .footer-links a,
 .footer-contact a {
@@ -731,9 +635,7 @@ section {
 }
 
 .footer-links a:hover,
-.footer-contact a:hover {
-  color: var(--accent);
-}
+.footer-contact a:hover { color: var(--accent); }
 
 .footer-bottom {
   padding-top: 2rem;
@@ -749,9 +651,7 @@ section {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
 }
-.footer-bottom a:hover {
-  color: var(--accent);
-}
+.footer-bottom a:hover { color: var(--accent); }
 
 /* =========================
    Consent Text
@@ -772,14 +672,12 @@ section {
 
 /* =========================
    About Page: "How I Work" Single Column
-   (scoped, clean, non-duplicated)
 ========================= */
 .how-work-list {
   grid-template-columns: 1fr !important;
   gap: 1.75rem;
 }
 
-/* Gold-lined row layout while keeping the usp-card style */
 .how-work-list .usp-card {
   text-align: left;
   display: grid;
@@ -788,7 +686,6 @@ section {
   align-items: flex-start;
 }
 
-/* Override global icon rules only here */
 .how-work-list .usp-icon {
   width: 56px;
   height: 56px;
@@ -806,9 +703,61 @@ section {
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 }
 
-/* Make text read well */
-.how-work-list .usp-card p {
-  max-width: 720px;
+.how-work-list .usp-card p { max-width: 720px; }
+
+/* =========================
+   Reveal animation system (safe)
+   - Visible by default
+   - If JS runs, it can toggle .is-visible
+========================= */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Only hide before reveal when JS is present */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================
+   Buyers CTA section (light background, dark text)
+========================= */
+.buyers-cta {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.buyers-cta .cta-content h2 { color: var(--primary); }
+.buyers-cta .cta-content p { color: var(--gray); }
+
+/* =========================
+   FAQ alignment
+========================= */
+.faq-col h2,
+.faq-col .section-intro {
+  text-align: center;
+}
+
+.faq-col .section-intro {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* =========================
@@ -829,13 +778,8 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .mobile-toggle {
-    display: flex;
-  }
+  .nav-menu.active { left: 0; }
+  .mobile-toggle { display: flex; }
 
   .hero-cta {
     flex-direction: column;
@@ -858,7 +802,6 @@ section {
     text-align: center;
   }
 
-  /* only affects headers that are flex on some pages */
   .section-header {
     flex-direction: column;
     gap: 1rem;
@@ -866,9 +809,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  .how-work-list .usp-card {
-    grid-template-columns: 44px 1fr;
-  }
+  .how-work-list .usp-card { grid-template-columns: 44px 1fr; }
 
   .how-work-list .usp-icon {
     width: 44px;
@@ -879,166 +820,7 @@ section {
 }
 
 @media (max-width: 640px) {
-  .listings-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .search-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   Global reveal animation (CSS-only)
-   - Visible by default (no disappearing grids)
-   - Animates in on load
-========================= */
-
-/* Use the same keyframes you already have */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Always visible baseline (prevents “grid not showing”) */
-.usp-card,
-.step,
-.promise-item,
-.detail-item,
-.service-block,
-.stat,
-.value-card,
-.approach-list li,
-.listing-card {
-  opacity: 1;
-  transform: none;
-}
-
-/* Animate on load (no JS needed) */
-.usp-card,
-.step,
-.promise-item,
-.detail-item,
-.service-block,
-.stat,
-.value-card,
-.approach-list li,
-.listing-card {
-  animation: fadeInUp 0.7s ease both;
-}
-
-/* Optional: small stagger so it feels polished */
-.usp-card:nth-child(1),
-.step:nth-child(1),
-.promise-item:nth-child(1),
-.detail-item:nth-child(1),
-.stat:nth-child(1),
-.value-card:nth-child(1),
-.approach-list li:nth-child(1),
-.listing-card:nth-child(1) { animation-delay: 0.05s; }
-
-.usp-card:nth-child(2),
-.step:nth-child(2),
-.promise-item:nth-child(2),
-.detail-item:nth-child(2),
-.stat:nth-child(2),
-.value-card:nth-child(2),
-.approach-list li:nth-child(2),
-.listing-card:nth-child(2) { animation-delay: 0.12s; }
-
-.usp-card:nth-child(3),
-.step:nth-child(3),
-.promise-item:nth-child(3),
-.detail-item:nth-child(3),
-.stat:nth-child(3),
-.value-card:nth-child(3),
-.approach-list li:nth-child(3),
-.listing-card:nth-child(3) { animation-delay: 0.19s; }
-
-.usp-card:nth-child(4),
-.step:nth-child(4),
-.promise-item:nth-child(4),
-.detail-item:nth-child(4),
-.stat:nth-child(4),
-.value-card:nth-child(4),
-.approach-list li:nth-child(4),
-.listing-card:nth-child(4) { animation-delay: 0.26s; }
-
-/* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .usp-card,
-  .step,
-  .promise-item,
-  .detail-item,
-  .service-block,
-  .stat,
-  .value-card,
-  .approach-list li,
-  .listing-card {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-/* =========================
-   Reveal animation system (CSS-only visibility + IO triggers)
-   - Visible by default when JS fails
-   - If JS runs, it will add .is-visible as elements enter view
-========================= */
-
-.reveal {
-  opacity: 1;
-  transform: none;
-}
-
-/* Only apply the “hidden before reveal” effect when JS is present */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .js .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-/* Buyers CTA section (light background, dark text) */
-.buyers-cta {
-  background: var(--white);
-  color: var(--primary);
-}
-
-.buyers-cta .cta-content h2 {
-  color: var(--primary);
-}
-
-.buyers-cta .cta-content p {
-  color: var(--gray);
-}
-
-/* Center the column titles + intro text inside the FAQ cards */
-.faq-col h2,
-.faq-col .section-intro {
-  text-align: center;
-}
-
-/* Let the intro line truly center (override the global max-width) */
-.faq-col .section-intro {
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
+  .listings-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .search-grid { grid-template-columns: 1fr; }
 }
