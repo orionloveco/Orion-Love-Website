@@ -265,18 +265,86 @@
     .why-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
     .why-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
 
-    /* ── NEIGHBORHOOD LINKS ── */
-    .neighborhoods-section { background: var(--white); border-top: 1px solid var(--sand); }
-    .nbhd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
-    .nbhd-link {
-      background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm);
-      padding: 1.4rem 1.25rem; text-decoration: none;
-      display: flex; align-items: center; gap: 0.8rem;
-      transition: border-color 0.22s, background 0.22s, transform 0.22s;
+    /* ── GRAND JUNCTION AREAS ── */
+    .gj-areas-section {
+      background: linear-gradient(180deg, var(--white) 0%, #fcfbf8 100%);
+      border-top: 1px solid var(--sand);
+      border-bottom: 1px solid var(--sand);
     }
-    .nbhd-link:hover { border-color: var(--gold); background: rgba(184,146,58,0.06); transform: translateY(-2px); }
-    .nbhd-link svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; }
-    .nbhd-link span { font-size: 0.9rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
+    .gj-areas-intro {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+    .gj-areas-intro .section-label {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .gj-areas-intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+    }
+    .gj-areas-intro p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-top: 0.9rem;
+    }
+    .gj-areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .gj-area-card {
+      display: block;
+      text-decoration: none;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: 18px;
+      padding: 1.25rem 1.2rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      min-height: 132px;
+    }
+    .gj-area-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.55);
+      background: rgba(184,146,58,0.05);
+    }
+    .gj-area-card .card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .gj-area-card .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: rgba(184,146,58,0.10);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .gj-area-card .card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      stroke-width: 2;
+    }
+    .gj-area-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin: 0;
+    }
+    .gj-area-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
 
     /* ── CTA BAND ── */
     .cta-band { background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
@@ -311,6 +379,7 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--sand); }
+      .gj-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .valuation-inner { grid-template-columns: 1fr; gap: 3rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -319,6 +388,8 @@
       .hero h1 { font-size: 2.4rem; }
       .form-row { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .gj-areas-grid { grid-template-columns: 1fr; }
+      .gj-area-card { min-height: unset; }
     }
   </style>
 </head>
@@ -390,33 +461,37 @@
   </div>
 </section>
 
-<section class="neighborhoods-section">
+<section class="gj-areas-section">
   <div class="container">
-    <div class="reveal" style="max-width:680px;">
+    <div class="gj-areas-intro reveal">
       <div class="section-label"><span>Grand Junction Areas</span></div>
-      <h2>Broad Numbers Only Tell Part<br>of the Story</h2>
-      <p style="color:var(--muted); font-size:1.05rem; margin-top:0.75rem; line-height:1.85;">
-        Use the overall Grand Junction market numbers as a starting point, then drill into the part of town that actually shapes your home's value.
-      </p>
+      <h2>Broad Numbers Only Tell Part of the Story</h2>
+      <p>Use the overall Grand Junction market as your starting point, then zero in on the part of town that actually shapes your home's value, buyer pool, and pricing range.</p>
     </div>
-    <div class="nbhd-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-      <a href="redlands-homes.html" class="nbhd-link reveal" style="transition-delay:0.05s">
-        <i data-lucide="map-pin"></i><span>The Redlands</span>
+    <div class="gj-areas-grid">
+      <a href="redlands-homes.html" class="gj-area-card reveal" style="transition-delay:0.05s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>The Redlands</h3></div>
+        <p>Monument views, larger lots, and one of the strongest seller-recognition pockets in Grand Junction.</p>
       </a>
-      <a href="orchard-mesa-homes.html" class="nbhd-link reveal" style="transition-delay:0.10s">
-        <i data-lucide="map-pin"></i><span>Orchard Mesa</span>
+      <a href="orchard-mesa-homes.html" class="gj-area-card reveal" style="transition-delay:0.10s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Orchard Mesa</h3></div>
+        <p>Established neighborhoods, strong value pockets, and a different buyer mix than north or west Grand Junction.</p>
       </a>
-      <a href="downtown-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.15s">
-        <i data-lucide="map-pin"></i><span>Downtown Grand Junction</span>
+      <a href="downtown-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.15s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Downtown</h3></div>
+        <p>Walkability, smaller lots, and a lifestyle-driven buyer pool that behaves differently than suburban Grand Junction.</p>
       </a>
-      <a href="north-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.20s">
-        <i data-lucide="map-pin"></i><span>North Grand Junction</span>
+      <a href="north-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.20s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>North Grand Junction</h3></div>
+        <p>Mature neighborhoods, central convenience, and broad family-buyer demand across a large part of the city.</p>
       </a>
-      <a href="northeast-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.25s">
-        <i data-lucide="map-pin"></i><span>Northeast Grand Junction</span>
+      <a href="northeast-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.25s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Northeast Grand Junction</h3></div>
+        <p>CMU proximity, established corridors, and a unique blend of owner-occupant and investor demand.</p>
       </a>
-      <a href="northwest-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.30s">
-        <i data-lucide="map-pin"></i><span>Northwest Grand Junction</span>
+      <a href="northwest-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.30s">
+        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Northwest Grand Junction</h3></div>
+        <p>Newer construction, Fruita-side access, and outdoor-oriented buyer appeal closer to the city edge.</p>
       </a>
     </div>
   </div>
@@ -699,16 +774,11 @@
       } else throw new Error();
     } catch {
       valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
-        valMsg.className = 'error';
-        valMsg.style.display = 'block';
-      }
-    } catch {
-      valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
       valMsg.className = 'error';
       valMsg.style.display = 'block';
     } finally {
-      valBtn.disabled = false;
-      valBtn.textContent = 'Get My Free Home Value';
+      valSubmit.disabled = false;
+      valSubmit.textContent = 'Get My Free Home Value';
     }
   });
 </script>
