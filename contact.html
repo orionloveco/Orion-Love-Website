@@ -7,12 +7,13 @@
 <title>Contact Orion Love | Start Your Journey | Grand Junction Realtor®</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script><link href="styles.css" rel="stylesheet"/>
+
 </head>
 <body class="page page-contact">
 <!-- NAV -->
-<header class="main-header solid" id="mainHeader">
+<header class="main-header" id="mainHeader">
 <nav>
 <a class="logo" href="index.html">
 <span class="logo-main">Orion Love | Colorado Realtor®</span>
@@ -80,12 +81,12 @@
 </div>
 </div>
 <!-- Form -->
-<div class="form-card reveal u-contact-1">
+<div class="form-card reveal" style="transition-delay:0.12s">
 <div class="section-label"><span>Send a Message</span></div>
 <h3>How Can I Help?</h3>
 <p class="form-card-sub">Fill out the form below and I'll be in touch within 24 hours.</p>
 <div class="form-message" id="formMessage" role="alert"></div>
-<form data-fub-form="true" data-success-message="Thank you for reaching out. I'll be in touch within 24 hours." id="contactForm" novalidate="">
+<form id="contactForm" novalidate="">
 <div class="form-row">
 <div class="form-group">
 <label for="firstName">First Name <span aria-hidden="true">*</span></label>
@@ -128,10 +129,10 @@
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
               or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply.
-              <a href="privacy.html">Privacy Policy</a>.
+              <a href="privacy.html" target="_blank">Privacy Policy</a>.
             </p>
 </div>
-<button class="btn btn-primary form-submit" data-submit-label="Send Message" id="submitBtn" type="submit">
+<button class="btn btn-primary form-submit" id="submitBtn" type="submit">
             Send Message
           </button>
 </form>
@@ -164,7 +165,7 @@
 <div class="footer-brand">
 <h3 class="logo-footer">Orion Love</h3>
 <p>Clear communication. Honest feedback.<br/>Strategy that works.</p>
-<p class="u-contact-2">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
+<p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
 </div>
 <div class="footer-links">
 <h4>Quick Links</h4>
@@ -191,5 +192,6 @@
 </div>
 </div>
 </footer>
+
 <script defer="" src="script.js"></script></body>
 </html>

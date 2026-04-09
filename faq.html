@@ -8,7 +8,7 @@
 <meta content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <!-- FAQ Schema -->
 <script type="application/ld+json">
@@ -23,7 +23,8 @@
       {"@type":"Question","name":"How much is my home worth in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Value depends on recent comparable sales, condition, location, and buyer demand. A local market analysis is more reliable than automated estimates alone."}}
     ]
   }
-  </script>
+  </script><link href="styles.css" rel="stylesheet"/>
+
 </head>
 <body class="page page-faq">
 <!-- NAV -->
@@ -84,7 +85,7 @@
           specific situation, I'm happy to do that.
         </p>
 </div>
-<div class="faq-search-wrap reveal u-faq-1">
+<div class="faq-search-wrap reveal" style="transition-delay:0.1s">
 <div class="search-wrap-inner">
 <svg class="search-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
 <input class="faq-search" data-target="buyers-accordion" placeholder="Search buyer questions…" type="search"/>
@@ -191,7 +192,7 @@
           tell me about your home and I'll chart a specific course.
         </p>
 </div>
-<div class="faq-search-wrap reveal u-faq-1">
+<div class="faq-search-wrap reveal" style="transition-delay:0.1s">
 <div class="search-wrap-inner">
 <svg class="search-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
 <input class="faq-search" data-target="sellers-accordion" placeholder="Search seller questions…" type="search"/>
@@ -314,7 +315,7 @@
 <div class="footer-brand">
 <h3 class="logo-footer">Orion Love</h3>
 <p>Guiding buyers and sellers through the Grand Junction market. Honest · Simple · True.</p>
-<p class="u-faq-2">Serving Grand Junction, the Redlands, Clifton,<br/>Orchard Mesa, Fruita, Palisade, and Western Colorado</p>
+<p style="margin-top:0.75rem">Serving Grand Junction, the Redlands, Clifton,<br/>Orchard Mesa, Fruita, Palisade, and Western Colorado</p>
 </div>
 <div class="footer-links">
 <h4>Quick Links</h4>
@@ -340,5 +341,6 @@
 </div>
 </div>
 </footer>
+
 <script defer="" src="script.js"></script></body>
 </html>

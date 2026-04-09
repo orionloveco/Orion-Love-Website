@@ -1,493 +1,1424 @@
-/* =========================================================
-   Orion Love — unified shared script.js
-   Single source of truth for shared UI behavior + forms + market stats
-========================================================= */
+/* Auto-generated shared script: original per-page scripts wrapped by body class guards */
 
-document.documentElement.classList.add('js');
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-about') || document.body.classList.contains('page-buyers') || document.body.classList.contains('page-index') || document.body.classList.contains('page-services'))) return;
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) lucide.createIcons();
+if (window.lucide) lucide.createIcons();
 
-  /* =========================
-     Mobile Menu Toggle
-  ========================= */
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
-  const closeMenu = () => {
-    navMenu?.classList.remove('active');
-    mobileToggle?.setAttribute('aria-expanded', 'false');
-    mobileToggle?.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  const openMenu = () => {
-    navMenu?.classList.add('active');
-    mobileToggle?.setAttribute('aria-expanded', 'true');
-    mobileToggle?.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
   if (mobileToggle && navMenu) {
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    mobileToggle.setAttribute('aria-controls', 'nav-menu');
-    navMenu.id = 'nav-menu';
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
 
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      navMenu.classList.contains('active') ? closeMenu() : openMenu();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
     });
 
-    navMenu.querySelectorAll('a').forEach((link) => {
+    overlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
-    document.addEventListener('click', (e) => {
-      if (
-        navMenu.classList.contains('active') &&
-        !navMenu.contains(e.target) &&
-        !mobileToggle.contains(e.target)
-      ) {
-        closeMenu();
-      }
-    });
-
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
-  /* =========================
-     Sticky Nav
-  ========================= */
-  const header = document.querySelector('.main-header');
+  const header = document.getElementById('mainHeader');
   if (header) {
-    const onScroll = () => {
-      const y = window.scrollY || window.pageYOffset;
-      header.classList.toggle('scrolled', y > 40 || header.classList.contains('solid'));
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  /* =========================
-     Smooth Scroll for Anchor Links
-  ========================= */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-      const headerOffset = 88;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-      window.scrollTo({ top, behavior: 'smooth' });
-      closeMenu();
-    });
-  });
-
-  /* =========================
-     Scroll Reveal
-  ========================= */
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealTargets = document.querySelectorAll(
-    '.reveal, .usp-card, .step, .stat, .value-card, .detail-item, .promise-item, .promise-card, .faq-item'
-  );
-
-  if (prefersReducedMotion) {
-    revealTargets.forEach((el) => {
-      el.classList.add('visible', 'is-visible');
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-  } else if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible', 'is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
-
-    revealTargets.forEach((el) => revealObserver.observe(el));
-  } else {
-    revealTargets.forEach((el) => el.classList.add('visible', 'is-visible'));
-  }
-
-  /* =========================
-     Hero Scroll Indicator
-  ========================= */
-  const scrollIndicator = document.querySelector('.hero-scroll');
-  if (scrollIndicator) {
     window.addEventListener('scroll', () => {
-      const opacity = Math.max(0, 1 - window.scrollY / 200);
-      scrollIndicator.style.opacity = opacity;
+      header.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
   }
 
-  /* =========================
-     Form Validation
-  ========================= */
-  document.querySelectorAll('form').forEach((form) => {
-    form.querySelectorAll('input[required], textarea[required], select[required]').forEach((field) => {
-      field.addEventListener('invalid', (e) => {
-        e.preventDefault();
-        field.classList.add('error');
-        field.setAttribute('aria-invalid', 'true');
-      });
-      field.addEventListener('input', () => {
-        if (field.validity.valid) {
-          field.classList.remove('error');
-          field.removeAttribute('aria-invalid');
-        }
-      });
-      field.addEventListener('change', () => {
-        if (field.validity.valid) {
-          field.classList.remove('error');
-          field.removeAttribute('aria-invalid');
-        }
-      });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-clifton-grand-junction'))) return;
+
+if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
   });
 
-  /* =========================
-     Lazy Loading Images
-  ========================= */
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  if (lazyImages.length && 'IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const img = entry.target;
-        const src = img.getAttribute('data-src');
-        if (src) {
-          img.src = src;
-          img.removeAttribute('data-src');
-          img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-        }
-        observer.unobserve(img);
-      });
-    }, { rootMargin: '300px 0px' });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-    lazyImages.forEach((img) => imageObserver.observe(img));
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'clifton';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
   }
 
-  /* =========================
-     Active Nav Link Highlighting
-  ========================= */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-menu a:not(.btn-nav)').forEach((link) => {
-    const linkPath = link.getAttribute('href')?.split('/').pop();
-    if (linkPath && linkPath === currentPath) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly ZIP-level market data for 81520';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly ZIP-level market data for 81520';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · ZIP 81520`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
     }
+  }
+
+  loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-contact'))) return;
+
+if (window.lucide) lucide.createIcons();
+
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+  const submitBtn   = document.getElementById('submitBtn');
+
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const requiredIds = ['firstName', 'lastName', 'email', 'message'];
+      let valid = true;
+      requiredIds.forEach(id => {
+        const field = document.getElementById(id);
+        if (!field?.value.trim()) { field?.classList.add('error'); valid = false; }
+      });
+      if (!valid) { showMessage('Please fill in all required fields.', 'error'); return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const formData = {
+        firstName: document.getElementById('firstName')?.value.trim(),
+        lastName:  document.getElementById('lastName')?.value.trim(),
+        email:     document.getElementById('email')?.value.trim(),
+        phone:     document.getElementById('phone')?.value.trim() || '',
+        inquiry:   document.getElementById('inquiry')?.value || '',
+        message:   document.getElementById('message')?.value.trim(),
+      };
+
+      try {
+        const WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
+        const response = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        let result = {};
+        try { result = await response.json(); } catch (_) {}
+        if (response.ok && result.success) {
+          showMessage("Thank you for reaching out. I'll be in touch within 24 hours.", 'success');
+          contactForm.reset();
+        } else {
+          throw new Error(result.error || 'Server error');
+        }
+      } catch (err) {
+        console.error('Form error:', err.message);
+        showMessage('Something went wrong. Please call or email me directly at (970) 644-6781.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Start the Conversation';
+      }
+    });
+  }
+
+  function showMessage(text, type) {
+    if (!formMessage) return;
+    formMessage.textContent = text;
+    formMessage.className = 'form-message ' + type;
+    formMessage.style.display = 'block';
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-downtown-grand-junction'))) return;
+
+if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
   });
 
-  /* =========================
-     FAQ Accordion
-  ========================= */
-  ['buyers-accordion', 'sellers-accordion'].forEach((id) => {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'downtown_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly ZIP-level market data for 81501';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly ZIP-level market data for 81501';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · ZIP 81501`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-faq'))) return;
+
+if (window.lucide) lucide.createIcons();
+
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // Tab switching
+  const faqTabs = document.querySelectorAll('.faq-tab');
+  const faqPanels = document.querySelectorAll('.faq-panel');
+  if (faqTabs.length) {
+    faqTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.panel;
+        faqTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        faqPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+        const panel = document.getElementById('panel-' + target);
+        if (panel) {
+          panel.classList.add('active');
+          panel.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+        }
+        if (window.lucide) lucide.createIcons();
+
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+      });
+    });
+  }
+
+  // One-open accordion
+  ['buyers-accordion','sellers-accordion'].forEach(id => {
     const container = document.getElementById(id);
     if (!container) return;
-    container.querySelectorAll('details.faq-item').forEach((item) => {
+    container.querySelectorAll('details.faq-item').forEach(item => {
       item.addEventListener('toggle', () => {
         if (item.open) {
-          container.querySelectorAll('details.faq-item[open]').forEach((openItem) => {
-            if (openItem !== item) openItem.removeAttribute('open');
+          container.querySelectorAll('details.faq-item[open]').forEach(open => {
+            if (open !== item) open.removeAttribute('open');
           });
         }
       });
     });
   });
 
-  /* =========================
-     FAQ Tab Switching
-  ========================= */
-  const faqTabs = document.querySelectorAll('.faq-tab');
-  const faqPanels = document.querySelectorAll('.faq-panel');
-
-  if (faqTabs.length) {
-    faqTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.panel;
-
-        faqTabs.forEach((t) => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        faqPanels.forEach((p) => p.classList.remove('active'));
-
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        const panel = document.getElementById('panel-' + target);
-        if (panel) {
-          panel.classList.add('active');
-          panel.querySelectorAll('.reveal:not(.visible)').forEach((el) => el.classList.add('visible'));
-        }
-
-        if (window.lucide) lucide.createIcons();
-      });
-    });
-  }
-
-  /* =========================
-     FAQ Search
-  ========================= */
-  document.querySelectorAll('.faq-search').forEach((input) => {
+  // Live search
+  document.querySelectorAll('.faq-search').forEach(input => {
     const targetId = input.dataset.target;
     const accordion = document.getElementById(targetId);
-    const panelKey = targetId?.replace('-accordion', '');
+    const panelKey = targetId?.replace('-accordion','');
     const noResults = document.getElementById('no-results-' + panelKey);
-
     if (!accordion) return;
-
     input.addEventListener('input', () => {
       const query = input.value.toLowerCase().trim();
       let visible = 0;
-
-      accordion.querySelectorAll('details.faq-item').forEach((item) => {
+      accordion.querySelectorAll('details.faq-item').forEach(item => {
         const match = !query || item.textContent.toLowerCase().includes(query);
         item.style.display = match ? '' : 'none';
-        if (match) visible += 1;
+        if (match) visible++;
         if (!match && item.open) item.removeAttribute('open');
       });
-
       if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
     });
   });
+});
 
-  /* =========================
-     Unified Follow Up Boss Form Handling
-  ========================= */
-  const FUB_WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
 
-  const commonFieldNames = new Set(['firstName', 'lastName', 'email', 'phone', 'inquiry', 'message']);
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-grand-junction-home-value'))) return;
 
-  function getFieldValue(form, name) {
-    const field = form.elements.namedItem(name);
-    if (!field) return '';
-    if (field instanceof RadioNodeList) return field.value?.trim?.() || '';
-    return field.value?.trim?.() || '';
-  }
+if (window.lucide) lucide.createIcons();
 
-  function findLabelText(field) {
-    if (!field) return '';
-    const byFor = field.id ? field.form?.querySelector(`label[for="${field.id}"]`) : null;
-    const label = byFor || field.closest('.form-group')?.querySelector('label');
-    if (!label) return field.name || field.id || 'Field';
-    return label.textContent.replace(/\*/g, '').trim();
-  }
+  // Nav scroll
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
-  function showFormMessage(form, text, type) {
-    const message = form.parentElement?.querySelector('.form-message') || form.querySelector('.form-message');
-    if (!message) return;
-    message.textContent = text;
-    message.className = `form-message ${type}`;
-    message.style.display = 'block';
-    message.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function buildGenericMessage(form) {
-    const extraLines = [];
-    Array.from(form.elements).forEach((field) => {
-      if (!field.name || commonFieldNames.has(field.name) || field.disabled) return;
-      if (!['INPUT', 'SELECT', 'TEXTAREA'].includes(field.tagName)) return;
-      const value = (field.value || '').trim();
-      if (!value) return;
-      extraLines.push(`${findLabelText(field)}: ${value}`);
-    });
-    return extraLines.join('\n');
-  }
-
-  document.querySelectorAll('form[data-fub-form="true"]').forEach((form) => {
-    const submitBtn = form.querySelector('.form-submit');
-    const defaultButtonLabel =
-      submitBtn?.dataset.submitLabel ||
-      submitBtn?.textContent?.trim() ||
-      'Submit';
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const requiredFields = form.querySelectorAll('[required]');
-      let valid = true;
-      requiredFields.forEach((field) => {
-        const value = (field.value || '').trim();
-        if (!value) {
-          field.classList.add('error');
-          field.setAttribute('aria-invalid', 'true');
-          valid = false;
-        }
-      });
-
-      if (!valid) {
-        showFormMessage(form, 'Please fill in all required fields.', 'error');
-        return;
-      }
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = submitBtn.dataset.submitLoading || 'Sending…';
-      }
-
-      const inquiry = form.dataset.inquiry || getFieldValue(form, 'inquiry') || 'Website Inquiry';
-      const explicitMessage = getFieldValue(form, 'message');
-      const payload = {
-        firstName: getFieldValue(form, 'firstName'),
-        lastName: getFieldValue(form, 'lastName'),
-        email: getFieldValue(form, 'email'),
-        phone: getFieldValue(form, 'phone'),
-        inquiry,
-        message: explicitMessage || buildGenericMessage(form),
-      };
-
-      try {
-        const response = await fetch(FUB_WORKER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        let result = {};
-        try {
-          result = await response.json();
-        } catch (_) {
-          result = {};
-        }
-
-        if (response.ok && result.success) {
-          showFormMessage(
-            form,
-            form.dataset.successMessage || "Thank you. I'll be in touch within 24 hours.",
-            'success'
-          );
-          form.reset();
-        } else {
-          throw new Error(result.error || `Server error ${response.status}`);
-        }
-      } catch (error) {
-        console.error('Form submission error:', error.message);
-        showFormMessage(
-          form,
-          'Something went wrong. Please call or email me directly at (970) 644-6781.',
-          'error'
-        );
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = defaultButtonLabel;
-        }
-      }
-    });
+  // Mobile menu
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
   });
 
-  /* =========================
-     Unified live market stats loader
-  ========================= */
-  const marketArea = document.body.dataset.marketArea;
-  const marketStatTargets = document.querySelectorAll('[data-market-stat]');
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
 
-  const formatCurrency = (value) => {
-    if (!Number.isFinite(value)) return '--';
+  // Valuation form
+  const valForm   = document.getElementById('valForm');
+  const valMsg    = document.getElementById('valFormMsg');
+  const valSubmit = document.getElementById('valSubmit');
+
+  valForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    valSubmit.disabled = true;
+    valSubmit.textContent = 'Sending…';
+
+    const formData = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName:  document.getElementById('lastName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      inquiry:   'Home Value Request — Grand Junction',
+      message: [
+        `Address: ${document.getElementById('address').value.trim()}`,
+        `Bedrooms: ${document.getElementById('bedrooms').value}`,
+        `Timeline: ${document.getElementById('timeline').value}`,
+      ].join('\n'),
+    };
+
+    try {
+      const res = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
+        valMsg.textContent = "Thank you! I'll have your home value review ready within 24 hours.";
+        valMsg.className = 'success';
+        valMsg.style.display = 'block';
+        valForm.reset();
+      } else throw new Error();
+    } catch {
+      valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+      valMsg.className = 'error';
+      valMsg.style.display = 'block';
+    } finally {
+      valSubmit.disabled = false;
+      valSubmit.textContent = 'Get My Free Home Value';
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-loma-mack-grand-junction'))) return;
+
+if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'loma_mack';
+
+  const formatCurrency = value => {
+    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format(value);
   };
 
-  const formatCompactCurrency = (value) => {
-    if (!Number.isFinite(value)) return '--';
-    const rounded = Math.round(value);
-    if (rounded >= 1000000) return `$${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
-    if (rounded >= 1000) return `$${Math.round(rounded / 1000)}K`;
-    return `$${rounded}`;
+  const formatDays = value => {
+    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
+    return `${Math.round(value)} days`;
   };
 
-  const formatCompactCurrencyHtml = (value) => {
-    if (!Number.isFinite(value)) return '<span>$</span>--';
-    const rounded = Math.round(value);
-    if (rounded >= 1000000) {
-      return `<span>$</span>${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
-    }
-    if (rounded >= 1000) return `<span>$</span>${Math.round(rounded / 1000)}K`;
-    return `<span>$</span>${rounded}`;
-  };
-
-  const formatNumber = (value) => (
-    Number.isFinite(value)
-      ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.round(value))
-      : '--'
-  );
-
-  const formatDays = (value) => (
-    Number.isFinite(value) ? `${Math.round(value)} days` : '-- days'
-  );
-
-  const formatMarketNote = (dateValue) => {
-    const zip = document.body.dataset.marketZip;
-    const label = document.body.dataset.marketLabel;
-    if (!dateValue) {
-      return 'Live market data temporarily unavailable';
-    }
-
-    const date = new Date(dateValue);
-    if (Number.isNaN(date.getTime())) {
-      return 'Live market data updated recently';
-    }
-
-    const monthYear = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-    if (zip) return `Updated ${monthYear} · ZIP ${zip}`;
-    if (label) return `Updated ${monthYear} · ${label}`;
-    return `Updated ${monthYear}`;
+  const formatUpdated = value => {
+    if (!value) return 'Live market data temporarily unavailable';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'Live market data updated recently';
+    return `Updated from live market data · ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
   };
 
   async function loadMarketStats() {
-    if (!marketArea || !marketStatTargets.length) return;
-
-    const noteTargets = document.querySelectorAll('[data-market-note]');
-    const endpoint = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+    const medianEl = document.getElementById('marketMedianPrice');
+    const domEl = document.getElementById('marketDaysOnMarket');
+    const noteEl = document.getElementById('marketUpdatedNote');
 
     try {
-      const response = await fetch(endpoint, { headers: { Accept: 'application/json' }, cache: 'no-store' });
-      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+      const response = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-      const payload = await response.json();
-      const area = payload?.areas?.[marketArea];
-      if (!area) throw new Error(`Area key not found: ${marketArea}`);
+      const data = await response.json();
+      const area = data?.areas?.[AREA_KEY];
+      if (!area) throw new Error('Missing area data');
 
-      marketStatTargets.forEach((el) => {
-        const stat = el.dataset.marketStat;
-        const value = area?.[stat];
-        const format = el.dataset.marketFormat || 'number';
-
-        if (format === 'currency') {
-          el.textContent = formatCurrency(value);
-        } else if (format === 'currency-compact') {
-          el.textContent = formatCompactCurrency(value);
-        } else if (format === 'currency-compact-html') {
-          el.innerHTML = formatCompactCurrencyHtml(value);
-        } else if (format === 'days') {
-          el.textContent = formatDays(value);
-        } else {
-          el.textContent = formatNumber(value);
-        }
-      });
-
-      const updated = area.lastUpdatedDate || payload.generatedAt;
-      noteTargets.forEach((el) => {
-        el.textContent = formatMarketNote(updated);
-      });
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdated(area.lastUpdatedDate || data.generatedAt);
     } catch (error) {
-      console.error('Market stats error:', error.message);
-      document.querySelectorAll('[data-market-note]').forEach((el) => {
-        el.textContent = 'Live market data temporarily unavailable';
-      });
+      if (medianEl) medianEl.textContent = 'Unavailable';
+      if (domEl) domEl.textContent = 'Unavailable';
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+      console.error('Failed to load market stats:', error);
     }
   }
 
   loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-north-grand-junction'))) return;
+
+if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'north_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly market data · North Grand Junction';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly market data · North Grand Junction';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · North Grand Junction`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-northeast-grand-junction'))) return;
+
+if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'northeast_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly market data · Northeast Grand Junction';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly market data · Northeast Grand Junction';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · Northeast Grand Junction`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-northwest-grand-junction'))) return;
+
+if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'northwest_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly market data · Northwest Grand Junction';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly market data · Northwest Grand Junction';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · Northwest Grand Junction`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-orchard-mesa-homes'))) return;
+
+if(window.lucide)lucide.createIcons();
+  const header=document.getElementById('mainHeader');
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+  const toggle=document.getElementById('mobileToggle'),menu=document.getElementById('navMenu');
+  toggle?.addEventListener('click',()=>menu.classList.toggle('active'));
+  document.addEventListener('click',e=>{if(!header.contains(e.target))menu.classList.remove('active');});
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const ORCHARD_MESA_AREA_KEY = 'orchard_mesa';
+
+  const formatCompactCurrency = value => {
+    if (!Number.isFinite(value)) return '--';
+    const rounded = Math.round(value);
+    if (rounded >= 1000000) return `<span>$</span>${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
+    if (rounded >= 1000) return `<span>$</span>${Math.round(rounded / 1000)}K`;
+    return `<span>$</span>${rounded}`;
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? Math.round(value).toLocaleString() : '--';
+
+  (async () => {
+    try {
+      const res = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!res.ok) throw new Error(`Stats request failed: ${res.status}`);
+      const data = await res.json();
+      const area = data?.areas?.[ORCHARD_MESA_AREA_KEY];
+      if (!area) throw new Error('Orchard Mesa area data missing');
+
+      const medianPriceEl = document.getElementById('omMedianPrice');
+      const daysOnMarketEl = document.getElementById('omDaysOnMarket');
+      const newListingsEl = document.getElementById('omNewListings');
+      const totalListingsEl = document.getElementById('omTotalListings');
+      const updatedEl = document.getElementById('omStatsUpdated');
+
+      if (medianPriceEl) medianPriceEl.innerHTML = formatCompactCurrency(area.medianPrice);
+      if (daysOnMarketEl) daysOnMarketEl.textContent = formatNumber(area.averageDaysOnMarket);
+      if (newListingsEl) newListingsEl.textContent = formatNumber(area.newListings);
+      if (totalListingsEl) totalListingsEl.textContent = formatNumber(area.totalListings);
+
+      if (updatedEl) {
+        const lastUpdated = area.lastUpdatedDate || data.generatedAt;
+        const formattedDate = lastUpdated
+          ? new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+          : null;
+        updatedEl.textContent = formattedDate
+          ? `Live Orchard Mesa market data · Updated ${formattedDate}`
+          : 'Live Orchard Mesa market data';
+      }
+    } catch (error) {
+      console.error('Failed to load Orchard Mesa market stats:', error);
+      const updatedEl = document.getElementById('omStatsUpdated');
+      if (updatedEl) updatedEl.textContent = 'Live market data temporarily unavailable';
+    }
+  })();
+  document.getElementById('omForm')?.addEventListener('submit',async e=>{
+    e.preventDefault();const btn=document.getElementById('formBtn'),msg=document.getElementById('formMsg');
+    btn.disabled=true;btn.textContent='Sending…';
+    try{const res=await fetch('https://fub-contact-proxy.orion-love-co.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:document.getElementById('fn').value.trim(),lastName:document.getElementById('ln').value.trim(),email:document.getElementById('em').value.trim(),phone:document.getElementById('ph').value.trim(),inquiry:'Home Value Request — Orchard Mesa',message:`Address: ${document.getElementById('addr').value.trim()}\nTimeline: ${document.getElementById('tl').value}\nRiver View: ${document.getElementById('rv').value}`})});
+    const data=await res.json().catch(()=>({}));
+    if(res.ok&&data.success){msg.textContent="Thank you! I'll have your Orchard Mesa home value ready within 24 hours.";msg.className='success';msg.style.display='block';e.target.reset();}else throw new Error();
+  } catch {
+    msg.textContent = "Something went wrong. Please call (970) 644-6781.";
+    msg.className = 'error';
+    msg.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Get My Orchard Mesa Home Value';
+  }
+});
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-redlands-homes'))) return;
+
+if (window.lucide) lucide.createIcons();
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const toggle = document.getElementById('mobileToggle'), menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => { if (!header.contains(e.target)) menu.classList.remove('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  async function loadRedlandsMarketStats() {
+    const endpoint = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+    const noteEl = document.getElementById('redlandsStatsNote');
+
+    const formatCurrency = value => {
+      if (!Number.isFinite(value)) return '—';
+      const rounded = Math.round(value);
+      if (rounded >= 1000) return `<span>$</span>${(rounded / 1000).toFixed(0)}K`;
+      return `<span>$</span>${rounded}`;
+    };
+
+    const formatNumber = value => Number.isFinite(value) ? Math.round(value).toLocaleString() : '—';
+
+    try {
+      const res = await fetch(endpoint);
+      if (!res.ok) throw new Error('Failed to fetch market stats');
+
+      const data = await res.json();
+      const stats = data?.areas?.redlands;
+      if (!stats) throw new Error('Redlands stats not found');
+
+      const medianEl = document.getElementById('redlandsMedianPrice');
+      const domEl = document.getElementById('redlandsDaysOnMarket');
+      const newListingsEl = document.getElementById('redlandsNewListings');
+      const totalListingsEl = document.getElementById('redlandsTotalListings');
+
+      if (medianEl) medianEl.innerHTML = formatCurrency(stats.medianPrice);
+      if (domEl) domEl.textContent = formatNumber(stats.averageDaysOnMarket);
+      if (newListingsEl) newListingsEl.textContent = formatNumber(stats.newListings);
+      if (totalListingsEl) totalListingsEl.textContent = formatNumber(stats.totalListings);
+
+      if (noteEl) {
+        const updated = stats.lastUpdatedDate || data.generatedAt;
+        const formatted = updated ? new Date(updated).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : 'recently';
+        noteEl.textContent = `Live Redlands market data updated ${formatted}`;
+      }
+    } catch (error) {
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadRedlandsMarketStats();
+
+  document.getElementById('redlandsForm')?.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('formBtn'), msg = document.getElementById('formMsg');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: document.getElementById('fn').value.trim(), lastName: document.getElementById('ln').value.trim(), email: document.getElementById('em').value.trim(), phone: document.getElementById('ph').value.trim(), inquiry: 'Home Value Request — Redlands', message: `Address: ${document.getElementById('addr').value.trim()}\nTimeline: ${document.getElementById('tl').value}\nMonument Views: ${document.getElementById('views').value}` })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) { msg.textContent = "Thank you! I'll have your Redlands home value ready within 24 hours."; msg.className = 'success'; msg.style.display = 'block'; e.target.reset(); }
+      else throw new Error();
+    } catch {
+      msg.textContent = "Something went wrong. Please call (970) 644-6781.";
+      msg.className = 'error';
+      msg.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Request My Home Value';
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-selling-in-fruita'))) return;
+
+if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => { if (!header.contains(e.target)) menu.classList.remove('active'); });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const formatCurrency = value => {
+    if (!Number.isFinite(value)) return '--';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value) : '--';
+
+  async function loadFruitaMarketStats() {
+    const medianEl = document.getElementById('fruitaMedianSalePrice');
+    const domEl = document.getElementById('fruitaDaysOnMarket');
+    const newEl = document.getElementById('fruitaNewListings');
+    const totalEl = document.getElementById('fruitaTotalListings');
+    const noteEl = document.getElementById('fruitaMarketNote');
+
+    try {
+      const res = await fetch(MARKET_STATS_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load market data');
+      const data = await res.json();
+      const area = data?.areas?.fruita;
+      if (!area) throw new Error('Fruita market data not found');
+
+      medianEl.textContent = formatCurrency(area.medianPrice);
+      domEl.textContent = formatNumber(area.averageDaysOnMarket);
+      newEl.textContent = formatNumber(area.newListings);
+      totalEl.textContent = formatNumber(area.totalListings);
+
+      const updated = area.lastUpdatedDate || data.generatedAt;
+      if (updated) {
+        const date = new Date(updated);
+        noteEl.textContent = `Live market data · updated ${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+      } else {
+        noteEl.textContent = 'Live market data';
+      }
+    } catch (error) {
+      medianEl.textContent = '--';
+      domEl.textContent = '--';
+      newEl.textContent = '--';
+      totalEl.textContent = '--';
+      noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadFruitaMarketStats();
+
+  // Form
+  const fruitaForm = document.getElementById('fruitaForm');
+  const fruMsg     = document.getElementById('fruFormMsg');
+  const fruSubmit  = document.getElementById('fruSubmit');
+
+  fruitaForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    fruSubmit.disabled = true;
+    fruSubmit.textContent = 'Sending…';
+
+    const formData = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName:  document.getElementById('lastName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      inquiry:   'Home Value Request — Fruita',
+      message: [
+        `Address: ${document.getElementById('address').value.trim()}`,
+        `Timeline: ${document.getElementById('timeline').value}`,
+        `Bedrooms: ${document.getElementById('bedrooms').value}`,
+      ].join('\n'),
+    };
+
+    try {
+      const res  = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        fruMsg.textContent = "Thank you! I'll have your Fruita home value ready within 24 hours.";
+        fruMsg.className = 'success'; fruMsg.style.display = 'block';
+        fruitaForm.reset();
+      } else throw new Error();
+    } catch {
+      fruMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+        fruMsg.className = 'error'; fruMsg.style.display = 'block';
+    } finally {
+      fruSubmit.disabled = false;
+      fruSubmit.textContent = 'Get My Fruita Home Value';
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body) return;
+  if (!(document.body.classList.contains('page-selling-in-palisade'))) return;
+
+if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => { if (!header.contains(e.target)) menu.classList.remove('active'); });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const formatCurrencyCompact = value => {
+    if (!Number.isFinite(value)) return '--';
+    const rounded = Math.round(value);
+    if (rounded >= 1000000) return `<span>$</span>${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
+    return `<span>$</span>${Math.round(rounded / 1000)}K`;
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? String(Math.round(value)) : '--';
+
+  (async () => {
+    const updatedEl = document.getElementById('palisadeMarketUpdated');
+    try {
+      const res = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!res.ok) throw new Error('Feed request failed');
+      const data = await res.json();
+      const area = data?.areas?.palisade;
+      if (!area) throw new Error('Palisade data missing');
+
+      const medianEl = document.getElementById('palMedianPrice');
+      const domEl = document.getElementById('palAvgDom');
+      const newListingsEl = document.getElementById('palNewListings');
+      const totalListingsEl = document.getElementById('palTotalListings');
+
+      if (medianEl) medianEl.innerHTML = formatCurrencyCompact(area.medianPrice);
+      if (domEl) domEl.textContent = formatNumber(area.averageDaysOnMarket);
+      if (newListingsEl) newListingsEl.textContent = formatNumber(area.newListings);
+      if (totalListingsEl) totalListingsEl.textContent = formatNumber(area.totalListings);
+
+      if (updatedEl) {
+        const updatedDate = area.lastUpdatedDate || data.generatedAt;
+        const prettyDate = updatedDate
+          ? new Date(updatedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+          : 'latest refresh';
+        updatedEl.textContent = `Live market data updated ${prettyDate}`;
+      }
+    } catch (error) {
+      if (updatedEl) updatedEl.textContent = 'Live market data temporarily unavailable';
+    }
+  })();
+
+  const palisadeForm = document.getElementById('palisadeForm');
+  const palMsg       = document.getElementById('palFormMsg');
+  const palSubmit    = document.getElementById('palSubmit');
+
+  palisadeForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    palSubmit.disabled = true;
+    palSubmit.textContent = 'Sending…';
+
+    const formData = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName:  document.getElementById('lastName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      inquiry:   'Home Value Request — Palisade',
+      message: [
+        `Address: ${document.getElementById('address').value.trim()}`,
+        `Notable features: ${document.getElementById('features').value.trim()}`,
+        `Timeline: ${document.getElementById('timeline').value}`,
+        `Bedrooms: ${document.getElementById('bedrooms').value}`,
+      ].join('\n'),
+    };
+
+    try {
+      const res  = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        palMsg.textContent = "Thank you! I'll have your Palisade home value ready within 24 hours.";
+        palMsg.className = 'success'; palMsg.style.display = 'block';
+        palisadeForm.reset();
+      } else throw new Error();
+    } catch {
+      palMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+        palMsg.className = 'error'; palMsg.style.display = 'block';
+    } finally {
+      palSubmit.disabled = false;
+      palSubmit.textContent = 'Get My Palisade Home Value';
+    }
+  });
 });

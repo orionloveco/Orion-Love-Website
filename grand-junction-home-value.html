@@ -9,8 +9,9 @@
 <meta content="Grand Junction home value, what is my home worth Grand Junction, Grand Junction home estimate, sell my home Grand Junction, Mesa County real estate" name="keywords"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script><link href="styles.css" rel="stylesheet"/>
+
 </head>
 <body class="page page-grand-junction-home-value">
 <!-- NAV -->
@@ -44,13 +45,13 @@
       </p>
 <div class="hero-cta">
 <a class="btn btn-primary" href="#valuation-form">Get My Free Home Value</a>
-<a class="btn-gold-outline" href="services.html">How I Market Homes</a>
+<a class="btn-outline-gold" href="services.html">How I Market Homes</a>
 </div>
 </div>
 </div>
 </section>
 <!-- MARKET STATS -->
-<section class="market-stats u-grand-junction-home-value-1">
+<section class="market-stats" style="padding: 0;">
 <div class="container">
 <div class="stats-grid">
 <div class="stat-item">
@@ -88,32 +89,32 @@
 </div>
 </div>
 <div class="value-grid">
-<div class="value-card reveal u-grand-junction-home-value-2">
+<div class="value-card reveal" style="transition-delay:0.05s">
 <div class="value-icon"><i data-lucide="map-pin"></i></div>
 <h3>Neighborhood &amp; Submarket</h3>
 <p>The Redlands, Orchard Mesa, Fruita, and downtown Grand Junction each trade at different price points. Neighborhood-level comps matter far more than city-wide averages.</p>
 </div>
-<div class="value-card reveal u-grand-junction-home-value-3">
+<div class="value-card reveal" style="transition-delay:0.12s">
 <div class="value-icon"><i data-lucide="trending-up"></i></div>
 <h3>Recent Comparable Sales</h3>
 <p>What closed within the last 60–90 days, within a mile of your property, is the most reliable signal. Older comps can mislead in a shifting market.</p>
 </div>
-<div class="value-card reveal u-grand-junction-home-value-4">
+<div class="value-card reveal" style="transition-delay:0.19s">
 <div class="value-icon"><i data-lucide="home"></i></div>
 <h3>Condition &amp; Updates</h3>
 <p>A remodeled kitchen, updated bathrooms, or fresh HVAC can meaningfully move your number. So can deferred maintenance — in the other direction.</p>
 </div>
-<div class="value-card reveal u-grand-junction-home-value-5">
+<div class="value-card reveal" style="transition-delay:0.26s">
 <div class="value-icon"><i data-lucide="eye"></i></div>
 <h3>Views &amp; Lot Characteristics</h3>
 <p>Colorado National Monument views, river access, lot size, and irrigation water carry real premium in this market. These factors rarely show up in automated estimates.</p>
 </div>
-<div class="value-card reveal u-grand-junction-home-value-6">
+<div class="value-card reveal" style="transition-delay:0.33s">
 <div class="value-icon"><i data-lucide="layers"></i></div>
 <h3>Active Competition</h3>
 <p>What else is on the market right now — and at what price — shapes buyer behavior. Pricing without knowing your competition is pricing blind.</p>
 </div>
-<div class="value-card reveal u-grand-junction-home-value-7">
+<div class="value-card reveal" style="transition-delay:0.40s">
 <div class="value-icon"><i data-lucide="clock"></i></div>
 <h3>Timing &amp; Inventory</h3>
 <p>Mesa County inventory levels shift seasonally. A spring list in low inventory is a different conversation than a fall list with more competition on the market.</p>
@@ -127,7 +128,7 @@
 <div class="container">
 <div class="valuation-inner">
 <div class="valuation-copy reveal">
-<div class="section-label u-grand-junction-home-value-8"><span class="u-grand-junction-home-value-9">Free Home Value Review</span></div>
+<div class="section-label" style="--gold-lt: #d4aa5a;"><span style="color:var(--gold-lt)">Free Home Value Review</span></div>
 <h2>Get an <em>Honest</em><br/>Market Review</h2>
 <p>
           I'll pull recent comparable sales, active competition, and neighborhood-level data
@@ -142,10 +143,10 @@
 <li><i data-lucide="check"></i> No obligation. No hard sell.</li>
 </ul>
 </div>
-<div class="form-card reveal u-grand-junction-home-value-10">
+<div class="form-card reveal" style="transition-delay:0.15s">
 <h3>Request Your Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form data-fub-form="true" data-inquiry="Home Value Request — Grand Junction" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm">
+<form id="valForm">
 <div class="form-row">
 <div class="form-group">
 <label for="firstName">First Name *</label>
@@ -187,10 +188,10 @@
 </select>
 </div>
 </div>
-<button class="btn btn-primary form-submit" data-submit-label="Get My Free Home Value" id="valSubmit" type="submit">
+<button class="btn btn-primary form-submit" id="valSubmit" type="submit">
             Get My Free Home Value
           </button>
-<div class="form-message" id="valFormMsg"></div>
+<div id="valFormMsg"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
@@ -204,27 +205,27 @@
 <!-- WHY ORION -->
 <section class="why-section">
 <div class="container">
-<div class="reveal u-grand-junction-home-value-11">
+<div class="reveal" style="text-align:center; max-width:640px; margin:0 auto 3rem;">
 <div class="section-label centered"><span>Why Work With Orion</span></div>
 <h2>A Grand Junction Agent<br/>Who Knows This Market</h2>
 </div>
 <div class="why-grid">
-<div class="why-card reveal u-grand-junction-home-value-2">
+<div class="why-card reveal" style="transition-delay:0.05s">
 <div class="why-num">01</div>
 <h3>Local, Not Generic</h3>
 <p>I work Mesa County — not the Front Range, not Denver. Your pricing strategy is built on what's happening in Grand Junction, Fruita, and the surrounding communities right now.</p>
 </div>
-<div class="why-card reveal u-grand-junction-home-value-12">
+<div class="why-card reveal" style="transition-delay:0.13s">
 <div class="why-num">02</div>
 <h3>Clear Communication</h3>
 <p>You'll hear the honest number — not a padded estimate designed to win the listing. If your timing or condition doesn't match market expectations, I'll tell you that upfront.</p>
 </div>
-<div class="why-card reveal u-grand-junction-home-value-13">
+<div class="why-card reveal" style="transition-delay:0.21s">
 <div class="why-num">03</div>
 <h3>Strategy Before the Sign</h3>
 <p>Every preparation decision — repairs, staging, photos, pricing — is evaluated against what actually moves buyers in this market. No generic checklists.</p>
 </div>
-<div class="why-card reveal u-grand-junction-home-value-14">
+<div class="why-card reveal" style="transition-delay:0.29s">
 <div class="why-num">04</div>
 <h3>No Pressure, Ever</h3>
 <p>A home value conversation is just that — a conversation. Whether you're ready to list tomorrow or just thinking about 2026, you're in control of the timeline.</p>
@@ -236,27 +237,27 @@
 <!-- NEIGHBORHOODS -->
 <section class="neighborhoods-section">
 <div class="container">
-<div class="reveal u-grand-junction-home-value-15">
+<div class="reveal" style="max-width: 580px;">
 <div class="section-label"><span>Local Expertise</span></div>
 <h2>I Know Every Corner<br/>of the Grand Valley</h2>
-<p class="u-grand-junction-home-value-16">
+<p style="color:var(--muted); font-size:1.05rem; margin-top:0.75rem; line-height:1.85;">
         Home values vary significantly across Mesa County. Explore pages for the specific areas I serve:
       </p>
 </div>
 <div class="nbhd-grid">
-<a class="nbhd-link reveal u-grand-junction-home-value-2" href="selling-in-fruita.html">
+<a class="nbhd-link reveal" href="selling-in-fruita.html" style="transition-delay:0.05s">
 <i data-lucide="map-pin"></i><span>Selling in Fruita</span>
 </a>
-<a class="nbhd-link reveal u-grand-junction-home-value-17" href="selling-in-palisade.html">
+<a class="nbhd-link reveal" href="selling-in-palisade.html" style="transition-delay:0.10s">
 <i data-lucide="map-pin"></i><span>Selling in Palisade</span>
 </a>
-<a class="nbhd-link reveal u-grand-junction-home-value-10" href="redlands-homes.html">
+<a class="nbhd-link reveal" href="redlands-homes.html" style="transition-delay:0.15s">
 <i data-lucide="map-pin"></i><span>Redlands Homes</span>
 </a>
-<a class="nbhd-link reveal u-grand-junction-home-value-18" href="orchard-mesa-homes.html">
+<a class="nbhd-link reveal" href="orchard-mesa-homes.html" style="transition-delay:0.20s">
 <i data-lucide="map-pin"></i><span>Orchard Mesa</span>
 </a>
-<a class="nbhd-link reveal u-grand-junction-home-value-19" href="contact.html">
+<a class="nbhd-link reveal" href="contact.html" style="transition-delay:0.25s">
 <i data-lucide="map-pin"></i><span>Your Neighborhood</span>
 </a>
 </div>
