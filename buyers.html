@@ -1,311 +1,1121 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Buy a Home in Grand Junction, CO | Navigate the Market | Orion Love</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script><link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy a Home in Grand Junction, CO | Navigate the Market | Orion Love</title>
 
+  
+  <meta name="description" content="Buy a home in Grand Junction with clear guidance, local insight, and a smart plan built around your goals, budget, and timing." />
+  <meta property="og:title" content="Buy a Home in Grand Junction, CO | Navigate the Market | Orion Love" />
+  <meta property="og:description" content="Buy a home in Grand Junction with clear guidance, local insight, and a smart plan built around your goals, budget, and timing." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Buy a Home in Grand Junction, CO | Navigate the Market | Orion Love" />
+  <meta name="twitter:description" content="Buy a home in Grand Junction with clear guidance, local insight, and a smart plan built around your goals, budget, and timing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── NAV ────────────────────────────────────── */
+    .main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    .main-header.scrolled {
+      background: rgba(12, 26, 61, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
+    }
+    .main-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .logo { text-decoration: none; }
+    .logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+      align-items: center;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
+    .btn-nav {
+      background: transparent !important;
+      border: 1px solid rgba(184,146,58,0.55) !important;
+      color: var(--gold-lt) !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      transition: background 0.22s !important;
+    }
+    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
+    .mobile-toggle { display: none; }
+
+    /* ── BUTTONS ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
+    }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.82);
+      transition: all 0.25s;
+    }
+    .btn-outline-white:hover {
+      border-color: var(--gold-lt);
+      color: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+    .btn-gold-outline {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Raleway", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 2.4rem;
+      border-radius: 50px;
+      border: 1px solid var(--gold);
+      color: var(--gold-lt);
+      white-space: nowrap;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+    .btn-gold-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTION LABEL ──────────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.1rem;
+    }
+    .section-label::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-label span {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .section-label.centered { justify-content: center; }
+    .section-label.centered::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── DIVIDER ────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px; background: var(--sand);
+    }
+    .divider-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ── HERO ───────────────────────────────────── */
+    .buyers-hero {
+      position: relative;
+      padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
+      background: var(--navy);
+      overflow: hidden;
+      text-align: center;
+    }
+    .buyers-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
+      pointer-events: none;
+    }
+    .buyers-hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ""; height: 1px; width: 36px;
+      background: var(--gold); opacity: 0.6;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+    .buyers-hero h1 {
+      font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.25s forwards;
+    }
+    .buyers-hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .buyers-hero p {
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 54ch;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.85;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── PROMISE / USP STRIP ────────────────────── */
+    .promise-section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--white);
+    }
+    .promise-header {
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+    .promise-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .promise-header .lead {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .promise-card {
+      position: relative;
+      padding: 2.25rem 2rem;
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+    .promise-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .promise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.22);
+    }
+    .promise-card:hover::before { opacity: 1; }
+    .promise-icon {
+      width: 48px; height: 48px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+      transition: background 0.25s;
+    }
+    .promise-card:hover .promise-icon { background: rgba(184,146,58,0.18); }
+    .promise-icon svg { width: 22px; height: 22px; stroke: var(--gold); }
+    .promise-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .promise-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    /* ── SERVICE BLOCKS ─────────────────────────── */
+    .buyers-main {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+      background: var(--cream);
+    }
+
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      padding: clamp(3.5rem, 6vw, 5rem) 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .service-block:first-child { padding-top: 0; }
+    .service-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .service-block:nth-child(even) .service-meta { order: 2; }
+    .service-block:nth-child(even) .service-details { order: 1; }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+    }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--gold); }
+
+    .service-meta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .service-meta h2 em { font-style: italic; color: var(--gold); }
+    .service-meta > p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.9;
+    }
+
+    .service-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .detail-card {
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      padding: 1.6rem 1.75rem;
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      position: relative;
+      overflow: hidden;
+    }
+    .detail-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.28s;
+    }
+    .detail-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.2);
+    }
+    .detail-card:hover::before { opacity: 1; }
+    .detail-card h4 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+    .detail-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    /* ── COMPENSATION CALLOUT ───────────────────── */
+    .compensation-band {
+      /* PHOTO SLOT */
+      background:
+        linear-gradient(rgba(8,18,50,0.80), rgba(8,18,50,0.80)),
+        url("images/gj-neighborhood.jpg") center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+    }
+    .compensation-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .compensation-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    .compensation-copy h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--white);
+      font-weight: 300;
+      margin-bottom: 0.65rem;
+    }
+    .compensation-copy h3 em { font-style: italic; color: var(--gold-lt); }
+    .compensation-copy p {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      max-width: 58ch;
+    }
+
+    /* ── CTA ────────────────────────────────────── */
+    .cta-band {
+      background: var(--cream);
+      border-top: 1px solid var(--sand);
+      padding: clamp(4rem, 7vw, 6rem) 0;
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-inner h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .cta-inner h2 em { font-style: italic; color: var(--gold); }
+    .cta-inner p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+      max-width: 52ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    .main-footer {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(184,146,58,0.15);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo-footer {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; }
+    .footer-links h4, .footer-contact h4 {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a {
+      text-decoration: none; color: rgba(255,255,255,0.52);
+      font-size: 0.9rem; transition: color 0.2s;
+    }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center; }
+
+    /* ── ANIMATIONS ─────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 700px) {
+      .promise-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MOBILE NAV ──────────────────────────────────────── */
+
+    @media (max-width: 980px) {
+      .promise-grid { grid-template-columns: 1fr; }
+      .service-block { grid-template-columns: 1fr; gap: 2.5rem; }
+      .service-block:nth-child(even) .service-meta { order: 0; }
+      .service-block:nth-child(even) .service-details { order: 0; }
+      .compensation-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      /* Mobile nav */
+      .nav-menu { display: none; }
+      .mobile-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 200;
+      }
+      .mobile-toggle span {
+        display: block;
+        width: 24px; height: 1.5px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+      .mobile-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .mobile-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .mobile-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      .nav-menu.active {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgb(12, 26, 61) !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 9999 !important;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-menu.active li { list-style: none; }
+      .nav-menu.active a {
+        font-size: 1.5rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu.active a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu.active .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+        color: var(--gold-lt);
+      }
+    }
+  
+    .nbhd-link-card{background:var(--white);border:1px solid var(--sand);border-radius:12px;padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}.nbhd-link-card:hover{border-color:var(--gold);transform:translateY(-2px);}.nbhd-link-card svg{width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}.nbhd-link-card span{font-size:0.88rem;font-weight:600;color:var(--navy);}
+</style>
 </head>
-<body class="page page-buyers">
+
+<body>
+
 <!-- NAV -->
 <header class="main-header" id="mainHeader">
-<nav>
-<a class="logo" href="index.html">
-<span class="logo-main">Orion Love | Colorado Realtor®</span>
-</a>
-<ul class="nav-menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Sellers</a></li>
-<li><a aria-current="page" class="active" href="buyers.html">Buyers</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a class="btn-nav" href="contact.html">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-toggle">
-<span></span><span></span><span></span>
-</button>
-</nav>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Sellers</a></li>
+      <li><a href="buyers.html" class="active" aria-current="page">Buyers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
+
 <!-- HERO -->
 <section class="buyers-hero">
-<div class="container">
-<div class="hero-eyebrow"><span>Buyer Services · Grand Junction</span></div>
-<h1>Buy with a<br/><em>Clear Plan.</em></h1>
-<p>
+  <div class="container">
+    <div class="hero-eyebrow"><span>Buyer Services · Grand Junction</span></div>
+    <h1>Buy with a<br><em>Clear Plan.</em></h1>
+    <p>
       Buying in Grand Junction rewards preparation and local knowledge.
       I provide the market insight, honest guidance, and clear strategy to get you there.
     </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="contact.html">Schedule a Consultation</a>
-<a class="btn-outline-white" href="#services">See the Buyer's Path</a>
-</div>
-</div>
+    <div class="hero-cta">
+      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+      <a href="#services" class="btn-outline-white">See the Buyer's Path</a>
+    </div>
+  </div>
 </section>
+
 <!-- PROMISE -->
 <section class="promise-section">
-<div class="container">
-<div class="promise-header reveal">
-<div class="section-label centered"><span>Why Sellers Choose Orion</span></div>
-<h2>The Grand Junction Market<br/>Rewards <em>Local Knowledge</em></h2>
-<p class="lead">
+  <div class="container">
+    <div class="promise-header reveal">
+      <div class="section-label centered"><span>Why Sellers Choose Orion</span></div>
+      <h2>The Grand Junction Market<br>Rewards <em>Local Knowledge</em></h2>
+      <p class="lead">
         From the Redlands to Fruita, Palisade to Orchard Mesa — every neighborhood has its own
         rhythm, pricing patterns, and considerations. I help you read them clearly and move with confidence.
       </p>
-</div>
-<div class="promise-grid">
-<div class="promise-card reveal" style="transition-delay:0.05s">
-<div class="promise-icon"><i data-lucide="handshake"></i></div>
-<h3>Exclusive Buyer Representation</h3>
-<p>I work for you — not the seller. Honest guidance on price, condition, resale potential, and what the market really looks like in your target Mesa County neighborhoods.</p>
-</div>
-<div class="promise-card reveal" style="transition-delay:0.14s">
-<div class="promise-icon"><i data-lucide="map"></i></div>
-<h3>Full Market Access</h3>
-<p>Grand Junction, Fruita, Palisade, Clifton, Orchard Mesa — you'll see every option across Mesa County, including new listings and off-market opportunities when they surface.</p>
-</div>
-<div class="promise-card reveal" style="transition-delay:0.23s">
-<div class="promise-icon"><i data-lucide="info"></i></div>
-<h3>Transparent Compensation</h3>
-<p>Buyer representation is typically covered through the transaction. I explain exactly how compensation works before we tour a single home — no ambiguity, no surprises.</p>
-</div>
-</div>
-</div>
+    </div>
+
+    <div class="promise-grid">
+      <div class="promise-card reveal" style="transition-delay:0.05s">
+        <div class="promise-icon"><i data-lucide="handshake"></i></div>
+        <h3>Exclusive Buyer Representation</h3>
+        <p>I work for you — not the seller. Honest guidance on price, condition, resale potential, and what the market really looks like in your target Mesa County neighborhoods.</p>
+      </div>
+
+      <div class="promise-card reveal" style="transition-delay:0.14s">
+        <div class="promise-icon"><i data-lucide="map"></i></div>
+        <h3>Full Market Access</h3>
+        <p>Grand Junction, Fruita, Palisade, Clifton, Orchard Mesa — you'll see every option across Mesa County, including new listings and off-market opportunities when they surface.</p>
+      </div>
+
+      <div class="promise-card reveal" style="transition-delay:0.23s">
+        <div class="promise-icon"><i data-lucide="info"></i></div>
+        <h3>Transparent Compensation</h3>
+        <p>Buyer representation is typically covered through the transaction. I explain exactly how compensation works before we tour a single home — no ambiguity, no surprises.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- SERVICE BLOCKS -->
 <section class="buyers-main" id="services">
-<div class="container">
-<!-- 1. Property Search -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>01</span></div>
-<div class="service-icon"><i data-lucide="search"></i></div>
-<h2>Property Search <em>&amp; Access</em></h2>
-<p>
+  <div class="container">
+
+    <!-- 1. Property Search -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>01</span></div>
+        <div class="service-icon"><i data-lucide="search"></i></div>
+        <h2>Property Search <em>&amp; Access</em></h2>
+        <p>
           Homes that fit your goals and make genuine sense in today's Mesa County market.
           Not a filtered algorithm — a local agent who knows the market and what's worth your attention.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>MLS Search</h4>
-<p>Real-time alerts for Mesa County listings, price reductions, and new inventory the moment it surfaces — so you never miss a promising opportunity.</p>
-</div>
-<div class="detail-card">
-<h4>Efficient Showings</h4>
-<p>Back-to-back tours so you can compare homes side by side and make confident decisions without decision fatigue.</p>
-</div>
-<div class="detail-card">
-<h4>Off-Market Opportunities</h4>
-<p>Access to local agent networks when homes are available before they go public — giving you a head start on the right property.</p>
-</div>
-</div>
-</div>
-<!-- 2. Market Analysis -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>02</span></div>
-<div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
-<h2>Market Analysis <em>&amp; Valuation</em></h2>
-<p>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>MLS Search</h4>
+          <p>Real-time alerts for Mesa County listings, price reductions, and new inventory the moment it surfaces — so you never miss a promising opportunity.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Efficient Showings</h4>
+          <p>Back-to-back tours so you can compare homes side by side and make confident decisions without decision fatigue.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Off-Market Opportunities</h4>
+          <p>Access to local agent networks when homes are available before they go public — giving you a head start on the right property.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Market Analysis -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>02</span></div>
+        <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h2>Market Analysis <em>&amp; Valuation</em></h2>
+        <p>
           Real value in Grand Junction is neighborhood-specific. What's true in the Redlands
           isn't true in Clifton. I give you the local data to navigate clearly, not national averages.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>Comparative Market Analysis</h4>
-<p>Recent closings, active competition, and buyer patterns broken down by Grand Junction neighborhood — so every offer you make is grounded, not guessed.</p>
-</div>
-<div class="detail-card">
-<h4>Neighborhood Insight</h4>
-<p>HOAs, irrigation water rights, property taxes, Mesa County school zones, and livability factors that listing photos never show — but matter enormously long-term.</p>
-</div>
-<div class="detail-card">
-<h4>Current Market Conditions</h4>
-<p>Inventory levels, days on market, and strategy guidance based on what's actually happening — not national trends.</p>
-</div>
-</div>
-</div>
-<!-- 3. Offer Strategy -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>03</span></div>
-<div class="service-icon"><i data-lucide="pen-line"></i></div>
-<h2>Offer Strategy <em>&amp; Negotiation</em></h2>
-<p>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>Comparative Market Analysis</h4>
+          <p>Recent closings, active competition, and buyer patterns broken down by Grand Junction neighborhood — so every offer you make is grounded, not guessed.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Neighborhood Insight</h4>
+          <p>HOAs, irrigation water rights, property taxes, Mesa County school zones, and livability factors that listing photos never show — but matter enormously long-term.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Current Market Conditions</h4>
+          <p>Inventory levels, days on market, and strategy guidance based on what's actually happening — not national trends.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Offer Strategy -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>03</span></div>
+        <div class="service-icon"><i data-lucide="pen-line"></i></div>
+        <h2>Offer Strategy <em>&amp; Negotiation</em></h2>
+        <p>
           In Mesa County, the best offer isn't always the highest — it's the one most likely
           to navigate cleanly to closing. I structure offers that are competitive, clean,
           and built to protect you from offer through closing.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>Clean Contracts</h4>
-<p>Well-structured offers that reduce friction for sellers while keeping your protections firmly in place.</p>
-</div>
-<div class="detail-card">
-<h4>Strategic Terms</h4>
-<p>Guidance on price, contingencies, appraisal risk, and timing so every term in the contract works in your favor.</p>
-</div>
-<div class="detail-card">
-<h4>Negotiation</h4>
-<p>Focused on protecting your bottom line through inspections, appraisal, and any curveballs between offer and closing.</p>
-</div>
-</div>
-</div>
-<!-- 4. Due Diligence -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>04</span></div>
-<div class="service-icon"><i data-lucide="shield-check"></i></div>
-<h2>Due <em>Diligence</em></h2>
-<p>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>Clean Contracts</h4>
+          <p>Well-structured offers that reduce friction for sellers while keeping your protections firmly in place.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Strategic Terms</h4>
+          <p>Guidance on price, contingencies, appraisal risk, and timing so every term in the contract works in your favor.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Negotiation</h4>
+          <p>Focused on protecting your bottom line through inspections, appraisal, and any curveballs between offer and closing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Due Diligence -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>04</span></div>
+        <div class="service-icon"><i data-lucide="shield-check"></i></div>
+        <h2>Due <em>Diligence</em></h2>
+        <p>
           This is where a knowledgeable guide saves you real money. I help you understand
           what to negotiate, what's standard in Grand Junction homes, and when the path
           ahead isn't worth taking.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>Trusted Inspectors</h4>
-<p>Inspectors who know Mesa County construction, adobe soil movement, older irrigation systems, and the issues common to Grand Junction homes at every age and price point.</p>
-</div>
-<div class="detail-card">
-<h4>Inspection Strategy</h4>
-<p>Clear guidance on what's worth negotiating, what's cosmetic, and what's a legitimate reason to rethink the deal.</p>
-</div>
-<div class="detail-card">
-<h4>Appraisal Support</h4>
-<p>Strategy and renegotiation guidance if values come in low — so a low appraisal doesn't automatically blow up the deal.</p>
-</div>
-</div>
-</div>
-<!-- 5. Financing -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>05</span></div>
-<div class="service-icon"><i data-lucide="landmark"></i></div>
-<h2>Financing <em>Coordination</em></h2>
-<p>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>Trusted Inspectors</h4>
+          <p>Inspectors who know Mesa County construction, adobe soil movement, older irrigation systems, and the issues common to Grand Junction homes at every age and price point.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Inspection Strategy</h4>
+          <p>Clear guidance on what's worth negotiating, what's cosmetic, and what's a legitimate reason to rethink the deal.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Appraisal Support</h4>
+          <p>Strategy and renegotiation guidance if values come in low — so a low appraisal doesn't automatically blow up the deal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Financing -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>05</span></div>
+        <div class="service-icon"><i data-lucide="landmark"></i></div>
+        <h2>Financing <em>Coordination</em></h2>
+        <p>
           Financing delays are one of the most common ways a Grand Junction purchase falls apart.
           I work with local lenders I trust and stay on top of every timeline so the route
           to closing stays clear.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>Local Lender Connections</h4>
-<p>Referrals to reliable local lenders who know the Grand Junction market and close on time — no last-minute delays.</p>
-</div>
-<div class="detail-card">
-<h4>Financing Guidance</h4>
-<p>Clear explanations of loan types, down payment options, and true closing costs so you're not surprised at the table.</p>
-</div>
-<div class="detail-card">
-<h4>Timeline Management</h4>
-<p>Coordination between lender deadlines and contract dates so nothing slips through and you don't lose the earnest money.</p>
-</div>
-</div>
-</div>
-<!-- 6. Closing -->
-<div class="service-block reveal">
-<div class="service-meta">
-<div class="section-label"><span>06</span></div>
-<div class="service-icon"><i data-lucide="key"></i></div>
-<h2>Closing <em>&amp; Beyond</em></h2>
-<p>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>Local Lender Connections</h4>
+          <p>Referrals to reliable local lenders who know the Grand Junction market and close on time — no last-minute delays.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Financing Guidance</h4>
+          <p>Clear explanations of loan types, down payment options, and true closing costs so you're not surprised at the table.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Timeline Management</h4>
+          <p>Coordination between lender deadlines and contract dates so nothing slips through and you don't lose the earnest money.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Closing -->
+    <div class="service-block reveal">
+      <div class="service-meta">
+        <div class="section-label"><span>06</span></div>
+        <div class="service-icon"><i data-lucide="key"></i></div>
+        <h2>Closing <em>&amp; Beyond</em></h2>
+        <p>
           Getting to closing day is the destination — but the journey doesn't stop there.
           I stay with you through the final walkthrough, the table, and the first weeks
           in your new Grand Junction home.
         </p>
-</div>
-<div class="service-details">
-<div class="detail-card">
-<h4>Final Walkthrough</h4>
-<p>Verifying condition and that agreed-upon repairs are complete before you sign anything at the closing table.</p>
-</div>
-<div class="detail-card">
-<h4>Closing Prep</h4>
-<p>Reviewing documents with you ahead of time so nothing is a surprise — and you understand exactly what you're signing.</p>
-</div>
-<div class="detail-card">
-<h4>Post-Closing Support</h4>
-<p>Utility setup, contractor referrals, and local resources so the transition into your new home is as smooth as possible.</p>
-</div>
-</div>
-</div>
-</div>
+      </div>
+      <div class="service-details">
+        <div class="detail-card">
+          <h4>Final Walkthrough</h4>
+          <p>Verifying condition and that agreed-upon repairs are complete before you sign anything at the closing table.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Closing Prep</h4>
+          <p>Reviewing documents with you ahead of time so nothing is a surprise — and you understand exactly what you're signing.</p>
+        </div>
+        <div class="detail-card">
+          <h4>Post-Closing Support</h4>
+          <p>Utility setup, contractor referrals, and local resources so the transition into your new home is as smooth as possible.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 <!-- COMPENSATION CALLOUT -->
 <section class="compensation-band">
-<div class="container">
-<div class="compensation-inner reveal">
-<div class="compensation-copy">
-<div class="section-label"><span>Compensation</span></div>
-<h3>How Buyer Representation <em>Works</em></h3>
-<p>
+  <div class="container">
+    <div class="compensation-inner reveal">
+      <div class="compensation-copy">
+        <div class="section-label"><span>Compensation</span></div>
+        <h3>How Buyer Representation <em>Works</em></h3>
+        <p>
           Buyer representation compensation is typically covered through the purchase contract.
           Before we tour a single home in Mesa County, I walk you through exactly how it works —
           plain language, everything in writing. The route is clear before we take a single step.
         </p>
-</div>
-<a class="btn-gold-outline" href="contact.html">Schedule a Consultation</a>
-</div>
-</div>
+      </div>
+      <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
+    </div>
+  </div>
 </section>
+
 <!-- CTA -->
 <section class="cta-band">
-<div class="container">
-<div class="cta-inner reveal">
-<div class="section-label centered"><span>Ready to Start?</span></div>
-<h2>Ready to Buy in <em>Grand Junction?</em></h2>
-<p>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-label centered"><span>Ready to Start?</span></div>
+      <h2>Ready to Buy in <em>Grand Junction?</em></h2>
+      <p>
         Let's map out a clear path before you spend a single weekend touring homes —
         one grounded in Mesa County data, honest guidance, and a strategy built for you.
       </p>
-<a class="btn btn-primary" href="contact.html">Schedule a Consultation</a>
-</div>
-</div>
+      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+    </div>
+  </div>
 </section>
+
+
+<!-- NEIGHBORHOODS -->
+<section style="background:var(--cream);border-top:1px solid var(--sand);padding:clamp(3rem,5vw,4rem) 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:1.5rem;max-width:720px;margin-left:auto;margin-right:auto;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-bottom:1.25rem;"><span style="display:block;width:28px;height:1px;background:var(--gold);"></span><span style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">Featured Areas</span><span style="display:block;width:28px;height:1px;background:var(--gold);"></span></div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:0.55rem;">Explore Key Areas Around Grand Junction</h2>
+      <p style="color:var(--muted);font-size:0.98rem;line-height:1.8;">A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;">
+      <a href="downtown-grand-junction.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>Downtown Grand Junction</span></a>
+      <a href="north-grand-junction.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>North Grand Junction</span></a>
+      <a href="redlands-homes.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>The Redlands</span></a>
+      <a href="orchard-mesa-homes.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>Orchard Mesa</span></a>
+      <a href="selling-in-fruita.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>Fruita</span></a>
+      <a href="selling-in-palisade.html" class="nbhd-link-card"><i data-lucide="map-pin"></i><span>Palisade</span></a>
+    </div>
+  </div>
+</section>
+
+
 <!-- FOOTER -->
 <footer class="main-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3 class="logo-footer">Orion Love</h3>
-<p>Helping Grand Junction homeowners buy and sell<br/>with clarity, confidence, and honest communication.</p>
-<p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
-</div>
-<div class="footer-links">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Sellers</a></li>
-<li><a href="buyers.html">Buyers</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div class="footer-contact">
-<h4>Contact</h4>
-<ul>
-<li><a href="/cdn-cgi/l/email-protection#ea8598838584c486859c8fc48985aa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="b3dcc1dadcdd9ddfdcc5d69dd0dcf3d4ded2dadf9dd0dcde">[email protected]</span></a></li>
-<li><a href="tel:9706446781">(970) 644-6781</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Orion Love Real Estate. All rights reserved.</p>
-</div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="logo-footer">Orion Love</h3>
+        <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
+        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#ea8598838584c486859c8fc48985aa8d878b8386c4898587"><span class="__cf_email__" data-cfemail="b3dcc1dadcdd9ddfdcc5d69dd0dcf3d4ded2dadf9dd0dcde">[email&#160;protected]</span></a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
 </footer>
 
-<script defer="" src="script.js"></script></body>
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
 </html>

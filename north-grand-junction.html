@@ -1,130 +1,269 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>North Grand Junction Real Estate | Orion Love — Colorado Realtor®</title>
-<meta content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." name="description"/>
-<meta content="North Grand Junction Real Estate | Orion Love — Colorado Realtor®" property="og:title"/>
-<meta content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="North Grand Junction Real Estate | Orion Love — Colorado Realtor®" name="twitter:title"/>
-<meta content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." name="twitter:description"/>
-<meta content="North Grand Junction real estate, North GJ homes for sale, sell my home North Grand Junction, Mesa County realtor, Grand Junction neighborhoods" name="keywords"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script><link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Grand Junction Real Estate | Orion Love — Colorado Realtor®</title>
+  <meta name="description" content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." />
+  <meta property="og:title" content="North Grand Junction Real Estate | Orion Love — Colorado Realtor®" />
+  <meta property="og:description" content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="North Grand Junction Real Estate | Orion Love — Colorado Realtor®" />
+  <meta name="twitter:description" content="Buying or selling in North Grand Junction? Get local expertise from Realtor Orion Love. Established neighborhoods, great schools, and easy access to all of Grand Junction." />
+  <meta name="keywords" content="North Grand Junction real estate, North GJ homes for sale, sell my home North Grand Junction, Mesa County realtor, Grand Junction neighborhoods" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px; }
+    html{scroll-behavior:smooth;}body{font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
+    .container{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}section{padding:clamp(3.5rem,6vw,5rem) 0;}
+    .main-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
+    .main-header.scrolled{background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
+    .main-header nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
+    .logo{text-decoration:none;}.logo-main{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
+    .nav-menu{display:flex;list-style:none;gap:2.25rem;align-items:center;}.nav-menu a{text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}.nav-menu a:hover{color:var(--gold-lt);}
+    .btn-nav{background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
+    .mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}.mobile-toggle span{display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
+    .btn-primary{background:var(--gold);color:var(--white);}.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);}
+    .btn-navy{background:var(--navy);color:var(--white);}.btn-navy:hover{background:var(--navy-mid);transform:translateY(-2px);}
+    .btn-outline-gold{background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}.btn-outline-gold:hover{background:rgba(184,146,58,0.12);transform:translateY(-2px);}
+    .section-label{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}.section-label::before{content:"";display:block;width:28px;height:1px;background:var(--gold);}.section-label span{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+    .section-label.centered{justify-content:center;}.section-label.centered::after{content:"";display:block;width:28px;height:1px;background:var(--gold);}
+    .divider{display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--sand);}.divider-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
+    .hero{position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+    .hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
+    .hero-inner{position:relative;z-index:1;max-width:760px;padding-top:4rem;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}.hero-eyebrow::before{content:"";display:block;width:22px;height:1px;background:var(--gold);}
+    .hero h1{color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}.hero h1 em{font-style:italic;color:var(--gold-lt);}
+    .hero-lead{font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
+    .nbhd-intro{background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .intro-copy h2{margin-bottom:0.85rem;}.intro-copy p{color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
+    .quick-facts{background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
+    .quick-facts h4{font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
+    .fact-row{display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}.fact-row:last-child{border-bottom:none;}
+    .fact-label{font-size:0.88rem;color:var(--muted);}
+    .fact-value{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
+    .market-note{font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
+    .card{background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
+    .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}.card:hover::before{opacity:1;}
+    .card-icon{width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}.card-icon svg{width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
+    .card h3{font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}.card p{color:var(--muted);font-size:0.95rem;line-height:1.8;}
+    .dark-band{background:var(--navy);position:relative;overflow:hidden;}.dark-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
+    .dark-band-inner{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
+    .dark-band-inner h2{color:var(--white);font-weight:300;margin-bottom:1rem;}.dark-band-inner h2 em{font-style:italic;color:var(--gold-lt);}
+    .dark-band-inner p{color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
+    .cta-pair{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
+    .link-card{background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}.link-card:hover{border-color:var(--gold);transform:translateY(-2px);}.link-card svg{width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}.link-card span{font-size:0.88rem;font-weight:600;color:var(--navy);}
+    .main-footer{background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
+    .logo-footer{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
+    .footer-brand p{color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
+    .footer-links h4,.footer-contact h4{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+    .footer-links ul,.footer-contact ul{list-style:none;}.footer-links li,.footer-contact li{margin-bottom:0.6rem;}
+    .footer-links a,.footer-contact a{color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}.footer-links a:hover,.footer-contact a:hover{color:var(--gold-lt);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
+    .footer-bottom p,.footer-bottom a{color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}.footer-bottom a:hover{color:var(--gold-lt);}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}.reveal.visible{opacity:1;transform:none;}
+    @media(max-width:968px){.nav-menu{position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}.nav-menu.active{left:0;}.mobile-toggle{display:flex;}.intro-grid{grid-template-columns:1fr;gap:2.5rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
+  </style>
 </head>
-<body class="page page-north-grand-junction">
+<body>
+
 <header class="main-header" id="mainHeader">
-<nav>
-<a class="logo" href="index.html"><span class="logo-main">Orion Love | Colorado Realtor®</span></a>
-<ul class="nav-menu" id="navMenu">
-<li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a class="btn-nav" href="contact.html">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
-</nav>
+  <nav>
+    <a href="index.html" class="logo"><span class="logo-main">Orion Love | Colorado Realtor®</span></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
 </header>
+
 <section class="hero">
-<div class="container"><div class="hero-inner">
-<div class="hero-eyebrow">North Grand Junction · Mesa County · Western Colorado</div>
-<h1>Living &amp; Buying in<br/><em>North Grand Junction</em></h1>
-<p class="hero-lead">One of Grand Junction's most established residential corridors. Mature tree-lined streets, proximity to North Avenue's commercial strip, Monument Road access to the Colorado National Monument, and a wide range of housing that suits buyers at nearly every price point.</p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="buyers.html">Buyer Services</a>
-<a class="btn-outline-gold" href="grand-junction-home-value.html">Selling in North GJ?</a>
-</div>
-</div></div>
+  <div class="container"><div class="hero-inner">
+    <div class="hero-eyebrow">North Grand Junction · Mesa County · Western Colorado</div>
+    <h1>Living &amp; Buying in<br><em>North Grand Junction</em></h1>
+    <p class="hero-lead">One of Grand Junction's most established residential corridors. Mature tree-lined streets, proximity to North Avenue's commercial strip, Monument Road access to the Colorado National Monument, and a wide range of housing that suits buyers at nearly every price point.</p>
+    <div class="hero-cta">
+      <a href="buyers.html" class="btn btn-primary">Buyer Services</a>
+      <a href="grand-junction-home-value.html" class="btn-outline-gold">Selling in North GJ?</a>
+    </div>
+  </div></div>
 </section>
+
 <section class="nbhd-intro">
-<div class="container"><div class="intro-grid">
-<div class="intro-copy reveal">
-<div class="section-label"><span>The Neighborhood</span></div>
-<h2>What Makes North Grand Junction Stand Out</h2>
-<p>North Grand Junction stretches roughly from I-70 Business to the mesa rim north of town, encompassing a broad swath of established residential development along corridors like North Avenue, 12th Street, and Patterson Road. It's not a single subdivision — it's a mature, interconnected section of the city with decades of roots.</p>
-<p>Buyers here typically find larger lots, older ranch-style and two-story homes, and neighborhoods where the trees have had time to grow. The proximity to schools like Grand Junction High School and Central High School makes it a consistent draw for families. North GJ also offers some of the most direct routes into Fruita and toward the Monument without going through the core of downtown.</p>
-<p>For sellers, North GJ's established character and steady family demand create a reliable resale market — one where condition and presentation matter more than location, because the location is already well understood by buyers.</p>
-<div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-<a class="btn btn-navy" href="contact.html">Talk to Orion</a>
-<a class="btn-outline-gold" href="grand-junction-home-value.html">Get a Home Value</a>
-</div>
-</div>
-<div class="quick-facts reveal" style="transition-delay:0.15s">
-<h4>North Grand Junction At a Glance</h4>
-<div class="market-note" id="marketNote">Live monthly market data · North Grand Junction</div>
-<div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value" data-market-stat="medianPrice">$--</span></div>
-<div class="fact-row"><span class="fact-label">Typical Property Types</span><span class="fact-value">Ranch homes, two-stories, split-levels</span></div>
-<div class="fact-row"><span class="fact-label">Lot Character</span><span class="fact-value">Mature trees, established lots</span></div>
-<div class="fact-row"><span class="fact-label">School Access</span><span class="fact-value">GJ High, Central High</span></div>
-<div class="fact-row"><span class="fact-label">Monument Access</span><span class="fact-value">Direct via Monument Rd</span></div>
-<div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value" data-market-stat="averageDaysOnMarket">-- days</span></div>
-<div class="fact-row"><span class="fact-label">Best For</span><span class="fact-value">Families, established neighborhoods, value</span></div>
-</div>
-</div></div>
+  <div class="container"><div class="intro-grid">
+    <div class="intro-copy reveal">
+      <div class="section-label"><span>The Neighborhood</span></div>
+      <h2>What Makes North Grand Junction Stand Out</h2>
+      <p>North Grand Junction stretches roughly from I-70 Business to the mesa rim north of town, encompassing a broad swath of established residential development along corridors like North Avenue, 12th Street, and Patterson Road. It's not a single subdivision — it's a mature, interconnected section of the city with decades of roots.</p>
+      <p>Buyers here typically find larger lots, older ranch-style and two-story homes, and neighborhoods where the trees have had time to grow. The proximity to schools like Grand Junction High School and Central High School makes it a consistent draw for families. North GJ also offers some of the most direct routes into Fruita and toward the Monument without going through the core of downtown.</p>
+      <p>For sellers, North GJ's established character and steady family demand create a reliable resale market — one where condition and presentation matter more than location, because the location is already well understood by buyers.</p>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-navy">Talk to Orion</a>
+        <a href="grand-junction-home-value.html" class="btn-outline-gold">Get a Home Value</a>
+      </div>
+    </div>
+    <div class="quick-facts reveal" style="transition-delay:0.15s">
+      <h4>North Grand Junction At a Glance</h4>
+      <div class="market-note" id="marketNote">Live monthly market data · North Grand Junction</div>
+      <div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value" data-market-stat="medianPrice">$--</span></div>
+      <div class="fact-row"><span class="fact-label">Typical Property Types</span><span class="fact-value">Ranch homes, two-stories, split-levels</span></div>
+      <div class="fact-row"><span class="fact-label">Lot Character</span><span class="fact-value">Mature trees, established lots</span></div>
+      <div class="fact-row"><span class="fact-label">School Access</span><span class="fact-value">GJ High, Central High</span></div>
+      <div class="fact-row"><span class="fact-label">Monument Access</span><span class="fact-value">Direct via Monument Rd</span></div>
+      <div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value" data-market-stat="averageDaysOnMarket">-- days</span></div>
+      <div class="fact-row"><span class="fact-label">Best For</span><span class="fact-value">Families, established neighborhoods, value</span></div>
+    </div>
+  </div></div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <section style="background:var(--cream);">
-<div class="container">
-<div class="reveal" style="max-width:640px;">
-<div class="section-label"><span>Why Buyers Choose North GJ</span></div>
-<h2>What North Grand Junction Offers That Draws Buyers Back</h2>
-</div>
-<div class="card-grid">
-<div class="card reveal" style="transition-delay:0.05s"><div class="card-icon"><i data-lucide="trees"></i></div><h3>Mature, Established Character</h3><p>North GJ has the kind of neighborhood feel that only comes with time — mature trees, owner-occupied streets, and a settled residential rhythm that newer subdivisions simply can't replicate yet.</p></div>
-<div class="card reveal" style="transition-delay:0.12s"><div class="card-icon"><i data-lucide="graduation-cap"></i></div><h3>School Proximity</h3><p>Grand Junction High School and Central High School are both within North GJ's orbit, making this area a consistent target for families prioritizing school access alongside housing value.</p></div>
-<div class="card reveal" style="transition-delay:0.19s"><div class="card-icon"><i data-lucide="mountain"></i></div><h3>Monument Road Access</h3><p>Some of the most direct routes to the Colorado National Monument run through North GJ. For buyers who prioritize outdoor access, that proximity to trails, overlooks, and canyon scenery is a genuine daily benefit.</p></div>
-<div class="card reveal" style="transition-delay:0.26s"><div class="card-icon"><i data-lucide="home"></i></div><h3>Wide Range of Housing Stock</h3><p>From modest ranch homes to larger two-story family houses, North GJ has more housing variety than most areas of comparable size. That range means buyers at different price points can often find something that fits — often with more square footage than newer construction at the same price.</p></div>
-<div class="card reveal" style="transition-delay:0.33s"><div class="card-icon"><i data-lucide="store"></i></div><h3>North Avenue Commercial Corridor</h3><p>North Avenue runs through the heart of this area, putting grocery stores, restaurants, and services within a short drive or bike ride. Daily errands don't require a trip to the other side of town.</p></div>
-<div class="card reveal" style="transition-delay:0.40s"><div class="card-icon"><i data-lucide="map"></i></div><h3>Central Grand Valley Position</h3><p>North GJ sits in one of the most centrally accessible parts of Mesa County — equidistant from downtown, close to I-70 for travel, and well-connected to Fruita, Clifton, and the broader Grand Valley without being in the middle of it all.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="reveal" style="max-width:640px;">
+      <div class="section-label"><span>Why Buyers Choose North GJ</span></div>
+      <h2>What North Grand Junction Offers That Draws Buyers Back</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal" style="transition-delay:0.05s"><div class="card-icon"><i data-lucide="trees"></i></div><h3>Mature, Established Character</h3><p>North GJ has the kind of neighborhood feel that only comes with time — mature trees, owner-occupied streets, and a settled residential rhythm that newer subdivisions simply can't replicate yet.</p></div>
+      <div class="card reveal" style="transition-delay:0.12s"><div class="card-icon"><i data-lucide="graduation-cap"></i></div><h3>School Proximity</h3><p>Grand Junction High School and Central High School are both within North GJ's orbit, making this area a consistent target for families prioritizing school access alongside housing value.</p></div>
+      <div class="card reveal" style="transition-delay:0.19s"><div class="card-icon"><i data-lucide="mountain"></i></div><h3>Monument Road Access</h3><p>Some of the most direct routes to the Colorado National Monument run through North GJ. For buyers who prioritize outdoor access, that proximity to trails, overlooks, and canyon scenery is a genuine daily benefit.</p></div>
+      <div class="card reveal" style="transition-delay:0.26s"><div class="card-icon"><i data-lucide="home"></i></div><h3>Wide Range of Housing Stock</h3><p>From modest ranch homes to larger two-story family houses, North GJ has more housing variety than most areas of comparable size. That range means buyers at different price points can often find something that fits — often with more square footage than newer construction at the same price.</p></div>
+      <div class="card reveal" style="transition-delay:0.33s"><div class="card-icon"><i data-lucide="store"></i></div><h3>North Avenue Commercial Corridor</h3><p>North Avenue runs through the heart of this area, putting grocery stores, restaurants, and services within a short drive or bike ride. Daily errands don't require a trip to the other side of town.</p></div>
+      <div class="card reveal" style="transition-delay:0.40s"><div class="card-icon"><i data-lucide="map"></i></div><h3>Central Grand Valley Position</h3><p>North GJ sits in one of the most centrally accessible parts of Mesa County — equidistant from downtown, close to I-70 for travel, and well-connected to Fruita, Clifton, and the broader Grand Valley without being in the middle of it all.</p></div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <section class="dark-band">
-<div class="container"><div class="dark-band-inner reveal">
-<div class="section-label centered" style="justify-content:center;"><span style="color:var(--gold-lt)">Ready to Move?</span></div>
-<h2>Buying or Selling in <em>North Grand Junction</em></h2>
-<p>Whether you're a family looking for the right school zone, a buyer who wants established neighborhoods over new construction, or a seller ready to capitalize on consistent North GJ demand — I know this area and I'll give you a straight read on it.</p>
-<div class="cta-pair">
-<a class="btn btn-primary" href="buyers.html">Buyer Services</a>
-<a class="btn-outline-gold" href="grand-junction-home-value.html">Get a Seller Review</a>
-</div>
-</div></div>
+  <div class="container"><div class="dark-band-inner reveal">
+    <div class="section-label centered" style="justify-content:center;"><span style="color:var(--gold-lt)">Ready to Move?</span></div>
+    <h2>Buying or Selling in <em>North Grand Junction</em></h2>
+    <p>Whether you're a family looking for the right school zone, a buyer who wants established neighborhoods over new construction, or a seller ready to capitalize on consistent North GJ demand — I know this area and I'll give you a straight read on it.</p>
+    <div class="cta-pair">
+      <a href="buyers.html" class="btn btn-primary">Buyer Services</a>
+      <a href="grand-junction-home-value.html" class="btn-outline-gold">Get a Seller Review</a>
+    </div>
+  </div></div>
 </section>
+
 <section style="background:var(--white);border-top:1px solid var(--sand);padding:clamp(3rem,5vw,4rem) 0;">
-<div class="container">
-<div class="reveal" style="text-align:center;margin-bottom:1.5rem;">
-<div class="section-label centered"><span>Explore More Neighborhoods</span></div>
-<h2 style="font-size:clamp(1.5rem,2.5vw,2.2rem);">Other Grand Valley Communities</h2>
-</div>
-<div class="link-grid">
-<a class="link-card" href="grand-junction-home-value.html"><i data-lucide="map-pin"></i><span>Grand Junction Home Value</span></a>
-<a class="link-card" href="downtown-grand-junction.html"><i data-lucide="map-pin"></i><span>Downtown Grand Junction</span></a>
-<a class="link-card" href="northwest-grand-junction.html"><i data-lucide="map-pin"></i><span>Northwest Grand Junction</span></a>
-<a class="link-card" href="northeast-grand-junction.html"><i data-lucide="map-pin"></i><span>Northeast Grand Junction</span></a>
-<a class="link-card" href="redlands-homes.html"><i data-lucide="map-pin"></i><span>The Redlands</span></a>
-<a class="link-card" href="orchard-mesa-homes.html"><i data-lucide="map-pin"></i><span>Orchard Mesa</span></a>
-<a class="link-card" href="clifton-grand-junction.html"><i data-lucide="map-pin"></i><span>Clifton</span></a>
-<a class="link-card" href="loma-mack-grand-junction.html"><i data-lucide="map-pin"></i><span>Loma / Mack</span></a>
-<a class="link-card" href="selling-in-fruita.html"><i data-lucide="map-pin"></i><span>Fruita</span></a>
-<a class="link-card" href="selling-in-palisade.html"><i data-lucide="map-pin"></i><span>Palisade</span></a>
-</div>
-</div>
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 1.75rem;">
+      <div class="section-label centered"><span>Related Areas</span></div>
+      <h2 style="font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:0.55rem;">Explore Nearby Areas</h2>
+      <p style="color:var(--muted);font-size:0.98rem;line-height:1.8;">A few nearby places worth comparing if you're looking across the Grand Valley.</p>
+    </div>
+    <div class="link-grid">
+      <a href="northwest-grand-junction.html" class="link-card"><i data-lucide="map-pin"></i><span>Northwest Grand Junction</span></a>
+      <a href="northeast-grand-junction.html" class="link-card"><i data-lucide="map-pin"></i><span>Northeast Grand Junction</span></a>
+      <a href="downtown-grand-junction.html" class="link-card"><i data-lucide="map-pin"></i><span>Downtown Grand Junction</span></a>
+      <a href="redlands-homes.html" class="link-card"><i data-lucide="map-pin"></i><span>The Redlands</span></a>
+      <a href="grand-junction-home-value.html" class="link-card"><i data-lucide="map-pin"></i><span>Grand Junction Home Value</span></a>
+    </div>
+  </div>
 </section>
+
+
+
 <footer class="main-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand"><span class="logo-footer">Orion Love</span><p>Helping Grand Junction buyers and sellers navigate the market with clarity and honest communication.</p><p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p></div>
-<div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div class="footer-contact"><h4>Contact</h4><ul><li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
-</div>
-<div class="footer-bottom"><p>© 2025 Orion Love Real Estate. All rights reserved.</p><a href="privacy.html">Privacy Policy</a></div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="logo-footer">Orion Love</span><p>Helping Grand Junction buyers and sellers navigate the market with clarity and honest communication.</p><p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p><a href="privacy.html">Privacy Policy</a></div>
+  </div>
 </footer>
 
-<script defer="" src="script.js"></script></body>
+<script>
+  if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'north_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly market data · North Grand Junction';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly market data · North Grand Junction';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · North Grand Junction`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
+</script>
+
+</body>
 </html>
