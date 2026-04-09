@@ -1,6 +1,6 @@
 /* ===== Original shared styles.css ===== */
 /* =========================================================
-   Orion Love — Shared Base Styles
+   Orion Love â€” Shared Base Styles
    Updated to match the redesigned page system:
    - Cormorant Garamond + Raleway typography
    - Unified CSS variable naming
@@ -23,7 +23,7 @@
   --muted:    rgba(26, 26, 46, 0.62);
   --white:    #ffffff;
 
-  /* Legacy aliases — keeps old page references working */
+  /* Legacy aliases â€” keeps old page references working */
   --primary:    var(--navy);
   --accent:     var(--gold);
   --off-white:  var(--cream);
@@ -124,7 +124,7 @@ p { color: var(--text); }
   margin-right: auto;
 }
 
-/* Section label — gold rule + uppercase tag */
+/* Section label â€” gold rule + uppercase tag */
 .section-label {
   display: flex;
   align-items: center;
@@ -331,7 +331,7 @@ p { color: var(--text); }
   box-shadow: 0 8px 28px rgba(184, 146, 58, 0.45);
 }
 
-/* Legacy alias — pages using btn-primary-light still work */
+/* Legacy alias â€” pages using btn-primary-light still work */
 .btn-primary-light {
   background: rgba(184, 146, 58, 0.14);
   color: var(--navy);
@@ -438,7 +438,7 @@ p { color: var(--text); }
   color: var(--white);
 }
 
-/* Atmospheric overlay — applied per-page on .hero::before */
+/* Atmospheric overlay â€” applied per-page on .hero::before */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1331,32 +1331,21 @@ body.page-about .approach-sticky p {color: var(--muted);
       font-size: 1rem;}
 body.page-about .steps-list {display: flex;
       flex-direction: column;
-      gap: 0;}
+      gap: 1rem;}
 body.page-about .step {display: grid;
-      grid-template-columns: 52px 1fr;
+      grid-template-columns: 52px minmax(0, 1fr);
       gap: 1.25rem;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--sand);
-      position: relative;
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
-      text-align: left;
-      overflow: visible;
-      transform: none;}
-body.page-about .step::before {display: none;}
-body.page-about .step:hover {transform: none;
-      box-shadow: none;
-      border-color: var(--sand);}
-body.page-about .step:first-child {padding-top: 0;}
-body.page-about .step:last-child {border-bottom: none;}
+      align-items: start;
+      padding: 1.5rem 1.75rem 1.5rem 1.35rem;
+      text-align: left;}
 body.page-about .step-num-wrap {display: flex;
       flex-direction: column;
-      align-items: center;}
+      align-items: center;
+      padding-top: 0.15rem;}
 body.page-about .step-num {width: 40px; height: 40px;
       border-radius: 50%;
-      border: 1px solid var(--sand);
-      background: var(--white);
+      border: 1px solid rgba(184, 146, 58, 0.35);
+      background: rgba(184, 146, 58, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1365,7 +1354,7 @@ body.page-about .step-num {width: 40px; height: 40px;
       font-weight: 500;
       color: var(--gold);
       flex-shrink: 0;
-      transition: background 0.2s, border-color 0.2s;}
+      transition: background 0.2s, border-color 0.2s, color 0.2s;}
 body.page-about .step:hover .step-num {background: var(--gold);
       color: var(--white);
       border-color: var(--gold);}
@@ -1374,14 +1363,17 @@ body.page-about .step-line {flex: 1;
       background: var(--sand);
       margin-top: 8px;}
 body.page-about .step:last-child .step-line {display: none;}
-body.page-about .step-body {padding-top: 0.5rem;}
+body.page-about .step-body {padding-top: 0.15rem;
+      padding-right: 0.75rem;
+      min-width: 0;}
 body.page-about .step-body h3 {font-size: 1.15rem;
       color: var(--navy);
       margin-bottom: 0.5rem;
       font-weight: 500;}
 body.page-about .step-body p {color: var(--muted);
       font-size: 0.97rem;
-      line-height: 1.8;}
+      line-height: 1.8;
+      max-width: 58ch;}
 body.page-about .stats-section {background: linear-gradient(rgba(8,18,50,0.80), rgba(8,18,50,0.80)), url("images/gj-valley.jpg") center 60% / cover no-repeat fixed;
       padding: clamp(3.5rem, 6vw, 5.5rem) 0;
       position: relative;
@@ -1499,7 +1491,8 @@ body.page-about .mobile-toggle span {display: block;
 @media (max-width: 600px) {
 body.page-about .hero {min-height: 88vh;}
 body.page-about .hero-title {font-size: 3rem;}
-body.page-about .step {grid-template-columns: 1fr;}
+body.page-about .step {grid-template-columns: 1fr;
+      padding: 1.35rem 1.25rem;}
 body.page-about .step-num-wrap {flex-direction: row; align-items: center; gap: 1rem;}
 body.page-about .step-line {display: none;}
 }
