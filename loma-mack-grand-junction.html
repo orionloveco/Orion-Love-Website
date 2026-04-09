@@ -78,7 +78,7 @@
   <nav>
     <a href="index.html" class="logo"><span class="logo-main">Orion Love | Colorado Realtor®</span></a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </nav>
@@ -182,22 +182,30 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><span class="logo-footer">Orion Love</span><p>Helping buyers and sellers across Mesa County — from Downtown Grand Junction to the far west valley.</p><p>Serving Grand Junction, Fruita, Loma, Mack, Palisade, and Western Colorado</p></div>
-      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="/cdn-cgi/l/email-protection#224d504b4d4c0c4e4d54470c414d62454f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="026d706b6d6c2c6e6d74672c616d42656f636b6e2c616d6f">[email&#160;protected]</span></a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p><a href="privacy.html">Privacy Policy</a></div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   if(window.lucide)lucide.createIcons();
   const header=document.getElementById('mainHeader');
   window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
   const toggle=document.getElementById('mobileToggle'),menu=document.getElementById('navMenu');
   toggle?.addEventListener('click',()=>menu.classList.toggle('active'));
   document.addEventListener('click',e=>{if(!header.contains(e.target))menu.classList.remove('active');});
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  const obs=new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+
 </body>
 </html>

@@ -90,7 +90,7 @@
   <nav>
     <a href="index.html" class="logo"><span class="logo-main">Orion Love | Colorado Realtor®</span></a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </nav>
@@ -235,14 +235,14 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><span class="logo-footer">Orion Love</span><p>Helping Orchard Mesa and Grand Valley homeowners sell with clarity and honest communication.</p><p>Serving Grand Junction, Orchard Mesa, Fruita, Palisade, and Western Colorado</p></div>
-      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="/cdn-cgi/l/email-protection#711e03181e1f5f1d1e07145f121e31161c10181d5f121e1c"><span class="__cf_email__" data-cfemail="1b74697274753577746d7e3578745b7c767a727735787476">[email&#160;protected]</span></a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p><a href="privacy.html">Privacy Policy</a></div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   if(window.lucide)lucide.createIcons();
   const header=document.getElementById('mainHeader');
   window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
@@ -256,10 +256,17 @@
     btn.disabled=true;btn.textContent='Sending…';
     try{const res=await fetch('https://fub-contact-proxy.orion-love-co.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:document.getElementById('fn').value.trim(),lastName:document.getElementById('ln').value.trim(),email:document.getElementById('em').value.trim(),phone:document.getElementById('ph').value.trim(),inquiry:'Home Value Request — Orchard Mesa',message:`Address: ${document.getElementById('addr').value.trim()}\nTimeline: ${document.getElementById('tl').value}\nRiver View: ${document.getElementById('rv').value}`})});
     const data=await res.json().catch(()=>({}));
-    if(res.ok&&data.success){msg.textContent="Thank you! I'll have your Orchard Mesa home value ready within 24 hours.";msg.className='success';msg.style.display='block';e.target.reset();}else throw new Error();}
-    catch{msg.textContent='Something went wrong. Please call (970) 644-6781.';msg.className='error';msg.style.display='block';}
-    finally{btn.disabled=false;btn.textContent='Get My Orchard Mesa Home Value';}
-  });
+    if(res.ok&&data.success){msg.textContent="Thank you! I'll have your Orchard Mesa home value ready within 24 hours.";msg.className='success';msg.style.display='block';e.target.reset();}else throw new Error();
+  } catch {
+    msg.textContent = "Something went wrong. Please call (970) 644-6781.";
+    msg.className = 'error';
+    msg.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Request My Home Value';
+  }
+});
 </script>
+
 </body>
 </html>

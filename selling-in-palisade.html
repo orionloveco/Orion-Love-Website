@@ -209,6 +209,7 @@
       <li><a href="services.html" class="active">Sellers</a></li>
       <li><a href="buyers.html">Buyers</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -538,13 +539,14 @@
           <li><a href="services.html">Sellers</a></li>
           <li><a href="buyers.html">Buyers</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#a1ced3c8cecf8fcdced7c48fc2cee1c6ccc0c8cd8fc2cecc"><span class="__cf_email__" data-cfemail="b4dbc6dddbda9ad8dbc2d19ad7dbf4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -556,7 +558,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   if (window.lucide) lucide.createIcons();
 
   const header = document.getElementById('mainHeader');
@@ -608,12 +610,13 @@
       } else throw new Error();
     } catch {
       palMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
-      palMsg.className = 'error'; palMsg.style.display = 'block';
+        palMsg.className = 'error'; palMsg.style.display = 'block';
     } finally {
-      palSubmit.disabled = false;
-      palSubmit.textContent = 'Get My Palisade Home Value';
+      palBtn.disabled = false;
+      palBtn.textContent = 'Request My Home Value';
     }
   });
 </script>
+
 </body>
 </html>

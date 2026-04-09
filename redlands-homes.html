@@ -182,6 +182,7 @@
       <li><a href="services.html">Sellers</a></li>
       <li><a href="buyers.html">Buyers</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -398,13 +399,14 @@
         <ul>
           <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li>
           <li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#59362b3036377735362f3c773a36193e34383035773a3634"><span class="__cf_email__" data-cfemail="6e011c070100400201180b400d012e09030f0702400d0103">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -416,7 +418,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   if (window.lucide) lucide.createIcons();
   const header = document.getElementById('mainHeader');
   window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
@@ -438,9 +440,16 @@
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.success) { msg.textContent = "Thank you! I'll have your Redlands home value ready within 24 hours."; msg.className = 'success'; msg.style.display = 'block'; e.target.reset(); }
       else throw new Error();
-    } catch { msg.textContent = 'Something went wrong. Please call (970) 644-6781.'; msg.className = 'error'; msg.style.display = 'block'; }
-    finally { btn.disabled = false; btn.textContent = 'Get My Redlands Home Value'; }
+    } catch {
+      msg.textContent = "Something went wrong. Please call (970) 644-6781.";
+      msg.className = 'error';
+      msg.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Request My Home Value';
+    }
   });
 </script>
+
 </body>
 </html>
