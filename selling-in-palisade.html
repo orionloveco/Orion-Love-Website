@@ -273,23 +273,25 @@
       <div class="reveal" style="transition-delay:0.15s">
         <div class="identity-stats" style="margin-bottom:1.5rem;">
           <div class="stat-box">
-            <div class="stat-val"><span>$</span>410K</div>
+            <div class="stat-val" id="palMedianPrice"><span>$</span>--</div>
             <div class="stat-lbl">Median Sale Price</div>
-            <div class="stat-note-sm">Palisade area · 2025 avg.</div>
+            <div class="stat-note-sm">Live Palisade market data</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val">35</div>
+            <div class="stat-val" id="palAvgDom">--</div>
             <div class="stat-lbl">Avg. Days on Market</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val">Low</div>
-            <div class="stat-lbl">Inventory</div>
-            <div class="stat-note-sm">Tight selection year-round</div>
+            <div class="stat-val" id="palNewListings">--</div>
+            <div class="stat-lbl">New Listings</div>
+            <div class="stat-note-sm">Latest monthly refresh</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val">99<span>%</span></div>
-            <div class="stat-lbl">List-to-Sale Ratio</div>
+            <div class="stat-val" id="palTotalListings">--</div>
+            <div class="stat-lbl">Total Listings</div>
           </div>
+        </div>
+        <div id="palisadeMarketUpdated" class="stat-note-sm" style="text-align:center; margin-top:-0.5rem; margin-bottom:1.5rem;">Updating live market data…</div>
         </div>
         <div style="padding: 1.5rem; background: rgba(184,146,58,0.06); border: 1px solid rgba(184,146,58,0.2); border-radius: var(--radius-md);">
           <p style="font-size:0.88rem; color:var(--navy); line-height:1.75;">
@@ -575,6 +577,48 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => obs.observe(el));
 
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const formatCurrencyCompact = value => {
+    if (!Number.isFinite(value)) return '--';
+    const rounded = Math.round(value);
+    if (rounded >= 1000000) return `<span>$</span>${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
+    return `<span>$</span>${Math.round(rounded / 1000)}K`;
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? String(Math.round(value)) : '--';
+
+  (async () => {
+    const updatedEl = document.getElementById('palisadeMarketUpdated');
+    try {
+      const res = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!res.ok) throw new Error('Feed request failed');
+      const data = await res.json();
+      const area = data?.areas?.palisade;
+      if (!area) throw new Error('Palisade data missing');
+
+      const medianEl = document.getElementById('palMedianPrice');
+      const domEl = document.getElementById('palAvgDom');
+      const newListingsEl = document.getElementById('palNewListings');
+      const totalListingsEl = document.getElementById('palTotalListings');
+
+      if (medianEl) medianEl.innerHTML = formatCurrencyCompact(area.medianPrice);
+      if (domEl) domEl.textContent = formatNumber(area.averageDaysOnMarket);
+      if (newListingsEl) newListingsEl.textContent = formatNumber(area.newListings);
+      if (totalListingsEl) totalListingsEl.textContent = formatNumber(area.totalListings);
+
+      if (updatedEl) {
+        const updatedDate = area.lastUpdatedDate || data.generatedAt;
+        const prettyDate = updatedDate
+          ? new Date(updatedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+          : 'latest refresh';
+        updatedEl.textContent = `Live market data updated ${prettyDate}`;
+      }
+    } catch (error) {
+      if (updatedEl) updatedEl.textContent = 'Live market data temporarily unavailable';
+    }
+  })();
+
   const palisadeForm = document.getElementById('palisadeForm');
   const palMsg       = document.getElementById('palFormMsg');
   const palSubmit    = document.getElementById('palSubmit');
@@ -612,8 +656,8 @@
       palMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
         palMsg.className = 'error'; palMsg.style.display = 'block';
     } finally {
-      palBtn.disabled = false;
-      palBtn.textContent = 'Request My Home Value';
+      palSubmit.disabled = false;
+      palSubmit.textContent = 'Get My Palisade Home Value';
     }
   });
 </script>

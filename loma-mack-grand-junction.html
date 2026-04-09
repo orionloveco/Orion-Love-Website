@@ -112,12 +112,15 @@
     <div class="reveal" style="transition-delay:0.15s">
       <div class="quick-facts">
         <h4>Loma &amp; Mack At a Glance</h4>
+        <div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value" id="marketMedianPrice">Loading…</span></div>
+        <div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value" id="marketDaysOnMarket">Loading…</span></div>
         <div class="fact-row"><span class="fact-label">Typical Property Types</span><span class="fact-value">Acreage, rural homes, land</span></div>
         <div class="fact-row"><span class="fact-label">Drive to Fruita</span><span class="fact-value">~15 min</span></div>
         <div class="fact-row"><span class="fact-label">Drive to Grand Junction</span><span class="fact-value">~20–25 min</span></div>
         <div class="fact-row"><span class="fact-label">I-70 Access</span><span class="fact-value">Direct (Loma exit)</span></div>
         <div class="fact-row"><span class="fact-label">Typical Buyer</span><span class="fact-value">Rural lifestyle, privacy, land</span></div>
         <div class="fact-row"><span class="fact-label">Best For</span><span class="fact-value">Space, quiet, agricultural use</span></div>
+        <div style="margin-top:0.85rem;font-size:0.75rem;color:var(--muted);" id="marketUpdatedNote">Updating from live market data…</div>
       </div>
       <div class="note-box">
         <h4>A note on rural property</h4>
@@ -190,21 +193,77 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  if(window.lucide)lucide.createIcons();
-  const header=document.getElementById('mainHeader');
-  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
-  const toggle=document.getElementById('mobileToggle'),menu=document.getElementById('navMenu');
-  toggle?.addEventListener('click',()=>menu.classList.toggle('active'));
-  document.addEventListener('click',e=>{if(!header.contains(e.target))menu.classList.remove('active');});
-  const obs=new IntersectionObserver(entries => {
+  if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'loma_mack';
+
+  const formatCurrency = value => {
+    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(value);
+  };
+
+  const formatDays = value => {
+    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
+    return `${Math.round(value)} days`;
+  };
+
+  const formatUpdated = value => {
+    if (!value) return 'Live market data temporarily unavailable';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'Live market data updated recently';
+    return `Updated from live market data · ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+  };
+
+  async function loadMarketStats() {
+    const medianEl = document.getElementById('marketMedianPrice');
+    const domEl = document.getElementById('marketDaysOnMarket');
+    const noteEl = document.getElementById('marketUpdatedNote');
+
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      const area = data?.areas?.[AREA_KEY];
+      if (!area) throw new Error('Missing area data');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdated(area.lastUpdatedDate || data.generatedAt);
+    } catch (error) {
+      if (medianEl) medianEl.textContent = 'Unavailable';
+      if (domEl) domEl.textContent = 'Unavailable';
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+      console.error('Failed to load market stats:', error);
+    }
+  }
+
+  loadMarketStats();
 </script>
 
 </body>

@@ -247,23 +247,28 @@
         </p>
         <a href="services.html" class="btn btn-navy" style="margin-top:1rem">See My Seller Process</a>
       </div>
-      <div class="snapshot-stats reveal" style="transition-delay:0.15s">
-        <div class="snap-stat">
-          <div class="snap-val"><span>$</span>375K</div>
-          <div class="snap-label">Median Sale Price</div>
+      <div>
+        <div class="snapshot-stats reveal" style="transition-delay:0.15s">
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaMedianSalePrice">--</div>
+            <div class="snap-label">Median Sale Price</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaDaysOnMarket">--</div>
+            <div class="snap-label">Avg. Days on Market</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaNewListings">--</div>
+            <div class="snap-label">New Listings</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaTotalListings">--</div>
+            <div class="snap-label">Total Listings</div>
+          </div>
         </div>
-        <div class="snap-stat">
-          <div class="snap-val">31</div>
-          <div class="snap-label">Avg. Days on Market</div>
-        </div>
-        <div class="snap-stat">
-          <div class="snap-val">99<span>%</span></div>
-          <div class="snap-label">List-to-Sale Ratio</div>
-        </div>
-        <div class="snap-stat">
-          <div class="snap-val">4–6</div>
-          <div class="snap-label">Weeks to Close</div>
-        </div>
+        <p id="fruitaMarketNote" style="margin-top:0.85rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-align:center;">
+          Live market data loading...
+        </p>
       </div>
     </div>
   </div>
@@ -510,6 +515,52 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => obs.observe(el));
 
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const formatCurrency = value => {
+    if (!Number.isFinite(value)) return '--';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value) : '--';
+
+  async function loadFruitaMarketStats() {
+    const medianEl = document.getElementById('fruitaMedianSalePrice');
+    const domEl = document.getElementById('fruitaDaysOnMarket');
+    const newEl = document.getElementById('fruitaNewListings');
+    const totalEl = document.getElementById('fruitaTotalListings');
+    const noteEl = document.getElementById('fruitaMarketNote');
+
+    try {
+      const res = await fetch(MARKET_STATS_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load market data');
+      const data = await res.json();
+      const area = data?.areas?.fruita;
+      if (!area) throw new Error('Fruita market data not found');
+
+      medianEl.textContent = formatCurrency(area.medianPrice);
+      domEl.textContent = formatNumber(area.averageDaysOnMarket);
+      newEl.textContent = formatNumber(area.newListings);
+      totalEl.textContent = formatNumber(area.totalListings);
+
+      const updated = area.lastUpdatedDate || data.generatedAt;
+      if (updated) {
+        const date = new Date(updated);
+        noteEl.textContent = `Live market data · updated ${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+      } else {
+        noteEl.textContent = 'Live market data';
+      }
+    } catch (error) {
+      medianEl.textContent = '--';
+      domEl.textContent = '--';
+      newEl.textContent = '--';
+      totalEl.textContent = '--';
+      noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadFruitaMarketStats();
+
   // Form
   const fruitaForm = document.getElementById('fruitaForm');
   const fruMsg     = document.getElementById('fruFormMsg');
@@ -547,8 +598,8 @@
       fruMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
         fruMsg.className = 'error'; fruMsg.style.display = 'block';
     } finally {
-      fruBtn.disabled = false;
-      fruBtn.textContent = 'Request My Home Value';
+      fruSubmit.disabled = false;
+      fruSubmit.textContent = 'Get My Fruita Home Value';
     }
   });
 </script>
