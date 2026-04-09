@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grand Junction Real Estate FAQs | Navigate the Market | Orion Love</title>
   <meta name="description" content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." />
+  <meta property="og:title" content="Grand Junction Real Estate FAQs | Navigate the Market | Orion Love" />
+  <meta property="og:description" content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Grand Junction Real Estate FAQs | Navigate the Market | Orion Love" />
+  <meta name="twitter:description" content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1037,6 +1043,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -1159,86 +1166,6 @@
           panel.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
         }
         if (window.lucide) lucide.createIcons();
-
-  // Mobile menu — body-level overlay to avoid fixed header stacking context
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (mobileToggle && navMenu) {
-    // Build overlay element appended directly to body
-    const overlay = document.createElement('div');
-    overlay.id = 'mobileNavOverlay';
-    overlay.innerHTML = navMenu.innerHTML;
-    overlay.style.cssText = [
-      'display:none',
-      'position:fixed',
-      'top:0','left:0','right:0','bottom:0',
-      'width:100vw','height:100vh',
-      'background:rgb(12,26,61)',
-      'flex-direction:column',
-      'align-items:center',
-      'justify-content:center',
-      'gap:2.5rem',
-      'z-index:99999',
-      'list-style:none',
-      'margin:0','padding:0'
-    ].join(';');
-
-    // Style the links inside overlay
-    const style = document.createElement('style');
-    style.textContent = `
-      #mobileNavOverlay a {
-        font-size: 1.5rem;
-        color: #ffffff;
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-        display: block;
-      }
-      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
-      #mobileNavOverlay li { list-style: none; text-align: center; }
-      #mobileNavOverlay .btn-nav {
-        border: 1px solid #b8923a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #d4aa5a;
-      }
-    `;
-    document.head.appendChild(style);
-    document.body.appendChild(overlay);
-
-    const openMenu = () => {
-      overlay.style.display = 'flex';
-      mobileToggle.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeMenu = () => {
-      overlay.style.display = 'none';
-      mobileToggle.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      overlay.style.display === 'flex' ? closeMenu() : openMenu();
-    });
-
-    overlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
       });
     });
   }

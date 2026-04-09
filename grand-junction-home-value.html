@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What Is My Grand Junction Home Worth? | Orion Love — Colorado Realtor®</title>
   <meta name="description" content="Find out what your Grand Junction home is worth in today's Mesa County market. Get a free, no-pressure home value review from local Realtor Orion Love." />
+  <meta property="og:title" content="What Is My Grand Junction Home Worth? | Orion Love — Colorado Realtor®" />
+  <meta property="og:description" content="Find out what your Grand Junction home is worth in today's Mesa County market. Get a free, no-pressure home value review from local Realtor Orion Love." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="What Is My Grand Junction Home Worth? | Orion Love — Colorado Realtor®" />
+  <meta name="twitter:description" content="Find out what your Grand Junction home is worth in today's Mesa County market. Get a free, no-pressure home value review from local Realtor Orion Love." />
   <meta name="keywords" content="Grand Junction home value, what is my home worth Grand Junction, Grand Junction home estimate, sell my home Grand Junction, Mesa County real estate" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -514,7 +520,7 @@
           <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
-              or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. Link to <a href="privacy.html">Privacy Policy</a>.
+              or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. <a href="privacy.html">Privacy Policy</a>.
           </p>
         </form>
       </div>
@@ -697,16 +703,11 @@
       } else throw new Error();
     } catch {
       valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
-        valMsg.className = 'error';
-        valMsg.style.display = 'block';
-      }
-    } catch {
-      valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
       valMsg.className = 'error';
       valMsg.style.display = 'block';
     } finally {
-      valBtn.disabled = false;
-      valBtn.textContent = 'Get My Free Home Value';
+      valSubmit.disabled = false;
+      valSubmit.textContent = 'Get My Free Home Value';
     }
   });
 </script>

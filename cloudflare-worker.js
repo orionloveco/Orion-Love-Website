@@ -6,96 +6,91 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-  // Only allow POST requests
-  if (request.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 })
-  }
-
-  // CORS headers for your domain
   const corsHeaders = {
-    'Access-Control-Allow-Origin': '*', // Change to your domain: 'https://yourdomain.com'
+    'Access-Control-Allow-Origin': '*', // Change to your domain if desired
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   }
 
-  // Handle preflight requests
+  // Handle preflight requests first
   if (request.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
 
+  // Only allow POST requests
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', {
+      status: 405,
+      headers: corsHeaders,
+    })
+  }
+
   try {
-    // Get the form data from the request
     const formData = await request.json()
 
-    // Validate required fields
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
-        { 
+        {
           status: 400,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         }
       )
     }
 
-    // YOUR FOLLOWUPBOSS API KEY - Set this as an environment variable in Cloudflare
-    const FUB_API_KEY = FUB_API_KEY_SECRET // This will be set in Cloudflare dashboard
+    const FUB_API_KEY = FUB_API_KEY_SECRET
 
-    // Prepare the data for FollowUpBoss
     const fubData = {
       source: 'Website Contact Form',
       person: {
         firstName: formData.firstName,
         lastName: formData.lastName,
-        emails: [{ value: formData.email }]
+        emails: [{ value: formData.email }],
       },
-      message: `Inquiry Type: ${formData.inquiry || 'General Inquiry'}\n\nMessage: ${formData.message}
-    }
-      
-    // Only add phone if provided
-    if (formData.phone && formData.phone.trim()) {
-    fubData.person.phones = [{ value: formData.phone }];
+      message: `Inquiry Type: ${formData.inquiry || 'General Inquiry'}\n\nMessage: ${formData.message}`,
     }
 
-    // Send to FollowUpBoss API
+    if (formData.phone && formData.phone.trim()) {
+      fubData.person.phones = [{ value: formData.phone.trim() }]
+    }
+
     const fubResponse = await fetch('https://api.followupboss.com/v1/events', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(FUB_API_KEY + ':')
+        'Authorization': 'Basic ' + btoa(FUB_API_KEY + ':'),
       },
-      body: JSON.stringify(fubData)
+      body: JSON.stringify(fubData),
     })
 
     if (fubResponse.ok) {
       return new Response(
         JSON.stringify({ success: true, message: 'Form submitted successfully' }),
-        { 
+        {
           status: 200,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-        }
-      )
-    } else {
-      const error = await fubResponse.text()
-      console.error('FollowUpBoss API Error:', error)
-      
-      return new Response(
-        JSON.stringify({ error: 'Failed to submit form' }),
-        { 
-          status: 500,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         }
       )
     }
 
+    const error = await fubResponse.text()
+    console.error('FollowUpBoss API Error:', error)
+
+    return new Response(
+      JSON.stringify({ error: 'Failed to submit form' }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    )
   } catch (error) {
     console.error('Worker Error:', error)
-    
+
     return new Response(
       JSON.stringify({ error: 'Internal server error' }),
-      { 
+      {
         status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       }
     )
   }
