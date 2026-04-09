@@ -48,6 +48,7 @@
     .fact-row:last-child{border-bottom:none;}
     .fact-label{font-size:0.88rem;color:var(--muted);}
     .fact-value{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
+    .market-note{font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
     /* lifestyle grid */
     .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
     .card{background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
@@ -115,13 +116,13 @@
       </div>
     </div>
     <div class="quick-facts reveal" style="transition-delay:0.15s">
-      <h4>Downtown At a Glance</h4>
-      <div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value">~$340K</span></div>
+      <h4>Downtown At a Glance</h4><div class="market-note" id="marketNote">Live monthly ZIP-level market data for 81501</div>
+      <div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value" data-market-stat="medianPrice">$--</span></div>
       <div class="fact-row"><span class="fact-label">Typical Property Types</span><span class="fact-value">Condos, townhomes, bungalows</span></div>
       <div class="fact-row"><span class="fact-label">Walk Score</span><span class="fact-value">Highest in GJ</span></div>
       <div class="fact-row"><span class="fact-label">Distance to CMU</span><span class="fact-value">~2 miles</span></div>
       <div class="fact-row"><span class="fact-label">River Trail Access</span><span class="fact-value">Direct</span></div>
-      <div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value">~28 days</span></div>
+      <div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value" data-market-stat="averageDaysOnMarket">-- days</span></div>
       <div class="fact-row"><span class="fact-label">Best For</span><span class="fact-value">Walkability, lifestyle, low-maintenance living</span></div>
     </div>
   </div></div>
@@ -189,21 +190,75 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  if(window.lucide)lucide.createIcons();
-  const header=document.getElementById('mainHeader');
-  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
-  const toggle=document.getElementById('mobileToggle'),menu=document.getElementById('navMenu');
-  toggle?.addEventListener('click',()=>menu.classList.toggle('active'));
-  document.addEventListener('click',e=>{if(!header.contains(e.target))menu.classList.remove('active');});
-  const obs=new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  if(window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+  const AREA_KEY = 'downtown_grand_junction';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
+    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatDays(value) {
+    if (!Number.isFinite(value)) return '-- days';
+    return `${Math.round(value)} days`;
+  }
+
+  function formatUpdatedDate(value) {
+    if (!value) return 'Live monthly ZIP-level market data for 81501';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return 'Live monthly ZIP-level market data for 81501';
+    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · ZIP 81501`;
+  }
+
+  async function loadMarketStats() {
+    try {
+      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
+
+      const payload = await response.json();
+      const area = payload?.areas?.[AREA_KEY];
+      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
+
+      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
+      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
+      const noteEl = document.getElementById('marketNote');
+
+      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
+      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
+      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
+    } catch (error) {
+      console.error('Unable to load market stats:', error);
+      const noteEl = document.getElementById('marketNote');
+      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadMarketStats();
 </script>
 
 </body>
