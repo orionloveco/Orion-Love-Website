@@ -1,313 +1,717 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>What Is My Grand Junction Home Worth? | Orion Love — Colorado Realtor®</title>
-<meta content="Find out what your Grand Junction home is worth in today's Mesa County market. Get a free, no-pressure home value review from local Realtor Orion Love." name="description"/>
-<meta content="Grand Junction home value, what is my home worth Grand Junction, Grand Junction home estimate, sell my home Grand Junction, Mesa County real estate" name="keywords"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script><link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is My Grand Junction Home Worth? | Orion Love — Colorado Realtor®</title>
+  <meta name="description" content="Find out what your Grand Junction home is worth in today's Mesa County market. Get a free, no-pressure home value review from local Realtor Orion Love." />
+  <meta name="keywords" content="Grand Junction home value, what is my home worth Grand Junction, Grand Junction home estimate, sell my home Grand Junction, Mesa County real estate" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Raleway", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
+    section { padding: clamp(3.5rem,6vw,5rem) 0; }
+
+    /* ── NAV ── */
+    .main-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    .main-header.scrolled {
+      background: rgba(12,26,61,0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
+    }
+    .main-header nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1120px; margin: 0 auto;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+    }
+    .logo { text-decoration: none; }
+    .logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;
+    }
+    .nav-menu { display: flex; list-style: none; gap: 2.25rem; align-items: center; }
+    .nav-menu a {
+      text-decoration: none; color: rgba(255,255,255,0.82);
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
+    .btn-nav {
+      background: transparent !important;
+      border: 1px solid rgba(184,146,58,0.55) !important;
+      color: var(--gold-lt) !important;
+      padding: 0.5rem 1.3rem; border-radius: 40px;
+    }
+    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
+    .mobile-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .mobile-toggle span { display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      text-decoration: none; font-family: "Raleway", sans-serif;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px;
+      transition: all 0.25s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35); }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,58,0.45); }
+    .btn-navy { background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm); }
+    .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
+    .btn-outline-gold {
+      background: transparent; color: var(--gold-lt);
+      border: 1px solid rgba(184,146,58,0.55); border-radius: 50px;
+      padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.25s;
+    }
+    .btn-outline-gold:hover { background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px); }
+
+    /* ── SECTION LABEL ── */
+    .section-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem; }
+    .section-label::before { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .section-label span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .section-label.centered { justify-content: center; }
+    .section-label.centered::after { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
+
+    /* ── DIVIDER ── */
+    .divider { display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto; }
+    .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--sand); }
+    .divider-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 82vh; display: flex; align-items: center;
+      background:
+        linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
+        url("images/gj-landscape.jpg") center / cover no-repeat;
+    }
+    .hero::after {
+      content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px; background: rgba(184,146,58,0.22);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; padding-top: 4rem; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: var(--gold); }
+    .hero h1 { color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── MARKET STATS ── */
+    .market-stats { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    }
+    .stat-item {
+      padding: 2.25rem 1.5rem; text-align: center;
+      border-right: 1px solid var(--sand);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value {
+      font-family: "Cormorant Garamond", serif; font-size: 2.8rem;
+      font-weight: 400; color: var(--navy); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .stat-value span { font-size: 1.5rem; color: var(--gold); }
+    .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .stat-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+
+    /* ── WHAT AFFECTS VALUE ── */
+    .value-section { background: var(--cream); }
+    .value-intro { max-width: 64ch; }
+    .value-intro h2 { margin-bottom: 0.75rem; }
+    .value-intro p { color: var(--muted); font-size: 1.05rem; line-height: 1.85; }
+    .value-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem; margin-top: 3rem;
+    }
+    .value-card {
+      background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md);
+      padding: 2rem 1.75rem; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+      position: relative; overflow: hidden;
+    }
+    .value-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity 0.28s;
+    }
+    .value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22); }
+    .value-card:hover::before { opacity: 1; }
+    .value-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(184,146,58,0.1); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 1.1rem;
+    }
+    .value-icon svg { width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8; }
+    .value-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem; }
+    .value-card p { color: var(--muted); font-size: 0.96rem; line-height: 1.8; }
+
+    /* ── VALUATION FORM ── */
+    .valuation-section { background: var(--navy); position: relative; overflow: hidden; }
+    .valuation-section::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
+      pointer-events: none;
+    }
+    .valuation-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .valuation-copy h2 { color: var(--white); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 300; margin-bottom: 1rem; }
+    .valuation-copy h2 em { font-style: italic; color: var(--gold-lt); }
+    .valuation-copy p { color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem; }
+    .valuation-bullets { list-style: none; }
+    .valuation-bullets li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      color: rgba(255,255,255,0.72); font-size: 0.95rem; margin-bottom: 0.9rem;
+    }
+    .valuation-bullets li svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
+
+    /* Form card */
+    .form-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg);
+    }
+    .form-card h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .form-card .form-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      border: 1px solid var(--sand); border-radius: var(--radius-sm);
+      font-family: "Raleway", sans-serif; font-size: 0.95rem;
+      color: var(--text); background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .consent-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic; }
+    .consent-note a { color: var(--navy); text-decoration: underline; font-style: normal; }
+    #valFormMsg { display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem; }
+    #valFormMsg.success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
+    #valFormMsg.error { background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020; }
+
+    /* ── WHY ORION ── */
+    .why-section { background: var(--cream); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+    .why-card {
+      background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md);
+      padding: 1.75rem; transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .why-num {
+      font-family: "Cormorant Garamond", serif; font-size: 2.4rem;
+      color: rgba(184,146,58,0.25); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .why-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .why-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
+
+    /* ── NEIGHBORHOOD LINKS ── */
+    .neighborhoods-section { background: var(--white); border-top: 1px solid var(--sand); }
+    .nbhd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .nbhd-link {
+      background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm);
+      padding: 1.4rem 1.25rem; text-decoration: none;
+      display: flex; align-items: center; gap: 0.8rem;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s;
+    }
+    .nbhd-link:hover { border-color: var(--gold); background: rgba(184,146,58,0.06); transform: translateY(-2px); }
+    .nbhd-link svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; }
+    .nbhd-link span { font-size: 0.9rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+    .cta-content { text-align: center; max-width: 680px; margin: 0 auto; }
+    .cta-content h2 { margin-bottom: 0.75rem; }
+    .cta-content p { font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85; }
+
+    /* ── FOOTER ── */
+    .main-footer { background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .logo-footer { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem; }
+    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem; }
+    .footer-links h4, .footer-contact h4 { font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a { color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem; }
+    .footer-bottom a:hover { color: var(--gold-lt); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 968px) {
+      .nav-menu { position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s; }
+      .nav-menu.active { left: 0; }
+      .mobile-toggle { display: flex; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--sand); }
+      .valuation-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.4rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
-<body class="page page-grand-junction-home-value">
+<body>
+
 <!-- NAV -->
 <header class="main-header" id="mainHeader">
-<nav>
-<a class="logo" href="index.html">
-<span class="logo-main">Orion Love | Colorado Realtor®</span>
-</a>
-<ul class="nav-menu" id="navMenu">
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Sellers</a></li>
-<li><a href="buyers.html">Buyers</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a class="btn-nav" href="contact.html">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-toggle" id="mobileToggle">
-<span></span><span></span><span></span>
-</button>
-</nav>
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Sellers</a></li>
+      <li><a href="buyers.html">Buyers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
+
 <!-- HERO -->
 <section class="hero">
-<div class="container">
-<div class="hero-inner">
-<div class="hero-eyebrow">Grand Junction · Mesa County</div>
-<h1>What Is My<br/><em>Grand Junction</em><br/>Home Worth?</h1>
-<p class="hero-lead">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Grand Junction · Mesa County</div>
+      <h1>What Is My<br><em>Grand Junction</em><br>Home Worth?</h1>
+      <p class="hero-lead">
         Zestimates give you a starting point — a local market review gives you the truth.
         Find out what buyers are actually paying for homes like yours in today's Mesa County market.
       </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#valuation-form">Get My Free Home Value</a>
-<a class="btn-outline-gold" href="services.html">How I Market Homes</a>
-</div>
-</div>
-</div>
+      <div class="hero-cta">
+        <a href="#valuation-form" class="btn btn-primary">Get My Free Home Value</a>
+        <a href="services.html" class="btn-outline-gold">How I Market Homes</a>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- MARKET STATS -->
 <section class="market-stats" style="padding: 0;">
-<div class="container">
-<div class="stats-grid">
-<div class="stat-item">
-<div class="stat-value"><span>$</span>385K</div>
-<div class="stat-label">Median Sale Price</div>
-<div class="stat-note">Mesa County · 2025 avg.</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">28</div>
-<div class="stat-label">Avg. Days on Market</div>
-<div class="stat-note">Well-priced GJ homes</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">99<span>%</span></div>
-<div class="stat-label">List-to-Sale Ratio</div>
-<div class="stat-note">Mesa County average</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">4–6</div>
-<div class="stat-label">Weeks to Close</div>
-<div class="stat-note">Typical timeline</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value"><span>$</span>385K</div>
+        <div class="stat-label">Median Sale Price</div>
+        <div class="stat-note">Mesa County · 2025 avg.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">28</div>
+        <div class="stat-label">Avg. Days on Market</div>
+        <div class="stat-note">Well-priced GJ homes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">99<span>%</span></div>
+        <div class="stat-label">List-to-Sale Ratio</div>
+        <div class="stat-note">Mesa County average</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">4–6</div>
+        <div class="stat-label">Weeks to Close</div>
+        <div class="stat-note">Typical timeline</div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="neighborhoods-section">
+  <div class="container">
+    <div class="reveal" style="max-width:680px;">
+      <div class="section-label"><span>Grand Junction Areas</span></div>
+      <h2>Broad Numbers Only Tell Part<br>of the Story</h2>
+      <p style="color:var(--muted); font-size:1.05rem; margin-top:0.75rem; line-height:1.85;">
+        Use the overall Grand Junction market numbers as a starting point, then drill into the part of town that actually shapes your home's value.
+      </p>
+    </div>
+    <div class="nbhd-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+      <a href="redlands-homes.html" class="nbhd-link reveal" style="transition-delay:0.05s">
+        <i data-lucide="map-pin"></i><span>The Redlands</span>
+      </a>
+      <a href="orchard-mesa-homes.html" class="nbhd-link reveal" style="transition-delay:0.10s">
+        <i data-lucide="map-pin"></i><span>Orchard Mesa</span>
+      </a>
+      <a href="downtown-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.15s">
+        <i data-lucide="map-pin"></i><span>Downtown Grand Junction</span>
+      </a>
+      <a href="north-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.20s">
+        <i data-lucide="map-pin"></i><span>North Grand Junction</span>
+      </a>
+      <a href="northeast-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.25s">
+        <i data-lucide="map-pin"></i><span>Northeast Grand Junction</span>
+      </a>
+      <a href="northwest-grand-junction.html" class="nbhd-link reveal" style="transition-delay:0.30s">
+        <i data-lucide="map-pin"></i><span>Northwest Grand Junction</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- WHAT AFFECTS YOUR VALUE -->
 <section class="value-section">
-<div class="container">
-<div class="reveal">
-<div class="section-label"><span>What Drives Value</span></div>
-<div class="value-intro">
-<h2>Why No Two Grand Junction<br/>Homes Are Worth the Same</h2>
-<p>Online estimates are calculated from public records, not from walking through your home. Here's what a real market analysis looks at — and what those algorithms miss.</p>
-</div>
-</div>
-<div class="value-grid">
-<div class="value-card reveal" style="transition-delay:0.05s">
-<div class="value-icon"><i data-lucide="map-pin"></i></div>
-<h3>Neighborhood &amp; Submarket</h3>
-<p>The Redlands, Orchard Mesa, Fruita, and downtown Grand Junction each trade at different price points. Neighborhood-level comps matter far more than city-wide averages.</p>
-</div>
-<div class="value-card reveal" style="transition-delay:0.12s">
-<div class="value-icon"><i data-lucide="trending-up"></i></div>
-<h3>Recent Comparable Sales</h3>
-<p>What closed within the last 60–90 days, within a mile of your property, is the most reliable signal. Older comps can mislead in a shifting market.</p>
-</div>
-<div class="value-card reveal" style="transition-delay:0.19s">
-<div class="value-icon"><i data-lucide="home"></i></div>
-<h3>Condition &amp; Updates</h3>
-<p>A remodeled kitchen, updated bathrooms, or fresh HVAC can meaningfully move your number. So can deferred maintenance — in the other direction.</p>
-</div>
-<div class="value-card reveal" style="transition-delay:0.26s">
-<div class="value-icon"><i data-lucide="eye"></i></div>
-<h3>Views &amp; Lot Characteristics</h3>
-<p>Colorado National Monument views, river access, lot size, and irrigation water carry real premium in this market. These factors rarely show up in automated estimates.</p>
-</div>
-<div class="value-card reveal" style="transition-delay:0.33s">
-<div class="value-icon"><i data-lucide="layers"></i></div>
-<h3>Active Competition</h3>
-<p>What else is on the market right now — and at what price — shapes buyer behavior. Pricing without knowing your competition is pricing blind.</p>
-</div>
-<div class="value-card reveal" style="transition-delay:0.40s">
-<div class="value-icon"><i data-lucide="clock"></i></div>
-<h3>Timing &amp; Inventory</h3>
-<p>Mesa County inventory levels shift seasonally. A spring list in low inventory is a different conversation than a fall list with more competition on the market.</p>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label"><span>What Drives Value</span></div>
+      <div class="value-intro">
+        <h2>Why No Two Grand Junction<br>Homes Are Worth the Same</h2>
+        <p>Online estimates are calculated from public records, not from walking through your home. Here's what a real market analysis looks at — and what those algorithms miss.</p>
+      </div>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card reveal" style="transition-delay:0.05s">
+        <div class="value-icon"><i data-lucide="map-pin"></i></div>
+        <h3>Neighborhood & Submarket</h3>
+        <p>The Redlands, Orchard Mesa, Fruita, and downtown Grand Junction each trade at different price points. Neighborhood-level comps matter far more than city-wide averages.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.12s">
+        <div class="value-icon"><i data-lucide="trending-up"></i></div>
+        <h3>Recent Comparable Sales</h3>
+        <p>What closed within the last 60–90 days, within a mile of your property, is the most reliable signal. Older comps can mislead in a shifting market.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.19s">
+        <div class="value-icon"><i data-lucide="home"></i></div>
+        <h3>Condition & Updates</h3>
+        <p>A remodeled kitchen, updated bathrooms, or fresh HVAC can meaningfully move your number. So can deferred maintenance — in the other direction.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.26s">
+        <div class="value-icon"><i data-lucide="eye"></i></div>
+        <h3>Views & Lot Characteristics</h3>
+        <p>Colorado National Monument views, river access, lot size, and irrigation water carry real premium in this market. These factors rarely show up in automated estimates.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.33s">
+        <div class="value-icon"><i data-lucide="layers"></i></div>
+        <h3>Active Competition</h3>
+        <p>What else is on the market right now — and at what price — shapes buyer behavior. Pricing without knowing your competition is pricing blind.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.40s">
+        <div class="value-icon"><i data-lucide="clock"></i></div>
+        <h3>Timing & Inventory</h3>
+        <p>Mesa County inventory levels shift seasonally. A spring list in low inventory is a different conversation than a fall list with more competition on the market.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- VALUATION FORM -->
 <section class="valuation-section" id="valuation-form">
-<div class="container">
-<div class="valuation-inner">
-<div class="valuation-copy reveal">
-<div class="section-label" style="--gold-lt: #d4aa5a;"><span style="color:var(--gold-lt)">Free Home Value Review</span></div>
-<h2>Get an <em>Honest</em><br/>Market Review</h2>
-<p>
+  <div class="container">
+    <div class="valuation-inner">
+
+      <div class="valuation-copy reveal">
+        <div class="section-label" style="--gold-lt: #d4aa5a;"><span style="color:var(--gold-lt)">Free Home Value Review</span></div>
+        <h2>Get an <em>Honest</em><br>Market Review</h2>
+        <p>
           I'll pull recent comparable sales, active competition, and neighborhood-level data
           specific to your home — then walk you through what it means for your timeline and
           your goals. No automated guesses. No pressure to list.
         </p>
-<ul class="valuation-bullets">
-<li><i data-lucide="check"></i> Comparable sales from the last 90 days</li>
-<li><i data-lucide="check"></i> Neighborhood-level price trends</li>
-<li><i data-lucide="check"></i> Honest assessment of your home's positioning</li>
-<li><i data-lucide="check"></i> A strategy conversation — only if you want one</li>
-<li><i data-lucide="check"></i> No obligation. No hard sell.</li>
-</ul>
-</div>
-<div class="form-card reveal" style="transition-delay:0.15s">
-<h3>Request Your Home Value</h3>
-<p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="valForm">
-<div class="form-row">
-<div class="form-group">
-<label for="firstName">First Name *</label>
-<input id="firstName" name="firstName" placeholder="Jane" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="lastName">Last Name *</label>
-<input id="lastName" name="lastName" placeholder="Smith" required="" type="text"/>
-</div>
-</div>
-<div class="form-group">
-<label for="email">Email Address *</label>
-<input id="email" name="email" placeholder="jane@email.com" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="phone">Phone Number</label>
-<input id="phone" name="phone" placeholder="(970) 555-0000" type="tel"/>
-</div>
-<div class="form-group">
-<label for="address">Property Address *</label>
-<input id="address" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="bedrooms">Bedrooms</label>
-<select id="bedrooms" name="bedrooms">
-<option value="">Select</option>
-<option>1</option><option>2</option><option>3</option>
-<option>4</option><option>5+</option>
-</select>
-</div>
-<div class="form-group">
-<label for="timeline">Your Timeline</label>
-<select id="timeline" name="timeline">
-<option value="">Select</option>
-<option>Just curious</option>
-<option>3–6 months</option>
-<option>As soon as possible</option>
-</select>
-</div>
-</div>
-<button class="btn btn-primary form-submit" id="valSubmit" type="submit">
+        <ul class="valuation-bullets">
+          <li><i data-lucide="check"></i> Comparable sales from the last 90 days</li>
+          <li><i data-lucide="check"></i> Neighborhood-level price trends</li>
+          <li><i data-lucide="check"></i> Honest assessment of your home's positioning</li>
+          <li><i data-lucide="check"></i> A strategy conversation — only if you want one</li>
+          <li><i data-lucide="check"></i> No obligation. No hard sell.</li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal" style="transition-delay:0.15s">
+        <h3>Request Your Home Value</h3>
+        <p class="form-sub">I'll be in touch within 24 hours.</p>
+        <form id="valForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="jane@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(970) 555-0000" />
+          </div>
+          <div class="form-group">
+            <label for="address">Property Address *</label>
+            <input type="text" id="address" name="address" required placeholder="123 Main St, Grand Junction, CO" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms">
+                <option value="">Select</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="timeline">Your Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select</option>
+                <option>Just curious</option>
+                <option>3–6 months</option>
+                <option>As soon as possible</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="valSubmit">
             Get My Free Home Value
           </button>
-<div id="valFormMsg"></div>
-<p class="consent-note">
+          <div id="valFormMsg"></div>
+          <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
               or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. Link to <a href="privacy.html">Privacy Policy</a>.
           </p>
-</form>
-</div>
-</div>
-</div>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 <!-- WHY ORION -->
 <section class="why-section">
-<div class="container">
-<div class="reveal" style="text-align:center; max-width:640px; margin:0 auto 3rem;">
-<div class="section-label centered"><span>Why Work With Orion</span></div>
-<h2>A Grand Junction Agent<br/>Who Knows This Market</h2>
-</div>
-<div class="why-grid">
-<div class="why-card reveal" style="transition-delay:0.05s">
-<div class="why-num">01</div>
-<h3>Local, Not Generic</h3>
-<p>I work Mesa County — not the Front Range, not Denver. Your pricing strategy is built on what's happening in Grand Junction, Fruita, and the surrounding communities right now.</p>
-</div>
-<div class="why-card reveal" style="transition-delay:0.13s">
-<div class="why-num">02</div>
-<h3>Clear Communication</h3>
-<p>You'll hear the honest number — not a padded estimate designed to win the listing. If your timing or condition doesn't match market expectations, I'll tell you that upfront.</p>
-</div>
-<div class="why-card reveal" style="transition-delay:0.21s">
-<div class="why-num">03</div>
-<h3>Strategy Before the Sign</h3>
-<p>Every preparation decision — repairs, staging, photos, pricing — is evaluated against what actually moves buyers in this market. No generic checklists.</p>
-</div>
-<div class="why-card reveal" style="transition-delay:0.29s">
-<div class="why-num">04</div>
-<h3>No Pressure, Ever</h3>
-<p>A home value conversation is just that — a conversation. Whether you're ready to list tomorrow or just thinking about 2026, you're in control of the timeline.</p>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto 3rem;">
+      <div class="section-label centered"><span>Why Work With Orion</span></div>
+      <h2>A Grand Junction Agent<br>Who Knows This Market</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" style="transition-delay:0.05s">
+        <div class="why-num">01</div>
+        <h3>Local, Not Generic</h3>
+        <p>I work Mesa County — not the Front Range, not Denver. Your pricing strategy is built on what's happening in Grand Junction, Fruita, and the surrounding communities right now.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.13s">
+        <div class="why-num">02</div>
+        <h3>Clear Communication</h3>
+        <p>You'll hear the honest number — not a padded estimate designed to win the listing. If your timing or condition doesn't match market expectations, I'll tell you that upfront.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.21s">
+        <div class="why-num">03</div>
+        <h3>Strategy Before the Sign</h3>
+        <p>Every preparation decision — repairs, staging, photos, pricing — is evaluated against what actually moves buyers in this market. No generic checklists.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.29s">
+        <div class="why-num">04</div>
+        <h3>No Pressure, Ever</h3>
+        <p>A home value conversation is just that — a conversation. Whether you're ready to list tomorrow or just thinking about 2026, you're in control of the timeline.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
-<!-- NEIGHBORHOODS -->
-<section class="neighborhoods-section">
-<div class="container">
-<div class="reveal" style="max-width: 580px;">
-<div class="section-label"><span>Local Expertise</span></div>
-<h2>I Know Every Corner<br/>of the Grand Valley</h2>
-<p style="color:var(--muted); font-size:1.05rem; margin-top:0.75rem; line-height:1.85;">
-        Home values vary significantly across Mesa County. Explore pages for the specific areas I serve:
-      </p>
-</div>
-<div class="nbhd-grid">
-<a class="nbhd-link reveal" href="selling-in-fruita.html" style="transition-delay:0.05s">
-<i data-lucide="map-pin"></i><span>Selling in Fruita</span>
-</a>
-<a class="nbhd-link reveal" href="selling-in-palisade.html" style="transition-delay:0.10s">
-<i data-lucide="map-pin"></i><span>Selling in Palisade</span>
-</a>
-<a class="nbhd-link reveal" href="redlands-homes.html" style="transition-delay:0.15s">
-<i data-lucide="map-pin"></i><span>Redlands Homes</span>
-</a>
-<a class="nbhd-link reveal" href="orchard-mesa-homes.html" style="transition-delay:0.20s">
-<i data-lucide="map-pin"></i><span>Orchard Mesa</span>
-</a>
-<a class="nbhd-link reveal" href="contact.html" style="transition-delay:0.25s">
-<i data-lucide="map-pin"></i><span>Your Neighborhood</span>
-</a>
-</div>
-</div>
-</section>
+
 <!-- FINAL CTA -->
 <section class="cta-band">
-<div class="container">
-<div class="cta-content reveal">
-<div class="section-label centered"><span>Ready to Talk?</span></div>
-<h2>Start With a Conversation</h2>
-<p>No commitment. No pressure. Just an honest look at what your home is worth in today's Grand Junction market — and what it would take to sell well.</p>
-<a class="btn btn-navy" href="#valuation-form">Request My Free Home Value</a>
-</div>
-</div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <div class="section-label centered"><span>Ready to Talk?</span></div>
+      <h2>Start With a Conversation</h2>
+      <p>No commitment. No pressure. Just an honest look at what your home is worth in today's Grand Junction market — and what it would take to sell well.</p>
+      <a href="#valuation-form" class="btn btn-navy">Request My Free Home Value</a>
+    </div>
+  </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="main-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<span class="logo-footer">Orion Love</span>
-<p>Helping Grand Junction homeowners sell with clarity, confidence, and honest communication.</p>
-<p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
-</div>
-<div class="footer-links">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html">Sellers</a></li>
-<li><a href="buyers.html">Buyers</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div class="footer-contact">
-<h4>Contact</h4>
-<ul>
-<li><a href="/cdn-cgi/l/email-protection#a7c8d5cec8c989cbc8d1c289c4c8e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="09667b6066672765667f6c276a66496e64686065276a6664">[email protected]</span></a></li>
-<li><a href="tel:9706446781">(970) 644-6781</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Orion Love Real Estate. All rights reserved.</p>
-<a href="privacy.html">Privacy Policy</a>
-</div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-footer">Orion Love</span>
+        <p>Helping Grand Junction homeowners sell with clarity, confidence, and honest communication.</p>
+        <p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#a7c8d5cec8c989cbc8d1c289c4c8e7c0cac6cecb89c4c8ca"><span class="__cf_email__" data-cfemail="09667b6066672765667f6c276a66496e64686065276a6664">[email&#160;protected]</span></a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script defer="" src="script.js"></script></body>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  if (window.lucide) lucide.createIcons();
+
+  // Nav scroll
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Mobile menu
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => {
+    if (!header.contains(e.target)) menu.classList.remove('active');
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
+
+  // Valuation form
+  const valForm   = document.getElementById('valForm');
+  const valMsg    = document.getElementById('valFormMsg');
+  const valSubmit = document.getElementById('valSubmit');
+
+  valForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    valSubmit.disabled = true;
+    valSubmit.textContent = 'Sending…';
+
+    const formData = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName:  document.getElementById('lastName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      inquiry:   'Home Value Request — Grand Junction',
+      message: [
+        `Address: ${document.getElementById('address').value.trim()}`,
+        `Bedrooms: ${document.getElementById('bedrooms').value}`,
+        `Timeline: ${document.getElementById('timeline').value}`,
+      ].join('\n'),
+    };
+
+    try {
+      const res = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
+        valMsg.textContent = "Thank you! I'll have your home value review ready within 24 hours.";
+        valMsg.className = 'success';
+        valMsg.style.display = 'block';
+        valForm.reset();
+      } else throw new Error();
+    } catch {
+      valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+        valMsg.className = 'error';
+        valMsg.style.display = 'block';
+      }
+    } catch {
+      valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+      valMsg.className = 'error';
+      valMsg.style.display = 'block';
+    } finally {
+      valBtn.disabled = false;
+      valBtn.textContent = 'Get My Free Home Value';
+    }
+  });
+</script>
+
+</body>
 </html>
