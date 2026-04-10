@@ -163,6 +163,8 @@
     .stat-value span { font-size: 1.5rem; color: var(--gold); }
     .stat-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
     .stat-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+    .market-stats-meta { text-align: center; font-size: 0.78rem; color: var(--muted); padding: 0.95rem 1.5rem 1.1rem; border-top: 1px solid var(--sand); }
+    .market-stats-meta strong { color: var(--navy); font-weight: 600; }
 
     /* ── WHAT AFFECTS VALUE ── */
     .value-section { background: var(--cream); }
@@ -265,86 +267,18 @@
     .why-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
     .why-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; }
 
-    /* ── GRAND JUNCTION AREAS ── */
-    .gj-areas-section {
-      background: linear-gradient(180deg, var(--white) 0%, #fcfbf8 100%);
-      border-top: 1px solid var(--sand);
-      border-bottom: 1px solid var(--sand);
+    /* ── NEIGHBORHOOD LINKS ── */
+    .neighborhoods-section { background: var(--white); border-top: 1px solid var(--sand); }
+    .nbhd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .nbhd-link {
+      background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm);
+      padding: 1.4rem 1.25rem; text-decoration: none;
+      display: flex; align-items: center; gap: 0.8rem;
+      transition: border-color 0.22s, background 0.22s, transform 0.22s;
     }
-    .gj-areas-intro {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      text-align: center;
-    }
-    .gj-areas-intro .section-label {
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .gj-areas-intro h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy);
-    }
-    .gj-areas-intro p {
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.85;
-      margin-top: 0.9rem;
-    }
-    .gj-areas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-    .gj-area-card {
-      display: block;
-      text-decoration: none;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: 18px;
-      padding: 1.25rem 1.2rem;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-      min-height: 132px;
-    }
-    .gj-area-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(184,146,58,0.55);
-      background: rgba(184,146,58,0.05);
-    }
-    .gj-area-card .card-top {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.9rem;
-    }
-    .gj-area-card .card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: rgba(184,146,58,0.10);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .gj-area-card .card-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--gold);
-      stroke-width: 2;
-    }
-    .gj-area-card h3 {
-      font-size: 1.25rem;
-      color: var(--navy);
-      margin: 0;
-    }
-    .gj-area-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
+    .nbhd-link:hover { border-color: var(--gold); background: rgba(184,146,58,0.06); transform: translateY(-2px); }
+    .nbhd-link svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; }
+    .nbhd-link span { font-size: 0.9rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
 
     /* ── CTA BAND ── */
     .cta-band { background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
@@ -379,7 +313,6 @@
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-item:nth-child(2) { border-right: none; }
       .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--sand); }
-      .gj-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .valuation-inner { grid-template-columns: 1fr; gap: 3rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -388,8 +321,6 @@
       .hero h1 { font-size: 2.4rem; }
       .form-row { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .gj-areas-grid { grid-template-columns: 1fr; }
-      .gj-area-card { min-height: unset; }
     }
   </style>
 </head>
@@ -438,62 +369,27 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-value"><span>$</span>385K</div>
-        <div class="stat-label">Median Sale Price</div>
-        <div class="stat-note">Mesa County · 2025 avg.</div>
+        <div class="stat-value" id="gjMedianListPrice"><span>$</span>—</div>
+        <div class="stat-label">Median List Price</div>
+        <div class="stat-note">Grand Junction active listings</div>
       </div>
       <div class="stat-item">
-        <div class="stat-value">28</div>
+        <div class="stat-value" id="gjAvgDom">—</div>
         <div class="stat-label">Avg. Days on Market</div>
-        <div class="stat-note">Well-priced GJ homes</div>
+        <div class="stat-note">Grand Junction active listings</div>
       </div>
       <div class="stat-item">
-        <div class="stat-value">99<span>%</span></div>
-        <div class="stat-label">List-to-Sale Ratio</div>
-        <div class="stat-note">Mesa County average</div>
+        <div class="stat-value" id="gjNewListings">—</div>
+        <div class="stat-label">New Listings</div>
+        <div class="stat-note">Listed in the last 30 days</div>
       </div>
       <div class="stat-item">
-        <div class="stat-value">4–6</div>
-        <div class="stat-label">Weeks to Close</div>
-        <div class="stat-note">Typical timeline</div>
+        <div class="stat-value" id="gjActiveListings">—</div>
+        <div class="stat-label">Active Listings</div>
+        <div class="stat-note">Current Grand Junction inventory</div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="gj-areas-section">
-  <div class="container">
-    <div class="gj-areas-intro reveal">
-      <div class="section-label"><span>Grand Junction Areas</span></div>
-      <h2>Broad Numbers Only Tell Part of the Story</h2>
-      <p>Use the overall Grand Junction market as your starting point, then zero in on the part of town that actually shapes your home's value, buyer pool, and pricing range.</p>
-    </div>
-    <div class="gj-areas-grid">
-      <a href="redlands-homes.html" class="gj-area-card reveal" style="transition-delay:0.05s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>The Redlands</h3></div>
-        <p>Monument views, larger lots, and one of the strongest seller-recognition pockets in Grand Junction.</p>
-      </a>
-      <a href="orchard-mesa-homes.html" class="gj-area-card reveal" style="transition-delay:0.10s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Orchard Mesa</h3></div>
-        <p>Established neighborhoods, strong value pockets, and a different buyer mix than north or west Grand Junction.</p>
-      </a>
-      <a href="downtown-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.15s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Downtown</h3></div>
-        <p>Walkability, smaller lots, and a lifestyle-driven buyer pool that behaves differently than suburban Grand Junction.</p>
-      </a>
-      <a href="north-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.20s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>North Grand Junction</h3></div>
-        <p>Mature neighborhoods, central convenience, and broad family-buyer demand across a large part of the city.</p>
-      </a>
-      <a href="northeast-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.25s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Northeast Grand Junction</h3></div>
-        <p>CMU proximity, established corridors, and a unique blend of owner-occupant and investor demand.</p>
-      </a>
-      <a href="northwest-grand-junction.html" class="gj-area-card reveal" style="transition-delay:0.30s">
-        <div class="card-top"><span class="card-icon"><i data-lucide="map-pin"></i></span><h3>Northwest Grand Junction</h3></div>
-        <p>Newer construction, Fruita-side access, and outdoor-oriented buyer appeal closer to the city edge.</p>
-      </a>
-    </div>
+    <div class="market-stats-meta" id="gjStatsMeta">Monthly snapshot loading…</div>
   </div>
 </section>
 
@@ -664,6 +560,36 @@
 
 <div class="divider"><div class="divider-diamond"></div></div>
 
+<!-- NEIGHBORHOODS -->
+<section class="neighborhoods-section">
+  <div class="container">
+    <div class="reveal" style="max-width: 580px;">
+      <div class="section-label"><span>Local Expertise</span></div>
+      <h2>I Know Every Corner<br>of the Grand Valley</h2>
+      <p style="color:var(--muted); font-size:1.05rem; margin-top:0.75rem; line-height:1.85;">
+        Home values vary significantly across Mesa County. Explore pages for the specific areas I serve:
+      </p>
+    </div>
+    <div class="nbhd-grid">
+      <a href="selling-in-fruita.html" class="nbhd-link reveal" style="transition-delay:0.05s">
+        <i data-lucide="map-pin"></i><span>Selling in Fruita</span>
+      </a>
+      <a href="selling-in-palisade.html" class="nbhd-link reveal" style="transition-delay:0.10s">
+        <i data-lucide="map-pin"></i><span>Selling in Palisade</span>
+      </a>
+      <a href="redlands-homes.html" class="nbhd-link reveal" style="transition-delay:0.15s">
+        <i data-lucide="map-pin"></i><span>Redlands Homes</span>
+      </a>
+      <a href="orchard-mesa-homes.html" class="nbhd-link reveal" style="transition-delay:0.20s">
+        <i data-lucide="map-pin"></i><span>Orchard Mesa</span>
+      </a>
+      <a href="contact.html" class="nbhd-link reveal" style="transition-delay:0.25s">
+        <i data-lucide="map-pin"></i><span>Your Neighborhood</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="cta-band">
   <div class="container">
@@ -731,9 +657,67 @@
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => obs.observe(el));
+
+  // Monthly snapshot stats
+  const statsMeta = document.getElementById('gjStatsMeta');
+  const statsEls = {
+    medianListPrice: document.getElementById('gjMedianListPrice'),
+    averageDaysOnMarket: document.getElementById('gjAvgDom'),
+    newListings30d: document.getElementById('gjNewListings'),
+    activeListings: document.getElementById('gjActiveListings'),
+  };
+
+  function formatCompactCurrency(value) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return '—';
+    if (numeric >= 1000000) return `$${(numeric / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
+    if (numeric >= 1000) return `$${Math.round(numeric / 1000)}K`;
+    return `$${Math.round(numeric)}`;
+  }
+
+  function formatWhole(value) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return '—';
+    return Math.round(numeric).toLocaleString();
+  }
+
+  function formatSnapshotDate(isoString) {
+    if (!isoString) return 'Last updated unavailable';
+    const date = new Date(isoString);
+    if (Number.isNaN(date.getTime())) return 'Last updated unavailable';
+    return `Monthly snapshot updated ${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+  }
+
+  async function loadGrandJunctionStats() {
+    const endpoint = 'https://grand-junction-city-stats.orion-love-co.workers.dev/api/grand-junction-stats';
+
+    try {
+      const response = await fetch(endpoint, { method: 'GET' });
+      if (!response.ok) throw new Error(`Stats request failed: ${response.status}`);
+      const payload = await response.json();
+      const stats = payload?.stats || {};
+
+      statsEls.medianListPrice.textContent = formatCompactCurrency(stats.medianListPrice);
+      statsEls.averageDaysOnMarket.textContent = formatWhole(stats.averageDaysOnMarket);
+      statsEls.newListings30d.textContent = formatWhole(stats.newListings30d);
+      statsEls.activeListings.textContent = formatWhole(stats.activeListings);
+
+      statsMeta.textContent = formatSnapshotDate(payload?.generatedAt);
+    } catch (error) {
+      console.error('Unable to load Grand Junction stats:', error);
+      statsMeta.textContent = 'Monthly snapshot temporarily unavailable';
+    }
+  }
+
+  loadGrandJunctionStats();
 
   // Valuation form
   const valForm   = document.getElementById('valForm');
@@ -755,7 +739,8 @@
         `Address: ${document.getElementById('address').value.trim()}`,
         `Bedrooms: ${document.getElementById('bedrooms').value}`,
         `Timeline: ${document.getElementById('timeline').value}`,
-      ].join('\n'),
+      ].join('
+'),
     };
 
     try {
@@ -771,8 +756,11 @@
         valMsg.className = 'success';
         valMsg.style.display = 'block';
         valForm.reset();
-      } else throw new Error();
-    } catch {
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Home value form error:', error);
       valMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
       valMsg.className = 'error';
       valMsg.style.display = 'block';
