@@ -202,6 +202,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ── PAGE: grand-junction-home-value ──────────────────────
+if (document.body.classList.contains('page-grand-junction-home-value')) {
+
+  // Load Grand Junction market stats
+  (async function loadGrandJunctionStats() {
+    try {
+      const res = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      // Try a few possible area keys in case your worker uses a slightly different name
+      const area =
+        data?.areas?.grand_junction ||
+        data?.areas?.grandJunction ||
+        data?.areas?.grand_junction_home_value ||
+        data?.areas?.grand_junction_city;
+
+      if (!area) throw new Error('Grand Junction area not found in API response');
+
+      const medianEl = document.getElementById('gjMedianListPrice');
+      const domEl = document.getElementById('gjAvgDom');
+      const newEl = document.getElementById('gjNewListings');
+      const activeEl = document.getElementById('gjActiveListings');
+      const metaEl = document.getElementById('gjStatsMeta');
+
+      if (medianEl) medianEl.innerHTML = formatCurrencyHTML(area.medianPrice ?? area.medianListPrice);
+      if (domEl) domEl.textContent = formatNumber(area.averageDaysOnMarket ?? area.avgDaysOnMarket ?? area.daysOnMarket);
+      if (newEl) newEl.textContent = formatNumber(area.newListings);
+      if (activeEl) activeEl.textContent = formatNumber(area.totalListings ?? area.activeListings);
+
+      const updated = area.lastUpdatedDate || data.generatedAt;
+      if (metaEl) metaEl.textContent = formatUpdatedDate(updated, 'Grand Junction');
+    } catch (err) {
+      console.error('Grand Junction stats load failed:', err);
+      const metaEl = document.getElementById('gjStatsMeta');
+      if (metaEl) metaEl.textContent = 'Monthly snapshot temporarily unavailable';
+    }
+  })();
+
+  const valForm   = document.getElementById('valForm');
+  const valMsg    = document.getElementById('valFormMsg');
+  const valSubmit = document.getElementById('valSubmit');
+
+  valForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    valSubmit.disabled = true;
+    valSubmit.textContent = 'Sending…';
+    try {
+      await submitToProxy({
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName:  document.getElementById('lastName').value.trim(),
+        email:     document.getElementById('email').value.trim(),
+        phone:     document.getElementById('phone').value.trim(),
+        inquiry:   'Home Value Request — Grand Junction',
+        message:   'Address: ' + document.getElementById('address').value.trim()
+                 + '\nBedrooms: ' + document.getElementById('bedrooms').value
+                 + '\nTimeline: ' + document.getElementById('timeline').value,
+      });
+      showFormMsg(valMsg, "Thank you! I'll have your home value review ready within 24 hours.", 'success');
+      valForm.reset();
+    } catch {
+      showFormMsg(valMsg, 'Something went wrong. Please call (970) 644-6781.', 'error');
+    } finally {
+      valSubmit.disabled = false;
+      valSubmit.textContent = 'Get My Free Home Value';
+    }
+  });
+}
+   
   if (document.body.classList.contains('page-grand-junction-home-value')) {
     const valForm   = document.getElementById('valForm');
     const valMsg    = document.getElementById('valFormMsg');
