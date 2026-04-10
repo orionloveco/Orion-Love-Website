@@ -5376,3 +5376,61 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         opacity: 1;
         color: var(--gold-lt);}
 }
+
+
+/* ============================================================
+   Utility classes added during cleanup
+   Replaces inline style="transition-delay: Xs" attributes
+   ============================================================ */
+.reveal-d1 { transition-delay: 0.05s !important; }
+.reveal-d2 { transition-delay: 0.13s !important; }
+.reveal-d3 { transition-delay: 0.21s !important; }
+.reveal-d4 { transition-delay: 0.29s !important; }
+.reveal-d5 { transition-delay: 0.37s !important; }
+.reveal-d6 { transition-delay: 0.45s !important; }
+
+/* Neighbourhood link card (shared across pages) */
+.nbhd-link-card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: border-color 0.22s, transform 0.22s;
+}
+.nbhd-link-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.nbhd-link-card svg, .nbhd-link-card i {
+  width: 15px;
+  height: 15px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.nbhd-link-card span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Form message states (used across contact/valuation forms) */
+.form-message { display: none; padding: 1rem 1.25rem; border-radius: 12px; font-size: 0.93rem; font-weight: 500; margin-bottom: 1.5rem; }
+.form-message.success, #formMsg.success, #fruFormMsg.success, #palFormMsg.success, #valFormMsg.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
+.form-message.error,   #formMsg.error,   #fruFormMsg.error,   #palFormMsg.error,   #valFormMsg.error   { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
+.success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
+.error   { background: rgba(200,60,60,0.08);  border: 1px solid rgba(200,60,60,0.2);  color: #8b2020; }
+
+/* Footer bottom flex layout (used on most pages) */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
