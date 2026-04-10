@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
 
   const GJ_CITY_STATS_URL =
-    'https://grand-junction-city-stats.orion-love-co.workers.dev/';
+    'https://grand-junction-city-stats.orion-love-co.workers.dev/api/grand-junction-stats';
 
   const PROXY_URL =
     'https://fub-contact-proxy.orion-love-co.workers.dev';
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ============================================================
      Grand Junction city stats loader
-     Uses separate worker only for grand-junction-home-value page
+     Uses separate worker for grand-junction-home-value page
      ============================================================ */
   async function loadGrandJunctionCityStats() {
     try {
@@ -263,31 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
-      console.log('Grand Junction city stats response:', data);
-
-      const medianListPrice =
-        data?.medianListPrice ??
-        data?.medianPrice ??
-        data?.median_price;
-
-      const avgDaysOnMarket =
-        data?.avgDaysOnMarket ??
-        data?.averageDaysOnMarket ??
-        data?.daysOnMarket;
-
-      const newListings =
-        data?.newListings ??
-        data?.new_listings;
-
-      const activeListings =
-        data?.activeListings ??
-        data?.totalListings ??
-        data?.active_listings;
-
-      const updatedAt =
-        data?.lastUpdatedDate ??
-        data?.updatedAt ??
-        data?.generatedAt;
+      const stats = data?.stats || {};
 
       const medianEl = document.getElementById('gjMedianListPrice');
       const domEl = document.getElementById('gjAvgDom');
@@ -295,11 +271,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const activeEl = document.getElementById('gjActiveListings');
       const metaEl = document.getElementById('gjStatsMeta');
 
-      if (medianEl) medianEl.innerHTML = formatCurrencyHTML(medianListPrice);
-      if (domEl) domEl.textContent = formatDays(avgDaysOnMarket);
-      if (newEl) newEl.textContent = formatNumber(newListings);
-      if (activeEl) activeEl.textContent = formatNumber(activeListings);
-      if (metaEl) metaEl.textContent = formatUpdatedDate(updatedAt, 'Grand Junction');
+      if (medianEl) medianEl.innerHTML = formatCurrencyHTML(stats.medianListPrice);
+      if (domEl) domEl.textContent = formatDays(stats.averageDaysOnMarket);
+      if (newEl) newEl.textContent = formatNumber(stats.newListings30d);
+      if (activeEl) activeEl.textContent = formatNumber(stats.activeListings);
+      if (metaEl) metaEl.textContent = formatUpdatedDate(data.generatedAt, 'Grand Junction');
     } catch (err) {
       console.error('Grand Junction city stats load failed:', err);
       const metaEl = document.getElementById('gjStatsMeta');
