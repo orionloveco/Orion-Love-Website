@@ -18,7 +18,7 @@
 <link href="styles.css" rel="stylesheet"/>
 <script src="script.js" defer></script>
 </head>
-<body>
+<body class="page-northwest-grand-junction">
 
 <header class="main-header" id="mainHeader">
   <nav>
@@ -130,67 +130,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  if(window.lucide) lucide.createIcons();
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 
-  const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-
-  const toggle = document.getElementById('mobileToggle');
-  const menu = document.getElementById('navMenu');
-  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
-  document.addEventListener('click', (e) => {
-    if (!header.contains(e.target)) menu.classList.remove('active');
-  });
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
-
-  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
-  const AREA_KEY = 'northwest_grand_junction';
-
-  function formatCurrency(value) {
-    if (!Number.isFinite(value)) return '$--';
-    if (value >= 1000000) return `$${(value / 1000000).toFixed(2).replace(/\.00$/, '')}M`;
-    if (value >= 1000) return `$${Math.round(value / 1000)}K`;
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
-  }
-
-  function formatDays(value) {
-    if (!Number.isFinite(value)) return '-- days';
-    return `${Math.round(value)} days`;
-  }
-
-  function formatUpdatedDate(value) {
-    if (!value) return 'Live monthly market data · Northwest Grand Junction';
-    const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return 'Live monthly market data · Northwest Grand Junction';
-    return `Updated ${parsed.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} · Northwest Grand Junction`;
-  }
-
-  async function loadMarketStats() {
-    try {
-      const response = await fetch(MARKET_STATS_URL, { headers: { Accept: 'application/json' } });
-      if (!response.ok) throw new Error(`Market stats request failed: ${response.status}`);
-
-      const payload = await response.json();
-      const area = payload?.areas?.[AREA_KEY];
-      if (!area) throw new Error(`Area key not found: ${AREA_KEY}`);
-
-      const medianEl = document.querySelector('[data-market-stat="medianPrice"]');
-      const domEl = document.querySelector('[data-market-stat="averageDaysOnMarket"]');
-      const noteEl = document.getElementById('marketNote');
-
-      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
-      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
-      if (noteEl) noteEl.textContent = formatUpdatedDate(area.lastUpdatedDate || payload.generatedAt);
-    } catch (error) {
-      conso
+</body>
+</html>

@@ -7,6 +7,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  document.documentElement.classList.add('js');
+
+  // ── Page identity fallback ─────────────────────────────────
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const pageSlug = path.replace(/\.html?$/i, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '').toLowerCase();
+  if (pageSlug) document.body.classList.add('page-' + pageSlug);
+
+
   // ── Lucide icons ─────────────────────────────────────────
   if (window.lucide) lucide.createIcons();
 
