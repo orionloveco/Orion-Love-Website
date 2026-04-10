@@ -709,3 +709,111 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+/* Grand Junction home value area cards */
+body.page-grand-junction-home-value .gj-areas-section {
+  background: linear-gradient(180deg, var(--white) 0%, #fcfbf8 100%);
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+body.page-grand-junction-home-value .gj-areas-intro {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+body.page-grand-junction-home-value .gj-areas-intro .section-label {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+body.page-grand-junction-home-value .gj-areas-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy);
+}
+
+body.page-grand-junction-home-value .gj-areas-intro p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin-top: 0.9rem;
+}
+
+body.page-grand-junction-home-value .gj-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body.page-grand-junction-home-value .gj-area-card {
+  display: block;
+  text-decoration: none;
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 18px;
+  padding: 1.25rem 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  min-height: 132px;
+}
+
+body.page-grand-junction-home-value .gj-area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184,146,58,0.55);
+  background: rgba(184,146,58,0.05);
+}
+
+body.page-grand-junction-home-value .gj-area-card .card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+body.page-grand-junction-home-value .gj-area-card .card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(184,146,58,0.10);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body.page-grand-junction-home-value .gj-area-card .card-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+body.page-grand-junction-home-value .gj-area-card h3 {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+body.page-grand-junction-home-value .gj-area-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  body.page-grand-junction-home-value .gj-areas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body.page-grand-junction-home-value .gj-areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-grand-junction-home-value .gj-area-card {
+    min-height: unset;
+  }
+}
