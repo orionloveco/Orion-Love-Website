@@ -5434,3 +5434,76 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
+
+/* Bottom city cards only on the 6 requested pages */
+body.page-index .bottom-city-links .link-grid,
+body.page-about .bottom-city-links .link-grid,
+body.page-services .bottom-city-links .link-grid,
+body.page-buyers .bottom-city-links .link-grid,
+body.page-faq .bottom-city-links .link-grid,
+body.page-contact .bottom-city-links .link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+body.page-index .bottom-city-links .link-card,
+body.page-about .bottom-city-links .link-card,
+body.page-services .bottom-city-links .link-card,
+body.page-buyers .bottom-city-links .link-card,
+body.page-faq .bottom-city-links .link-card,
+body.page-contact .bottom-city-links .link-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+}
+
+body.page-index .bottom-city-links .link-card:hover,
+body.page-about .bottom-city-links .link-card:hover,
+body.page-services .bottom-city-links .link-card:hover,
+body.page-buyers .bottom-city-links .link-card:hover,
+body.page-faq .bottom-city-links .link-card:hover,
+body.page-contact .bottom-city-links .link-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+body.page-index .bottom-city-links .link-card svg,
+body.page-index .bottom-city-links .link-card i,
+body.page-about .bottom-city-links .link-card svg,
+body.page-about .bottom-city-links .link-card i,
+body.page-services .bottom-city-links .link-card svg,
+body.page-services .bottom-city-links .link-card i,
+body.page-buyers .bottom-city-links .link-card svg,
+body.page-buyers .bottom-city-links .link-card i,
+body.page-faq .bottom-city-links .link-card svg,
+body.page-faq .bottom-city-links .link-card i,
+body.page-contact .bottom-city-links .link-card svg,
+body.page-contact .bottom-city-links .link-card i {
+  width: 15px;
+  height: 15px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+body.page-index .bottom-city-links .link-card span,
+body.page-about .bottom-city-links .link-card span,
+body.page-services .bottom-city-links .link-card span,
+body.page-buyers .bottom-city-links .link-card span,
+body.page-faq .bottom-city-links .link-card span,
+body.page-contact .bottom-city-links .link-card span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+}
