@@ -103,7 +103,12 @@ p { color: var(--text); }
    Section Utilities
 ========================= */
 .section-header { margin-bottom: 2rem; }
-.section-header.centered { text-align: center; }
+.section-header.centered {
+  text-align: center;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .section-header h2 { margin-bottom: 0.5rem; }
 
 .section-intro {
@@ -116,6 +121,10 @@ p { color: var(--text); }
 .section-header.centered .section-intro {
   margin-left: auto;
   margin-right: auto;
+}
+
+.section-copy-wide {
+  max-width: 920px;
 }
 
 /* Section label â€” gold rule + uppercase tag */
@@ -1215,7 +1224,7 @@ body.page-about .section-header h2 {font-size: clamp(2rem, 4vw, 3rem);
       color: var(--navy);
       margin-bottom: 1rem;
       font-weight: 300;}
-body.page-about .section-header .lead {max-width: 58ch;
+body.page-about .section-header .section-intro {max-width: 58ch;
       margin: 0 auto;
       color: var(--muted);
       font-size: 1.05rem;
@@ -1710,17 +1719,6 @@ body.page-buyers .hero-cta {display: flex;
       z-index: 1;}
 body.page-buyers .promise-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--white);}
-body.page-buyers .promise-header {text-align: center;
-      margin-bottom: clamp(3rem, 5vw, 4.5rem);}
-body.page-buyers .promise-header h2 {font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy);
-      font-weight: 300;
-      margin-bottom: 1rem;}
-body.page-buyers .promise-header .lead {max-width: 56ch;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.04rem;
-      line-height: 1.85;}
 body.page-buyers .promise-grid {display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;}
@@ -1990,7 +1988,6 @@ body.page-clifton-grand-junction .divider::before, body.page-clifton-grand-junct
 body.page-clifton-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-clifton-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-clifton-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-clifton-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-clifton-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-clifton-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -2015,8 +2012,6 @@ body.page-clifton-grand-junction .card-icon {width:48px;height:48px;border-radiu
 body.page-clifton-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-clifton-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-clifton-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-clifton-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-clifton-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-clifton-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-clifton-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-clifton-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
@@ -2559,7 +2554,6 @@ body.page-downtown-grand-junction .divider::before, body.page-downtown-grand-jun
 body.page-downtown-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-downtown-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-downtown-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-downtown-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-downtown-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -2586,12 +2580,6 @@ body.page-downtown-grand-junction .card-icon {width:48px;height:48px;border-radi
 body.page-downtown-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-downtown-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-downtown-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-downtown-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-downtown-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-downtown-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-downtown-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-downtown-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-downtown-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-downtown-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-downtown-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-downtown-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
@@ -3134,7 +3122,6 @@ body.page-grand-junction-home-value .hero {position: relative; min-height: 82vh;
         url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-grand-junction-home-value .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0;
       height: 1px; background: rgba(184,146,58,0.22);}
-body.page-grand-junction-home-value .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
 body.page-grand-junction-home-value .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
@@ -3493,7 +3480,7 @@ body.page-index .section-header h2 {font-size: clamp(2rem, 4.5vw, 3.2rem);
       color: var(--navy);
       margin-bottom: 1rem;
       font-weight: 300;}
-body.page-index .section-header .lead {max-width: 56ch;
+body.page-index .section-header .section-intro {max-width: 56ch;
       margin: 0 auto;
       color: var(--muted);
       font-size: 1.06rem;
@@ -3780,7 +3767,6 @@ body.page-loma-mack-grand-junction .divider::before, body.page-loma-mack-grand-j
 body.page-loma-mack-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-loma-mack-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-loma-mack-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-loma-mack-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -3808,8 +3794,6 @@ body.page-loma-mack-grand-junction .card p {color:var(--muted);font-size:0.95rem
 body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
-body.page-loma-mack-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-loma-mack-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-loma-mack-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-loma-mack-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-loma-mack-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
@@ -3874,7 +3858,6 @@ body.page-north-grand-junction .divider::before, body.page-north-grand-junction 
 body.page-north-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-north-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-north-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-north-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -3901,12 +3884,6 @@ body.page-north-grand-junction .card-icon {width:48px;height:48px;border-radius:
 body.page-north-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-north-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-north-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-north-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-north-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-north-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-north-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-north-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-north-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-north-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-north-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-north-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
@@ -3967,7 +3944,6 @@ body.page-northeast-grand-junction .divider::before, body.page-northeast-grand-j
 body.page-northeast-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-northeast-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-northeast-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-northeast-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -3994,12 +3970,6 @@ body.page-northeast-grand-junction .card-icon {width:48px;height:48px;border-rad
 body.page-northeast-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-northeast-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-northeast-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-northeast-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-northeast-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-northeast-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-northeast-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-northeast-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-northeast-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northeast-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northeast-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-northeast-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
@@ -4060,7 +4030,6 @@ body.page-northwest-grand-junction .divider::before, body.page-northwest-grand-j
 body.page-northwest-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-northwest-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-northwest-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-northwest-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -4087,12 +4056,6 @@ body.page-northwest-grand-junction .card-icon {width:48px;height:48px;border-rad
 body.page-northwest-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-northwest-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-northwest-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-northwest-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-northwest-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-northwest-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-northwest-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-northwest-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-northwest-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northwest-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northwest-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-northwest-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
@@ -4153,7 +4116,6 @@ body.page-orchard-mesa-homes .divider::before, body.page-orchard-mesa-homes .div
 body.page-orchard-mesa-homes .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-orchard-mesa-homes .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-orchard-mesa-homes .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-orchard-mesa-homes .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -4177,8 +4139,6 @@ body.page-orchard-mesa-homes .card-icon {width:48px;height:48px;border-radius:12
 body.page-orchard-mesa-homes .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-orchard-mesa-homes .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-orchard-mesa-homes .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-orchard-mesa-homes .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-orchard-mesa-homes .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-orchard-mesa-homes .dark-inner {position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 body.page-orchard-mesa-homes .dark-copy h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-orchard-mesa-homes .dark-copy h2 em {font-style:italic;color:var(--gold-lt);}
@@ -4319,7 +4279,6 @@ body.page-redlands-homes .divider-diamond {width: 8px; height: 8px; background: 
 body.page-redlands-homes .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-redlands-homes .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-redlands-homes .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
 body.page-redlands-homes .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
 body.page-redlands-homes .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
 body.page-redlands-homes .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
@@ -4345,9 +4304,6 @@ body.page-redlands-homes .card-icon {width: 48px; height: 48px; border-radius: 1
 body.page-redlands-homes .card-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
 body.page-redlands-homes .card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
 body.page-redlands-homes .card p {color: var(--muted); font-size: 0.95rem; line-height: 1.8;}
-body.page-redlands-homes .dark-band {background: var(--navy); position: relative; overflow: hidden;}
-body.page-redlands-homes .dark-band::before {content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none;}
-body.page-redlands-homes .dark-band-inner {position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
 body.page-redlands-homes .dark-copy h2 {color: var(--white); font-weight: 300; margin-bottom: 1rem;}
 body.page-redlands-homes .dark-copy h2 em {font-style: italic; color: var(--gold-lt);}
 body.page-redlands-homes .dark-copy p {color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.85; margin-bottom: 0;}
@@ -4399,7 +4355,6 @@ body.page-redlands-homes .reveal.visible {opacity: 1; transform: none;}
 body.page-redlands-homes .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
 body.page-redlands-homes .nav-menu.active {left: 0;}
 body.page-redlands-homes .mobile-toggle {display: flex;}
-body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-redlands-homes .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-redlands-homes .footer-bottom {flex-direction: column; text-align: center;}
 }
@@ -4461,7 +4416,6 @@ body.page-selling-in-fruita .hero {position: relative; min-height: 82vh; display
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
         url("images/gj-landscape.jpg") center 30% / cover no-repeat;}
 body.page-selling-in-fruita .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-selling-in-fruita .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
 body.page-selling-in-fruita .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
 body.page-selling-in-fruita .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
 body.page-selling-in-fruita .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
@@ -4607,7 +4561,6 @@ body.page-selling-in-palisade .hero {position: relative; min-height: 82vh; displ
         linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
         url("images/gj-landscape.jpg") center 40% / cover no-repeat;}
 body.page-selling-in-palisade .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-selling-in-palisade .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
 body.page-selling-in-palisade .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
 body.page-selling-in-palisade .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
 body.page-selling-in-palisade .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
@@ -5443,17 +5396,6 @@ body.page-services #services {
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
 }
 
-body.page-services #services .section-header {
-  margin-bottom: 2.25rem;
-}
-
-body.page-services #services .section-intro,
-body.page-services #services .lead {
-  max-width: 62ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 body.page-services #services .process-steps,
 body.page-services #services .usp-grid {
   margin-bottom: 2.5rem;
@@ -5739,6 +5681,76 @@ body.page-about .hero-trust {
   color: rgba(255, 255, 255, 0.4);
 }
 
+/* ---------- Shared market-area dark band family ---------- */
+body.page-market-area .dark-band {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+body.page-market-area .dark-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184, 146, 58, 0.07), transparent 70%);
+  pointer-events: none;
+}
+
+body.page-market-area .dark-band-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body.page-market-area .dark-band-inner h2 {
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+body.page-market-area .dark-band-inner h2 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+body.page-market-area .dark-band-inner > p,
+body.page-market-area .dark-copy p {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+body.page-market-area .dark-band-inner > p {
+  margin-bottom: 2rem;
+}
+
+body.page-market-area .dark-copy p {
+  margin-bottom: 1.25rem;
+}
+
+body.page-market-area .dark-band-inner-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: none;
+  text-align: left;
+}
+
+body.page-market-area .dark-band-steps {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 980px) {
+  body.page-market-area .dark-band-inner-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 968px) {
   body[class^="page-"] .mobile-toggle {
     display: flex;
@@ -5828,8 +5840,7 @@ body.page-services #services .process-steps {
 
 body[class^="page-"] .cta-center,
 body[class^="page-"] .cta-content,
-body[class^="page-"] .faq-panel-header,
-body[class^="page-"] .promise-header {
+body[class^="page-"] .faq-panel-header {
   margin-top: 0;
 }
 
@@ -6266,23 +6277,6 @@ body.page-privacy .footer-bottom {
   padding: clamp(3rem,5vw,4rem) 0;
 }
 
-.section-intro-center {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 2rem;
-}
-
-.section-intro-center h2 {
-  font-size: clamp(1.5rem,2.5vw,2.2rem);
-  margin-bottom: 0.55rem;
-}
-
-.section-intro-center p {
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.8;
-}
-
 .section-copy-narrow {
   max-width: 640px;
 }
@@ -6409,18 +6403,6 @@ body.page-privacy .footer-bottom {
 }
 
 /* Services page rules moved out of inline style block */
-body.page-services #services .section-header {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.75rem;
-}
-body.page-services #services .section-intro {
-  margin-top: 0.85rem;
-}
-body.page-services #services .process-steps {
-  margin-top: 0.35rem;
-}
 body.page-services .cta-band-inner {
   max-width: 720px;
   margin: 0 auto;
@@ -6596,52 +6578,6 @@ body.page-privacy .privacy-content {
 
 /* Additional cleanup utilities */
 .no-text-decoration { text-decoration: none; }
-.section-intro-center-wide {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 3rem;
-}
-.mt-35 { margin-top: 3.5rem; }
-.market-stats-flush { padding: 0; }
-.stat-note-sm-center {
-  text-align: center;
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
-}
-.market-status-note {
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-  text-align: center;
-}
-.market-status-note-uppercase {
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: center;
-}
-.info-callout {
-  padding: 1.5rem;
-  background: rgba(184,146,58,0.06);
-  border: 1px solid rgba(184,146,58,0.2);
-  border-radius: var(--radius-md);
-}
-.info-callout p {
-  font-size: 0.88rem;
-  color: var(--navy);
-  line-height: 1.75;
-}
-.info-callout strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--gold);
-}
-.bottom-city-links.bottom-city-links-white {
-  background: var(--white);
-}
-
 body.page-privacy .privacy-footer-bottom {
   display:flex;
   justify-content:space-between;
@@ -6656,4 +6592,12 @@ body.page-privacy .privacy-footer-copy {
   color:rgba(255,255,255,0.5);
   font-size:0.8rem;
   margin:0;
+}
+
+/* Services page family trim */
+body.page-services #services .section-intro {
+  margin-top: 0.85rem;
+}
+body.page-services #services .process-steps {
+  margin-top: 0.35rem;
 }
