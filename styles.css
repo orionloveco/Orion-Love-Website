@@ -5648,3 +5648,43 @@ body.page-services .cta-band-copy p,
 body.page-services .cta-band-inner p {
   color: rgba(255,255,255,0.72);
 }
+
+
+/* =========================
+   Alignment + spacing fixes
+========================= */
+.hero-content,
+.hero-content.centered {
+  text-align: left;
+}
+
+.hero-content.centered .hero-cta {
+  justify-content: flex-start;
+}
+
+.hero-content.centered .hero-subtitle {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero-eyebrow.centered {
+  justify-content: flex-start;
+}
+
+body.page-index .process-preview .process-steps {
+  margin-bottom: 2.5rem;
+}
+
+.services-proof .usp-grid,
+body.page-services .usp-grid {
+  margin-bottom: 2.5rem;
+}
+
+.cta-band .cta-band-copy h2,
+.cta-band .cta-band-copy p {
+  color: var(--white);
+}
+
+.cta-band .cta-band-copy p {
+  color: rgba(255, 255, 255, 0.78);
+}
