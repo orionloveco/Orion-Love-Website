@@ -400,6 +400,31 @@ p { color: var(--text); }
   box-shadow: 0 8px 28px rgba(184, 146, 58, 0.35);
 }
 
+/* Shared alias for legacy gold-outline button name */
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(184, 146, 58, 0.55);
+  color: var(--gold-lt);
+  background: transparent;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.btn-outline-gold:hover {
+  background: rgba(184,146,58,0.12);
+  border-color: var(--gold-lt);
+  transform: translateY(-2px);
+}
+
 /* White outline for dark hero use */
 .btn-outline-white {
   display: inline-flex;
@@ -692,6 +717,67 @@ p { color: var(--text); }
 }
 
 /* =========================
+   Dark CTA Band
+========================= */
+.dark-band {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.dark-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184, 146, 58, 0.07), transparent 70%);
+  pointer-events: none;
+}
+.dark-band-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.dark-band-inner.dark-band-inner-solo {
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dark-copy h2,
+.dark-band-inner.dark-band-inner-solo h2 {
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.dark-copy h2 em,
+.dark-band-inner.dark-band-inner-solo h2 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+.dark-copy p,
+.dark-band-inner.dark-band-inner-solo p {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+.dark-band-inner.dark-band-inner-solo p {
+  margin-bottom: 2rem;
+}
+.steps-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .dark-band-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* =========================
    Process Steps
 ========================= */
 .process-preview { background: rgba(255, 255, 255, 0.5); }
@@ -951,15 +1037,11 @@ p { color: var(--text); }
   .hero-cta .btn { width: 100%; max-width: 340px; }
 }
 
-
-
 /* ===== Shared mobile overlay helper ===== */
 #mobileNavOverlay { display:none; position:fixed; inset:0; width:100vw; height:100vh; background:rgb(12,26,61); flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; z-index:99999; list-style:none; margin:0; padding:0; }
 #mobileNavOverlay a { font-size:1.5rem; color:#ffffff; text-decoration:none; font-family:"Cormorant Garamond", serif; font-weight:400; letter-spacing:0.05em; }
 #mobileNavOverlay .btn-nav { border:1px solid rgba(184,146,58,0.55); border-radius:999px; padding:0.75rem 1.6rem; color:#d4aa5a; }
 body.mobile-nav-open { overflow:hidden; }
-
-
 
 /* ===== about.html ===== */
 body.page-about *, body.page-about *::before, body.page-about *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -1035,14 +1117,6 @@ body.page-about .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-about .nav-menu a:hover, body.page-about .nav-menu a.active {color: var(--gold-lt);}
-body.page-about .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s, border-color 0.22s !important;}
-body.page-about .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
-      border-color: var(--gold-lt) !important;}
 body.page-about .hero {position: relative;
       min-height: 75vh;
       display: flex;
@@ -1137,12 +1211,6 @@ body.page-about .btn {display: inline-flex;
       border-radius: 50px;
       transition: all 0.25s;
       cursor: pointer;}
-body.page-about .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-about .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-about .btn-outline {background: transparent;
       color: var(--white);
       border: 1px solid rgba(255,255,255,0.35);}
@@ -1550,7 +1618,6 @@ body.page-about .mobile-toggle.active span:nth-child(3) {transform: translateY(-
 body.page-about .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
-
 /* ===== buyers.html ===== */
 body.page-buyers *, body.page-buyers *::before, body.page-buyers *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -1615,13 +1682,6 @@ body.page-buyers .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-buyers .nav-menu a:hover, body.page-buyers .nav-menu a.active {color: var(--gold-lt);}
-body.page-buyers .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s !important;}
-body.page-buyers .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
 body.page-buyers .mobile-toggle {display: none;}
 body.page-buyers .btn {display: inline-flex;
       align-items: center;
@@ -1637,12 +1697,6 @@ body.page-buyers .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-buyers .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-buyers .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-buyers .btn-outline-white {display: inline-flex;
       align-items: center;
       text-decoration: none;
@@ -2011,7 +2065,6 @@ body.page-buyers .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         color: var(--gold-lt);}
 }
 
-
 /* ===== clifton-grand-junction.html ===== */
 body.page-clifton-grand-junction *, body.page-clifton-grand-junction *::before, body.page-clifton-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
@@ -2028,16 +2081,9 @@ body.page-clifton-grand-junction .logo-main {font-family:"Cormorant Garamond",se
 body.page-clifton-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-clifton-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-clifton-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-clifton-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-clifton-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-clifton-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-clifton-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-clifton-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-clifton-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-clifton-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-clifton-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-clifton-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-clifton-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -2046,16 +2092,6 @@ body.page-clifton-grand-junction .section-label.centered::after {content:"";disp
 body.page-clifton-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-clifton-grand-junction .divider::before, body.page-clifton-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-clifton-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-clifton-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-clifton-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-clifton-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-clifton-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-clifton-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-clifton-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-clifton-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-clifton-grand-junction .copy h2 {margin-bottom:0.85rem;}
 body.page-clifton-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-clifton-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -2073,12 +2109,6 @@ body.page-clifton-grand-junction .card-icon {width:48px;height:48px;border-radiu
 body.page-clifton-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-clifton-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-clifton-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-clifton-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-clifton-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-clifton-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-clifton-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-clifton-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-clifton-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-clifton-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-clifton-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -2103,11 +2133,9 @@ body.page-clifton-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-clifton-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-clifton-grand-junction .nav-menu.active {left:0;}
 body.page-clifton-grand-junction .mobile-toggle {display:flex;}
-body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 body.page-clifton-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-clifton-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== contact.html ===== */
 body.page-contact *, body.page-contact *::before, body.page-contact *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -2173,11 +2201,6 @@ body.page-contact .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-contact .nav-menu a:hover, body.page-contact .nav-menu a.active {color: var(--gold-lt);}
-body.page-contact .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;}
 body.page-contact .mobile-toggle {display: none;}
 body.page-contact .btn {display: inline-flex;
       align-items: center;
@@ -2193,16 +2216,6 @@ body.page-contact .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-contact .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-contact .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-contact .btn-navy {background: var(--navy);
-      color: var(--white);}
-body.page-contact .btn-navy:hover {background: var(--navy-mid);
-      transform: translateY(-2px);}
 body.page-contact .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
@@ -2587,7 +2600,6 @@ body.page-contact .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         color: var(--gold-lt);}
 }
 
-
 /* ===== downtown-grand-junction.html ===== */
 body.page-downtown-grand-junction *, body.page-downtown-grand-junction *::before, body.page-downtown-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
@@ -2604,16 +2616,9 @@ body.page-downtown-grand-junction .logo-main {font-family:"Cormorant Garamond",s
 body.page-downtown-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-downtown-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-downtown-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-downtown-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-downtown-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-downtown-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-downtown-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-downtown-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-downtown-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-downtown-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-downtown-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-downtown-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-downtown-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -2622,17 +2627,6 @@ body.page-downtown-grand-junction .section-label.centered::after {content:"";dis
 body.page-downtown-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-downtown-grand-junction .divider::before, body.page-downtown-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-downtown-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-downtown-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-downtown-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-downtown-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-downtown-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-downtown-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-downtown-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-downtown-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-downtown-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-downtown-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-downtown-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-downtown-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-downtown-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -2651,12 +2645,6 @@ body.page-downtown-grand-junction .card-icon {width:48px;height:48px;border-radi
 body.page-downtown-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-downtown-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-downtown-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-downtown-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-downtown-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-downtown-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-downtown-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-downtown-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-downtown-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-downtown-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -2681,11 +2669,9 @@ body.page-downtown-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-downtown-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-downtown-grand-junction .nav-menu.active {left:0;}
 body.page-downtown-grand-junction .mobile-toggle {display:flex;}
-body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 body.page-downtown-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-downtown-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== faq.html ===== */
 body.page-faq *, body.page-faq *::before, body.page-faq *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -2751,13 +2737,6 @@ body.page-faq .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-faq .nav-menu a:hover, body.page-faq .nav-menu a.active {color: var(--gold-lt);}
-body.page-faq .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s !important;}
-body.page-faq .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
 body.page-faq .mobile-toggle {display: none;}
 body.page-faq .btn {display: inline-flex;
       align-items: center;
@@ -2773,12 +2752,6 @@ body.page-faq .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-faq .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-faq .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-faq .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
@@ -3123,7 +3096,6 @@ body.page-faq .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.
 body.page-faq .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
-
 /* ===== grand-junction-home-value.html ===== */
 body.page-grand-junction-home-value *, body.page-grand-junction-home-value *::before, body.page-grand-junction-home-value *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -3168,11 +3140,6 @@ body.page-grand-junction-home-value .nav-menu a {text-decoration: none; color: r
       font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
       transition: color 0.2s;}
 body.page-grand-junction-home-value .nav-menu a:hover, body.page-grand-junction-home-value .nav-menu a.active {color: var(--gold-lt);}
-body.page-grand-junction-home-value .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-grand-junction-home-value .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
 body.page-grand-junction-home-value .mobile-toggle {display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
@@ -3181,17 +3148,6 @@ body.page-grand-junction-home-value .btn {display: inline-flex; align-items: cen
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px;
       transition: all 0.25s; cursor: pointer; border: none;}
-body.page-grand-junction-home-value .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-grand-junction-home-value .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-grand-junction-home-value .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-grand-junction-home-value .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-grand-junction-home-value .btn-outline-gold {background: transparent; color: var(--gold-lt);
-      border: 1px solid rgba(184,146,58,0.55); border-radius: 50px;
-      padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: all 0.25s;}
-body.page-grand-junction-home-value .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
 body.page-grand-junction-home-value .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
 body.page-grand-junction-home-value .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
 body.page-grand-junction-home-value .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
@@ -3200,21 +3156,6 @@ body.page-grand-junction-home-value .section-label.centered::after {content: "";
 body.page-grand-junction-home-value .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
 body.page-grand-junction-home-value .divider::before, body.page-grand-junction-home-value .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
 body.page-grand-junction-home-value .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
-body.page-grand-junction-home-value .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
-      background:
-        linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
-        url("images/gj-landscape.jpg") center / cover no-repeat;}
-body.page-grand-junction-home-value .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 1px; background: rgba(184,146,58,0.22);}
-body.page-grand-junction-home-value .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
-body.page-grand-junction-home-value .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
-body.page-grand-junction-home-value .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
-body.page-grand-junction-home-value .hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-grand-junction-home-value .hero-lead {font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem;}
-body.page-grand-junction-home-value .hero-cta {display: flex; gap: 1rem; flex-wrap: wrap;}
 body.page-grand-junction-home-value .market-stats {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .stats-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;}
 body.page-grand-junction-home-value .stat-item {padding: 2.25rem 1.5rem; text-align: center;
@@ -3333,7 +3274,6 @@ body.page-grand-junction-home-value .form-row {grid-template-columns: 1fr;}
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
 }
 
-
 /* ===== index.html ===== */
 body.page-index *, body.page-index *::before, body.page-index *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -3400,14 +3340,6 @@ body.page-index .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-index .nav-menu a:hover, body.page-index .nav-menu a.active {color: var(--gold-lt);}
-body.page-index .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s, border-color 0.22s !important;}
-body.page-index .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
-      border-color: var(--gold-lt) !important;}
 body.page-index .mobile-toggle {display: none;}
 body.page-index .btn {display: inline-flex;
       align-items: center;
@@ -3423,24 +3355,12 @@ body.page-index .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-index .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-index .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-index .btn-outline {background: transparent;
       color: var(--white);
       border: 1px solid rgba(255,255,255,0.35);}
 body.page-index .btn-outline:hover {border-color: var(--gold-lt);
       color: var(--gold-lt);
       transform: translateY(-2px);}
-body.page-index .btn-navy {background: var(--navy);
-      color: var(--white);
-      box-shadow: var(--shadow-sm);}
-body.page-index .btn-navy:hover {background: var(--navy-mid);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);}
 body.page-index .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
@@ -3877,7 +3797,6 @@ body.page-index .mobile-toggle.active span:nth-child(3) {transform: translateY(-
 body.page-index .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
-
 /* ===== loma-mack-grand-junction.html ===== */
 body.page-loma-mack-grand-junction *, body.page-loma-mack-grand-junction *::before, body.page-loma-mack-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
@@ -3894,16 +3813,9 @@ body.page-loma-mack-grand-junction .logo-main {font-family:"Cormorant Garamond",
 body.page-loma-mack-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-loma-mack-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-loma-mack-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-loma-mack-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-loma-mack-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-loma-mack-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-loma-mack-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-loma-mack-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-loma-mack-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-loma-mack-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-loma-mack-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -3912,16 +3824,6 @@ body.page-loma-mack-grand-junction .section-label.centered::after {content:"";di
 body.page-loma-mack-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-loma-mack-grand-junction .divider::before, body.page-loma-mack-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-loma-mack-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-loma-mack-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-loma-mack-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-loma-mack-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-loma-mack-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-loma-mack-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-loma-mack-grand-junction .copy h2 {margin-bottom:0.85rem;}
 body.page-loma-mack-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-loma-mack-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -3942,12 +3844,6 @@ body.page-loma-mack-grand-junction .card p {color:var(--muted);font-size:0.95rem
 body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
-body.page-loma-mack-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-loma-mack-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-loma-mack-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-loma-mack-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-loma-mack-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -3972,11 +3868,9 @@ body.page-loma-mack-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-loma-mack-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-loma-mack-grand-junction .nav-menu.active {left:0;}
 body.page-loma-mack-grand-junction .mobile-toggle {display:flex;}
-body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 body.page-loma-mack-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-loma-mack-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== north-grand-junction.html ===== */
 body.page-north-grand-junction *, body.page-north-grand-junction *::before, body.page-north-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -3994,16 +3888,9 @@ body.page-north-grand-junction .logo-main {font-family:"Cormorant Garamond",seri
 body.page-north-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-north-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-north-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-north-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-north-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-north-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-north-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-north-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-north-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-north-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-north-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-north-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-north-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -4012,17 +3899,6 @@ body.page-north-grand-junction .section-label.centered::after {content:"";displa
 body.page-north-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-north-grand-junction .divider::before, body.page-north-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-north-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-north-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-north-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-north-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-north-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-north-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-north-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-north-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-north-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-north-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -4041,12 +3917,6 @@ body.page-north-grand-junction .card-icon {width:48px;height:48px;border-radius:
 body.page-north-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-north-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-north-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-north-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-north-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-north-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-north-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-north-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-north-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-north-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -4071,11 +3941,9 @@ body.page-north-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-north-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-north-grand-junction .nav-menu.active {left:0;}
 body.page-north-grand-junction .mobile-toggle {display:flex;}
-body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 body.page-north-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-north-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== northeast-grand-junction.html ===== */
 body.page-northeast-grand-junction *, body.page-northeast-grand-junction *::before, body.page-northeast-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -4093,16 +3961,9 @@ body.page-northeast-grand-junction .logo-main {font-family:"Cormorant Garamond",
 body.page-northeast-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-northeast-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-northeast-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-northeast-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-northeast-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-northeast-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northeast-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northeast-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northeast-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northeast-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-northeast-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-northeast-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-northeast-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -4111,17 +3972,6 @@ body.page-northeast-grand-junction .section-label.centered::after {content:"";di
 body.page-northeast-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-northeast-grand-junction .divider::before, body.page-northeast-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-northeast-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-northeast-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-northeast-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-northeast-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-northeast-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-northeast-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-northeast-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-northeast-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northeast-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-northeast-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -4140,12 +3990,6 @@ body.page-northeast-grand-junction .card-icon {width:48px;height:48px;border-rad
 body.page-northeast-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-northeast-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-northeast-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-northeast-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-northeast-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-northeast-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-northeast-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-northeast-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-northeast-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northeast-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -4170,11 +4014,9 @@ body.page-northeast-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-northeast-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-northeast-grand-junction .nav-menu.active {left:0;}
 body.page-northeast-grand-junction .mobile-toggle {display:flex;}
-body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 body.page-northeast-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-northeast-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== northwest-grand-junction.html ===== */
 body.page-northwest-grand-junction *, body.page-northwest-grand-junction *::before, body.page-northwest-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -4192,16 +4034,9 @@ body.page-northwest-grand-junction .logo-main {font-family:"Cormorant Garamond",
 body.page-northwest-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-northwest-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-northwest-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-northwest-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-northwest-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-northwest-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northwest-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northwest-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northwest-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northwest-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-northwest-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-northwest-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-northwest-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -4210,17 +4045,6 @@ body.page-northwest-grand-junction .section-label.centered::after {content:"";di
 body.page-northwest-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-northwest-grand-junction .divider::before, body.page-northwest-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-northwest-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-northwest-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-northwest-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-northwest-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-northwest-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-northwest-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-northwest-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-northwest-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northwest-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-northwest-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
@@ -4239,12 +4063,6 @@ body.page-northwest-grand-junction .card-icon {width:48px;height:48px;border-rad
 body.page-northwest-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-northwest-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-northwest-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-northwest-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-northwest-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-northwest-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-body.page-northwest-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-northwest-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-northwest-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northwest-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
@@ -4269,11 +4087,9 @@ body.page-northwest-grand-junction .reveal.visible {opacity:1;transform:none;}
 body.page-northwest-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-northwest-grand-junction .nav-menu.active {left:0;}
 body.page-northwest-grand-junction .mobile-toggle {display:flex;}
-body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 body.page-northwest-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-northwest-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
-
 
 /* ===== orchard-mesa-homes.html ===== */
 body.page-orchard-mesa-homes *, body.page-orchard-mesa-homes *::before, body.page-orchard-mesa-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
@@ -4291,16 +4107,9 @@ body.page-orchard-mesa-homes .logo-main {font-family:"Cormorant Garamond",serif;
 body.page-orchard-mesa-homes .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
 body.page-orchard-mesa-homes .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
 body.page-orchard-mesa-homes .nav-menu a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
 body.page-orchard-mesa-homes .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 body.page-orchard-mesa-homes .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-orchard-mesa-homes .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-orchard-mesa-homes .btn-primary {background:var(--gold);color:var(--white);box-shadow:0 4px 20px rgba(184,146,58,0.35);}
-body.page-orchard-mesa-homes .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-navy {background:var(--navy);color:var(--white);}
-body.page-orchard-mesa-homes .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-orchard-mesa-homes .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-orchard-mesa-homes .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
 body.page-orchard-mesa-homes .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
 body.page-orchard-mesa-homes .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
@@ -4309,16 +4118,6 @@ body.page-orchard-mesa-homes .section-label.centered::after {content:"";display:
 body.page-orchard-mesa-homes .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
 body.page-orchard-mesa-homes .divider::before, body.page-orchard-mesa-homes .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
 body.page-orchard-mesa-homes .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-body.page-orchard-mesa-homes .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-orchard-mesa-homes .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-orchard-mesa-homes .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-orchard-mesa-homes .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-orchard-mesa-homes .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
-body.page-orchard-mesa-homes .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 body.page-orchard-mesa-homes .copy h2 {margin-bottom:0.85rem;}
 body.page-orchard-mesa-homes .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-orchard-mesa-homes .stat-grid {display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sand);border:1px solid var(--sand);border-radius:var(--radius-md);overflow:hidden;}
@@ -4335,16 +4134,6 @@ body.page-orchard-mesa-homes .card-icon {width:48px;height:48px;border-radius:12
 body.page-orchard-mesa-homes .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
 body.page-orchard-mesa-homes .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
 body.page-orchard-mesa-homes .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
-body.page-orchard-mesa-homes .dark-band {background:var(--navy);position:relative;overflow:hidden;}
-body.page-orchard-mesa-homes .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-body.page-orchard-mesa-homes .dark-inner {position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-body.page-orchard-mesa-homes .dark-copy h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
-body.page-orchard-mesa-homes .dark-copy h2 em {font-style:italic;color:var(--gold-lt);}
-body.page-orchard-mesa-homes .dark-copy p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:1.25rem;}
-body.page-orchard-mesa-homes .dark-list {list-style:none;display:flex;flex-direction:column;gap:0.85rem;}
-body.page-orchard-mesa-homes .dark-list li {display:flex;align-items:flex-start;gap:0.75rem;color:rgba(255,255,255,0.72);font-size:0.95rem;}
-body.page-orchard-mesa-homes .dark-list li svg {width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;margin-top:3px;}
-body.page-orchard-mesa-homes .steps-col {display:flex;flex-direction:column;gap:1rem;}
 body.page-orchard-mesa-homes .step-item {background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:background 0.25s;}
 body.page-orchard-mesa-homes .step-item:hover {background:rgba(255,255,255,0.1);}
 body.page-orchard-mesa-homes .step-n {font-family:"Cormorant Garamond",serif;font-size:2rem;color:rgba(184,146,58,0.4);line-height:1;flex-shrink:0;width:2rem;text-align:center;}
@@ -4394,14 +4183,12 @@ body.page-orchard-mesa-homes .reveal.visible {opacity:1;transform:none;}
 body.page-orchard-mesa-homes .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
 body.page-orchard-mesa-homes .nav-menu.active {left:0;}
 body.page-orchard-mesa-homes .mobile-toggle {display:flex;}
-body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
 body.page-orchard-mesa-homes .footer-grid {grid-template-columns:1fr;gap:2rem;}
 body.page-orchard-mesa-homes .footer-bottom {flex-direction:column;text-align:center;}
 }
 @media (max-width:640px) {
 body.page-orchard-mesa-homes .form-row {grid-template-columns:1fr;}
 }
-
 
 /* ===== privacy.html ===== */
 body.page-privacy .privacy-hero {margin-top: 80px;
@@ -4441,7 +4228,6 @@ body.page-privacy .contact-box a {color: var(--primary);
             font-weight: 600;}
 body.page-privacy .contact-box a:hover {color: var(--accent);}
 
-
 /* ===== redlands-homes.html ===== */
 body.page-redlands-homes *, body.page-redlands-homes *::before, body.page-redlands-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy: #0c1a3d; --navy-mid: #16275a; --gold: #b8923a; --gold-lt: #d4aa5a;
@@ -4463,16 +4249,9 @@ body.page-redlands-homes .logo-main {font-family: "Cormorant Garamond", serif; f
 body.page-redlands-homes .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
 body.page-redlands-homes .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
 body.page-redlands-homes .nav-menu a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
 body.page-redlands-homes .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-redlands-homes .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-redlands-homes .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-redlands-homes .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-redlands-homes .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-redlands-homes .btn-navy {background: var(--navy); color: var(--white);}
-body.page-redlands-homes .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-redlands-homes .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-redlands-homes .btn-outline-gold:hover {background: rgba(184,146,58,0.12); transform: translateY(-2px);}
 body.page-redlands-homes .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
 body.page-redlands-homes .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
 body.page-redlands-homes .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
@@ -4481,16 +4260,6 @@ body.page-redlands-homes .section-label.centered::after {content: ""; display: b
 body.page-redlands-homes .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
 body.page-redlands-homes .divider::before, body.page-redlands-homes .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
 body.page-redlands-homes .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
-body.page-redlands-homes .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
-      background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center / cover no-repeat;}
-body.page-redlands-homes .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-redlands-homes .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
-body.page-redlands-homes .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
-body.page-redlands-homes .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
-body.page-redlands-homes .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
-body.page-redlands-homes .hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-redlands-homes .hero-lead {font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem;}
-body.page-redlands-homes .hero-cta {display: flex; gap: 1rem; flex-wrap: wrap;}
 body.page-redlands-homes .snapshot-section {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-redlands-homes .snapshot-inner {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
 body.page-redlands-homes .snapshot-copy h2 {margin-bottom: 0.85rem;}
@@ -4510,16 +4279,6 @@ body.page-redlands-homes .card-icon {width: 48px; height: 48px; border-radius: 1
 body.page-redlands-homes .card-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
 body.page-redlands-homes .card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
 body.page-redlands-homes .card p {color: var(--muted); font-size: 0.95rem; line-height: 1.8;}
-body.page-redlands-homes .dark-band {background: var(--navy); position: relative; overflow: hidden;}
-body.page-redlands-homes .dark-band::before {content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none;}
-body.page-redlands-homes .dark-band-inner {position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
-body.page-redlands-homes .dark-copy h2 {color: var(--white); font-weight: 300; margin-bottom: 1rem;}
-body.page-redlands-homes .dark-copy h2 em {font-style: italic; color: var(--gold-lt);}
-body.page-redlands-homes .dark-copy p {color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.85; margin-bottom: 0;}
-body.page-redlands-homes .dark-list {list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.25rem;}
-body.page-redlands-homes .dark-list li {display: flex; align-items: flex-start; gap: 0.75rem; color: rgba(255,255,255,0.72); font-size: 0.95rem;}
-body.page-redlands-homes .dark-list li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-redlands-homes .steps-col {display: flex; flex-direction: column; gap: 1rem;}
 body.page-redlands-homes .step-item {background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: background 0.25s;}
 body.page-redlands-homes .step-item:hover {background: rgba(255,255,255,0.1);}
 body.page-redlands-homes .step-n {font-family: "Cormorant Garamond", serif; font-size: 2rem; color: rgba(184,146,58,0.4); line-height: 1; flex-shrink: 0; width: 2rem; text-align: center;}
@@ -4578,7 +4337,6 @@ body.page-redlands-homes .footer-bottom {flex-direction: column; text-align: cen
 body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
 }
 
-
 /* ===== selling-in-fruita.html ===== */
 body.page-selling-in-fruita *, body.page-selling-in-fruita *::before, body.page-selling-in-fruita *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -4609,17 +4367,9 @@ body.page-selling-in-fruita .logo-main {font-family: "Cormorant Garamond", serif
 body.page-selling-in-fruita .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
 body.page-selling-in-fruita .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
 body.page-selling-in-fruita .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-fruita .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
 body.page-selling-in-fruita .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-selling-in-fruita .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-selling-in-fruita .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-fruita .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-fruita .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-fruita .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-fruita .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
 body.page-selling-in-fruita .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
 body.page-selling-in-fruita .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
 body.page-selling-in-fruita .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
@@ -4628,18 +4378,6 @@ body.page-selling-in-fruita .section-label.centered::after {content: ""; display
 body.page-selling-in-fruita .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
 body.page-selling-in-fruita .divider::before, body.page-selling-in-fruita .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
 body.page-selling-in-fruita .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
-body.page-selling-in-fruita .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
-      background:
-        linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
-        url("images/gj-landscape.jpg") center 30% / cover no-repeat;}
-body.page-selling-in-fruita .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-selling-in-fruita .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
-body.page-selling-in-fruita .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
-body.page-selling-in-fruita .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
-body.page-selling-in-fruita .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
-body.page-selling-in-fruita .hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-selling-in-fruita .hero-lead {font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem;}
-body.page-selling-in-fruita .hero-cta {display: flex; gap: 1rem; flex-wrap: wrap;}
 body.page-selling-in-fruita .snapshot-section {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-selling-in-fruita .snapshot-inner {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
 body.page-selling-in-fruita .snapshot-copy h2 {margin-bottom: 0.85rem;}
@@ -4725,7 +4463,6 @@ body.page-selling-in-fruita .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 }
 
-
 /* ===== selling-in-palisade.html ===== */
 body.page-selling-in-palisade *, body.page-selling-in-palisade *::before, body.page-selling-in-palisade *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -4756,17 +4493,9 @@ body.page-selling-in-palisade .logo-main {font-family: "Cormorant Garamond", ser
 body.page-selling-in-palisade .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
 body.page-selling-in-palisade .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
 body.page-selling-in-palisade .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-palisade .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
 body.page-selling-in-palisade .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-selling-in-palisade .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-selling-in-palisade .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-palisade .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-palisade .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-palisade .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-palisade .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
 body.page-selling-in-palisade .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
 body.page-selling-in-palisade .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
 body.page-selling-in-palisade .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
@@ -4775,18 +4504,6 @@ body.page-selling-in-palisade .section-label.centered::after {content: ""; displ
 body.page-selling-in-palisade .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
 body.page-selling-in-palisade .divider::before, body.page-selling-in-palisade .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
 body.page-selling-in-palisade .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
-body.page-selling-in-palisade .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
-      background:
-        linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
-        url("images/gj-landscape.jpg") center 40% / cover no-repeat;}
-body.page-selling-in-palisade .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
-body.page-selling-in-palisade .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
-body.page-selling-in-palisade .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
-body.page-selling-in-palisade .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
-body.page-selling-in-palisade .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
-body.page-selling-in-palisade .hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-selling-in-palisade .hero-lead {font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem;}
-body.page-selling-in-palisade .hero-cta {display: flex; gap: 1rem; flex-wrap: wrap;}
 body.page-selling-in-palisade .identity-section {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-selling-in-palisade .identity-inner {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;}
 body.page-selling-in-palisade .identity-copy h2 {margin-bottom: 0.85rem;}
@@ -4881,7 +4598,6 @@ body.page-selling-in-palisade .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pricing-card {margin-top: 1rem;}
 }
 
-
 /* ===== services.html ===== */
 body.page-services *, body.page-services *::before, body.page-services *::after {box-sizing: border-box; margin: 0; padding: 0;}
 :root {--navy:    #0c1a3d;
@@ -4946,14 +4662,6 @@ body.page-services .nav-menu a {text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;}
 body.page-services .nav-menu a:hover, body.page-services .nav-menu a.active {color: var(--gold-lt);}
-body.page-services .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s, border-color 0.22s !important;}
-body.page-services .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
-      border-color: var(--gold-lt) !important;}
 body.page-services .mobile-toggle {display: none;}
 body.page-services .btn {display: inline-flex;
       align-items: center;
@@ -4969,12 +4677,6 @@ body.page-services .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-services .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-services .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-services .btn-outline-navy {background: transparent;
       color: var(--navy);
       border: 1px solid rgba(12,26,61,0.25);}
@@ -5377,7 +5079,6 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         color: var(--gold-lt);}
 }
 
-
 /* ============================================================
    Utility classes added during cleanup
    Replaces inline style="transition-delay: Xs" attributes
@@ -5434,7 +5135,6 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 
 /* Unified bottom area card system */
 
@@ -5576,7 +5276,6 @@ body.page-services .cta-band-copy p,
 body.page-services .cta-band-inner p {
   color: rgba(255,255,255,0.72);
 }
-
 
 /* =========================
    Alignment + spacing fixes
@@ -5744,17 +5443,7 @@ body[class^="page-"] .mobile-toggle span {
 /* ---------- Shared hero wrappers ---------- */
 body.page-index .hero,
 body.page-about .hero,
-body.page-grand-junction-home-value .hero,
-body.page-redlands-homes .hero,
-body.page-orchard-mesa-homes .hero,
-body.page-selling-in-fruita .hero,
-body.page-selling-in-palisade .hero,
-body.page-clifton-grand-junction .hero,
-body.page-downtown-grand-junction .hero,
-body.page-loma-mack-grand-junction .hero,
-body.page-north-grand-junction .hero,
-body.page-northeast-grand-junction .hero,
-body.page-northwest-grand-junction .hero,
+body.page-photo-hero .hero,
 body.page-buyers .buyers-hero,
 body.page-services .services-hero,
 body.page-contact .contact-hero,
@@ -5766,20 +5455,32 @@ body.page-faq .faq-hero {
 
 body.page-index .hero,
 body.page-about .hero,
-body.page-grand-junction-home-value .hero,
-body.page-redlands-homes .hero,
-body.page-orchard-mesa-homes .hero,
-body.page-selling-in-fruita .hero,
-body.page-selling-in-palisade .hero,
-body.page-clifton-grand-junction .hero,
-body.page-downtown-grand-junction .hero,
-body.page-loma-mack-grand-junction .hero,
-body.page-north-grand-junction .hero,
-body.page-northeast-grand-junction .hero,
-body.page-northwest-grand-junction .hero {
+body.page-photo-hero .hero {
   min-height: 78vh;
   display: flex;
   align-items: center;
+}
+
+body.page-photo-hero .hero {
+  background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center/cover no-repeat;
+}
+
+body.page-photo-hero .hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(184,146,58,0.22);
+}
+
+body.page-selling-in-fruita.page-photo-hero .hero {
+  background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center 30%/cover no-repeat;
+}
+
+body.page-selling-in-palisade.page-photo-hero .hero {
+  background: linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%), url("images/gj-landscape.jpg") center 40%/cover no-repeat;
 }
 
 body.page-buyers .buyers-hero,
@@ -5802,21 +5503,11 @@ body.page-index .hero-content,
 body.page-about .hero-content,
 body.page-index .hero-inner,
 body.page-about .hero-inner,
+body.page-photo-hero .hero-inner,
 body.page-buyers .buyers-hero .hero-inner,
 body.page-services .services-hero .hero-inner,
 body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner,
-body.page-grand-junction-home-value .hero-inner,
-body.page-redlands-homes .hero-inner,
-body.page-orchard-mesa-homes .hero-inner,
-body.page-selling-in-fruita .hero-inner,
-body.page-selling-in-palisade .hero-inner,
-body.page-clifton-grand-junction .hero-inner,
-body.page-downtown-grand-junction .hero-inner,
-body.page-loma-mack-grand-junction .hero-inner,
-body.page-north-grand-junction .hero-inner,
-body.page-northeast-grand-junction .hero-inner,
-body.page-northwest-grand-junction .hero-inner {
+body.page-faq .faq-hero .hero-inner {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -5836,21 +5527,11 @@ body.page-faq .faq-hero .hero-inner {
 
 body.page-index .hero-eyebrow,
 body.page-about .hero-eyebrow,
+body.page-photo-hero .hero-eyebrow,
 body.page-buyers .hero-eyebrow,
 body.page-services .hero-eyebrow,
 body.page-contact .hero-eyebrow,
-body.page-faq .hero-eyebrow,
-body.page-grand-junction-home-value .hero-eyebrow,
-body.page-redlands-homes .hero-eyebrow,
-body.page-orchard-mesa-homes .hero-eyebrow,
-body.page-selling-in-fruita .hero-eyebrow,
-body.page-selling-in-palisade .hero-eyebrow,
-body.page-clifton-grand-junction .hero-eyebrow,
-body.page-downtown-grand-junction .hero-eyebrow,
-body.page-loma-mack-grand-junction .hero-eyebrow,
-body.page-north-grand-junction .hero-eyebrow,
-body.page-northeast-grand-junction .hero-eyebrow,
-body.page-northwest-grand-junction .hero-eyebrow {
+body.page-faq .hero-eyebrow {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -5867,6 +5548,8 @@ body.page-index .hero-eyebrow::before,
 body.page-index .hero-eyebrow::after,
 body.page-about .hero-eyebrow::before,
 body.page-about .hero-eyebrow::after,
+body.page-photo-hero .hero-eyebrow::before,
+body.page-photo-hero .hero-eyebrow::after,
 body.page-buyers .hero-eyebrow::before,
 body.page-buyers .hero-eyebrow::after,
 body.page-services .hero-eyebrow::before,
@@ -5874,29 +5557,7 @@ body.page-services .hero-eyebrow::after,
 body.page-contact .hero-eyebrow::before,
 body.page-contact .hero-eyebrow::after,
 body.page-faq .hero-eyebrow::before,
-body.page-faq .hero-eyebrow::after,
-body.page-grand-junction-home-value .hero-eyebrow::before,
-body.page-grand-junction-home-value .hero-eyebrow::after,
-body.page-redlands-homes .hero-eyebrow::before,
-body.page-redlands-homes .hero-eyebrow::after,
-body.page-orchard-mesa-homes .hero-eyebrow::before,
-body.page-orchard-mesa-homes .hero-eyebrow::after,
-body.page-selling-in-fruita .hero-eyebrow::before,
-body.page-selling-in-fruita .hero-eyebrow::after,
-body.page-selling-in-palisade .hero-eyebrow::before,
-body.page-selling-in-palisade .hero-eyebrow::after,
-body.page-clifton-grand-junction .hero-eyebrow::before,
-body.page-clifton-grand-junction .hero-eyebrow::after,
-body.page-downtown-grand-junction .hero-eyebrow::before,
-body.page-downtown-grand-junction .hero-eyebrow::after,
-body.page-loma-mack-grand-junction .hero-eyebrow::before,
-body.page-loma-mack-grand-junction .hero-eyebrow::after,
-body.page-north-grand-junction .hero-eyebrow::before,
-body.page-north-grand-junction .hero-eyebrow::after,
-body.page-northeast-grand-junction .hero-eyebrow::before,
-body.page-northeast-grand-junction .hero-eyebrow::after,
-body.page-northwest-grand-junction .hero-eyebrow::before,
-body.page-northwest-grand-junction .hero-eyebrow::after {
+body.page-faq .hero-eyebrow::after {
   content: "";
   width: 36px;
   height: 1px;
@@ -5906,21 +5567,11 @@ body.page-northwest-grand-junction .hero-eyebrow::after {
 
 body.page-index .hero-eyebrow span,
 body.page-about .hero-eyebrow span,
+body.page-photo-hero .hero-eyebrow span,
 body.page-buyers .hero-eyebrow span,
 body.page-services .hero-eyebrow span,
 body.page-contact .hero-eyebrow span,
-body.page-faq .hero-eyebrow span,
-body.page-grand-junction-home-value .hero-eyebrow span,
-body.page-redlands-homes .hero-eyebrow span,
-body.page-orchard-mesa-homes .hero-eyebrow span,
-body.page-selling-in-fruita .hero-eyebrow span,
-body.page-selling-in-palisade .hero-eyebrow span,
-body.page-clifton-grand-junction .hero-eyebrow span,
-body.page-downtown-grand-junction .hero-eyebrow span,
-body.page-loma-mack-grand-junction .hero-eyebrow span,
-body.page-north-grand-junction .hero-eyebrow span,
-body.page-northeast-grand-junction .hero-eyebrow span,
-body.page-northwest-grand-junction .hero-eyebrow span {
+body.page-faq .hero-eyebrow span {
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
@@ -5930,21 +5581,11 @@ body.page-northwest-grand-junction .hero-eyebrow span {
 
 body.page-index .hero-title,
 body.page-about .hero-title,
+body.page-photo-hero .hero h1,
 body.page-buyers .buyers-hero h1,
 body.page-services .services-hero h1,
 body.page-contact .contact-hero h1,
-body.page-faq .faq-hero h1,
-body.page-grand-junction-home-value .hero h1,
-body.page-redlands-homes .hero h1,
-body.page-orchard-mesa-homes .hero h1,
-body.page-selling-in-fruita .hero h1,
-body.page-selling-in-palisade .hero h1,
-body.page-clifton-grand-junction .hero h1,
-body.page-downtown-grand-junction .hero h1,
-body.page-loma-mack-grand-junction .hero h1,
-body.page-north-grand-junction .hero h1,
-body.page-northeast-grand-junction .hero h1,
-body.page-northwest-grand-junction .hero h1 {
+body.page-faq .faq-hero h1 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 300;
@@ -5957,27 +5598,18 @@ body.page-northwest-grand-junction .hero h1 {
 
 body.page-index .hero-title em,
 body.page-about .hero-title em,
+body.page-photo-hero .hero h1 em,
 body.page-buyers .buyers-hero h1 em,
 body.page-services .services-hero h1 em,
 body.page-contact .contact-hero h1 em,
-body.page-faq .faq-hero h1 em,
-body.page-grand-junction-home-value .hero h1 em,
-body.page-redlands-homes .hero h1 em,
-body.page-orchard-mesa-homes .hero h1 em,
-body.page-selling-in-fruita .hero h1 em,
-body.page-selling-in-palisade .hero h1 em,
-body.page-clifton-grand-junction .hero h1 em,
-body.page-downtown-grand-junction .hero h1 em,
-body.page-loma-mack-grand-junction .hero h1 em,
-body.page-north-grand-junction .hero h1 em,
-body.page-northeast-grand-junction .hero h1 em,
-body.page-northwest-grand-junction .hero h1 em {
+body.page-faq .faq-hero h1 em {
   color: var(--gold-lt);
   font-style: italic;
 }
 
 body.page-index .hero-subtitle,
 body.page-about .hero-subtitle,
+body.page-photo-hero .hero-lead,
 body.page-buyers .buyers-hero .hero-lead,
 body.page-buyers .buyers-hero p,
 body.page-services .services-hero .hero-lead,
@@ -5985,18 +5617,7 @@ body.page-services .services-hero p,
 body.page-contact .contact-hero .hero-lead,
 body.page-contact .contact-hero p,
 body.page-faq .faq-hero .hero-lead,
-body.page-faq .faq-hero p,
-body.page-grand-junction-home-value .hero-lead,
-body.page-redlands-homes .hero-lead,
-body.page-orchard-mesa-homes .hero-lead,
-body.page-selling-in-fruita .hero-lead,
-body.page-selling-in-palisade .hero-lead,
-body.page-clifton-grand-junction .hero-lead,
-body.page-downtown-grand-junction .hero-lead,
-body.page-loma-mack-grand-junction .hero-lead,
-body.page-north-grand-junction .hero-lead,
-body.page-northeast-grand-junction .hero-lead,
-body.page-northwest-grand-junction .hero-lead {
+body.page-faq .faq-hero p {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
   color: rgba(255, 255, 255, 0.78);
   max-width: 54ch;
@@ -6007,21 +5628,11 @@ body.page-northwest-grand-junction .hero-lead {
 
 body.page-index .hero-cta,
 body.page-about .hero-cta,
+body.page-photo-hero .hero-cta,
 body.page-buyers .hero-cta,
 body.page-services .hero-cta,
 body.page-contact .hero-cta,
-body.page-faq .hero-cta,
-body.page-grand-junction-home-value .hero-cta,
-body.page-redlands-homes .hero-cta,
-body.page-orchard-mesa-homes .hero-cta,
-body.page-selling-in-fruita .hero-cta,
-body.page-selling-in-palisade .hero-cta,
-body.page-clifton-grand-junction .hero-cta,
-body.page-downtown-grand-junction .hero-cta,
-body.page-loma-mack-grand-junction .hero-cta,
-body.page-north-grand-junction .hero-cta,
-body.page-northeast-grand-junction .hero-cta,
-body.page-northwest-grand-junction .hero-cta {
+body.page-faq .hero-cta {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -6066,42 +5677,22 @@ body.page-about .hero-trust {
   body.page-about .hero-content,
   body.page-index .hero-inner,
   body.page-about .hero-inner,
+  body.page-photo-hero .hero-inner,
   body.page-buyers .buyers-hero .hero-inner,
   body.page-services .services-hero .hero-inner,
   body.page-contact .contact-hero .hero-inner,
-  body.page-faq .faq-hero .hero-inner,
-  body.page-grand-junction-home-value .hero-inner,
-  body.page-redlands-homes .hero-inner,
-  body.page-orchard-mesa-homes .hero-inner,
-  body.page-selling-in-fruita .hero-inner,
-  body.page-selling-in-palisade .hero-inner,
-  body.page-clifton-grand-junction .hero-inner,
-  body.page-downtown-grand-junction .hero-inner,
-  body.page-loma-mack-grand-junction .hero-inner,
-  body.page-north-grand-junction .hero-inner,
-  body.page-northeast-grand-junction .hero-inner,
-  body.page-northwest-grand-junction .hero-inner {
+  body.page-faq .faq-hero .hero-inner {
     padding-top: clamp(6rem, 10vw, 7rem);
     padding-bottom: 2.5rem;
   }
 
   body.page-index .hero-cta,
   body.page-about .hero-cta,
+  body.page-photo-hero .hero-cta,
   body.page-buyers .hero-cta,
   body.page-services .hero-cta,
   body.page-contact .hero-cta,
-  body.page-faq .hero-cta,
-  body.page-grand-junction-home-value .hero-cta,
-  body.page-redlands-homes .hero-cta,
-  body.page-orchard-mesa-homes .hero-cta,
-  body.page-selling-in-fruita .hero-cta,
-  body.page-selling-in-palisade .hero-cta,
-  body.page-clifton-grand-junction .hero-cta,
-  body.page-downtown-grand-junction .hero-cta,
-  body.page-loma-mack-grand-junction .hero-cta,
-  body.page-north-grand-junction .hero-cta,
-  body.page-northeast-grand-junction .hero-cta,
-  body.page-northwest-grand-junction .hero-cta {
+  body.page-faq .hero-cta {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -6159,10 +5750,9 @@ body[class^="page-"] .card-grid,
 body[class^="page-"] .stat-grid,
 body[class^="page-"] .stats-grid,
 body[class^="page-"] .link-grid,
-body[class^="page-"] .intro-grid,
+body[class^="page-"] .split-layout,
 body[class^="page-"] .snapshot-inner,
 body[class^="page-"] .identity-inner,
-body[class^="page-"] .two-col,
 body[class^="page-"] .contact-layout {
   margin-top: 0;
 }
@@ -6173,10 +5763,9 @@ body[class^="page-"] .section-header + .promise-grid,
 body[class^="page-"] .section-header + .card-grid,
 body[class^="page-"] .section-header + .stats-grid,
 body[class^="page-"] .section-header + .link-grid,
-body[class^="page-"] .section-header + .intro-grid,
+body[class^="page-"] .section-header + .split-layout,
 body[class^="page-"] .section-header + .snapshot-inner,
 body[class^="page-"] .section-header + .identity-inner,
-body[class^="page-"] .section-header + .two-col,
 body[class^="page-"] .section-header + .contact-layout {
   margin-top: 0;
 }
@@ -6187,10 +5776,9 @@ body[class^="page-"] .promise-grid,
 body[class^="page-"] .card-grid,
 body[class^="page-"] .stats-grid,
 body[class^="page-"] .link-grid,
-body[class^="page-"] .intro-grid,
+body[class^="page-"] .split-layout,
 body[class^="page-"] .snapshot-inner,
 body[class^="page-"] .identity-inner,
-body[class^="page-"] .two-col,
 body[class^="page-"] .contact-layout {
   margin-bottom: 2.5rem;
 }
@@ -6221,12 +5809,33 @@ body[class^="page-"] .promise-header {
   body[class^="page-"] .card-grid,
   body[class^="page-"] .stats-grid,
   body[class^="page-"] .link-grid,
-  body[class^="page-"] .intro-grid,
+  body[class^="page-"] .split-layout,
   body[class^="page-"] .snapshot-inner,
   body[class^="page-"] .identity-inner,
-  body[class^="page-"] .two-col,
   body[class^="page-"] .contact-layout {
     margin-bottom: 2rem;
+  }
+}
+
+/* =========================================================
+   Shared split layout system
+   ========================================================= */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.split-layout-align-center {
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
@@ -6511,7 +6120,6 @@ body.page-buyers .cta-band-copy {
   }
 }
 
-
 /* =========================================================
    Footer standardization layer
    Scoped to shared footer only. No unrelated styles changed.
@@ -6660,17 +6268,7 @@ body.page-buyers .hero-inner,
 body.page-contact .hero-inner,
 body.page-faq .hero-inner,
 body.page-services .hero-inner,
-body.page-grand-junction-home-value .hero-inner,
-body.page-clifton-grand-junction .hero-inner,
-body.page-downtown-grand-junction .hero-inner,
-body.page-loma-mack-grand-junction .hero-inner,
-body.page-north-grand-junction .hero-inner,
-body.page-northeast-grand-junction .hero-inner,
-body.page-northwest-grand-junction .hero-inner,
-body.page-orchard-mesa-homes .hero-inner,
-body.page-redlands-homes .hero-inner,
-body.page-selling-in-fruita .hero-inner,
-body.page-selling-in-palisade .hero-inner {
+body.page-photo-hero .hero-inner {
   max-width: 760px;
 }
 
@@ -6700,7 +6298,6 @@ body.page-privacy .footer-bottom {
   justify-content: space-between;
   align-items: center;
 }
-
 
 /* ============================================================
    Standardization pass
@@ -7157,7 +6754,6 @@ body.page-privacy .privacy-highlight strong {
   }
 }
 
-
 /* Additional cleanup utilities */
 .no-text-decoration { text-decoration: none; }
 .section-intro-center-wide {
@@ -7221,7 +6817,6 @@ body.page-privacy .privacy-footer-copy {
   font-size:0.8rem;
   margin:0;
 }
-
 
 /* Unified bottom area card system */
 .bottom-city-links .link-grid {
