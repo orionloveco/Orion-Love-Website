@@ -2081,10 +2081,10 @@ body.page-clifton-grand-junction .dark-inner h2 em {font-style:italic;color:var(
 body.page-clifton-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-clifton-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-clifton-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-clifton-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-clifton-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-clifton-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-clifton-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-clifton-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-clifton-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-clifton-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-clifton-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-clifton-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-clifton-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -2659,10 +2659,10 @@ body.page-downtown-grand-junction .dark-band-inner h2 em {font-style:italic;colo
 body.page-downtown-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-downtown-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-downtown-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-downtown-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-downtown-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-downtown-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-downtown-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-downtown-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-downtown-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-downtown-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-downtown-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -3950,10 +3950,10 @@ body.page-loma-mack-grand-junction .dark-inner h2 em {font-style:italic;color:va
 body.page-loma-mack-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-loma-mack-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-loma-mack-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-loma-mack-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-loma-mack-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-loma-mack-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-loma-mack-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-loma-mack-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-loma-mack-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-loma-mack-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -4049,10 +4049,10 @@ body.page-north-grand-junction .dark-band-inner h2 em {font-style:italic;color:v
 body.page-north-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-north-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-north-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-north-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-north-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-north-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-north-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-north-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-north-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-north-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-north-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -4148,10 +4148,10 @@ body.page-northeast-grand-junction .dark-band-inner h2 em {font-style:italic;col
 body.page-northeast-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northeast-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northeast-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northeast-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-northeast-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-northeast-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-northeast-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-northeast-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-northeast-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-northeast-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-northeast-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -4247,10 +4247,10 @@ body.page-northwest-grand-junction .dark-band-inner h2 em {font-style:italic;col
 body.page-northwest-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northwest-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northwest-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northwest-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-northwest-grand-junction .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-northwest-grand-junction .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-northwest-grand-junction .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-northwest-grand-junction .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-northwest-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-northwest-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-northwest-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -4372,10 +4372,10 @@ body.page-orchard-mesa-homes #formMsg {display:none;padding:0.85rem 1rem;border-
 body.page-orchard-mesa-homes #formMsg.success {background:rgba(100,180,100,0.12);border:1px solid rgba(100,180,100,0.3);color:#2d6a2d;}
 body.page-orchard-mesa-homes #formMsg.error {background:rgba(200,60,60,0.08);border:1px solid rgba(200,60,60,0.2);color:#8b2020;}
 body.page-orchard-mesa-homes .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-orchard-mesa-homes .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-orchard-mesa-homes .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-orchard-mesa-homes .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
+body.page-orchard-mesa-homes .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-orchard-mesa-homes .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-orchard-mesa-homes .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-orchard-mesa-homes .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-orchard-mesa-homes .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
 body.page-orchard-mesa-homes .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
 body.page-orchard-mesa-homes .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
@@ -4548,10 +4548,10 @@ body.page-redlands-homes #formMsg.success {background: rgba(100,180,100,0.12); b
 body.page-redlands-homes #formMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
 body.page-redlands-homes .cross-links {background: var(--white); border-top: 1px solid var(--sand);}
 body.page-redlands-homes .link-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1rem; margin-top: 2rem;}
-body.page-redlands-homes .link-card {background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm); padding: 1.25rem; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; transition: border-color 0.22s, transform 0.22s;}
-body.page-redlands-homes .link-card:hover {border-color: var(--gold); transform: translateY(-2px);}
-body.page-redlands-homes .link-card svg {width: 15px; height: 15px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0;}
-body.page-redlands-homes .link-card span {font-size: 0.88rem; font-weight: 600; color: var(--navy);}
+body.page-redlands-homes .link-card {position:relative;isolation:isolate;overflow:hidden;min-height:84px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.97));border:1px solid rgba(184,146,58,0.16);border-radius:16px;padding:1.15rem 3.15rem 1.15rem 1.15rem;text-decoration:none;display:flex;align-items:center;gap:0.9rem;box-shadow:0 10px 24px rgba(12,26,61,0.08);transition:border-color 0.24s,transform 0.24s,box-shadow 0.24s,background 0.24s;}
+body.page-redlands-homes .link-card:hover {border-color:rgba(184,146,58,0.48);transform:translateY(-4px);box-shadow:0 18px 34px rgba(12,26,61,0.12);}
+body.page-redlands-homes .link-card svg {width:18px;height:18px;stroke:var(--gold);stroke-width:2;flex-shrink:0;background:rgba(184,146,58,0.10);border:1px solid rgba(184,146,58,0.14);border-radius:999px;padding:0.55rem;box-sizing:content-box;}
+body.page-redlands-homes .link-card span {font-size:0.94rem;font-weight:600;letter-spacing:0.02em;color:var(--navy);}
 body.page-redlands-homes .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
 body.page-redlands-homes .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
 body.page-redlands-homes .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
@@ -5391,31 +5391,67 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 
 /* Neighbourhood link card (shared across pages) */
 .nbhd-link-card {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: 12px;
-  padding: 1.25rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 84px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 244, 237, 0.96));
+  border: 1px solid rgba(184, 146, 58, 0.16);
+  border-radius: 16px;
+  padding: 1.15rem 3.15rem 1.15rem 1.15rem;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: border-color 0.22s, transform 0.22s;
+  gap: 0.9rem;
+  box-shadow: 0 10px 24px rgba(12, 26, 61, 0.08);
+  transition: border-color 0.24s, transform 0.24s, box-shadow 0.24s, background 0.24s;
+}
+.nbhd-link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(140% 100% at 100% 0%, rgba(184, 146, 58, 0.10), transparent 55%);
+  opacity: 0.95;
+  z-index: -1;
+}
+.nbhd-link-card::after {
+  content: "→";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: rgba(12, 26, 61, 0.42);
+  transition: transform 0.24s ease, color 0.24s ease;
 }
 .nbhd-link-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
+  border-color: rgba(184, 146, 58, 0.48);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(12, 26, 61, 0.12);
+}
+.nbhd-link-card:hover::after {
+  transform: translateY(-50%) translateX(3px);
+  color: var(--gold);
 }
 .nbhd-link-card svg, .nbhd-link-card i {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   stroke: var(--gold);
   stroke-width: 2;
   flex-shrink: 0;
   color: var(--gold);
+  background: rgba(184, 146, 58, 0.10);
+  border: 1px solid rgba(184, 146, 58, 0.14);
+  border-radius: 999px;
+  padding: 0.55rem;
+  box-sizing: content-box;
 }
 .nbhd-link-card span {
-  font-size: 0.88rem;
+  font-size: 0.94rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--navy);
 }
 
@@ -5455,15 +5491,51 @@ body.page-services .bottom-city-links .link-card,
 body.page-buyers .bottom-city-links .link-card,
 body.page-faq .bottom-city-links .link-card,
 body.page-contact .bottom-city-links .link-card {
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 84px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 244, 237, 0.96));
+  border: 1px solid rgba(184, 146, 58, 0.16);
+  border-radius: 16px;
+  padding: 1.15rem 3.15rem 1.15rem 1.15rem;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+  gap: 0.9rem;
+  box-shadow: 0 10px 24px rgba(12, 26, 61, 0.08);
+  transition: border-color 0.24s, transform 0.24s, box-shadow 0.24s, background 0.24s;
+}
+
+body.page-index .bottom-city-links .link-card::before,
+body.page-about .bottom-city-links .link-card::before,
+body.page-services .bottom-city-links .link-card::before,
+body.page-buyers .bottom-city-links .link-card::before,
+body.page-faq .bottom-city-links .link-card::before,
+body.page-contact .bottom-city-links .link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(140% 100% at 100% 0%, rgba(184, 146, 58, 0.10), transparent 55%);
+  z-index: -1;
+}
+
+body.page-index .bottom-city-links .link-card::after,
+body.page-about .bottom-city-links .link-card::after,
+body.page-services .bottom-city-links .link-card::after,
+body.page-buyers .bottom-city-links .link-card::after,
+body.page-faq .bottom-city-links .link-card::after,
+body.page-contact .bottom-city-links .link-card::after {
+  content: "→";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: rgba(12, 26, 61, 0.42);
+  transition: transform 0.24s ease, color 0.24s ease;
 }
 
 body.page-index .bottom-city-links .link-card:hover,
@@ -5472,9 +5544,56 @@ body.page-services .bottom-city-links .link-card:hover,
 body.page-buyers .bottom-city-links .link-card:hover,
 body.page-faq .bottom-city-links .link-card:hover,
 body.page-contact .bottom-city-links .link-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(184, 146, 58, 0.48);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(12, 26, 61, 0.12);
+}
+
+body.page-index .bottom-city-links .link-card:hover::after,
+body.page-about .bottom-city-links .link-card:hover::after,
+body.page-services .bottom-city-links .link-card:hover::after,
+body.page-buyers .bottom-city-links .link-card:hover::after,
+body.page-faq .bottom-city-links .link-card:hover::after,
+body.page-contact .bottom-city-links .link-card:hover::after {
+  transform: translateY(-50%) translateX(3px);
+  color: var(--gold);
+}
+
+body.page-index .bottom-city-links .link-card svg,
+body.page-index .bottom-city-links .link-card i,
+body.page-about .bottom-city-links .link-card svg,
+body.page-about .bottom-city-links .link-card i,
+body.page-services .bottom-city-links .link-card svg,
+body.page-services .bottom-city-links .link-card i,
+body.page-buyers .bottom-city-links .link-card svg,
+body.page-buyers .bottom-city-links .link-card i,
+body.page-faq .bottom-city-links .link-card svg,
+body.page-faq .bottom-city-links .link-card i,
+body.page-contact .bottom-city-links .link-card svg,
+body.page-contact .bottom-city-links .link-card i {
+  width: 18px;
+  height: 18px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  color: var(--gold);
+  flex-shrink: 0;
+  background: rgba(184, 146, 58, 0.10);
+  border: 1px solid rgba(184, 146, 58, 0.14);
+  border-radius: 999px;
+  padding: 0.55rem;
+  box-sizing: content-box;
+}
+
+body.page-index .bottom-city-links .link-card span,
+body.page-about .bottom-city-links .link-card span,
+body.page-services .bottom-city-links .link-card span,
+body.page-buyers .bottom-city-links .link-card span,
+body.page-faq .bottom-city-links .link-card span,
+body.page-contact .bottom-city-links .link-card span {
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--navy);
 }
 
 body.page-index .bottom-city-links .link-card svg,
@@ -5616,4 +5735,51 @@ body.page-grand-junction-home-value .gj-area-card p {
   body.page-grand-junction-home-value .gj-area-card {
     min-height: unset;
   }
+}
+
+
+body.page-clifton-grand-junction .link-card::before,
+body.page-downtown-grand-junction .link-card::before,
+body.page-loma-mack-grand-junction .link-card::before,
+body.page-north-grand-junction .link-card::before,
+body.page-northeast-grand-junction .link-card::before,
+body.page-northwest-grand-junction .link-card::before,
+body.page-orchard-mesa-homes .link-card::before,
+body.page-redlands-homes .link-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(140% 100% at 100% 0%, rgba(184,146,58,0.10), transparent 55%);
+  z-index:-1;
+}
+
+body.page-clifton-grand-junction .link-card::after,
+body.page-downtown-grand-junction .link-card::after,
+body.page-loma-mack-grand-junction .link-card::after,
+body.page-north-grand-junction .link-card::after,
+body.page-northeast-grand-junction .link-card::after,
+body.page-northwest-grand-junction .link-card::after,
+body.page-orchard-mesa-homes .link-card::after,
+body.page-redlands-homes .link-card::after {
+  content:"→";
+  position:absolute;
+  right:1.1rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"Raleway", sans-serif;
+  font-size:1rem;
+  color:rgba(12,26,61,0.42);
+  transition:transform 0.24s ease, color 0.24s ease;
+}
+
+body.page-clifton-grand-junction .link-card:hover::after,
+body.page-downtown-grand-junction .link-card:hover::after,
+body.page-loma-mack-grand-junction .link-card:hover::after,
+body.page-north-grand-junction .link-card:hover::after,
+body.page-northeast-grand-junction .link-card:hover::after,
+body.page-northwest-grand-junction .link-card:hover::after,
+body.page-orchard-mesa-homes .link-card:hover::after,
+body.page-redlands-homes .link-card:hover::after {
+  transform:translateY(-50%) translateX(3px);
+  color:var(--gold);
 }
