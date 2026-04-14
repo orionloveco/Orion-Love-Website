@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Find Your Way Home | Orion Love — Grand Junction Realtor®</title>
+  <title>Grand Junction Realtor® for Home Sellers | Orion Love</title>
 
-  
-  <meta name="description" content="Grand Junction real estate guidance for buyers and sellers in Mesa County. Work with Orion Love for honest strategy, local market insight, and clear communication." />
-  <meta property="og:title" content="Find Your Way Home | Orion Love — Grand Junction Realtor®" />
-  <meta property="og:description" content="Grand Junction real estate guidance for buyers and sellers in Mesa County. Work with Orion Love for honest strategy, local market insight, and clear communication." />
+  <meta name="description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
+  <meta property="og:title" content="Grand Junction Realtor® for Home Sellers | Orion Love" />
+  <meta property="og:description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Find Your Way Home | Orion Love — Grand Junction Realtor®" />
-  <meta name="twitter:description" content="Grand Junction real estate guidance for buyers and sellers in Mesa County. Work with Orion Love for honest strategy, local market insight, and clear communication." />
+  <meta name="twitter:title" content="Grand Junction Realtor® for Home Sellers | Orion Love" />
+  <meta name="twitter:description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script>
-<link href="styles.css" rel="stylesheet"/>
-<script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="styles.css" rel="stylesheet"/>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +27,7 @@
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="services.html">Sellers</a></li>
       <li><a href="buyers.html">Buyers</a></li>
@@ -36,7 +35,7 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -49,16 +48,17 @@
       <span>Grand Junction · Mesa County · Western Colorado</span>
     </div>
 
-    <h1 class="hero-title">Sell Smart.<br><em>Move Forward.</em></h1>
+    <h1 class="hero-title">Sell with a<br><em>Clear Strategy.</em></h1>
 
     <p class="hero-subtitle">
-      Local market knowledge, honest communication, and a clear plan —
-      so every decision you make is grounded, confident, and yours.
+      In Grand Junction, selling well takes more than a list price. I help homeowners
+      price clearly, prepare strategically, and move forward with honest guidance rooted
+      in what buyers are actually doing in the Mesa County market.
     </p>
 
     <div class="hero-cta">
-      <a href="contact.html" class="btn btn-primary">Get Your Home's Value</a>
-      <a href="buyers.html" class="btn btn-outline">Buying in Grand Junction?</a>
+      <a href="grand-junction-home-value.html" class="btn btn-primary">Get Your Home Value</a>
+      <a href="services.html" class="btn btn-outline">See How I Market Homes</a>
     </div>
 
     <p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Mesa County · Western Colorado</p>
@@ -75,40 +75,88 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label centered"><span>Why Sellers Choose Orion</span></div>
-      <h2>Grand Junction Real Estate<br><em>Done Differently</em></h2>
+      <h2>Grand Junction Real Estate<br><em>Done with Clarity</em></h2>
       <p class="lead">
-        Real estate in Mesa County moves on local knowledge, honest positioning, and clear direction — not national averages or empty promises.
+        Real estate in Mesa County rewards local knowledge, clear positioning, and steady communication.
+        I do not rely on hype, generic advice, or automated pricing. I build a strategy around your home,
+        your timing, and what the market is actually doing right now.
       </p>
     </div>
 
     <div class="usp-grid">
       <div class="usp-card reveal" style="transition-delay:0.05s">
         <div class="usp-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
-        <h3>Local Market Knowledge</h3>
-        <p>From the Redlands to Fruita, Palisade to Orchard Mesa — I track what's selling, what's sitting, and what buyers are actually paying attention to right now.</p>
+        <h3>Local Market Perspective</h3>
+        <p>
+          From the Redlands to Fruita, Palisade to Orchard Mesa, I track what is moving,
+          what is sitting, and how buyers are responding across different parts of Mesa County.
+        </p>
       </div>
 
       <div class="usp-card reveal" style="transition-delay:0.13s">
         <div class="usp-icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div>
-        <h3>Pricing Backed by Real Data</h3>
-        <p>Every price recommendation is built on recent Grand Junction closings, active competition, and buyer behavior — never an algorithm, always a strategy.</p>
+        <h3>Pricing with a Real Strategy</h3>
+        <p>
+          Pricing is not guesswork. It is built on recent closings, active competition,
+          property condition, and how your home fits into the choices buyers have today.
+        </p>
       </div>
 
       <div class="usp-card reveal" style="transition-delay:0.21s">
-        <div class="usp-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
-        <h3>Communication You Don't Chase</h3>
-        <p>Weekly updates, honest showing feedback, and direct answers — you'll always know exactly where you stand and what comes next.</p>
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="camera"></i></div>
+        <h3>Preparation That Matters</h3>
+        <p>
+          The details matter. Before your home hits the market, I help you focus on the updates,
+          presentation, and marketing decisions that actually shape buyer response.
+        </p>
       </div>
 
       <div class="usp-card reveal" style="transition-delay:0.29s">
-        <div class="usp-icon" aria-hidden="true"><i data-lucide="target"></i></div>
-        <h3>Preparation Before Going Live</h3>
-        <p>Strategic preparation, professional photography, and targeted presentation — focused on what moves Grand Junction buyers, nothing that doesn't.</p>
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
+        <h3>Direct Communication</h3>
+        <p>
+          You will know what is happening, what buyers are saying, and what I think the next move should be.
+          Clear communication is part of the service, not an extra.
+        </p>
       </div>
     </div>
 
-    <div class="cta-center reveal" style="transition-delay:0.1s">
-      <a href="services.html" class="btn btn-navy">How It Works</a>
+    <div class="cta-center reveal">
+      <a href="services.html" class="btn btn-primary">Explore Seller Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="process-preview">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <div class="section-label centered"><span>Grounded in the Market</span></div>
+      <h2>Seller Guidance Backed by<br><em>Local Focus</em></h2>
+      <p class="lead">
+        I work with buyers and sellers across Grand Junction and Mesa County, with a strong focus on helping
+        homeowners position their property clearly, communicate honestly, and navigate the market with confidence.
+      </p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step reveal" style="transition-delay:0.05s">
+        <div class="step-number">01</div>
+        <h3>Grand Junction Focus</h3>
+        <p>Hyper-local guidance built around the neighborhoods, price bands, and buyer behavior that shape this market.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.13s">
+        <div class="step-number">02</div>
+        <h3>Seller-First Positioning</h3>
+        <p>From pricing to preparation to launch, every recommendation is made with the seller's outcome in mind.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.21s">
+        <div class="step-number">03</div>
+        <h3>Clear Next Steps</h3>
+        <p>No runaround, no vague advice. Just a practical path forward based on your home, your timing, and your goals.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -116,88 +164,82 @@
 <!-- DIVIDER -->
 <div class="divider"><div class="divider-diamond"></div></div>
 
-<!-- DARK CTA BAND -->
-<section class="cta-band">
+<!-- LOCAL PATHS -->
+<section class="buyers-cta">
   <div class="container">
-    <div class="cta-band-inner reveal">
-      <div class="cta-band-copy">
-        <div class="section-label"><span>For Sellers</span></div>
-        <h2>Thinking About Selling<br>in <em>Grand Junction?</em></h2>
-        <p>
-          A no-pressure market review — what homes like yours are selling for in Mesa County,
-          and what it takes to position yours well.
-        </p>
-      </div>
-      <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
+    <div class="section-header centered reveal">
+      <div class="section-label centered"><span>Explore Mesa County</span></div>
+      <h2>Start with the Area or<br><em>Question You Have</em></h2>
+      <p class="lead">
+        Whether you are trying to understand your home's value, compare neighborhoods,
+        or figure out what selling would actually look like, here are a few good places to start.
+      </p>
+    </div>
+
+    <div class="usp-grid">
+      <a href="grand-junction-home-value.html" class="usp-card reveal" style="text-decoration:none; transition-delay:0.05s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="home"></i></div>
+        <h3>What Is My Home Worth?</h3>
+        <p>Get a local value review grounded in actual Grand Junction and Mesa County market activity.</p>
+      </a>
+
+      <a href="redlands-homes.html" class="usp-card reveal" style="text-decoration:none; transition-delay:0.13s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="trees"></i></div>
+        <h3>Selling in the Redlands</h3>
+        <p>Large lots, Monument views, and a premium market that needs more than generic pricing.</p>
+      </a>
+
+      <a href="selling-in-fruita.html" class="usp-card reveal" style="text-decoration:none; transition-delay:0.21s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="bike"></i></div>
+        <h3>Selling in Fruita</h3>
+        <p>Outdoor lifestyle demand, community identity, and a market rhythm that deserves local context.</p>
+      </a>
+
+      <a href="selling-in-palisade.html" class="usp-card reveal" style="text-decoration:none; transition-delay:0.29s">
+        <div class="usp-icon" aria-hidden="true"><i data-lucide="grape"></i></div>
+        <h3>Selling in Palisade</h3>
+        <p>Wine country appeal, orchard views, and a submarket that rewards the right positioning.</p>
+      </a>
+    </div>
+
+    <div class="cta-center reveal">
+      <a href="faq.html" class="btn btn-secondary">Read Grand Junction FAQs</a>
     </div>
   </div>
 </section>
-
-<!-- BUYERS -->
-<section class="buyers-section">
-  <div class="container">
-    <div class="buyers-inner">
-      <div class="buyers-copy reveal">
-        <div class="section-label"><span>For Buyers</span></div>
-        <h2>Find the Right Home<br>in <em>Grand Junction.</em></h2>
-        <p>
-          Whether you're relocating to Western Colorado or buying local, I help you
-          read the market clearly, move at the right moment, and find a home
-          that makes sense — not just one that's available.
-        </p>
-        <a href="buyers.html" class="btn btn-primary">Buyer Services</a>
-      </div>
-
-      <div class="buyers-visual reveal" style="transition-delay:0.15s">
-        <div class="buyers-card">
-          <div class="buyers-card-title">What to Expect as a Buyer</div>
-          <ul class="buyers-list">
-            <li><i data-lucide="check-circle"></i> Clear-eyed market education before you make offers</li>
-            <li><i data-lucide="check-circle"></i> Honest guidance on price, condition, and long-term value</li>
-            <li><i data-lucide="check-circle"></i> Strategy through inspections, appraisal, and negotiations</li>
-            <li><i data-lucide="check-circle"></i> A clear path forward — from first showing to closing day</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DIVIDER -->
-<div class="divider"><div class="divider-diamond"></div></div>
 
 <!-- PROCESS -->
 <section class="process-section">
   <div class="container">
     <div class="section-header reveal">
       <div class="section-label centered"><span>The Process</span></div>
-      <h2>A Simple, Proven Process</h2>
-      <p class="lead">From the first conversation to closing day — a deliberate, navigated path through the Grand Junction market.</p>
+      <h2>A Simple, Proven Path</h2>
+      <p class="lead">From the first conversation to closing day, every step is built to keep your decision-making clear and your sale grounded in the market.</p>
     </div>
 
     <div class="process-grid">
       <div class="process-step reveal" style="transition-delay:0.05s">
         <div class="step-num">1</div>
         <h3>The Local Market Review</h3>
-        <p>Recent Mesa County closings, active competition, and neighborhood-level demand — so your strategy is built on the ground beneath you, not national headlines.</p>
+        <p>We start with recent Mesa County closings, active competition, and neighborhood-level demand so your strategy is built on the market in front of you.</p>
       </div>
 
       <div class="process-step reveal" style="transition-delay:0.13s">
         <div class="step-num">2</div>
-        <h3>Strategic Preparation</h3>
-        <p>Deliberate preparation, professional photography, and clean positioning — only the work that meaningfully moves Grand Junction buyers.</p>
+        <h3>Preparation with Purpose</h3>
+        <p>Before launch, I help you focus on the repairs, staging decisions, presentation, and photography that actually move buyers.</p>
       </div>
 
       <div class="process-step reveal" style="transition-delay:0.21s">
         <div class="step-num">3</div>
-        <h3>Market Effectively</h3>
-        <p>MLS exposure, targeted online platforms, and video-first marketing built to reach serious buyers across Mesa County and beyond.</p>
+        <h3>Market the Home Clearly</h3>
+        <p>Your listing is positioned through the MLS, strong visuals, online exposure, and messaging built around what makes the property stand out.</p>
       </div>
 
       <div class="process-step reveal" style="transition-delay:0.29s">
         <div class="step-num">4</div>
-        <h3>Negotiation &amp; Closing</h3>
-        <p>Steady guidance through every offer, inspection, and negotiation — so you cross the finish line on solid ground.</p>
+        <h3>Negotiate and Close</h3>
+        <p>From offers through inspections, appraisal, and the closing table, I guide the process so you know where things stand and what comes next.</p>
       </div>
     </div>
 
@@ -248,7 +290,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#214e53484e4f0f4d4e57440f424e61464c40484d0f424e4c"><span class="__cf_email__" data-cfemail="325d405b5d5c1c5e5d44571c515d72555f535b5e1c515d5f">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -260,5 +302,6 @@
   </div>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
