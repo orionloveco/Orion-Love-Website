@@ -1,6 +1,6 @@
 /* ===== Original shared styles.css ===== */
 /* =========================================================
-   Orion Love â€” Shared Base Styles
+   Orion Love Ã¢â‚¬â€ Shared Base Styles
    Updated to match the redesigned page system:
    - Cormorant Garamond + Raleway typography
    - Unified CSS variable naming
@@ -23,7 +23,7 @@
   --muted:    rgba(26, 26, 46, 0.62);
   --white:    #ffffff;
 
-  /* Legacy aliases â€” keeps old page references working */
+  /* Legacy aliases Ã¢â‚¬â€ keeps old page references working */
   --primary:    var(--navy);
   --accent:     var(--gold);
   --off-white:  var(--cream);
@@ -124,7 +124,7 @@ p { color: var(--text); }
   margin-right: auto;
 }
 
-/* Section label â€” gold rule + uppercase tag */
+/* Section label Ã¢â‚¬â€ gold rule + uppercase tag */
 .section-label {
   display: flex;
   align-items: center;
@@ -331,7 +331,7 @@ p { color: var(--text); }
   box-shadow: 0 8px 28px rgba(184, 146, 58, 0.45);
 }
 
-/* Legacy alias â€” pages using btn-primary-light still work */
+/* Legacy alias Ã¢â‚¬â€ pages using btn-primary-light still work */
 .btn-primary-light {
   background: rgba(184, 146, 58, 0.14);
   color: var(--navy);
@@ -438,7 +438,7 @@ p { color: var(--text); }
   color: var(--white);
 }
 
-/* Atmospheric overlay â€” applied per-page on .hero::before */
+/* Atmospheric overlay Ã¢â‚¬â€ applied per-page on .hero::before */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -5442,9 +5442,7 @@ body.page-about .bottom-city-links .link-grid,
 body.page-services .bottom-city-links .link-grid,
 body.page-buyers .bottom-city-links .link-grid,
 body.page-faq .bottom-city-links .link-grid,
-body.page-contact .bottom-city-links .link-grid,
-body.page-selling-in-fruita .bottom-city-links .link-grid,
-body.page-selling-in-palisade .bottom-city-links .link-grid {
+body.page-contact .bottom-city-links .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
@@ -5456,10 +5454,8 @@ body.page-about .bottom-city-links .link-card,
 body.page-services .bottom-city-links .link-card,
 body.page-buyers .bottom-city-links .link-card,
 body.page-faq .bottom-city-links .link-card,
-body.page-contact .bottom-city-links .link-card,
-body.page-selling-in-fruita .bottom-city-links .link-card,
-body.page-selling-in-palisade .bottom-city-links .link-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, var(--cream) 100%);
+body.page-contact .bottom-city-links .link-card {
+  background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-sm);
   padding: 1.25rem;
@@ -5467,7 +5463,6 @@ body.page-selling-in-palisade .bottom-city-links .link-card {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: var(--shadow-sm);
   transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
 }
 
@@ -5476,12 +5471,10 @@ body.page-about .bottom-city-links .link-card:hover,
 body.page-services .bottom-city-links .link-card:hover,
 body.page-buyers .bottom-city-links .link-card:hover,
 body.page-faq .bottom-city-links .link-card:hover,
-body.page-contact .bottom-city-links .link-card:hover,
-body.page-selling-in-fruita .bottom-city-links .link-card:hover,
-body.page-selling-in-palisade .bottom-city-links .link-card:hover {
+body.page-contact .bottom-city-links .link-card:hover {
   border-color: var(--gold);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-sm);
 }
 
 body.page-index .bottom-city-links .link-card svg,
@@ -5495,11 +5488,7 @@ body.page-buyers .bottom-city-links .link-card i,
 body.page-faq .bottom-city-links .link-card svg,
 body.page-faq .bottom-city-links .link-card i,
 body.page-contact .bottom-city-links .link-card svg,
-body.page-contact .bottom-city-links .link-card i,
-body.page-selling-in-fruita .bottom-city-links .link-card svg,
-body.page-selling-in-fruita .bottom-city-links .link-card i,
-body.page-selling-in-palisade .bottom-city-links .link-card svg,
-body.page-selling-in-palisade .bottom-city-links .link-card i {
+body.page-contact .bottom-city-links .link-card i {
   width: 15px;
   height: 15px;
   stroke: var(--gold);
@@ -5513,9 +5502,7 @@ body.page-about .bottom-city-links .link-card span,
 body.page-services .bottom-city-links .link-card span,
 body.page-buyers .bottom-city-links .link-card span,
 body.page-faq .bottom-city-links .link-card span,
-body.page-contact .bottom-city-links .link-card span,
-body.page-selling-in-fruita .bottom-city-links .link-card span,
-body.page-selling-in-palisade .bottom-city-links .link-card span {
+body.page-contact .bottom-city-links .link-card span {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--navy);
@@ -5629,4 +5616,35 @@ body.page-grand-junction-home-value .gj-area-card p {
   body.page-grand-junction-home-value .gj-area-card {
     min-height: unset;
   }
+}
+
+/* ===== services page cleanup: seller guidance spacing + dark CTA text ===== */
+body.page-services #services {
+  padding-bottom: clamp(4.5rem, 7vw, 6rem);
+}
+
+body.page-services #services .section-header {
+  margin-bottom: 2.25rem;
+}
+
+body.page-services #services .section-intro,
+body.page-services #services .lead {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.page-services #services .process-steps,
+body.page-services #services .usp-grid {
+  margin-bottom: 2.5rem;
+}
+
+body.page-services .cta-band-copy h2,
+body.page-services .cta-band-inner h2 {
+  color: var(--white);
+}
+
+body.page-services .cta-band-copy p,
+body.page-services .cta-band-inner p {
+  color: rgba(255,255,255,0.72);
 }
