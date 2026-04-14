@@ -20,7 +20,7 @@
 <script src="script.js" defer></script>
 </head>
 
-<body class="page-buyers">
+<body class="page-buyers page-bottom-city-links">
 
 <!-- NAV -->
 <header class="main-header" id="mainHeader">
@@ -28,7 +28,7 @@
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Sellers</a></li>
       <li><a href="buyers.html" class="active" aria-current="page">Buyers</a></li>
@@ -36,7 +36,7 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -44,10 +44,10 @@
 
 <!-- HERO -->
 <section class="buyers-hero">
-  <div class="container">
+  <div class="container hero-inner">
     <div class="hero-eyebrow"><span>Buyer Services · Grand Junction</span></div>
     <h1>Buy with a<br><em>Clear Plan.</em></h1>
-    <p>
+    <p class="hero-lead">
       Buying in Grand Junction rewards preparation and local knowledge.
       I provide the market insight, honest guidance, and clear strategy to get you there.
     </p>
@@ -61,29 +61,29 @@
 <!-- PROMISE -->
 <section class="promise-section">
   <div class="container">
-    <div class="promise-header reveal">
+    <div class="promise-header reveal section-header centered">
       <div class="section-label centered"><span>Why Buyers Choose Orion</span></div>
       <h2>The Grand Junction Market<br>Rewards <em>Local Knowledge</em></h2>
-      <p class="lead">
+      <p class="section-intro">
         From the Redlands to Fruita, Palisade to Orchard Mesa — every neighborhood has its own
         rhythm, pricing patterns, and considerations. I help you read them clearly and move with confidence.
       </p>
     </div>
 
     <div class="promise-grid">
-      <div class="promise-card reveal" style="transition-delay:0.05s">
+      <div class="promise-card reveal reveal-delay-005">
         <div class="promise-icon"><i data-lucide="handshake"></i></div>
         <h3>Exclusive Buyer Representation</h3>
         <p>I work for you — not the seller. Honest guidance on price, condition, resale potential, and what the market really looks like in your target Mesa County neighborhoods.</p>
       </div>
 
-      <div class="promise-card reveal" style="transition-delay:0.14s">
+      <div class="promise-card reveal reveal-delay-014">
         <div class="promise-icon"><i data-lucide="map"></i></div>
         <h3>Full Market Access</h3>
         <p>Grand Junction, Fruita, Palisade, Clifton, Orchard Mesa — you'll see every option across Mesa County, including new listings and off-market opportunities when they surface.</p>
       </div>
 
-      <div class="promise-card reveal" style="transition-delay:0.23s">
+      <div class="promise-card reveal reveal-delay-023">
         <div class="promise-icon"><i data-lucide="info"></i></div>
         <h3>Transparent Compensation</h3>
         <p>Buyer representation is typically covered through the transaction. I explain exactly how compensation works before we tour a single home — no ambiguity, no surprises.</p>
@@ -301,12 +301,12 @@
 </section>
 
 <!-- NEIGHBORHOODS -->
-<section class="bottom-city-links" style="background:var(--cream);border-top:1px solid var(--sand);padding:clamp(3rem,5vw,4rem) 0;">
+<section class="bottom-city-links">
   <div class="container">
-    <div style="text-align:center;margin-bottom:1.5rem;max-width:720px;margin-left:auto;margin-right:auto;">
-      <div style="display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-bottom:1.25rem;"><span style="display:block;width:28px;height:1px;background:var(--gold);"></span><span style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">Featured Areas</span><span style="display:block;width:28px;height:1px;background:var(--gold);"></span></div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:0.55rem;">Explore Key Markets Around Mesa County</h2>
-      <p style="color:var(--muted);font-size:0.98rem;line-height:1.8;">A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+    <div class="bottom-city-links-intro section-header centered section-copy-narrow">
+      <div class="bottom-city-links-label section-label centered"><span>Featured Areas</span></div>
+      <h2>Explore Key Markets Around Mesa County</h2>
+      <p class="section-intro">A few of the places buyers and sellers ask about most across the Grand Valley.</p>
     </div>
     <div class="link-grid">
       <a href="grand-junction-home-value.html" class="link-card"><i data-lucide="map-pin"></i><span>Grand Junction</span></a>
@@ -325,7 +325,7 @@
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
         <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
-        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
+        <p class="footer-brand-note">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>

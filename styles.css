@@ -4883,135 +4883,12 @@ body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pr
 
 
 /* ===== services.html ===== */
-body.page-services *, body.page-services *::before, body.page-services *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
-body.page-services {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
-body.page-services h1, body.page-services h2, body.page-services h3, body.page-services h4 {font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-      line-height: 1.15;}
-body.page-services .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-services .main-header {position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;}
-body.page-services .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-services .main-header nav {display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-services .logo {text-decoration: none;}
-body.page-services .logo-main {font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.04em;}
-body.page-services .nav-menu {display: flex;
-      list-style: none;
-      gap: 2.25rem;
-      align-items: center;}
-body.page-services .nav-menu a {text-decoration: none;
-      color: rgba(255,255,255,0.82);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;}
-body.page-services .nav-menu a:hover, body.page-services .nav-menu a.active {color: var(--gold-lt);}
-body.page-services .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s, border-color 0.22s !important;}
-body.page-services .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
-      border-color: var(--gold-lt) !important;}
-body.page-services .mobile-toggle {display: none;}
-body.page-services .btn {display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;}
-body.page-services .btn-primary {background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-services .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
+/* Reduced to page-specific rules now that shared site classes handle the base system. */
 body.page-services .btn-outline-navy {background: transparent;
       color: var(--navy);
       border: 1px solid rgba(12,26,61,0.25);}
 body.page-services .btn-outline-navy:hover {border-color: var(--navy);
       transform: translateY(-2px);}
-body.page-services .section-label {display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.1rem;}
-body.page-services .section-label::before {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
-body.page-services .section-label span {font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;}
-body.page-services .section-label.centered {justify-content: center;}
-body.page-services .section-label.centered::after {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
-body.page-services .divider {display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);
-      max-width: 1120px;
-      margin: 0 auto;}
-body.page-services .divider::before, body.page-services .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-services .divider-diamond {width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      opacity: 0.6;}
 body.page-services .services-hero {position: relative;
       padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
       background: var(--navy);
@@ -5027,20 +4904,6 @@ body.page-services .services-hero::after {content: "";
       bottom: 0; left: 0; right: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
-body.page-services .hero-eyebrow {display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.1s forwards;}
-body.page-services .hero-eyebrow::before, body.page-services .hero-eyebrow::after {content: ""; height: 1px; width: 36px;
-      background: var(--gold); opacity: 0.6;}
-body.page-services .hero-eyebrow span {font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      font-weight: 600;}
 body.page-services .services-hero h1 {font-size: clamp(3rem, 7.5vw, 6rem);
       font-weight: 300;
       color: var(--white);
@@ -5061,30 +4924,6 @@ body.page-services .services-hero p {font-size: clamp(1rem, 1.8vw, 1.12rem);
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.4s forwards;}
-body.page-services .hero-cta {display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.55s forwards;
-      position: relative;
-      z-index: 1;}
-body.page-services .btn-outline-white {display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.82);
-      transition: all 0.25s;}
-body.page-services .btn-outline-white:hover {border-color: var(--gold-lt);
-      color: var(--gold-lt);
-      transform: translateY(-2px);}
 body.page-services .services-main {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-services .service-block {display: grid;
@@ -5285,51 +5124,14 @@ body.page-services .cta-band-inner p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-body.page-services .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-services .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-services .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-services .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-services .footer-links h4, body.page-services .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;}
-body.page-services .footer-links ul, body.page-services .footer-contact ul {list-style: none;}
-body.page-services .footer-links li, body.page-services .footer-contact li {margin-bottom: 0.6rem;}
-body.page-services .footer-links a, body.page-services .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;}
-body.page-services .footer-links a:hover, body.page-services .footer-contact a:hover {color: var(--gold-lt);}
-body.page-services .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-services .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-services .reveal {opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-services .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 980px) {
 body.page-services .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-services .service-block:nth-child(even) .service-meta {order: 0;}
 body.page-services .service-block:nth-child(even) .service-details {order: 0;}
 body.page-services .fee-grid {grid-template-columns: 1fr;}
 body.page-services .fee-full {grid-template-columns: 1fr; gap: 1.75rem;}
-body.page-services .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-services .nav-menu {display: none;}
-body.page-services .mobile-toggle {display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-        z-index: 200;}
 body.page-services .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
@@ -5436,25 +5238,15 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 }
 
 
-/* Bottom city cards only on the 6 requested pages */
-body.page-index .bottom-city-links .link-grid,
-body.page-about .bottom-city-links .link-grid,
-body.page-services .bottom-city-links .link-grid,
-body.page-buyers .bottom-city-links .link-grid,
-body.page-faq .bottom-city-links .link-grid,
-body.page-contact .bottom-city-links .link-grid {
+/* Bottom city cards page family */
+body.page-bottom-city-links .bottom-city-links .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1.1rem;
   margin-top: 2rem;
 }
 
-body.page-index .bottom-city-links .link-card,
-body.page-about .bottom-city-links .link-card,
-body.page-services .bottom-city-links .link-card,
-body.page-buyers .bottom-city-links .link-card,
-body.page-faq .bottom-city-links .link-card,
-body.page-contact .bottom-city-links .link-card {
+body.page-bottom-city-links .bottom-city-links .link-card {
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
@@ -5470,12 +5262,7 @@ body.page-contact .bottom-city-links .link-card {
   transition: border-color 0.24s, transform 0.24s, box-shadow 0.24s, background 0.24s;
 }
 
-body.page-index .bottom-city-links .link-card::before,
-body.page-about .bottom-city-links .link-card::before,
-body.page-services .bottom-city-links .link-card::before,
-body.page-buyers .bottom-city-links .link-card::before,
-body.page-faq .bottom-city-links .link-card::before,
-body.page-contact .bottom-city-links .link-card::before {
+body.page-bottom-city-links .bottom-city-links .link-card::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
@@ -5485,39 +5272,19 @@ body.page-contact .bottom-city-links .link-card::before {
   transition: opacity 0.24s ease;
 }
 
-body.page-index .bottom-city-links .link-card:hover,
-body.page-about .bottom-city-links .link-card:hover,
-body.page-services .bottom-city-links .link-card:hover,
-body.page-buyers .bottom-city-links .link-card:hover,
-body.page-faq .bottom-city-links .link-card:hover,
-body.page-contact .bottom-city-links .link-card:hover {
+body.page-bottom-city-links .bottom-city-links .link-card:hover {
   border-color: rgba(184, 146, 58, 0.35);
   background: linear-gradient(180deg, rgba(255,255,255,1), rgba(248,248,248,1));
   transform: translateY(-4px);
   box-shadow: 0 18px 36px rgba(12, 26, 61, 0.12);
 }
 
-body.page-index .bottom-city-links .link-card:hover::before,
-body.page-about .bottom-city-links .link-card:hover::before,
-body.page-services .bottom-city-links .link-card:hover::before,
-body.page-buyers .bottom-city-links .link-card:hover::before,
-body.page-faq .bottom-city-links .link-card:hover::before,
-body.page-contact .bottom-city-links .link-card:hover::before {
+body.page-bottom-city-links .bottom-city-links .link-card:hover::before {
   opacity: 1;
 }
 
-body.page-index .bottom-city-links .link-card svg,
-body.page-index .bottom-city-links .link-card i,
-body.page-about .bottom-city-links .link-card svg,
-body.page-about .bottom-city-links .link-card i,
-body.page-services .bottom-city-links .link-card svg,
-body.page-services .bottom-city-links .link-card i,
-body.page-buyers .bottom-city-links .link-card svg,
-body.page-buyers .bottom-city-links .link-card i,
-body.page-faq .bottom-city-links .link-card svg,
-body.page-faq .bottom-city-links .link-card i,
-body.page-contact .bottom-city-links .link-card svg,
-body.page-contact .bottom-city-links .link-card i {
+body.page-bottom-city-links .bottom-city-links .link-card svg,
+body.page-bottom-city-links .bottom-city-links .link-card i {
   width: 38px;
   height: 38px;
   min-width: 38px;
@@ -5533,12 +5300,7 @@ body.page-contact .bottom-city-links .link-card i {
   flex-shrink: 0;
 }
 
-body.page-index .bottom-city-links .link-card span,
-body.page-about .bottom-city-links .link-card span,
-body.page-services .bottom-city-links .link-card span,
-body.page-buyers .bottom-city-links .link-card span,
-body.page-faq .bottom-city-links .link-card span,
-body.page-contact .bottom-city-links .link-card span {
+body.page-bottom-city-links .bottom-city-links .link-card span {
   font-size: 0.96rem;
   line-height: 1.35;
   font-weight: 600;
@@ -5864,70 +5626,25 @@ body.page-loma-mack-grand-junction .hero,
 body.page-north-grand-junction .hero,
 body.page-northeast-grand-junction .hero,
 body.page-northwest-grand-junction .hero,
-body.page-buyers .buyers-hero,
-body.page-services .services-hero,
-body.page-contact .contact-hero,
-body.page-faq .faq-hero {
-  position: relative;
-  overflow: hidden;
-  color: var(--white);
-}
 
-body.page-index .hero,
-body.page-about .hero,
-body.page-grand-junction-home-value .hero,
-body.page-redlands-homes .hero,
-body.page-orchard-mesa-homes .hero,
-body.page-selling-in-fruita .hero,
-body.page-selling-in-palisade .hero,
-body.page-clifton-grand-junction .hero,
-body.page-downtown-grand-junction .hero,
-body.page-loma-mack-grand-junction .hero,
-body.page-north-grand-junction .hero,
-body.page-northeast-grand-junction .hero,
-body.page-northwest-grand-junction .hero {
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-}
-
-body.page-buyers .buyers-hero,
-body.page-services .services-hero,
-body.page-contact .contact-hero,
-body.page-faq .faq-hero {
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) {
   padding: clamp(7rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 6rem);
   text-align: left;
 }
 
-body.page-buyers .buyers-hero .container,
-body.page-services .services-hero .container,
-body.page-contact .contact-hero .container,
-body.page-faq .faq-hero .container {
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) .container.hero-inner,
+body:is(.page-index, .page-about) .hero-content,
+body:is(.page-index, .page-about) .hero-inner,
+body.page-market-area .hero-inner,
+body.page-grand-junction-home-value .hero-inner {
   position: relative;
   z-index: 1;
 }
 
-body.page-index .hero-content,
-body.page-about .hero-content,
-body.page-index .hero-inner,
-body.page-about .hero-inner,
-body.page-buyers .buyers-hero .hero-inner,
-body.page-services .services-hero .hero-inner,
-body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner,
-body.page-grand-junction-home-value .hero-inner,
-body.page-redlands-homes .hero-inner,
-body.page-orchard-mesa-homes .hero-inner,
-body.page-selling-in-fruita .hero-inner,
-body.page-selling-in-palisade .hero-inner,
-body.page-clifton-grand-junction .hero-inner,
-body.page-downtown-grand-junction .hero-inner,
-body.page-loma-mack-grand-junction .hero-inner,
-body.page-north-grand-junction .hero-inner,
-body.page-northeast-grand-junction .hero-inner,
-body.page-northwest-grand-junction .hero-inner {
-  position: relative;
-  z-index: 1;
+body:is(.page-index, .page-about) :is(.hero-content, .hero-inner),
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) .hero-inner,
+body.page-market-area .hero-inner,
+body.page-grand-junction-home-value .hero-inner {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -5935,31 +5652,14 @@ body.page-northwest-grand-junction .hero-inner {
   text-align: left;
 }
 
-body.page-buyers .buyers-hero .hero-inner,
-body.page-services .services-hero .hero-inner,
-body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner {
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) .hero-inner {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-body.page-index .hero-eyebrow,
-body.page-about .hero-eyebrow,
-body.page-buyers .hero-eyebrow,
-body.page-services .hero-eyebrow,
-body.page-contact .hero-eyebrow,
-body.page-faq .hero-eyebrow,
-body.page-grand-junction-home-value .hero-eyebrow,
-body.page-redlands-homes .hero-eyebrow,
-body.page-orchard-mesa-homes .hero-eyebrow,
-body.page-selling-in-fruita .hero-eyebrow,
-body.page-selling-in-palisade .hero-eyebrow,
-body.page-clifton-grand-junction .hero-eyebrow,
-body.page-downtown-grand-junction .hero-eyebrow,
-body.page-loma-mack-grand-junction .hero-eyebrow,
-body.page-north-grand-junction .hero-eyebrow,
-body.page-northeast-grand-junction .hero-eyebrow,
-body.page-northwest-grand-junction .hero-eyebrow {
+body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-eyebrow,
+body.page-market-area .hero-eyebrow,
+body.page-grand-junction-home-value .hero-eyebrow {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -5972,40 +5672,12 @@ body.page-northwest-grand-junction .hero-eyebrow {
   font-weight: 600;
 }
 
-body.page-index .hero-eyebrow::before,
-body.page-index .hero-eyebrow::after,
-body.page-about .hero-eyebrow::before,
-body.page-about .hero-eyebrow::after,
-body.page-buyers .hero-eyebrow::before,
-body.page-buyers .hero-eyebrow::after,
-body.page-services .hero-eyebrow::before,
-body.page-services .hero-eyebrow::after,
-body.page-contact .hero-eyebrow::before,
-body.page-contact .hero-eyebrow::after,
-body.page-faq .hero-eyebrow::before,
-body.page-faq .hero-eyebrow::after,
+body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-eyebrow::before,
+body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-eyebrow::after,
+body.page-market-area .hero-eyebrow::before,
+body.page-market-area .hero-eyebrow::after,
 body.page-grand-junction-home-value .hero-eyebrow::before,
-body.page-grand-junction-home-value .hero-eyebrow::after,
-body.page-redlands-homes .hero-eyebrow::before,
-body.page-redlands-homes .hero-eyebrow::after,
-body.page-orchard-mesa-homes .hero-eyebrow::before,
-body.page-orchard-mesa-homes .hero-eyebrow::after,
-body.page-selling-in-fruita .hero-eyebrow::before,
-body.page-selling-in-fruita .hero-eyebrow::after,
-body.page-selling-in-palisade .hero-eyebrow::before,
-body.page-selling-in-palisade .hero-eyebrow::after,
-body.page-clifton-grand-junction .hero-eyebrow::before,
-body.page-clifton-grand-junction .hero-eyebrow::after,
-body.page-downtown-grand-junction .hero-eyebrow::before,
-body.page-downtown-grand-junction .hero-eyebrow::after,
-body.page-loma-mack-grand-junction .hero-eyebrow::before,
-body.page-loma-mack-grand-junction .hero-eyebrow::after,
-body.page-north-grand-junction .hero-eyebrow::before,
-body.page-north-grand-junction .hero-eyebrow::after,
-body.page-northeast-grand-junction .hero-eyebrow::before,
-body.page-northeast-grand-junction .hero-eyebrow::after,
-body.page-northwest-grand-junction .hero-eyebrow::before,
-body.page-northwest-grand-junction .hero-eyebrow::after {
+body.page-grand-junction-home-value .hero-eyebrow::after {
   content: "";
   width: 36px;
   height: 1px;
@@ -6013,23 +5685,9 @@ body.page-northwest-grand-junction .hero-eyebrow::after {
   opacity: 0.6;
 }
 
-body.page-index .hero-eyebrow span,
-body.page-about .hero-eyebrow span,
-body.page-buyers .hero-eyebrow span,
-body.page-services .hero-eyebrow span,
-body.page-contact .hero-eyebrow span,
-body.page-faq .hero-eyebrow span,
-body.page-grand-junction-home-value .hero-eyebrow span,
-body.page-redlands-homes .hero-eyebrow span,
-body.page-orchard-mesa-homes .hero-eyebrow span,
-body.page-selling-in-fruita .hero-eyebrow span,
-body.page-selling-in-palisade .hero-eyebrow span,
-body.page-clifton-grand-junction .hero-eyebrow span,
-body.page-downtown-grand-junction .hero-eyebrow span,
-body.page-loma-mack-grand-junction .hero-eyebrow span,
-body.page-north-grand-junction .hero-eyebrow span,
-body.page-northeast-grand-junction .hero-eyebrow span,
-body.page-northwest-grand-junction .hero-eyebrow span {
+body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-eyebrow span,
+body.page-market-area .hero-eyebrow span,
+body.page-grand-junction-home-value .hero-eyebrow span {
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
@@ -6037,23 +5695,10 @@ body.page-northwest-grand-junction .hero-eyebrow span {
   font-weight: inherit;
 }
 
-body.page-index .hero-title,
-body.page-about .hero-title,
-body.page-buyers .buyers-hero h1,
-body.page-services .services-hero h1,
-body.page-contact .contact-hero h1,
-body.page-faq .faq-hero h1,
-body.page-grand-junction-home-value .hero h1,
-body.page-redlands-homes .hero h1,
-body.page-orchard-mesa-homes .hero h1,
-body.page-selling-in-fruita .hero h1,
-body.page-selling-in-palisade .hero h1,
-body.page-clifton-grand-junction .hero h1,
-body.page-downtown-grand-junction .hero h1,
-body.page-loma-mack-grand-junction .hero h1,
-body.page-north-grand-junction .hero h1,
-body.page-northeast-grand-junction .hero h1,
-body.page-northwest-grand-junction .hero h1 {
+body:is(.page-index, .page-about) .hero-title,
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) h1,
+body.page-market-area .hero h1,
+body.page-grand-junction-home-value .hero h1 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 300;
@@ -6064,48 +5709,18 @@ body.page-northwest-grand-junction .hero h1 {
   max-width: 14ch;
 }
 
-body.page-index .hero-title em,
-body.page-about .hero-title em,
-body.page-buyers .buyers-hero h1 em,
-body.page-services .services-hero h1 em,
-body.page-contact .contact-hero h1 em,
-body.page-faq .faq-hero h1 em,
-body.page-grand-junction-home-value .hero h1 em,
-body.page-redlands-homes .hero h1 em,
-body.page-orchard-mesa-homes .hero h1 em,
-body.page-selling-in-fruita .hero h1 em,
-body.page-selling-in-palisade .hero h1 em,
-body.page-clifton-grand-junction .hero h1 em,
-body.page-downtown-grand-junction .hero h1 em,
-body.page-loma-mack-grand-junction .hero h1 em,
-body.page-north-grand-junction .hero h1 em,
-body.page-northeast-grand-junction .hero h1 em,
-body.page-northwest-grand-junction .hero h1 em {
+body:is(.page-index, .page-about) .hero-title em,
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) h1 em,
+body.page-market-area .hero h1 em,
+body.page-grand-junction-home-value .hero h1 em {
   color: var(--gold-lt);
   font-style: italic;
 }
 
-body.page-index .hero-subtitle,
-body.page-about .hero-subtitle,
-body.page-buyers .buyers-hero .hero-lead,
-body.page-buyers .buyers-hero p,
-body.page-services .services-hero .hero-lead,
-body.page-services .services-hero p,
-body.page-contact .contact-hero .hero-lead,
-body.page-contact .contact-hero p,
-body.page-faq .faq-hero .hero-lead,
-body.page-faq .faq-hero p,
-body.page-grand-junction-home-value .hero-lead,
-body.page-redlands-homes .hero-lead,
-body.page-orchard-mesa-homes .hero-lead,
-body.page-selling-in-fruita .hero-lead,
-body.page-selling-in-palisade .hero-lead,
-body.page-clifton-grand-junction .hero-lead,
-body.page-downtown-grand-junction .hero-lead,
-body.page-loma-mack-grand-junction .hero-lead,
-body.page-north-grand-junction .hero-lead,
-body.page-northeast-grand-junction .hero-lead,
-body.page-northwest-grand-junction .hero-lead {
+body:is(.page-index, .page-about) .hero-subtitle,
+body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) :is(.hero-lead, p),
+body.page-market-area .hero-lead,
+body.page-grand-junction-home-value .hero-lead {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
   color: rgba(255, 255, 255, 0.78);
   max-width: 54ch;
@@ -6114,23 +5729,9 @@ body.page-northwest-grand-junction .hero-lead {
   font-weight: 300;
 }
 
-body.page-index .hero-cta,
-body.page-about .hero-cta,
-body.page-buyers .hero-cta,
-body.page-services .hero-cta,
-body.page-contact .hero-cta,
-body.page-faq .hero-cta,
-body.page-grand-junction-home-value .hero-cta,
-body.page-redlands-homes .hero-cta,
-body.page-orchard-mesa-homes .hero-cta,
-body.page-selling-in-fruita .hero-cta,
-body.page-selling-in-palisade .hero-cta,
-body.page-clifton-grand-junction .hero-cta,
-body.page-downtown-grand-junction .hero-cta,
-body.page-loma-mack-grand-junction .hero-cta,
-body.page-north-grand-junction .hero-cta,
-body.page-northeast-grand-junction .hero-cta,
-body.page-northwest-grand-junction .hero-cta {
+body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-cta,
+body.page-market-area .hero-cta,
+body.page-grand-junction-home-value .hero-cta {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -6138,8 +5739,7 @@ body.page-northwest-grand-junction .hero-cta {
   margin-bottom: 3rem;
 }
 
-body.page-index .hero-trust,
-body.page-about .hero-trust {
+body:is(.page-index, .page-about) .hero-trust {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -6171,50 +5771,22 @@ body.page-about .hero-trust {
     left: 0;
   }
 
-  body.page-index .hero-content,
-  body.page-about .hero-content,
-  body.page-index .hero-inner,
-  body.page-about .hero-inner,
-  body.page-buyers .buyers-hero .hero-inner,
-  body.page-services .services-hero .hero-inner,
-  body.page-contact .contact-hero .hero-inner,
-  body.page-faq .faq-hero .hero-inner,
-  body.page-grand-junction-home-value .hero-inner,
-  body.page-redlands-homes .hero-inner,
-  body.page-orchard-mesa-homes .hero-inner,
-  body.page-selling-in-fruita .hero-inner,
-  body.page-selling-in-palisade .hero-inner,
-  body.page-clifton-grand-junction .hero-inner,
-  body.page-downtown-grand-junction .hero-inner,
-  body.page-loma-mack-grand-junction .hero-inner,
-  body.page-north-grand-junction .hero-inner,
-  body.page-northeast-grand-junction .hero-inner,
-  body.page-northwest-grand-junction .hero-inner {
+  body:is(.page-index, .page-about) :is(.hero-content, .hero-inner),
+  body:is(.page-buyers, .page-services, .page-contact, .page-faq) :is(.buyers-hero, .services-hero, .contact-hero, .faq-hero) .hero-inner,
+  body.page-market-area .hero-inner,
+  body.page-grand-junction-home-value .hero-inner {
     padding-top: clamp(6rem, 10vw, 7rem);
     padding-bottom: 2.5rem;
   }
 
-  body.page-index .hero-cta,
-  body.page-about .hero-cta,
-  body.page-buyers .hero-cta,
-  body.page-services .hero-cta,
-  body.page-contact .hero-cta,
-  body.page-faq .hero-cta,
-  body.page-grand-junction-home-value .hero-cta,
-  body.page-redlands-homes .hero-cta,
-  body.page-orchard-mesa-homes .hero-cta,
-  body.page-selling-in-fruita .hero-cta,
-  body.page-selling-in-palisade .hero-cta,
-  body.page-clifton-grand-junction .hero-cta,
-  body.page-downtown-grand-junction .hero-cta,
-  body.page-loma-mack-grand-junction .hero-cta,
-  body.page-north-grand-junction .hero-cta,
-  body.page-northeast-grand-junction .hero-cta,
-  body.page-northwest-grand-junction .hero-cta {
+  body:is(.page-index, .page-about, .page-buyers, .page-services, .page-contact, .page-faq) .hero-cta,
+  body.page-market-area .hero-cta,
+  body.page-grand-junction-home-value .hero-cta {
     flex-direction: column;
     align-items: flex-start;
   }
 }
+
 
 /* =========================================================
    Standardization pass: shared section headers + spacing only
@@ -6808,4 +6380,928 @@ body[class*="page-"] .footer-bottom {
 body.page-privacy .footer-bottom {
   justify-content: space-between;
   align-items: center;
+}
+
+
+/* ============================================================
+   Standardization pass
+   Moved repeated inline HTML styles into shared classes/utilities
+   ============================================================ */
+
+/* Delay utilities replacing inline transition-delay styles */
+.reveal-delay-005 { transition-delay: 0.05s !important; }
+.reveal-delay-010 { transition-delay: 0.10s !important; }
+.reveal-delay-012 { transition-delay: 0.12s !important; }
+.reveal-delay-013 { transition-delay: 0.13s !important; }
+.reveal-delay-014 { transition-delay: 0.14s !important; }
+.reveal-delay-015 { transition-delay: 0.15s !important; }
+.reveal-delay-019 { transition-delay: 0.19s !important; }
+.reveal-delay-020 { transition-delay: 0.20s !important; }
+.reveal-delay-021 { transition-delay: 0.21s !important; }
+.reveal-delay-023 { transition-delay: 0.23s !important; }
+.reveal-delay-025 { transition-delay: 0.25s !important; }
+.reveal-delay-026 { transition-delay: 0.26s !important; }
+.reveal-delay-029 { transition-delay: 0.29s !important; }
+.reveal-delay-030 { transition-delay: 0.30s !important; }
+.reveal-delay-033 { transition-delay: 0.33s !important; }
+.reveal-delay-040 { transition-delay: 0.40s !important; }
+
+/* Shared section shells */
+.section-shell-white {
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.section-shell-cream {
+  background: var(--cream);
+}
+
+.section-shell-top {
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+  padding: clamp(3rem,5vw,4rem) 0;
+}
+
+.section-intro-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.section-intro-center h2 {
+  font-size: clamp(1.5rem,2.5vw,2.2rem);
+  margin-bottom: 0.55rem;
+}
+
+.section-intro-center p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.section-copy-narrow {
+  max-width: 640px;
+}
+
+.section-copy-narrow.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-intro-center.section-header {
+  margin-bottom: 2rem;
+}
+
+.promise-header.section-header,
+.faq-panel-header.section-header {
+  margin-bottom: 2rem;
+}
+
+.note-muted {
+  color: var(--muted);
+  font-size: 1.02rem;
+  margin-top: 0.75rem;
+  line-height: 1.85;
+}
+
+.cta-row-wrap {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.section-label-gold span {
+  color: var(--gold-lt);
+}
+
+.market-note {
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: -0.35rem 0 1rem 0;
+}
+
+.stats-updated-note {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.call-link-block {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+}
+
+.call-link-block-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.call-link-block-phone {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.section-action-top {
+  margin-top: 1rem;
+}
+
+.section-action-lg {
+  margin-top: 2rem;
+}
+
+/* Shared bottom city links intro */
+.bottom-city-links {
+  background: var(--cream);
+  border-top: 1px solid var(--sand);
+  padding: clamp(3rem,5vw,4rem) 0;
+}
+
+.bottom-city-links-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottom-city-links-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.bottom-city-links-label::before,
+.bottom-city-links-label::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.bottom-city-links-label span {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.bottom-city-links-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem,2.5vw,2.2rem);
+  margin-bottom: 0.55rem;
+}
+
+.bottom-city-links-intro p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.footer-brand-note {
+  margin-top: 0.75rem;
+}
+
+/* Services page rules moved out of inline style block */
+body.page-services #services .section-header {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.75rem;
+}
+body.page-services #services .section-intro {
+  margin-top: 0.85rem;
+}
+body.page-services #services .process-steps {
+  margin-top: 0.35rem;
+}
+body.page-services .cta-band-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: block;
+}
+body.page-services .cta-band-copy {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+body.page-services .cta-band-copy h2 {
+  color: var(--white);
+}
+body.page-services .cta-band-copy h2 em {
+  color: var(--gold-lt);
+}
+body.page-services .cta-band-copy p {
+  color: rgba(255,255,255,0.74);
+}
+
+/* Privacy page rules moved out of inline style block */
+body.page-privacy {
+  background:
+    radial-gradient(900px 450px at 50% -10%, rgba(184, 146, 58, 0.08), transparent 60%),
+    var(--cream);
+}
+
+body.page-privacy .main-header {
+  background: rgba(12, 26, 61, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(184, 146, 58, 0.18);
+}
+
+body.page-privacy .privacy-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8.5rem 0 4rem;
+  background:
+    linear-gradient(rgba(12, 26, 61, 0.9), rgba(12, 26, 61, 0.88)),
+    radial-gradient(700px 280px at 50% 0%, rgba(184, 146, 58, 0.12), transparent 70%);
+}
+
+body.page-privacy .privacy-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top center, rgba(212, 170, 90, 0.08), transparent 45%);
+  pointer-events: none;
+}
+
+body.page-privacy .privacy-hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 880px;
+}
+
+body.page-privacy .privacy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+  color: var(--gold-lt);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+body.page-privacy .privacy-eyebrow::before,
+body.page-privacy .privacy-eyebrow::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: rgba(212, 170, 90, 0.7);
+}
+
+body.page-privacy .privacy-hero h1 {
+  color: var(--white);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 300;
+  margin-bottom: 0.9rem;
+}
+
+body.page-privacy .privacy-hero p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 54ch;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+body.page-privacy .privacy-shell {
+  max-width: 1080px;
+  margin: -2.5rem auto 0;
+  padding: 0 1.5rem 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+body.page-privacy .privacy-card {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 224, 211, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(12, 26, 61, 0.12);
+  overflow: hidden;
+}
+
+body.page-privacy .privacy-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  padding: 2rem 2.2rem;
+  border-bottom: 1px solid rgba(232, 225, 208, 0.95);
+  background:
+    linear-gradient(180deg, rgba(247, 244, 237, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+body.page-privacy .privacy-intro-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+body.page-privacy .last-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  align-self: start;
+  white-space: nowrap;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: rgba(12, 26, 61, 0.05);
+  color: var(--navy);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+body.page-privacy .last-updated i,
+body.page-privacy .last-updated svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  stroke: currentColor;
+}
+
+body.page-privacy .privacy-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+}
+
+body.page-privacy .privacy-nav {
+  padding: 2rem 1.6rem 2.2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,244,237,0.78));
+  border-right: 1px solid rgba(232, 225, 208, 0.95);
+}
+
+body.page-privacy .privacy-nav h2 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  color: var(--navy);
+}
+
+body.page-privacy .privacy-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+body.page-privacy .privacy-nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  padding: 0.7rem 0.85rem;
+  border-radius: 14px;
+  transition: background 0.22s, color 0.22s, transform 0.22s;
+}
+
+body.page-privacy .privacy-nav a:hover {
+  background: rgba(12, 26, 61, 0.05);
+  color: var(--navy);
+  transform: translateX(2px);
+}
+
+body.page-privacy .privacy-content {
+  padding: 2.2rem 2.2rem 2.6rem;
+}
+
+body.page-privacy .privacy-section + .privacy-section {
+  margin-top: 2.35rem;
+  padding-top: 2.1rem;
+  border-top: 1px solid rgba(232, 225, 208, 0.9);
+}
+
+body.page-privacy .privacy-section h2 {
+  font-size: clamp(1.45rem, 2.3vw, 2rem);
+  margin-bottom: 0.85rem;
+  color: var(--navy);
+}
+
+body.page-privacy .privacy-section p,
+body.page-privacy .privacy-section li {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+body.page-privacy .privacy-section ul {
+  padding-left: 1.2rem;
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+body.page-privacy .privacy-highlight {
+  margin-top: 1rem;
+  padding: 1.1rem 1.15rem;
+  border-radius: 18px;
+  background: rgba(12, 26, 61, 0.04);
+  border: 1px solid rgba(184, 146, 58, 0.12);
+}
+
+body.page-privacy .privacy-highlight strong {
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  body.page-privacy .privacy-intro,
+  body.page-privacy .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-privacy .privacy-nav {
+    border-right: none;
+    border-bottom: 1px solid rgba(232, 225, 208, 0.95);
+  }
+}
+
+@media (max-width: 640px) {
+  body.page-privacy .privacy-shell {
+    padding: 0 1rem 4rem;
+  }
+
+  body.page-privacy .privacy-intro,
+  body.page-privacy .privacy-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  body.page-privacy .last-updated {
+    white-space: normal;
+  }
+}
+
+
+/* Additional cleanup utilities */
+.no-text-decoration { text-decoration: none; }
+.section-intro-center-wide {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+.mt-35 { margin-top: 3.5rem; }
+.market-stats-flush { padding: 0; }
+.stat-note-sm-center {
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+.market-status-note {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+.market-status-note-uppercase {
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+.info-callout {
+  padding: 1.5rem;
+  background: rgba(184,146,58,0.06);
+  border: 1px solid rgba(184,146,58,0.2);
+  border-radius: var(--radius-md);
+}
+.info-callout p {
+  font-size: 0.88rem;
+  color: var(--navy);
+  line-height: 1.75;
+}
+.info-callout strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--gold);
+}
+.bottom-city-links.bottom-city-links-white {
+  background: var(--white);
+}
+
+body.page-privacy .privacy-footer-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:2rem;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+body.page-privacy .privacy-footer-copy {
+  color:rgba(255,255,255,0.5);
+  font-size:0.8rem;
+  margin:0;
+}
+
+
+/* =========================================================
+   Pass 3 standardization: shared market-area page system
+   Scope: neighborhood/location pages with repeated card + link sections
+   ========================================================= */
+
+body.page-market-area .fact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+body.page-market-area .fact-row:last-child {
+  border-bottom: none;
+}
+
+body.page-market-area .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+
+body.page-market-area .card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+body.page-market-area .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+body.page-market-area .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184, 146, 58, 0.22);
+}
+
+body.page-market-area .card:hover::before {
+  opacity: 1;
+}
+
+body.page-market-area .card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(184, 146, 58, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+body.page-market-area .card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
+body.page-market-area .card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+body.page-market-area .card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+body.page-market-area .cta-pair {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body.page-market-area .link-grid {
+  gap: 1rem;
+}
+
+body.page-market-area .link-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
+  border: 1px solid rgba(230, 224, 211, 0.95);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.25rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 24px rgba(12, 26, 61, 0.08);
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+}
+
+body.page-market-area .link-card::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+body.page-market-area .link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
+  border-color: rgba(184, 146, 58, 0.28);
+}
+
+body.page-market-area .link-card svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+body.page-market-area .link-card span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  body.page-market-area .fact-row {
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  body.page-market-area .cta-pair {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body.page-market-area .link-card {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   Pass 4 - shared forms and footer copy classes
+   Keeps global pieces easier to maintain without redesigning pages
+========================================================= */
+body.page-lead-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+body.page-lead-form .form-group {
+  margin-bottom: 1rem;
+}
+
+body.page-lead-form .form-group label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+body.page-lead-form .form-group input,
+body.page-lead-form .form-group select,
+body.page-lead-form .form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+body.page-lead-form .form-group input::placeholder,
+body.page-lead-form .form-group textarea::placeholder {
+  color: rgba(26, 26, 46, 0.35);
+}
+
+body.page-lead-form .form-group input:focus,
+body.page-lead-form .form-group select:focus,
+body.page-lead-form .form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184, 146, 58, 0.12);
+}
+
+body.page-lead-form .form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+body.page-lead-form .select-wrap {
+  position: relative;
+}
+
+body.page-lead-form .select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid rgba(12, 26, 61, 0.45);
+  border-bottom: 1.5px solid rgba(12, 26, 61, 0.45);
+  transform: translateY(-65%) rotate(45deg);
+  pointer-events: none;
+}
+
+body.page-lead-form .form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.75rem;
+}
+
+.footer-brand-copy {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand-note {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  body.page-lead-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   Pass 8 standardization: shared metric/stat panel system
+   Scope: repeated stat grids across valuation + market pages
+   ========================================================= */
+
+body.page-stat-panels .metric-panel-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--sand);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+body.page-stat-panels .metric-panel-grid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+body.page-stat-panels .metric-panel-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+body.page-stat-panels .metric-panel-item {
+  background: var(--cream);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+
+body.page-stat-panels .metric-panel-value {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--navy);
+  line-height: 1;
+}
+
+body.page-stat-panels .metric-panel-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+body.page-stat-panels .metric-panel-note {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  body.page-stat-panels .metric-panel-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  body.page-stat-panels .metric-panel-grid--2,
+  body.page-stat-panels .metric-panel-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   Standardization pass: naming cleanup compatibility layer
+   Keeps newer shared class names in control while preserving
+   support for older variants still used elsewhere.
+   ========================================================= */
+
+/* Hero lead naming cleanup */
+.hero-subtitle,
+.hero-lead {
+  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 54ch;
+  line-height: 1.85;
+  margin: 0 0 2.5rem;
+  font-weight: 300;
+}
+
+/* Shared intro paragraph naming cleanup */
+.section-intro,
+.lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  max-width: 62ch;
+  line-height: 1.85;
+}
+
+.section-header.centered :is(.section-intro, .lead),
+.cta-content :is(.section-intro, .lead),
+.promise-header.centered :is(.section-intro, .lead) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bottom city links intro now follows shared section-header patterns */
+.bottom-city-links-intro.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.bottom-city-links-intro.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem,2.5vw,2.2rem);
+  margin-bottom: 0.55rem;
+}
+
+.bottom-city-links-intro .section-label {
+  margin-bottom: 1.25rem;
+}
+
+/* Neighborhood intro shell naming cleanup */
+body.page-market-area .nbhd-intro.section-shell-white {
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+/* Wide centered intro wrapper normalized to shared header system */
+.section-intro-center-wide.section-header {
+  max-width: 760px;
+  text-align: center;
+  margin: 0 auto 2rem;
+}
+
+.section-intro-center-wide.section-header .section-intro {
+  margin-left: auto;
+  margin-right: auto;
 }

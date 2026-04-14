@@ -34,7 +34,7 @@
 <script src="script.js" defer></script>
 </head>
 
-<body class="page-faq">
+<body class="page-faq page-bottom-city-links">
 
 <!-- NAV -->
 <header class="main-header" id="mainHeader">
@@ -42,7 +42,7 @@
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Sellers</a></li>
       <li><a href="buyers.html">Buyers</a></li>
@@ -50,7 +50,7 @@
       <li><a href="faq.html" class="active" aria-current="page">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -58,10 +58,10 @@
 
 <!-- HERO -->
 <section class="faq-hero">
-  <div class="container">
+  <div class="container hero-inner">
     <div class="hero-eyebrow"><span>Grand Junction Real Estate</span></div>
     <h1>Real Answers.<br><em>Local Knowledge.</em></h1>
-    <p>
+    <p class="hero-lead">
       Real estate in Grand Junction, the Redlands, Clifton, Orchard Mesa,
       Fruita, and Palisade comes with real local nuance. These are the questions
       that actually matter — answered honestly, without the runaround.
@@ -87,7 +87,7 @@
 
     <!-- ── BUYERS PANEL ── -->
     <div class="faq-panel active" id="panel-buyers">
-      <div class="faq-panel-header reveal">
+      <div class="faq-panel-header reveal section-header">
         <div>
           <div class="section-label"><span>For Buyers</span></div>
           <h2>Buying in <em>Grand Junction</em></h2>
@@ -99,7 +99,7 @@
         </p>
       </div>
 
-      <div class="faq-search-wrap reveal" style="transition-delay:0.1s">
+      <div class="faq-search-wrap reveal reveal-delay-010">
         <div class="search-wrap-inner">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input type="search" class="faq-search" placeholder="Search buyer questions…" data-target="buyers-accordion" />
@@ -220,7 +220,7 @@
 
     <!-- ── SELLERS PANEL ── -->
     <div class="faq-panel" id="panel-sellers">
-      <div class="faq-panel-header reveal">
+      <div class="faq-panel-header reveal section-header">
         <div>
           <div class="section-label"><span>For Sellers</span></div>
           <h2>Selling in <em>Grand Junction</em></h2>
@@ -232,7 +232,7 @@
         </p>
       </div>
 
-      <div class="faq-search-wrap reveal" style="transition-delay:0.1s">
+      <div class="faq-search-wrap reveal reveal-delay-010">
         <div class="search-wrap-inner">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input type="search" class="faq-search" placeholder="Search seller questions…" data-target="sellers-accordion" />
@@ -377,12 +377,12 @@
 </section>
 
 <!-- NEIGHBORHOODS -->
-<section class="bottom-city-links" style="background:var(--cream);border-top:1px solid var(--sand);padding:clamp(3rem,5vw,4rem) 0;">
+<section class="bottom-city-links">
   <div class="container">
-    <div style="text-align:center;margin-bottom:1.5rem;max-width:720px;margin-left:auto;margin-right:auto;">
-      <div style="display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-bottom:1.25rem;"><span style="display:block;width:28px;height:1px;background:var(--gold);"></span><span style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">Featured Areas</span><span style="display:block;width:28px;height:1px;background:var(--gold);"></span></div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:0.55rem;">Explore Key Markets Around Mesa County</h2>
-      <p style="color:var(--muted);font-size:0.98rem;line-height:1.8;">A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+    <div class="bottom-city-links-intro section-header centered section-copy-narrow">
+      <div class="bottom-city-links-label section-label centered"><span>Featured Areas</span></div>
+      <h2>Explore Key Markets Around Mesa County</h2>
+      <p class="section-intro">A few of the places buyers and sellers ask about most across the Grand Valley.</p>
     </div>
     <div class="link-grid">
       <a href="grand-junction-home-value.html" class="link-card"><i data-lucide="map-pin"></i><span>Grand Junction</span></a>
@@ -401,7 +401,7 @@
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
         <p>Guiding buyers and sellers through the Grand Junction market. Honest · Simple · True.</p>
-        <p style="margin-top:0.75rem">Serving Grand Junction, the Redlands, Clifton,<br>Orchard Mesa, Fruita, Palisade, and Western Colorado</p>
+        <p class="footer-brand-note">Serving Grand Junction, the Redlands, Clifton,<br>Orchard Mesa, Fruita, Palisade, and Western Colorado</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
