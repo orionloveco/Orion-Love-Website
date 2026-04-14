@@ -6747,7 +6747,7 @@ body.page-privacy .privacy-footer-copy {
 /* Unified bottom area card system */
 .bottom-city-links .link-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1.1rem;
   margin-top: 2rem;
 }
@@ -6873,6 +6873,18 @@ body.page-privacy .privacy-footer-copy {
 .bottom-city-links-detailed .link-card i,
 .bottom-city-links-detailed .link-card svg {
   margin-top: 0.1rem;
+}
+
+@media (max-width: 1100px) {
+  .bottom-city-links:not(.bottom-city-links-detailed) .link-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom-city-links:not(.bottom-city-links-detailed) .link-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
