@@ -5444,8 +5444,8 @@ body.page-buyers .bottom-city-links .link-grid,
 body.page-faq .bottom-city-links .link-grid,
 body.page-contact .bottom-city-links .link-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.1rem;
   margin-top: 2rem;
 }
 
@@ -5455,15 +5455,34 @@ body.page-services .bottom-city-links .link-card,
 body.page-buyers .bottom-city-links .link-card,
 body.page-faq .bottom-city-links .link-card,
 body.page-contact .bottom-city-links .link-card {
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
+  border: 1px solid rgba(184, 146, 58, 0.14);
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem;
+  min-height: 86px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+  gap: 0.95rem;
+  box-shadow: 0 10px 26px rgba(12, 26, 61, 0.08);
+  transition: border-color 0.24s, transform 0.24s, box-shadow 0.24s, background 0.24s;
+}
+
+body.page-index .bottom-city-links .link-card::before,
+body.page-about .bottom-city-links .link-card::before,
+body.page-services .bottom-city-links .link-card::before,
+body.page-buyers .bottom-city-links .link-card::before,
+body.page-faq .bottom-city-links .link-card::before,
+body.page-contact .bottom-city-links .link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(184,146,58,0.75), transparent);
+  opacity: 0;
+  transition: opacity 0.24s ease;
 }
 
 body.page-index .bottom-city-links .link-card:hover,
@@ -5472,9 +5491,19 @@ body.page-services .bottom-city-links .link-card:hover,
 body.page-buyers .bottom-city-links .link-card:hover,
 body.page-faq .bottom-city-links .link-card:hover,
 body.page-contact .bottom-city-links .link-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  border-color: rgba(184, 146, 58, 0.35);
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(248,248,248,1));
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(12, 26, 61, 0.12);
+}
+
+body.page-index .bottom-city-links .link-card:hover::before,
+body.page-about .bottom-city-links .link-card:hover::before,
+body.page-services .bottom-city-links .link-card:hover::before,
+body.page-buyers .bottom-city-links .link-card:hover::before,
+body.page-faq .bottom-city-links .link-card:hover::before,
+body.page-contact .bottom-city-links .link-card:hover::before {
+  opacity: 1;
 }
 
 body.page-index .bottom-city-links .link-card svg,
@@ -5489,12 +5518,19 @@ body.page-faq .bottom-city-links .link-card svg,
 body.page-faq .bottom-city-links .link-card i,
 body.page-contact .bottom-city-links .link-card svg,
 body.page-contact .bottom-city-links .link-card i {
-  width: 15px;
-  height: 15px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+  border-radius: 12px;
+  background: rgba(184, 146, 58, 0.12);
   stroke: var(--gold);
-  stroke-width: 2;
-  flex-shrink: 0;
+  stroke-width: 1.9;
   color: var(--gold);
+  flex-shrink: 0;
 }
 
 body.page-index .bottom-city-links .link-card span,
@@ -5503,7 +5539,8 @@ body.page-services .bottom-city-links .link-card span,
 body.page-buyers .bottom-city-links .link-card span,
 body.page-faq .bottom-city-links .link-card span,
 body.page-contact .bottom-city-links .link-card span {
-  font-size: 0.88rem;
+  font-size: 0.96rem;
+  line-height: 1.35;
   font-weight: 600;
   color: var(--navy);
 }
