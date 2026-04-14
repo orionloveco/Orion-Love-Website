@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sell Your Home in Grand Junction | Orion Love</title>
+  <title>Grand Junction Realtor® for Home Sellers | Orion Love</title>
 
-  
-  <meta name="description" content="Sell your Grand Junction home with a clear strategy, honest pricing, strong marketing, and direct communication from Orion Love." />
-  <meta property="og:title" content="Sell Your Home in Grand Junction | Orion Love" />
-  <meta property="og:description" content="Sell your Grand Junction home with a clear strategy, honest pricing, strong marketing, and direct communication from Orion Love." />
+  <meta name="description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
+  <meta property="og:title" content="Grand Junction Realtor® for Home Sellers | Orion Love" />
+  <meta property="og:description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sell Your Home in Grand Junction | Orion Love" />
-  <meta name="twitter:description" content="Sell your Grand Junction home with a clear strategy, honest pricing, strong marketing, and direct communication from Orion Love." />
+  <meta name="twitter:title" content="Grand Junction Realtor® for Home Sellers | Orion Love" />
+  <meta name="twitter:description" content="Thinking about selling your home in Grand Junction or Mesa County? Orion Love helps sellers price clearly, prepare strategically, and navigate the market with honest guidance and strong communication." />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script>
-<link href="styles.css" rel="stylesheet"/>
-<script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="styles.css" rel="stylesheet"/>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +27,7 @@
     <a href="index.html" class="logo">
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html" class="active" aria-current="page">Sellers</a></li>
       <li><a href="buyers.html">Buyers</a></li>
@@ -36,7 +35,7 @@
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html" class="btn-nav">Contact</a></li>
     </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -45,21 +44,55 @@
 <!-- HERO -->
 <section class="services-hero">
   <div class="container">
-    <div class="hero-eyebrow"><span>Seller Services · Grand Junction</span></div>
+    <div class="hero-eyebrow"><span>Seller Services · Grand Junction · Mesa County</span></div>
     <h1>Sell with a<br><em>Clear Plan.</em></h1>
     <p>
-      Every seller in Grand Junction deserves a clear plan — honest positioning,
-      deliberate preparation, and an agent who knows the Mesa County market.
+      Selling in Grand Junction takes more than a list price. I help Mesa County homeowners
+      price clearly, prepare deliberately, and launch with a strategy built around what buyers
+      are actually doing in this market.
     </p>
     <div class="hero-cta">
-      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+      <a href="contact.html" class="btn btn-primary">Schedule a Seller Consultation</a>
       <a href="#services" class="btn-outline-white">See What's Included</a>
     </div>
   </div>
 </section>
 
+<!-- INTRO / POSITIONING -->
+<section class="process-preview" id="services">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <div class="section-label centered"><span>Seller Guidance</span></div>
+      <h2>Built for Homeowners Who Want<br><em>Clarity, Not Hype</em></h2>
+      <p class="section-intro">
+        If you are thinking about selling, the goal is not just to get on the market. It is to
+        enter the market with the right price, the right presentation, and a plan that holds up
+        once showings, feedback, and offers start coming in.
+      </p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step reveal" style="transition-delay:0.05s">
+        <div class="step-number">01</div>
+        <h3>Market-Based Pricing</h3>
+        <p>Pricing is built on current competition, recent closings, and how buyers are behaving in your part of Mesa County right now.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.13s">
+        <div class="step-number">02</div>
+        <h3>Practical Preparation</h3>
+        <p>We focus on the updates, presentation, and decisions that actually influence buyer response and perceived value.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.21s">
+        <div class="step-number">03</div>
+        <h3>Clear Communication</h3>
+        <p>You know what is happening, what buyers are saying, and what the next move should be without having to chase for answers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE BLOCKS -->
-<section class="services-main" id="services">
+<section class="services-main">
   <div class="container">
 
     <!-- 1. Market Analysis -->
@@ -69,23 +102,23 @@
         <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
         <h2>Accurate <em>Market Analysis</em></h2>
         <p>
-          Pricing is the single most important decision in your sale. I base it on real
-          Mesa County data — not national averages, not automated estimates — so you
-          enter the market with a position you can defend.
+          Pricing is the single most important decision in your sale. I base it on current
+          Mesa County data, active competition, and recent closings so you enter the market
+          with a position you can explain and defend.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Comparative Market Analysis</h4>
-          <p>We review active competition and recent closings in your specific Grand Junction neighborhood — Redlands, Fruita, Palisade, Orchard Mesa — so pricing reflects what buyers here are actually choosing.</p>
+          <p>We review active competition and recent closings in your specific area of Grand Junction, Fruita, Palisade, Orchard Mesa, Clifton, or beyond so pricing reflects what buyers here are actually choosing.</p>
         </div>
         <div class="detail-card">
-          <h4>Monthly Market Bearings</h4>
-          <p>Every 30 days, you receive updated data on Mesa County new listings, closed sales, and price trends — so your strategy stays grounded in what's happening now.</p>
+          <h4>Ongoing Market Review</h4>
+          <p>Every 30 days, you receive updated data on Mesa County new listings, closed sales, inventory shifts, and pricing trends so your strategy stays grounded in what is happening now.</p>
         </div>
         <div class="detail-card">
           <h4>Strategic Positioning</h4>
-          <p>We discuss timing, initial price point, and adjustment strategy. The goal is to attract serious Grand Junction buyers early — protecting your leverage, not chasing a fast close at the wrong number.</p>
+          <p>We discuss timing, initial price point, and adjustment strategy. The goal is to attract serious buyers early and protect leverage instead of reacting late after the market has already spoken.</p>
         </div>
       </div>
     </div>
@@ -97,9 +130,9 @@
         <div class="service-icon"><i data-lucide="camera"></i></div>
         <h2>Professional <em>Marketing</em></h2>
         <p>
-          Mesa County buyers shop online before they ever call an agent.
-          Your home's first impression is formed before a single showing is scheduled —
-          and it needs to be right.
+          Buyers shop online before they ever call an agent. Your home's first impression is
+          formed before a single showing is scheduled, and it needs to feel well-positioned,
+          well-presented, and worth seeing in person.
         </p>
       </div>
       <div class="service-details">
@@ -109,9 +142,9 @@
             <li>Professional photographer</li>
             <li>High-resolution listing images</li>
             <li>Video walkthrough</li>
-            <li>Aerial drone footage (when applicable)</li>
+            <li>Aerial drone footage when applicable</li>
           </ul>
-          <span class="detail-note">Paid upfront — no cost to you</span>
+          <span class="detail-note">Paid upfront and included in the service</span>
         </div>
         <div class="detail-card">
           <h4>MLS &amp; Syndication</h4>
@@ -123,7 +156,7 @@
           </ul>
         </div>
         <div class="detail-card">
-          <h4>Digital Marketing</h4>
+          <h4>Digital Exposure</h4>
           <ul class="detail-list">
             <li>Social media promotion</li>
             <li>Targeted online advertising</li>
@@ -141,23 +174,23 @@
         <div class="service-icon"><i data-lucide="home"></i></div>
         <h2>Property <em>Preparation</em></h2>
         <p>
-          Most obstacles in a Grand Junction home sale are preventable. We address them
-          before buyers find them — focusing only on preparation that genuinely moves
-          the needle, nothing that doesn't earn its cost.
+          Most obstacles in a home sale are preventable. We address them before buyers find
+          them, focusing on preparation that genuinely improves the way your home shows and
+          supports the number you want the market to accept.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Staging &amp; Presentation</h4>
-          <p>A walk-through with clear, practical direction — what helps, what hurts, and what Grand Junction buyers in your price range respond to most.</p>
+          <p>A walk-through with clear, practical direction on what helps, what hurts, and what buyers in your price range are most likely to notice the minute they walk in.</p>
         </div>
         <div class="detail-card">
           <h4>Pre-Listing Inspection</h4>
-          <p>Optional but often worth it. Identifying issues before listing means you negotiate from strength — not scrambling when a buyer's inspector finds something first.</p>
+          <p>Optional but often worthwhile. Identifying issues before listing means you negotiate from strength instead of scrambling when a buyer's inspection brings up problems later.</p>
         </div>
         <div class="detail-card">
           <h4>Vendor Coordination</h4>
-          <p>Repairs, cleaning, touch-ups — I connect you with trusted Grand Junction contractors who deliver quality work on a listing timeline, without you managing the logistics.</p>
+          <p>Repairs, cleaning, touch-ups, and small projects can all be coordinated through trusted local vendors so you are not left managing every detail on your own.</p>
         </div>
       </div>
     </div>
@@ -169,23 +202,23 @@
         <div class="service-icon"><i data-lucide="message-square"></i></div>
         <h2>Clear <em>Communication</em></h2>
         <p>
-          You'll never be left wondering. Every stage of your sale comes with
-          clear direction, honest showing feedback, and direct communication —
-          without you having to chase it.
+          One of the biggest frustrations sellers have is not knowing what is happening.
+          You should not have to wonder whether buyers are responding, whether the market is
+          shifting, or whether an adjustment needs to be made.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Weekly Updates</h4>
-          <p>Every week: showing activity, buyer feedback, Mesa County market changes, and a clear next step. No silence. No guessing. No chasing me down.</p>
+          <p>Every week: showing activity, buyer feedback, market movement, and a clear next step. No silence. No vague updates. No guessing.</p>
         </div>
         <div class="detail-card">
           <h4>Honest Showing Feedback</h4>
-          <p>After every showing, I share what buyers actually said — the good and the critical. If something needs to change, I tell you directly and we course-correct early.</p>
+          <p>After showings, I share what buyers are actually saying. If something needs to change, I tell you directly so we can course-correct early instead of losing momentum.</p>
         </div>
         <div class="detail-card">
           <h4>Direct Access</h4>
-          <p>Call, text, or email. I respond to all inquiries within 24 hours — usually faster. You won't be bounced to an assistant or left wondering.</p>
+          <p>Call, text, or email. You are communicating with me directly, not being bounced around or left waiting for basic answers.</p>
         </div>
       </div>
     </div>
@@ -197,23 +230,23 @@
         <div class="service-icon"><i data-lucide="handshake"></i></div>
         <h2>Negotiation &amp; <em>Closing</em></h2>
         <p>
-          Receiving an offer is one step. Closing on your terms is the goal.
-          I manage every detail from offer through keys so nothing falls through
-          and there are no surprises at the table.
+          Receiving an offer is one step. Closing on terms that make sense for you is the goal.
+          I manage the details from offer through keys so deadlines are handled, risks are clear,
+          and there are no unnecessary surprises late in the process.
         </p>
       </div>
       <div class="service-details">
         <div class="detail-card">
           <h4>Buyer Qualification</h4>
-          <p>Before presenting any offer, I verify buyer financing and assess their track record. No wasted time on offers that won't survive the route to closing.</p>
+          <p>Before presenting any offer, I verify financing strength and overall readiness so time is not wasted on offers that are unlikely to survive the route to closing.</p>
         </div>
         <div class="detail-card">
           <h4>Contract Review</h4>
-          <p>We review all terms, conditions, contingencies, and timelines together. You'll understand exactly what you're agreeing to — and what's negotiable.</p>
+          <p>We review terms, contingencies, timelines, and tradeoffs together so you understand exactly what you are agreeing to and where negotiation room exists.</p>
         </div>
         <div class="detail-card">
           <h4>Transaction Management</h4>
-          <p>I coordinate inspection, appraisal, title, and closing. You'll know what's happening and when. No loose threads. No surprises.</p>
+          <p>I coordinate inspection, appraisal, title, and closing while keeping you updated throughout. No loose threads. No scrambling at the last minute.</p>
         </div>
       </div>
     </div>
@@ -229,24 +262,24 @@
     <div class="investment-header reveal">
       <div class="section-label centered"><span>Transparency</span></div>
       <h2>What You Pay For</h2>
-      <p>No hidden fees. No surprise charges. Every cost mapped out clearly before you commit to anything.</p>
+      <p>No hidden fees. No surprise charges. Everything is mapped out clearly before you commit to anything.</p>
     </div>
 
     <div class="fee-grid">
       <div class="fee-card reveal" style="transition-delay:0.05s">
         <div class="fee-icon"><i data-lucide="percent"></i></div>
         <h4>Commission Structure</h4>
-        <p>Standard rates apply. I walk through the full breakdown during our first conversation — before you make any commitment.</p>
+        <p>Standard rates apply. I walk through the full breakdown during our first conversation before you make any commitment.</p>
       </div>
       <div class="fee-card reveal" style="transition-delay:0.13s">
         <div class="fee-icon"><i data-lucide="camera"></i></div>
         <h4>Marketing Costs</h4>
-        <p>Professional photography, video, and digital advertising are covered upfront. Quality marketing is part of the route — not an add-on you pay extra for.</p>
+        <p>Professional photography, video, and digital advertising are covered upfront. Quality marketing is part of the service, not an add-on you pay extra for.</p>
       </div>
       <div class="fee-card reveal" style="transition-delay:0.21s">
         <div class="fee-icon"><i data-lucide="shield-check"></i></div>
         <h4>No Hidden Fees</h4>
-        <p>No transaction fees, no admin charges, no upsells. What I quote is what you pay — everything else is already on the map.</p>
+        <p>No transaction fees, no admin charges, and no surprise upsells. What I quote is what you pay.</p>
       </div>
     </div>
 
@@ -254,11 +287,11 @@
       <div class="fee-full-copy">
         <h4>Full Transparency, In Writing</h4>
         <p>
-          During our consultation, I provide a clear breakdown of all costs, commission structure, and exactly what's included —
-          everything documented before you make a single decision.
+          During our consultation, I provide a clear breakdown of costs, commission structure,
+          and exactly what is included so you can make a decision with the full picture in front of you.
         </p>
       </div>
-      <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
+      <a href="contact.html" class="btn-gold-outline">Schedule a Seller Consultation</a>
     </div>
   </div>
 </section>
@@ -268,12 +301,12 @@
   <div class="container">
     <div class="cta-band-inner reveal">
       <div class="section-label centered"><span>Ready to Start?</span></div>
-      <h2>Let's Discuss Your <em>Home Sale</em></h2>
+      <h2>Let's Talk Through Your <em>Home Sale</em></h2>
       <p>
-        Schedule a consultation — we'll review your Mesa County market position,
-        walk through a pricing strategy, and map out a clear route to closing day.
+        We will review your market position, talk through pricing and preparation,
+        and map out a clear path forward based on your home, your timing, and your goals.
       </p>
-      <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+      <a href="contact.html" class="btn btn-primary">Schedule a Seller Consultation</a>
     </div>
   </div>
 </section>
@@ -319,7 +352,7 @@
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#85eaf7eceaebabe9eaf3e0abe6eac5e2e8e4ece9abe6eae8"><span class="__cf_email__" data-cfemail="bcd3ced5d3d292d0d3cad992dfd3fcdbd1ddd5d092dfd3d1">[email&#160;protected]</span></a></li>
           <li><a href="tel:9706446781">(970) 644-6781</a></li>
         </ul>
       </div>
@@ -331,5 +364,6 @@
   </div>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
