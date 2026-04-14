@@ -5877,24 +5877,6 @@ body.page-selling-in-palisade .link-card {
   transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
 }
 
-body.page-clifton-grand-junction .link-card::after,
-body.page-downtown-grand-junction .link-card::after,
-body.page-loma-mack-grand-junction .link-card::after,
-body.page-north-grand-junction .link-card::after,
-body.page-northeast-grand-junction .link-card::after,
-body.page-northwest-grand-junction .link-card::after,
-body.page-orchard-mesa-homes .link-card::after,
-body.page-redlands-homes .link-card::after,
-body.page-selling-in-fruita .link-card::after,
-body.page-selling-in-palisade .link-card::after {
-  content: "→";
-  margin-left: auto;
-  color: var(--gold);
-  font-size: 0.95rem;
-  line-height: 1;
-  opacity: 0.8;
-}
-
 body.page-clifton-grand-junction .link-card:hover,
 body.page-downtown-grand-junction .link-card:hover,
 body.page-loma-mack-grand-junction .link-card:hover,
@@ -7000,5 +6982,103 @@ body.page-hero-aligned .hero-inner {
 
   .bottom-city-links-intro {
     margin-bottom: 1.75rem;
+  }
+}
+
+
+/* =========================================================
+   System-level section rhythm
+   Establishes one vertical spacing system for headers,
+   content grids, and follow-up CTA rows across the site.
+========================================================= */
+:root {
+  --section-header-gap: clamp(1.5rem, 2.8vw, 2.35rem);
+  --section-content-gap: clamp(1.75rem, 3.2vw, 2.75rem);
+  --section-cta-gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+body[class^="page-"] .section-header {
+  margin-bottom: var(--section-header-gap);
+}
+
+body[class^="page-"] .section-header.centered {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body[class^="page-"] .section-header.centered .section-intro,
+body[class^="page-"] .section-header.centered .lead,
+body[class^="page-"] .section-header.centered > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body[class^="page-"] .section-header + .usp-grid,
+body[class^="page-"] .section-header + .process-steps,
+body[class^="page-"] .section-header + .process-grid,
+body[class^="page-"] .section-header + .promise-grid,
+body[class^="page-"] .section-header + .card-grid,
+body[class^="page-"] .section-header + .stats-grid,
+body[class^="page-"] .section-header + .stat-grid,
+body[class^="page-"] .section-header + .link-grid,
+body[class^="page-"] .section-header + .split-layout,
+body[class^="page-"] .section-header + .snapshot-inner,
+body[class^="page-"] .section-header + .identity-inner,
+body[class^="page-"] .section-header + .contact-layout,
+body[class^="page-"] .section-header + .fee-grid,
+body[class^="page-"] .section-header + .faq-grid,
+body[class^="page-"] .section-header + .service-block,
+body[class^="page-"] .section-header + .service-blocks {
+  margin-top: var(--section-content-gap);
+}
+
+body[class^="page-"] .usp-grid,
+body[class^="page-"] .process-steps,
+body[class^="page-"] .process-grid,
+body[class^="page-"] .promise-grid,
+body[class^="page-"] .card-grid,
+body[class^="page-"] .stat-grid,
+body[class^="page-"] .stats-grid,
+body[class^="page-"] .link-grid,
+body[class^="page-"] .split-layout,
+body[class^="page-"] .snapshot-inner,
+body[class^="page-"] .identity-inner,
+body[class^="page-"] .contact-layout,
+body[class^="page-"] .fee-grid,
+body[class^="page-"] .faq-grid,
+body[class^="page-"] .process-preview .process-steps,
+body[class^="page-"] .services-proof .usp-grid,
+body.page-services .usp-grid {
+  margin-bottom: 0;
+}
+
+body[class^="page-"] .cta-center,
+body[class^="page-"] .cta-content,
+body[class^="page-"] .faq-panel-header,
+body[class^="page-"] .promise-header,
+body[class^="page-"] .fee-full,
+body[class^="page-"] .cta-pair {
+  margin-top: var(--section-cta-gap);
+}
+
+body[class^="page-"] .divider + section {
+  padding-top: clamp(4rem, 7vw, 6rem);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-header-gap: 1.4rem;
+    --section-content-gap: 1.8rem;
+    --section-cta-gap: 1.75rem;
+  }
+
+  body[class^="page-"] .section-header.centered {
+    max-width: 680px;
+  }
+
+  body[class^="page-"] .divider + section {
+    padding-top: clamp(3rem, 8vw, 4rem);
   }
 }
