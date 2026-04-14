@@ -17,6 +17,39 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="styles.css" rel="stylesheet"/>
   <script src="script.js" defer></script>
+
+<style>
+  body.page-services #services .section-header {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.75rem;
+  }
+  body.page-services #services .section-intro {
+    margin-top: 0.85rem;
+  }
+  body.page-services #services .process-steps {
+    margin-top: 0.35rem;
+  }
+  body.page-services .cta-band-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: block;
+  }
+  body.page-services .cta-band-copy {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+  }
+  body.page-services .cta-band-copy h2 {
+    color: var(--white);
+  }
+  body.page-services .cta-band-copy h2 em {
+    color: var(--gold-lt);
+  }
+  body.page-services .cta-band-copy p {
+    color: rgba(255,255,255,0.74);
+  }
+</style>
 </head>
 
 <body>
@@ -300,12 +333,14 @@
 <section class="cta-band">
   <div class="container">
     <div class="cta-band-inner reveal">
-      <div class="section-label centered"><span>Ready to Start?</span></div>
-      <h2>Let's Talk Through Your <em>Home Sale</em></h2>
-      <p>
-        We will review your market position, talk through pricing and preparation,
-        and map out a clear path forward based on your home, your timing, and your goals.
-      </p>
+      <div class="cta-band-copy">
+        <div class="section-label centered"><span>Ready to Start?</span></div>
+        <h2>Let's Talk Through Your <em>Home Sale</em></h2>
+        <p>
+          We will review your market position, talk through pricing and preparation,
+          and map out a clear path forward based on your home, your timing, and your goals.
+        </p>
+      </div>
       <a href="contact.html" class="btn btn-primary">Schedule a Seller Consultation</a>
     </div>
   </div>
