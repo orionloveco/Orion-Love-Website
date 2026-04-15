@@ -5486,81 +5486,37 @@ body[class^="page-"] .mobile-toggle span {
 }
 
 /* ---------- Shared hero wrappers ---------- */
-body.page-index .hero,
-body.page-about .hero,
-body.page-grand-junction-home-value .hero,
-body.page-redlands-homes .hero,
-body.page-orchard-mesa-homes .hero,
-body.page-selling-in-fruita .hero,
-body.page-selling-in-palisade .hero,
-body.page-clifton-grand-junction .hero,
-body.page-downtown-grand-junction .hero,
-body.page-loma-mack-grand-junction .hero,
-body.page-north-grand-junction .hero,
-body.page-northeast-grand-junction .hero,
-body.page-northwest-grand-junction .hero,
-body.page-buyers .buyers-hero,
-body.page-services .services-hero,
-body.page-contact .contact-hero,
-body.page-faq .faq-hero {
+/* Compatibility alias: .buyers-hero/.services-hero/.contact-hero/.faq-hero all carry .hero */
+body.page-hero-aligned .hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
 }
 
-body.page-index .hero,
-body.page-about .hero,
-body.page-grand-junction-home-value .hero,
-body.page-redlands-homes .hero,
-body.page-orchard-mesa-homes .hero,
-body.page-selling-in-fruita .hero,
-body.page-selling-in-palisade .hero,
-body.page-clifton-grand-junction .hero,
-body.page-downtown-grand-junction .hero,
-body.page-loma-mack-grand-junction .hero,
-body.page-north-grand-junction .hero,
-body.page-northeast-grand-junction .hero,
-body.page-northwest-grand-junction .hero {
+body.page-hero-aligned:not(.page-buyers):not(.page-services):not(.page-contact):not(.page-faq) .hero {
   min-height: 78vh;
   display: flex;
   align-items: center;
 }
 
-body.page-buyers .buyers-hero,
-body.page-services .services-hero,
+body.page-buyers .hero,
+body.page-services .hero,
 body.page-contact .contact-hero,
 body.page-faq .faq-hero {
   padding: clamp(7rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 6rem);
   text-align: left;
 }
 
-body.page-buyers .buyers-hero .container,
-body.page-services .services-hero .container,
+body.page-buyers .hero .container,
+body.page-services .hero .container,
 body.page-contact .contact-hero .container,
 body.page-faq .faq-hero .container {
   position: relative;
   z-index: 1;
 }
 
-body.page-index .hero-content,
-body.page-about .hero-content,
-body.page-index .hero-inner,
-body.page-about .hero-inner,
-body.page-buyers .buyers-hero .hero-inner,
-body.page-services .services-hero .hero-inner,
-body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner,
-body.page-grand-junction-home-value .hero-inner,
-body.page-redlands-homes .hero-inner,
-body.page-orchard-mesa-homes .hero-inner,
-body.page-selling-in-fruita .hero-inner,
-body.page-selling-in-palisade .hero-inner,
-body.page-clifton-grand-junction .hero-inner,
-body.page-downtown-grand-junction .hero-inner,
-body.page-loma-mack-grand-junction .hero-inner,
-body.page-north-grand-junction .hero-inner,
-body.page-northeast-grand-junction .hero-inner,
-body.page-northwest-grand-junction .hero-inner {
+/* Compatibility alias: support legacy .hero-content and current .hero-inner */
+body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -5570,31 +5526,16 @@ body.page-northwest-grand-junction .hero-inner {
   text-align: left;
 }
 
-body.page-buyers .buyers-hero .hero-inner,
-body.page-services .services-hero .hero-inner,
+body.page-buyers .hero .hero-inner,
+body.page-services .hero .hero-inner,
 body.page-contact .contact-hero .hero-inner,
 body.page-faq .faq-hero .hero-inner {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-body.page-index .hero-eyebrow,
-body.page-about .hero-eyebrow,
-body.page-buyers .hero-eyebrow,
-body.page-services .hero-eyebrow,
-body.page-contact .hero-eyebrow,
-body.page-faq .hero-eyebrow,
-body.page-grand-junction-home-value .hero-eyebrow,
-body.page-redlands-homes .hero-eyebrow,
-body.page-orchard-mesa-homes .hero-eyebrow,
-body.page-selling-in-fruita .hero-eyebrow,
-body.page-selling-in-palisade .hero-eyebrow,
-body.page-clifton-grand-junction .hero-eyebrow,
-body.page-downtown-grand-junction .hero-eyebrow,
-body.page-loma-mack-grand-junction .hero-eyebrow,
-body.page-north-grand-junction .hero-eyebrow,
-body.page-northeast-grand-junction .hero-eyebrow,
-body.page-northwest-grand-junction .hero-eyebrow {
+/* Compatibility alias: normalize all page-hero-aligned eyebrow variants */
+body.page-hero-aligned .hero .hero-eyebrow {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -5607,40 +5548,8 @@ body.page-northwest-grand-junction .hero-eyebrow {
   font-weight: 600;
 }
 
-body.page-index .hero-eyebrow::before,
-body.page-index .hero-eyebrow::after,
-body.page-about .hero-eyebrow::before,
-body.page-about .hero-eyebrow::after,
-body.page-buyers .hero-eyebrow::before,
-body.page-buyers .hero-eyebrow::after,
-body.page-services .hero-eyebrow::before,
-body.page-services .hero-eyebrow::after,
-body.page-contact .hero-eyebrow::before,
-body.page-contact .hero-eyebrow::after,
-body.page-faq .hero-eyebrow::before,
-body.page-faq .hero-eyebrow::after,
-body.page-grand-junction-home-value .hero-eyebrow::before,
-body.page-grand-junction-home-value .hero-eyebrow::after,
-body.page-redlands-homes .hero-eyebrow::before,
-body.page-redlands-homes .hero-eyebrow::after,
-body.page-orchard-mesa-homes .hero-eyebrow::before,
-body.page-orchard-mesa-homes .hero-eyebrow::after,
-body.page-selling-in-fruita .hero-eyebrow::before,
-body.page-selling-in-fruita .hero-eyebrow::after,
-body.page-selling-in-palisade .hero-eyebrow::before,
-body.page-selling-in-palisade .hero-eyebrow::after,
-body.page-clifton-grand-junction .hero-eyebrow::before,
-body.page-clifton-grand-junction .hero-eyebrow::after,
-body.page-downtown-grand-junction .hero-eyebrow::before,
-body.page-downtown-grand-junction .hero-eyebrow::after,
-body.page-loma-mack-grand-junction .hero-eyebrow::before,
-body.page-loma-mack-grand-junction .hero-eyebrow::after,
-body.page-north-grand-junction .hero-eyebrow::before,
-body.page-north-grand-junction .hero-eyebrow::after,
-body.page-northeast-grand-junction .hero-eyebrow::before,
-body.page-northeast-grand-junction .hero-eyebrow::after,
-body.page-northwest-grand-junction .hero-eyebrow::before,
-body.page-northwest-grand-junction .hero-eyebrow::after {
+body.page-hero-aligned .hero .hero-eyebrow::before,
+body.page-hero-aligned .hero .hero-eyebrow::after {
   content: "";
   width: 36px;
   height: 1px;
@@ -5648,23 +5557,7 @@ body.page-northwest-grand-junction .hero-eyebrow::after {
   opacity: 0.6;
 }
 
-body.page-index .hero-eyebrow span,
-body.page-about .hero-eyebrow span,
-body.page-buyers .hero-eyebrow span,
-body.page-services .hero-eyebrow span,
-body.page-contact .hero-eyebrow span,
-body.page-faq .hero-eyebrow span,
-body.page-grand-junction-home-value .hero-eyebrow span,
-body.page-redlands-homes .hero-eyebrow span,
-body.page-orchard-mesa-homes .hero-eyebrow span,
-body.page-selling-in-fruita .hero-eyebrow span,
-body.page-selling-in-palisade .hero-eyebrow span,
-body.page-clifton-grand-junction .hero-eyebrow span,
-body.page-downtown-grand-junction .hero-eyebrow span,
-body.page-loma-mack-grand-junction .hero-eyebrow span,
-body.page-north-grand-junction .hero-eyebrow span,
-body.page-northeast-grand-junction .hero-eyebrow span,
-body.page-northwest-grand-junction .hero-eyebrow span {
+body.page-hero-aligned .hero .hero-eyebrow span {
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
@@ -5672,23 +5565,8 @@ body.page-northwest-grand-junction .hero-eyebrow span {
   font-weight: inherit;
 }
 
-body.page-index .hero-title,
-body.page-about .hero-title,
-body.page-buyers .buyers-hero h1,
-body.page-services .services-hero h1,
-body.page-contact .contact-hero h1,
-body.page-faq .faq-hero h1,
-body.page-grand-junction-home-value .hero h1,
-body.page-redlands-homes .hero h1,
-body.page-orchard-mesa-homes .hero h1,
-body.page-selling-in-fruita .hero h1,
-body.page-selling-in-palisade .hero h1,
-body.page-clifton-grand-junction .hero h1,
-body.page-downtown-grand-junction .hero h1,
-body.page-loma-mack-grand-junction .hero h1,
-body.page-north-grand-junction .hero h1,
-body.page-northeast-grand-junction .hero h1,
-body.page-northwest-grand-junction .hero h1 {
+/* Compatibility alias: map .hero-title and plain h1 into one contract */
+body.page-hero-aligned .hero :is(h1, .hero-title) {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 300;
@@ -5699,48 +5577,13 @@ body.page-northwest-grand-junction .hero h1 {
   max-width: 14ch;
 }
 
-body.page-index .hero-title em,
-body.page-about .hero-title em,
-body.page-buyers .buyers-hero h1 em,
-body.page-services .services-hero h1 em,
-body.page-contact .contact-hero h1 em,
-body.page-faq .faq-hero h1 em,
-body.page-grand-junction-home-value .hero h1 em,
-body.page-redlands-homes .hero h1 em,
-body.page-orchard-mesa-homes .hero h1 em,
-body.page-selling-in-fruita .hero h1 em,
-body.page-selling-in-palisade .hero h1 em,
-body.page-clifton-grand-junction .hero h1 em,
-body.page-downtown-grand-junction .hero h1 em,
-body.page-loma-mack-grand-junction .hero h1 em,
-body.page-north-grand-junction .hero h1 em,
-body.page-northeast-grand-junction .hero h1 em,
-body.page-northwest-grand-junction .hero h1 em {
+body.page-hero-aligned .hero :is(h1, .hero-title) em {
   color: var(--gold-lt);
   font-style: italic;
 }
 
-body.page-index .hero-subtitle,
-body.page-about .hero-subtitle,
-body.page-buyers .buyers-hero .hero-lead,
-body.page-buyers .buyers-hero p,
-body.page-services .services-hero .hero-lead,
-body.page-services .services-hero p,
-body.page-contact .contact-hero .hero-lead,
-body.page-contact .contact-hero p,
-body.page-faq .faq-hero .hero-lead,
-body.page-faq .faq-hero p,
-body.page-grand-junction-home-value .hero-lead,
-body.page-redlands-homes .hero-lead,
-body.page-orchard-mesa-homes .hero-lead,
-body.page-selling-in-fruita .hero-lead,
-body.page-selling-in-palisade .hero-lead,
-body.page-clifton-grand-junction .hero-lead,
-body.page-downtown-grand-junction .hero-lead,
-body.page-loma-mack-grand-junction .hero-lead,
-body.page-north-grand-junction .hero-lead,
-body.page-northeast-grand-junction .hero-lead,
-body.page-northwest-grand-junction .hero-lead {
+/* Compatibility alias: map legacy .hero-subtitle and current .hero-lead */
+body.page-hero-aligned .hero :is(.hero-lead, .hero-subtitle) {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
   color: rgba(255, 255, 255, 0.78);
   max-width: 54ch;
@@ -5749,23 +5592,7 @@ body.page-northwest-grand-junction .hero-lead {
   font-weight: 300;
 }
 
-body.page-index .hero-cta,
-body.page-about .hero-cta,
-body.page-buyers .hero-cta,
-body.page-services .hero-cta,
-body.page-contact .hero-cta,
-body.page-faq .hero-cta,
-body.page-grand-junction-home-value .hero-cta,
-body.page-redlands-homes .hero-cta,
-body.page-orchard-mesa-homes .hero-cta,
-body.page-selling-in-fruita .hero-cta,
-body.page-selling-in-palisade .hero-cta,
-body.page-clifton-grand-junction .hero-cta,
-body.page-downtown-grand-junction .hero-cta,
-body.page-loma-mack-grand-junction .hero-cta,
-body.page-north-grand-junction .hero-cta,
-body.page-northeast-grand-junction .hero-cta,
-body.page-northwest-grand-junction .hero-cta {
+body.page-hero-aligned .hero .hero-cta {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -5806,46 +5633,12 @@ body.page-about .hero-trust {
     left: 0;
   }
 
-  body.page-index .hero-content,
-  body.page-about .hero-content,
-  body.page-index .hero-inner,
-  body.page-about .hero-inner,
-  body.page-buyers .buyers-hero .hero-inner,
-  body.page-services .services-hero .hero-inner,
-  body.page-contact .contact-hero .hero-inner,
-  body.page-faq .faq-hero .hero-inner,
-  body.page-grand-junction-home-value .hero-inner,
-  body.page-redlands-homes .hero-inner,
-  body.page-orchard-mesa-homes .hero-inner,
-  body.page-selling-in-fruita .hero-inner,
-  body.page-selling-in-palisade .hero-inner,
-  body.page-clifton-grand-junction .hero-inner,
-  body.page-downtown-grand-junction .hero-inner,
-  body.page-loma-mack-grand-junction .hero-inner,
-  body.page-north-grand-junction .hero-inner,
-  body.page-northeast-grand-junction .hero-inner,
-  body.page-northwest-grand-junction .hero-inner {
+  body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
     padding-top: clamp(6rem, 10vw, 7rem);
     padding-bottom: 2.5rem;
   }
 
-  body.page-index .hero-cta,
-  body.page-about .hero-cta,
-  body.page-buyers .hero-cta,
-  body.page-services .hero-cta,
-  body.page-contact .hero-cta,
-  body.page-faq .hero-cta,
-  body.page-grand-junction-home-value .hero-cta,
-  body.page-redlands-homes .hero-cta,
-  body.page-orchard-mesa-homes .hero-cta,
-  body.page-selling-in-fruita .hero-cta,
-  body.page-selling-in-palisade .hero-cta,
-  body.page-clifton-grand-junction .hero-cta,
-  body.page-downtown-grand-junction .hero-cta,
-  body.page-loma-mack-grand-junction .hero-cta,
-  body.page-north-grand-junction .hero-cta,
-  body.page-northeast-grand-junction .hero-cta,
-  body.page-northwest-grand-junction .hero-cta {
+  body.page-hero-aligned .hero .hero-cta {
     flex-direction: column;
     align-items: flex-start;
   }
