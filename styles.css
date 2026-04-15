@@ -904,13 +904,6 @@ p { color: var(--text); }
 body.mobile-nav-open { overflow:hidden; }
 
 /* ===== about.html ===== */
-body.page-about *, body.page-about *::before, body.page-about *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-about {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-about h1, body.page-about h2, body.page-about h3 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;
@@ -921,9 +914,6 @@ body.page-about .script {font-family: "Allura", cursive;
       font-size: 1.35em;
       display: block;
       margin-bottom: 0.2em;}
-body.page-about .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-about .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -1432,19 +1422,9 @@ body.page-about .mobile-toggle span {transition: transform 0.25s ease, opacity 0
 }
 
 /* ===== buyers.html ===== */
-body.page-buyers *, body.page-buyers *::before, body.page-buyers *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-buyers {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-buyers h1, body.page-buyers h2, body.page-buyers h3, body.page-buyers h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-buyers .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-buyers .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -1839,11 +1819,7 @@ body.page-buyers .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 }
 
 /* ===== clifton-grand-junction.html ===== */
-body.page-clifton-grand-junction *, body.page-clifton-grand-junction *::before, body.page-clifton-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-clifton-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-clifton-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-clifton-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-clifton-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-clifton-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-clifton-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -1880,19 +1856,9 @@ body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;
 }
 
 /* ===== contact.html ===== */
-body.page-contact *, body.page-contact *::before, body.page-contact *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-contact {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-contact h1, body.page-contact h2, body.page-contact h3, body.page-contact h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-contact .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-contact .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -2305,11 +2271,7 @@ body.page-contact .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 }
 
 /* ===== downtown-grand-junction.html ===== */
-body.page-downtown-grand-junction *, body.page-downtown-grand-junction *::before, body.page-downtown-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-downtown-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-downtown-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-downtown-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-downtown-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-downtown-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-downtown-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -2348,19 +2310,9 @@ body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5
 }
 
 /* ===== faq.html ===== */
-body.page-faq *, body.page-faq *::before, body.page-faq *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-faq {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-faq .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -2731,17 +2683,9 @@ body.page-faq .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2
 }
 
 /* ===== grand-junction-home-value.html ===== */
-body.page-grand-junction-home-value *, body.page-grand-junction-home-value *::before, body.page-grand-junction-home-value *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-grand-junction-home-value {font-family: "Raleway", sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-grand-junction-home-value .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-grand-junction-home-value section {padding: clamp(3.5rem,6vw,5rem) 0;}
 body.page-grand-junction-home-value .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
 body.page-grand-junction-home-value .main-header.scrolled {background: rgba(12,26,61,0.97);
@@ -2901,20 +2845,10 @@ body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;
 }
 
 /* ===== index.html ===== */
-body.page-index *, body.page-index *::before, body.page-index *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-index {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-index .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
@@ -3340,11 +3274,7 @@ body.page-index .mobile-toggle span {transition: transform 0.25s ease, opacity 0
 }
 
 /* ===== loma-mack-grand-junction.html ===== */
-body.page-loma-mack-grand-junction *, body.page-loma-mack-grand-junction *::before, body.page-loma-mack-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-loma-mack-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-loma-mack-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-loma-mack-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-loma-mack-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-loma-mack-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-loma-mack-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3384,11 +3314,7 @@ body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5re
 }
 
 /* ===== north-grand-junction.html ===== */
-body.page-north-grand-junction *, body.page-north-grand-junction *::before, body.page-north-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-north-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-north-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-north-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-north-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-north-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-north-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3427,11 +3353,7 @@ body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem
 }
 
 /* ===== northeast-grand-junction.html ===== */
-body.page-northeast-grand-junction *, body.page-northeast-grand-junction *::before, body.page-northeast-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-northeast-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northeast-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northeast-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-northeast-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-northeast-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-northeast-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3470,11 +3392,7 @@ body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 }
 
 /* ===== northwest-grand-junction.html ===== */
-body.page-northwest-grand-junction *, body.page-northwest-grand-junction *::before, body.page-northwest-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-northwest-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northwest-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northwest-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-northwest-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-northwest-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-northwest-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3513,11 +3431,7 @@ body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 }
 
 /* ===== orchard-mesa-homes.html ===== */
-body.page-orchard-mesa-homes *, body.page-orchard-mesa-homes *::before, body.page-orchard-mesa-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-orchard-mesa-homes {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-orchard-mesa-homes .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-orchard-mesa-homes section {padding:clamp(3.5rem,6vw,5rem) 0;}
 body.page-orchard-mesa-homes .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-orchard-mesa-homes .btn-primary {background:var(--gold);color:var(--white);box-shadow:0 4px 20px rgba(184,146,58,0.35);}
 body.page-orchard-mesa-homes .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3633,11 +3547,7 @@ body.page-privacy .contact-box a {color: var(--primary);
 body.page-privacy .contact-box a:hover {color: var(--accent);}
 
 /* ===== redlands-homes.html ===== */
-body.page-redlands-homes *, body.page-redlands-homes *::before, body.page-redlands-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-redlands-homes {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-redlands-homes h1, body.page-redlands-homes h2, body.page-redlands-homes h3, body.page-redlands-homes h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-redlands-homes .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-redlands-homes section {padding: clamp(3.5rem,6vw,5rem) 0;}
 body.page-redlands-homes .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-redlands-homes .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-redlands-homes .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -3730,11 +3640,7 @@ body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
 }
 
 /* ===== selling-in-fruita.html ===== */
-body.page-selling-in-fruita *, body.page-selling-in-fruita *::before, body.page-selling-in-fruita *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-selling-in-fruita {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-fruita h1, body.page-selling-in-fruita h2, body.page-selling-in-fruita h3, body.page-selling-in-fruita h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-fruita .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-fruita section {padding: clamp(3.5rem,6vw,5rem) 0;}
 body.page-selling-in-fruita .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-selling-in-fruita .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-selling-in-fruita .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -3830,11 +3736,7 @@ body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 }
 
 /* ===== selling-in-palisade.html ===== */
-body.page-selling-in-palisade *, body.page-selling-in-palisade *::before, body.page-selling-in-palisade *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-selling-in-palisade {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-palisade h1, body.page-selling-in-palisade h2, body.page-selling-in-palisade h3, body.page-selling-in-palisade h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-palisade .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-palisade section {padding: clamp(3.5rem,6vw,5rem) 0;}
 body.page-selling-in-palisade .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-selling-in-palisade .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-selling-in-palisade .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -3939,19 +3841,9 @@ body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pr
 }
 
 /* ===== services.html ===== */
-body.page-services *, body.page-services *::before, body.page-services *::after {box-sizing: border-box; margin: 0; padding: 0;}
-body.page-services {font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;}
 body.page-services h1, body.page-services h2, body.page-services h3, body.page-services h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-services .container {max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
 body.page-services .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
