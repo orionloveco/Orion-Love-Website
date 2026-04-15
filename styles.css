@@ -2965,7 +2965,7 @@ body.page-index .hero {position: relative;
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;
       overflow: hidden;}
-body.page-index .hero > .container {max-width: none;
+body.page-hero-aligned .hero > .container {max-width: none;
       margin: 0;}
 body.page-index .hero::before {content: "";
       position: absolute;
