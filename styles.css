@@ -2297,7 +2297,6 @@ body.page-downtown-grand-junction .nbhd-intro {background:var(--white);border-to
 body.page-downtown-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-downtown-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-downtown-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-downtown-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3342,7 +3341,6 @@ body.page-north-grand-junction .nbhd-intro {background:var(--white);border-top:1
 body.page-north-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-north-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-north-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3381,7 +3379,6 @@ body.page-northeast-grand-junction .nbhd-intro {background:var(--white);border-t
 body.page-northeast-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northeast-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northeast-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3420,7 +3417,6 @@ body.page-northwest-grand-junction .nbhd-intro {background:var(--white);border-t
 body.page-northwest-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northwest-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northwest-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -5729,7 +5725,7 @@ body:is(
   background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: clamp(1.75rem, 2.4vw, 2.4rem);
 }
 
 body:is(
@@ -5746,7 +5742,7 @@ body:is(
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 body:is(
@@ -5756,11 +5752,34 @@ body:is(
   .page-north-grand-junction,
   .page-northeast-grand-junction,
   .page-northwest-grand-junction
-) .fact-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.65rem 0;
+) .quick-facts-editorial {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 2.3vw, 2.5rem);
+  align-items: start;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .quick-facts-headlines {
+  display: grid;
+  gap: 1rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .headline-stat {
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--sand);
 }
 
@@ -5771,8 +5790,9 @@ body:is(
   .page-north-grand-junction,
   .page-northeast-grand-junction,
   .page-northwest-grand-junction
-) .fact-row:last-child {
+) .headline-stat:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 body:is(
@@ -5782,22 +5802,164 @@ body:is(
   .page-north-grand-junction,
   .page-northeast-grand-junction,
   .page-northwest-grand-junction
-) .fact-label {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .fact-value {
+) .headline-stat-value {
+  display: block;
   font-family: "Cormorant Garamond",serif;
-  font-size: 1.2rem;
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  line-height: 1;
   color: var(--navy);
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .headline-stat-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .quick-facts-support {
+  display: grid;
+  gap: 1rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-group {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-group h5 {
+  font-family: "Raleway",sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-item {
+  display: grid;
+  gap: 0.18rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-item dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .support-item dd {
+  margin: 0;
+  font-family: "Cormorant Garamond",serif;
+  font-size: 1.32rem;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  body:is(
+    .page-clifton-grand-junction,
+    .page-downtown-grand-junction,
+    .page-loma-mack-grand-junction,
+    .page-north-grand-junction,
+    .page-northeast-grand-junction,
+    .page-northwest-grand-junction
+  ) .quick-facts-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  body:is(
+    .page-clifton-grand-junction,
+    .page-downtown-grand-junction,
+    .page-loma-mack-grand-junction,
+    .page-north-grand-junction,
+    .page-northeast-grand-junction,
+    .page-northwest-grand-junction
+  ) .quick-facts-headlines {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  body:is(
+    .page-clifton-grand-junction,
+    .page-downtown-grand-junction,
+    .page-loma-mack-grand-junction,
+    .page-north-grand-junction,
+    .page-northeast-grand-junction,
+    .page-northwest-grand-junction
+  ) .headline-stat {
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    background: var(--white);
+  }
 }
 
 body:is(
