@@ -7055,28 +7055,308 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
   box-shadow: none;
 }
 
+/* =========================================================
+   Area master pages
+========================================================= */
+.hero-area-master .area-master-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 760px);
+  padding: clamp(6.5rem, 11vw, 8.5rem) 0 clamp(4rem, 8vw, 6rem);
+}
 
-/* ===== north-grand-junction form section ===== */
-body.page-north-grand-junction .form-section {background: var(--cream);}
-body.page-north-grand-junction .form-inner {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-north-grand-junction .form-copy h2 {font-size:clamp(2.1rem,4vw,3.25rem);margin-bottom:1rem;}
-body.page-north-grand-junction .form-copy > p {color:var(--muted);line-height:1.9;margin-bottom:1.5rem;max-width:60ch;}
-body.page-north-grand-junction .check-list {list-style:none;}
-body.page-north-grand-junction .check-list li {display:flex;align-items:flex-start;gap:0.75rem;color:var(--muted);font-size:0.95rem;margin-bottom:0.85rem;}
-body.page-north-grand-junction .check-list li svg {width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;margin-top:3px;}
-body.page-north-grand-junction .form-card {background:var(--white);border-radius:var(--radius-lg);padding:2.5rem 2.25rem;box-shadow:var(--shadow-lg);border:1px solid var(--sand);}
-body.page-north-grand-junction .form-card h3 {font-size:1.5rem;color:var(--navy);margin-bottom:0.4rem;}
-body.page-north-grand-junction .form-card .form-sub {font-size:0.9rem;color:var(--muted);margin-bottom:1.75rem;}
-body.page-north-grand-junction .form-row {display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-body.page-north-grand-junction .form-group {margin-bottom:1rem;}
-body.page-north-grand-junction .form-group label {display:block;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:0.55rem;}
-body.page-north-grand-junction .form-group input,
-body.page-north-grand-junction .form-group select {width:100%;padding:0.95rem 1rem;border:1px solid rgba(12,26,61,0.14);border-radius:14px;background:var(--white);font:inherit;color:var(--text);}
-body.page-north-grand-junction .form-group input:focus,
-body.page-north-grand-junction .form-group select:focus {outline:none;border-color:rgba(184,146,58,0.8);box-shadow:0 0 0 3px rgba(184,146,58,0.12);}
-body.page-north-grand-junction .form-submit {width:100%;margin-top:0.25rem;}
-body.page-north-grand-junction .consent-note {font-size:0.8rem;line-height:1.7;color:var(--muted);margin-top:1rem;}
+.hero-area-master .hero-lead {
+  max-width: 58ch;
+  color: rgba(255,255,255,0.78);
+}
+
+.area-master-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.44rem 0.84rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(184, 146, 58, 0.34);
+  background: rgba(184, 146, 58, 0.11);
+  color: var(--gold-lt);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-downtown-master::before,
+.hero-north-master::before,
+.hero-northeast-master::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-downtown-master {
+  background:
+    linear-gradient(90deg, rgba(8,18,50,0.90) 0%, rgba(8,18,50,0.78) 36%, rgba(8,18,50,0.42) 66%, rgba(8,18,50,0.16) 100%),
+    radial-gradient(900px 420px at 18% 22%, rgba(184,146,58,0.16), transparent 60%),
+    url("images/downtown-grand-junction.jpg") center center / cover no-repeat;
+}
+
+.hero-north-master {
+  background:
+    linear-gradient(90deg, rgba(8,18,50,0.92) 0%, rgba(8,18,50,0.83) 38%, rgba(8,18,50,0.52) 68%, rgba(8,18,50,0.18) 100%),
+    radial-gradient(900px 420px at 18% 22%, rgba(184,146,58,0.14), transparent 60%),
+    url("images/north-grand-junction.jpg") center center / cover no-repeat;
+}
+
+.hero-northeast-master {
+  background:
+    linear-gradient(90deg, rgba(8,18,50,0.92) 0%, rgba(8,18,50,0.82) 38%, rgba(8,18,50,0.50) 68%, rgba(8,18,50,0.16) 100%),
+    radial-gradient(900px 420px at 18% 22%, rgba(184,146,58,0.13), transparent 60%),
+    url("images/northeast-grand-junction.jpg") center center / cover no-repeat;
+}
+
+.area-master-intro-shell {
+  padding-top: clamp(3.25rem, 6vw, 4.75rem);
+  background: var(--white);
+}
+
+.area-master-intro-grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: start;
+}
+
+.area-master-intro-grid--editorial,
+.area-master-intro-grid--seller,
+.area-master-intro-grid--practical {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+}
+
+.area-master-copy h2 {
+  margin-bottom: 1rem;
+}
+
+.area-master-copy p + p {
+  margin-top: 1rem;
+}
+
+.area-master-panel {
+  border-radius: 28px;
+  padding: 1.45rem 1.4rem;
+  box-shadow: var(--shadow-card);
+}
+
+.area-master-panel--seller {
+  background: linear-gradient(180deg, rgba(12,26,61,0.99) 0%, rgba(17,34,77,0.98) 100%);
+  border: 1px solid rgba(184,146,58,0.18);
+}
+
+.area-master-panel--seller h3,
+.area-master-panel--seller .master-stat-value,
+.area-master-panel--seller .master-stat-label,
+.area-master-panel--seller .master-mini-stat strong,
+.area-master-panel--seller .master-mini-stat span,
+.area-master-panel--seller .master-panel-note,
+.area-master-panel--seller .master-panel-eyebrow span {
+  color: var(--white);
+}
+
+.area-master-panel--seller .master-panel-eyebrow::before {
+  background: rgba(212,170,90,0.75);
+}
+
+.area-master-panel--practical {
+  background: rgba(247, 244, 237, 0.84);
+  border: 1px solid rgba(184,146,58,0.16);
+}
+
+.area-master-panel:not(.area-master-panel--seller):not(.area-master-panel--practical) {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(184,146,58,0.14);
+}
+
+.master-panel-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.master-panel-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: rgba(184,146,58,0.6);
+  display: block;
+}
+
+.master-panel-eyebrow span {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.area-master-panel h3 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  margin-bottom: 1rem;
+}
+
+.master-stat-stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.master-stat-row {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(184,146,58,0.14);
+}
+
+.master-stat-row:last-of-type {
+  border-bottom: 0;
+}
+
+.master-stat-value {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  color: var(--navy);
+}
+
+.master-stat-label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.master-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.master-mini-stat {
+  background: rgba(184,146,58,0.07);
+  border: 1px solid rgba(184,146,58,0.12);
+  border-radius: 18px;
+  padding: 0.95rem 0.9rem;
+}
+
+.master-mini-stat strong,
+.master-strip-stat strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--navy);
+  margin-bottom: 0.24rem;
+}
+
+.master-mini-stat span,
+.master-strip-stat span,
+.master-panel-note {
+  font-size: 0.75rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.master-panel-note {
+  margin-top: 1rem;
+}
+
+.master-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.master-strip-stat {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(184,146,58,0.14);
+  border-radius: 18px;
+  padding: 1rem 0.95rem;
+}
+
+.area-feature-split {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: start;
+}
+
+.area-feature-split--editorial,
+.area-feature-split--seller,
+.area-feature-split--practical {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.area-feature-copy h2 {
+  margin-bottom: 0.8rem;
+}
+
+.area-feature-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-callout {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(184,146,58,0.12);
+  border-radius: 22px;
+  padding: 1.15rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-callout i {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184,146,58,0.1);
+  color: var(--gold);
+}
+
+.feature-callout strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--navy);
+}
+
+.feature-callout p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 @media (max-width: 980px) {
-  body.page-north-grand-junction .form-inner {grid-template-columns:1fr;gap:2.5rem;}
-  body.page-north-grand-junction .form-row {grid-template-columns:1fr;}
+  .area-master-intro-grid--editorial,
+  .area-master-intro-grid--seller,
+  .area-master-intro-grid--practical,
+  .area-feature-split--editorial,
+  .area-feature-split--seller,
+  .area-feature-split--practical {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-area-master .area-master-hero-inner {
+    width: 100%;
+    padding-top: 6rem;
+  }
+
+  .master-mini-grid,
+  .master-stat-strip {
+    grid-template-columns: 1fr;
+  }
 }
