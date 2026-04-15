@@ -310,7 +310,45 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ============================================================
      Shared neighborhood stats loader
      ============================================================ */
-  async function loadMarketStats(areaKey, opts = {}) {
+  function renderMarketAreaBlock(blockEl, areaData, generatedAt) {
+    const useHtmlCurrency = blockEl.dataset.marketCurrency === 'html';
+
+    blockEl.querySelectorAll('[data-market-stat]').forEach((statEl) => {
+      const statKey = statEl.dataset.marketStat;
+
+      if (statKey === 'medianPrice') {
+        if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(areaData.medianPrice);
+        else statEl.textContent = formatCurrency(areaData.medianPrice);
+        return;
+      }
+
+      if (statKey === 'averageDaysOnMarket') {
+        statEl.textContent = formatDays(areaData.averageDaysOnMarket);
+        return;
+      }
+
+      if (statKey === 'newListings') {
+        statEl.textContent = formatNumber(areaData.newListings);
+        return;
+      }
+
+      if (statKey === 'totalListings') {
+        statEl.textContent = formatNumber(areaData.totalListings);
+      }
+    });
+
+    const noteEl = blockEl.querySelector('[data-market-note]');
+    if (!noteEl) return;
+
+    const areaLabel = blockEl.dataset.marketAreaLabel || '';
+    const updated = areaData.lastUpdatedDate || generatedAt;
+    noteEl.textContent = formatUpdatedDate(updated, areaLabel);
+  }
+
+  async function loadMarketStatsBlocks() {
+    const marketBlocks = [...document.querySelectorAll('[data-market-area]')];
+    if (!marketBlocks.length) return;
+
     try {
       const res = await fetch(MARKET_STATS_URL, {
         headers: { Accept: 'application/json' },
@@ -319,54 +357,25 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
-      const area = data?.areas?.[areaKey];
 
-      if (!area) throw new Error(`Area not found: ${areaKey}`);
+      marketBlocks.forEach((blockEl) => {
+        const areaKey = blockEl.dataset.marketArea;
+        const areaData = data?.areas?.[areaKey];
 
-      const medianEls = document.querySelectorAll(
-        '[data-market-stat="medianPrice"], #marketMedianPrice, #omMedianPrice, #redlandsMedianPrice, #palMedianPrice, #fruitaMedianSalePrice'
-      );
-      const domEls = document.querySelectorAll(
-        '[data-market-stat="averageDaysOnMarket"], #marketDaysOnMarket, #omDaysOnMarket, #redlandsDaysOnMarket, #palAvgDom, #fruitaDaysOnMarket'
-      );
-      const newEls = document.querySelectorAll(
-        '#omNewListings, #redlandsNewListings, #palNewListings, #fruitaNewListings'
-      );
-      const totalEls = document.querySelectorAll(
-        '#omTotalListings, #redlandsTotalListings, #palTotalListings, #fruitaTotalListings'
-      );
-      const noteEls = document.querySelectorAll(
-        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
-      );
+        if (!areaData) {
+          console.error(`Market stats area not found: ${areaKey}`);
+          const noteEl = blockEl.querySelector('[data-market-note]');
+          if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+          return;
+        }
 
-      medianEls.forEach((el) => {
-        if (opts.htmlCurrency) el.innerHTML = formatCurrencyHTML(area.medianPrice);
-        else el.textContent = formatCurrency(area.medianPrice);
-      });
-
-      domEls.forEach((el) => {
-        el.textContent = formatDays(area.averageDaysOnMarket);
-      });
-
-      newEls.forEach((el) => {
-        el.textContent = formatNumber(area.newListings);
-      });
-
-      totalEls.forEach((el) => {
-        el.textContent = formatNumber(area.totalListings);
-      });
-
-      const updated = area.lastUpdatedDate || data.generatedAt;
-      noteEls.forEach((el) => {
-        el.textContent = formatUpdatedDate(updated, opts.areaLabel);
+        renderMarketAreaBlock(blockEl, areaData, data.generatedAt);
       });
     } catch (err) {
       console.error('Market stats load failed:', err);
-      const noteEls = document.querySelectorAll(
-        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
-      );
-      noteEls.forEach((el) => {
-        el.textContent = 'Live market data temporarily unavailable';
+      marketBlocks.forEach((blockEl) => {
+        const noteEl = blockEl.querySelector('[data-market-note]');
+        if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
       });
     }
   }
@@ -556,49 +565,38 @@ document.addEventListener('DOMContentLoaded', function () {
       initSellerLeadForms();
     },
     'page-orchard-mesa-homes': () => {
-      loadMarketStats('orchard_mesa', {
-        htmlCurrency: true,
-        areaLabel: 'Orchard Mesa',
-      });
+      loadMarketStatsBlocks();
       initSellerLeadForms();
     },
     'page-redlands-homes': () => {
-      loadMarketStats('redlands', {
-        htmlCurrency: true,
-        areaLabel: 'Redlands',
-      });
+      loadMarketStatsBlocks();
       initSellerLeadForms();
     },
     'page-selling-in-fruita': () => {
-      loadMarketStats('fruita', {
-        areaLabel: 'Fruita',
-      });
+      loadMarketStatsBlocks();
       initSellerLeadForms();
     },
     'page-selling-in-palisade': () => {
-      loadMarketStats('palisade', {
-        htmlCurrency: true,
-        areaLabel: 'Palisade',
-      });
+      loadMarketStatsBlocks();
       initSellerLeadForms();
     },
     'page-clifton-grand-junction': () => {
-      loadMarketStats('clifton', { areaLabel: 'ZIP 81520' });
+      loadMarketStatsBlocks();
     },
     'page-downtown-grand-junction': () => {
-      loadMarketStats('downtown_grand_junction', { areaLabel: 'ZIP 81501' });
+      loadMarketStatsBlocks();
     },
     'page-loma-mack-grand-junction': () => {
-      loadMarketStats('loma_mack', { areaLabel: 'Loma / Mack' });
+      loadMarketStatsBlocks();
     },
     'page-north-grand-junction': () => {
-      loadMarketStats('north_grand_junction', { areaLabel: 'North Grand Junction' });
+      loadMarketStatsBlocks();
     },
     'page-northeast-grand-junction': () => {
-      loadMarketStats('northeast_grand_junction', { areaLabel: 'Northeast Grand Junction' });
+      loadMarketStatsBlocks();
     },
     'page-northwest-grand-junction': () => {
-      loadMarketStats('northwest_grand_junction', { areaLabel: 'Northwest Grand Junction' });
+      loadMarketStatsBlocks();
     },
   };
 
