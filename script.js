@@ -146,19 +146,24 @@ document.addEventListener('DOMContentLoaded', function () {
      Scroll reveal
      ============================================================ */
   const revealEls = document.querySelectorAll('.reveal');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (revealEls.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-    );
+    if (prefersReducedMotion) {
+      revealEls.forEach((el) => el.classList.add('visible'));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      );
 
-    revealEls.forEach((el) => revealObserver.observe(el));
+      revealEls.forEach((el) => revealObserver.observe(el));
+    }
   }
 
   /* ============================================================
@@ -398,355 +403,220 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     CONTACT PAGE
+     Page initializers
      ============================================================ */
-  if (document.body.classList.contains('page-contact')) {
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    const submitBtn = document.getElementById('submitBtn');
+  const getTrimmedValue = (id) => document.getElementById(id)?.value.trim() || '';
 
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+  const submitForm = ({
+    formId,
+    submitBtnId,
+    messageId,
+    payloadBuilder,
+    successMessage,
+    submitButtonDefaultText,
+    errorMessage = 'Something went wrong. Please call (970) 644-6781.',
+    validate,
+  }) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
 
-        const firstName = document.getElementById('firstName');
-        const lastName = document.getElementById('lastName');
-        const email = document.getElementById('email');
-        const phone = document.getElementById('phone');
-        const inquiry = document.getElementById('inquiry');
-        const message = document.getElementById('message');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        const requiredFields = [firstName, lastName, email, message];
-        let valid = true;
+      const btn = document.getElementById(submitBtnId);
+      const msg = document.getElementById(messageId);
 
-        requiredFields.forEach((field) => {
-          if (!field || !field.value.trim()) valid = false;
-        });
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+      }
 
-        if (!valid) {
-          showFormMsg(formMessage, 'Please fill in all required fields.', 'error');
+      try {
+        const validationError = validate ? validate() : '';
+        if (validationError) {
+          showFormMsg(msg, validationError, 'error');
           return;
         }
 
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending…';
+        await submitToProxy(payloadBuilder());
+        showFormMsg(msg, successMessage, 'success');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        showFormMsg(msg, errorMessage, 'error');
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = submitButtonDefaultText;
         }
+      }
+    });
+  };
 
-        try {
-          await submitToProxy({
-            firstName: firstName.value.trim(),
-            lastName: lastName.value.trim(),
-            email: email.value.trim(),
-            phone: phone?.value.trim() || '',
-            inquiry: inquiry?.value || 'General Inquiry',
-            message: message.value.trim(),
-          });
-
-          showFormMsg(
-            formMessage,
-            "Thank you for reaching out. I'll be in touch within 24 hours.",
-            'success'
-          );
-          contactForm.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(
-            formMessage,
-            'Something went wrong. Please call or email me directly.',
-            'error'
-          );
-        } finally {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Start the Conversation';
-          }
-        }
+  const pageInitializers = {
+    'page-contact': () => {
+      submitForm({
+        formId: 'contactForm',
+        submitBtnId: 'submitBtn',
+        messageId: 'formMessage',
+        validate: () => {
+          const requiredIds = ['contactFirstName', 'contactLastName', 'contactEmail', 'contactMessage'];
+          const hasAllValues = requiredIds.every((id) => getTrimmedValue(id));
+          return hasAllValues ? '' : 'Please fill in all required fields.';
+        },
+        payloadBuilder: () => ({
+          firstName: getTrimmedValue('contactFirstName'),
+          lastName: getTrimmedValue('contactLastName'),
+          email: getTrimmedValue('contactEmail'),
+          phone: getTrimmedValue('contactPhone'),
+          inquiry: document.getElementById('contactInquiry')?.value || 'General Inquiry',
+          message: getTrimmedValue('contactMessage'),
+        }),
+        successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
+        submitButtonDefaultText: 'Start the Conversation',
+        errorMessage: 'Something went wrong. Please call or email me directly.',
       });
-    }
-  }
-
-  /* ============================================================
-     GRAND JUNCTION HOME VALUE PAGE
-     ============================================================ */
-  if (document.body.classList.contains('page-grand-junction-home-value')) {
+    },
+    'page-grand-junction-home-value': () => {
     loadGrandJunctionCityStats();
-
-    const valForm = document.getElementById('valForm');
-    const valMsg = document.getElementById('valFormMsg');
-    const valSubmit = document.getElementById('valSubmit');
-
-    if (valForm) {
-      valForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        if (valSubmit) {
-          valSubmit.disabled = true;
-          valSubmit.textContent = 'Sending…';
-        }
-
-        try {
-          await submitToProxy({
-            firstName: document.getElementById('firstName')?.value.trim() || '',
-            lastName: document.getElementById('lastName')?.value.trim() || '',
-            email: document.getElementById('email')?.value.trim() || '',
-            phone: document.getElementById('phone')?.value.trim() || '',
+      submitForm({
+        formId: 'valForm',
+        submitBtnId: 'valSubmit',
+        messageId: 'valFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('gjFirstName')?.value.trim() || '',
+            lastName: document.getElementById('gjLastName')?.value.trim() || '',
+            email: document.getElementById('gjEmail')?.value.trim() || '',
+            phone: document.getElementById('gjPhone')?.value.trim() || '',
             inquiry: 'Home Value Request — Grand Junction',
             message:
-              'Address: ' + (document.getElementById('address')?.value.trim() || '') +
-              '\nBedrooms: ' + (document.getElementById('bedrooms')?.value || '') +
-              '\nTimeline: ' + (document.getElementById('timeline')?.value || ''),
-          });
-
-          showFormMsg(
-            valMsg,
-            "Thank you! I'll have your home value review ready within 24 hours.",
-            'success'
-          );
-          valForm.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(
-            valMsg,
-            'Something went wrong. Please call (970) 644-6781.',
-            'error'
-          );
-        } finally {
-          if (valSubmit) {
-            valSubmit.disabled = false;
-            valSubmit.textContent = 'Get My Free Home Value';
-          }
-        }
+              'Address: ' + (document.getElementById('gjAddress')?.value.trim() || '') +
+              '\nBedrooms: ' + (document.getElementById('gjBedrooms')?.value || '') +
+              '\nTimeline: ' + (document.getElementById('gjTimeline')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your home value review ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Free Home Value',
       });
-    }
-  }
-
-  /* ============================================================
-     ORCHARD MESA PAGE
-     ============================================================ */
-  if (document.body.classList.contains('page-orchard-mesa-homes')) {
-    loadMarketStats('orchard_mesa', {
-      htmlCurrency: true,
-      areaLabel: 'Orchard Mesa',
-    });
-
-    const form = document.getElementById('omForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const btn = document.getElementById('formBtn');
-        const msg = document.getElementById('formMsg');
-
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = 'Sending…';
-        }
-
-        try {
-          await submitToProxy({
-            firstName: document.getElementById('fn')?.value.trim() || '',
-            lastName: document.getElementById('ln')?.value.trim() || '',
-            email: document.getElementById('em')?.value.trim() || '',
-            phone: document.getElementById('ph')?.value.trim() || '',
+    },
+    'page-orchard-mesa-homes': () => {
+      loadMarketStats('orchard_mesa', {
+        htmlCurrency: true,
+        areaLabel: 'Orchard Mesa',
+      });
+      submitForm({
+        formId: 'omForm',
+        submitBtnId: 'omFormBtn',
+        messageId: 'omFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('omFirstName')?.value.trim() || '',
+            lastName: document.getElementById('omLastName')?.value.trim() || '',
+            email: document.getElementById('omEmail')?.value.trim() || '',
+            phone: document.getElementById('omPhone')?.value.trim() || '',
             inquiry: 'Home Value Request — Orchard Mesa',
             message:
-              'Address: ' + (document.getElementById('addr')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('tl')?.value || '') +
-              '\nRiver View: ' + (document.getElementById('rv')?.value || ''),
-          });
-
-          showFormMsg(msg, "Thank you! I'll have your Orchard Mesa home value ready within 24 hours.", 'success');
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(msg, 'Something went wrong. Please call (970) 644-6781.', 'error');
-        } finally {
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = 'Get My Orchard Mesa Home Value';
-          }
-        }
+              'Address: ' + (document.getElementById('omAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('omTimeline')?.value || '') +
+              '\nRiver View: ' + (document.getElementById('omRiverView')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Orchard Mesa home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Orchard Mesa Home Value',
       });
-    }
-  }
-
-  /* ============================================================
-     REDLANDS PAGE
-     ============================================================ */
-  if (document.body.classList.contains('page-redlands-homes')) {
-    loadMarketStats('redlands', {
-      htmlCurrency: true,
-      areaLabel: 'Redlands',
-    });
-
-    const form = document.getElementById('redlandsForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const btn = document.getElementById('formBtn');
-        const msg = document.getElementById('formMsg');
-
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = 'Sending…';
-        }
-
-        try {
-          await submitToProxy({
-            firstName: document.getElementById('fn')?.value.trim() || '',
-            lastName: document.getElementById('ln')?.value.trim() || '',
-            email: document.getElementById('em')?.value.trim() || '',
-            phone: document.getElementById('ph')?.value.trim() || '',
+    },
+    'page-redlands-homes': () => {
+      loadMarketStats('redlands', {
+        htmlCurrency: true,
+        areaLabel: 'Redlands',
+      });
+      submitForm({
+        formId: 'redlandsForm',
+        submitBtnId: 'redFormBtn',
+        messageId: 'redFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('redFirstName')?.value.trim() || '',
+            lastName: document.getElementById('redLastName')?.value.trim() || '',
+            email: document.getElementById('redEmail')?.value.trim() || '',
+            phone: document.getElementById('redPhone')?.value.trim() || '',
             inquiry: 'Home Value Request — Redlands',
             message:
-              'Address: ' + (document.getElementById('addr')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('tl')?.value || '') +
-              '\nMonument Views: ' + (document.getElementById('views')?.value || ''),
-          });
-
-          showFormMsg(msg, "Thank you! I'll have your Redlands home value ready within 24 hours.", 'success');
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(msg, 'Something went wrong. Please call (970) 644-6781.', 'error');
-        } finally {
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = 'Request My Home Value';
-          }
-        }
+              'Address: ' + (document.getElementById('redAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('redTimeline')?.value || '') +
+              '\nMonument Views: ' + (document.getElementById('redViews')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Redlands home value ready within 24 hours.",
+        submitButtonDefaultText: 'Request My Home Value',
       });
-    }
-  }
-
-  /* ============================================================
-     FRUITA PAGE
-     ============================================================ */
-  if (document.body.classList.contains('page-selling-in-fruita')) {
-    loadMarketStats('fruita', {
-      areaLabel: 'Fruita',
-    });
-
-    const form = document.getElementById('fruitaForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const btn = document.getElementById('fruSubmit');
-        const msg = document.getElementById('fruFormMsg');
-
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = 'Sending…';
-        }
-
-        try {
-          await submitToProxy({
-            firstName: document.getElementById('firstName')?.value.trim() || '',
-            lastName: document.getElementById('lastName')?.value.trim() || '',
-            email: document.getElementById('email')?.value.trim() || '',
-            phone: document.getElementById('phone')?.value.trim() || '',
+    },
+    'page-selling-in-fruita': () => {
+      loadMarketStats('fruita', {
+        areaLabel: 'Fruita',
+      });
+      submitForm({
+        formId: 'fruitaForm',
+        submitBtnId: 'fruSubmit',
+        messageId: 'fruFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('fruFirstName')?.value.trim() || '',
+            lastName: document.getElementById('fruLastName')?.value.trim() || '',
+            email: document.getElementById('fruEmail')?.value.trim() || '',
+            phone: document.getElementById('fruPhone')?.value.trim() || '',
             inquiry: 'Home Value Request — Fruita',
             message:
-              'Address: ' + (document.getElementById('address')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('timeline')?.value || '') +
-              '\nBedrooms: ' + (document.getElementById('bedrooms')?.value || ''),
-          });
-
-          showFormMsg(msg, "Thank you! I'll have your Fruita home value ready within 24 hours.", 'success');
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(msg, 'Something went wrong. Please call (970) 644-6781.', 'error');
-        } finally {
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = 'Get My Fruita Home Value';
-          }
-        }
+              'Address: ' + (document.getElementById('fruAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('fruTimeline')?.value || '') +
+              '\nBedrooms: ' + (document.getElementById('fruBedrooms')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Fruita home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Fruita Home Value',
       });
-    }
-  }
-
-  /* ============================================================
-     PALISADE PAGE
-     ============================================================ */
-  if (document.body.classList.contains('page-selling-in-palisade')) {
-    loadMarketStats('palisade', {
-      htmlCurrency: true,
-      areaLabel: 'Palisade',
-    });
-
-    const form = document.getElementById('palisadeForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const btn = document.getElementById('palSubmit');
-        const msg = document.getElementById('palFormMsg');
-
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = 'Sending…';
-        }
-
-        try {
-          await submitToProxy({
-            firstName: document.getElementById('firstName')?.value.trim() || '',
-            lastName: document.getElementById('lastName')?.value.trim() || '',
-            email: document.getElementById('email')?.value.trim() || '',
-            phone: document.getElementById('phone')?.value.trim() || '',
+    },
+    'page-selling-in-palisade': () => {
+      loadMarketStats('palisade', {
+        htmlCurrency: true,
+        areaLabel: 'Palisade',
+      });
+      submitForm({
+        formId: 'palisadeForm',
+        submitBtnId: 'palSubmit',
+        messageId: 'palFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('palFirstName')?.value.trim() || '',
+            lastName: document.getElementById('palLastName')?.value.trim() || '',
+            email: document.getElementById('palEmail')?.value.trim() || '',
+            phone: document.getElementById('palPhone')?.value.trim() || '',
             inquiry: 'Home Value Request — Palisade',
             message:
-              'Address: ' + (document.getElementById('address')?.value.trim() || '') +
-              '\nNotable features: ' + (document.getElementById('features')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('timeline')?.value || '') +
-              '\nBedrooms: ' + (document.getElementById('bedrooms')?.value || ''),
-          });
-
-          showFormMsg(msg, "Thank you! I'll have your Palisade home value ready within 24 hours.", 'success');
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          showFormMsg(msg, 'Something went wrong. Please call (970) 644-6781.', 'error');
-        } finally {
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = 'Get My Palisade Home Value';
-          }
-        }
+              'Address: ' + (document.getElementById('palAddress')?.value.trim() || '') +
+              '\nNotable features: ' + (document.getElementById('palFeatures')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('palTimeline')?.value || '') +
+              '\nBedrooms: ' + (document.getElementById('palBedrooms')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Palisade home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Palisade Home Value',
       });
-    }
-  }
+    },
+    'page-clifton-grand-junction': () => {
+      loadMarketStats('clifton', { areaLabel: 'ZIP 81520' });
+    },
+    'page-downtown-grand-junction': () => {
+      loadMarketStats('downtown_grand_junction', { areaLabel: 'ZIP 81501' });
+    },
+    'page-loma-mack-grand-junction': () => {
+      loadMarketStats('loma_mack', { areaLabel: 'Loma / Mack' });
+    },
+    'page-north-grand-junction': () => {
+      loadMarketStats('north_grand_junction', { areaLabel: 'North Grand Junction' });
+    },
+    'page-northeast-grand-junction': () => {
+      loadMarketStats('northeast_grand_junction', { areaLabel: 'Northeast Grand Junction' });
+    },
+    'page-northwest-grand-junction': () => {
+      loadMarketStats('northwest_grand_junction', { areaLabel: 'Northwest Grand Junction' });
+    },
+  };
 
-  /* ============================================================
-     Area pages: stats only
-     ============================================================ */
-  if (document.body.classList.contains('page-clifton-grand-junction')) {
-    loadMarketStats('clifton', { areaLabel: 'ZIP 81520' });
-  }
-
-  if (document.body.classList.contains('page-downtown-grand-junction')) {
-    loadMarketStats('downtown_grand_junction', { areaLabel: 'ZIP 81501' });
-  }
-
-  if (document.body.classList.contains('page-loma-mack-grand-junction')) {
-    loadMarketStats('loma_mack', { areaLabel: 'Loma / Mack' });
-  }
-
-  if (document.body.classList.contains('page-north-grand-junction')) {
-    loadMarketStats('north_grand_junction', { areaLabel: 'North Grand Junction' });
-  }
-
-  if (document.body.classList.contains('page-northeast-grand-junction')) {
-    loadMarketStats('northeast_grand_junction', { areaLabel: 'Northeast Grand Junction' });
-  }
-
-  if (document.body.classList.contains('page-northwest-grand-junction')) {
-    loadMarketStats('northwest_grand_junction', { areaLabel: 'Northwest Grand Junction' });
-  }
+  Object.entries(pageInitializers).forEach(([pageClass, init]) => {
+    if (document.body.classList.contains(pageClass)) init();
+  });
 
   /* ============================================================
      FAQ PAGE

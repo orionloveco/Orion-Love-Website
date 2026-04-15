@@ -16,13 +16,28 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="https://unpkg.com/lucide@0.263.1" defer></script>
 <link href="styles.css" rel="stylesheet"/>
 <script defer="" src="script.js"></script>
 </head>
 <body class="page-hero-aligned page-grand-junction-home-value page-photo-hero">
 <!-- NAV -->
 <div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+</noscript>
 <!-- HERO -->
 <section class="hero">
 <div class="container">
@@ -215,30 +230,30 @@
 <form id="valForm" novalidate="">
 <div class="form-row">
 <div class="form-group">
-<label for="firstName">First Name *</label>
-<input id="firstName" name="firstName" placeholder="Jane" required="" type="text"/>
+<label for="gjFirstName">First Name *</label>
+<input id="gjFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
 </div>
 <div class="form-group">
-<label for="lastName">Last Name *</label>
-<input id="lastName" name="lastName" placeholder="Smith" required="" type="text"/>
+<label for="gjLastName">Last Name *</label>
+<input id="gjLastName" name="lastName" placeholder="Smith" required="" type="text"/>
 </div>
 </div>
 <div class="form-group">
-<label for="email">Email Address *</label>
-<input id="email" name="email" placeholder="jane@email.com" required="" type="email"/>
+<label for="gjEmail">Email Address *</label>
+<input id="gjEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
 </div>
 <div class="form-group">
-<label for="phone">Phone Number</label>
-<input id="phone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+<label for="gjPhone">Phone Number</label>
+<input id="gjPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
 </div>
 <div class="form-group">
-<label for="address">Property Address *</label>
-<input id="address" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
+<label for="gjAddress">Property Address *</label>
+<input id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
 </div>
 <div class="form-row">
 <div class="form-group">
-<label for="bedrooms">Bedrooms</label>
-<select id="bedrooms" name="bedrooms">
+<label for="gjBedrooms">Bedrooms</label>
+<select id="gjBedrooms" name="bedrooms">
 <option value="">Select</option>
 <option>1</option>
 <option>2</option>
@@ -248,8 +263,8 @@
 </select>
 </div>
 <div class="form-group">
-<label for="timeline">Your Timeline</label>
-<select id="timeline" name="timeline">
+<label for="gjTimeline">Your Timeline</label>
+<select id="gjTimeline" name="timeline">
 <option value="">Select</option>
 <option>Just curious</option>
 <option>3–6 months</option>
@@ -327,5 +342,16 @@
 <div id="featuredAreasLinks"></div>
 <!-- FOOTER -->
 <div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</footer>
+</noscript>
 </body>
 </html>
