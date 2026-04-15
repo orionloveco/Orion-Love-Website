@@ -1469,10 +1469,6 @@ body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1f
 body.page-clifton-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-clifton-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-clifton-grand-junction .link-card, body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-clifton-grand-junction .link-card:hover, body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-clifton-grand-junction .link-card svg, body.page-downtown-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-clifton-grand-junction .link-card span, body.page-downtown-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -1679,23 +1675,6 @@ body.page-contact .form-message.success {background: #edf7ee;
 body.page-contact .form-message.error {background: #fdf2f2;
       border: 1px solid #f0c6c6;
       color: #7a1f1f;}
-body.page-contact .btn-gold-outline {display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.95rem 2.4rem;
-      border-radius: 50px;
-      border: 1px solid var(--gold);
-      color: var(--gold-lt);
-      white-space: nowrap;
-      transition: all 0.25s;}
-body.page-contact .btn-gold-outline:hover {background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);}
 body.page-contact .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;
       display: flex;
@@ -1731,26 +1710,6 @@ body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-faq .btn-gold-outline {display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.95rem 2.4rem;
-      border-radius: 50px;
-      border: 1px solid var(--gold);
-      color: var(--gold-lt);
-      white-space: nowrap;
-      transition: all 0.25s;}
-body.page-faq .btn-gold-outline:hover {background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);}
 body.page-faq .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
@@ -2097,9 +2056,6 @@ body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormor
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-index .btn-outline {background: transparent;
       color: var(--white);
       border: 1px solid rgba(255,255,255,0.35);}
@@ -2318,24 +2274,6 @@ body.page-index .cta-band-copy p {color: rgba(255,255,255,0.6);
       font-size: 1rem;
       line-height: 1.8;
       max-width: 52ch;}
-body.page-index .btn-gold-outline {display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.95rem 2.4rem;
-      border-radius: 50px;
-      border: 1px solid var(--gold);
-      color: var(--gold-lt);
-      white-space: nowrap;
-      transition: all 0.25s;}
-body.page-index .btn-gold-outline:hover {background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.35);}
 body.page-index .process-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-index .process-grid {display: grid;
@@ -2419,10 +2357,6 @@ body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);b
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
 body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-loma-mack-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2441,10 +2375,6 @@ body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-north-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-north-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-north-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-north-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2463,10 +2393,6 @@ body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northeast-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-northeast-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northeast-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northeast-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2485,10 +2411,6 @@ body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northwest-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-northwest-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
 body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northwest-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northwest-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2543,10 +2465,6 @@ body.page-orchard-mesa-homes .form-submit {width:100%;margin-top:0.5rem;justify-
 body.page-orchard-mesa-homes .consent-note {font-size:0.78rem;color:var(--muted);margin-top:0.85rem;line-height:1.6;font-style:italic;}
 body.page-orchard-mesa-homes .consent-note a {color:var(--navy);text-decoration:underline;font-style:normal;}
 body.page-orchard-mesa-homes .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-orchard-mesa-homes .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-orchard-mesa-homes .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-orchard-mesa-homes .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
 @media (max-width:968px) {
 body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2657,10 +2575,6 @@ body.page-redlands-homes .form-submit {width: 100%; margin-top: 0.5rem; justify-
 body.page-redlands-homes .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
 body.page-redlands-homes .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
 body.page-redlands-homes .link-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1rem; margin-top: 2rem;}
-body.page-redlands-homes .link-card {background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm); padding: 1.25rem; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; transition: border-color 0.22s, transform 0.22s;}
-body.page-redlands-homes .link-card:hover {border-color: var(--gold); transform: translateY(-2px);}
-body.page-redlands-homes .link-card svg {width: 15px; height: 15px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0;}
-body.page-redlands-homes .link-card span {font-size: 0.88rem; font-weight: 600; color: var(--navy);}
 @media (max-width: 968px) {
 body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 }
@@ -2842,9 +2756,6 @@ body.page-services h1, body.page-services h2, body.page-services h3, body.page-s
 body.page-services .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-services .btn-primary:hover {background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
 body.page-services .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
@@ -2923,22 +2834,6 @@ body.page-services .hero-cta {display: flex;
       animation: fadeUp 0.9s 0.55s forwards;
       position: relative;
       z-index: 1;}
-body.page-services .btn-outline-white {display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.82);
-      transition: all 0.25s;}
-body.page-services .btn-outline-white:hover {border-color: var(--gold-lt);
-      color: var(--gold-lt);
-      transform: translateY(-2px);}
 body.page-services .services-main {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-services .service-block {display: grid;
@@ -3355,7 +3250,7 @@ body.page-buyers .promise-icon svg {
   box-shadow: var(--shadow-hover);
 }
 
-/* Bottom area link cards */
+/* Bottom area link cards (shared local-area system; replaces per-page duplicates) */
 body.page-local-area .link-grid {
   gap: 1rem;
 }
