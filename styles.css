@@ -1430,70 +1430,17 @@ body:is(.page-grand-junction-home-value,
   border-color: var(--gold-lt);
 }
 
-/* ===== local-area shared hero system (Clifton, Downtown, Loma/Mack, North, Northeast, Northwest, Orchard Mesa) ===== */
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero h1 em {font-style:italic;color:var(--gold-lt);}
+/* ===== Local-area template contract v2: shared hero scaffold ===== */
+body.local-area-contract-v2 .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body.local-area-contract-v2 .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
+body.local-area-contract-v2 .hero-inner {position: relative;z-index: 1;max-width: 760px;padding-top: 4rem;}
+body.local-area-contract-v2 .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
+body.local-area-contract-v2 .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
+body.local-area-contract-v2 .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
+body.local-area-contract-v2 .hero h1 em {font-style:italic;color:var(--gold-lt);}
+body.local-area-contract-v2 .hero-lead {font-size: 1.1rem;color: rgba(255,255,255,0.72);max-width: 56ch;line-height: 1.9;margin-bottom: 2.5rem;}
+body.local-area-contract-v2 .hero-cta {display: flex;gap: 1rem;flex-wrap: wrap;}
 
-/* ===== clifton-grand-junction.html ===== */
-body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-clifton-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-clifton-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-}
 
 /* ===== contact.html ===== */
 body.page-contact .main-header {position: fixed;
@@ -1716,17 +1663,6 @@ body.page-contact .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
 body.page-contact .form-row {grid-template-columns: 1fr;}
 }
 
-/* ===== downtown-grand-junction.html ===== */
-body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-downtown-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-downtown-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-downtown-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-downtown-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-downtown-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-}
 
 /* ===== faq.html ===== */
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
@@ -2347,50 +2283,9 @@ body.page-index .hero-title {font-size: 2.8rem;}
 body.page-index .usp-grid {grid-template-columns: 1fr;}
 body.page-index .process-grid {grid-template-columns: 1fr;}
 }
-/* ===== loma-mack-grand-junction.html ===== */
-body.page-loma-mack-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-loma-mack-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-loma-mack-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
-body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
-body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
-body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-}
 
-/* ===== north-grand-junction.html ===== */
-body.page-north-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-north-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-north-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-north-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-}
 
-/* ===== northeast-grand-junction.html ===== */
-body.page-northeast-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-northeast-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-northeast-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northeast-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-}
 
-/* ===== northwest-grand-junction.html ===== */
-body.page-northwest-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
-body.page-northwest-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
-body.page-northwest-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northwest-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-@media (max-width:968px) {
-body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-}
 
 /* ===== orchard-mesa-homes.html ===== */
 body.page-orchard-mesa-homes .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
@@ -3311,6 +3206,80 @@ body.page-buyers .cta-band-copy {
   background: var(--cream);
 }
 
+
+/* Local-area template contract v2: shared section scaffolding */
+body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+body.local-area-contract-v2 .local-area-intro .split-layout.split-layout-align-center {
+  align-items: center;
+}
+
+body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy) h2 {
+  margin-bottom: 0.85rem;
+}
+
+body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy) p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+body.local-area-contract-v2 .local-area-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--sand);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+body.local-area-contract-v2 :is(.local-area-stat-grid .stat-box, .local-area-stat-grid .snap-stat) {
+  background: var(--cream);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+
+body.local-area-contract-v2 :is(.local-area-stat-grid .stat-val, .local-area-stat-grid .snap-val) {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  color: var(--navy);
+  line-height: 1;
+}
+
+body.local-area-contract-v2 .local-area-stat-grid .stat-val span {
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+body.local-area-contract-v2 :is(.local-area-stat-grid .stat-lbl, .local-area-stat-grid .snap-label) {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 968px) {
+  body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body.local-area-contract-v2 .local-area-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 .section-shell-white > .container,
 .section-shell-cream > .container,
@@ -3341,27 +3310,13 @@ body.page-buyers .cta-band-copy {
   margin-top: 0;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band {
+body.local-area-core .local-area-dark-band {
   background: var(--navy);
   position: relative;
   overflow: hidden;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band::before {
+body.local-area-core .local-area-dark-band::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -3369,14 +3324,7 @@ body:is(
   pointer-events: none;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band :is(.dark-inner, .dark-band-inner) {
+body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3384,115 +3332,32 @@ body:is(
   margin: 0 auto;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band :is(.dark-inner, .dark-band-inner) h2 {
+body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2 {
   color: var(--white);
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band :is(.dark-inner, .dark-band-inner) h2 em {
+body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .dark-band :is(.dark-inner, .dark-band-inner) p {
+body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) p {
   color: rgba(255,255,255,0.58);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
 }
 
-/* Shared neighborhood template layer (additive) */
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-  padding-top: 4rem;
-}
-
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero-lead {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.72);
-  max-width: 56ch;
-  line-height: 1.9;
-  margin-bottom: 2.5rem;
-}
-
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .hero-cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card-grid {
+body.local-area-contract-v2 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
   gap: 1.25rem;
   margin-top: 2.75rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card {
+body.local-area-contract-v2 .card {
   background: var(--white);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
@@ -3502,15 +3367,7 @@ body:is(
   transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card::before {
+body.local-area-contract-v2 .card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -3522,41 +3379,17 @@ body:is(
   transition: opacity 0.28s;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card:hover {
+body.local-area-contract-v2 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: rgba(184,146,58,0.22);
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card:hover::before {
+body.local-area-contract-v2 .card:hover::before {
   opacity: 1;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card-icon {
+body.local-area-contract-v2 .card-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -3567,56 +3400,27 @@ body:is(
   margin-bottom: 1.1rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card-icon svg {
+body.local-area-contract-v2 .card-icon svg {
   width: 20px;
   height: 20px;
   stroke: var(--gold);
   stroke-width: 1.8;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card h3 {
+body.local-area-contract-v2 .card h3 {
   font-size: 1.15rem;
   color: var(--navy);
   margin-bottom: 0.6rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction,
-  .page-orchard-mesa-homes
-) .card p {
+body.local-area-contract-v2 .card p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
 /* Shared local-area lead form card shell */
-body:is(
-  .page-orchard-mesa-homes,
-  .page-redlands-homes,
-  .page-selling-in-fruita,
-  .page-selling-in-palisade
-) .form-card {
+body.local-area-seller-variant .form-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2.25rem;
@@ -3624,25 +3428,13 @@ body:is(
   border: 1px solid var(--sand);
 }
 
-body:is(
-  .page-orchard-mesa-homes,
-  .page-redlands-homes,
-  .page-selling-in-fruita,
-  .page-selling-in-palisade
-) .form-card h3 {
+body.local-area-seller-variant .form-card h3 {
   font-size: 1.5rem;
   color: var(--navy);
   margin-bottom: 0.4rem;
 }
 
-body:is(
-  .page-orchard-mesa-homes,
-  .page-redlands-homes
-) .form-sub,
-body:is(
-  .page-selling-in-fruita,
-  .page-selling-in-palisade
-) .form-card .form-sub {
+body.local-area-seller-variant :is(.form-sub, .form-card .form-sub) {
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 1.75rem;
@@ -3717,28 +3509,14 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .quick-facts {
+body.local-area-core .local-area-quick-facts {
   background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
   padding: 1.75rem 1.5rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .quick-facts h4 {
+body.local-area-core .local-area-quick-facts h4 {
   font-family: "Raleway",sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
@@ -3748,14 +3526,7 @@ body:is(
   margin-bottom: 1rem;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .fact-row {
+body.local-area-core .local-area-quick-facts .fact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3763,37 +3534,16 @@ body:is(
   border-bottom: 1px solid var(--sand);
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .fact-row:last-child {
+body.local-area-core .local-area-quick-facts .fact-row:last-child {
   border-bottom: none;
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .fact-label {
+body.local-area-core .local-area-quick-facts .fact-label {
   font-size: 0.88rem;
   color: var(--muted);
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .fact-value {
+body.local-area-core .local-area-quick-facts .fact-value {
   font-family: "Cormorant Garamond",serif;
   font-size: 1.2rem;
   color: var(--navy);
