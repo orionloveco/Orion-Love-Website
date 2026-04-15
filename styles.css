@@ -6446,3 +6446,288 @@ body.page-privacy .privacy-content {
     animation: none !important;
   }
 }
+
+
+/* =========================================================
+   Area Page Families — Editorial Refresh
+   ========================================================= */
+.area-editorial-shell,
+.area-practical-shell,
+.area-seller-shell {
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.area-editorial-grid,
+.area-seller-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.area-practical-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.area-intro-copy h2,
+.area-practical-copy h2,
+.area-seller-copy h2,
+.area-story-copy h2,
+.area-positioning-copy h2 {
+  margin-bottom: 0.9rem;
+}
+
+.area-intro-copy p,
+.area-practical-copy p,
+.area-seller-copy p,
+.area-story-copy p,
+.area-positioning-copy p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.market-sidebar,
+.seller-market-panel {
+  background: linear-gradient(180deg, rgba(247,244,237,0.72) 0%, rgba(255,255,255,0.96) 100%);
+  border: 1px solid rgba(184, 146, 58, 0.18);
+  border-radius: 24px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: 0 10px 34px rgba(12, 26, 61, 0.08);
+}
+
+.market-sidebar-label,
+.market-strip-label,
+.seller-market-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.market-sidebar-label::before,
+.market-strip-label::before,
+.seller-market-label::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.market-sidebar-title,
+.seller-market-title {
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.market-sidebar-intro,
+.seller-market-intro {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+  line-height: 1.8;
+}
+
+.market-sidebar-stats,
+.seller-market-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(184, 146, 58, 0.18);
+  border: 1px solid rgba(184, 146, 58, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.market-sidebar-stat,
+.seller-market-stat {
+  background: rgba(255,255,255,0.96);
+  padding: 1.2rem 1.15rem;
+}
+
+.market-sidebar-value,
+.seller-market-value,
+.market-strip-value {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  line-height: 1;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.market-sidebar-value span,
+.seller-market-value span,
+.market-strip-value span {
+  font-size: 0.7em;
+}
+
+.market-sidebar-stat-label,
+.seller-market-stat-label,
+.market-strip-stat-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.market-sidebar-meta,
+.seller-market-meta,
+.market-strip-meta {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.editorial-highlights {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.editorial-highlight {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(232, 225, 208, 0.9);
+}
+.editorial-highlight:last-child { border-bottom: none; padding-bottom: 0; }
+.editorial-highlight i {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(184, 146, 58, 0.12);
+  color: var(--gold);
+}
+.editorial-highlight strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.editorial-highlight p,
+.area-practical-list p { margin: 0; color: var(--muted); }
+
+.area-story-grid,
+.area-positioning-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: clamp(1.8rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.area-story-panel,
+.area-positioning-panel {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(230, 224, 211, 0.9);
+  border-radius: 24px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--shadow-card);
+}
+
+.area-practical-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(184, 146, 58, 0.16);
+  border: 1px solid rgba(184, 146, 58, 0.14);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.market-strip-stat {
+  background: rgba(255,255,255,0.96);
+  padding: 1.2rem 1.1rem;
+}
+
+.area-practical-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.area-practical-list {
+  display: grid;
+  gap: 1rem;
+}
+.area-practical-list-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(232, 225, 208, 0.9);
+}
+.area-practical-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+.area-practical-list-item strong {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.area-card-grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.area-card-large {
+  background: rgba(255,255,255,0.84);
+  border: 1px solid rgba(230, 224, 211, 0.95);
+  border-radius: 24px;
+  padding: 2rem 1.6rem;
+  box-shadow: var(--shadow-card);
+}
+.area-card-large h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.25rem;
+}
+.area-card-large p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+@media (max-width: 980px) {
+  .area-editorial-grid,
+  .area-seller-grid,
+  .area-story-grid,
+  .area-positioning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-practical-strip,
+  .market-sidebar-stats,
+  .seller-market-stats,
+  .area-card-grid-editorial {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .area-practical-strip,
+  .market-sidebar-stats,
+  .seller-market-stats,
+  .area-card-grid-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .market-sidebar,
+  .seller-market-panel,
+  .area-story-panel,
+  .area-positioning-panel {
+    border-radius: 20px;
+  }
+}

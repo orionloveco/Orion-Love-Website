@@ -330,13 +330,13 @@ document.addEventListener('DOMContentLoaded', function () {
         '[data-market-stat="averageDaysOnMarket"], #marketDaysOnMarket, #omDaysOnMarket, #redlandsDaysOnMarket, #palAvgDom, #fruitaDaysOnMarket'
       );
       const newEls = document.querySelectorAll(
-        '#omNewListings, #redlandsNewListings, #palNewListings, #fruitaNewListings'
+        '[data-market-stat="newListings"], #omNewListings, #redlandsNewListings, #palNewListings, #fruitaNewListings'
       );
       const totalEls = document.querySelectorAll(
-        '#omTotalListings, #redlandsTotalListings, #palTotalListings, #fruitaTotalListings'
+        '[data-market-stat="totalListings"], #omTotalListings, #redlandsTotalListings, #palTotalListings, #fruitaTotalListings'
       );
       const noteEls = document.querySelectorAll(
-        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
+        '[data-market-note], #marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
       );
 
       medianEls.forEach((el) => {
@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (err) {
       console.error('Market stats load failed:', err);
       const noteEls = document.querySelectorAll(
-        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
+        '[data-market-note], #marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
       );
       noteEls.forEach((el) => {
         el.textContent = 'Live market data temporarily unavailable';
