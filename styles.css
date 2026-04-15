@@ -4648,13 +4648,8 @@ body.page-services .cta-band-inner p {
 /* =========================
    Alignment + spacing fixes
 ========================= */
-.hero-content,
-.hero-content.centered {
+.hero-content {
   text-align: left;
-}
-
-.hero-content.centered .hero-cta {
-  justify-content: flex-start;
 }
 
 .hero-content.centered .hero-subtitle {
