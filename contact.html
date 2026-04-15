@@ -1,1080 +1,183 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Orion Love | Start Your Journey | Grand Junction Realtor®</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    /* ── LAYOUT ─────────────────────────────────── */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-
-    /* ── NAV ────────────────────────────────────── */
-    .main-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;
-      background: rgba(12, 26, 61, 0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
-    }
-    .main-header nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-    .logo { text-decoration: none; }
-    .logo-main {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.04em;
-    }
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2.25rem;
-      align-items: center;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.82);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
-    .btn-nav {
-      background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-    }
-    .mobile-toggle { display: none; }
-
-    /* ── BUTTONS ────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
-    }
-    .btn-primary:hover {
-      background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
-    }
-    .btn-navy {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-navy:hover {
-      background: var(--navy-mid);
-      transform: translateY(-2px);
-    }
-
-    /* ── SECTION LABEL ──────────────────────────── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.1rem;
-    }
-    .section-label::before {
-      content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .section-label span {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-    }
-    .section-label.centered { justify-content: center; }
-    .section-label.centered::after {
-      content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    /* ── DIVIDER ────────────────────────────────── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    .divider::before, .divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--sand);
-    }
-    .divider-diamond {
-      width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      opacity: 0.6;
-    }
-
-    /* ── HERO ───────────────────────────────────── */
-    .contact-hero {
-      /* PHOTO SLOT: replace url() with a Grand Junction landscape or monument photo */
-      background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-monument.jpg") center / cover no-repeat;
-      padding: clamp(7rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 6rem);
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    .contact-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
-      pointer-events: none;
-    }
-    .contact-hero::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.1s forwards;
-    }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: ""; height: 1px; width: 36px;
-      background: var(--gold); opacity: 0.6;
-    }
-    .hero-eyebrow span {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      font-weight: 600;
-    }
-    .contact-hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.25s forwards;
-    }
-    .contact-hero h1 em {
-      font-style: italic;
-      color: var(--gold-lt);
-    }
-    .contact-hero p {
-      font-size: clamp(1rem, 1.8vw, 1.1rem);
-      color: rgba(255,255,255,0.65);
-      max-width: 56ch;
-      margin: 0 auto;
-      font-weight: 300;
-      line-height: 1.85;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.4s forwards;
-    }
-
-    /* ── MAIN CONTACT SECTION ───────────────────── */
-    .contact-section {
-      padding: clamp(4rem, 8vw, 7rem) 0;
-      background: var(--cream);
-    }
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 5fr 8fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    /* Info panel */
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      position: sticky;
-      top: 100px;
-    }
-    .info-card {
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      padding: 2rem 1.85rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .info-card-title {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(232,225,208,0.7);
-    }
-    .info-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .info-item:first-of-type { padding-top: 0; }
-    .info-icon {
-      width: 36px; height: 36px;
-      background: rgba(184,146,58,0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .info-icon svg { width: 16px; height: 16px; stroke: var(--gold); }
-    .info-text { flex: 1; }
-    .info-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-    .info-value {
-      font-size: 0.97rem;
-      color: var(--navy);
-      font-weight: 500;
-    }
-    .info-value a {
-      color: var(--navy);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .info-value a:hover { color: var(--gold); }
-
-    .response-card {
-      background: var(--navy);
-      border-radius: var(--radius-md);
-      padding: 1.85rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .response-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,146,58,0.12), transparent 65%);
-      pointer-events: none;
-    }
-    .response-card h4 {
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-      position: relative;
-      z-index: 1;
-    }
-    .response-card p {
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.75;
-      position: relative;
-      z-index: 1;
-    }
-    .response-card p strong {
-      color: var(--gold-lt);
-      font-weight: 500;
-    }
-
-    /* Form panel */
-    .form-card {
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-lg);
-      padding: clamp(2rem, 4vw, 3rem);
-      box-shadow: var(--shadow-lg);
-    }
-    .form-card h3 {
-      font-size: 2rem;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-      font-weight: 300;
-    }
-    .form-card-sub {
-      color: var(--muted);
-      font-size: 0.97rem;
-      margin-bottom: 2.25rem;
-      line-height: 1.7;
-    }
-
-    /* Form elements */
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-    .form-group {
-      margin-bottom: 1.4rem;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 0.55rem;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.9rem 1.1rem;
-      background: var(--cream);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-sm);
-      font-family: "Raleway", sans-serif;
-      font-size: 0.97rem;
-      color: var(--text);
-      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(26,26,46,0.35);
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      background: var(--white);
-      box-shadow: 0 0 0 3px rgba(184,146,58,0.1);
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 140px;
-      line-height: 1.7;
-    }
-    /* Custom select arrow */
-    .select-wrap { position: relative; }
-    .select-wrap::after {
-      content: "";
-      position: absolute;
-      right: 1.1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0; height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 5px solid var(--gold);
-      pointer-events: none;
-    }
-
-    /* Consent block */
-    .consent-block {
-      margin: 1.75rem 0 2rem;
-      padding: 1.4rem 1.5rem;
-      background: var(--cream);
-      border: 1px solid var(--sand);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-    .consent-block p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-    .consent-block a {
-      color: var(--navy);
-      text-underline-offset: 2px;
-    }
-    .consent-block a:hover { color: var(--gold); }
-
-    /* Submit */
-    .form-submit {
-      width: 100%;
-      padding: 1.1rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      border-radius: 50px;
-      cursor: pointer;
-    }
-    .form-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none !important;
-    }
-
-    /* Form message */
-    .form-message {
-      display: none;
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.93rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-    .form-message.success {
-      background: #edf7ee;
-      border: 1px solid #b9debb;
-      color: #1a5c22;
-    }
-    .form-message.error {
-      background: #fdf2f2;
-      border: 1px solid #f0c6c6;
-      color: #7a1f1f;
-    }
-
-    /* ── BOTTOM CTA ─────────────────────────────── */
-    .cta-band {
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
-    }
-    .cta-band::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-    }
-    .cta-band-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 3rem;
-    }
-    .cta-band-copy h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--white);
-      font-weight: 300;
-      margin-bottom: 0.6rem;
-    }
-    .cta-band-copy h2 em { font-style: italic; color: var(--gold-lt); }
-    .cta-band-copy p {
-      color: rgba(255,255,255,0.55);
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-    .btn-gold-outline {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.95rem 2.4rem;
-      border-radius: 50px;
-      border: 1px solid var(--gold);
-      color: var(--gold-lt);
-      white-space: nowrap;
-      transition: all 0.25s;
-    }
-    .btn-gold-outline:hover {
-      background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    /* ── FOOTER ─────────────────────────────────── */
-    .main-footer {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;
-    }
-    .logo-footer {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; }
-    .footer-links h4, .footer-contact h4 {
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;
-    }
-    .footer-links ul, .footer-contact ul { list-style: none; }
-    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
-    .footer-links a, .footer-contact a {
-      text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;
-    }
-    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; }
-    .footer-bottom a { color: rgba(255,255,255,0.38); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--gold-lt); }
-
-    /* ── ANIMATIONS ─────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ─────────────────────────────── */
-    @media (max-width: 900px) {
-      .contact-layout { grid-template-columns: 1fr; }
-      .contact-info { position: static; }
-      .cta-band-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-
-    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
-
-    @media (max-width: 640px) {
-      .form-row { grid-template-columns: 1fr; }
-      /* Mobile nav */
-      .nav-menu { display: none; }
-      .mobile-toggle {
-        display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-        z-index: 200;
-      }
-      .mobile-toggle span {
-        display: block;
-        width: 24px; height: 1.5px;
-        background: var(--white);
-        border-radius: 2px;
-        transition: transform 0.25s ease, opacity 0.2s ease;
-      }
-      .mobile-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-      .mobile-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-      .mobile-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-      .nav-menu.active {
-        display: flex !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background: rgb(12, 26, 61) !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        z-index: 9999 !important;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .nav-menu.active li { list-style: none; }
-      .nav-menu.active a {
-        font-size: 1.5rem;
-        color: var(--white);
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-      }
-      .nav-menu.active a:hover { opacity: 1; color: var(--gold-lt); }
-      .nav-menu.active .btn-nav {
-        border: 1px solid var(--gold);
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        opacity: 1;
-        color: var(--gold-lt);
-      }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Orion Love | Start Your Journey | Grand Junction Realtor®</title>
+<meta content="Contact Orion Love for Grand Junction real estate help, home-selling strategy, buyer guidance, or a no-pressure market conversation." name="description"/>
+<meta content="Contact Orion Love | Start Your Journey | Grand Junction Realtor®" property="og:title"/>
+<meta content="Contact Orion Love for Grand Junction real estate help, home-selling strategy, buyer guidance, or a no-pressure market conversation." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Contact Orion Love | Start Your Journey | Grand Junction Realtor®" name="twitter:title"/>
+<meta content="Contact Orion Love for Grand Junction real estate help, home-selling strategy, buyer guidance, or a no-pressure market conversation." name="twitter:description"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<link href="styles.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
 </head>
-
-<body>
-
+<body class="page-hero-aligned page-contact">
 <!-- NAV -->
-<header class="main-header" id="mainHeader">
-  <nav>
-    <a href="index.html" class="logo">
-      <span class="logo-main">Orion Love | Colorado Realtor®</span>
-    </a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Sellers</a></li>
-      <li><a href="buyers.html">Buyers</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html" class="active btn-nav" aria-current="page">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </header>
-
+</noscript>
 <!-- HERO -->
-<section class="contact-hero">
-  <div class="container">
-    <div class="hero-eyebrow"><span>Get in Touch · Grand Junction</span></div>
-    <h1>Let's Get <em>Started.</em></h1>
-    <p>
+<section class="contact-hero hero">
+<div class="container">
+<div class="hero-inner">
+<div class="hero-eyebrow"><span>Get in Touch · Grand Junction</span></div>
+<h1>Let's Get <em>Started.</em></h1>
+<p class="hero-lead">
       Thinking about selling, buying, or just want clarity on your options?
       Reach out — no pressure, just a clear conversation about your next move.
     </p>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- CONTACT SECTION -->
 <section class="contact-section">
-  <div class="container">
-    <div class="contact-layout">
-
-      <!-- Info sidebar -->
-      <div class="contact-info reveal">
-        <div class="info-card">
-          <div class="info-card-title">Contact Details</div>
-
-          <div class="info-item">
-            <div class="info-icon"><i data-lucide="mail"></i></div>
-            <div class="info-text">
-              <div class="info-label">Email</div>
-              <div class="info-value"><a href="/cdn-cgi/l/email-protection#5738253e3839793b38213279343817303a363e3b7934383a"><span class="__cf_email__" data-cfemail="e18e93888e8fcf8d8e9784cf828ea1868c80888dcf828e8c">[email&#160;protected]</span></a></div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon"><i data-lucide="phone"></i></div>
-            <div class="info-text">
-              <div class="info-label">Phone</div>
-              <div class="info-value"><a href="tel:9706446781">(970) 644-6781</a></div>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon"><i data-lucide="map-pin"></i></div>
-            <div class="info-text">
-              <div class="info-label">Serving</div>
-              <div class="info-value">Grand Junction, CO &amp; surrounding areas</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="response-card">
-          <h4>Response Time</h4>
-          <p>
+<div class="container">
+<div class="contact-layout">
+<!-- Info sidebar -->
+<div class="contact-info reveal">
+<div class="info-card">
+<div class="info-card-title">Contact Details</div>
+<div class="info-item">
+<div class="info-icon"><i data-lucide="mail"></i></div>
+<div class="info-text">
+<div class="info-label">Email</div>
+<div class="info-value"><a href="mailto:orion@orionlove.com">orion@orionlove.com</a></div>
+</div>
+</div>
+<div class="info-item">
+<div class="info-icon"><i data-lucide="phone"></i></div>
+<div class="info-text">
+<div class="info-label">Phone</div>
+<div class="info-value"><a href="tel:9706446781">(970) 644-6781</a></div>
+</div>
+</div>
+<div class="info-item">
+<div class="info-icon"><i data-lucide="map-pin"></i></div>
+<div class="info-text">
+<div class="info-label">Serving</div>
+<div class="info-value">Grand Junction, CO &amp; surrounding areas</div>
+</div>
+</div>
+</div>
+<div class="response-card">
+<h4>Response Time</h4>
+<p>
             I return calls between <strong>2:00–3:00 PM weekdays</strong> and respond to all inquiries
             within <strong>24 hours.</strong> For urgent matters, I'll respond as quickly as possible.
           </p>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <div class="form-card reveal" style="transition-delay:0.12s">
-        <div class="section-label"><span>Send a Message</span></div>
-        <h3>How Can I Help?</h3>
-        <p class="form-card-sub">Fill out the form below and I'll be in touch within 24 hours.</p>
-
-        <div id="formMessage" class="form-message" role="alert"></div>
-
-        <form id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" placeholder="jane@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(970) 000-0000" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inquiry">I'm Interested In</label>
-            <div class="select-wrap">
-              <select id="inquiry" name="inquiry">
-                <option value="">Select an option</option>
-                <option value="selling">Selling My Home</option>
-                <option value="buying">Buying a Home</option>
-                <option value="valuation">Home Valuation</option>
-                <option value="consultation">Market Consultation</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" required placeholder="Tell me about your goals, timeline, or any questions you have about the market…"></textarea>
-          </div>
-
-          <div class="consent-block">
-            <p>
+</div>
+</div>
+<!-- Form -->
+<div class="form-card reveal reveal-delay-012">
+<div class="section-label"><span>Send a Message</span></div>
+<h3>How Can I Help?</h3>
+<p class="form-card-sub">Fill out the form below and I'll be in touch within 24 hours.</p>
+<div class="form-message" id="formMessage" role="alert"></div>
+<form id="contactForm" novalidate="">
+<div class="form-row">
+<div class="form-group">
+<label for="contactFirstName">First Name <span aria-hidden="true">*</span></label>
+<input id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="contactLastName">Last Name <span aria-hidden="true">*</span></label>
+<input id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="contactEmail">Email <span aria-hidden="true">*</span></label>
+<input id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="contactPhone">Phone</label>
+<input id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="form-group">
+<label for="contactInquiry">I'm Interested In</label>
+<div class="select-wrap">
+<select id="contactInquiry" name="inquiry">
+<option value="">Select an option</option>
+<option value="selling">Selling My Home</option>
+<option value="buying">Buying a Home</option>
+<option value="valuation">Home Valuation</option>
+<option value="consultation">Market Consultation</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="contactMessage">Message <span aria-hidden="true">*</span></label>
+<textarea id="contactMessage" name="message" placeholder="Tell me about your goals, timeline, or any questions you have about the market…" required=""></textarea>
+</div>
+<div class="consent-block">
+<p>
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
               or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply.
-              <a href="privacy.html" target="_blank">Privacy Policy</a>.
+              <a href="privacy.html">Privacy Policy</a>.
             </p>
-          </div>
-
-          <button type="submit" id="submitBtn" class="btn btn-primary form-submit">
+</div>
+<button class="btn btn-primary form-submit" id="submitBtn" type="submit">
             Send Message
           </button>
-        </form>
-      </div>
-
-    </div>
-  </div>
+</form>
+</div>
+</div>
+</div>
 </section>
-
 <!-- DIVIDER -->
 <div class="divider"><div class="divider-diamond"></div></div>
-
 <!-- BOTTOM CTA -->
 <section class="cta-band">
-  <div class="container">
-    <div class="cta-band-inner reveal">
-      <div class="cta-band-copy">
-        <div class="section-label"><span>Not Ready Yet?</span></div>
-        <h2>Learn How I <em>Work</em> First.</h2>
-        <p>
+<div class="container">
+<div class="cta-band-inner reveal">
+<div class="cta-band-copy">
+<div class="section-label"><span>Not Ready Yet?</span></div>
+<h2>Learn How I <em>Work</em> First.</h2>
+<p>
           Explore how I approach marketing, presentation, and positioning
           before you make your next move.
         </p>
-      </div>
-      <a href="services.html" class="btn-gold-outline">See My Services</a>
-    </div>
-  </div>
+</div>
+<a class="btn-gold-outline" href="services.html">See My Services</a>
+</div>
+</div>
 </section>
-
+<!-- NEIGHBORHOODS -->
+<div id="featuredAreasLinks"></div>
 <!-- FOOTER -->
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3 class="logo-footer">Orion Love</h3>
-        <p>Clear communication. Honest feedback.<br>Strategy that works.</p>
-        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Sellers</a></li>
-          <li><a href="buyers.html">Buyers</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="/cdn-cgi/l/email-protection#78170a1117165614170e1d561b17381f15191114561b1715"><span class="__cf_email__" data-cfemail="dab5a8b3b5b4f4b6b5acbff4b9b59abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a></li>
-          <li><a href="tel:9706446781">(970) 644-6781</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
-  </div>
+<div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </footer>
-
-<script>
-  if (window.lucide) lucide.createIcons();
-
-  // Mobile menu — body-level overlay to avoid fixed header stacking context
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (mobileToggle && navMenu) {
-    // Build overlay element appended directly to body
-    const overlay = document.createElement('div');
-    overlay.id = 'mobileNavOverlay';
-    overlay.innerHTML = navMenu.innerHTML;
-    overlay.style.cssText = [
-      'display:none',
-      'position:fixed',
-      'top:0','left:0','right:0','bottom:0',
-      'width:100vw','height:100vh',
-      'background:rgb(12,26,61)',
-      'flex-direction:column',
-      'align-items:center',
-      'justify-content:center',
-      'gap:2.5rem',
-      'z-index:99999',
-      'list-style:none',
-      'margin:0','padding:0'
-    ].join(';');
-
-    // Style the links inside overlay
-    const style = document.createElement('style');
-    style.textContent = `
-      #mobileNavOverlay a {
-        font-size: 1.5rem;
-        color: #ffffff;
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-        display: block;
-      }
-      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
-      #mobileNavOverlay li { list-style: none; text-align: center; }
-      #mobileNavOverlay .btn-nav {
-        border: 1px solid #b8923a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #d4aa5a;
-      }
-    `;
-    document.head.appendChild(style);
-    document.body.appendChild(overlay);
-
-    const openMenu = () => {
-      overlay.style.display = 'flex';
-      mobileToggle.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeMenu = () => {
-      overlay.style.display = 'none';
-      mobileToggle.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      overlay.style.display === 'flex' ? closeMenu() : openMenu();
-    });
-
-    overlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
-
-  const header = document.getElementById('mainHeader');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-  }
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  // Contact form
-  const contactForm = document.getElementById('contactForm');
-  const formMessage = document.getElementById('formMessage');
-  const submitBtn   = document.getElementById('submitBtn');
-
-  if (contactForm && submitBtn) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const requiredIds = ['firstName', 'lastName', 'email', 'message'];
-      let valid = true;
-      requiredIds.forEach(id => {
-        const field = document.getElementById(id);
-        if (!field?.value.trim()) { field?.classList.add('error'); valid = false; }
-      });
-      if (!valid) { showMessage('Please fill in all required fields.', 'error'); return; }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      const formData = {
-        firstName: document.getElementById('firstName')?.value.trim(),
-        lastName:  document.getElementById('lastName')?.value.trim(),
-        email:     document.getElementById('email')?.value.trim(),
-        phone:     document.getElementById('phone')?.value.trim() || '',
-        inquiry:   document.getElementById('inquiry')?.value || '',
-        message:   document.getElementById('message')?.value.trim(),
-      };
-
-      try {
-        const WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
-        const response = await fetch(WORKER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
-        let result = {};
-        try { result = await response.json(); } catch (_) {}
-        if (response.ok && result.success) {
-          showMessage("Thank you for reaching out. I'll be in touch within 24 hours.", 'success');
-          contactForm.reset();
-        } else {
-          throw new Error(result.error || 'Server error');
-        }
-      } catch (err) {
-        console.error('Form error:', err.message);
-        showMessage('Something went wrong. Please call or email me directly at (970) 644-6781.', 'error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Start the Conversation';
-      }
-    });
-  }
-
-  function showMessage(text, type) {
-    if (!formMessage) return;
-    formMessage.textContent = text;
-    formMessage.className = 'form-message ' + type;
-    formMessage.style.display = 'block';
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-</script>
-
+</noscript>
 </body>
 </html>

@@ -1,283 +1,652 @@
-/* =========================================================
-   Orion Love — script.js
-   Reconciled + upgraded to match the redesigned site system
-========================================================= */
+/* ============================================================
+   Orion Love Real Estate — Shared Script
+   ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.classList.add('js');
 
-  /* =========================
-     Lucide Icons
-     Initialize on every page that loads this script.
-  ========================= */
-  if (window.lucide) lucide.createIcons();
+  /* ============================================================
+     Page identity fallback
+     Adds body class from filename if missing
+     example: about.html -> page-about
+     ============================================================ */
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const pageSlug = path
+    .replace(/\.html?$/i, '')
+    .replace(/[^a-z0-9]+/gi, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase();
+
+  if (pageSlug && document.body) {
+    document.body.classList.add(`page-${pageSlug}`);
+  }
 
 
-  /* =========================
-     Mobile Menu Toggle
-  ========================= */
+  const SHARED_NAV_ITEMS = [
+    { href: 'index.html', label: 'Home' },
+    { href: 'services.html', label: 'Sellers' },
+    { href: 'buyers.html', label: 'Buyers' },
+    { href: 'about.html', label: 'About' },
+    { href: 'faq.html', label: 'FAQ' },
+    { href: 'contact.html', label: 'Contact', isButton: true },
+  ];
+
+  const FEATURED_AREA_LINKS = [
+    { href: 'grand-junction-home-value.html', icon: 'building-2', label: 'Grand Junction' },
+    { href: 'selling-in-fruita.html', icon: 'bike', label: 'Fruita' },
+    { href: 'selling-in-palisade.html', icon: 'leaf', label: 'Palisade' },
+    { href: 'clifton-grand-junction.html', icon: 'house', label: 'Clifton' },
+    { href: 'loma-mack-grand-junction.html', icon: 'mountain', label: 'Loma / Mack' },
+  ];
+
+  function renderSharedHeader(currentPath) {
+    const target = document.getElementById('siteHeader');
+    if (!target) return;
+
+    const navItems = SHARED_NAV_ITEMS.map((item) => {
+      const isActive = currentPath === item.href;
+      const activeClass = isActive ? ' class="active"' : '';
+      const currentAttr = isActive ? ' aria-current="page"' : '';
+      const btnClass = item.isButton ? ' class="btn-nav"' : activeClass;
+      const classAttr = item.isButton ? btnClass : activeClass;
+
+      return `<li><a${classAttr} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
+    }).join('');
+
+    target.innerHTML = `
+<header class="main-header" id="mainHeader">
+  <nav>
+    <a class="logo" href="index.html">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">${navItems}</ul>
+    <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavOverlay" class="mobile-toggle" id="mobileToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>`;
+  }
+
+  function renderFeaturedAreas() {
+    const target = document.getElementById('featuredAreasLinks');
+    if (!target) return;
+
+    const links = FEATURED_AREA_LINKS.map(
+      (item) =>
+        `<a class="link-card" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
+    ).join('');
+
+    target.innerHTML = `
+<section class="bottom-city-links">
+  <div class="container">
+    <div class="bottom-city-links-shell">
+      <div class="bottom-city-links-intro">
+        <div class="bottom-city-links-label"><span>Featured Areas</span></div>
+        <h2>Explore Key Markets Around Mesa County</h2>
+        <p>A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+      </div>
+      <div class="link-grid">${links}</div>
+    </div>
+  </div>
+</section>`;
+  }
+
+  function renderSharedFooter() {
+    const target = document.getElementById('siteFooter');
+    if (!target) return;
+
+    target.innerHTML = `
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="logo-footer">Orion Love</h3>
+        <p>Helping Grand Junction homeowners buy and sell<br/>with clarity, confidence, and honest communication.</p>
+        <p class="footer-brand-note">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:orion@orionlove.com">orion@orionlove.com</a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ${new Date().getFullYear()} Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>`;
+  }
+
+  renderSharedHeader(path);
+  renderFeaturedAreas();
+  renderSharedFooter();
+
+  /* ============================================================
+     Icons
+     ============================================================ */
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
+  /* ============================================================
+     Scroll reveal
+     ============================================================ */
+  const revealEls = document.querySelectorAll('.reveal');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (revealEls.length) {
+    if (prefersReducedMotion) {
+      revealEls.forEach((el) => el.classList.add('visible'));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+    }
+  }
+
+  /* ============================================================
+     Header scroll state
+     ============================================================ */
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    const updateHeader = () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  }
+
+  /* ============================================================
+     Mobile nav overlay
+     ============================================================ */
   const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu      = document.querySelector('.nav-menu');
-
-  const closeMenu = () => {
-    navMenu?.classList.remove('active');
-    mobileToggle?.setAttribute('aria-expanded', 'false');
-    mobileToggle?.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  const openMenu = () => {
-    navMenu?.classList.add('active');
-    mobileToggle?.setAttribute('aria-expanded', 'true');
-    mobileToggle?.classList.add('active');
-    document.body.style.overflow = 'hidden'; // prevent bg scroll
-  };
+  const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
-    mobileToggle.setAttribute('aria-expanded', 'false');
-    mobileToggle.setAttribute('aria-controls', 'nav-menu');
-    navMenu.id = 'nav-menu';
+    let overlay = document.getElementById('mobileNavOverlay');
+
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'mobileNavOverlay';
+      overlay.innerHTML = navMenu.innerHTML;
+      document.body.appendChild(overlay);
+    }
+
+    const openMenu = () => {
+      overlay.classList.add('open');
+      mobileToggle.classList.add('active');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('mobile-nav-open');
+    };
+
+    const closeMenu = () => {
+      overlay.classList.remove('open');
+      mobileToggle.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('mobile-nav-open');
+    };
 
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      navMenu.classList.contains('active') ? closeMenu() : openMenu();
+      if (overlay.classList.contains('open')) closeMenu();
+      else openMenu();
     });
 
-    // Close on link click
-    navMenu.querySelectorAll('a').forEach(link => {
+    overlay.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('active') &&
-          !navMenu.contains(e.target) &&
-          !mobileToggle.contains(e.target)) {
-        closeMenu();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  /* ============================================================
+     Shared helpers
+     ============================================================ */
+  const MARKET_STATS_URL =
+    'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const GJ_CITY_STATS_URL =
+    'https://grand-junction-city-stats.orion-love-co.workers.dev/api/grand-junction-stats';
+
+  const PROXY_URL =
+    'https://fub-contact-proxy.orion-love-co.workers.dev';
+
+  function formatCurrency(value) {
+    if (!Number.isFinite(value)) return '$--';
+    if (value >= 1000000) {
+      return '$' + (value / 1000000).toFixed(2).replace(/\.00$/, '') + 'M';
+    }
+    if (value >= 1000) {
+      return '$' + Math.round(value / 1000) + 'K';
+    }
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0,
+    }).format(value);
+  }
+
+  function formatCurrencyHTML(value) {
+    if (!Number.isFinite(value)) return '<span>$</span>--';
+    const rounded = Math.round(value);
+
+    if (rounded >= 1000000) {
+      return '<span>$</span>' + (rounded / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    }
+    if (rounded >= 1000) {
+      return '<span>$</span>' + Math.round(rounded / 1000) + 'K';
+    }
+    return '<span>$</span>' + rounded.toLocaleString();
+  }
+
+  function formatDays(value) {
+    return Number.isFinite(value) ? `${Math.round(value)} days` : '-- days';
+  }
+
+  function formatNumber(value) {
+    return Number.isFinite(value) ? Math.round(value).toLocaleString() : '--';
+  }
+
+  function formatUpdatedDate(value, areaLabel) {
+    const suffix = areaLabel ? ` · ${areaLabel}` : '';
+    if (!value) return `Live market data${suffix}`;
+
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return `Live market data${suffix}`;
+
+    return `Updated ${parsed.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    })}${suffix}`;
+  }
+
+  function showFormMsg(el, text, type) {
+    if (!el) return;
+    el.textContent = text;
+    el.className = `form-message ${type}`;
+    el.style.display = 'block';
+  }
+
+  async function submitToProxy(formData) {
+    const res = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || 'Server error');
+    }
+
+    return data;
+  }
+
+  /* ============================================================
+     Shared neighborhood stats loader
+     ============================================================ */
+  async function loadMarketStats(areaKey, opts = {}) {
+    try {
+      const res = await fetch(MARKET_STATS_URL, {
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+      const area = data?.areas?.[areaKey];
+
+      if (!area) throw new Error(`Area not found: ${areaKey}`);
+
+      const medianEls = document.querySelectorAll(
+        '[data-market-stat="medianPrice"], #marketMedianPrice, #omMedianPrice, #redlandsMedianPrice, #palMedianPrice, #fruitaMedianSalePrice'
+      );
+      const domEls = document.querySelectorAll(
+        '[data-market-stat="averageDaysOnMarket"], #marketDaysOnMarket, #omDaysOnMarket, #redlandsDaysOnMarket, #palAvgDom, #fruitaDaysOnMarket'
+      );
+      const newEls = document.querySelectorAll(
+        '#omNewListings, #redlandsNewListings, #palNewListings, #fruitaNewListings'
+      );
+      const totalEls = document.querySelectorAll(
+        '#omTotalListings, #redlandsTotalListings, #palTotalListings, #fruitaTotalListings'
+      );
+      const noteEls = document.querySelectorAll(
+        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
+      );
+
+      medianEls.forEach((el) => {
+        if (opts.htmlCurrency) el.innerHTML = formatCurrencyHTML(area.medianPrice);
+        else el.textContent = formatCurrency(area.medianPrice);
+      });
+
+      domEls.forEach((el) => {
+        el.textContent = formatDays(area.averageDaysOnMarket);
+      });
+
+      newEls.forEach((el) => {
+        el.textContent = formatNumber(area.newListings);
+      });
+
+      totalEls.forEach((el) => {
+        el.textContent = formatNumber(area.totalListings);
+      });
+
+      const updated = area.lastUpdatedDate || data.generatedAt;
+      noteEls.forEach((el) => {
+        el.textContent = formatUpdatedDate(updated, opts.areaLabel);
+      });
+    } catch (err) {
+      console.error('Market stats load failed:', err);
+      const noteEls = document.querySelectorAll(
+        '#marketNote, #marketUpdatedNote, #omStatsUpdated, #redlandsStatsNote, #palisadeMarketUpdated, #fruitaMarketNote'
+      );
+      noteEls.forEach((el) => {
+        el.textContent = 'Live market data temporarily unavailable';
+      });
+    }
+  }
+
+  /* ============================================================
+     Grand Junction city stats loader
+     Uses separate worker for grand-junction-home-value page
+     ============================================================ */
+  async function loadGrandJunctionCityStats() {
+    try {
+      const res = await fetch(GJ_CITY_STATS_URL, {
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const data = await res.json();
+      const stats = data?.stats || {};
+
+      const medianEl = document.getElementById('gjMedianListPrice');
+      const domEl = document.getElementById('gjAvgDom');
+      const newEl = document.getElementById('gjNewListings');
+      const activeEl = document.getElementById('gjActiveListings');
+      const metaEl = document.getElementById('gjStatsMeta');
+
+      if (medianEl) medianEl.innerHTML = formatCurrencyHTML(stats.medianListPrice);
+      if (domEl) domEl.textContent = formatDays(stats.averageDaysOnMarket);
+      if (newEl) newEl.textContent = formatNumber(stats.newListings30d);
+      if (activeEl) activeEl.textContent = formatNumber(stats.activeListings);
+      if (metaEl) metaEl.textContent = formatUpdatedDate(data.generatedAt, 'Grand Junction');
+    } catch (err) {
+      console.error('Grand Junction city stats load failed:', err);
+      const metaEl = document.getElementById('gjStatsMeta');
+      if (metaEl) metaEl.textContent = 'Monthly snapshot temporarily unavailable';
+    }
+  }
+
+  /* ============================================================
+     Page initializers
+     ============================================================ */
+  const getTrimmedValue = (id) => document.getElementById(id)?.value.trim() || '';
+
+  const submitForm = ({
+    formId,
+    submitBtnId,
+    messageId,
+    payloadBuilder,
+    successMessage,
+    submitButtonDefaultText,
+    errorMessage = 'Something went wrong. Please call (970) 644-6781.',
+    validate,
+  }) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn = document.getElementById(submitBtnId);
+      const msg = document.getElementById(messageId);
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+      }
+
+      try {
+        const validationError = validate ? validate() : '';
+        if (validationError) {
+          showFormMsg(msg, validationError, 'error');
+          return;
+        }
+
+        await submitToProxy(payloadBuilder());
+        showFormMsg(msg, successMessage, 'success');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        showFormMsg(msg, errorMessage, 'error');
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = submitButtonDefaultText;
+        }
       }
     });
+  };
 
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
-    });
-  }
+  const pageInitializers = {
+    'page-contact': () => {
+      submitForm({
+        formId: 'contactForm',
+        submitBtnId: 'submitBtn',
+        messageId: 'formMessage',
+        validate: () => {
+          const requiredIds = ['contactFirstName', 'contactLastName', 'contactEmail', 'contactMessage'];
+          const hasAllValues = requiredIds.every((id) => getTrimmedValue(id));
+          return hasAllValues ? '' : 'Please fill in all required fields.';
+        },
+        payloadBuilder: () => ({
+          firstName: getTrimmedValue('contactFirstName'),
+          lastName: getTrimmedValue('contactLastName'),
+          email: getTrimmedValue('contactEmail'),
+          phone: getTrimmedValue('contactPhone'),
+          inquiry: document.getElementById('contactInquiry')?.value || 'General Inquiry',
+          message: getTrimmedValue('contactMessage'),
+        }),
+        successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
+        submitButtonDefaultText: 'Start the Conversation',
+        errorMessage: 'Something went wrong. Please call or email me directly.',
+      });
+    },
+    'page-grand-junction-home-value': () => {
+    loadGrandJunctionCityStats();
+      submitForm({
+        formId: 'valForm',
+        submitBtnId: 'valSubmit',
+        messageId: 'valFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('gjFirstName')?.value.trim() || '',
+            lastName: document.getElementById('gjLastName')?.value.trim() || '',
+            email: document.getElementById('gjEmail')?.value.trim() || '',
+            phone: document.getElementById('gjPhone')?.value.trim() || '',
+            inquiry: 'Home Value Request — Grand Junction',
+            message:
+              'Address: ' + (document.getElementById('gjAddress')?.value.trim() || '') +
+              '\nBedrooms: ' + (document.getElementById('gjBedrooms')?.value || '') +
+              '\nTimeline: ' + (document.getElementById('gjTimeline')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your home value review ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Free Home Value',
+      });
+    },
+    'page-orchard-mesa-homes': () => {
+      loadMarketStats('orchard_mesa', {
+        htmlCurrency: true,
+        areaLabel: 'Orchard Mesa',
+      });
+      submitForm({
+        formId: 'omForm',
+        submitBtnId: 'omFormBtn',
+        messageId: 'omFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('omFirstName')?.value.trim() || '',
+            lastName: document.getElementById('omLastName')?.value.trim() || '',
+            email: document.getElementById('omEmail')?.value.trim() || '',
+            phone: document.getElementById('omPhone')?.value.trim() || '',
+            inquiry: 'Home Value Request — Orchard Mesa',
+            message:
+              'Address: ' + (document.getElementById('omAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('omTimeline')?.value || '') +
+              '\nRiver View: ' + (document.getElementById('omRiverView')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Orchard Mesa home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Orchard Mesa Home Value',
+      });
+    },
+    'page-redlands-homes': () => {
+      loadMarketStats('redlands', {
+        htmlCurrency: true,
+        areaLabel: 'Redlands',
+      });
+      submitForm({
+        formId: 'redlandsForm',
+        submitBtnId: 'redFormBtn',
+        messageId: 'redFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('redFirstName')?.value.trim() || '',
+            lastName: document.getElementById('redLastName')?.value.trim() || '',
+            email: document.getElementById('redEmail')?.value.trim() || '',
+            phone: document.getElementById('redPhone')?.value.trim() || '',
+            inquiry: 'Home Value Request — Redlands',
+            message:
+              'Address: ' + (document.getElementById('redAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('redTimeline')?.value || '') +
+              '\nMonument Views: ' + (document.getElementById('redViews')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Redlands home value ready within 24 hours.",
+        submitButtonDefaultText: 'Request My Home Value',
+      });
+    },
+    'page-selling-in-fruita': () => {
+      loadMarketStats('fruita', {
+        areaLabel: 'Fruita',
+      });
+      submitForm({
+        formId: 'fruitaForm',
+        submitBtnId: 'fruSubmit',
+        messageId: 'fruFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('fruFirstName')?.value.trim() || '',
+            lastName: document.getElementById('fruLastName')?.value.trim() || '',
+            email: document.getElementById('fruEmail')?.value.trim() || '',
+            phone: document.getElementById('fruPhone')?.value.trim() || '',
+            inquiry: 'Home Value Request — Fruita',
+            message:
+              'Address: ' + (document.getElementById('fruAddress')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('fruTimeline')?.value || '') +
+              '\nBedrooms: ' + (document.getElementById('fruBedrooms')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Fruita home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Fruita Home Value',
+      });
+    },
+    'page-selling-in-palisade': () => {
+      loadMarketStats('palisade', {
+        htmlCurrency: true,
+        areaLabel: 'Palisade',
+      });
+      submitForm({
+        formId: 'palisadeForm',
+        submitBtnId: 'palSubmit',
+        messageId: 'palFormMsg',
+        payloadBuilder: () => ({
+            firstName: document.getElementById('palFirstName')?.value.trim() || '',
+            lastName: document.getElementById('palLastName')?.value.trim() || '',
+            email: document.getElementById('palEmail')?.value.trim() || '',
+            phone: document.getElementById('palPhone')?.value.trim() || '',
+            inquiry: 'Home Value Request — Palisade',
+            message:
+              'Address: ' + (document.getElementById('palAddress')?.value.trim() || '') +
+              '\nNotable features: ' + (document.getElementById('palFeatures')?.value.trim() || '') +
+              '\nTimeline: ' + (document.getElementById('palTimeline')?.value || '') +
+              '\nBedrooms: ' + (document.getElementById('palBedrooms')?.value || ''),
+          }),
+        successMessage: "Thank you! I'll have your Palisade home value ready within 24 hours.",
+        submitButtonDefaultText: 'Get My Palisade Home Value',
+      });
+    },
+    'page-clifton-grand-junction': () => {
+      loadMarketStats('clifton', { areaLabel: 'ZIP 81520' });
+    },
+    'page-downtown-grand-junction': () => {
+      loadMarketStats('downtown_grand_junction', { areaLabel: 'ZIP 81501' });
+    },
+    'page-loma-mack-grand-junction': () => {
+      loadMarketStats('loma_mack', { areaLabel: 'Loma / Mack' });
+    },
+    'page-north-grand-junction': () => {
+      loadMarketStats('north_grand_junction', { areaLabel: 'North Grand Junction' });
+    },
+    'page-northeast-grand-junction': () => {
+      loadMarketStats('northeast_grand_junction', { areaLabel: 'Northeast Grand Junction' });
+    },
+    'page-northwest-grand-junction': () => {
+      loadMarketStats('northwest_grand_junction', { areaLabel: 'Northwest Grand Junction' });
+    },
+  };
 
-
-  /* =========================
-     Sticky Nav — scroll state
-     Adds .scrolled for frosted-navy effect defined in CSS.
-     Also handles the transparent-over-hero pattern.
-  ========================= */
-  const header = document.querySelector('.main-header');
-
-  if (header) {
-    const onScroll = () => {
-      const y = window.scrollY || window.pageYOffset;
-      header.classList.toggle('scrolled', y > 40);
-    };
-
-    onScroll(); // run once on load
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-
-  /* =========================
-     Smooth Scroll for Anchor Links
-     Accounts for the 72px fixed header.
-  ========================= */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#') return;
-
-      const target = document.querySelector(href);
-      if (!target) return;
-
-      e.preventDefault();
-      const headerOffset = 88; // nav height + breathing room
-      const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-
-      window.scrollTo({ top, behavior: 'smooth' });
-      closeMenu();
-    });
+  Object.entries(pageInitializers).forEach(([pageClass, init]) => {
+    if (document.body.classList.contains(pageClass)) init();
   });
 
+  /* ============================================================
+     FAQ PAGE
+     ============================================================ */
+  if (document.body.classList.contains('page-faq')) {
+    const faqTabs = document.querySelectorAll('.faq-tab');
+    const faqPanels = document.querySelectorAll('.faq-panel');
 
-  /* =========================
-     Scroll Reveal
-     Handles both .reveal (new pages) and legacy
-     selector targets (usp-card, step, etc.).
-     Supports: transition-delay on individual elements.
-  ========================= */
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (prefersReducedMotion) {
-    // Skip all animation — just make everything visible immediately
-    document.querySelectorAll('.reveal, .usp-card, .step, .stat, .value-card, .detail-item, .promise-item, .promise-card, .faq-item')
-      .forEach(el => {
-        el.classList.add('is-visible', 'visible');
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
-  } else {
-    // New .reveal system (used by all redesigned pages)
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible', 'is-visible');
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
-
-      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-      // Legacy targets (old pages that don't use .reveal)
-      const legacyTargets = document.querySelectorAll(
-        '.usp-card:not(.reveal), .step:not(.reveal), .stat:not(.reveal), .value-card:not(.reveal), .detail-item:not(.reveal), .promise-item:not(.reveal)'
-      );
-      const legacyObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-
-      legacyTargets.forEach(el => legacyObserver.observe(el));
-
-    } else {
-      // Fallback for no IntersectionObserver support
-      document.querySelectorAll('.reveal, .usp-card, .step, .stat')
-        .forEach(el => {
-          el.classList.add('visible', 'is-visible');
-        });
-    }
-  }
-
-
-  /* =========================
-     Hero Scroll Indicator
-     Fades out as user scrolls down.
-  ========================= */
-  const scrollIndicator = document.querySelector('.hero-scroll');
-  if (scrollIndicator) {
-    window.addEventListener('scroll', () => {
-      const opacity = Math.max(0, 1 - window.scrollY / 200);
-      scrollIndicator.style.opacity = opacity;
-    }, { passive: true });
-  }
-
-
-  /* =========================
-     Form Validation
-     Adds .error class on invalid fields,
-     removes on correction. Works with any form on the page.
-  ========================= */
-  document.querySelectorAll('form').forEach(form => {
-    form.querySelectorAll('input[required], textarea[required], select[required]')
-      .forEach(field => {
-        field.addEventListener('invalid', (e) => {
-          e.preventDefault();
-          field.classList.add('error');
-          field.setAttribute('aria-invalid', 'true');
-        });
-
-        field.addEventListener('input', () => {
-          if (field.validity.valid) {
-            field.classList.remove('error');
-            field.removeAttribute('aria-invalid');
-          }
-        });
-      });
-  });
-
-
-  /* =========================
-     Lazy Loading Images
-     Swaps data-src → src when near viewport.
-  ========================= */
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  if (lazyImages.length && 'IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const img = entry.target;
-        const src = img.getAttribute('data-src');
-        if (src) {
-          img.src = src;
-          img.removeAttribute('data-src');
-          img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-        }
-        observer.unobserve(img);
-      });
-    }, { rootMargin: '300px 0px' });
-
-    lazyImages.forEach(img => imageObserver.observe(img));
-  }
-
-
-  /* =========================
-     Active Nav Link Highlighting
-     Marks the current page's nav link as active
-     based on the current URL path.
-  ========================= */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-menu a:not(.btn-nav)').forEach(link => {
-    const linkPath = link.getAttribute('href')?.split('/').pop();
-    if (linkPath && linkPath === currentPath) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-    }
-  });
-
-
-  /* =========================
-     FAQ Accordion (shared logic)
-     Used by faq.html but safe to run on every page.
-     One-open-at-a-time within each accordion group.
-  ========================= */
-  ['buyers-accordion', 'sellers-accordion'].forEach(id => {
-    const container = document.getElementById(id);
-    if (!container) return;
-
-    container.querySelectorAll('details.faq-item').forEach(item => {
-      item.addEventListener('toggle', () => {
-        if (item.open) {
-          container.querySelectorAll('details.faq-item[open]').forEach(open => {
-            if (open !== item) open.removeAttribute('open');
-          });
-        }
-      });
-    });
-  });
-
-
-  /* =========================
-     FAQ Tab Switching (faq.html)
-  ========================= */
-  const faqTabs  = document.querySelectorAll('.faq-tab');
-  const faqPanels = document.querySelectorAll('.faq-panel');
-
-  if (faqTabs.length) {
-    faqTabs.forEach(tab => {
+    faqTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.panel;
 
-        faqTabs.forEach(t => {
+        faqTabs.forEach((t) => {
           t.classList.remove('active');
           t.setAttribute('aria-selected', 'false');
         });
-        faqPanels.forEach(p => p.classList.remove('active'));
+
+        faqPanels.forEach((panel) => {
+          panel.classList.remove('active');
+        });
 
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
 
-        const panel = document.getElementById('panel-' + target);
-        if (panel) {
-          panel.classList.add('active');
-          // Re-run reveal observer for newly visible items
-          panel.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        const targetPanel = document.getElementById(`panel-${target}`);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+          targetPanel.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
             el.classList.add('visible');
           });
         }
@@ -285,114 +654,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.lucide) lucide.createIcons();
       });
     });
-  }
 
+    ['buyers-accordion', 'sellers-accordion'].forEach((id) => {
+      const container = document.getElementById(id);
+      if (!container) return;
 
-  /* =========================
-     FAQ Live Search
-  ========================= */
-  document.querySelectorAll('.faq-search').forEach(input => {
-    const targetId  = input.dataset.target;
-    const accordion = document.getElementById(targetId);
-    const panelKey  = targetId?.replace('-accordion', '');
-    const noResults = document.getElementById('no-results-' + panelKey);
+      container.querySelectorAll('details.faq-item').forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
 
-    if (!accordion) return;
-
-    input.addEventListener('input', () => {
-      const query = input.value.toLowerCase().trim();
-      let visible = 0;
-
-      accordion.querySelectorAll('details.faq-item').forEach(item => {
-        const match = !query || item.textContent.toLowerCase().includes(query);
-        item.style.display = match ? '' : 'none';
-        if (match) visible++;
-        if (!match && item.open) item.removeAttribute('open');
+          container.querySelectorAll('details.faq-item[open]').forEach((openItem) => {
+            if (openItem !== item) openItem.removeAttribute('open');
+          });
+        });
       });
-
-      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
     });
-  });
 
+    document.querySelectorAll('.faq-search').forEach((input) => {
+      const accordion = document.getElementById(input.dataset.target);
+      const panelKey = input.dataset.target?.replace('-accordion', '');
+      const noResults = document.getElementById(`no-results-${panelKey}`);
 
-  /* =========================
-     Contact Form (Cloudflare Worker → FollowUpBoss)
-     Only activates when #contactForm is present.
-  ========================= */
-  const contactForm = document.getElementById('contactForm');
-  const formMessage = document.getElementById('formMessage');
-  const submitBtn   = document.getElementById('submitBtn');
+      if (!accordion) return;
 
-  if (contactForm && submitBtn) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+      input.addEventListener('input', () => {
+        const query = input.value.toLowerCase().trim();
+        let visibleCount = 0;
 
-      // Client-side required field check
-      const requiredIds = ['firstName', 'lastName', 'email', 'message'];
-      let valid = true;
-      requiredIds.forEach(id => {
-        const field = document.getElementById(id);
-        if (!field?.value.trim()) {
-          field?.classList.add('error');
-          valid = false;
-        }
-      });
-
-      if (!valid) {
-        showFormMessage('Please fill in all required fields.', 'error');
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      const formData = {
-        firstName: document.getElementById('firstName')?.value.trim(),
-        lastName:  document.getElementById('lastName')?.value.trim(),
-        email:     document.getElementById('email')?.value.trim(),
-        phone:     document.getElementById('phone')?.value.trim() || '',
-        inquiry:   document.getElementById('inquiry')?.value || '',
-        message:   document.getElementById('message')?.value.trim(),
-      };
-
-      try {
-        const WORKER_URL = 'https://fub-contact-proxy.orion-love-co.workers.dev';
-
-        const response = await fetch(WORKER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
+        accordion.querySelectorAll('details.faq-item').forEach((item) => {
+          const match = !query || item.textContent.toLowerCase().includes(query);
+          item.style.display = match ? '' : 'none';
+          if (!match && item.open) item.removeAttribute('open');
+          if (match) visibleCount++;
         });
 
-        let result = {};
-        try { result = await response.json(); } catch (_) {}
-
-        if (response.ok && result.success) {
-          showFormMessage("Thank you for reaching out. I'll be in touch within 24 hours.", 'success');
-          contactForm.reset();
-        } else {
-          throw new Error(result.error || `Server error ${response.status}`);
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         }
-
-      } catch (err) {
-        console.error('Form error:', err.message);
-        showFormMessage(
-          'Something went wrong. Please call or email me directly at (970) 644-6781.',
-          'error'
-        );
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }
+      });
     });
   }
-
-  function showFormMessage(text, type) {
-    if (!formMessage) return;
-    formMessage.textContent = text;
-    formMessage.className = 'form-message ' + type;
-    formMessage.style.display = 'block';
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-}); // end DOMContentLoaded
+});

@@ -1,270 +1,127 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loma & Mack, CO Real Estate | Orion Love — Grand Junction Realtor®</title>
-  <meta name="description" content="Buying or selling land or a home in Loma or Mack, Colorado? Get honest, local real estate guidance from Realtor Orion Love. Rural acreage, wide-open space, and the far-west Mesa County lifestyle." />
-  <meta name="keywords" content="Loma Colorado real estate, Mack Colorado homes, Loma Mack Mesa County, sell my land Loma CO, rural Grand Junction real estate, far west Mesa County" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px; }
-    html{scroll-behavior:smooth;}body{font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
-    h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-    .container{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}section{padding:clamp(3.5rem,6vw,5rem) 0;}
-    .main-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}.main-header.scrolled{background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-    .main-header nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-    .logo{text-decoration:none;}.logo-main{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-    .nav-menu{display:flex;list-style:none;gap:2.25rem;align-items:center;}.nav-menu a{text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}.nav-menu a:hover{color:var(--gold-lt);}
-    .btn-nav{background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-    .mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}.mobile-toggle span{display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-    .btn{display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-    .btn-primary{background:var(--gold);color:var(--white);}.btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);}
-    .btn-navy{background:var(--navy);color:var(--white);}.btn-navy:hover{background:var(--navy-mid);transform:translateY(-2px);}
-    .btn-outline-gold{background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}.btn-outline-gold:hover{background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-    .section-label{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}.section-label::before{content:"";display:block;width:28px;height:1px;background:var(--gold);}.section-label span{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-    .section-label.centered{justify-content:center;}.section-label.centered::after{content:"";display:block;width:28px;height:1px;background:var(--gold);}
-    .divider{display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--sand);}.divider-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
-    .hero{position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-    .hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-    .hero-inner{position:relative;z-index:1;max-width:760px;padding-top:4rem;}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}.hero-eyebrow::before{content:"";display:block;width:22px;height:1px;background:var(--gold);}
-    .hero h1{color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}.hero h1 em{font-style:italic;color:var(--gold-lt);}
-    .hero-lead{font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-    .copy h2{margin-bottom:0.85rem;}.copy p{color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-    .quick-facts{background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-    .quick-facts h4{font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-    .fact-row{display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}.fact-row:last-child{border-bottom:none;}
-    .fact-label{font-size:0.88rem;color:var(--muted);}.fact-value{font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);}
-    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-    .card{background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-    .card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}.card:hover::before{opacity:1;}
-    .card-icon{width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}.card-icon svg{width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-    .card h3{font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}.card p{color:var(--muted);font-size:0.95rem;line-height:1.8;}
-    /* important note box */
-    .note-box{background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
-    .note-box h4{font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
-    .note-box p{color:var(--text);font-size:0.95rem;line-height:1.8;}
-    .dark-band{background:var(--navy);position:relative;overflow:hidden;}.dark-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
-    .dark-inner{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
-    .dark-inner h2{color:var(--white);font-weight:300;margin-bottom:1rem;}.dark-inner h2 em{font-style:italic;color:var(--gold-lt);}
-    .dark-inner p{color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-    .cta-pair{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-    .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-    .link-card{background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}.link-card:hover{border-color:var(--gold);transform:translateY(-2px);}.link-card svg{width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}.link-card span{font-size:0.88rem;font-weight:600;color:var(--navy);}
-    .main-footer{background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-    .logo-footer{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-    .footer-brand p{color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-    .footer-links h4,.footer-contact h4{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-    .footer-links ul,.footer-contact ul{list-style:none;}.footer-links li,.footer-contact li{margin-bottom:0.6rem;}
-    .footer-links a,.footer-contact a{color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}.footer-links a:hover,.footer-contact a:hover{color:var(--gold-lt);}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-    .footer-bottom p,.footer-bottom a{color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}.footer-bottom a:hover{color:var(--gold-lt);}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}.reveal.visible{opacity:1;transform:none;}
-    @media(max-width:968px){.nav-menu{position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}.nav-menu.active{left:0;}.mobile-toggle{display:flex;}.two-col{grid-template-columns:1fr;gap:2.5rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.footer-bottom{flex-direction:column;text-align:center;}}
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loma &amp; Mack, CO Real Estate | Orion Love — Grand Junction Realtor®</title>
+<meta content="Buying or selling land or a home in Loma or Mack, Colorado? Get honest, local real estate guidance from Realtor Orion Love. Rural acreage, wide-open space, and the far-west Mesa County lifestyle." name="description"/>
+<meta content="Loma Colorado real estate, Mack Colorado homes, Loma Mack Mesa County, sell my land Loma CO, rural Grand Junction real estate, far west Mesa County" name="keywords"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<link href="styles.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
 </head>
-<body>
-<header class="main-header" id="mainHeader">
-  <nav>
-    <a href="index.html" class="logo"><span class="logo-main">Orion Love | Colorado Realtor®</span></a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="btn-nav">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  </nav>
+<body class="page-hero-aligned page-loma-mack-grand-junction page-photo-hero">
+<div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </header>
-
+</noscript>
 <section class="hero">
-  <div class="container"><div class="hero-inner">
-    <div class="hero-eyebrow">Loma &amp; Mack · Far West Mesa County · Colorado</div>
-    <h1>Real Estate in<br><em>Loma &amp; Mack, Colorado</em></h1>
-    <p class="hero-lead">Out past Fruita on the I-70 corridor, Loma and Mack are the far-west reaches of Mesa County — wide-open high desert, acreage parcels, rural quiet, and a way of life that no subdivision in Grand Junction proper can replicate.</p>
-    <div class="hero-cta">
-      <a href="contact.html" class="btn btn-primary">Talk to Orion</a>
-      <a href="grand-junction-home-value.html" class="btn-outline-gold">GJ Market Overview</a>
-    </div>
-  </div></div>
+<div class="container"><div class="hero-inner">
+<div class="hero-eyebrow"><span>Loma &amp; Mack · Far West Mesa County · Colorado</span></div>
+<h1>Real Estate in<br/><em>Loma &amp; Mack, Colorado</em></h1>
+<p class="hero-lead">Out past Fruita on the I-70 corridor, Loma and Mack are the far-west reaches of Mesa County — wide-open high desert, acreage parcels, rural quiet, and a way of life that no subdivision in Grand Junction proper can replicate.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="contact.html">Talk to Orion</a>
+<a class="btn-outline-gold" href="grand-junction-home-value.html">GJ Market Overview</a>
+</div>
+</div></div>
 </section>
-
-<section style="background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);">
-  <div class="container"><div class="two-col">
-    <div class="copy reveal">
-      <div class="section-label"><span>The Far West Valley</span></div>
-      <h2>What Loma &amp; Mack Offer — and Who They're For</h2>
-      <p>Loma sits roughly 15 miles west of Grand Junction along I-70, with Mack another few miles further toward the Utah border. Both are small unincorporated communities defined by agricultural land, acreage parcels, and a rural character that's increasingly rare as the Grand Valley fills in.</p>
-      <p>Buyers who seek out Loma and Mack are looking for something specific: land, privacy, and separation from the city — while keeping reasonable I-70 access to Grand Junction amenities. They may be hobby farmers, remote workers, retirees wanting space, or families priced out of larger acreage closer to town.</p>
-      <p>For sellers, understanding this niche buyer pool is everything. Marketing a rural Loma property like a suburban GJ home misses the audience entirely.</p>
-      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-navy">Talk to Orion</a>
-        <a href="grand-junction-home-value.html" class="btn-outline-gold">Get a Home Value</a>
-      </div>
-    </div>
-    <div class="reveal" style="transition-delay:0.15s">
-      <div class="quick-facts">
-        <h4>Loma &amp; Mack At a Glance</h4>
-        <div class="fact-row"><span class="fact-label">Median Sale Price</span><span class="fact-value" id="marketMedianPrice">Loading…</span></div>
-        <div class="fact-row"><span class="fact-label">Avg. Days on Market</span><span class="fact-value" id="marketDaysOnMarket">Loading…</span></div>
-        <div class="fact-row"><span class="fact-label">Typical Property Types</span><span class="fact-value">Acreage, rural homes, land</span></div>
-        <div class="fact-row"><span class="fact-label">Drive to Fruita</span><span class="fact-value">~15 min</span></div>
-        <div class="fact-row"><span class="fact-label">Drive to Grand Junction</span><span class="fact-value">~20–25 min</span></div>
-        <div class="fact-row"><span class="fact-label">I-70 Access</span><span class="fact-value">Direct (Loma exit)</span></div>
-        <div class="fact-row"><span class="fact-label">Typical Buyer</span><span class="fact-value">Rural lifestyle, privacy, land</span></div>
-        <div class="fact-row"><span class="fact-label">Best For</span><span class="fact-value">Space, quiet, agricultural use</span></div>
-        <div style="margin-top:0.85rem;font-size:0.75rem;color:var(--muted);" id="marketUpdatedNote">Updating from live market data…</div>
-      </div>
-      <div class="note-box">
-        <h4>A note on rural property</h4>
-        <p>Acreage and rural properties in Loma and Mack require different pricing approaches than residential Mesa County sales — including water rights, well and septic systems, agricultural use, and access easements. I'm familiar with these factors and will give you an honest assessment, not a guess.</p>
-      </div>
-    </div>
-  </div></div>
+<section class="section-shell-white">
+<div class="container"><div class="split-layout">
+<div class="copy reveal">
+<div class="section-label"><span>The Far West Valley</span></div>
+<h2>What Loma &amp; Mack Offer — and Who They're For</h2>
+<p>Loma sits roughly 15 miles west of Grand Junction along I-70, with Mack another few miles further toward the Utah border. Both are small unincorporated communities defined by agricultural land, acreage parcels, and a rural character that's increasingly rare as the Grand Valley fills in.</p>
+<p>Buyers who seek out Loma and Mack are looking for something specific: land, privacy, and separation from the city — while keeping reasonable I-70 access to Grand Junction amenities. They may be hobby farmers, remote workers, retirees wanting space, or families priced out of larger acreage closer to town.</p>
+<p>For sellers, understanding this niche buyer pool is everything. Marketing a rural Loma property like a suburban GJ home misses the audience entirely.</p>
+</div>
+<section class="area-glance premium-glance reveal reveal-delay-015">
+<div class="premium-glance__header">
+<div class="premium-glance__title-block">
+<p class="premium-glance__eyebrow">Area Snapshot</p>
+<h2 class="premium-glance__title">Loma &amp; Mack At a Glance</h2>
+<p class="premium-glance__intro">A rural West Valley snapshot focused on acreage demand, privacy buyers, and monthly live market updates.</p>
+</div>
+<div class="premium-glance__actions">
+<a class="btn btn-primary" href="contact.html">Get a Home Value Review</a>
+<a class="premium-glance__text-link" href="grand-junction-home-value.html">Selling in Loma or Mack?</a>
+</div>
+</div>
+<div class="premium-glance__stats">
+<article class="premium-stat"><p class="premium-stat__value" id="marketMedianPrice">Loading…</p><p class="premium-stat__label">Median Sale Price</p></article>
+<article class="premium-stat"><p class="premium-stat__value" id="marketDaysOnMarket">Loading…</p><p class="premium-stat__label">Avg. Days on Market</p></article>
+</div>
+<div class="premium-glance__details">
+<article class="premium-detail"><p class="premium-detail__label">Typical Buyer</p><p class="premium-detail__text">Rural lifestyle buyers seeking privacy and land</p></article>
+<article class="premium-detail"><p class="premium-detail__label">Property Types</p><p class="premium-detail__text">Acreage, rural homes, and land parcels</p></article>
+<article class="premium-detail"><p class="premium-detail__label">Best For</p><p class="premium-detail__text">Space, quiet, and agricultural use</p></article>
+<article class="premium-detail"><p class="premium-detail__label">Access</p><p class="premium-detail__text">~15 minutes to Fruita, ~20–25 minutes to Grand Junction, with direct I-70 access at the Loma exit</p></article>
+<article class="premium-detail premium-detail--wide"><p class="premium-detail__label">Market Notes</p><p class="premium-detail__text">Mesa County rural tax structure with monthly live data updates. <span class="market-note" id="marketUpdatedNote">Updating from live market data…</span></p></article>
+</div>
 </section>
-
+<div class="note-box">
+<h4>A note on rural property</h4>
+<p>Acreage and rural properties in Loma and Mack require different pricing approaches than residential Mesa County sales — including water rights, well and septic systems, agricultural use, and access easements. I'm familiar with these factors and will give you an honest assessment, not a guess.</p>
+</div>
+</div>
+</div></div>
+</section>
 <div class="divider"><div class="divider-diamond"></div></div>
-
-<section style="background:var(--cream);">
-  <div class="container">
-    <div class="reveal" style="max-width:640px;">
-      <div class="section-label"><span>Why Buyers Choose Loma &amp; Mack</span></div>
-      <h2>The Rural Case for the Far West Valley</h2>
-      <p style="color:var(--muted);font-size:1.02rem;margin-top:0.75rem;line-height:1.85;">These aren't features that show up on most real estate checklists — but they're exactly what the buyers searching for Loma and Mack are after.</p>
-    </div>
-    <div class="card-grid">
-      <div class="card reveal" style="transition-delay:0.05s"><div class="card-icon"><i data-lucide="maximize-2"></i></div><h3>True Acreage at Accessible Prices</h3><p>Multi-acre parcels near Grand Junction are increasingly rare and expensive. Loma and Mack still offer genuine land at price points that make rural ownership realistic — often with substantially more acreage per dollar than anything closer to town.</p></div>
-      <div class="card reveal" style="transition-delay:0.12s"><div class="card-icon"><i data-lucide="shield"></i></div><h3>Privacy and Space</h3><p>No HOA. No adjacent subdivision. No shared walls. For buyers who left denser living behind and want separation between themselves and their neighbors, the far west valley delivers what no in-town neighborhood can.</p></div>
-      <div class="card reveal" style="transition-delay:0.19s"><div class="card-icon"><i data-lucide="tractor"></i></div><h3>Agricultural Opportunity</h3><p>Loma properties with irrigation rights, outbuildings, and agricultural history offer hobby farming, livestock, and market garden possibilities that attract a specific buyer — one who has done their research and knows exactly what they want.</p></div>
-      <div class="card reveal" style="transition-delay:0.26s"><div class="card-icon"><i data-lucide="mountain-snow"></i></div><h3>High Desert Landscape & Views</h3><p>The Ruby Canyon corridor, the Colorado River, and the open high desert terrain between Loma and the Utah border create a dramatic landscape that can't be found anywhere else in Mesa County — and that certain buyers will drive a long way to live in.</p></div>
-      <div class="card reveal" style="transition-delay:0.33s"><div class="card-icon"><i data-lucide="zap"></i></div><h3>Remote Work Compatible</h3><p>With reliable internet connectivity increasingly available even in rural Mesa County, the Loma/Mack corridor has become viable for remote workers who want true rural living without sacrificing professional functionality.</p></div>
-      <div class="card reveal" style="transition-delay:0.40s"><div class="card-icon"><i data-lucide="car"></i></div><h3>I-70 Access Still Works</h3><p>The Loma I-70 interchange means GJ amenities, the airport, and medical services are 20–25 minutes away — genuinely accessible, not isolated. For buyers weighing rural life against practical concerns, this commute math matters.</p></div>
-    </div>
-  </div>
+<section class="section-shell-cream">
+<div class="container">
+<div class="reveal section-copy-narrow">
+<div class="section-label"><span>Why Buyers Choose Loma &amp; Mack</span></div>
+<h2>The Rural Case for the Far West Valley</h2>
+<p class="note-muted">These aren't features that show up on most real estate checklists — but they're exactly what the buyers searching for Loma and Mack are after.</p>
+</div>
+<div class="card-grid">
+<div class="card reveal reveal-delay-005"><div class="card-icon"><i data-lucide="maximize-2"></i></div><h3>True Acreage at Accessible Prices</h3><p>Multi-acre parcels near Grand Junction are increasingly rare and expensive. Loma and Mack still offer genuine land at price points that make rural ownership realistic — often with substantially more acreage per dollar than anything closer to town.</p></div>
+<div class="card reveal reveal-delay-012"><div class="card-icon"><i data-lucide="shield"></i></div><h3>Privacy and Space</h3><p>No HOA. No adjacent subdivision. No shared walls. For buyers who left denser living behind and want separation between themselves and their neighbors, the far west valley delivers what no in-town neighborhood can.</p></div>
+<div class="card reveal reveal-delay-019"><div class="card-icon"><i data-lucide="tractor"></i></div><h3>Agricultural Opportunity</h3><p>Loma properties with irrigation rights, outbuildings, and agricultural history offer hobby farming, livestock, and market garden possibilities that attract a specific buyer — one who has done their research and knows exactly what they want.</p></div>
+<div class="card reveal reveal-delay-026"><div class="card-icon"><i data-lucide="mountain-snow"></i></div><h3>High Desert Landscape &amp; Views</h3><p>The Ruby Canyon corridor, the Colorado River, and the open high desert terrain between Loma and the Utah border create a dramatic landscape that can't be found anywhere else in Mesa County — and that certain buyers will drive a long way to live in.</p></div>
+<div class="card reveal reveal-delay-033"><div class="card-icon"><i data-lucide="zap"></i></div><h3>Remote Work Compatible</h3><p>With reliable internet connectivity increasingly available even in rural Mesa County, the Loma/Mack corridor has become viable for remote workers who want true rural living without sacrificing professional functionality.</p></div>
+<div class="card reveal reveal-delay-040"><div class="card-icon"><i data-lucide="car"></i></div><h3>I-70 Access Still Works</h3><p>The Loma I-70 interchange means GJ amenities, the airport, and medical services are 20–25 minutes away — genuinely accessible, not isolated. For buyers weighing rural life against practical concerns, this commute math matters.</p></div>
+</div>
+</div>
 </section>
-
 <div class="divider"><div class="divider-diamond"></div></div>
-
 <section class="dark-band">
-  <div class="container"><div class="dark-inner reveal">
-    <div class="section-label centered" style="justify-content:center;"><span style="color:var(--gold-lt)">Rural Real Estate Done Right</span></div>
-    <h2>Buying or Selling in <em>Loma or Mack</em></h2>
-    <p>Rural acreage transactions have real complexity — water rights, well and septic systems, agricultural zoning, access easements, and a niche buyer pool that requires targeted marketing. I'll help you navigate all of it without the generic approach that leaves rural sellers underserved.</p>
-    <div class="cta-pair">
-      <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
-      <a href="grand-junction-home-value.html" class="btn-outline-gold">GJ Market Overview</a>
-    </div>
-  </div></div>
+<div class="container"><div class="dark-band-inner dark-band-inner-solo reveal">
+<div class="section-label centered section-label-gold"><span>Rural Real Estate Done Right</span></div>
+<h2>Buying or Selling in <em>Loma or Mack</em></h2>
+<p>Rural acreage transactions have real complexity — water rights, well and septic systems, agricultural zoning, access easements, and a niche buyer pool that requires targeted marketing. I'll help you navigate all of it without the generic approach that leaves rural sellers underserved.</p>
+<div class="cta-pair">
+<a class="btn btn-primary" href="contact.html">Start a Conversation</a>
+<a class="btn-outline-gold" href="grand-junction-home-value.html">GJ Market Overview</a>
+</div>
+</div></div>
 </section>
-
-<section style="background:var(--white);border-top:1px solid var(--sand);padding:clamp(3rem,5vw,4rem) 0;">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:1.5rem;">
-      <div class="section-label centered"><span>Explore More Communities</span></div>
-      <h2 style="font-size:clamp(1.5rem,2.5vw,2.2rem);">Other Grand Valley Areas</h2>
-    </div>
-    <div class="link-grid">
-      <a href="selling-in-fruita.html" class="link-card"><i data-lucide="map-pin"></i><span>Fruita (nearest city)</span></a>
-      <a href="grand-junction-home-value.html" class="link-card"><i data-lucide="map-pin"></i><span>Grand Junction Home Value</span></a>
-      <a href="redlands-homes.html" class="link-card"><i data-lucide="map-pin"></i><span>The Redlands</span></a>
-      <a href="orchard-mesa-homes.html" class="link-card"><i data-lucide="map-pin"></i><span>Orchard Mesa</span></a>
-      <a href="clifton-grand-junction.html" class="link-card"><i data-lucide="map-pin"></i><span>Clifton</span></a>
-      <a href="downtown-grand-junction.html" class="link-card"><i data-lucide="map-pin"></i><span>Downtown Grand Junction</span></a>
-    </div>
-  </div>
-</section>
-
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><span class="logo-footer">Orion Love</span><p>Helping buyers and sellers across Mesa County — from Downtown Grand Junction to the far west valley.</p><p>Serving Grand Junction, Fruita, Loma, Mack, Palisade, and Western Colorado</p></div>
-      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Sellers</a></li><li><a href="buyers.html">Buyers</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4><ul><li><a href="/cdn-cgi/l/email-protection#224d504b4d4c0c4e4d54470c414d62454f434b4e0c414d4f"><span class="__cf_email__" data-cfemail="026d706b6d6c2c6e6d74672c616d42656f636b6e2c616d6f">[email&#160;protected]</span></a></li><li><a href="tel:9706446781">(970) 644-6781</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p><a href="privacy.html">Privacy Policy</a></div>
-  </div>
+<div id="featuredAreasLinks"></div>
+<div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  if (window.lucide) lucide.createIcons();
-
-  const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-
-  const toggle = document.getElementById('mobileToggle');
-  const menu = document.getElementById('navMenu');
-  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
-  document.addEventListener('click', e => {
-    if (!header.contains(e.target)) menu.classList.remove('active');
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
-  const AREA_KEY = 'loma_mack';
-
-  const formatCurrency = value => {
-    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0
-    }).format(value);
-  };
-
-  const formatDays = value => {
-    if (typeof value !== 'number' || Number.isNaN(value)) return 'Unavailable';
-    return `${Math.round(value)} days`;
-  };
-
-  const formatUpdated = value => {
-    if (!value) return 'Live market data temporarily unavailable';
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return 'Live market data updated recently';
-    return `Updated from live market data · ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
-  };
-
-  async function loadMarketStats() {
-    const medianEl = document.getElementById('marketMedianPrice');
-    const domEl = document.getElementById('marketDaysOnMarket');
-    const noteEl = document.getElementById('marketUpdatedNote');
-
-    try {
-      const response = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-      const data = await response.json();
-      const area = data?.areas?.[AREA_KEY];
-      if (!area) throw new Error('Missing area data');
-
-      if (medianEl) medianEl.textContent = formatCurrency(area.medianPrice);
-      if (domEl) domEl.textContent = formatDays(area.averageDaysOnMarket);
-      if (noteEl) noteEl.textContent = formatUpdated(area.lastUpdatedDate || data.generatedAt);
-    } catch (error) {
-      if (medianEl) medianEl.textContent = 'Unavailable';
-      if (domEl) domEl.textContent = 'Unavailable';
-      if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
-      console.error('Failed to load market stats:', error);
-    }
-  }
-
-  loadMarketStats();
-</script>
-
+</noscript>
 </body>
 </html>

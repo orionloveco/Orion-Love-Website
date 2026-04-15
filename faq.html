@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grand Junction Real Estate FAQs | Navigate the Market | Orion Love</title>
-  <meta name="description" content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grand Junction Real Estate FAQs | Navigate the Market | Orion Love</title>
+<meta content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." name="description"/>
+<meta content="Grand Junction Real Estate FAQs | Navigate the Market | Orion Love" property="og:title"/>
+<meta content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Grand Junction Real Estate FAQs | Navigate the Market | Orion Love" name="twitter:title"/>
+<meta content="Grand Junction real estate FAQs — navigate the Mesa County market with clarity. Hyper-local answers about neighborhoods (Redlands, Fruita, Palisade, Orchard Mesa, Clifton), pricing, timelines, inspections, irrigation water rights, HOAs, and Mesa County market strategy." name="twitter:description"/>
+<!-- FAQ Schema -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -25,1259 +26,307 @@
     ]
   }
   </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    /* ── LAYOUT ─────────────────────────────────── */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-
-    /* ── NAV ────────────────────────────────────── */
-    .main-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;
-    }
-    .main-header.scrolled {
-      background: rgba(12, 26, 61, 0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
-    }
-    .main-header nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-    .logo { text-decoration: none; }
-    .logo-main {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--white);
-      letter-spacing: 0.04em;
-    }
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2.25rem;
-      align-items: center;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.82);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
-    .btn-nav {
-      background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 40px;
-      transition: background 0.22s !important;
-    }
-    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
-    .mobile-toggle { display: none; }
-
-    /* ── BUTTONS ────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      transition: all 0.25s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
-    }
-    .btn-primary:hover {
-      background: var(--gold-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
-    }
-    .btn-gold-outline {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.95rem 2.4rem;
-      border-radius: 50px;
-      border: 1px solid var(--gold);
-      color: var(--gold-lt);
-      white-space: nowrap;
-      transition: all 0.25s;
-    }
-    .btn-gold-outline:hover {
-      background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    /* ── SECTION LABEL ──────────────────────────── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.1rem;
-    }
-    .section-label::before {
-      content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .section-label span {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-    }
-    .section-label.centered { justify-content: center; }
-    .section-label.centered::after {
-      content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    /* ── DIVIDER ────────────────────────────────── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    .divider::before, .divider::after {
-      content: ""; flex: 1; height: 1px; background: var(--sand);
-    }
-    .divider-diamond {
-      width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      opacity: 0.6;
-    }
-
-    /* ── HERO ───────────────────────────────────── */
-    .faq-hero {
-      /* PHOTO SLOT: replace url() with a Grand Junction downtown or monument photo */
-      background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-downtown.jpg") center / cover no-repeat;
-      position: relative;
-      padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
-      overflow: hidden;
-      text-align: center;
-    }
-    .faq-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
-      pointer-events: none;
-    }
-    .faq-hero::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);
-    }
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.1s forwards;
-    }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: ""; height: 1px; width: 36px;
-      background: var(--gold); opacity: 0.6;
-    }
-    .hero-eyebrow span {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      font-weight: 600;
-    }
-    .faq-hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.25s forwards;
-    }
-    .faq-hero h1 em { font-style: italic; color: var(--gold-lt); }
-    .faq-hero p {
-      font-size: clamp(1rem, 1.8vw, 1.1rem);
-      color: rgba(255,255,255,0.62);
-      max-width: 62ch;
-      margin: 0 auto;
-      font-weight: 300;
-      line-height: 1.85;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.4s forwards;
-    }
-
-    /* ── TAB SWITCHER ───────────────────────────── */
-    .faq-nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--sand);
-      position: sticky;
-      top: 72px;
-      z-index: 50;
-    }
-    .faq-nav-inner {
-      display: flex;
-      gap: 0;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-    }
-    .faq-tab {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.1rem 1.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      cursor: pointer;
-      border: none;
-      background: none;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-      font-family: "Raleway", sans-serif;
-    }
-    .faq-tab svg { width: 16px; height: 16px; stroke: currentColor; }
-    .faq-tab:hover { color: var(--navy); }
-    .faq-tab.active {
-      color: var(--navy);
-      border-bottom-color: var(--gold);
-    }
-
-    /* ── FAQ MAIN SECTION ───────────────────────── */
-    .faq-section {
-      padding: clamp(4rem, 7vw, 6rem) 0;
-      background: var(--cream);
-    }
-
-    .faq-panel { display: none; }
-    .faq-panel.active { display: block; }
-
-    .faq-panel-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: end;
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--sand);
-    }
-    .faq-panel-header h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy);
-      font-weight: 300;
-    }
-    .faq-panel-header h2 em { font-style: italic; color: var(--gold); }
-    .faq-panel-header p {
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.85;
-    }
-
-    /* ── ACCORDION ──────────────────────────────── */
-    .faq-accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .faq-item[open] {
-      border-color: rgba(184,146,58,0.3);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .faq-item summary {
-      cursor: pointer;
-      padding: 1.35rem 1.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.25rem;
-      list-style: none;
-      -webkit-appearance: none;
-      user-select: none;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: -2px;
-      border-radius: var(--radius-md);
-    }
-
-    .faq-q {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.13rem;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.3;
-      flex: 1;
-    }
-
-    .faq-chevron {
-      width: 20px; height: 20px;
-      flex-shrink: 0;
-      stroke: var(--gold);
-      transition: transform 0.3s ease;
-    }
-    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
-
-    .faq-body {
-      padding: 0 1.6rem 1.5rem;
-      border-top: 1px solid var(--sand);
-    }
-    .faq-body p {
-      color: var(--muted);
-      font-size: 0.97rem;
-      line-height: 1.85;
-      padding-top: 1.25rem;
-    }
-
-    /* Two-column accordion layout */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      align-items: start;
-    }
-    /* Items that span full width (first + last for balance) */
-    .faq-item.full { grid-column: 1 / -1; }
-
-    /* ── SEARCH BAR ─────────────────────────────── */
-    .faq-search-wrap {
-      margin-bottom: 2rem;
-    }
-    .faq-search {
-      width: 100%;
-      max-width: 560px;
-      padding: 0.85rem 1.25rem 0.85rem 3rem;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: 50px;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.97rem;
-      color: var(--text);
-      transition: border-color 0.25s, box-shadow 0.25s;
-      appearance: none;
-    }
-    .faq-search:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(184,146,58,0.1);
-    }
-    .faq-search::placeholder { color: rgba(26,26,46,0.35); }
-    .search-wrap-inner {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      max-width: 560px;
-    }
-    .search-icon {
-      position: absolute;
-      left: 1.1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px; height: 16px;
-      stroke: var(--muted);
-      pointer-events: none;
-    }
-    .faq-no-results {
-      display: none;
-      padding: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1rem;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-    }
-
-    /* ── CTA BAND ───────────────────────────────── */
-    .cta-band {
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
-    }
-    .cta-band::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-    }
-    .cta-band-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 3rem;
-    }
-    .cta-band-copy h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--white);
-      font-weight: 300;
-      margin-bottom: 0.6rem;
-    }
-    .cta-band-copy h2 em { font-style: italic; color: var(--gold-lt); }
-    .cta-band-copy p {
-      color: rgba(255,255,255,0.55);
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    /* ── FOOTER ─────────────────────────────────── */
-    .main-footer {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;
-    }
-    .logo-footer {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; }
-    .footer-links h4, .footer-contact h4 {
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;
-    }
-    .footer-links ul, .footer-contact ul { list-style: none; }
-    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
-    .footer-links a, .footer-contact a {
-      text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;
-    }
-    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;
-    }
-    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center; }
-
-    /* ── ANIMATIONS ─────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ─────────────────────────────── */
-    @media (max-width: 900px) {
-      .faq-grid { grid-template-columns: 1fr; }
-      .faq-item.full { grid-column: auto; }
-      .faq-panel-header { grid-template-columns: 1fr; gap: 1.25rem; }
-      .cta-band-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-    @media (max-width: 640px) {
-      .nav-menu { display: none; }
-      .mobile-toggle {
-        display: flex; flex-direction: column; gap: 5px;
-        background: none; border: none; cursor: pointer; padding: 6px;
-      }
-      .mobile-toggle span {
-        display: block; width: 24px; height: 1.5px;
-        background: var(--white); border-radius: 2px;
-      }
-      .faq-tab { padding: 1rem 1rem; font-size: 0.72rem; }
-    }
-
-    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
-    @media (max-width: 640px) {
-      .nav-menu {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(12, 26, 61, 0.98);
-        backdrop-filter: blur(16px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        z-index: 99;
-      }
-      .nav-menu.active {
-        display: flex !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background: rgb(12, 26, 61) !important;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        z-index: 9999 !important;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .nav-menu li { list-style: none; }
-      .nav-menu a {
-        font-size: 1.4rem;
-        color: var(--white);
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-      }
-      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
-      .nav-menu .btn-nav {
-        border: 1px solid var(--gold);
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        opacity: 1;
-      }
-      .mobile-toggle { z-index: 10000 !important; }
-      .mobile-toggle.active span:nth-child(1) {
-        transform: translateY(6.5px) rotate(45deg);
-      }
-      .mobile-toggle.active span:nth-child(2) {
-        opacity: 0; transform: scaleX(0);
-      }
-      .mobile-toggle.active span:nth-child(3) {
-        transform: translateY(-6.5px) rotate(-45deg);
-      }
-      .mobile-toggle span {
-        transition: transform 0.25s ease, opacity 0.2s ease;
-      }
-    }
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<link href="styles.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
 </head>
-
-<body>
-
+<body class="page-hero-aligned page-faq">
 <!-- NAV -->
-<header class="main-header" id="mainHeader">
-  <nav>
-    <a href="index.html" class="logo">
-      <span class="logo-main">Orion Love | Colorado Realtor®</span>
-    </a>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Sellers</a></li>
-      <li><a href="buyers.html">Buyers</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html" class="active" aria-current="page">FAQ</a></li>
-      <li><a href="contact.html" class="btn-nav">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </header>
-
+</noscript>
 <!-- HERO -->
-<section class="faq-hero">
-  <div class="container">
-    <div class="hero-eyebrow"><span>Grand Junction Real Estate</span></div>
-    <h1>Real Answers.<br><em>Local Knowledge.</em></h1>
-    <p>
+<section class="faq-hero hero">
+<div class="container">
+<div class="hero-inner">
+<div class="hero-eyebrow"><span>Grand Junction Real Estate</span></div>
+<h1>Real Answers.<br/><em>Local Knowledge.</em></h1>
+<p class="hero-lead">
       Real estate in Grand Junction, the Redlands, Clifton, Orchard Mesa,
       Fruita, and Palisade comes with real local nuance. These are the questions
       that actually matter — answered honestly, without the runaround.
     </p>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- STICKY TAB NAV -->
-<nav class="faq-nav" aria-label="FAQ categories">
-  <div class="faq-nav-inner">
-    <button class="faq-tab active" data-panel="buyers" aria-selected="true">
-      <i data-lucide="home"></i>Buyer FAQs
+<nav aria-label="FAQ categories" class="faq-nav">
+<div class="faq-nav-inner">
+<button aria-selected="true" class="faq-tab active" data-panel="buyers">
+<i data-lucide="home"></i>Buyer FAQs
     </button>
-    <button class="faq-tab" data-panel="sellers" aria-selected="false">
-      <i data-lucide="trending-up"></i>Seller FAQs
+<button aria-selected="false" class="faq-tab" data-panel="sellers">
+<i data-lucide="trending-up"></i>Seller FAQs
     </button>
-  </div>
+</div>
 </nav>
-
 <!-- FAQ SECTION -->
 <section class="faq-section">
-  <div class="container">
-
-    <!-- ── BUYERS PANEL ── -->
-    <div class="faq-panel active" id="panel-buyers">
-      <div class="faq-panel-header reveal">
-        <div>
-          <div class="section-label"><span>For Buyers</span></div>
-          <h2>Buying in <em>Grand Junction</em></h2>
-        </div>
-        <p>
+<div class="container">
+<!-- ── BUYERS PANEL ── -->
+<div class="faq-panel active" id="panel-buyers">
+<div class="faq-panel-header reveal">
+<div>
+<div class="section-label"><span>For Buyers</span></div>
+<h2>Buying in <em>Grand Junction</em></h2>
+</div>
+<p>
           These are general answers based on common situations across Mesa County.
           Every buyer's path is different — if you want a route mapped out for your
           specific situation, I'm happy to do that.
         </p>
-      </div>
-
-      <div class="faq-search-wrap reveal" style="transition-delay:0.1s">
-        <div class="search-wrap-inner">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="search" class="faq-search" placeholder="Search buyer questions…" data-target="buyers-accordion" />
-        </div>
-      </div>
-
-      <div class="faq-no-results" id="no-results-buyers">No questions matched your search.</div>
-
-      <div class="faq-accordion faq-grid" id="buyers-accordion">
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How do I choose the right realtor in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>In Grand Junction, the right agent should know neighborhood-by-neighborhood pricing (Redlands vs Clifton vs Fruita), local inspection priorities (radon, sewer scope, roof/HVAC age), and how HOAs and irrigation water rights affect value. I'm happy to share a clear game plan based on your timeline and target areas.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Is now a good time to buy a home in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>It depends on your budget, timeline, and which part of Mesa County you're targeting. Some price ranges move fast while others allow negotiation — especially depending on condition, HOA fees, and location. I can break down what's happening this week in your target neighborhoods.</p></div>
-        </details>
-
-        <details class="faq-item full">
-          <summary><span class="faq-q">What are the best neighborhoods to buy in Grand Junction and Mesa County?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>It depends on lifestyle and budget. The Redlands is popular for scenery and proximity to trails; North Grand Junction often offers convenience to shopping and commuting; Orchard Mesa can offer more space and value; Fruita is loved for its community feel and biking; Palisade is known for charm and wineries. The best fit comes down to your day-to-day priorities and resale goals.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Should I get pre-approved before touring homes?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Yes. Pre-approval helps you move quickly and makes your offer stronger — especially on well-priced homes. I also recommend asking your lender about condo approvals and HOA requirements early if you're considering attached properties.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How much money do I need upfront to buy?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>It varies by loan type, down payment, and purchase price. Most buyers plan for down payment plus closing costs, and then inspections — home inspection, radon, and sewer scope are common add-ons here. I can help you estimate a realistic budget range based on your loan type and target neighborhoods.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What inspections are most important in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>A general home inspection is the baseline. In Grand Junction and Mesa County, radon testing and a sewer scope are often worth adding, and for older homes we pay close attention to roof age, HVAC, electrical panels, and water heaters. Your inspection plan should match the property type and location.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What is a sewer scope and when should I do one?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>A sewer scope is a camera inspection of the sewer line. It's often smart for older homes or properties with mature trees. In Grand Junction, it can uncover issues that don't show up in a standard home inspection — and the cost is usually very reasonable.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Is radon a concern in Mesa County?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Radon levels can vary home-to-home, so testing is the only way to know. Many buyers in Grand Junction choose to test during the inspection period and then decide whether mitigation is appropriate based on results.</p></div>
-        </details>
-
-        <details class="faq-item full">
-          <summary><span class="faq-q">How do irrigation water rights affect a home's value in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>In Mesa County, irrigation water can be a major quality-of-life and cost factor for yards, landscaping, and gardens. Availability, type of right, and whether it's currently active can affect both appeal and long-term value. We verify what's included and what it costs to maintain or reinstate before you're under contract.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How do HOAs work in Grand Junction, Fruita, and Palisade?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>HOAs vary widely. Some cover landscaping and trash; others include amenities or exterior maintenance. In condos, HOA budgets, insurance, and rental restrictions matter a lot. I review HOA documents with you so there are no surprises after you're under contract.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Can I negotiate price, repairs, or closing costs?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Often yes. In Mesa County, negotiation depends on the home's condition, days on market, competition, and how your offer is structured. Strong terms — timelines, contingencies, and lender strength — can matter as much as the price itself.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What happens if the appraisal comes in low?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Options can include renegotiating price, adjusting terms, increasing down payment, disputing the appraisal with better comps, or using contract protections depending on how the offer is written. Strategy depends on buyer strength and how the property compares to recent Mesa County sales.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How long does it take to close on a home in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Many purchases close in about 30–45 days once under contract, but timing can vary based on loan type, appraisal, inspections, title work, and HOA document timelines for condos.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Should I buy a home "as-is" in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>"As-is" typically means the seller may limit repairs, but disclosures still apply and inspections still matter. I help you decide what's reasonable to accept based on the home, the price, and the current market — so you're not taking on more risk than the deal warrants.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What are common buyer mistakes in Mesa County?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Common issues include focusing only on list price, skipping a strong inspection plan, overlooking HOA restrictions or budgets, misunderstanding irrigation water details, and not considering resale factors that differ between neighborhoods like the Redlands, Clifton, and Fruita.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Do I need a buyer representation agreement in Colorado?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Buyer representation agreements outline duties, responsibilities, and compensation. I explain it upfront in plain English so you can make an informed decision before we tour a single home.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Can I buy if I need to sell my current home first?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Possibly. Options include a sale contingency, coordinating closing dates, or exploring lender solutions depending on your finances and risk tolerance. The best strategy depends on how quickly your current home is likely to sell in your specific area.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Are there first-time buyer programs for Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Some buyers may qualify for down payment assistance or specific loan programs depending on income, credit, and property type. A local lender can confirm eligibility, and I can connect you with lenders who regularly work in Mesa County.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What's different about buying a condo in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Condos require extra due diligence: HOA budget and insurance, reserves, rules, rental restrictions, and lender approval requirements. I help you review the HOA documents early so you don't run into financing issues late in the process.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What's the best way to win in a multiple-offer situation?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>We focus on clean terms, strong lender presentation, clear timelines, and minimizing risk for the seller. In Grand Junction, the best offer isn't always the highest — it's the one most likely to close smoothly.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What should I know about winterizing and freezing risk in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>In winter months, we pay close attention to hose bibs, crawlspaces, vacant properties, and older plumbing. If a home has been vacant, I recommend extra diligence during inspection to reduce surprises after closing.</p></div>
-        </details>
-
-      </div>
-    </div>
-
-    <!-- ── SELLERS PANEL ── -->
-    <div class="faq-panel" id="panel-sellers">
-      <div class="faq-panel-header reveal">
-        <div>
-          <div class="section-label"><span>For Sellers</span></div>
-          <h2>Selling in <em>Grand Junction</em></h2>
-        </div>
-        <p>
+</div>
+<div class="faq-search-wrap reveal reveal-delay-010">
+<div class="search-wrap-inner">
+<svg class="search-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+<input class="faq-search" data-target="buyers-accordion" placeholder="Search buyer questions…" type="search"/>
+</div>
+</div>
+<div class="faq-no-results" id="no-results-buyers">No questions matched your search.</div>
+<div class="faq-accordion faq-grid" id="buyers-accordion">
+<details class="faq-item">
+<summary><span class="faq-q">How do I choose the right realtor in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>In Grand Junction, the right agent should know neighborhood-by-neighborhood pricing (Redlands vs Clifton vs Fruita), local inspection priorities (radon, sewer scope, roof/HVAC age), and how HOAs and irrigation water rights affect value. I'm happy to share a clear game plan based on your timeline and target areas.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Is now a good time to buy a home in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>It depends on your budget, timeline, and which part of Mesa County you're targeting. Some price ranges move fast while others allow negotiation — especially depending on condition, HOA fees, and location. I can break down what's happening this week in your target neighborhoods.</p></div>
+</details>
+<details class="faq-item full">
+<summary><span class="faq-q">What are the best neighborhoods to buy in Grand Junction and Mesa County?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>It depends on lifestyle and budget. The Redlands is popular for scenery and proximity to trails; North Grand Junction often offers convenience to shopping and commuting; Orchard Mesa can offer more space and value; Fruita is loved for its community feel and biking; Palisade is known for charm and wineries. The best fit comes down to your day-to-day priorities and resale goals.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Should I get pre-approved before touring homes?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Yes. Pre-approval helps you move quickly and makes your offer stronger — especially on well-priced homes. I also recommend asking your lender about condo approvals and HOA requirements early if you're considering attached properties.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How much money do I need upfront to buy?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>It varies by loan type, down payment, and purchase price. Most buyers plan for down payment plus closing costs, and then inspections — home inspection, radon, and sewer scope are common add-ons here. I can help you estimate a realistic budget range based on your loan type and target neighborhoods.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What inspections are most important in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>A general home inspection is the baseline. In Grand Junction and Mesa County, radon testing and a sewer scope are often worth adding, and for older homes we pay close attention to roof age, HVAC, electrical panels, and water heaters. Your inspection plan should match the property type and location.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What is a sewer scope and when should I do one?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>A sewer scope is a camera inspection of the sewer line. It's often smart for older homes or properties with mature trees. In Grand Junction, it can uncover issues that don't show up in a standard home inspection — and the cost is usually very reasonable.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Is radon a concern in Mesa County?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Radon levels can vary home-to-home, so testing is the only way to know. Many buyers in Grand Junction choose to test during the inspection period and then decide whether mitigation is appropriate based on results.</p></div>
+</details>
+<details class="faq-item full">
+<summary><span class="faq-q">How do irrigation water rights affect a home's value in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>In Mesa County, irrigation water can be a major quality-of-life and cost factor for yards, landscaping, and gardens. Availability, type of right, and whether it's currently active can affect both appeal and long-term value. We verify what's included and what it costs to maintain or reinstate before you're under contract.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How do HOAs work in Grand Junction, Fruita, and Palisade?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>HOAs vary widely. Some cover landscaping and trash; others include amenities or exterior maintenance. In condos, HOA budgets, insurance, and rental restrictions matter a lot. I review HOA documents with you so there are no surprises after you're under contract.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Can I negotiate price, repairs, or closing costs?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Often yes. In Mesa County, negotiation depends on the home's condition, days on market, competition, and how your offer is structured. Strong terms — timelines, contingencies, and lender strength — can matter as much as the price itself.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What happens if the appraisal comes in low?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Options can include renegotiating price, adjusting terms, increasing down payment, disputing the appraisal with better comps, or using contract protections depending on how the offer is written. Strategy depends on buyer strength and how the property compares to recent Mesa County sales.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How long does it take to close on a home in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Many purchases close in about 30–45 days once under contract, but timing can vary based on loan type, appraisal, inspections, title work, and HOA document timelines for condos.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Should I buy a home "as-is" in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>"As-is" typically means the seller may limit repairs, but disclosures still apply and inspections still matter. I help you decide what's reasonable to accept based on the home, the price, and the current market — so you're not taking on more risk than the deal warrants.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What are common buyer mistakes in Mesa County?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Common issues include focusing only on list price, skipping a strong inspection plan, overlooking HOA restrictions or budgets, misunderstanding irrigation water details, and not considering resale factors that differ between neighborhoods like the Redlands, Clifton, and Fruita.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Do I need a buyer representation agreement in Colorado?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Buyer representation agreements outline duties, responsibilities, and compensation. I explain it upfront in plain English so you can make an informed decision before we tour a single home.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Can I buy if I need to sell my current home first?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Possibly. Options include a sale contingency, coordinating closing dates, or exploring lender solutions depending on your finances and risk tolerance. The best strategy depends on how quickly your current home is likely to sell in your specific area.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Are there first-time buyer programs for Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Some buyers may qualify for down payment assistance or specific loan programs depending on income, credit, and property type. A local lender can confirm eligibility, and I can connect you with lenders who regularly work in Mesa County.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What's different about buying a condo in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Condos require extra due diligence: HOA budget and insurance, reserves, rules, rental restrictions, and lender approval requirements. I help you review the HOA documents early so you don't run into financing issues late in the process.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What's the best way to win in a multiple-offer situation?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>We focus on clean terms, strong lender presentation, clear timelines, and minimizing risk for the seller. In Grand Junction, the best offer isn't always the highest — it's the one most likely to close smoothly.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What should I know about winterizing and freezing risk in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>In winter months, we pay close attention to hose bibs, crawlspaces, vacant properties, and older plumbing. If a home has been vacant, I recommend extra diligence during inspection to reduce surprises after closing.</p></div>
+</details>
+</div>
+</div>
+<!-- ── SELLERS PANEL ── -->
+<div class="faq-panel" id="panel-sellers">
+<div class="faq-panel-header reveal">
+<div>
+<div class="section-label"><span>For Sellers</span></div>
+<h2>Selling in <em>Grand Junction</em></h2>
+</div>
+<p>
           These are general answers based on common Mesa County situations.
           Pricing, timing, and strategy vary by neighborhood and property type —
           tell me about your home and I'll chart a specific course.
         </p>
-      </div>
-
-      <div class="faq-search-wrap reveal" style="transition-delay:0.1s">
-        <div class="search-wrap-inner">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="search" class="faq-search" placeholder="Search seller questions…" data-target="sellers-accordion" />
-        </div>
-      </div>
-
-      <div class="faq-no-results" id="no-results-sellers">No questions matched your search.</div>
-
-      <div class="faq-accordion faq-grid" id="sellers-accordion">
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How do I choose the right listing agent in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Look for an agent who prices based on recent Mesa County closed sales (not hope), can explain neighborhood-specific demand, and has a clear plan for photography, online exposure, and negotiation. I'm happy to give you a no-pressure pricing and strategy review.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How much is my home worth in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Value depends on recent comparable sales, condition, location, and buyer demand. In Grand Junction, differences between areas like the Redlands, Orchard Mesa, Clifton, and North Grand Junction can materially change pricing. A local market analysis is more reliable than automated estimates alone.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Is now a good time to sell in Mesa County?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Timing depends on your goals, competition, and price point. In Mesa County, preparation and pricing strategy usually have more impact than season alone. I can show you what buyers are paying attention to right now in your neighborhood.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How long does it take to sell a home in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Days on market vary by neighborhood and price range. Homes that are priced correctly and presented well attract stronger interest earlier, while overpriced homes often sit and then require bigger adjustments.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What should I fix before listing my home?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Focus on repairs that hurt buyer confidence: obvious maintenance issues, safety items, and anything that shows up in typical inspection reports. In Grand Junction, buyers pay close attention to roof age, HVAC, and signs of deferred maintenance. Not every remodel pays off — strategy matters.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Should I remodel my kitchen or bathroom before selling?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Often, targeted improvements outperform full remodels. We look at your price range, your competition in Mesa County, and what today's buyers are rewarding. Sometimes paint, lighting, and minor repairs create the best return.</p></div>
-        </details>
-
-        <details class="faq-item full">
-          <summary><span class="faq-q">How do you price a home correctly in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Pricing is based on recent closed sales, current active competition, and buyer behavior — adjusted for condition, location, and features like irrigation water or HOA costs. The goal is to attract qualified buyers quickly and avoid chasing the market with multiple reductions.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What's the difference between list price and market value?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>List price is your strategy. Market value is what buyers are willing to pay based on comparable sales and demand. In Mesa County, the best results usually come from aligning strategy with what buyers can justify to their lender and appraiser.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How do showings work once my home is listed?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Buyers tour with their agents, and we track feedback and showing activity. In Grand Junction, early showing volume is a strong indicator of pricing accuracy. Feedback guides any needed adjustments to presentation or strategy.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Do I need to leave the house during showings?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Yes, it's strongly recommended. Buyers are more comfortable, stay longer, and give better feedback when the home is vacant during the showing window.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What are common seller closing costs in Mesa County?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Costs vary but may include agent compensation, title-related fees, and negotiated concessions or repairs. I provide a net sheet upfront so you can make decisions with clear numbers — no surprises.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Will I have to pay buyer closing costs?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Sometimes buyers request concessions. Whether it makes sense depends on price, terms, competition, and your overall net. In many cases, a smart concession can protect your bottom line better than a price cut.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How do offers and counteroffers work?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>An offer includes price and terms. We evaluate reliability — loan strength, contingencies, timelines — then negotiate using counters or acceptance depending on your goals. I focus on reducing risk, not just chasing the highest number.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What happens during the inspection period as a seller?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>The buyer completes inspections and may request repairs or credits. We negotiate based on what's reasonable and what protects your net. A calm, strategic response often keeps the deal on track and avoids re-trades later.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What if the appraisal comes in low as a seller?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Options may include renegotiation, providing better comps, or adjusting terms depending on the contract and buyer strength. Strong prep and accurate pricing reduce appraisal risk from the start.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Should I accept the highest offer?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Not always. The best offer balances price with reliability, financing strength, timelines, and risk. Clean terms can be worth more than a slightly higher number that has a low chance of actually closing.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">What if my home doesn't sell?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>We reassess pricing, presentation, and marketing using real buyer feedback and current competition. In Grand Junction, the fastest turnarounds usually come from a clear adjustment plan rather than waiting and hoping.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">When should I do a price reduction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>If showing activity is low or feedback points to value, a strategic adjustment can reposition the listing. The right timing depends on your market segment and what comparable homes in your area are doing that yours isn't.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">How should I prepare my home for photos?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Declutter, deep clean, maximize natural light, and stage key areas simply. Grand Junction buyers shop online first, so photo prep directly affects showings. I provide a practical checklist so you know what matters most.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Do I need professional photography?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>In most cases, yes. Professional photos — and sometimes video — typically increase interest, reduce time on market, and help your home stand out against similar listings in Mesa County.</p></div>
-        </details>
-
-        <details class="faq-item">
-          <summary><span class="faq-q">Can I sell and buy at the same time?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>Yes, with a clear plan. We coordinate timing, negotiate terms strategically, and work with your lender to reduce stress and avoid costly gaps between closings.</p></div>
-        </details>
-
-        <details class="faq-item full">
-          <summary><span class="faq-q">Does irrigation water increase buyer demand in Grand Junction?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-body"><p>It often does — especially for buyers who value landscaping, gardens, and lower water costs. The key is clearly confirming what's included, whether it's active, and the ongoing cost or maintenance requirements so buyers don't have questions you can't answer.</p></div>
-        </details>
-
-      </div>
-    </div>
-
-  </div>
+</div>
+<div class="faq-search-wrap reveal reveal-delay-010">
+<div class="search-wrap-inner">
+<svg class="search-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+<input class="faq-search" data-target="sellers-accordion" placeholder="Search seller questions…" type="search"/>
+</div>
+</div>
+<div class="faq-no-results" id="no-results-sellers">No questions matched your search.</div>
+<div class="faq-accordion faq-grid" id="sellers-accordion">
+<details class="faq-item">
+<summary><span class="faq-q">How do I choose the right listing agent in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Look for an agent who prices based on recent Mesa County closed sales (not hope), can explain neighborhood-specific demand, and has a clear plan for photography, online exposure, and negotiation. I'm happy to give you a no-pressure pricing and strategy review.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How much is my home worth in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Value depends on recent comparable sales, condition, location, and buyer demand. In Grand Junction, differences between areas like the Redlands, Orchard Mesa, Clifton, and North Grand Junction can materially change pricing. A local market analysis is more reliable than automated estimates alone.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Is now a good time to sell in Mesa County?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Timing depends on your goals, competition, and price point. In Mesa County, preparation and pricing strategy usually have more impact than season alone. I can show you what buyers are paying attention to right now in your neighborhood.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How long does it take to sell a home in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Days on market vary by neighborhood and price range. Homes that are priced correctly and presented well attract stronger interest earlier, while overpriced homes often sit and then require bigger adjustments.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What should I fix before listing my home?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Focus on repairs that hurt buyer confidence: obvious maintenance issues, safety items, and anything that shows up in typical inspection reports. In Grand Junction, buyers pay close attention to roof age, HVAC, and signs of deferred maintenance. Not every remodel pays off — strategy matters.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Should I remodel my kitchen or bathroom before selling?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Often, targeted improvements outperform full remodels. We look at your price range, your competition in Mesa County, and what today's buyers are rewarding. Sometimes paint, lighting, and minor repairs create the best return.</p></div>
+</details>
+<details class="faq-item full">
+<summary><span class="faq-q">How do you price a home correctly in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Pricing is based on recent closed sales, current active competition, and buyer behavior — adjusted for condition, location, and features like irrigation water or HOA costs. The goal is to attract qualified buyers quickly and avoid chasing the market with multiple reductions.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What's the difference between list price and market value?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>List price is your strategy. Market value is what buyers are willing to pay based on comparable sales and demand. In Mesa County, the best results usually come from aligning strategy with what buyers can justify to their lender and appraiser.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How do showings work once my home is listed?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Buyers tour with their agents, and we track feedback and showing activity. In Grand Junction, early showing volume is a strong indicator of pricing accuracy. Feedback guides any needed adjustments to presentation or strategy.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Do I need to leave the house during showings?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Yes, it's strongly recommended. Buyers are more comfortable, stay longer, and give better feedback when the home is vacant during the showing window.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What are common seller closing costs in Mesa County?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Costs vary but may include agent compensation, title-related fees, and negotiated concessions or repairs. I provide a net sheet upfront so you can make decisions with clear numbers — no surprises.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Will I have to pay buyer closing costs?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Sometimes buyers request concessions. Whether it makes sense depends on price, terms, competition, and your overall net. In many cases, a smart concession can protect your bottom line better than a price cut.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How do offers and counteroffers work?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>An offer includes price and terms. We evaluate reliability — loan strength, contingencies, timelines — then negotiate using counters or acceptance depending on your goals. I focus on reducing risk, not just chasing the highest number.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What happens during the inspection period as a seller?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>The buyer completes inspections and may request repairs or credits. We negotiate based on what's reasonable and what protects your net. A calm, strategic response often keeps the deal on track and avoids re-trades later.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What if the appraisal comes in low as a seller?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Options may include renegotiation, providing better comps, or adjusting terms depending on the contract and buyer strength. Strong prep and accurate pricing reduce appraisal risk from the start.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Should I accept the highest offer?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Not always. The best offer balances price with reliability, financing strength, timelines, and risk. Clean terms can be worth more than a slightly higher number that has a low chance of actually closing.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">What if my home doesn't sell?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>We reassess pricing, presentation, and marketing using real buyer feedback and current competition. In Grand Junction, the fastest turnarounds usually come from a clear adjustment plan rather than waiting and hoping.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">When should I do a price reduction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>If showing activity is low or feedback points to value, a strategic adjustment can reposition the listing. The right timing depends on your market segment and what comparable homes in your area are doing that yours isn't.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">How should I prepare my home for photos?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Declutter, deep clean, maximize natural light, and stage key areas simply. Grand Junction buyers shop online first, so photo prep directly affects showings. I provide a practical checklist so you know what matters most.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Do I need professional photography?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>In most cases, yes. Professional photos — and sometimes video — typically increase interest, reduce time on market, and help your home stand out against similar listings in Mesa County.</p></div>
+</details>
+<details class="faq-item">
+<summary><span class="faq-q">Can I sell and buy at the same time?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>Yes, with a clear plan. We coordinate timing, negotiate terms strategically, and work with your lender to reduce stress and avoid costly gaps between closings.</p></div>
+</details>
+<details class="faq-item full">
+<summary><span class="faq-q">Does irrigation water increase buyer demand in Grand Junction?</span><svg class="faq-chevron" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+<div class="faq-body"><p>It often does — especially for buyers who value landscaping, gardens, and lower water costs. The key is clearly confirming what's included, whether it's active, and the ongoing cost or maintenance requirements so buyers don't have questions you can't answer.</p></div>
+</details>
+</div>
+</div>
+</div>
 </section>
-
 <!-- CTA BAND -->
 <section class="cta-band">
-  <div class="container">
-    <div class="cta-band-inner reveal">
-      <div class="cta-band-copy">
-        <div class="section-label"><span>Ready to Start?</span></div>
-        <h2>Want Advice for<br><em>Your Situation?</em></h2>
-        <p>
+<div class="container">
+<div class="cta-band-inner reveal">
+<div class="cta-band-copy">
+<div class="section-label"><span>Ready to Start?</span></div>
+<h2>Want Advice for<br/><em>Your Situation?</em></h2>
+<p>
           Tell me what you're trying to do and I'll give you a clear plan
           based on today's Grand Junction market — no pressure, no obligation.
         </p>
-      </div>
-      <a href="contact.html" class="btn-gold-outline">Schedule a Consultation</a>
-    </div>
-  </div>
+</div>
+<a class="btn-gold-outline" href="contact.html">Schedule a Consultation</a>
+</div>
+</div>
 </section>
-
+<!-- NEIGHBORHOODS -->
+<div id="featuredAreasLinks"></div>
 <!-- FOOTER -->
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3 class="logo-footer">Orion Love</h3>
-        <p>Guiding buyers and sellers through the Grand Junction market. Honest · Simple · True.</p>
-        <p style="margin-top:0.75rem">Serving Grand Junction, the Redlands, Clifton,<br>Orchard Mesa, Fruita, Palisade, and Western Colorado</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Sellers</a></li>
-          <li><a href="buyers.html">Buyers</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="/cdn-cgi/l/email-protection#09667b6066672765667f6c276a66496e64686065276a6664"><span class="__cf_email__" data-cfemail="39564b5056571755564f5c175a56795e54585055175a5654">[email&#160;protected]</span></a></li>
-          <li><a href="tel:9706446781">(970) 644-6781</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
-    </div>
-  </div>
+<div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </footer>
-
-<script>
-  if (window.lucide) lucide.createIcons();
-
-  // Mobile menu — body-level overlay to avoid fixed header stacking context
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (mobileToggle && navMenu) {
-    // Build overlay element appended directly to body
-    const overlay = document.createElement('div');
-    overlay.id = 'mobileNavOverlay';
-    overlay.innerHTML = navMenu.innerHTML;
-    overlay.style.cssText = [
-      'display:none',
-      'position:fixed',
-      'top:0','left:0','right:0','bottom:0',
-      'width:100vw','height:100vh',
-      'background:rgb(12,26,61)',
-      'flex-direction:column',
-      'align-items:center',
-      'justify-content:center',
-      'gap:2.5rem',
-      'z-index:99999',
-      'list-style:none',
-      'margin:0','padding:0'
-    ].join(';');
-
-    // Style the links inside overlay
-    const style = document.createElement('style');
-    style.textContent = `
-      #mobileNavOverlay a {
-        font-size: 1.5rem;
-        color: #ffffff;
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-        display: block;
-      }
-      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
-      #mobileNavOverlay li { list-style: none; text-align: center; }
-      #mobileNavOverlay .btn-nav {
-        border: 1px solid #b8923a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #d4aa5a;
-      }
-    `;
-    document.head.appendChild(style);
-    document.body.appendChild(overlay);
-
-    const openMenu = () => {
-      overlay.style.display = 'flex';
-      mobileToggle.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeMenu = () => {
-      overlay.style.display = 'none';
-      mobileToggle.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      overlay.style.display === 'flex' ? closeMenu() : openMenu();
-    });
-
-    overlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
-
-  const header = document.getElementById('mainHeader');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-  }
-
-  const reveals = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  reveals.forEach(el => revealObserver.observe(el));
-
-  // Tab switching
-  const faqTabs = document.querySelectorAll('.faq-tab');
-  const faqPanels = document.querySelectorAll('.faq-panel');
-  if (faqTabs.length) {
-    faqTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.panel;
-        faqTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-        faqPanels.forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected','true');
-        const panel = document.getElementById('panel-' + target);
-        if (panel) {
-          panel.classList.add('active');
-          panel.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
-        }
-        if (window.lucide) lucide.createIcons();
-
-  // Mobile menu — body-level overlay to avoid fixed header stacking context
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (mobileToggle && navMenu) {
-    // Build overlay element appended directly to body
-    const overlay = document.createElement('div');
-    overlay.id = 'mobileNavOverlay';
-    overlay.innerHTML = navMenu.innerHTML;
-    overlay.style.cssText = [
-      'display:none',
-      'position:fixed',
-      'top:0','left:0','right:0','bottom:0',
-      'width:100vw','height:100vh',
-      'background:rgb(12,26,61)',
-      'flex-direction:column',
-      'align-items:center',
-      'justify-content:center',
-      'gap:2.5rem',
-      'z-index:99999',
-      'list-style:none',
-      'margin:0','padding:0'
-    ].join(';');
-
-    // Style the links inside overlay
-    const style = document.createElement('style');
-    style.textContent = `
-      #mobileNavOverlay a {
-        font-size: 1.5rem;
-        color: #ffffff;
-        text-decoration: none;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        opacity: 0.85;
-        transition: opacity 0.2s, color 0.2s;
-        display: block;
-      }
-      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
-      #mobileNavOverlay li { list-style: none; text-align: center; }
-      #mobileNavOverlay .btn-nav {
-        border: 1px solid #b8923a;
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-family: "Raleway", sans-serif;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #d4aa5a;
-      }
-    `;
-    document.head.appendChild(style);
-    document.body.appendChild(overlay);
-
-    const openMenu = () => {
-      overlay.style.display = 'flex';
-      mobileToggle.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeMenu = () => {
-      overlay.style.display = 'none';
-      mobileToggle.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      overlay.style.display === 'flex' ? closeMenu() : openMenu();
-    });
-
-    overlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
-      });
-    });
-  }
-
-  // One-open accordion
-  ['buyers-accordion','sellers-accordion'].forEach(id => {
-    const container = document.getElementById(id);
-    if (!container) return;
-    container.querySelectorAll('details.faq-item').forEach(item => {
-      item.addEventListener('toggle', () => {
-        if (item.open) {
-          container.querySelectorAll('details.faq-item[open]').forEach(open => {
-            if (open !== item) open.removeAttribute('open');
-          });
-        }
-      });
-    });
-  });
-
-  // Live search
-  document.querySelectorAll('.faq-search').forEach(input => {
-    const targetId = input.dataset.target;
-    const accordion = document.getElementById(targetId);
-    const panelKey = targetId?.replace('-accordion','');
-    const noResults = document.getElementById('no-results-' + panelKey);
-    if (!accordion) return;
-    input.addEventListener('input', () => {
-      const query = input.value.toLowerCase().trim();
-      let visible = 0;
-      accordion.querySelectorAll('details.faq-item').forEach(item => {
-        const match = !query || item.textContent.toLowerCase().includes(query);
-        item.style.display = match ? '' : 'none';
-        if (match) visible++;
-        if (!match && item.open) item.removeAttribute('open');
-      });
-      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
-    });
-  });
-</script>
-
+</noscript>
 </body>
 </html>

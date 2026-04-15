@@ -1,666 +1,320 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selling Your Home in Palisade, CO | Orion Love — Colorado Realtor®</title>
-  <meta name="description" content="Selling a home in Palisade, Colorado? Get a local market review from Realtor Orion Love. Palisade's wine country lifestyle, orchard views, and tight inventory make it a unique submarket — let's position your home the right way." />
-  <meta name="keywords" content="selling home Palisade CO, Palisade Colorado real estate, sell my home Palisade, Palisade CO realtor, Palisade wine country homes, Mesa County real estate agent" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;
-    }
-
-    html { scroll-behavior: smooth; }
-    body { font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
-    h1,h2,h3,h4 { font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
-    section { padding: clamp(3.5rem,6vw,5rem) 0; }
-
-    /* ── NAV ── */
-    .main-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s; }
-    .main-header.scrolled { background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18); }
-    .main-header nav { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
-    .logo { text-decoration: none; }
-    .logo-main { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em; }
-    .nav-menu { display: flex; list-style: none; gap: 2.25rem; align-items: center; }
-    .nav-menu a { text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-menu a:hover { color: var(--gold-lt); }
-    .btn-nav { background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px; }
-    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
-    .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
-    .mobile-toggle span { display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px; }
-
-    /* ── BUTTONS ── */
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none; }
-    .btn-primary { background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35); }
-    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
-    .btn-navy { background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm); }
-    .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
-    .btn-outline-gold { background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s; }
-    .btn-outline-gold:hover { background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px); }
-
-    /* ── LABELS / DIVIDER ── */
-    .section-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem; }
-    .section-label::before { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
-    .section-label span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-    .section-label.centered { justify-content: center; }
-    .section-label.centered::after { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
-    .divider { display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto; }
-    .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--sand); }
-    .divider-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6; }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative; min-height: 82vh; display: flex; align-items: center;
-      background:
-        linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
-        url("images/gj-landscape.jpg") center 40% / cover no-repeat;
-    }
-    .hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22); }
-    .hero-inner { position: relative; z-index: 1; max-width: 760px; padding-top: 4rem; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem; }
-    .hero-eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: var(--gold); }
-    .hero h1 { color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem; }
-    .hero h1 em { font-style: italic; color: var(--gold-lt); }
-    .hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem; }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* ── PALISADE IDENTITY ── */
-    .identity-section { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
-    .identity-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .identity-copy h2 { margin-bottom: 0.85rem; }
-    .identity-copy p { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1rem; }
-    .identity-highlights { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
-    .highlight-item { display: flex; align-items: flex-start; gap: 0.85rem; padding: 1rem 1.1rem; background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm); }
-    .highlight-item svg { width: 18px; height: 18px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
-    .highlight-item div { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
-    .highlight-item strong { color: var(--navy); display: block; font-size: 0.85rem; letter-spacing: 0.04em; margin-bottom: 0.15rem; }
-    .identity-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--sand); border: 1px solid var(--sand); border-radius: var(--radius-md); overflow: hidden; }
-    .stat-box { background: var(--cream); padding: 1.75rem 1.5rem; text-align: center; }
-    .stat-val { font-family: "Cormorant Garamond", serif; font-size: 2.4rem; color: var(--navy); line-height: 1; }
-    .stat-val span { font-size: 1.3rem; color: var(--gold); }
-    .stat-lbl { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 0.35rem; }
-    .stat-note-sm { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
-
-    /* ── WHAT MAKES PALISADE DIFFERENT ── */
-    .diff-section { background: var(--cream); }
-    .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; margin-top: 2.75rem; }
-    .diff-card { background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s; }
-    .diff-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.28s; }
-    .diff-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22); }
-    .diff-card:hover::before { opacity: 1; }
-    .diff-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(184,146,58,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
-    .diff-icon svg { width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8; }
-    .diff-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem; }
-    .diff-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; }
-
-    /* ── PRICING NUANCE ── */
-    .pricing-section { background: var(--navy); position: relative; overflow: hidden; }
-    .pricing-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none; }
-    .pricing-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .pricing-copy h2 { color: var(--white); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 300; margin-bottom: 1rem; }
-    .pricing-copy h2 em { font-style: italic; color: var(--gold-lt); }
-    .pricing-copy p { color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem; }
-    .pricing-points { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
-    .pricing-points li { display: flex; align-items: flex-start; gap: 0.75rem; }
-    .pricing-points li svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
-    .pricing-points li span { color: rgba(255,255,255,0.72); font-size: 0.95rem; line-height: 1.7; }
-    .pricing-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 2.5rem 2rem; }
-    .pricing-card h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 1.25rem; }
-    .pricing-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .pricing-row:last-of-type { border-bottom: none; }
-    .pricing-row .pr-label { color: rgba(255,255,255,0.55); font-size: 0.88rem; }
-    .pricing-row .pr-val { color: var(--gold-lt); font-family: "Cormorant Garamond", serif; font-size: 1.5rem; }
-    .pricing-note { color: rgba(255,255,255,0.35); font-size: 0.78rem; margin-top: 1rem; font-style: italic; }
-
-    /* ── CONTACT ── */
-    .contact-section { background: var(--cream); }
-    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .contact-copy h2 { margin-bottom: 0.85rem; }
-    .contact-copy p { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.5rem; }
-    .contact-bullets { list-style: none; }
-    .contact-bullets li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem; }
-    .contact-bullets li svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
-    .form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand); }
-    .form-card h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem; }
-    .form-card .form-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12); }
-    .form-submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
-    .consent-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic; }
-    .consent-note a { color: var(--navy); text-decoration: underline; font-style: normal; }
-    #palFormMsg { display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem; }
-    #palFormMsg.success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
-    #palFormMsg.error { background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020; }
-
-    /* ── FOOTER ── */
-    .main-footer { background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
-    .logo-footer { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem; }
-    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem; }
-    .footer-links h4, .footer-contact h4 { font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .footer-links ul, .footer-contact ul { list-style: none; }
-    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
-    .footer-links a, .footer-contact a { color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; }
-    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem; }
-    .footer-bottom a:hover { color: var(--gold-lt); }
-
-    /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 968px) {
-      .nav-menu { position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s; }
-      .nav-menu.active { left: 0; }
-      .mobile-toggle { display: flex; }
-      .identity-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .pricing-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
-    }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.4rem; }
-      .form-row { grid-template-columns: 1fr; }
-      .identity-stats, .pricing-card { margin-top: 1rem; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Selling Your Home in Palisade, CO | Orion Love — Colorado Realtor®</title>
+<meta content="Selling a home in Palisade, Colorado? Get a local market review from Realtor Orion Love. Palisade's wine country lifestyle, orchard views, and tight inventory make it a unique submarket — let's position your home the right way." name="description"/>
+<meta content="selling home Palisade CO, Palisade Colorado real estate, sell my home Palisade, Palisade CO realtor, Palisade wine country homes, Mesa County real estate agent" name="keywords"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<link href="styles.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
 </head>
-<body>
-
+<body class="page-hero-aligned page-selling-in-palisade page-photo-hero">
 <!-- NAV -->
-<header class="main-header" id="mainHeader">
-  <nav>
-    <a href="index.html" class="logo">
-      <span class="logo-main">Orion Love | Colorado Realtor®</span>
-    </a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html" class="active">Sellers</a></li>
-      <li><a href="buyers.html">Buyers</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html" class="btn-nav">Contact</a></li>
-    </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+<div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </header>
-
+</noscript>
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">Palisade · Mesa County · Colorado Wine Country</div>
-      <h1>Selling Your Home<br>in <em>Palisade, Colorado</em></h1>
-      <p class="hero-lead">
+<div class="container">
+<div class="hero-inner">
+<div class="hero-eyebrow"><span>Palisade · Mesa County · Colorado Wine Country</span></div>
+<h1>Selling Your Home<br/>in <em>Palisade, Colorado</em></h1>
+<p class="hero-lead">
         Palisade is not just another Mesa County zip code. Orchard views, wine trail access,
         and a community identity that draws lifestyle buyers from across the state make this
         a submarket that rewards sellers who position their home correctly.
       </p>
-      <div class="hero-cta">
-        <a href="#palisade-contact" class="btn btn-primary">Get My Free Palisade Home Value</a>
-        <a href="grand-junction-home-value.html" class="btn-outline-gold">GJ Market Overview</a>
-      </div>
-    </div>
-  </div>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#palisade-contact">Get My Free Palisade Home Value</a>
+<a class="btn-outline-gold" href="grand-junction-home-value.html">GJ Market Overview</a>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PALISADE IDENTITY -->
 <section class="identity-section">
-  <div class="container">
-    <div class="identity-inner">
-      <div class="identity-copy reveal">
-        <div class="section-label"><span>The Palisade Market</span></div>
-        <h2>Why Palisade Sells<br>Differently Than Grand Junction</h2>
-        <p>
+<div class="container">
+<div class="identity-inner">
+<div class="identity-copy reveal">
+<div class="section-label"><span>The Palisade Market</span></div>
+<h2>Why Palisade Sells<br/>Differently Than Grand Junction</h2>
+<p>
           Palisade sits on the eastern end of the Grand Valley, tucked between the Colorado River
           and the Book Cliffs — and it has its own distinct identity. Peach orchards, a nationally
           recognized wine trail, and the slower pace of a small agricultural town draw buyers who
           are specifically searching for <em>Palisade</em>, not just an affordable Mesa County address.
         </p>
-        <p>
+<p>
           That specificity is your advantage as a seller — if the marketing reflects it. Generic
           listing language that reads like any other Mesa County home leaves value on the table.
         </p>
-        <div class="identity-highlights">
-          <div class="highlight-item">
-            <i data-lucide="wine"></i>
-            <div><strong>Wine Country Identity</strong>Nearly 30 wineries and tasting rooms within a few miles create a lifestyle draw that reaches buyers from Denver, the Front Range, and beyond.</div>
-          </div>
-          <div class="highlight-item">
-            <i data-lucide="sun"></i>
-            <div><strong>Agricultural Charm & Orchard Views</strong>Irrigation water rights and orchard proximity are genuine amenities for Palisade buyers — unique to this submarket.</div>
-          </div>
-          <div class="highlight-item">
-            <i data-lucide="mountain"></i>
-            <div><strong>Colorado River & Outdoor Access</strong>Tubing, kayaking, cycling the Palisade Rim Trail — these are buyer draws that belong in your listing's story.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal" style="transition-delay:0.15s">
-        <div class="identity-stats" style="margin-bottom:1.5rem;">
-          <div class="stat-box">
-            <div class="stat-val" id="palMedianPrice"><span>$</span>--</div>
-            <div class="stat-lbl">Median Sale Price</div>
-            <div class="stat-note-sm">Live Palisade market data</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" id="palAvgDom">--</div>
-            <div class="stat-lbl">Avg. Days on Market</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" id="palNewListings">--</div>
-            <div class="stat-lbl">New Listings</div>
-            <div class="stat-note-sm">Latest monthly refresh</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" id="palTotalListings">--</div>
-            <div class="stat-lbl">Total Listings</div>
-          </div>
-        </div>
-        <div id="palisadeMarketUpdated" class="stat-note-sm" style="text-align:center; margin-top:-0.5rem; margin-bottom:1.5rem;">Updating live market data…</div>
-        </div>
-        <div style="padding: 1.5rem; background: rgba(184,146,58,0.06); border: 1px solid rgba(184,146,58,0.2); border-radius: var(--radius-md);">
-          <p style="font-size:0.88rem; color:var(--navy); line-height:1.75;">
-            <strong style="display:block; margin-bottom:0.25rem; color:var(--gold);">Low inventory is a seller advantage —</strong>
+<div class="identity-highlights">
+<div class="highlight-item">
+<i data-lucide="wine"></i>
+<div><strong>Wine Country Identity</strong>Nearly 30 wineries and tasting rooms within a few miles create a lifestyle draw that reaches buyers from Denver, the Front Range, and beyond.</div>
+</div>
+<div class="highlight-item">
+<i data-lucide="sun"></i>
+<div><strong>Agricultural Charm &amp; Orchard Views</strong>Irrigation water rights and orchard proximity are genuine amenities for Palisade buyers — unique to this submarket.</div>
+</div>
+<div class="highlight-item">
+<i data-lucide="mountain"></i>
+<div><strong>Colorado River &amp; Outdoor Access</strong>Tubing, kayaking, cycling the Palisade Rim Trail — these are buyer draws that belong in your listing's story.</div>
+</div>
+</div>
+</div>
+<div class="reveal reveal-delay-015">
+<div class="identity-stats">
+<div class="stat-box">
+<div class="stat-val" id="palMedianPrice"><span>$</span>--</div>
+<div class="stat-lbl">Median Sale Price</div>
+<div class="stat-note-sm">Live Palisade market data</div>
+</div>
+<div class="stat-box">
+<div class="stat-val" id="palAvgDom">--</div>
+<div class="stat-lbl">Avg. Days on Market</div>
+</div>
+<div class="stat-box">
+<div class="stat-val" id="palNewListings">--</div>
+<div class="stat-lbl">New Listings</div>
+<div class="stat-note-sm">Latest monthly refresh</div>
+</div>
+<div class="stat-box">
+<div class="stat-val" id="palTotalListings">--</div>
+<div class="stat-lbl">Total Listings</div>
+</div>
+</div>
+<div class="stat-note-sm stat-note-sm-center" id="palisadeMarketUpdated">Updating live market data…</div>
+</div>
+<div class="info-callout">
+<p>
+<strong>Low inventory is a seller advantage —</strong>
             Palisade sees fewer listings than GJ proper. When a well-positioned home comes to market, it often generates immediate interest from buyers who've been waiting for months.
           </p>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+
 </section>
-
 <div class="divider"><div class="divider-diamond"></div></div>
-
 <!-- WHAT MAKES PALISADE DIFFERENT TO MARKET -->
 <section class="diff-section">
-  <div class="container">
-    <div class="reveal" style="max-width:640px;">
-      <div class="section-label"><span>Marketing Your Home</span></div>
-      <h2>What Makes a Palisade Home<br>Different to Sell</h2>
-      <p style="color:var(--muted); font-size:1.02rem; margin-top:0.75rem; line-height:1.85;">
+<div class="container">
+<div class="reveal section-copy-narrow">
+<div class="section-label"><span>Marketing Your Home</span></div>
+<h2>What Makes a Palisade Home<br/>Different to Sell</h2>
+<p class="note-muted">
         Palisade homes require a different kind of marketing eye. These are the factors that
         matter here — and that most out-of-area agents overlook.
       </p>
-    </div>
-    <div class="diff-grid">
-      <div class="diff-card reveal" style="transition-delay:0.05s">
-        <div class="diff-icon"><i data-lucide="droplets"></i></div>
-        <h3>Irrigation & Water Rights</h3>
-        <p>Properties with irrigation water shares carry real premium in Palisade. Knowing how to present and price that asset requires local market knowledge — and communicating it clearly to out-of-state buyers who may not understand the system.</p>
-      </div>
-      <div class="diff-card reveal" style="transition-delay:0.12s">
-        <div class="diff-icon"><i data-lucide="eye"></i></div>
-        <h3>View & Orchard Premiums</h3>
-        <p>Book Cliffs views, Colorado River frontage, and orchard adjacency each influence value in ways that county-wide comps don't capture. Pricing these factors correctly requires comparables pulled from Palisade-specific sales.</p>
-      </div>
-      <div class="diff-card reveal" style="transition-delay:0.19s">
-        <div class="diff-icon"><i data-lucide="users"></i></div>
-        <h3>Out-of-State Lifestyle Buyers</h3>
-        <p>A significant share of Palisade buyers are relocating from the Front Range or out of state. Marketing that speaks to the wine country lifestyle — not just square footage — reaches them where they're searching.</p>
-      </div>
-      <div class="diff-card reveal" style="transition-delay:0.26s">
-        <div class="diff-icon"><i data-lucide="home"></i></div>
-        <h3>Property Type Diversity</h3>
-        <p>Palisade has farmhouses, vineyards, newer subdivision homes, and historic in-town properties. Each competes in its own micro-pool — correct comparable selection is essential to avoid over- or under-pricing.</p>
-      </div>
-      <div class="diff-card reveal" style="transition-delay:0.33s">
-        <div class="diff-icon"><i data-lucide="camera"></i></div>
-        <h3>Photography That Tells the Story</h3>
-        <p>Interior-only photos miss the point in Palisade. Professional photography that captures the views, the landscape, and the lifestyle context gets significantly more engagement from the buyers most likely to convert.</p>
-      </div>
-      <div class="diff-card reveal" style="transition-delay:0.40s">
-        <div class="diff-icon"><i data-lucide="calendar"></i></div>
-        <h3>Seasonal Timing</h3>
-        <p>Palisade's harvest festival and wine events create natural buyer interest spikes. Depending on your timeline, working with — or around — these seasonal patterns can meaningfully affect your days on market.</p>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="diff-grid">
+<div class="diff-card reveal reveal-delay-005">
+<div class="diff-icon"><i data-lucide="droplets"></i></div>
+<h3>Irrigation &amp; Water Rights</h3>
+<p>Properties with irrigation water shares carry real premium in Palisade. Knowing how to present and price that asset requires local market knowledge — and communicating it clearly to out-of-state buyers who may not understand the system.</p>
+</div>
+<div class="diff-card reveal reveal-delay-012">
+<div class="diff-icon"><i data-lucide="eye"></i></div>
+<h3>View &amp; Orchard Premiums</h3>
+<p>Book Cliffs views, Colorado River frontage, and orchard adjacency each influence value in ways that county-wide comps don't capture. Pricing these factors correctly requires comparables pulled from Palisade-specific sales.</p>
+</div>
+<div class="diff-card reveal reveal-delay-019">
+<div class="diff-icon"><i data-lucide="users"></i></div>
+<h3>Out-of-State Lifestyle Buyers</h3>
+<p>A significant share of Palisade buyers are relocating from the Front Range or out of state. Marketing that speaks to the wine country lifestyle — not just square footage — reaches them where they're searching.</p>
+</div>
+<div class="diff-card reveal reveal-delay-026">
+<div class="diff-icon"><i data-lucide="home"></i></div>
+<h3>Property Type Diversity</h3>
+<p>Palisade has farmhouses, vineyards, newer subdivision homes, and historic in-town properties. Each competes in its own micro-pool — correct comparable selection is essential to avoid over- or under-pricing.</p>
+</div>
+<div class="diff-card reveal reveal-delay-033">
+<div class="diff-icon"><i data-lucide="camera"></i></div>
+<h3>Photography That Tells the Story</h3>
+<p>Interior-only photos miss the point in Palisade. Professional photography that captures the views, the landscape, and the lifestyle context gets significantly more engagement from the buyers most likely to convert.</p>
+</div>
+<div class="diff-card reveal reveal-delay-040">
+<div class="diff-icon"><i data-lucide="calendar"></i></div>
+<h3>Seasonal Timing</h3>
+<p>Palisade's harvest festival and wine events create natural buyer interest spikes. Depending on your timeline, working with — or around — these seasonal patterns can meaningfully affect your days on market.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PRICING NUANCE - NAVY -->
 <section class="pricing-section">
-  <div class="container">
-    <div class="pricing-inner">
-      <div class="pricing-copy reveal">
-        <div class="section-label"><span>Honest Pricing</span></div>
-        <h2>Pricing a Palisade Home<br>Requires <em>Local Comps</em></h2>
-        <p>
+<div class="container">
+<div class="pricing-inner">
+<div class="pricing-copy reveal">
+<div class="section-label"><span>Honest Pricing</span></div>
+<h2>Pricing a Palisade Home<br/>Requires <em>Local Comps</em></h2>
+<p>
           The most common mistake in Palisade listings is drawing comparables from Grand Junction
           proper — a different buyer pool, different price-per-square-foot expectations, and
           different demand patterns. Your number needs to reflect your actual market.
         </p>
-        <ul class="pricing-points">
-          <li><i data-lucide="check"></i><span>Comps drawn from Palisade-area closings, not GJ averages</span></li>
-          <li><i data-lucide="check"></i><span>Irrigation water and view premiums factored in explicitly</span></li>
-          <li><i data-lucide="check"></i><span>Active competition reviewed before pricing decisions</span></li>
-          <li><i data-lucide="check"></i><span>An honest range — not a padded number to win the listing</span></li>
-          <li><i data-lucide="check"></i><span>A pricing strategy you understand before signing anything</span></li>
-        </ul>
-        <div style="margin-top:2rem;">
-          <a href="#palisade-contact" class="btn-outline-gold">Request My Free Review</a>
-        </div>
-      </div>
-
-      <div class="pricing-card reveal" style="transition-delay:0.15s">
-        <h3>What I Bring to Your Palisade Sale</h3>
-        <div class="pricing-row">
-          <span class="pr-label">Local market knowledge</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">Palisade-specific comps</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">Professional photography</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">MLS + targeted digital marketing</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">Lifestyle-forward listing copy</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">Full negotiation & closing support</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <div class="pricing-row">
-          <span class="pr-label">No pressure. No obligation consultation.</span>
-          <span class="pr-val">✓</span>
-        </div>
-        <p class="pricing-note">Serving Palisade, Grand Junction, Fruita, and the surrounding Grand Valley communities.</p>
-      </div>
-    </div>
-  </div>
+<ul class="pricing-points">
+<li><i data-lucide="check"></i><span>Comps drawn from Palisade-area closings, not GJ averages</span></li>
+<li><i data-lucide="check"></i><span>Irrigation water and view premiums factored in explicitly</span></li>
+<li><i data-lucide="check"></i><span>Active competition reviewed before pricing decisions</span></li>
+<li><i data-lucide="check"></i><span>An honest range — not a padded number to win the listing</span></li>
+<li><i data-lucide="check"></i><span>A pricing strategy you understand before signing anything</span></li>
+</ul>
+<div class="section-action-lg">
+<a class="btn-outline-gold" href="#palisade-contact">Request My Free Review</a>
+</div>
+</div>
+<div class="pricing-card reveal reveal-delay-015">
+<h3>What I Bring to Your Palisade Sale</h3>
+<div class="pricing-row">
+<span class="pr-label">Local market knowledge</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">Palisade-specific comps</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">Professional photography</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">MLS + targeted digital marketing</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">Lifestyle-forward listing copy</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">Full negotiation &amp; closing support</span>
+<span class="pr-val">✓</span>
+</div>
+<div class="pricing-row">
+<span class="pr-label">No pressure. No obligation consultation.</span>
+<span class="pr-val">✓</span>
+</div>
+<p class="pricing-note">Serving Palisade, Grand Junction, Fruita, and the surrounding Grand Valley communities.</p>
+</div>
+</div>
+</div>
 </section>
-
 <!-- CONTACT FORM -->
 <section class="contact-section" id="palisade-contact">
-  <div class="container">
-    <div class="contact-inner">
-
-      <div class="contact-copy reveal">
-        <div class="section-label"><span>Free Market Review</span></div>
-        <h2>What's Your<br>Palisade Home Worth?</h2>
-        <p>
+<div class="container">
+<div class="contact-inner">
+<div class="contact-copy reveal">
+<div class="section-label"><span>Free Market Review</span></div>
+<h2>What's Your<br/>Palisade Home Worth?</h2>
+<p>
           I'll pull Palisade-specific comparable sales, review your competition, and give you
           an honest market review — including what premiums your property may carry and what
           it would realistically take to sell well.
         </p>
-        <ul class="contact-bullets">
-          <li><i data-lucide="check"></i> Palisade-area comps, not GJ-wide averages</li>
-          <li><i data-lucide="check"></i> View, irrigation, and lifestyle premiums assessed</li>
-          <li><i data-lucide="check"></i> Honest positioning for your timeline and goals</li>
-          <li><i data-lucide="check"></i> No obligation. No pressure to list.</li>
-        </ul>
-        <div style="margin-top:1.5rem; padding:1.5rem; background:var(--white); border:1px solid var(--sand); border-radius:var(--radius-md);">
-          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.25rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;">Prefer to call?</p>
-          <a href="tel:9706446781" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--navy); text-decoration:none;">(970) 644-6781</a>
-        </div>
-      </div>
-
-      <div class="form-card reveal" style="transition-delay:0.15s">
-        <h3>Get Your Palisade Home Value</h3>
-        <p class="form-sub">I'll be in touch within 24 hours.</p>
-        <form id="palisadeForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required placeholder="Jane" />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="jane@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(970) 555-0000" />
-          </div>
-          <div class="form-group">
-            <label for="address">Property Address *</label>
-            <input type="text" id="address" name="address" required placeholder="123 Orchard Ave, Palisade, CO" />
-          </div>
-          <div class="form-group">
-            <label for="features">Notable Features (optional)</label>
-            <input type="text" id="features" name="features" placeholder="e.g. irrigation water, orchard views, river access" />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="timeline">Your Timeline</label>
-              <select id="timeline" name="timeline">
-                <option value="">Select</option>
-                <option>Just curious</option>
-                <option>3–6 months</option>
-                <option>As soon as possible</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="bedrooms">Bedrooms</label>
-              <select id="bedrooms" name="bedrooms">
-                <option value="">Select</option>
-                <option>2</option><option>3</option><option>4</option><option>5+</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit" id="palSubmit">
+<ul class="contact-bullets">
+<li><i data-lucide="check"></i> Palisade-area comps, not GJ-wide averages</li>
+<li><i data-lucide="check"></i> View, irrigation, and lifestyle premiums assessed</li>
+<li><i data-lucide="check"></i> Honest positioning for your timeline and goals</li>
+<li><i data-lucide="check"></i> No obligation. No pressure to list.</li>
+</ul>
+<div class="call-link-block">
+<p class="call-link-block-label">Prefer to call?</p>
+<a class="call-link-block-phone" href="tel:9706446781">(970) 644-6781</a>
+</div>
+</div>
+<div class="form-card reveal reveal-delay-015">
+<h3>Get Your Palisade Home Value</h3>
+<p class="form-sub">I'll be in touch within 24 hours.</p>
+<form id="palisadeForm">
+<div class="form-row">
+<div class="form-group">
+<label for="palFirstName">First Name *</label>
+<input id="palFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="palLastName">Last Name *</label>
+<input id="palLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label for="palEmail">Email Address *</label>
+<input id="palEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="palPhone">Phone Number</label>
+<input id="palPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+</div>
+<div class="form-group">
+<label for="palAddress">Property Address *</label>
+<input id="palAddress" name="address" placeholder="123 Orchard Ave, Palisade, CO" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="palFeatures">Notable Features (optional)</label>
+<input id="palFeatures" name="features" placeholder="e.g. irrigation water, orchard views, river access" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="palTimeline">Your Timeline</label>
+<select id="palTimeline" name="timeline">
+<option value="">Select</option>
+<option>Just curious</option>
+<option>3–6 months</option>
+<option>As soon as possible</option>
+</select>
+</div>
+<div class="form-group">
+<label for="palBedrooms">Bedrooms</label>
+<select id="palBedrooms" name="bedrooms">
+<option value="">Select</option>
+<option>2</option><option>3</option><option>4</option><option>5+</option>
+</select>
+</div>
+</div>
+<button class="btn btn-primary form-submit" id="palSubmit" type="submit">
             Get My Palisade Home Value
           </button>
-          <div id="palFormMsg"></div>
-          <p class="consent-note">
+<div id="palFormMsg"></div>
+<p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
               or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. Link to <a href="privacy.html">Privacy Policy</a>.
           </p>
-        </form>
-      </div>
-
-    </div>
-  </div>
+</form>
+</div>
+</div>
+</div>
 </section>
-
 <!-- CROSS LINKS -->
-<section style="background:var(--white); border-top:1px solid var(--sand); padding: clamp(3rem,5vw,4rem) 0;">
-  <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:2rem;">
-      <div class="section-label centered"><span>Also Serving</span></div>
-      <h2 style="font-size:clamp(1.5rem,2.5vw,2.2rem);">Selling Elsewhere in the Grand Valley?</h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem;">
-      <a href="grand-junction-home-value.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
-        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
-        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Grand Junction Home Value</span>
-      </a>
-      <a href="selling-in-fruita.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
-        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
-        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Selling in Fruita</span>
-      </a>
-      <a href="redlands-homes.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
-        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
-        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Redlands Homes</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="logo-footer">Orion Love</span>
-        <p>Helping Palisade and Grand Valley homeowners sell with clarity, confidence, and honest communication.</p>
-        <p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Sellers</a></li>
-          <li><a href="buyers.html">Buyers</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="/cdn-cgi/l/email-protection#a1ced3c8cecf8fcdced7c48fc2cee1c6ccc0c8cd8fc2cecc"><span class="__cf_email__" data-cfemail="b4dbc6dddbda9ad8dbc2d19ad7dbf4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span></a></li>
-          <li><a href="tel:9706446781">(970) 644-6781</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
-  </div>
+<div id="featuredAreasLinks"></div>
+<div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  if (window.lucide) lucide.createIcons();
-
-  const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
-
-  const toggle = document.getElementById('mobileToggle');
-  const menu   = document.getElementById('navMenu');
-  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
-  document.addEventListener('click', e => { if (!header.contains(e.target)) menu.classList.remove('active'); });
-
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  reveals.forEach(el => obs.observe(el));
-
-  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
-
-  const formatCurrencyCompact = value => {
-    if (!Number.isFinite(value)) return '--';
-    const rounded = Math.round(value);
-    if (rounded >= 1000000) return `<span>$</span>${(rounded / 1000000).toFixed(1).replace(/\.0$/, '')}M`;
-    return `<span>$</span>${Math.round(rounded / 1000)}K`;
-  };
-
-  const formatNumber = value => Number.isFinite(value) ? String(Math.round(value)) : '--';
-
-  (async () => {
-    const updatedEl = document.getElementById('palisadeMarketUpdated');
-    try {
-      const res = await fetch(MARKET_STATS_URL, { headers: { 'Accept': 'application/json' } });
-      if (!res.ok) throw new Error('Feed request failed');
-      const data = await res.json();
-      const area = data?.areas?.palisade;
-      if (!area) throw new Error('Palisade data missing');
-
-      const medianEl = document.getElementById('palMedianPrice');
-      const domEl = document.getElementById('palAvgDom');
-      const newListingsEl = document.getElementById('palNewListings');
-      const totalListingsEl = document.getElementById('palTotalListings');
-
-      if (medianEl) medianEl.innerHTML = formatCurrencyCompact(area.medianPrice);
-      if (domEl) domEl.textContent = formatNumber(area.averageDaysOnMarket);
-      if (newListingsEl) newListingsEl.textContent = formatNumber(area.newListings);
-      if (totalListingsEl) totalListingsEl.textContent = formatNumber(area.totalListings);
-
-      if (updatedEl) {
-        const updatedDate = area.lastUpdatedDate || data.generatedAt;
-        const prettyDate = updatedDate
-          ? new Date(updatedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-          : 'latest refresh';
-        updatedEl.textContent = `Live market data updated ${prettyDate}`;
-      }
-    } catch (error) {
-      if (updatedEl) updatedEl.textContent = 'Live market data temporarily unavailable';
-    }
-  })();
-
-  const palisadeForm = document.getElementById('palisadeForm');
-  const palMsg       = document.getElementById('palFormMsg');
-  const palSubmit    = document.getElementById('palSubmit');
-
-  palisadeForm?.addEventListener('submit', async e => {
-    e.preventDefault();
-    palSubmit.disabled = true;
-    palSubmit.textContent = 'Sending…';
-
-    const formData = {
-      firstName: document.getElementById('firstName').value.trim(),
-      lastName:  document.getElementById('lastName').value.trim(),
-      email:     document.getElementById('email').value.trim(),
-      phone:     document.getElementById('phone').value.trim(),
-      inquiry:   'Home Value Request — Palisade',
-      message: [
-        `Address: ${document.getElementById('address').value.trim()}`,
-        `Notable features: ${document.getElementById('features').value.trim()}`,
-        `Timeline: ${document.getElementById('timeline').value}`,
-        `Bedrooms: ${document.getElementById('bedrooms').value}`,
-      ].join('\n'),
-    };
-
-    try {
-      const res  = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.success) {
-        palMsg.textContent = "Thank you! I'll have your Palisade home value ready within 24 hours.";
-        palMsg.className = 'success'; palMsg.style.display = 'block';
-        palisadeForm.reset();
-      } else throw new Error();
-    } catch {
-      palMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
-        palMsg.className = 'error'; palMsg.style.display = 'block';
-    } finally {
-      palSubmit.disabled = false;
-      palSubmit.textContent = 'Get My Palisade Home Value';
-    }
-  });
-</script>
-
+</noscript>
 </body>
 </html>
