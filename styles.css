@@ -6776,6 +6776,14 @@ body.page-privacy .privacy-content {
   background: var(--gold-lt);
 }
 
+.orchard-market-strip .section-label-muted span {
+  color: rgba(255,255,255,0.72);
+}
+
+.orchard-market-strip .section-label-muted::before {
+  background: rgba(255,255,255,0.24);
+}
+
 .orchard-market-strip-copy {
   display: grid;
   gap: 0.55rem;
@@ -7014,4 +7022,35 @@ body.page-privacy .privacy-content {
   .north-practical-strip {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ===== Orchard Mesa market strip eyebrow fix ===== */
+body.page-orchard-mesa-homes .market-strip-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+body.page-orchard-mesa-homes .market-strip-eyebrow::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  flex-shrink: 0;
+}
+
+body.page-orchard-mesa-homes .market-strip-eyebrow span {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+  background: none;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
 }
