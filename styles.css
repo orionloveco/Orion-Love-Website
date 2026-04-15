@@ -4322,6 +4322,57 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 }
 
 /* ===== Grand Junction home value area cards ===== */
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-grid-detailed {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed {
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.35rem 1.4rem;
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed::after {
+  content: "";
+  display: none;
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed i,
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-text {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  body.page-grand-junction-home-value .bottom-city-links-detailed .link-grid-detailed {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== services page cleanup: seller guidance spacing + dark CTA text ===== */
 body.page-services #services {
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
