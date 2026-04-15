@@ -2027,23 +2027,7 @@ body.page-grand-junction-home-value .form-card {background: var(--white); border
       padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg);}
 body.page-grand-junction-home-value .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
 body.page-grand-junction-home-value .form-card .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
-body.page-grand-junction-home-value .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
-body.page-grand-junction-home-value .form-group {margin-bottom: 1rem;}
-body.page-grand-junction-home-value .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
-body.page-grand-junction-home-value .form-group input, body.page-grand-junction-home-value .form-group select, body.page-grand-junction-home-value .form-group textarea {width: 100%; padding: 0.8rem 1rem;
-      border: 1px solid var(--sand); border-radius: var(--radius-sm);
-      font-family: "Raleway", sans-serif; font-size: 0.95rem;
-      color: var(--text); background: var(--cream);
-      transition: border-color 0.2s, box-shadow 0.2s; outline: none;}
-body.page-grand-junction-home-value .form-group input:focus, body.page-grand-junction-home-value .form-group select:focus, body.page-grand-junction-home-value .form-group textarea:focus {border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);}
-body.page-grand-junction-home-value .form-group textarea {resize: vertical; min-height: 90px;}
 body.page-grand-junction-home-value .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
-body.page-grand-junction-home-value .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
-body.page-grand-junction-home-value .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
-body.page-grand-junction-home-value #valFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
-body.page-grand-junction-home-value #valFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
-body.page-grand-junction-home-value #valFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
 body.page-grand-junction-home-value .why-section {background: var(--cream);}
 body.page-grand-junction-home-value .why-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem;}
 body.page-grand-junction-home-value .why-card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md);
@@ -2069,7 +2053,6 @@ body.page-grand-junction-home-value .footer-bottom {flex-direction: column; gap:
 }
 @media (max-width: 640px) {
 body.page-grand-junction-home-value .hero h1 {font-size: 2.4rem;}
-body.page-grand-junction-home-value .form-row {grid-template-columns: 1fr;}
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
 }
 
@@ -2440,20 +2423,10 @@ body.page-orchard-mesa-homes .form-copy p {color:var(--muted);font-size:1.02rem;
 body.page-orchard-mesa-homes .check-list {list-style:none;}
 body.page-orchard-mesa-homes .check-list li {display:flex;align-items:flex-start;gap:0.75rem;color:var(--muted);font-size:0.95rem;margin-bottom:0.85rem;}
 body.page-orchard-mesa-homes .check-list li svg {width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;margin-top:3px;}
-body.page-orchard-mesa-homes .form-row {display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-body.page-orchard-mesa-homes .form-group {margin-bottom:1rem;}
-body.page-orchard-mesa-homes .form-group label {display:block;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:0.4rem;}
-body.page-orchard-mesa-homes .form-group input, body.page-orchard-mesa-homes .form-group select {width:100%;padding:0.8rem 1rem;border:1px solid var(--sand);border-radius:var(--radius-sm);font-family:"Raleway",sans-serif;font-size:0.95rem;color:var(--text);background:var(--cream);transition:border-color 0.2s,box-shadow 0.2s;outline:none;}
-body.page-orchard-mesa-homes .form-group input:focus, body.page-orchard-mesa-homes .form-group select:focus {border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,58,0.12);}
 body.page-orchard-mesa-homes .form-submit {width:100%;margin-top:0.5rem;justify-content:center;}
-body.page-orchard-mesa-homes .consent-note {font-size:0.78rem;color:var(--muted);margin-top:0.85rem;line-height:1.6;font-style:italic;}
-body.page-orchard-mesa-homes .consent-note a {color:var(--navy);text-decoration:underline;font-style:normal;}
 body.page-orchard-mesa-homes .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 @media (max-width:968px) {
 body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
-}
-@media (max-width:640px) {
-body.page-orchard-mesa-homes .form-row {grid-template-columns:1fr;}
 }
 
 /* ===== privacy.html ===== */
@@ -2547,20 +2520,10 @@ body.page-redlands-homes .form-copy p {color: var(--muted); font-size: 1.02rem; 
 body.page-redlands-homes .check-list {list-style: none;}
 body.page-redlands-homes .check-list li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-redlands-homes .check-list li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-redlands-homes .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
-body.page-redlands-homes .form-group {margin-bottom: 1rem;}
-body.page-redlands-homes .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
-body.page-redlands-homes .form-group input, body.page-redlands-homes .form-group select {width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none;}
-body.page-redlands-homes .form-group input:focus, body.page-redlands-homes .form-group select:focus {border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);}
 body.page-redlands-homes .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
-body.page-redlands-homes .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
-body.page-redlands-homes .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
 body.page-redlands-homes .link-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1rem; margin-top: 2rem;}
 @media (max-width: 968px) {
 body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-}
-@media (max-width: 640px) {
-body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
 }
 
 /* ===== selling-in-fruita.html ===== */
@@ -2617,25 +2580,13 @@ body.page-selling-in-fruita .contact-copy p {color: var(--muted); font-size: 1.0
 body.page-selling-in-fruita .contact-bullets {list-style: none;}
 body.page-selling-in-fruita .contact-bullets li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-selling-in-fruita .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-selling-in-fruita .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
-body.page-selling-in-fruita .form-group {margin-bottom: 1rem;}
-body.page-selling-in-fruita .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
-body.page-selling-in-fruita .form-group input, body.page-selling-in-fruita .form-group select, body.page-selling-in-fruita .form-group textarea {width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none;}
-body.page-selling-in-fruita .form-group input:focus, body.page-selling-in-fruita .form-group select:focus, body.page-selling-in-fruita .form-group textarea:focus {border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);}
-body.page-selling-in-fruita .form-group textarea {resize: vertical; min-height: 90px;}
 body.page-selling-in-fruita .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
-body.page-selling-in-fruita .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
-body.page-selling-in-fruita .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
-body.page-selling-in-fruita #fruFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
-body.page-selling-in-fruita #fruFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
-body.page-selling-in-fruita #fruFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
 @media (max-width: 968px) {
 body.page-selling-in-fruita .snapshot-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-fruita .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
 }
 @media (max-width: 640px) {
 body.page-selling-in-fruita .hero h1 {font-size: 2.4rem;}
-body.page-selling-in-fruita .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 }
 
@@ -2702,17 +2653,7 @@ body.page-selling-in-palisade .contact-copy p {color: var(--muted); font-size: 1
 body.page-selling-in-palisade .contact-bullets {list-style: none;}
 body.page-selling-in-palisade .contact-bullets li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-selling-in-palisade .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-selling-in-palisade .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
-body.page-selling-in-palisade .form-group {margin-bottom: 1rem;}
-body.page-selling-in-palisade .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
-body.page-selling-in-palisade .form-group input, body.page-selling-in-palisade .form-group select, body.page-selling-in-palisade .form-group textarea {width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none;}
-body.page-selling-in-palisade .form-group input:focus, body.page-selling-in-palisade .form-group select:focus, body.page-selling-in-palisade .form-group textarea:focus {border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);}
 body.page-selling-in-palisade .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
-body.page-selling-in-palisade .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
-body.page-selling-in-palisade .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
-body.page-selling-in-palisade #palFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
-body.page-selling-in-palisade #palFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
-body.page-selling-in-palisade #palFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
 @media (max-width: 968px) {
 body.page-selling-in-palisade .identity-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-palisade .pricing-inner {grid-template-columns: 1fr; gap: 3rem;}
@@ -2720,7 +2661,6 @@ body.page-selling-in-palisade .contact-inner {grid-template-columns: 1fr; gap: 3
 }
 @media (max-width: 640px) {
 body.page-selling-in-palisade .hero h1 {font-size: 2.4rem;}
-body.page-selling-in-palisade .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pricing-card {margin-top: 1rem;}
 }
 
@@ -2982,8 +2922,8 @@ body.page-services .nav-menu {display: none;}
 
 /* Form message states (used across contact/valuation forms) */
 .form-message { display: none; padding: 1rem 1.25rem; border-radius: 12px; font-size: 0.93rem; font-weight: 500; margin-bottom: 1.5rem; }
-.form-message.success, #fruFormMsg.success, #palFormMsg.success, #valFormMsg.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
-.form-message.error,   #fruFormMsg.error,   #palFormMsg.error,   #valFormMsg.error   { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
+.form-message.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
+.form-message.error { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
 .success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
 .error   { background: rgba(200,60,60,0.08);  border: 1px solid rgba(200,60,60,0.2);  color: #8b2020; }
 
@@ -3706,6 +3646,75 @@ body:is(
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 1.75rem;
+}
+
+/* Shared seller lead form contract */
+form[data-lead-form="seller"] .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+form[data-lead-form="seller"] .form-group {
+  margin-bottom: 1rem;
+}
+
+form[data-lead-form="seller"] .form-group label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+form[data-lead-form="seller"] .form-group :is(input, select, textarea) {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+form[data-lead-form="seller"] .form-group :is(input, select, textarea):focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,146,58,0.12);
+}
+
+form[data-lead-form="seller"] .form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+form[data-lead-form="seller"] .consent-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.85rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+form[data-lead-form="seller"] .consent-note a {
+  color: var(--navy);
+  text-decoration: underline;
+  font-style: normal;
+}
+
+form[data-lead-form="seller"] .form-message {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  form[data-lead-form="seller"] .form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 body:is(

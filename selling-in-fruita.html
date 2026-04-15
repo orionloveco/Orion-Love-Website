@@ -195,33 +195,33 @@
 <div class="form-card reveal reveal-delay-015">
 <h3>Get Your Fruita Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="fruitaForm">
+<form class="seller-lead-form" data-inquiry="Home Value Request — Fruita" data-lead-form="seller" data-success-message="Thank you! I'll have your Fruita home value ready within 24 hours." id="fruitaForm">
 <div class="form-row">
 <div class="form-group">
 <label for="fruFirstName">First Name *</label>
-<input id="fruFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+<input data-lead-field="firstName" id="fruFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="fruLastName">Last Name *</label>
-<input id="fruLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+<input data-lead-field="lastName" id="fruLastName" name="lastName" placeholder="Smith" required="" type="text"/>
 </div>
 </div>
 <div class="form-group">
 <label for="fruEmail">Email Address *</label>
-<input id="fruEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+<input data-lead-field="email" id="fruEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
 </div>
 <div class="form-group">
 <label for="fruPhone">Phone Number</label>
-<input id="fruPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+<input data-lead-field="phone" id="fruPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
 </div>
 <div class="form-group">
 <label for="fruAddress">Property Address *</label>
-<input id="fruAddress" name="address" placeholder="123 Main St, Fruita, CO" required="" type="text"/>
+<input data-message-line="Address" id="fruAddress" name="address" placeholder="123 Main St, Fruita, CO" required="" type="text"/>
 </div>
 <div class="form-row">
 <div class="form-group">
 <label for="fruTimeline">Your Timeline</label>
-<select id="fruTimeline" name="timeline">
+<select data-message-line="Timeline" id="fruTimeline" name="timeline">
 <option value="">Select</option>
 <option>Just curious</option>
 <option>3–6 months</option>
@@ -230,16 +230,16 @@
 </div>
 <div class="form-group">
 <label for="fruBedrooms">Bedrooms</label>
-<select id="fruBedrooms" name="bedrooms">
+<select data-message-line="Bedrooms" id="fruBedrooms" name="bedrooms">
 <option value="">Select</option>
 <option>2</option><option>3</option><option>4</option><option>5+</option>
 </select>
 </div>
 </div>
-<button class="btn btn-primary form-submit" id="fruSubmit" type="submit">
+<button class="btn btn-primary form-submit" data-submit-button="" id="fruSubmit" type="submit">
             Get My Fruita Home Value
           </button>
-<div id="fruFormMsg"></div>
+<div class="form-message" id="fruFormMsg" role="alert"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing

@@ -175,26 +175,26 @@
 <div class="form-card reveal reveal-delay-015">
 <h3>Get Your Redlands Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="redlandsForm">
+<form class="seller-lead-form" data-inquiry="Home Value Request — Redlands" data-lead-form="seller" data-success-message="Thank you! I'll have your Redlands home value ready within 24 hours." id="redlandsForm">
 <div class="form-row">
-<div class="form-group"><label for="redFirstName">First Name *</label><input id="redFirstName" placeholder="Jane" required="" type="text"/></div>
-<div class="form-group"><label for="redLastName">Last Name *</label><input id="redLastName" placeholder="Smith" required="" type="text"/></div>
+<div class="form-group"><label for="redFirstName">First Name *</label><input data-lead-field="firstName" id="redFirstName" placeholder="Jane" required="" type="text"/></div>
+<div class="form-group"><label for="redLastName">Last Name *</label><input data-lead-field="lastName" id="redLastName" placeholder="Smith" required="" type="text"/></div>
 </div>
-<div class="form-group"><label for="redEmail">Email *</label><input id="redEmail" placeholder="jane@email.com" required="" type="email"/></div>
-<div class="form-group"><label for="redPhone">Phone</label><input id="redPhone" placeholder="(970) 555-0000" type="tel"/></div>
-<div class="form-group"><label for="redAddress">Property Address *</label><input id="redAddress" placeholder="123 Monument View Dr, Grand Junction, CO" required="" type="text"/></div>
+<div class="form-group"><label for="redEmail">Email *</label><input data-lead-field="email" id="redEmail" placeholder="jane@email.com" required="" type="email"/></div>
+<div class="form-group"><label for="redPhone">Phone</label><input data-lead-field="phone" id="redPhone" placeholder="(970) 555-0000" type="tel"/></div>
+<div class="form-group"><label for="redAddress">Property Address *</label><input data-message-line="Address" id="redAddress" placeholder="123 Monument View Dr, Grand Junction, CO" required="" type="text"/></div>
 <div class="form-row">
 <div class="form-group">
 <label for="redTimeline">Timeline</label>
-<select id="redTimeline"><option value="">Select</option><option>Just curious</option><option>3–6 months</option><option>As soon as possible</option></select>
+<select data-message-line="Timeline" id="redTimeline"><option value="">Select</option><option>Just curious</option><option>3–6 months</option><option>As soon as possible</option></select>
 </div>
 <div class="form-group">
 <label for="redViews">Has Monument Views?</label>
-<select id="redViews"><option value="">Select</option><option>Yes — direct views</option><option>Partial views</option><option>No views</option></select>
+<select data-message-line="Monument Views" id="redViews"><option value="">Select</option><option>Yes — direct views</option><option>Partial views</option><option>No views</option></select>
 </div>
 </div>
-<button class="btn btn-primary form-submit" id="redFormBtn" type="submit">Get My Redlands Home Value</button>
-<div id="redFormMsg"></div>
+<button class="btn btn-primary form-submit" data-submit-button="" id="redFormBtn" type="submit">Get My Redlands Home Value</button>
+<div class="form-message" id="redFormMsg" role="alert"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
