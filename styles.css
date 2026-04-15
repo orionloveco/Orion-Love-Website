@@ -4597,7 +4597,7 @@ body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
   z-index: 1;
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0;
   padding: clamp(4.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) 3.25rem;
   text-align: left;
 }
