@@ -931,25 +931,6 @@ body.mobile-nav-open { overflow:hidden; }
 
 /* ===== about.html ===== */
 body.page-about *, body.page-about *::before, body.page-about *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --warm:    #f2ede3;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 16px 56px rgba(12,26,61,0.14);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-about {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
@@ -1512,24 +1493,6 @@ body.page-about .mobile-toggle span {transition: transform 0.25s ease, opacity 0
 
 /* ===== buyers.html ===== */
 body.page-buyers *, body.page-buyers *::before, body.page-buyers *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-buyers {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
@@ -1961,8 +1924,6 @@ body.page-buyers .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 
 /* ===== clifton-grand-junction.html ===== */
 body.page-clifton-grand-junction *, body.page-clifton-grand-junction *::before, body.page-clifton-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-clifton-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-clifton-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -2004,24 +1965,6 @@ body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;
 
 /* ===== contact.html ===== */
 body.page-contact *, body.page-contact *::before, body.page-contact *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-contact {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
@@ -2468,8 +2411,6 @@ body.page-contact .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 
 /* ===== downtown-grand-junction.html ===== */
 body.page-downtown-grand-junction *, body.page-downtown-grand-junction *::before, body.page-downtown-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-downtown-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-downtown-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -2513,24 +2454,6 @@ body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5
 
 /* ===== faq.html ===== */
 body.page-faq *, body.page-faq *::before, body.page-faq *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-faq {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
@@ -2938,22 +2861,6 @@ body.page-faq .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2
 
 /* ===== grand-junction-home-value.html ===== */
 body.page-grand-junction-home-value *, body.page-grand-junction-home-value *::before, body.page-grand-junction-home-value *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-grand-junction-home-value {font-family: "Raleway", sans-serif;
       color: var(--text);
       background: var(--cream);
@@ -3138,25 +3045,6 @@ body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;
 
 /* ===== index.html ===== */
 body.page-index *, body.page-index *::before, body.page-index *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --warm:    #f2ede3;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 16px 56px rgba(12,26,61,0.14);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-index {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
@@ -3630,8 +3518,6 @@ body.page-index .mobile-toggle span {transition: transform 0.25s ease, opacity 0
 
 /* ===== loma-mack-grand-junction.html ===== */
 body.page-loma-mack-grand-junction *, body.page-loma-mack-grand-junction *::before, body.page-loma-mack-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-loma-mack-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-loma-mack-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -3676,8 +3562,6 @@ body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5re
 
 /* ===== north-grand-junction.html ===== */
 body.page-north-grand-junction *, body.page-north-grand-junction *::before, body.page-north-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-north-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-north-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -3721,8 +3605,6 @@ body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem
 
 /* ===== northeast-grand-junction.html ===== */
 body.page-northeast-grand-junction *, body.page-northeast-grand-junction *::before, body.page-northeast-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-northeast-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-northeast-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -3766,8 +3648,6 @@ body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 
 /* ===== northwest-grand-junction.html ===== */
 body.page-northwest-grand-junction *, body.page-northwest-grand-junction *::before, body.page-northwest-grand-junction *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-northwest-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-northwest-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -3811,8 +3691,6 @@ body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 
 /* ===== orchard-mesa-homes.html ===== */
 body.page-orchard-mesa-homes *, body.page-orchard-mesa-homes *::before, body.page-orchard-mesa-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:#0c1a3d;--navy-mid:#16275a;--gold:#b8923a;--gold-lt:#d4aa5a;--cream:#f7f4ed;--sand:#e8e1d0;--text:#1a1a2e;--muted:rgba(26,26,46,0.62);--white:#ffffff;--shadow-sm:0 2px 12px rgba(12,26,61,0.07);--shadow-md:0 6px 32px rgba(12,26,61,0.10);--shadow-lg:0 20px 60px rgba(12,26,61,0.13);--radius-sm:12px;--radius-md:20px;--radius-lg:28px;}
-html {scroll-behavior:smooth;}
 body.page-orchard-mesa-homes {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-orchard-mesa-homes .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
@@ -3936,13 +3814,6 @@ body.page-privacy .contact-box a:hover {color: var(--accent);}
 
 /* ===== redlands-homes.html ===== */
 body.page-redlands-homes *, body.page-redlands-homes *::before, body.page-redlands-homes *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy: #0c1a3d; --navy-mid: #16275a; --gold: #b8923a; --gold-lt: #d4aa5a;
-      --cream: #f7f4ed; --sand: #e8e1d0; --text: #1a1a2e; --muted: rgba(26,26,46,0.62);
-      --white: #ffffff;
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07); --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-      --radius-sm: 12px; --radius-md: 20px; --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-redlands-homes {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-redlands-homes h1, body.page-redlands-homes h2, body.page-redlands-homes h3, body.page-redlands-homes h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-redlands-homes .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
@@ -4043,22 +3914,6 @@ body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
 
 /* ===== selling-in-fruita.html ===== */
 body.page-selling-in-fruita *, body.page-selling-in-fruita *::before, body.page-selling-in-fruita *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-selling-in-fruita {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-fruita h1, body.page-selling-in-fruita h2, body.page-selling-in-fruita h3, body.page-selling-in-fruita h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-selling-in-fruita .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
@@ -4159,22 +4014,6 @@ body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 
 /* ===== selling-in-palisade.html ===== */
 body.page-selling-in-palisade *, body.page-selling-in-palisade *::before, body.page-selling-in-palisade *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-selling-in-palisade {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-palisade h1, body.page-selling-in-palisade h2, body.page-selling-in-palisade h3, body.page-selling-in-palisade h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-selling-in-palisade .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
@@ -4284,24 +4123,6 @@ body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pr
 
 /* ===== services.html ===== */
 body.page-services *, body.page-services *::before, body.page-services *::after {box-sizing: border-box; margin: 0; padding: 0;}
-:root {--navy:    #0c1a3d;
-      --navy-mid:#16275a;
-      --gold:    #b8923a;
-      --gold-lt: #d4aa5a;
-      --cream:   #f7f4ed;
-      --sand:    #e8e1d0;
-      --text:    #1a1a2e;
-      --muted:   rgba(26,26,46,0.62);
-      --white:   #ffffff;
-
-      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
-      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
-      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
-
-      --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;}
-html {scroll-behavior: smooth;}
 body.page-services {font-family: "Raleway", sans-serif;
       font-weight: 400;
       color: var(--text);
