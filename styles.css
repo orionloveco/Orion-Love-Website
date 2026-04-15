@@ -1967,17 +1967,6 @@ body.page-clifton-grand-junction {font-family:"Raleway",sans-serif;color:var(--t
 body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-clifton-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-clifton-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-clifton-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-clifton-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-clifton-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-clifton-grand-junction .logo {text-decoration:none;}
-body.page-clifton-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-clifton-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-clifton-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-clifton-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-clifton-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-clifton-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-clifton-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-clifton-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-clifton-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -2007,27 +1996,10 @@ body.page-clifton-grand-junction .link-card {background:var(--cream);border:1px 
 body.page-clifton-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-clifton-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-clifton-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-clifton-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-clifton-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-clifton-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-clifton-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-clifton-grand-junction .footer-links h4, body.page-clifton-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-clifton-grand-junction .footer-links ul, body.page-clifton-grand-junction .footer-contact ul {list-style:none;}
-body.page-clifton-grand-junction .footer-links li, body.page-clifton-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-clifton-grand-junction .footer-links a, body.page-clifton-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-clifton-grand-junction .footer-links a:hover, body.page-clifton-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-clifton-grand-junction .footer-bottom p, body.page-clifton-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-clifton-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-clifton-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-clifton-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-clifton-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-clifton-grand-junction .nav-menu.active {left:0;}
-body.page-clifton-grand-junction .mobile-toggle {display:flex;}
 body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-body.page-clifton-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-clifton-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== contact.html ===== */
@@ -2502,17 +2474,6 @@ body.page-downtown-grand-junction {font-family:"Raleway",sans-serif;color:var(--
 body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-downtown-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-downtown-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-downtown-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-downtown-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-downtown-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-downtown-grand-junction .logo {text-decoration:none;}
-body.page-downtown-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-downtown-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-downtown-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-downtown-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-downtown-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-downtown-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-downtown-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-downtown-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-downtown-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -2544,27 +2505,10 @@ body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px
 body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-downtown-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-downtown-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-downtown-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-downtown-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-downtown-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-downtown-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-downtown-grand-junction .footer-links h4, body.page-downtown-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-downtown-grand-junction .footer-links ul, body.page-downtown-grand-junction .footer-contact ul {list-style:none;}
-body.page-downtown-grand-junction .footer-links li, body.page-downtown-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-downtown-grand-junction .footer-links a, body.page-downtown-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-downtown-grand-junction .footer-links a:hover, body.page-downtown-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-downtown-grand-junction .footer-bottom p, body.page-downtown-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-downtown-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-downtown-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-downtown-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-downtown-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-downtown-grand-junction .nav-menu.active {left:0;}
-body.page-downtown-grand-junction .mobile-toggle {display:flex;}
 body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-downtown-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-downtown-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== faq.html ===== */
@@ -3692,17 +3636,6 @@ body.page-loma-mack-grand-junction {font-family:"Raleway",sans-serif;color:var(-
 body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-loma-mack-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-loma-mack-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-loma-mack-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-loma-mack-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-loma-mack-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-loma-mack-grand-junction .logo {text-decoration:none;}
-body.page-loma-mack-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-loma-mack-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-loma-mack-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-loma-mack-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-loma-mack-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-loma-mack-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-loma-mack-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-loma-mack-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-loma-mack-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3735,27 +3668,10 @@ body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1p
 body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-loma-mack-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-loma-mack-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-loma-mack-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-loma-mack-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-loma-mack-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-loma-mack-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-loma-mack-grand-junction .footer-links h4, body.page-loma-mack-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .footer-links ul, body.page-loma-mack-grand-junction .footer-contact ul {list-style:none;}
-body.page-loma-mack-grand-junction .footer-links li, body.page-loma-mack-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-loma-mack-grand-junction .footer-links a, body.page-loma-mack-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-loma-mack-grand-junction .footer-links a:hover, body.page-loma-mack-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-loma-mack-grand-junction .footer-bottom p, body.page-loma-mack-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-loma-mack-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-loma-mack-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-loma-mack-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-loma-mack-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-loma-mack-grand-junction .nav-menu.active {left:0;}
-body.page-loma-mack-grand-junction .mobile-toggle {display:flex;}
 body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-body.page-loma-mack-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-loma-mack-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== north-grand-junction.html ===== */
@@ -3766,17 +3682,6 @@ body.page-north-grand-junction {font-family:"Raleway",sans-serif;color:var(--tex
 body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-north-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-north-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-north-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-north-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-north-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-north-grand-junction .logo {text-decoration:none;}
-body.page-north-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-north-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-north-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-north-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-north-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-north-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-north-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-north-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-north-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3808,27 +3713,10 @@ body.page-north-grand-junction .link-card {background:var(--cream);border:1px so
 body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-north-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-north-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-north-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-north-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-north-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-north-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-north-grand-junction .footer-links h4, body.page-north-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-north-grand-junction .footer-links ul, body.page-north-grand-junction .footer-contact ul {list-style:none;}
-body.page-north-grand-junction .footer-links li, body.page-north-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-north-grand-junction .footer-links a, body.page-north-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-north-grand-junction .footer-links a:hover, body.page-north-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-north-grand-junction .footer-bottom p, body.page-north-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-north-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-north-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-north-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-north-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-north-grand-junction .nav-menu.active {left:0;}
-body.page-north-grand-junction .mobile-toggle {display:flex;}
 body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-north-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-north-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== northeast-grand-junction.html ===== */
@@ -3839,17 +3727,6 @@ body.page-northeast-grand-junction {font-family:"Raleway",sans-serif;color:var(-
 body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-northeast-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-northeast-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-northeast-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-northeast-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-northeast-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northeast-grand-junction .logo {text-decoration:none;}
-body.page-northeast-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-northeast-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-northeast-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-northeast-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-northeast-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-northeast-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-northeast-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-northeast-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-northeast-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3881,27 +3758,10 @@ body.page-northeast-grand-junction .link-card {background:var(--cream);border:1p
 body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-northeast-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-northeast-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northeast-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-northeast-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-northeast-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-northeast-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-northeast-grand-junction .footer-links h4, body.page-northeast-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-northeast-grand-junction .footer-links ul, body.page-northeast-grand-junction .footer-contact ul {list-style:none;}
-body.page-northeast-grand-junction .footer-links li, body.page-northeast-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-northeast-grand-junction .footer-links a, body.page-northeast-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-northeast-grand-junction .footer-links a:hover, body.page-northeast-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-northeast-grand-junction .footer-bottom p, body.page-northeast-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-northeast-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-northeast-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-northeast-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-northeast-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-northeast-grand-junction .nav-menu.active {left:0;}
-body.page-northeast-grand-junction .mobile-toggle {display:flex;}
 body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-northeast-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-northeast-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== northwest-grand-junction.html ===== */
@@ -3912,17 +3772,6 @@ body.page-northwest-grand-junction {font-family:"Raleway",sans-serif;color:var(-
 body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-northwest-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-northwest-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-northwest-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-northwest-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-northwest-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northwest-grand-junction .logo {text-decoration:none;}
-body.page-northwest-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-northwest-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-northwest-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-northwest-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-northwest-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-northwest-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-northwest-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-northwest-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
 body.page-northwest-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -3954,27 +3803,10 @@ body.page-northwest-grand-junction .link-card {background:var(--cream);border:1p
 body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-northwest-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-northwest-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northwest-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-northwest-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-northwest-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-northwest-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-northwest-grand-junction .footer-links h4, body.page-northwest-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-northwest-grand-junction .footer-links ul, body.page-northwest-grand-junction .footer-contact ul {list-style:none;}
-body.page-northwest-grand-junction .footer-links li, body.page-northwest-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-northwest-grand-junction .footer-links a, body.page-northwest-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-northwest-grand-junction .footer-links a:hover, body.page-northwest-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-northwest-grand-junction .footer-bottom p, body.page-northwest-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-northwest-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-northwest-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-northwest-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-northwest-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-northwest-grand-junction .nav-menu.active {left:0;}
-body.page-northwest-grand-junction .mobile-toggle {display:flex;}
 body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-northwest-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-northwest-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== orchard-mesa-homes.html ===== */
@@ -3985,17 +3817,6 @@ body.page-orchard-mesa-homes {font-family:"Raleway",sans-serif;color:var(--text)
 body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
 body.page-orchard-mesa-homes .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-orchard-mesa-homes section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-orchard-mesa-homes .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-orchard-mesa-homes .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-orchard-mesa-homes .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-orchard-mesa-homes .logo {text-decoration:none;}
-body.page-orchard-mesa-homes .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-orchard-mesa-homes .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-orchard-mesa-homes .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-orchard-mesa-homes .nav-menu a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-orchard-mesa-homes .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-orchard-mesa-homes .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
 body.page-orchard-mesa-homes .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
 body.page-orchard-mesa-homes .btn-primary {background:var(--gold);color:var(--white);box-shadow:0 4px 20px rgba(184,146,58,0.35);}
 body.page-orchard-mesa-homes .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
@@ -4066,27 +3887,10 @@ body.page-orchard-mesa-homes .link-card {background:var(--cream);border:1px soli
 body.page-orchard-mesa-homes .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-orchard-mesa-homes .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-orchard-mesa-homes .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-orchard-mesa-homes .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-orchard-mesa-homes .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-orchard-mesa-homes .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-orchard-mesa-homes .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-orchard-mesa-homes .footer-links h4, body.page-orchard-mesa-homes .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-orchard-mesa-homes .footer-links ul, body.page-orchard-mesa-homes .footer-contact ul {list-style:none;}
-body.page-orchard-mesa-homes .footer-links li, body.page-orchard-mesa-homes .footer-contact li {margin-bottom:0.6rem;}
-body.page-orchard-mesa-homes .footer-links a, body.page-orchard-mesa-homes .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-orchard-mesa-homes .footer-links a:hover, body.page-orchard-mesa-homes .footer-contact a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-orchard-mesa-homes .footer-bottom p, body.page-orchard-mesa-homes .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-orchard-mesa-homes .footer-bottom a:hover {color:var(--gold-lt);}
 body.page-orchard-mesa-homes .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
 body.page-orchard-mesa-homes .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-orchard-mesa-homes .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-orchard-mesa-homes .nav-menu.active {left:0;}
-body.page-orchard-mesa-homes .mobile-toggle {display:flex;}
 body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
-body.page-orchard-mesa-homes .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-orchard-mesa-homes .footer-bottom {flex-direction:column;text-align:center;}
 }
 @media (max-width:640px) {
 body.page-orchard-mesa-homes .form-row {grid-template-columns:1fr;}
@@ -4143,17 +3947,6 @@ body.page-redlands-homes {font-family: "Raleway", sans-serif; color: var(--text)
 body.page-redlands-homes h1, body.page-redlands-homes h2, body.page-redlands-homes h3, body.page-redlands-homes h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-redlands-homes .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-redlands-homes section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-redlands-homes .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-redlands-homes .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-redlands-homes .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-redlands-homes .logo {text-decoration: none;}
-body.page-redlands-homes .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-redlands-homes .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-redlands-homes .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-redlands-homes .nav-menu a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-redlands-homes .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-redlands-homes .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-redlands-homes .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-redlands-homes .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-redlands-homes .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -4239,27 +4032,10 @@ body.page-redlands-homes .link-card {background: var(--cream); border: 1px solid
 body.page-redlands-homes .link-card:hover {border-color: var(--gold); transform: translateY(-2px);}
 body.page-redlands-homes .link-card svg {width: 15px; height: 15px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0;}
 body.page-redlands-homes .link-card span {font-size: 0.88rem; font-weight: 600; color: var(--navy);}
-body.page-redlands-homes .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-redlands-homes .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-redlands-homes .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-redlands-homes .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-redlands-homes .footer-links h4, body.page-redlands-homes .footer-contact h4 {font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-redlands-homes .footer-links ul, body.page-redlands-homes .footer-contact ul {list-style: none;}
-body.page-redlands-homes .footer-links li, body.page-redlands-homes .footer-contact li {margin-bottom: 0.6rem;}
-body.page-redlands-homes .footer-links a, body.page-redlands-homes .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-redlands-homes .footer-links a:hover, body.page-redlands-homes .footer-contact a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-redlands-homes .footer-bottom p, body.page-redlands-homes .footer-bottom a {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-decoration: none;}
-body.page-redlands-homes .footer-bottom a:hover {color: var(--gold-lt);}
 body.page-redlands-homes .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
 body.page-redlands-homes .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-redlands-homes .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-redlands-homes .nav-menu.active {left: 0;}
-body.page-redlands-homes .mobile-toggle {display: flex;}
 body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-redlands-homes .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-redlands-homes .footer-bottom {flex-direction: column; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
@@ -4287,18 +4063,6 @@ body.page-selling-in-fruita {font-family: "Raleway", sans-serif; color: var(--te
 body.page-selling-in-fruita h1, body.page-selling-in-fruita h2, body.page-selling-in-fruita h3, body.page-selling-in-fruita h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-selling-in-fruita .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-selling-in-fruita section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-selling-in-fruita .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-selling-in-fruita .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-selling-in-fruita .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-fruita .logo {text-decoration: none;}
-body.page-selling-in-fruita .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-selling-in-fruita .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-selling-in-fruita .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-selling-in-fruita .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-fruita .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-selling-in-fruita .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-selling-in-fruita .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-selling-in-fruita .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-selling-in-fruita .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-selling-in-fruita .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -4381,29 +4145,11 @@ body.page-selling-in-fruita .consent-note a {color: var(--navy); text-decoration
 body.page-selling-in-fruita #fruFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-selling-in-fruita #fruFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-selling-in-fruita #fruFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-fruita .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-selling-in-fruita .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-selling-in-fruita .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-selling-in-fruita .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-selling-in-fruita .footer-links h4, body.page-selling-in-fruita .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-selling-in-fruita .footer-links ul, body.page-selling-in-fruita .footer-contact ul {list-style: none;}
-body.page-selling-in-fruita .footer-links li, body.page-selling-in-fruita .footer-contact li {margin-bottom: 0.6rem;}
-body.page-selling-in-fruita .footer-links a, body.page-selling-in-fruita .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-selling-in-fruita .footer-links a:hover, body.page-selling-in-fruita .footer-contact a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-selling-in-fruita .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-selling-in-fruita .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-selling-in-fruita .footer-bottom a:hover {color: var(--gold-lt);}
 body.page-selling-in-fruita .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
 body.page-selling-in-fruita .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-selling-in-fruita .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-selling-in-fruita .nav-menu.active {left: 0;}
-body.page-selling-in-fruita .mobile-toggle {display: flex;}
 body.page-selling-in-fruita .snapshot-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-fruita .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-fruita .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-selling-in-fruita .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-selling-in-fruita .hero h1 {font-size: 2.4rem;}
@@ -4433,18 +4179,6 @@ body.page-selling-in-palisade {font-family: "Raleway", sans-serif; color: var(--
 body.page-selling-in-palisade h1, body.page-selling-in-palisade h2, body.page-selling-in-palisade h3, body.page-selling-in-palisade h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
 body.page-selling-in-palisade .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-selling-in-palisade section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-selling-in-palisade .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-selling-in-palisade .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-selling-in-palisade .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-palisade .logo {text-decoration: none;}
-body.page-selling-in-palisade .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-selling-in-palisade .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-selling-in-palisade .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-selling-in-palisade .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-palisade .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-selling-in-palisade .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-selling-in-palisade .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-selling-in-palisade .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
 body.page-selling-in-palisade .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
 body.page-selling-in-palisade .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
@@ -4535,30 +4269,12 @@ body.page-selling-in-palisade .consent-note a {color: var(--navy); text-decorati
 body.page-selling-in-palisade #palFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-selling-in-palisade #palFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-selling-in-palisade #palFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-palisade .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-selling-in-palisade .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-selling-in-palisade .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-selling-in-palisade .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-selling-in-palisade .footer-links h4, body.page-selling-in-palisade .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-selling-in-palisade .footer-links ul, body.page-selling-in-palisade .footer-contact ul {list-style: none;}
-body.page-selling-in-palisade .footer-links li, body.page-selling-in-palisade .footer-contact li {margin-bottom: 0.6rem;}
-body.page-selling-in-palisade .footer-links a, body.page-selling-in-palisade .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-selling-in-palisade .footer-links a:hover, body.page-selling-in-palisade .footer-contact a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-selling-in-palisade .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-selling-in-palisade .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-selling-in-palisade .footer-bottom a:hover {color: var(--gold-lt);}
 body.page-selling-in-palisade .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
 body.page-selling-in-palisade .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-selling-in-palisade .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-selling-in-palisade .nav-menu.active {left: 0;}
-body.page-selling-in-palisade .mobile-toggle {display: flex;}
 body.page-selling-in-palisade .identity-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-palisade .pricing-inner {grid-template-columns: 1fr; gap: 3rem;}
 body.page-selling-in-palisade .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-palisade .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-selling-in-palisade .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-selling-in-palisade .hero h1 {font-size: 2.4rem;}
