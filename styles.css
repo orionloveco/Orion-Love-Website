@@ -29,7 +29,6 @@
   --off-white:  var(--cream);
   --light-gray: var(--sand);
   --gray:       var(--muted);
-  --slate:      rgba(74, 86, 117, 1);
 
   /* Shadows */
   --shadow-sm:   0 2px 12px rgba(12, 26, 61, 0.07);
@@ -37,7 +36,6 @@
   --shadow-md:   0 6px 32px rgba(12, 26, 61, 0.10);
   --shadow-hover:0 18px 46px rgba(12, 26, 61, 0.14);
   --shadow-lg:   0 20px 60px rgba(12, 26, 61, 0.13);
-  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.05);
 
   /* Radii */
   --radius-sm: 12px;
@@ -792,8 +790,7 @@ p { color: var(--text); }
   transform: translateY(22px);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
-.js .reveal.visible,
-.js .reveal.is-visible {
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -4196,7 +4193,6 @@ body.page-privacy .privacy-content {
   .reveal,
   .js .reveal,
   .reveal.visible,
-  .reveal.is-visible,
   [class*="reveal-delay-"],
   [class*="reveal-d"] {
     opacity: 1 !important;
