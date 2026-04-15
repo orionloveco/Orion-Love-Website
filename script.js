@@ -536,78 +536,72 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  const pageInitializers = {
-    'page-contact': () => {
-      submitForm({
-        formId: 'contactForm',
-        submitBtnId: 'submitBtn',
-        messageId: 'formMessage',
-        validate: () => {
-          const requiredIds = ['contactFirstName', 'contactLastName', 'contactEmail', 'contactMessage'];
-          const hasAllValues = requiredIds.every((id) => getTrimmedValue(id));
-          return hasAllValues ? '' : 'Please fill in all required fields.';
-        },
-        payloadBuilder: () => ({
-          firstName: getTrimmedValue('contactFirstName'),
-          lastName: getTrimmedValue('contactLastName'),
-          email: getTrimmedValue('contactEmail'),
-          phone: getTrimmedValue('contactPhone'),
-          inquiry: document.getElementById('contactInquiry')?.value || 'General Inquiry',
-          message: getTrimmedValue('contactMessage'),
-        }),
-        successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
-        submitButtonDefaultText: 'Start the Conversation',
-        errorMessage: 'Something went wrong. Please call or email me directly.',
-      });
-    },
-    'page-grand-junction-home-value': () => {
-      loadGrandJunctionCityStats();
-      initSellerLeadForms();
-    },
-    'page-orchard-mesa-homes': () => {
-      loadMarketStatsBlocks();
-      initSellerLeadForms();
-    },
-    'page-redlands-homes': () => {
-      loadMarketStatsBlocks();
-      initSellerLeadForms();
-    },
-    'page-selling-in-fruita': () => {
-      loadMarketStatsBlocks();
-      initSellerLeadForms();
-    },
-    'page-selling-in-palisade': () => {
-      loadMarketStatsBlocks();
-      initSellerLeadForms();
-    },
-    'page-clifton-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
-    'page-downtown-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
-    'page-loma-mack-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
-    'page-north-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
-    'page-northeast-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
-    'page-northwest-grand-junction': () => {
-      loadMarketStatsBlocks();
-    },
+  const initContactForm = () => {
+    submitForm({
+      formId: 'contactForm',
+      submitBtnId: 'submitBtn',
+      messageId: 'formMessage',
+      validate: () => {
+        const requiredIds = ['contactFirstName', 'contactLastName', 'contactEmail', 'contactMessage'];
+        const hasAllValues = requiredIds.every((id) => getTrimmedValue(id));
+        return hasAllValues ? '' : 'Please fill in all required fields.';
+      },
+      payloadBuilder: () => ({
+        firstName: getTrimmedValue('contactFirstName'),
+        lastName: getTrimmedValue('contactLastName'),
+        email: getTrimmedValue('contactEmail'),
+        phone: getTrimmedValue('contactPhone'),
+        inquiry: document.getElementById('contactInquiry')?.value || 'General Inquiry',
+        message: getTrimmedValue('contactMessage'),
+      }),
+      successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
+      submitButtonDefaultText: 'Start the Conversation',
+      errorMessage: 'Something went wrong. Please call or email me directly.',
+    });
   };
 
-  Object.entries(pageInitializers).forEach(([pageClass, init]) => {
-    if (document.body.classList.contains(pageClass)) init();
+  const hasGrandJunctionCityStats = () => {
+    return !!(
+      document.getElementById('gjMedianListPrice') ||
+      document.getElementById('gjAvgDom') ||
+      document.getElementById('gjNewListings') ||
+      document.getElementById('gjActiveListings')
+    );
+  };
+
+  const runtimeFeatureInitializers = [
+    {
+      key: 'contact-form',
+      when: () => !!document.getElementById('contactForm'),
+      init: initContactForm,
+    },
+    {
+      key: 'market-stats-blocks',
+      when: () => document.querySelector('[data-market-area]'),
+      init: loadMarketStatsBlocks,
+    },
+    {
+      key: 'seller-lead-forms',
+      when: () => document.querySelector('form[data-lead-form="seller"]'),
+      init: initSellerLeadForms,
+    },
+    {
+      key: 'grand-junction-city-stats',
+      when: hasGrandJunctionCityStats,
+      init: loadGrandJunctionCityStats,
+    },
+  ];
+
+  runtimeFeatureInitializers.forEach((feature) => {
+    if (feature.when()) {
+      feature.init();
+    }
   });
 
   /* ============================================================
      FAQ PAGE
      ============================================================ */
-  if (document.body.classList.contains('page-faq')) {
+  if (document.body.classList.contains('page-faq') || document.querySelector('.faq-tab')) {
     const faqTabs = document.querySelectorAll('.faq-tab');
     const faqPanels = document.querySelectorAll('.faq-panel');
 
