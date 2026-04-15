@@ -594,14 +594,6 @@ p { color: var(--text); }
   max-width: 820px;
   margin: 0 auto;
 }
-.cta-content h2 { margin-bottom: 0.75rem; }
-.cta-content p {
-  font-size: 1.05rem;
-  color: var(--muted);
-  margin: 0 auto 1.75rem;
-  line-height: 1.85;
-  max-width: 60ch;
-}
 
 /* Dark CTA band */
 .cta-band {
@@ -624,19 +616,6 @@ p { color: var(--text); }
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 3rem;
-}
-.cta-band-copy h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: var(--white);
-  font-weight: 300;
-  margin-bottom: 0.6rem;
-}
-.cta-band-copy h2 em { font-style: italic; color: var(--gold-lt); }
-.cta-band-copy p {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 52ch;
 }
 
 /* Buyers CTA (white bg) */
@@ -2464,9 +2443,6 @@ body.page-orchard-mesa-homes .form-copy p {color:var(--muted);font-size:1.02rem;
 body.page-orchard-mesa-homes .check-list {list-style:none;}
 body.page-orchard-mesa-homes .check-list li {display:flex;align-items:flex-start;gap:0.75rem;color:var(--muted);font-size:0.95rem;margin-bottom:0.85rem;}
 body.page-orchard-mesa-homes .check-list li svg {width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;margin-top:3px;}
-body.page-orchard-mesa-homes .form-card {background:var(--white);border-radius:var(--radius-lg);padding:2.5rem 2.25rem;box-shadow:var(--shadow-lg);border:1px solid var(--sand);}
-body.page-orchard-mesa-homes .form-card h3 {font-size:1.5rem;color:var(--navy);margin-bottom:0.4rem;}
-body.page-orchard-mesa-homes .form-sub {font-size:0.9rem;color:var(--muted);margin-bottom:1.75rem;}
 body.page-orchard-mesa-homes .form-row {display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 body.page-orchard-mesa-homes .form-group {margin-bottom:1rem;}
 body.page-orchard-mesa-homes .form-group label {display:block;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);font-weight:600;margin-bottom:0.4rem;}
@@ -2574,9 +2550,6 @@ body.page-redlands-homes .form-copy p {color: var(--muted); font-size: 1.02rem; 
 body.page-redlands-homes .check-list {list-style: none;}
 body.page-redlands-homes .check-list li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-redlands-homes .check-list li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-redlands-homes .form-card {background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand);}
-body.page-redlands-homes .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
-body.page-redlands-homes .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
 body.page-redlands-homes .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
 body.page-redlands-homes .form-group {margin-bottom: 1rem;}
 body.page-redlands-homes .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
@@ -2647,9 +2620,6 @@ body.page-selling-in-fruita .contact-copy p {color: var(--muted); font-size: 1.0
 body.page-selling-in-fruita .contact-bullets {list-style: none;}
 body.page-selling-in-fruita .contact-bullets li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-selling-in-fruita .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-selling-in-fruita .form-card {background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand);}
-body.page-selling-in-fruita .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
-body.page-selling-in-fruita .form-card .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
 body.page-selling-in-fruita .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
 body.page-selling-in-fruita .form-group {margin-bottom: 1rem;}
 body.page-selling-in-fruita .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
@@ -2735,9 +2705,6 @@ body.page-selling-in-palisade .contact-copy p {color: var(--muted); font-size: 1
 body.page-selling-in-palisade .contact-bullets {list-style: none;}
 body.page-selling-in-palisade .contact-bullets li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
 body.page-selling-in-palisade .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-selling-in-palisade .form-card {background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand);}
-body.page-selling-in-palisade .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
-body.page-selling-in-palisade .form-card .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
 body.page-selling-in-palisade .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
 body.page-selling-in-palisade .form-group {margin-bottom: 1rem;}
 body.page-selling-in-palisade .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
@@ -3171,33 +3138,6 @@ body.page-services #services .lead {
 body.page-services #services .process-steps,
 body.page-services #services .usp-grid {
   margin-bottom: 2.5rem;
-}
-
-body.page-services .cta-band-copy h2,
-body.page-services .cta-band-inner h2 {
-  color: var(--white);
-}
-
-body.page-services .cta-band-copy p,
-body.page-services .cta-band-inner p {
-  color: rgba(255,255,255,0.72);
-}
-
-/* =========================
-   Alignment + spacing fixes
-========================= */
-
-body.page-index .process-preview .process-steps {
-  margin-bottom: 2.5rem;
-}
-
-.cta-band .cta-band-copy h2,
-.cta-band .cta-band-copy p {
-  color: var(--white);
-}
-
-.cta-band .cta-band-copy p {
-  color: rgba(255, 255, 255, 0.78);
 }
 
 /* =========================================================
@@ -3743,6 +3683,44 @@ body:is(
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
+}
+
+/* Shared local-area lead form card shell */
+body:is(
+  .page-orchard-mesa-homes,
+  .page-redlands-homes,
+  .page-selling-in-fruita,
+  .page-selling-in-palisade
+) .form-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--sand);
+}
+
+body:is(
+  .page-orchard-mesa-homes,
+  .page-redlands-homes,
+  .page-selling-in-fruita,
+  .page-selling-in-palisade
+) .form-card h3 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+body:is(
+  .page-orchard-mesa-homes,
+  .page-redlands-homes
+) .form-sub,
+body:is(
+  .page-selling-in-fruita,
+  .page-selling-in-palisade
+) .form-card .form-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
 }
 
 body:is(
