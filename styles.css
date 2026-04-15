@@ -2965,6 +2965,8 @@ body.page-index .hero {position: relative;
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;
       overflow: hidden;}
+body.page-hero-aligned .hero > .container {max-width: none;
+      margin: 0;}
 body.page-index .hero::before {content: "";
       position: absolute;
       inset: 0;
@@ -4597,7 +4599,7 @@ body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
   z-index: 1;
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0;
   padding: clamp(4.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) 3.25rem;
   text-align: left;
 }
@@ -4608,6 +4610,11 @@ body.page-contact .contact-hero .hero-inner,
 body.page-faq .faq-hero .hero-inner {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+body.page-hero-aligned .hero .container > :is(.hero-inner, .hero-content) {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Compatibility alias: normalize all page-hero-aligned eyebrow variants */
@@ -5251,7 +5258,7 @@ body[class*="page-"] .cta-content .lead {
 }
 
 /* Normalize hero width across standardized core/local pages */
-body.page-index .hero-content,
+body.page-index .hero-inner,
 body.page-about .hero-content,
 body.page-buyers .hero-inner,
 body.page-contact .hero-inner,
@@ -5268,7 +5275,7 @@ body.page-orchard-mesa-homes .hero-inner,
 body.page-redlands-homes .hero-inner,
 body.page-selling-in-fruita .hero-inner,
 body.page-selling-in-palisade .hero-inner {
-  max-width: 760px;
+  max-width: 860px;
 }
 
 /* Keep CTA copy readable even when older page-specific rules linger */
