@@ -1,268 +1,608 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Selling Your Home in Fruita, CO | Orion Love — Colorado Realtor®</title>
-<meta content="Thinking about selling your home in Fruita, Colorado? Get a free market review from local Realtor Orion Love — honest pricing, local expertise, and a proven process for Mesa County sellers." name="description"/>
-<meta content="selling home Fruita CO, Fruita Colorado real estate, sell my home Fruita, Fruita CO realtor, Fruita home value, Mesa County real estate agent" name="keywords"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest" defer></script>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selling Your Home in Fruita, CO | Orion Love — Colorado Realtor®</title>
+  <meta name="description" content="Thinking about selling your home in Fruita, Colorado? Get a free market review from local Realtor Orion Love — honest pricing, local expertise, and a proven process for Mesa County sellers." />
+  <meta name="keywords" content="selling home Fruita CO, Fruita Colorado real estate, sell my home Fruita, Fruita CO realtor, Fruita home value, Mesa County real estate agent" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 20px 60px rgba(12,26,61,0.13);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
+    section { padding: clamp(3.5rem,6vw,5rem) 0; }
+
+    /* ── NAV ── */
+    .main-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s; }
+    .main-header.scrolled { background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18); }
+    .main-header nav { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
+    .logo { text-decoration: none; }
+    .logo-main { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em; }
+    .nav-menu { display: flex; list-style: none; gap: 2.25rem; align-items: center; }
+    .nav-menu a { text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-menu a:hover { color: var(--gold-lt); }
+    .btn-nav { background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px; }
+    .btn-nav:hover { background: rgba(184,146,58,0.12) !important; }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .mobile-toggle span { display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35); }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-navy { background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm); }
+    .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
+    .btn-outline-gold { background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s; }
+    .btn-outline-gold:hover { background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px); }
+
+    /* ── LABELS / DIVIDER ── */
+    .section-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem; }
+    .section-label::before { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .section-label span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .section-label.centered { justify-content: center; }
+    .section-label.centered::after { content: ""; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .divider { display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto; }
+    .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--sand); }
+    .divider-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 82vh; display: flex; align-items: center;
+      background:
+        linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
+        url("images/gj-landscape.jpg") center 30% / cover no-repeat;
+    }
+    .hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22); }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; padding-top: 4rem; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem; }
+    .hero-eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: var(--gold); }
+    .hero h1 { color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── FRUITA SNAPSHOT ── */
+    .snapshot-section { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+    .snapshot-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .snapshot-copy h2 { margin-bottom: 0.85rem; }
+    .snapshot-copy p { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1rem; }
+    .snapshot-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--sand); border: 1px solid var(--sand); border-radius: var(--radius-md); overflow: hidden; }
+    .snap-stat { background: var(--cream); padding: 1.75rem 1.5rem; text-align: center; }
+    .snap-val { font-family: "Cormorant Garamond", serif; font-size: 2.4rem; color: var(--navy); line-height: 1; }
+    .snap-val span { font-size: 1.3rem; color: var(--gold); }
+    .snap-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 0.35rem; }
+
+    /* ── FRUITA BUYER PROFILE ── */
+    .profile-section { background: var(--cream); }
+    .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; margin-top: 2.75rem; }
+    .profile-card { background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s; }
+    .profile-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.28s; }
+    .profile-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22); }
+    .profile-card:hover::before { opacity: 1; }
+    .profile-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(184,146,58,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+    .profile-icon svg { width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8; }
+    .profile-card h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem; }
+    .profile-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; }
+
+    /* ── PROCESS STEPS ── */
+    .process-section { background: var(--navy); position: relative; overflow: hidden; }
+    .process-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none; }
+    .process-inner { position: relative; z-index: 1; }
+    .process-header { text-align: center; margin-bottom: 3rem; }
+    .process-header h2 { color: var(--white); font-weight: 300; }
+    .process-header h2 em { font-style: italic; color: var(--gold-lt); }
+    .process-header p { color: rgba(255,255,255,0.55); font-size: 1rem; margin-top: 0.75rem; max-width: 52ch; margin-left: auto; margin-right: auto; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+    .step-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 2rem 1.5rem; text-align: center; transition: background 0.25s, border-color 0.25s; }
+    .step-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(184,146,58,0.3); }
+    .step-num { font-family: "Cormorant Garamond", serif; font-size: 2.8rem; color: rgba(184,146,58,0.3); line-height: 1; margin-bottom: 0.75rem; }
+    .step-card h3 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem; }
+    .step-card p { color: rgba(255,255,255,0.52); font-size: 0.9rem; line-height: 1.8; }
+    .process-cta { text-align: center; margin-top: 3rem; }
+
+    /* ── FORM SECTION ── */
+    .contact-section { background: var(--cream); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-copy h2 { margin-bottom: 0.85rem; }
+    .contact-copy p { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.5rem; }
+    .contact-bullets { list-style: none; }
+    .contact-bullets li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem; }
+    .contact-bullets li svg { width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
+    .form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand); }
+    .form-card h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .form-card .form-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .consent-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic; }
+    .consent-note a { color: var(--navy); text-decoration: underline; font-style: normal; }
+    #fruFormMsg { display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem; }
+    #fruFormMsg.success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
+    #fruFormMsg.error { background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020; }
+
+    /* ── FOOTER ── */
+    .main-footer { background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+    .logo-footer { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem; }
+    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem; }
+    .footer-links h4, .footer-contact h4 { font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a { color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom p { color: rgba(255,255,255,0.28); font-size: 0.8rem; }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem; }
+    .footer-bottom a:hover { color: var(--gold-lt); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 968px) {
+      .nav-menu { position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s; }
+      .nav-menu.active { left: 0; }
+      .mobile-toggle { display: flex; }
+      .snapshot-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.4rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .snapshot-stats { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body class="page-hero-aligned page-selling-in-fruita page-photo-hero">
+<body>
+
 <!-- NAV -->
-<div id="siteHeader"></div>
-<noscript>
-<header class="noscript-header" role="banner">
-<div class="container">
-<a href="index.html">Orion Love Real Estate</a>
-<nav aria-label="Primary navigation">
-<a href="index.html">Home</a> |
-<a href="about.html">About</a> |
-<a href="services.html">Sellers</a> |
-<a href="buyers.html">Buyers</a> |
-<a href="faq.html">FAQ</a> |
-<a href="contact.html">Contact</a>
-</nav>
-</div>
+<header class="main-header" id="mainHeader">
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Sellers</a></li>
+      <li><a href="buyers.html">Buyers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
-</noscript>
+
 <!-- HERO -->
 <section class="hero">
-<div class="container">
-<div class="hero-inner">
-<div class="hero-eyebrow"><span>Fruita · Mesa County · Western Colorado</span></div>
-<h1>Selling Your Home<br/>in <em>Fruita, Colorado</em></h1>
-<p class="hero-lead">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Fruita · Mesa County · Western Colorado</div>
+      <h1>Selling Your Home<br>in <em>Fruita, Colorado</em></h1>
+      <p class="hero-lead">
         Fruita has its own market rhythm — driven by outdoor lifestyle buyers, strong CMU proximity,
         and a community identity that national portals don't capture. Get a local market review
         built around what Fruita buyers are actually paying right now.
       </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#fruita-contact">Get My Free Fruita Home Value</a>
-<a class="btn-outline-gold" href="grand-junction-home-value.html">GJ Market Overview</a>
-</div>
-</div>
-</div>
+      <div class="hero-cta">
+        <a href="#fruita-contact" class="btn btn-primary">Get My Free Fruita Home Value</a>
+        <a href="grand-junction-home-value.html" class="btn-outline-gold">GJ Market Overview</a>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- FRUITA SNAPSHOT -->
 <section class="snapshot-section">
-<div class="container">
-<div class="snapshot-inner">
-<div class="snapshot-copy reveal">
-<div class="section-label"><span>The Fruita Market</span></div>
-<h2>What Sellers Need to Know<br/>About Fruita Right Now</h2>
-<p>
+  <div class="container">
+    <div class="snapshot-inner">
+      <div class="snapshot-copy reveal">
+        <div class="section-label"><span>The Fruita Market</span></div>
+        <h2>What Sellers Need to Know<br>About Fruita Right Now</h2>
+        <p>
           Fruita sits northwest of Grand Junction along the Colorado River, and it draws a
           different buyer pool than GJ proper — mountain bikers, outdoor enthusiasts, and
           families who want quick Kokopelli Trail access with a short commute into the city.
         </p>
-<p>
+        <p>
           That specific identity is a marketing asset. It's also why a Fruita home priced
           and positioned for Fruita buyers — not for a generic Mesa County audience — typically
           moves faster and closer to full price.
         </p>
-<a class="btn btn-navy section-action-top" href="services.html">See My Seller Process</a>
-</div>
-<div>
-<div class="snapshot-stats reveal reveal-delay-015">
-<div class="snap-stat">
-<div class="snap-val" id="fruitaMedianSalePrice">--</div>
-<div class="snap-label">Median Sale Price</div>
-</div>
-<div class="snap-stat">
-<div class="snap-val" id="fruitaDaysOnMarket">--</div>
-<div class="snap-label">Avg. Days on Market</div>
-</div>
-<div class="snap-stat">
-<div class="snap-val" id="fruitaNewListings">--</div>
-<div class="snap-label">New Listings</div>
-</div>
-<div class="snap-stat">
-<div class="snap-val" id="fruitaTotalListings">--</div>
-<div class="snap-label">Total Listings</div>
-</div>
-</div>
-<p class="market-status-note-uppercase" id="fruitaMarketNote">
+        <a href="services.html" class="btn btn-navy" style="margin-top:1rem">See My Seller Process</a>
+      </div>
+      <div>
+        <div class="snapshot-stats reveal" style="transition-delay:0.15s">
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaMedianSalePrice">--</div>
+            <div class="snap-label">Median Sale Price</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaDaysOnMarket">--</div>
+            <div class="snap-label">Avg. Days on Market</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaNewListings">--</div>
+            <div class="snap-label">New Listings</div>
+          </div>
+          <div class="snap-stat">
+            <div class="snap-val" id="fruitaTotalListings">--</div>
+            <div class="snap-label">Total Listings</div>
+          </div>
+        </div>
+        <p id="fruitaMarketNote" style="margin-top:0.85rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-align:center;">
           Live market data loading...
         </p>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- WHO BUYS IN FRUITA -->
 <section class="profile-section">
-<div class="container">
-<div class="reveal section-copy-narrow">
-<div class="section-label"><span>Know Your Buyer</span></div>
-<h2>Who's Buying Homes<br/>in Fruita — and Why It Matters</h2>
-<p class="note-muted">
+  <div class="container">
+    <div class="reveal" style="max-width:640px;">
+      <div class="section-label"><span>Know Your Buyer</span></div>
+      <h2>Who's Buying Homes<br>in Fruita — and Why It Matters</h2>
+      <p style="color:var(--muted); font-size:1.02rem; margin-top:0.75rem; line-height:1.85;">
         Pricing and marketing strategy should reflect the buyer pool. In Fruita, that means knowing
         what these buyers prioritize — and leading with it.
       </p>
-</div>
-<div class="profile-grid">
-<div class="profile-card reveal reveal-delay-005">
-<div class="profile-icon"><i data-lucide="bike"></i></div>
-<h3>Outdoor Lifestyle Buyers</h3>
-<p>Proximity to Kokopelli Trail, the Colorado River, and McInnis Canyons draws buyers who are relocating specifically for the outdoor recreation access Fruita offers. They research thoroughly before making offers.</p>
-</div>
-<div class="profile-card reveal reveal-delay-012">
-<div class="profile-icon"><i data-lucide="graduation-cap"></i></div>
-<h3>CMU-Adjacent Households</h3>
-<p>Colorado Mesa University faculty, staff, and families look to Fruita for slightly more space and quieter neighborhoods than GJ proper, while keeping a short commute on I-70.</p>
-</div>
-<div class="profile-card reveal reveal-delay-019">
-<div class="profile-icon"><i data-lucide="truck"></i></div>
-<h3>Grand Junction Commuters</h3>
-<p>The I-70 corridor makes Fruita practical for buyers priced out of certain GJ neighborhoods who want newer builds, larger lots, or rural adjacency without sacrificing access to downtown amenities.</p>
-</div>
-<div class="profile-card reveal reveal-delay-026">
-<div class="profile-icon"><i data-lucide="move-right"></i></div>
-<h3>Front Range Relocators</h3>
-<p>Denver and Colorado Springs buyers increasingly look to Western Colorado for affordability and lifestyle. Fruita's national trail reputation gives it name recognition that speeds their search.</p>
-</div>
-</div>
-</div>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-card reveal" style="transition-delay:0.05s">
+        <div class="profile-icon"><i data-lucide="bike"></i></div>
+        <h3>Outdoor Lifestyle Buyers</h3>
+        <p>Proximity to Kokopelli Trail, the Colorado River, and McInnis Canyons draws buyers who are relocating specifically for the outdoor recreation access Fruita offers. They research thoroughly before making offers.</p>
+      </div>
+      <div class="profile-card reveal" style="transition-delay:0.12s">
+        <div class="profile-icon"><i data-lucide="graduation-cap"></i></div>
+        <h3>CMU-Adjacent Households</h3>
+        <p>Colorado Mesa University faculty, staff, and families look to Fruita for slightly more space and quieter neighborhoods than GJ proper, while keeping a short commute on I-70.</p>
+      </div>
+      <div class="profile-card reveal" style="transition-delay:0.19s">
+        <div class="profile-icon"><i data-lucide="truck"></i></div>
+        <h3>Grand Junction Commuters</h3>
+        <p>The I-70 corridor makes Fruita practical for buyers priced out of certain GJ neighborhoods who want newer builds, larger lots, or rural adjacency without sacrificing access to downtown amenities.</p>
+      </div>
+      <div class="profile-card reveal" style="transition-delay:0.26s">
+        <div class="profile-icon"><i data-lucide="move-right"></i></div>
+        <h3>Front Range Relocators</h3>
+        <p>Denver and Colorado Springs buyers increasingly look to Western Colorado for affordability and lifestyle. Fruita's national trail reputation gives it name recognition that speeds their search.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- SELLER PROCESS - NAVY -->
 <section class="process-section">
-<div class="container">
-<div class="process-inner">
-<div class="process-header reveal">
-<div class="section-label centered section-label-gold">
-<span>The Selling Process</span>
-</div>
-<h2>How I Sell <em>Fruita</em> Homes</h2>
-<p>A deliberate process built around what moves buyers in this specific submarket — not a generic checklist.</p>
-</div>
-<div class="steps-grid">
-<div class="step-card reveal reveal-delay-005">
-<div class="step-num">01</div>
-<h3>Fruita-Specific Comps</h3>
-<p>Recent closings in your neighborhood, your price range, your property type — not GJ-wide averages that dilute your positioning.</p>
-</div>
-<div class="step-card reveal reveal-delay-013">
-<div class="step-num">02</div>
-<h3>Outdoor-Forward Preparation</h3>
-<p>Photography and presentation that showcases the outdoor lifestyle advantages Fruita buyers came here for — trail proximity, views, yard space, garage storage.</p>
-</div>
-<div class="step-card reveal reveal-delay-021">
-<div class="step-num">03</div>
-<h3>Targeted Buyer Reach</h3>
-<p>MLS exposure, targeted social distribution, and video-first marketing designed to reach both local buyers and the out-of-state relocators actively searching Fruita.</p>
-</div>
-<div class="step-card reveal reveal-delay-029">
-<div class="step-num">04</div>
-<h3>Negotiation &amp; Closing</h3>
-<p>Steady, clear guidance from accepted offer through inspection, appraisal, and closing day — so you get to the finish line on solid ground.</p>
-</div>
-</div>
-<div class="process-cta reveal reveal-delay-015">
-<a class="btn-outline-gold" href="services.html">See the Full Seller's Path</a>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="process-inner">
+      <div class="process-header reveal">
+        <div class="section-label centered" style="justify-content:center;">
+          <span style="color:var(--gold-lt)">The Selling Process</span>
+        </div>
+        <h2>How I Sell <em>Fruita</em> Homes</h2>
+        <p>A deliberate process built around what moves buyers in this specific submarket — not a generic checklist.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal" style="transition-delay:0.05s">
+          <div class="step-num">01</div>
+          <h3>Fruita-Specific Comps</h3>
+          <p>Recent closings in your neighborhood, your price range, your property type — not GJ-wide averages that dilute your positioning.</p>
+        </div>
+        <div class="step-card reveal" style="transition-delay:0.13s">
+          <div class="step-num">02</div>
+          <h3>Outdoor-Forward Preparation</h3>
+          <p>Photography and presentation that showcases the outdoor lifestyle advantages Fruita buyers came here for — trail proximity, views, yard space, garage storage.</p>
+        </div>
+        <div class="step-card reveal" style="transition-delay:0.21s">
+          <div class="step-num">03</div>
+          <h3>Targeted Buyer Reach</h3>
+          <p>MLS exposure, targeted social distribution, and video-first marketing designed to reach both local buyers and the out-of-state relocators actively searching Fruita.</p>
+        </div>
+        <div class="step-card reveal" style="transition-delay:0.29s">
+          <div class="step-num">04</div>
+          <h3>Negotiation & Closing</h3>
+          <p>Steady, clear guidance from accepted offer through inspection, appraisal, and closing day — so you get to the finish line on solid ground.</p>
+        </div>
+      </div>
+      <div class="process-cta reveal" style="transition-delay:0.15s">
+        <a href="services.html" class="btn-outline-gold">See the Full Seller's Path</a>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- CONTACT FORM -->
 <section class="contact-section" id="fruita-contact">
-<div class="container">
-<div class="contact-inner">
-<div class="contact-copy reveal">
-<div class="section-label"><span>Free Market Review</span></div>
-<h2>What's Your<br/>Fruita Home Worth?</h2>
-<p>
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-copy reveal">
+        <div class="section-label"><span>Free Market Review</span></div>
+        <h2>What's Your<br>Fruita Home Worth?</h2>
+        <p>
           I'll pull recent Fruita-specific sales, review your competition on the market today,
           and give you an honest assessment of what your home is worth — and what it would take
           to sell well in the current market.
         </p>
-<ul class="contact-bullets">
-<li><i data-lucide="check"></i> Fruita neighborhood comps from the last 90 days</li>
-<li><i data-lucide="check"></i> Honest pricing range — not an inflated estimate to win the listing</li>
-<li><i data-lucide="check"></i> A strategy conversation whenever you're ready</li>
-<li><i data-lucide="check"></i> No pressure. No obligation.</li>
-</ul>
-<div class="call-link-block">
-<p class="call-link-block-label">Prefer to call?</p>
-<a class="call-link-block-phone" href="tel:9706446781">(970) 644-6781</a>
-</div>
-</div>
-<div class="form-card reveal reveal-delay-015">
-<h3>Get Your Fruita Home Value</h3>
-<p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="fruitaForm">
-<div class="form-row">
-<div class="form-group">
-<label for="fruFirstName">First Name *</label>
-<input id="fruFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="fruLastName">Last Name *</label>
-<input id="fruLastName" name="lastName" placeholder="Smith" required="" type="text"/>
-</div>
-</div>
-<div class="form-group">
-<label for="fruEmail">Email Address *</label>
-<input id="fruEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="fruPhone">Phone Number</label>
-<input id="fruPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
-</div>
-<div class="form-group">
-<label for="fruAddress">Property Address *</label>
-<input id="fruAddress" name="address" placeholder="123 Main St, Fruita, CO" required="" type="text"/>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="fruTimeline">Your Timeline</label>
-<select id="fruTimeline" name="timeline">
-<option value="">Select</option>
-<option>Just curious</option>
-<option>3–6 months</option>
-<option>As soon as possible</option>
-</select>
-</div>
-<div class="form-group">
-<label for="fruBedrooms">Bedrooms</label>
-<select id="fruBedrooms" name="bedrooms">
-<option value="">Select</option>
-<option>2</option><option>3</option><option>4</option><option>5+</option>
-</select>
-</div>
-</div>
-<button class="btn btn-primary form-submit" id="fruSubmit" type="submit">
+        <ul class="contact-bullets">
+          <li><i data-lucide="check"></i> Fruita neighborhood comps from the last 90 days</li>
+          <li><i data-lucide="check"></i> Honest pricing range — not an inflated estimate to win the listing</li>
+          <li><i data-lucide="check"></i> A strategy conversation whenever you're ready</li>
+          <li><i data-lucide="check"></i> No pressure. No obligation.</li>
+        </ul>
+        <div style="margin-top:1.5rem; padding:1.5rem; background:var(--white); border:1px solid var(--sand); border-radius:var(--radius-md);">
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.25rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;">Prefer to call?</p>
+          <a href="tel:9706446781" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--navy); text-decoration:none;">(970) 644-6781</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal" style="transition-delay:0.15s">
+        <h3>Get Your Fruita Home Value</h3>
+        <p class="form-sub">I'll be in touch within 24 hours.</p>
+        <form id="fruitaForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="jane@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(970) 555-0000" />
+          </div>
+          <div class="form-group">
+            <label for="address">Property Address *</label>
+            <input type="text" id="address" name="address" required placeholder="123 Main St, Fruita, CO" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="timeline">Your Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select</option>
+                <option>Just curious</option>
+                <option>3–6 months</option>
+                <option>As soon as possible</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms">
+                <option value="">Select</option>
+                <option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="fruSubmit">
             Get My Fruita Home Value
           </button>
-<div id="fruFormMsg"></div>
-<p class="consent-note">
+          <div id="fruFormMsg"></div>
+          <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
               or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. Link to <a href="privacy.html">Privacy Policy</a>.
           </p>
-</form>
-</div>
-</div>
-</div>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 <!-- ALSO SERVING -->
-<div id="featuredAreasLinks"></div>
-<div id="siteFooter"></div>
-<noscript>
-<footer class="noscript-footer" role="contentinfo">
-<div class="container">
-<p>© Orion Love Real Estate</p>
-<nav aria-label="Footer navigation">
-<a href="privacy.html">Privacy</a> |
-<a href="contact.html">Contact</a>
-</nav>
-</div>
+<section style="background:var(--white); border-top:1px solid var(--sand); padding: clamp(3rem,5vw,4rem) 0;">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:2rem;">
+      <div class="section-label centered"><span>Also Serving</span></div>
+      <h2 style="font-size:clamp(1.5rem,2.5vw,2.2rem);">Selling Elsewhere in the Grand Valley?</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:0.5rem;">
+      <a href="grand-junction-home-value.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
+        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
+        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Grand Junction Home Value</span>
+      </a>
+      <a href="selling-in-palisade.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
+        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
+        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Selling in Palisade</span>
+      </a>
+      <a href="redlands-homes.html" style="background:var(--cream); border:1px solid var(--sand); border-radius:var(--radius-sm); padding:1.4rem 1.25rem; text-decoration:none; display:flex; align-items:center; gap:0.8rem; transition:border-color 0.22s, transform 0.22s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--sand)'; this.style.transform=''">
+        <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2;flex-shrink:0;"></i>
+        <span style="font-size:0.9rem;font-weight:600;color:var(--navy);">Redlands Homes</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-footer">Orion Love</span>
+        <p>Helping Grand Junction and Fruita homeowners sell with clarity and honest communication.</p>
+        <p>Serving Grand Junction, Fruita, Palisade, and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#046b766d6b6a2a686b72612a676b446369656d682a676b69"><span class="__cf_email__" data-cfemail="412e33282e2f6f2d2e37246f222e01262c20282d6f222e2c">[email&#160;protected]</span></a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
 </footer>
-</noscript>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  if (window.lucide) lucide.createIcons();
+
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle?.addEventListener('click', () => menu.classList.toggle('active'));
+  document.addEventListener('click', e => { if (!header.contains(e.target)) menu.classList.remove('active'); });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
+
+  const MARKET_STATS_URL = 'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
+
+  const formatCurrency = value => {
+    if (!Number.isFinite(value)) return '--';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+  };
+
+  const formatNumber = value => Number.isFinite(value) ? new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(value) : '--';
+
+  async function loadFruitaMarketStats() {
+    const medianEl = document.getElementById('fruitaMedianSalePrice');
+    const domEl = document.getElementById('fruitaDaysOnMarket');
+    const newEl = document.getElementById('fruitaNewListings');
+    const totalEl = document.getElementById('fruitaTotalListings');
+    const noteEl = document.getElementById('fruitaMarketNote');
+
+    try {
+      const res = await fetch(MARKET_STATS_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load market data');
+      const data = await res.json();
+      const area = data?.areas?.fruita;
+      if (!area) throw new Error('Fruita market data not found');
+
+      medianEl.textContent = formatCurrency(area.medianPrice);
+      domEl.textContent = formatNumber(area.averageDaysOnMarket);
+      newEl.textContent = formatNumber(area.newListings);
+      totalEl.textContent = formatNumber(area.totalListings);
+
+      const updated = area.lastUpdatedDate || data.generatedAt;
+      if (updated) {
+        const date = new Date(updated);
+        noteEl.textContent = `Live market data · updated ${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+      } else {
+        noteEl.textContent = 'Live market data';
+      }
+    } catch (error) {
+      medianEl.textContent = '--';
+      domEl.textContent = '--';
+      newEl.textContent = '--';
+      totalEl.textContent = '--';
+      noteEl.textContent = 'Live market data temporarily unavailable';
+    }
+  }
+
+  loadFruitaMarketStats();
+
+  // Form
+  const fruitaForm = document.getElementById('fruitaForm');
+  const fruMsg     = document.getElementById('fruFormMsg');
+  const fruSubmit  = document.getElementById('fruSubmit');
+
+  fruitaForm?.addEventListener('submit', async e => {
+    e.preventDefault();
+    fruSubmit.disabled = true;
+    fruSubmit.textContent = 'Sending…';
+
+    const formData = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName:  document.getElementById('lastName').value.trim(),
+      email:     document.getElementById('email').value.trim(),
+      phone:     document.getElementById('phone').value.trim(),
+      inquiry:   'Home Value Request — Fruita',
+      message: [
+        `Address: ${document.getElementById('address').value.trim()}`,
+        `Timeline: ${document.getElementById('timeline').value}`,
+        `Bedrooms: ${document.getElementById('bedrooms').value}`,
+      ].join('\n'),
+    };
+
+    try {
+      const res  = await fetch('https://fub-contact-proxy.orion-love-co.workers.dev', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        fruMsg.textContent = "Thank you! I'll have your Fruita home value ready within 24 hours.";
+        fruMsg.className = 'success'; fruMsg.style.display = 'block';
+        fruitaForm.reset();
+      } else throw new Error();
+    } catch {
+      fruMsg.textContent = 'Something went wrong. Please call (970) 644-6781.';
+        fruMsg.className = 'error'; fruMsg.style.display = 'block';
+    } finally {
+      fruSubmit.disabled = false;
+      fruSubmit.textContent = 'Get My Fruita Home Value';
+    }
+  });
+</script>
+
 </body>
 </html>

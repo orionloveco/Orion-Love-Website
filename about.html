@@ -1,249 +1,1260 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Orion Love | Grand Junction Real Estate Guide &amp; Realtor®</title>
-<meta content="Meet Orion Love, a Grand Junction Realtor helping Mesa County buyers and sellers move with clear strategy, honest advice, and strong communication." name="description"/>
-<meta content="About Orion Love | Grand Junction Real Estate Guide &amp; Realtor®" property="og:title"/>
-<meta content="Meet Orion Love, a Grand Junction Realtor helping Mesa County buyers and sellers move with clear strategy, honest advice, and strong communication." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="About Orion Love | Grand Junction Real Estate Guide &amp; Realtor®" name="twitter:title"/>
-<meta content="Meet Orion Love, a Grand Junction Realtor helping Mesa County buyers and sellers move with clear strategy, honest advice, and strong communication." name="twitter:description"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest" defer></script>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Orion Love | Grand Junction Real Estate Guide & Realtor®</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0c1a3d;
+      --navy-mid:#16275a;
+      --gold:    #b8923a;
+      --gold-lt: #d4aa5a;
+      --cream:   #f7f4ed;
+      --sand:    #e8e1d0;
+      --warm:    #f2ede3;
+      --text:    #1a1a2e;
+      --muted:   rgba(26,26,46,0.62);
+      --white:   #ffffff;
+
+      --shadow-sm: 0 2px 12px rgba(12,26,61,0.07);
+      --shadow-md: 0 6px 32px rgba(12,26,61,0.10);
+      --shadow-lg: 0 16px 56px rgba(12,26,61,0.14);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ────────────────────────────────────── */
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+    .script {
+      font-family: "Allura", cursive;
+      font-weight: 400;
+      color: var(--gold);
+      font-size: 1.35em;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    /* ── Layout ─────────────────────────────────────────── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    .main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+    .main-header.scrolled {
+      background: rgba(12, 26, 61, 0.97);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(184,146,58,0.18);
+    }
+    .main-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-main {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+      align-items: center;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--gold-lt); }
+    .btn-nav {
+      background: transparent !important;
+      border: 1px solid rgba(184,146,58,0.55) !important;
+      color: var(--gold-lt) !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      transition: background 0.22s, border-color 0.22s !important;
+    }
+    .btn-nav:hover {
+      background: rgba(184,146,58,0.12) !important;
+      border-color: var(--gold-lt) !important;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: flex-end;
+      /* Face positioned on the right — image anchored right-center */
+      background:
+        url("images/headshot.jpg") 20% 18% / cover no-repeat;
+      overflow: hidden;
+    }
+    /* Overlay: left side darkened for text, right side open for face */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(8, 18, 50, 0.93) 0%,
+          rgba(8, 18, 50, 0.90) 28%,
+          rgba(8, 18, 50, 0.60) 50%,
+          rgba(8, 18, 50, 0.20) 68%,
+          rgba(8, 18, 50, 0.05) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(8, 18, 50, 0.30) 0%,
+          rgba(8, 18, 50, 0.00) 30%,
+          rgba(8, 18, 50, 0.50) 100%
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+    /* Gold separator line at bottom of hero */
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
+      z-index: 3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 100px clamp(1.25rem,4vw,2.5rem) clamp(3.5rem,7vw,5rem);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: "";
+      height: 1px;
+      width: 40px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 1.5rem;
+      /* Constrain to left side — face lives in the right 40% */
+      max-width: 11ch;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.25s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-subtitle {
+      max-width: 56ch;
+      font-size: clamp(0.97rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(184,146,58,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,146,58,0.45);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-lt);
+      color: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+
+    /* ── INTRO SECTION ──────────────────────────────────── */
+    .intro-section {
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Photo card */
+    .photo-wrap {
+      position: relative;
+    }
+    .photo-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/5;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .photo-frame:hover img { transform: scale(1.03); }
+    /* Gold corner accent */
+    .photo-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(12,26,61,0.45) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    /* decorative offset border */
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 1.2rem -1.2rem -1.2rem 1.2rem;
+      border: 1px solid rgba(184,146,58,0.25);
+      border-radius: var(--radius-lg);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Copy side */
+    .intro-copy {
+      padding-top: 0.5rem;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-label::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-label span {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+      font-weight: 300;
+    }
+    .intro-copy h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    .intro-copy p strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* Credentials */
+    .credentials {
+      margin-top: 2rem;
+      padding: 1.5rem 1.75rem;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .credentials-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .credentials ul { list-style: none; }
+    .credentials li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(232,225,208,0.6);
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .credentials li:last-child { border-bottom: none; }
+    .credentials li svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 clamp(1.25rem,4vw,2.5rem);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--sand);
+    }
+    .divider-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ── VALUES SECTION ──────────────────────────────────── */
+    .values-section {
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      background: var(--white);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .section-header .lead {
+      max-width: 58ch;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .value-card {
+      position: relative;
+      padding: 2.25rem 2rem;
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: var(--radius-md);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+    .value-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184,146,58,0.25);
+    }
+    .value-card:hover::before { opacity: 1; }
+
+    .value-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--sand);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+    .value-card:hover .value-num { color: rgba(184,146,58,0.15); }
+
+    .value-icon {
+      width: 44px; height: 44px;
+      background: rgba(184,146,58,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .value-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--gold);
+    }
+    .value-card h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .value-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    /* ── APPROACH / HOW I WORK ───────────────────────────── */
+    .approach-section {
+      padding: clamp(4rem, 7vw, 7rem) 0;
+      background: var(--cream);
+    }
+    .approach-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .approach-sticky {
+      position: sticky;
+      top: 100px;
+    }
+    .approach-sticky h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .approach-sticky p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 1.25rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--sand);
+      position: relative;
+    }
+    .step:first-child { padding-top: 0; }
+    .step:last-child { border-bottom: none; }
+
+    .step-num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .step-num {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .step:hover .step-num {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .step-line {
+      flex: 1;
+      width: 1px;
+      background: var(--sand);
+      margin-top: 8px;
+    }
+    .step:last-child .step-line { display: none; }
+
+    .step-body { padding-top: 0.5rem; }
+    .step-body h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .step-body p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+    }
+
+    /* ── STATS BAND ──────────────────────────────────────── */
+    .stats-section {
+      /* PHOTO SLOT: replace url() with a wide Grand Junction valley/landscape photo */
+      background: linear-gradient(rgba(8,18,50,0.80), rgba(8,18,50,0.80)), url("images/gj-valley.jpg") center 60% / cover no-repeat fixed;
+      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
+      pointer-events: none;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .stat {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+    .stat + .stat::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: rgba(184,146,58,0.2);
+    }
+    .stat-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 300;
+      color: var(--gold-lt);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.52);
+      font-weight: 500;
+    }
+
+    /* ── CTA BANNER ──────────────────────────────────────── */
+    .cta-section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: var(--cream);
+    }
+    .cta-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-inner h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      color: var(--navy);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+    .cta-inner p {
+      color: var(--muted);
+      font-size: 1.07rem;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      max-width: 54ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-inner .btn-primary {
+      display: inline-flex;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .main-footer {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(184,146,58,0.15);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo-footer {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.48);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .footer-links h4, .footer-contact h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links ul, .footer-contact ul { list-style: none; }
+    .footer-links li, .footer-contact li { margin-bottom: 0.6rem; }
+    .footer-links a, .footer-contact a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── MOBILE ──────────────────────────────────────────── */
+    .mobile-toggle { display: none; }
+
+    @media (max-width: 980px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .photo-wrap::after { display: none; }
+      .photo-frame { aspect-ratio: 16/10; }
+      .values-grid { grid-template-columns: 1fr; }
+      .approach-inner { grid-template-columns: 1fr; }
+      .approach-sticky { position: static; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat + .stat::before {
+        left: 20%; right: 20%; top: 0; bottom: auto;
+        width: auto; height: 1px;
+      }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-menu { display: none; }
+      .mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .mobile-toggle span {
+        display: block;
+        width: 24px; height: 1.5px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero { min-height: 88vh; }
+      .hero-title { font-size: 3rem; }
+      .step { grid-template-columns: 1fr; }
+      .step-num-wrap { flex-direction: row; align-items: center; gap: 1rem; }
+      .step-line { display: none; }
+    }
+
+    /* ── MOBILE NAV ACTIVE STATE ─────────────────────────── */
+    @media (max-width: 640px) {
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(12, 26, 61, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99;
+      }
+      .nav-menu.active {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgb(12, 26, 61) !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 9999 !important;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-menu li { list-style: none; }
+      .nav-menu a {
+        font-size: 1.4rem;
+        color: var(--white);
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+      }
+      .nav-menu a:hover { opacity: 1; color: var(--gold-lt); }
+      .nav-menu .btn-nav {
+        border: 1px solid var(--gold);
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 1;
+      }
+      .mobile-toggle { z-index: 10000 !important; }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0; transform: scaleX(0);
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+      .mobile-toggle span {
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+    }
+  </style>
 </head>
-<body class="page-hero-aligned page-about">
+
+<body>
+
 <!-- NAV -->
-<div id="siteHeader"></div>
-<noscript>
-<header class="noscript-header" role="banner">
-<div class="container">
-<a href="index.html">Orion Love Real Estate</a>
-<nav aria-label="Primary navigation">
-<a href="index.html">Home</a> |
-<a href="about.html">About</a> |
-<a href="services.html">Sellers</a> |
-<a href="buyers.html">Buyers</a> |
-<a href="faq.html">FAQ</a> |
-<a href="contact.html">Contact</a>
-</nav>
-</div>
+<header class="main-header" id="mainHeader">
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Sellers</a></li>
+      <li><a href="buyers.html">Buyers</a></li>
+      <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn-nav">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
-</noscript>
+
 <!-- HERO -->
-<section aria-label="Hero" class="hero">
-<div class="container">
-<div class="hero-inner">
-<div class="hero-eyebrow">
-<span>Your Guide · Grand Junction Realtor®</span>
-</div>
-<h1 class="hero-title">Strategy Over<br/><em>Hype.</em></h1>
-<p class="hero-lead">
+<section class="hero" aria-label="Hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Your Guide · Grand Junction Realtor®</span>
+    </div>
+
+    <h1 class="hero-title">Strategy Over<br><em>Hype.</em></h1>
+
+    <p class="hero-subtitle">
       Real estate in Western Colorado rewards preparation and honest strategy.
       I bring the local knowledge and clear communication to get you there.
     </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="contact.html">Start the Conversation</a>
-<a class="btn btn-outline" href="services.html">How It Works</a>
-</div>
-<p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Mesa County · Western Colorado</p>
-</div>
-</div>
+
+    <div class="hero-cta">
+      <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
+      <a href="services.html" class="btn btn-outline">How It Works</a>
+    </div>
+
+    <p class="hero-trust">Serving Grand Junction · Fruita · Palisade · Mesa County · Western Colorado</p>
+  </div>
 </section>
+
 <!-- INTRO -->
 <section class="intro-section">
-<div class="container">
-<div class="split-layout">
-<div class="photo-wrap reveal">
-<div class="photo-frame">
-<img alt="Orion Love — Real Estate Broker, Grand Junction Colorado" src="images/headshot.jpg" loading="lazy" width="1080" height="1512"/>
-</div>
-</div>
-<div class="intro-copy reveal reveal-delay-015">
-<div class="section-label"><span>About Orion</span></div>
-<h2>Steady direction.<br/><em>No guesswork.</em></h2>
-<p>
+  <div class="container">
+    <div class="intro-grid">
+
+      <div class="photo-wrap reveal">
+        <div class="photo-frame">
+          <img src="images/headshot.jpg" alt="Orion Love — Real Estate Broker, Grand Junction Colorado" />
+        </div>
+      </div>
+
+      <div class="intro-copy reveal" style="transition-delay:0.15s">
+        <div class="section-label"><span>About Orion</span></div>
+        <h2>Steady direction.<br><em>No guesswork.</em></h2>
+
+        <p>
           I work with sellers and buyers who want <strong>clarity, not noise.</strong> My approach is built on local knowledge —
           understanding how Mesa County buyers move, what homes are actually closing for in Grand Junction, and
           which decisions make a measurable difference.
         </p>
-<p>
+        <p>
           From the Redlands to Fruita, Orchard Mesa to Palisade — I know this market at street level.
           That means honest pricing, video-first exposure, and clear direction from the first conversation to closing day.
         </p>
-<p>
+        <p>
           I don't ask for trust. I earn it through preparation, follow-through, and transparency.
           When you arrive at closing day, you'll know every step of how you got there.
         </p>
-<div class="credentials">
-<div class="credentials-title">Credentials &amp; Affiliations</div>
-<ul>
-<li><i data-lucide="check-circle"></i> Licensed Real Estate Broker, Colorado</li>
-<li><i data-lucide="check-circle"></i> Keller Williams Colorado West Realty, LLC.</li>
-<li><i data-lucide="check-circle"></i> Grand Junction Area REALTOR® Association</li>
-<li><i data-lucide="check-circle"></i> Serving Grand Junction, Fruita, Palisade, and Western Colorado</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 
+        <div class="credentials">
+          <div class="credentials-title">Credentials &amp; Affiliations</div>
+          <ul>
+            <li><i data-lucide="check-circle"></i> Licensed Real Estate Broker, Colorado</li>
+            <li><i data-lucide="check-circle"></i> Keller Williams Colorado West Realty, LLC.</li>
+            <li><i data-lucide="check-circle"></i> Grand Junction Area REALTOR® Association</li>
+            <li><i data-lucide="check-circle"></i> Serving Grand Junction, Fruita, Palisade, and Western Colorado</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 <!-- DIVIDER -->
 <div class="divider"><div class="divider-diamond"></div></div>
+
 <!-- VALUES -->
 <section class="values-section">
-<div class="container">
-<div class="section-header centered reveal">
-<div class="section-label centered"><span>My Philosophy</span></div>
-<h2>What Guides<br/><em>My Work</em></h2>
-<p class="section-intro">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="justify-content:center"><span>My Philosophy</span></div>
+      <h2>What Guides<br><em>My Work</em></h2>
+      <p class="lead">
         Every home in Mesa County has its own story and its own market position.
         My approach stays constant: understand the market clearly, prepare with purpose, and execute together.
       </p>
-</div>
-<div class="values-grid">
-<div class="value-card reveal reveal-delay-005">
-<div class="value-icon"><i data-lucide="compass"></i></div>
-<h3>Strategy Before Listing</h3>
-<p>Before a single photo is taken, we build a clear plan — what to prepare, what to leave, and what will genuinely move Grand Junction buyers in your price range.</p>
-</div>
-<div class="value-card reveal reveal-delay-015">
-<div class="value-icon"><i data-lucide="bar-chart-3"></i></div>
-<h3>Pricing With Real Buyer Data</h3>
-<p>Pricing is built on recent Mesa County closed sales and active buyer behavior — not last season's numbers, not a neighbor's opinion, not an algorithm.</p>
-</div>
-<div class="value-card reveal reveal-delay-025">
-<div class="value-icon"><i data-lucide="message-square"></i></div>
-<h3>Communication You Don't Chase</h3>
-<p>Weekly updates, honest feedback after every showing, and direct answers — always. You'll never wonder what's happening or what comes next.</p>
-</div>
-</div>
-</div>
+    </div>
 
+    <div class="values-grid">
+      <div class="value-card reveal" style="transition-delay:0.05s">
+        <div class="value-icon"><i data-lucide="compass"></i></div>
+        <h3>Strategy Before Listing</h3>
+        <p>Before a single photo is taken, we build a clear plan — what to prepare, what to leave, and what will genuinely move Grand Junction buyers in your price range.</p>
+      </div>
+
+      <div class="value-card reveal" style="transition-delay:0.15s">
+        <div class="value-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h3>Pricing With Real Buyer Data</h3>
+        <p>Pricing is built on recent Mesa County closed sales and active buyer behavior — not last season's numbers, not a neighbor's opinion, not an algorithm.</p>
+      </div>
+
+      <div class="value-card reveal" style="transition-delay:0.25s">
+        <div class="value-icon"><i data-lucide="message-square"></i></div>
+        <h3>Communication You Don't Chase</h3>
+        <p>Weekly updates, honest feedback after every showing, and direct answers — always. You'll never wonder what's happening or what comes next.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- APPROACH -->
 <section class="approach-section">
-<div class="container">
-<div class="approach-inner">
-<div class="approach-sticky reveal">
-<div class="section-label"><span>The Process</span></div>
-<h2>How I Work</h2>
-<p>
+  <div class="container">
+    <div class="approach-inner">
+
+      <div class="approach-sticky reveal">
+        <div class="section-label"><span>The Process</span></div>
+        <h2>How I Work</h2>
+        <p>
           A deliberate, navigated process built around local knowledge and honest communication.
           Every step mapped out. No surprises. No scrambling. Just a clear route from first conversation to closing day.
         </p>
-</div>
-<div class="steps-list">
-<div class="step reveal reveal-delay-005">
-<div class="step-num-wrap">
-<div class="step-num">1</div>
-<div class="step-line"></div>
-</div>
-<div class="step-body">
-<h3>The Local Market Review</h3>
-<p>Active listings, pending sales, and recent closings in your Mesa County neighborhood — so you know exactly what buyers are comparing your home against before we price it.</p>
-</div>
-</div>
-<div class="step reveal reveal-delay-012">
-<div class="step-num-wrap">
-<div class="step-num">2</div>
-<div class="step-line"></div>
-</div>
-<div class="step-body">
-<h3>Strategic Preparation</h3>
-<p>We focus on the preparation that actually moves Grand Junction buyers — presentation, lighting, first impressions — nothing that doesn't earn its cost.</p>
-</div>
-</div>
-<div class="step reveal reveal-delay-019">
-<div class="step-num-wrap">
-<div class="step-num">3</div>
-<div class="step-line"></div>
-</div>
-<div class="step-body">
-<h3>Market Effectively</h3>
-<p>Professional photography, video-first exposure, and clean messaging built for how Mesa County buyers shop — online first, before they ever schedule a showing.</p>
-</div>
-</div>
-<div class="step reveal reveal-delay-026">
-<div class="step-num-wrap">
-<div class="step-num">4</div>
-<div class="step-line"></div>
-</div>
-<div class="step-body">
-<h3>Clear Feedback &amp; Adjustments</h3>
-<p>Honest feedback after every showing, weekly updates on traffic and interest — so we course-correct early and protect your position.</p>
-</div>
-</div>
-<div class="step reveal reveal-delay-033">
-<div class="step-num-wrap">
-<div class="step-num">5</div>
-<div class="step-line"></div>
-</div>
-<div class="step-body">
-<h3>Negotiation &amp; Closing</h3>
-<p>From offer review through inspections and appraisal, I manage every detail so you cross the finish line on solid ground — nothing left to chance.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+      </div>
 
+      <div class="steps-list">
+        <div class="step reveal" style="transition-delay:0.05s">
+          <div class="step-num-wrap">
+            <div class="step-num">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3>The Local Market Review</h3>
+            <p>Active listings, pending sales, and recent closings in your Mesa County neighborhood — so you know exactly what buyers are comparing your home against before we price it.</p>
+          </div>
+        </div>
+
+        <div class="step reveal" style="transition-delay:0.12s">
+          <div class="step-num-wrap">
+            <div class="step-num">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3>Strategic Preparation</h3>
+            <p>We focus on the preparation that actually moves Grand Junction buyers — presentation, lighting, first impressions — nothing that doesn't earn its cost.</p>
+          </div>
+        </div>
+
+        <div class="step reveal" style="transition-delay:0.19s">
+          <div class="step-num-wrap">
+            <div class="step-num">3</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3>Market Effectively</h3>
+            <p>Professional photography, video-first exposure, and clean messaging built for how Mesa County buyers shop — online first, before they ever schedule a showing.</p>
+          </div>
+        </div>
+
+        <div class="step reveal" style="transition-delay:0.26s">
+          <div class="step-num-wrap">
+            <div class="step-num">4</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3>Clear Feedback &amp; Adjustments</h3>
+            <p>Honest feedback after every showing, weekly updates on traffic and interest — so we course-correct early and protect your position.</p>
+          </div>
+        </div>
+
+        <div class="step reveal" style="transition-delay:0.33s">
+          <div class="step-num-wrap">
+            <div class="step-num">5</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <h3>Negotiation &amp; Closing</h3>
+            <p>From offer review through inspections and appraisal, I manage every detail so you cross the finish line on solid ground — nothing left to chance.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 <!-- STATS -->
 <section class="stats-section">
-<div class="container">
-<div class="stats-grid">
-<div class="stat reveal">
-<div class="stat-number">Weekly</div>
-<div class="stat-label">Communication &amp; Updates</div>
-</div>
-<div class="stat reveal reveal-delay-010">
-<div class="stat-number">Data-Driven</div>
-<div class="stat-label">Pricing &amp; Positioning</div>
-</div>
-<div class="stat reveal reveal-delay-020">
-<div class="stat-number">Full Service</div>
-<div class="stat-label">Preparation · Marketing · Negotiation</div>
-</div>
-</div>
-</div>
-
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-number">Weekly</div>
+        <div class="stat-label">Communication &amp; Updates</div>
+      </div>
+      <div class="stat reveal" style="transition-delay:0.1s">
+        <div class="stat-number">Data-Driven</div>
+        <div class="stat-label">Pricing &amp; Positioning</div>
+      </div>
+      <div class="stat reveal" style="transition-delay:0.2s">
+        <div class="stat-number">Full Service</div>
+        <div class="stat-label">Preparation · Marketing · Negotiation</div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- CTA -->
 <section class="cta-section">
-<div class="container">
-<div class="cta-inner reveal">
-<div class="section-label centered"><span>Ready to Start?</span></div>
-<h2>Want a Clear Plan?</h2>
-<p>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-label" style="justify-content:center"><span>Ready to Start?</span></div>
+      <h2>Want a Clear Plan?</h2>
+      <p>
         If you're thinking about selling in Grand Junction, Fruita, Palisade, or anywhere in Mesa County —
         I'll give you a clear, honest view of where you stand and what it takes to move forward with confidence.
       </p>
-<a class="btn btn-primary" href="contact.html">Start the Conversation</a>
-</div>
-</div>
-
+      <a href="contact.html" class="btn btn-primary">Start the Conversation</a>
+    </div>
+  </div>
 </section>
-<!-- NEIGHBORHOODS -->
-<div id="featuredAreasLinks"></div>
+
 <!-- FOOTER -->
-<div id="siteFooter"></div>
-<noscript>
-<footer class="noscript-footer" role="contentinfo">
-<div class="container">
-<p>© Orion Love Real Estate</p>
-<nav aria-label="Footer navigation">
-<a href="privacy.html">Privacy</a> |
-<a href="contact.html">Contact</a>
-</nav>
-</div>
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="logo-footer">Orion Love</h3>
+        <p>Helping Grand Junction homeowners buy and sell<br>with clarity, confidence, and honest communication.</p>
+        <p style="margin-top:0.75rem">Serving Grand Junction, Fruita, Palisade,<br>and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#b9d6cbd0d6d797d5d6cfdc97dad6f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="d9b6abb0b6b7f7b5b6afbcf7bab699beb4b8b0b5f7bab6b4">[email&#160;protected]</span></a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Orion Love Real Estate. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
-</noscript>
+
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  // Mobile menu — body-level overlay to avoid fixed header stacking context
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileToggle && navMenu) {
+    // Build overlay element appended directly to body
+    const overlay = document.createElement('div');
+    overlay.id = 'mobileNavOverlay';
+    overlay.innerHTML = navMenu.innerHTML;
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'top:0','left:0','right:0','bottom:0',
+      'width:100vw','height:100vh',
+      'background:rgb(12,26,61)',
+      'flex-direction:column',
+      'align-items:center',
+      'justify-content:center',
+      'gap:2.5rem',
+      'z-index:99999',
+      'list-style:none',
+      'margin:0','padding:0'
+    ].join(';');
+
+    // Style the links inside overlay
+    const style = document.createElement('style');
+    style.textContent = `
+      #mobileNavOverlay a {
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        transition: opacity 0.2s, color 0.2s;
+        display: block;
+      }
+      #mobileNavOverlay a:hover { opacity: 1; color: #d4aa5a; }
+      #mobileNavOverlay li { list-style: none; text-align: center; }
+      #mobileNavOverlay .btn-nav {
+        border: 1px solid #b8923a;
+        padding: 0.6rem 1.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: "Raleway", sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #d4aa5a;
+      }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      overlay.style.display = 'flex';
+      mobileToggle.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      overlay.style.display = 'none';
+      mobileToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      overlay.style.display === 'flex' ? closeMenu() : openMenu();
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  const header = document.getElementById('mainHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
