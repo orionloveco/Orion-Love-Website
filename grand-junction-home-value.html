@@ -227,33 +227,33 @@
 <div class="form-card reveal reveal-delay-015">
 <h3>Request Your Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="valForm" novalidate="">
+<form class="seller-lead-form" data-inquiry="Home Value Request — Grand Junction" data-lead-form="seller" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm" novalidate="">
 <div class="form-row">
 <div class="form-group">
 <label for="gjFirstName">First Name *</label>
-<input id="gjFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+<input data-lead-field="firstName" id="gjFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="gjLastName">Last Name *</label>
-<input id="gjLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+<input data-lead-field="lastName" id="gjLastName" name="lastName" placeholder="Smith" required="" type="text"/>
 </div>
 </div>
 <div class="form-group">
 <label for="gjEmail">Email Address *</label>
-<input id="gjEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+<input data-lead-field="email" id="gjEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
 </div>
 <div class="form-group">
 <label for="gjPhone">Phone Number</label>
-<input id="gjPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+<input data-lead-field="phone" id="gjPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
 </div>
 <div class="form-group">
 <label for="gjAddress">Property Address *</label>
-<input id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
+<input data-message-line="Address" id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
 </div>
 <div class="form-row">
 <div class="form-group">
 <label for="gjBedrooms">Bedrooms</label>
-<select id="gjBedrooms" name="bedrooms">
+<select data-message-line="Bedrooms" id="gjBedrooms" name="bedrooms">
 <option value="">Select</option>
 <option>1</option>
 <option>2</option>
@@ -264,7 +264,7 @@
 </div>
 <div class="form-group">
 <label for="gjTimeline">Your Timeline</label>
-<select id="gjTimeline" name="timeline">
+<select data-message-line="Timeline" id="gjTimeline" name="timeline">
 <option value="">Select</option>
 <option>Just curious</option>
 <option>3–6 months</option>
@@ -272,10 +272,10 @@
 </select>
 </div>
 </div>
-<button class="btn btn-primary form-submit" id="valSubmit" type="submit">
+<button class="btn btn-primary form-submit" data-submit-button="" id="valSubmit" type="submit">
               Get My Free Home Value
             </button>
-<div id="valFormMsg"></div>
+<div class="form-message" id="valFormMsg" role="alert"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing

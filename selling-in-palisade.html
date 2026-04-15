@@ -243,37 +243,37 @@
 <div class="form-card reveal reveal-delay-015">
 <h3>Get Your Palisade Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="palisadeForm">
+<form class="seller-lead-form" data-inquiry="Home Value Request — Palisade" data-lead-form="seller" data-success-message="Thank you! I'll have your Palisade home value ready within 24 hours." id="palisadeForm">
 <div class="form-row">
 <div class="form-group">
 <label for="palFirstName">First Name *</label>
-<input id="palFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+<input data-lead-field="firstName" id="palFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="palLastName">Last Name *</label>
-<input id="palLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+<input data-lead-field="lastName" id="palLastName" name="lastName" placeholder="Smith" required="" type="text"/>
 </div>
 </div>
 <div class="form-group">
 <label for="palEmail">Email Address *</label>
-<input id="palEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+<input data-lead-field="email" id="palEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
 </div>
 <div class="form-group">
 <label for="palPhone">Phone Number</label>
-<input id="palPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+<input data-lead-field="phone" id="palPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
 </div>
 <div class="form-group">
 <label for="palAddress">Property Address *</label>
-<input id="palAddress" name="address" placeholder="123 Orchard Ave, Palisade, CO" required="" type="text"/>
+<input data-message-line="Address" id="palAddress" name="address" placeholder="123 Orchard Ave, Palisade, CO" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="palFeatures">Notable Features (optional)</label>
-<input id="palFeatures" name="features" placeholder="e.g. irrigation water, orchard views, river access" type="text"/>
+<input data-message-line="Notable features" id="palFeatures" name="features" placeholder="e.g. irrigation water, orchard views, river access" type="text"/>
 </div>
 <div class="form-row">
 <div class="form-group">
 <label for="palTimeline">Your Timeline</label>
-<select id="palTimeline" name="timeline">
+<select data-message-line="Timeline" id="palTimeline" name="timeline">
 <option value="">Select</option>
 <option>Just curious</option>
 <option>3–6 months</option>
@@ -282,16 +282,16 @@
 </div>
 <div class="form-group">
 <label for="palBedrooms">Bedrooms</label>
-<select id="palBedrooms" name="bedrooms">
+<select data-message-line="Bedrooms" id="palBedrooms" name="bedrooms">
 <option value="">Select</option>
 <option>2</option><option>3</option><option>4</option><option>5+</option>
 </select>
 </div>
 </div>
-<button class="btn btn-primary form-submit" id="palSubmit" type="submit">
+<button class="btn btn-primary form-submit" data-submit-button="" id="palSubmit" type="submit">
             Get My Palisade Home Value
           </button>
-<div id="palFormMsg"></div>
+<div class="form-message" id="palFormMsg" role="alert"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing

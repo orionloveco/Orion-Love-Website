@@ -455,6 +455,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
+  const getLeadFieldValue = (form, fieldKey) => {
+    const field = form.querySelector(`[data-lead-field="${fieldKey}"]`);
+    return field ? field.value.trim() : '';
+  };
+
+  const buildSellerLeadMessage = (form) => {
+    const lines = [];
+    form.querySelectorAll('[data-message-line]').forEach((field) => {
+      const label = field.getAttribute('data-message-line');
+      const value = field.value.trim();
+      lines.push(`${label}: ${value}`);
+    });
+    return lines.join('\n');
+  };
+
+  const initSellerLeadForm = (form) => {
+    if (!form || form.dataset.initialized === 'true') return;
+
+    const submitBtn = form.querySelector('[data-submit-button], button[type="submit"]');
+    const msgEl = form.querySelector('.form-message');
+    const successMessage =
+      form.dataset.successMessage || "Thank you! I'll be in touch within 24 hours.";
+    const inquiry = form.dataset.inquiry || 'Home Value Request';
+    const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Submit';
+    const errorMessage =
+      form.dataset.errorMessage || 'Something went wrong. Please call (970) 644-6781.';
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        showFormMsg(msgEl, 'Please fill in all required fields.', 'error');
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        await submitToProxy({
+          firstName: getLeadFieldValue(form, 'firstName'),
+          lastName: getLeadFieldValue(form, 'lastName'),
+          email: getLeadFieldValue(form, 'email'),
+          phone: getLeadFieldValue(form, 'phone'),
+          inquiry,
+          message: buildSellerLeadMessage(form),
+        });
+
+        showFormMsg(msgEl, successMessage, 'success');
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        showFormMsg(msgEl, errorMessage, 'error');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitDefaultText;
+        }
+      }
+    });
+
+    form.dataset.initialized = 'true';
+  };
+
+  const initSellerLeadForms = () => {
+    document.querySelectorAll('form[data-lead-form="seller"]').forEach((form) => {
+      initSellerLeadForm(form);
+    });
+  };
+
   const pageInitializers = {
     'page-contact': () => {
       submitForm({
@@ -480,121 +552,35 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     },
     'page-grand-junction-home-value': () => {
-    loadGrandJunctionCityStats();
-      submitForm({
-        formId: 'valForm',
-        submitBtnId: 'valSubmit',
-        messageId: 'valFormMsg',
-        payloadBuilder: () => ({
-            firstName: document.getElementById('gjFirstName')?.value.trim() || '',
-            lastName: document.getElementById('gjLastName')?.value.trim() || '',
-            email: document.getElementById('gjEmail')?.value.trim() || '',
-            phone: document.getElementById('gjPhone')?.value.trim() || '',
-            inquiry: 'Home Value Request — Grand Junction',
-            message:
-              'Address: ' + (document.getElementById('gjAddress')?.value.trim() || '') +
-              '\nBedrooms: ' + (document.getElementById('gjBedrooms')?.value || '') +
-              '\nTimeline: ' + (document.getElementById('gjTimeline')?.value || ''),
-          }),
-        successMessage: "Thank you! I'll have your home value review ready within 24 hours.",
-        submitButtonDefaultText: 'Get My Free Home Value',
-      });
+      loadGrandJunctionCityStats();
+      initSellerLeadForms();
     },
     'page-orchard-mesa-homes': () => {
       loadMarketStats('orchard_mesa', {
         htmlCurrency: true,
         areaLabel: 'Orchard Mesa',
       });
-      submitForm({
-        formId: 'omForm',
-        submitBtnId: 'omFormBtn',
-        messageId: 'omFormMsg',
-        payloadBuilder: () => ({
-            firstName: document.getElementById('omFirstName')?.value.trim() || '',
-            lastName: document.getElementById('omLastName')?.value.trim() || '',
-            email: document.getElementById('omEmail')?.value.trim() || '',
-            phone: document.getElementById('omPhone')?.value.trim() || '',
-            inquiry: 'Home Value Request — Orchard Mesa',
-            message:
-              'Address: ' + (document.getElementById('omAddress')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('omTimeline')?.value || '') +
-              '\nRiver View: ' + (document.getElementById('omRiverView')?.value || ''),
-          }),
-        successMessage: "Thank you! I'll have your Orchard Mesa home value ready within 24 hours.",
-        submitButtonDefaultText: 'Get My Orchard Mesa Home Value',
-      });
+      initSellerLeadForms();
     },
     'page-redlands-homes': () => {
       loadMarketStats('redlands', {
         htmlCurrency: true,
         areaLabel: 'Redlands',
       });
-      submitForm({
-        formId: 'redlandsForm',
-        submitBtnId: 'redFormBtn',
-        messageId: 'redFormMsg',
-        payloadBuilder: () => ({
-            firstName: document.getElementById('redFirstName')?.value.trim() || '',
-            lastName: document.getElementById('redLastName')?.value.trim() || '',
-            email: document.getElementById('redEmail')?.value.trim() || '',
-            phone: document.getElementById('redPhone')?.value.trim() || '',
-            inquiry: 'Home Value Request — Redlands',
-            message:
-              'Address: ' + (document.getElementById('redAddress')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('redTimeline')?.value || '') +
-              '\nMonument Views: ' + (document.getElementById('redViews')?.value || ''),
-          }),
-        successMessage: "Thank you! I'll have your Redlands home value ready within 24 hours.",
-        submitButtonDefaultText: 'Request My Home Value',
-      });
+      initSellerLeadForms();
     },
     'page-selling-in-fruita': () => {
       loadMarketStats('fruita', {
         areaLabel: 'Fruita',
       });
-      submitForm({
-        formId: 'fruitaForm',
-        submitBtnId: 'fruSubmit',
-        messageId: 'fruFormMsg',
-        payloadBuilder: () => ({
-            firstName: document.getElementById('fruFirstName')?.value.trim() || '',
-            lastName: document.getElementById('fruLastName')?.value.trim() || '',
-            email: document.getElementById('fruEmail')?.value.trim() || '',
-            phone: document.getElementById('fruPhone')?.value.trim() || '',
-            inquiry: 'Home Value Request — Fruita',
-            message:
-              'Address: ' + (document.getElementById('fruAddress')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('fruTimeline')?.value || '') +
-              '\nBedrooms: ' + (document.getElementById('fruBedrooms')?.value || ''),
-          }),
-        successMessage: "Thank you! I'll have your Fruita home value ready within 24 hours.",
-        submitButtonDefaultText: 'Get My Fruita Home Value',
-      });
+      initSellerLeadForms();
     },
     'page-selling-in-palisade': () => {
       loadMarketStats('palisade', {
         htmlCurrency: true,
         areaLabel: 'Palisade',
       });
-      submitForm({
-        formId: 'palisadeForm',
-        submitBtnId: 'palSubmit',
-        messageId: 'palFormMsg',
-        payloadBuilder: () => ({
-            firstName: document.getElementById('palFirstName')?.value.trim() || '',
-            lastName: document.getElementById('palLastName')?.value.trim() || '',
-            email: document.getElementById('palEmail')?.value.trim() || '',
-            phone: document.getElementById('palPhone')?.value.trim() || '',
-            inquiry: 'Home Value Request — Palisade',
-            message:
-              'Address: ' + (document.getElementById('palAddress')?.value.trim() || '') +
-              '\nNotable features: ' + (document.getElementById('palFeatures')?.value.trim() || '') +
-              '\nTimeline: ' + (document.getElementById('palTimeline')?.value || '') +
-              '\nBedrooms: ' + (document.getElementById('palBedrooms')?.value || ''),
-          }),
-        successMessage: "Thank you! I'll have your Palisade home value ready within 24 hours.",
-        submitButtonDefaultText: 'Get My Palisade Home Value',
-      });
+      initSellerLeadForms();
     },
     'page-clifton-grand-junction': () => {
       loadMarketStats('clifton', { areaLabel: 'ZIP 81520' });

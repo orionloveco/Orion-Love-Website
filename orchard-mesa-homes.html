@@ -122,20 +122,20 @@
 <div class="form-card reveal reveal-delay-015">
 <h3>Get Your Orchard Mesa Home Value</h3>
 <p class="form-sub">I'll be in touch within 24 hours.</p>
-<form id="omForm">
+<form class="seller-lead-form" data-inquiry="Home Value Request — Orchard Mesa" data-lead-form="seller" data-success-message="Thank you! I'll have your Orchard Mesa home value ready within 24 hours." id="omForm">
 <div class="form-row">
-<div class="form-group"><label for="omFirstName">First Name *</label><input id="omFirstName" placeholder="Jane" required="" type="text"/></div>
-<div class="form-group"><label for="omLastName">Last Name *</label><input id="omLastName" placeholder="Smith" required="" type="text"/></div>
+<div class="form-group"><label for="omFirstName">First Name *</label><input data-lead-field="firstName" id="omFirstName" placeholder="Jane" required="" type="text"/></div>
+<div class="form-group"><label for="omLastName">Last Name *</label><input data-lead-field="lastName" id="omLastName" placeholder="Smith" required="" type="text"/></div>
 </div>
-<div class="form-group"><label for="omEmail">Email *</label><input id="omEmail" placeholder="jane@email.com" required="" type="email"/></div>
-<div class="form-group"><label for="omPhone">Phone</label><input id="omPhone" placeholder="(970) 555-0000" type="tel"/></div>
-<div class="form-group"><label for="omAddress">Property Address *</label><input id="omAddress" placeholder="123 River View Rd, Grand Junction, CO" required="" type="text"/></div>
+<div class="form-group"><label for="omEmail">Email *</label><input data-lead-field="email" id="omEmail" placeholder="jane@email.com" required="" type="email"/></div>
+<div class="form-group"><label for="omPhone">Phone</label><input data-lead-field="phone" id="omPhone" placeholder="(970) 555-0000" type="tel"/></div>
+<div class="form-group"><label for="omAddress">Property Address *</label><input data-message-line="Address" id="omAddress" placeholder="123 River View Rd, Grand Junction, CO" required="" type="text"/></div>
 <div class="form-row">
-<div class="form-group"><label for="omTimeline">Timeline</label><select id="omTimeline"><option value="">Select</option><option>Just curious</option><option>3–6 months</option><option>As soon as possible</option></select></div>
-<div class="form-group"><label for="omRiverView">River View?</label><select id="omRiverView"><option value="">Select</option><option>Yes — direct</option><option>Partial view</option><option>No river view</option></select></div>
+<div class="form-group"><label for="omTimeline">Timeline</label><select data-message-line="Timeline" id="omTimeline"><option value="">Select</option><option>Just curious</option><option>3–6 months</option><option>As soon as possible</option></select></div>
+<div class="form-group"><label for="omRiverView">River View?</label><select data-message-line="River View" id="omRiverView"><option value="">Select</option><option>Yes — direct</option><option>Partial view</option><option>No river view</option></select></div>
 </div>
-<button class="btn btn-primary form-submit" id="omFormBtn" type="submit">Get My Orchard Mesa Home Value</button>
-<div id="omFormMsg"></div>
+<button class="btn btn-primary form-submit" data-submit-button="" id="omFormBtn" type="submit">Get My Orchard Mesa Home Value</button>
+<div class="form-message" id="omFormMsg" role="alert"></div>
 <p class="consent-note">
               By submitting this form, I agree to be contacted by Orion Love via call, email, and text
               for real estate services. Data will not be sold or shared with third parties for marketing
