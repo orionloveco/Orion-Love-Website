@@ -950,50 +950,39 @@ body.page-about .script {font-family: "Allura", cursive;
       font-size: 1.35em;
       display: block;
       margin-bottom: 0.2em;}
-body.page-about .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-about .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-about .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-about .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-about .logo {text-decoration: none;
       display: flex;
       flex-direction: column;}
-body.page-about .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-about .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-about .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-about .nav-menu a:hover, body.page-about .nav-menu a.active {color: var(--gold-lt);}
-body.page-about .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;
       transition: background 0.22s, border-color 0.22s !important;}
-body.page-about .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
       border-color: var(--gold-lt) !important;}
 body.page-about .hero {position: relative;
       min-height: 75vh;
@@ -1077,7 +1066,6 @@ body.page-about .hero-cta {display: flex;
       margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp 0.9s 0.55s forwards;}
-body.page-about .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -1089,16 +1077,12 @@ body.page-about .btn {display: inline-flex;
       border-radius: 50px;
       transition: all 0.25s;
       cursor: pointer;}
-body.page-about .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-about .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-about .btn-outline {background: transparent;
       color: var(--white);
       border: 1px solid rgba(255,255,255,0.35);}
-body.page-about .btn-outline:hover {border-color: var(--gold-lt);
       color: var(--gold-lt);
       transform: translateY(-2px);}
 body.page-about .hero-trust {font-size: 0.75rem;
@@ -1140,16 +1124,13 @@ body.page-about .photo-wrap::after {content: "";
       pointer-events: none;
       z-index: -1;}
 body.page-about .intro-copy {padding-top: 0.5rem;}
-body.page-about .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.25rem;}
-body.page-about .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-about .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -1192,17 +1173,14 @@ body.page-about .credentials li svg {width: 16px;
       stroke: var(--gold);
       flex-shrink: 0;
       margin-top: 3px;}
-body.page-about .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-about .divider::before, body.page-about .divider::after {content: "";
       flex: 1;
       height: 1px;
       background: var(--sand);}
-body.page-about .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -1366,47 +1344,33 @@ body.page-about .cta-inner p {color: var(--muted);
       margin-left: auto;
       margin-right: auto;}
 body.page-about .cta-inner .btn-primary {display: inline-flex;}
-body.page-about .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-about .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-about .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-about .footer-brand p {color: rgba(255,255,255,0.48);
       font-size: 0.9rem;
       line-height: 1.7;}
-body.page-about .footer-links h4, body.page-about .footer-contact h4 {font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1rem;}
-body.page-about .footer-links ul, body.page-about .footer-contact ul {list-style: none;}
-body.page-about .footer-links li, body.page-about .footer-contact li {margin-bottom: 0.6rem;}
-body.page-about .footer-links a, body.page-about .footer-contact a {text-decoration: none;
       color: rgba(255,255,255,0.55);
       font-size: 0.9rem;
       transition: color 0.2s;}
-body.page-about .footer-links a:hover, body.page-about .footer-contact a:hover {color: var(--gold-lt);}
-body.page-about .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;}
-body.page-about .footer-bottom p {color: rgba(255,255,255,0.3);
       font-size: 0.8rem;
       text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-about .reveal {opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-about .reveal.visible {opacity: 1;
       transform: none;}
-body.page-about .mobile-toggle {display: none;}
 @media (max-width: 980px) {
 body.page-about .intro-grid {grid-template-columns: 1fr;}
 body.page-about .photo-wrap::after {display: none;}
@@ -1417,16 +1381,12 @@ body.page-about .approach-sticky {position: static;}
 body.page-about .stats-grid {grid-template-columns: 1fr;}
 body.page-about .stat + .stat::before {left: 20%; right: 20%; top: 0; bottom: auto;
         width: auto; height: 1px;}
-body.page-about .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-about .nav-menu {display: none;}
-body.page-about .mobile-toggle {display: flex;
         flex-direction: column;
         gap: 5px;
         background: none;
         border: none;
         cursor: pointer;
         padding: 6px;}
-body.page-about .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
         border-radius: 2px;
@@ -1441,7 +1401,6 @@ body.page-about .step-num-wrap {flex-direction: row; align-items: center; gap: 1
 body.page-about .step-line {display: none;}
 }
 @media (max-width: 640px) {
-body.page-about .nav-menu {display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(12, 26, 61, 0.98);
@@ -1451,7 +1410,6 @@ body.page-about .nav-menu {display: none;
         justify-content: center;
         gap: 2rem;
         z-index: 99;}
-body.page-about .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -1468,8 +1426,6 @@ body.page-about .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-about .nav-menu li {list-style: none;}
-body.page-about .nav-menu a {font-size: 1.4rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -1477,8 +1433,6 @@ body.page-about .nav-menu a {font-size: 1.4rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-about .nav-menu a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-about .nav-menu .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -1487,11 +1441,6 @@ body.page-about .nav-menu .btn-nav {border: 1px solid var(--gold);
         text-transform: uppercase;
         font-weight: 600;
         opacity: 1;}
-body.page-about .mobile-toggle {z-index: 10000 !important;}
-body.page-about .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-about .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-about .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-about .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
 /* ===== buyers.html ===== */
@@ -1523,50 +1472,37 @@ body.page-buyers {font-family: "Raleway", sans-serif;
 body.page-buyers h1, body.page-buyers h2, body.page-buyers h3, body.page-buyers h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-buyers .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-buyers .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-buyers .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-buyers .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-buyers .logo {text-decoration: none;}
-body.page-buyers .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-buyers .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-buyers .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-buyers .nav-menu a:hover, body.page-buyers .nav-menu a.active {color: var(--gold-lt);}
-body.page-buyers .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;
       transition: background 0.22s !important;}
-body.page-buyers .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-buyers .mobile-toggle {display: none;}
-body.page-buyers .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -1580,13 +1516,10 @@ body.page-buyers .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-buyers .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-buyers .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-buyers .btn-outline-white {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -1599,10 +1532,8 @@ body.page-buyers .btn-outline-white {display: inline-flex;
       border: 1px solid rgba(255,255,255,0.3);
       color: rgba(255,255,255,0.82);
       transition: all 0.25s;}
-body.page-buyers .btn-outline-white:hover {border-color: var(--gold-lt);
       color: var(--gold-lt);
       transform: translateY(-2px);}
-body.page-buyers .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -1617,37 +1548,28 @@ body.page-buyers .btn-gold-outline {display: inline-flex;
       white-space: nowrap;
       transition: all 0.25s;
       flex-shrink: 0;}
-body.page-buyers .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);}
-body.page-buyers .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.1rem;}
-body.page-buyers .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-buyers .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;}
-body.page-buyers .section-label.centered {justify-content: center;}
-body.page-buyers .section-label.centered::after {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-buyers .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-buyers .divider::before, body.page-buyers .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-buyers .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -1859,35 +1781,22 @@ body.page-buyers .cta-inner p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-body.page-buyers .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-buyers .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-buyers .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-buyers .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-buyers .footer-links h4, body.page-buyers .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 1rem;}
-body.page-buyers .footer-links ul, body.page-buyers .footer-contact ul {list-style: none;}
-body.page-buyers .footer-links li, body.page-buyers .footer-contact li {margin-bottom: 0.6rem;}
-body.page-buyers .footer-links a, body.page-buyers .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
       font-size: 0.9rem; transition: color 0.2s;}
-body.page-buyers .footer-links a:hover, body.page-buyers .footer-contact a:hover {color: var(--gold-lt);}
-body.page-buyers .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;}
-body.page-buyers .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-buyers .reveal {opacity: 0;
       transform: translateY(26px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-buyers .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 700px) {
 body.page-buyers .promise-grid {grid-template-columns: 1fr;}
 }
@@ -1897,9 +1806,6 @@ body.page-buyers .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-buyers .service-block:nth-child(even) .service-meta {order: 0;}
 body.page-buyers .service-block:nth-child(even) .service-details {order: 0;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-buyers .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-buyers .nav-menu {display: none;}
-body.page-buyers .mobile-toggle {display: flex !important;
         flex-direction: column;
         gap: 5px;
         background: none;
@@ -1907,15 +1813,10 @@ body.page-buyers .mobile-toggle {display: flex !important;
         cursor: pointer;
         padding: 6px;
         z-index: 200;}
-body.page-buyers .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
         border-radius: 2px;
         transition: transform 0.25s ease, opacity 0.2s ease;}
-body.page-buyers .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-buyers .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-buyers .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-buyers .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -1932,8 +1833,6 @@ body.page-buyers .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-buyers .nav-menu.active li {list-style: none;}
-body.page-buyers .nav-menu.active a {font-size: 1.5rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -1941,8 +1840,6 @@ body.page-buyers .nav-menu.active a {font-size: 1.5rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-buyers .nav-menu.active a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-buyers .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -1960,34 +1857,7 @@ body.page-clifton-grand-junction *, body.page-clifton-grand-junction *::before, 
 html {scroll-behavior:smooth;}
 body.page-clifton-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-clifton-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-clifton-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-clifton-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-clifton-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-clifton-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-clifton-grand-junction .logo {text-decoration:none;}
-body.page-clifton-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-clifton-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-clifton-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-clifton-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-clifton-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-clifton-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-clifton-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-clifton-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-clifton-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-clifton-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-clifton-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-clifton-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-clifton-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-clifton-grand-junction .section-label.centered {justify-content:center;}
-body.page-clifton-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-clifton-grand-junction .divider::before, body.page-clifton-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-clifton-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-clifton-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-clifton-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-clifton-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -2006,15 +1876,6 @@ body.page-clifton-grand-junction .fact-row {display:flex;justify-content:space-b
 body.page-clifton-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-clifton-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-clifton-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);}
-body.page-clifton-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-clifton-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-clifton-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-clifton-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .card:hover::before {opacity:1;}
-body.page-clifton-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-clifton-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-clifton-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-clifton-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-clifton-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-clifton-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-clifton-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
@@ -2022,32 +1883,8 @@ body.page-clifton-grand-junction .dark-inner h2 {color:var(--white);font-weight:
 body.page-clifton-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-clifton-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-clifton-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-clifton-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-clifton-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-clifton-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-clifton-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-clifton-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-clifton-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-clifton-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-clifton-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-clifton-grand-junction .footer-links h4, body.page-clifton-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-clifton-grand-junction .footer-links ul, body.page-clifton-grand-junction .footer-contact ul {list-style:none;}
-body.page-clifton-grand-junction .footer-links li, body.page-clifton-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-clifton-grand-junction .footer-links a, body.page-clifton-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-clifton-grand-junction .footer-links a:hover, body.page-clifton-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-clifton-grand-junction .footer-bottom p, body.page-clifton-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-clifton-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-clifton-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-clifton-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-clifton-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-clifton-grand-junction .nav-menu.active {left:0;}
-body.page-clifton-grand-junction .mobile-toggle {display:flex;}
 body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-body.page-clifton-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-clifton-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== contact.html ===== */
@@ -2079,48 +1916,37 @@ body.page-contact {font-family: "Raleway", sans-serif;
 body.page-contact h1, body.page-contact h2, body.page-contact h3, body.page-contact h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-contact .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-contact .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;
       background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-contact .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-contact .logo {text-decoration: none;}
-body.page-contact .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-contact .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-contact .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-contact .nav-menu a:hover, body.page-contact .nav-menu a.active {color: var(--gold-lt);}
-body.page-contact .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;}
-body.page-contact .mobile-toggle {display: none;}
-body.page-contact .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -2134,47 +1960,35 @@ body.page-contact .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-contact .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-contact .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-contact .btn-navy {background: var(--navy);
       color: var(--white);}
-body.page-contact .btn-navy:hover {background: var(--navy-mid);
       transform: translateY(-2px);}
-body.page-contact .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.1rem;}
-body.page-contact .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-contact .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;}
-body.page-contact .section-label.centered {justify-content: center;}
-body.page-contact .section-label.centered::after {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-contact .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-contact .divider::before, body.page-contact .divider::after {content: "";
       flex: 1;
       height: 1px;
       background: var(--sand);}
-body.page-contact .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -2411,7 +2225,6 @@ body.page-contact .cta-band-copy h2 em {font-style: italic; color: var(--gold-lt
 body.page-contact .cta-band-copy p {color: rgba(255,255,255,0.55);
       font-size: 1rem;
       line-height: 1.8;}
-body.page-contact .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -2425,55 +2238,36 @@ body.page-contact .btn-gold-outline {display: inline-flex;
       color: var(--gold-lt);
       white-space: nowrap;
       transition: all 0.25s;}
-body.page-contact .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);}
-body.page-contact .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-contact .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-contact .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-contact .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-contact .footer-links h4, body.page-contact .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 1rem;}
-body.page-contact .footer-links ul, body.page-contact .footer-contact ul {list-style: none;}
-body.page-contact .footer-links li, body.page-contact .footer-contact li {margin-bottom: 0.6rem;}
-body.page-contact .footer-links a, body.page-contact .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
       font-size: 0.9rem; transition: color 0.2s;}
-body.page-contact .footer-links a:hover, body.page-contact .footer-contact a:hover {color: var(--gold-lt);}
-body.page-contact .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 0.5rem;}
-body.page-contact .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-contact .footer-bottom a {color: rgba(255,255,255,0.38); text-decoration: none;}
-body.page-contact .footer-bottom a:hover {color: var(--gold-lt);}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-contact .reveal {opacity: 0;
       transform: translateY(26px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-contact .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 900px) {
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
 body.page-contact .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-contact .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
 body.page-contact .form-row {grid-template-columns: 1fr;}
-body.page-contact .nav-menu {display: none;}
-body.page-contact .mobile-toggle {display: flex !important;
         flex-direction: column;
         gap: 5px;
         background: none;
@@ -2481,15 +2275,10 @@ body.page-contact .mobile-toggle {display: flex !important;
         cursor: pointer;
         padding: 6px;
         z-index: 200;}
-body.page-contact .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
         border-radius: 2px;
         transition: transform 0.25s ease, opacity 0.2s ease;}
-body.page-contact .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-contact .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-contact .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-contact .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -2506,8 +2295,6 @@ body.page-contact .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-contact .nav-menu.active li {list-style: none;}
-body.page-contact .nav-menu.active a {font-size: 1.5rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -2515,8 +2302,6 @@ body.page-contact .nav-menu.active a {font-size: 1.5rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-contact .nav-menu.active a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-contact .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -2534,34 +2319,7 @@ body.page-downtown-grand-junction *, body.page-downtown-grand-junction *::before
 html {scroll-behavior:smooth;}
 body.page-downtown-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-downtown-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-downtown-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-downtown-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-downtown-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-downtown-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-downtown-grand-junction .logo {text-decoration:none;}
-body.page-downtown-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-downtown-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-downtown-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-downtown-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-downtown-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-downtown-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-downtown-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-downtown-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-downtown-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-downtown-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-downtown-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-downtown-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-downtown-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-downtown-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-downtown-grand-junction .section-label.centered {justify-content:center;}
-body.page-downtown-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-downtown-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-downtown-grand-junction .divider::before, body.page-downtown-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-downtown-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-downtown-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -2582,15 +2340,6 @@ body.page-downtown-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-downtown-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-downtown-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-downtown-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-downtown-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-downtown-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-downtown-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-downtown-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-downtown-grand-junction .card:hover::before {opacity:1;}
-body.page-downtown-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-downtown-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-downtown-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-downtown-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-downtown-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-downtown-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-downtown-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
@@ -2598,32 +2347,8 @@ body.page-downtown-grand-junction .dark-band-inner h2 {color:var(--white);font-w
 body.page-downtown-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-downtown-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-downtown-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-downtown-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-downtown-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-downtown-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-downtown-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-downtown-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-downtown-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-downtown-grand-junction .footer-links h4, body.page-downtown-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-downtown-grand-junction .footer-links ul, body.page-downtown-grand-junction .footer-contact ul {list-style:none;}
-body.page-downtown-grand-junction .footer-links li, body.page-downtown-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-downtown-grand-junction .footer-links a, body.page-downtown-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-downtown-grand-junction .footer-links a:hover, body.page-downtown-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-downtown-grand-junction .footer-bottom p, body.page-downtown-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-downtown-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-downtown-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-downtown-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-downtown-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-downtown-grand-junction .nav-menu.active {left:0;}
-body.page-downtown-grand-junction .mobile-toggle {display:flex;}
 body.page-downtown-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-downtown-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-downtown-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== faq.html ===== */
@@ -2655,50 +2380,37 @@ body.page-faq {font-family: "Raleway", sans-serif;
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-faq .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-faq .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-faq .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-faq .logo {text-decoration: none;}
-body.page-faq .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-faq .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-faq .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-faq .nav-menu a:hover, body.page-faq .nav-menu a.active {color: var(--gold-lt);}
-body.page-faq .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;
       transition: background 0.22s !important;}
-body.page-faq .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-faq .mobile-toggle {display: none;}
-body.page-faq .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -2712,13 +2424,10 @@ body.page-faq .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-faq .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-faq .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-faq .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -2732,37 +2441,28 @@ body.page-faq .btn-gold-outline {display: inline-flex;
       color: var(--gold-lt);
       white-space: nowrap;
       transition: all 0.25s;}
-body.page-faq .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);}
-body.page-faq .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.1rem;}
-body.page-faq .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-faq .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;}
-body.page-faq .section-label.centered {justify-content: center;}
-body.page-faq .section-label.centered::after {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-faq .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-faq .divider::before, body.page-faq .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-faq .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -2964,52 +2664,34 @@ body.page-faq .cta-band-copy h2 em {font-style: italic; color: var(--gold-lt);}
 body.page-faq .cta-band-copy p {color: rgba(255,255,255,0.55);
       font-size: 1rem;
       line-height: 1.8;}
-body.page-faq .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-faq .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-faq .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-faq .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-faq .footer-links h4, body.page-faq .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 1rem;}
-body.page-faq .footer-links ul, body.page-faq .footer-contact ul {list-style: none;}
-body.page-faq .footer-links li, body.page-faq .footer-contact li {margin-bottom: 0.6rem;}
-body.page-faq .footer-links a, body.page-faq .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
       font-size: 0.9rem; transition: color 0.2s;}
-body.page-faq .footer-links a:hover, body.page-faq .footer-contact a:hover {color: var(--gold-lt);}
-body.page-faq .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;}
-body.page-faq .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-faq .reveal {opacity: 0;
       transform: translateY(26px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-faq .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 900px) {
 body.page-faq .faq-grid {grid-template-columns: 1fr;}
 body.page-faq .faq-item.full {grid-column: auto;}
 body.page-faq .faq-panel-header {grid-template-columns: 1fr; gap: 1.25rem;}
 body.page-faq .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-faq .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
-body.page-faq .nav-menu {display: none;}
-body.page-faq .mobile-toggle {display: flex; flex-direction: column; gap: 5px;
         background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-faq .mobile-toggle span {display: block; width: 24px; height: 1.5px;
         background: var(--white); border-radius: 2px;}
 body.page-faq .faq-tab {padding: 1rem 1rem; font-size: 0.72rem;}
 }
 @media (max-width: 640px) {
-body.page-faq .nav-menu {display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(12, 26, 61, 0.98);
@@ -3019,7 +2701,6 @@ body.page-faq .nav-menu {display: none;
         justify-content: center;
         gap: 2rem;
         z-index: 99;}
-body.page-faq .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -3036,8 +2717,6 @@ body.page-faq .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-faq .nav-menu li {list-style: none;}
-body.page-faq .nav-menu a {font-size: 1.4rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -3045,8 +2724,6 @@ body.page-faq .nav-menu a {font-size: 1.4rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-faq .nav-menu a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-faq .nav-menu .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -3055,11 +2732,6 @@ body.page-faq .nav-menu .btn-nav {border: 1px solid var(--gold);
         text-transform: uppercase;
         font-weight: 600;
         opacity: 1;}
-body.page-faq .mobile-toggle {z-index: 10000 !important;}
-body.page-faq .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-faq .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-faq .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-faq .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
 /* ===== grand-junction-home-value.html ===== */
@@ -3088,56 +2760,28 @@ body.page-grand-junction-home-value {font-family: "Raleway", sans-serif;
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-grand-junction-home-value .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-grand-junction-home-value section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-grand-junction-home-value .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-grand-junction-home-value .main-header.scrolled {background: rgba(12,26,61,0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-grand-junction-home-value .main-header nav {display: flex; align-items: center; justify-content: space-between;
       height: 72px; max-width: 1120px; margin: 0 auto;
       padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-grand-junction-home-value .logo {text-decoration: none;}
-body.page-grand-junction-home-value .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-grand-junction-home-value .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-grand-junction-home-value .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82);
       font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
       transition: color 0.2s;}
-body.page-grand-junction-home-value .nav-menu a:hover, body.page-grand-junction-home-value .nav-menu a.active {color: var(--gold-lt);}
-body.page-grand-junction-home-value .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-grand-junction-home-value .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-grand-junction-home-value .mobile-toggle {display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-grand-junction-home-value .btn {display: inline-flex; align-items: center; gap: 0.5rem;
       text-decoration: none; font-family: "Raleway", sans-serif;
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px;
       transition: all 0.25s; cursor: pointer; border: none;}
-body.page-grand-junction-home-value .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-grand-junction-home-value .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-grand-junction-home-value .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-grand-junction-home-value .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-grand-junction-home-value .btn-outline-gold {background: transparent; color: var(--gold-lt);
       border: 1px solid rgba(184,146,58,0.55); border-radius: 50px;
       padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
       display: inline-flex; align-items: center; gap: 0.5rem;
       transition: all 0.25s;}
-body.page-grand-junction-home-value .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-grand-junction-home-value .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-grand-junction-home-value .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-grand-junction-home-value .section-label.centered {justify-content: center;}
-body.page-grand-junction-home-value .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-grand-junction-home-value .divider::before, body.page-grand-junction-home-value .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-grand-junction-home-value .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-grand-junction-home-value .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
@@ -3230,31 +2874,11 @@ body.page-grand-junction-home-value .cta-band {background: linear-gradient(180de
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
-body.page-grand-junction-home-value .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-grand-junction-home-value .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-grand-junction-home-value .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-grand-junction-home-value .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .footer-links h4, body.page-grand-junction-home-value .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-grand-junction-home-value .footer-links ul, body.page-grand-junction-home-value .footer-contact ul {list-style: none;}
-body.page-grand-junction-home-value .footer-links li, body.page-grand-junction-home-value .footer-contact li {margin-bottom: 0.6rem;}
-body.page-grand-junction-home-value .footer-links a, body.page-grand-junction-home-value .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-grand-junction-home-value .footer-links a:hover, body.page-grand-junction-home-value .footer-contact a:hover {color: var(--gold-lt);}
-body.page-grand-junction-home-value .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-grand-junction-home-value .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-grand-junction-home-value .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-grand-junction-home-value .footer-bottom a:hover {color: var(--gold-lt);}
-body.page-grand-junction-home-value .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-grand-junction-home-value .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-grand-junction-home-value .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-grand-junction-home-value .nav-menu.active {left: 0;}
-body.page-grand-junction-home-value .mobile-toggle {display: flex;}
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2, 1fr);}
 body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
 body.page-grand-junction-home-value .stat-item:nth-child(1), body.page-grand-junction-home-value .stat-item:nth-child(2) {border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-grand-junction-home-value .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-grand-junction-home-value .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-grand-junction-home-value .hero h1 {font-size: 2.4rem;}
@@ -3293,51 +2917,38 @@ body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormor
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-index .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-index .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-index .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-index .logo {text-decoration: none;}
-body.page-index .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-index .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-index .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-index .nav-menu a:hover, body.page-index .nav-menu a.active {color: var(--gold-lt);}
-body.page-index .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;
       transition: background 0.22s, border-color 0.22s !important;}
-body.page-index .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
       border-color: var(--gold-lt) !important;}
-body.page-index .mobile-toggle {display: none;}
-body.page-index .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -3351,55 +2962,41 @@ body.page-index .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-index .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-index .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-index .btn-outline {background: transparent;
       color: var(--white);
       border: 1px solid rgba(255,255,255,0.35);}
-body.page-index .btn-outline:hover {border-color: var(--gold-lt);
       color: var(--gold-lt);
       transform: translateY(-2px);}
-body.page-index .btn-navy {background: var(--navy);
       color: var(--white);
       box-shadow: var(--shadow-sm);}
-body.page-index .btn-navy:hover {background: var(--navy-mid);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);}
-body.page-index .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.25rem;}
-body.page-index .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-index .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;}
-body.page-index .section-label.centered {justify-content: center;}
-body.page-index .section-label.centered::before, body.page-index .section-label.centered::after {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-index .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-index .divider::before, body.page-index .divider::after {content: "";
       flex: 1;
       height: 1px;
       background: var(--sand);}
-body.page-index .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -3573,7 +3170,6 @@ body.page-index .cta-band-copy p {color: rgba(255,255,255,0.6);
       font-size: 1rem;
       line-height: 1.8;
       max-width: 52ch;}
-body.page-index .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -3587,7 +3183,6 @@ body.page-index .btn-gold-outline {display: inline-flex;
       color: var(--gold-lt);
       white-space: nowrap;
       transition: all 0.25s;}
-body.page-index .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.35);}
@@ -3633,45 +3228,32 @@ body.page-index .process-step h3 {font-size: 1.15rem;
 body.page-index .process-step p {color: var(--muted);
       font-size: 0.93rem;
       line-height: 1.8;}
-body.page-index .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-index .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-index .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-index .footer-brand p {color: rgba(255,255,255,0.45);
       font-size: 0.9rem;
       line-height: 1.7;}
-body.page-index .footer-links h4, body.page-index .footer-contact h4 {font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 1rem;}
-body.page-index .footer-links ul, body.page-index .footer-contact ul {list-style: none;}
-body.page-index .footer-links li, body.page-index .footer-contact li {margin-bottom: 0.6rem;}
-body.page-index .footer-links a, body.page-index .footer-contact a {text-decoration: none;
       color: rgba(255,255,255,0.52);
       font-size: 0.9rem;
       transition: color 0.2s;}
-body.page-index .footer-links a:hover, body.page-index .footer-contact a:hover {color: var(--gold-lt);}
-body.page-index .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;}
-body.page-index .footer-bottom p {color: rgba(255,255,255,0.28);
       font-size: 0.8rem;
       text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-index .reveal {opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-index .reveal.visible {opacity: 1;
       transform: none;}
 @media (max-width: 1024px) {
 body.page-index .usp-grid {grid-template-columns: repeat(2, 1fr);}
@@ -3680,16 +3262,12 @@ body.page-index .process-grid::before {display: none;}
 }
 @media (max-width: 768px) {
 body.page-index .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-index .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-index .nav-menu {display: none;}
-body.page-index .mobile-toggle {display: flex;
         flex-direction: column;
         gap: 5px;
         background: none;
         border: none;
         cursor: pointer;
         padding: 6px;}
-body.page-index .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
         border-radius: 2px;}
@@ -3701,7 +3279,6 @@ body.page-index .usp-grid {grid-template-columns: 1fr;}
 body.page-index .process-grid {grid-template-columns: 1fr;}
 }
 @media (max-width: 640px) {
-body.page-index .nav-menu {display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(12, 26, 61, 0.98);
@@ -3711,7 +3288,6 @@ body.page-index .nav-menu {display: none;
         justify-content: center;
         gap: 2rem;
         z-index: 99;}
-body.page-index .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -3728,8 +3304,6 @@ body.page-index .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-index .nav-menu li {list-style: none;}
-body.page-index .nav-menu a {font-size: 1.4rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -3737,8 +3311,6 @@ body.page-index .nav-menu a {font-size: 1.4rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-index .nav-menu a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-index .nav-menu .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -3747,11 +3319,6 @@ body.page-index .nav-menu .btn-nav {border: 1px solid var(--gold);
         text-transform: uppercase;
         font-weight: 600;
         opacity: 1;}
-body.page-index .mobile-toggle {z-index: 10000 !important;}
-body.page-index .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-index .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-index .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-index .mobile-toggle span {transition: transform 0.25s ease, opacity 0.2s ease;}
 }
 
 /* ===== loma-mack-grand-junction.html ===== */
@@ -3760,34 +3327,7 @@ body.page-loma-mack-grand-junction *, body.page-loma-mack-grand-junction *::befo
 html {scroll-behavior:smooth;}
 body.page-loma-mack-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-loma-mack-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-loma-mack-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-loma-mack-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-loma-mack-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-loma-mack-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-loma-mack-grand-junction .logo {text-decoration:none;}
-body.page-loma-mack-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-loma-mack-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-loma-mack-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-loma-mack-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-loma-mack-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-loma-mack-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-loma-mack-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-loma-mack-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-loma-mack-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-loma-mack-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-loma-mack-grand-junction .section-label.centered {justify-content:center;}
-body.page-loma-mack-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-loma-mack-grand-junction .divider::before, body.page-loma-mack-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-loma-mack-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-loma-mack-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -3806,15 +3346,6 @@ body.page-loma-mack-grand-junction .fact-row {display:flex;justify-content:space
 body.page-loma-mack-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-loma-mack-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-loma-mack-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);}
-body.page-loma-mack-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-loma-mack-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-loma-mack-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-loma-mack-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .card:hover::before {opacity:1;}
-body.page-loma-mack-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-loma-mack-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-loma-mack-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-loma-mack-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
@@ -3825,32 +3356,8 @@ body.page-loma-mack-grand-junction .dark-inner h2 {color:var(--white);font-weigh
 body.page-loma-mack-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-loma-mack-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-loma-mack-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-loma-mack-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-loma-mack-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-loma-mack-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-loma-mack-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-loma-mack-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-loma-mack-grand-junction .footer-links h4, body.page-loma-mack-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .footer-links ul, body.page-loma-mack-grand-junction .footer-contact ul {list-style:none;}
-body.page-loma-mack-grand-junction .footer-links li, body.page-loma-mack-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-loma-mack-grand-junction .footer-links a, body.page-loma-mack-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-loma-mack-grand-junction .footer-links a:hover, body.page-loma-mack-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-loma-mack-grand-junction .footer-bottom p, body.page-loma-mack-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-loma-mack-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-loma-mack-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-loma-mack-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-loma-mack-grand-junction .nav-menu.active {left:0;}
-body.page-loma-mack-grand-junction .mobile-toggle {display:flex;}
 body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
-body.page-loma-mack-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-loma-mack-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== north-grand-junction.html ===== */
@@ -3859,34 +3366,7 @@ body.page-north-grand-junction *, body.page-north-grand-junction *::before, body
 html {scroll-behavior:smooth;}
 body.page-north-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-north-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-north-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-north-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-north-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-north-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-north-grand-junction .logo {text-decoration:none;}
-body.page-north-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-north-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-north-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-north-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-north-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-north-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-north-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-north-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-north-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-north-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-north-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-north-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-north-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-north-grand-junction .section-label.centered {justify-content:center;}
-body.page-north-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-north-grand-junction .divider::before, body.page-north-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-north-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-north-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -3907,15 +3387,6 @@ body.page-north-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-north-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-north-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-north-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-north-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-north-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-north-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-north-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .card:hover::before {opacity:1;}
-body.page-north-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-north-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-north-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-north-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-north-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-north-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-north-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
@@ -3923,32 +3394,8 @@ body.page-north-grand-junction .dark-band-inner h2 {color:var(--white);font-weig
 body.page-north-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-north-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-north-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-north-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-north-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-north-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-north-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-north-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-north-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-north-grand-junction .footer-links h4, body.page-north-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-north-grand-junction .footer-links ul, body.page-north-grand-junction .footer-contact ul {list-style:none;}
-body.page-north-grand-junction .footer-links li, body.page-north-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-north-grand-junction .footer-links a, body.page-north-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-north-grand-junction .footer-links a:hover, body.page-north-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-north-grand-junction .footer-bottom p, body.page-north-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-north-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-north-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-north-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-north-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-north-grand-junction .nav-menu.active {left:0;}
-body.page-north-grand-junction .mobile-toggle {display:flex;}
 body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-north-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-north-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== northeast-grand-junction.html ===== */
@@ -3957,34 +3404,7 @@ body.page-northeast-grand-junction *, body.page-northeast-grand-junction *::befo
 html {scroll-behavior:smooth;}
 body.page-northeast-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northeast-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-northeast-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-northeast-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-northeast-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-northeast-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northeast-grand-junction .logo {text-decoration:none;}
-body.page-northeast-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-northeast-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-northeast-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-northeast-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-northeast-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-northeast-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-northeast-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northeast-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northeast-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northeast-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northeast-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-northeast-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-northeast-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-northeast-grand-junction .section-label.centered {justify-content:center;}
-body.page-northeast-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-northeast-grand-junction .divider::before, body.page-northeast-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-northeast-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-northeast-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -4005,15 +3425,6 @@ body.page-northeast-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-northeast-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-northeast-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-northeast-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northeast-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-northeast-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-northeast-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-northeast-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .card:hover::before {opacity:1;}
-body.page-northeast-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-northeast-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-northeast-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-northeast-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-northeast-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-northeast-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-northeast-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
@@ -4021,32 +3432,8 @@ body.page-northeast-grand-junction .dark-band-inner h2 {color:var(--white);font-
 body.page-northeast-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-northeast-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northeast-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northeast-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northeast-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northeast-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-northeast-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-northeast-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-northeast-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-northeast-grand-junction .footer-links h4, body.page-northeast-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-northeast-grand-junction .footer-links ul, body.page-northeast-grand-junction .footer-contact ul {list-style:none;}
-body.page-northeast-grand-junction .footer-links li, body.page-northeast-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-northeast-grand-junction .footer-links a, body.page-northeast-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-northeast-grand-junction .footer-links a:hover, body.page-northeast-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-northeast-grand-junction .footer-bottom p, body.page-northeast-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-northeast-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-northeast-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-northeast-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-northeast-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-northeast-grand-junction .nav-menu.active {left:0;}
-body.page-northeast-grand-junction .mobile-toggle {display:flex;}
 body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-northeast-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-northeast-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== northwest-grand-junction.html ===== */
@@ -4055,34 +3442,7 @@ body.page-northwest-grand-junction *, body.page-northwest-grand-junction *::befo
 html {scroll-behavior:smooth;}
 body.page-northwest-grand-junction {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northwest-grand-junction .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-northwest-grand-junction section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-northwest-grand-junction .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-northwest-grand-junction .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-northwest-grand-junction .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-northwest-grand-junction .logo {text-decoration:none;}
-body.page-northwest-grand-junction .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-northwest-grand-junction .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-northwest-grand-junction .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-northwest-grand-junction .nav-menu a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-northwest-grand-junction .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-northwest-grand-junction .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-northwest-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northwest-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northwest-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northwest-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northwest-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-northwest-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-northwest-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-northwest-grand-junction .section-label.centered {justify-content:center;}
-body.page-northwest-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-northwest-grand-junction .divider::before, body.page-northwest-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-northwest-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-northwest-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -4103,15 +3463,6 @@ body.page-northwest-grand-junction .fact-row:last-child {border-bottom:none;}
 body.page-northwest-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
 body.page-northwest-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-northwest-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northwest-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-northwest-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-northwest-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-northwest-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .card:hover::before {opacity:1;}
-body.page-northwest-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-northwest-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-northwest-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-northwest-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-northwest-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-northwest-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-northwest-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
@@ -4119,32 +3470,8 @@ body.page-northwest-grand-junction .dark-band-inner h2 {color:var(--white);font-
 body.page-northwest-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-northwest-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
 body.page-northwest-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-northwest-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-northwest-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northwest-grand-junction .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-northwest-grand-junction .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-northwest-grand-junction .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-northwest-grand-junction .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-northwest-grand-junction .footer-links h4, body.page-northwest-grand-junction .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-northwest-grand-junction .footer-links ul, body.page-northwest-grand-junction .footer-contact ul {list-style:none;}
-body.page-northwest-grand-junction .footer-links li, body.page-northwest-grand-junction .footer-contact li {margin-bottom:0.6rem;}
-body.page-northwest-grand-junction .footer-links a, body.page-northwest-grand-junction .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-northwest-grand-junction .footer-links a:hover, body.page-northwest-grand-junction .footer-contact a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-northwest-grand-junction .footer-bottom p, body.page-northwest-grand-junction .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-northwest-grand-junction .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-northwest-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-northwest-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-northwest-grand-junction .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-northwest-grand-junction .nav-menu.active {left:0;}
-body.page-northwest-grand-junction .mobile-toggle {display:flex;}
 body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
-body.page-northwest-grand-junction .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-northwest-grand-junction .footer-bottom {flex-direction:column;text-align:center;}
 }
 
 /* ===== orchard-mesa-homes.html ===== */
@@ -4153,34 +3480,7 @@ body.page-orchard-mesa-homes *, body.page-orchard-mesa-homes *::before, body.pag
 html {scroll-behavior:smooth;}
 body.page-orchard-mesa-homes {font-family:"Raleway",sans-serif;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-orchard-mesa-homes .container {max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
 body.page-orchard-mesa-homes section {padding:clamp(3.5rem,6vw,5rem) 0;}
-body.page-orchard-mesa-homes .main-header {position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.35s,box-shadow 0.35s;}
-body.page-orchard-mesa-homes .main-header.scrolled {background:rgba(12,26,61,0.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(184,146,58,0.18);}
-body.page-orchard-mesa-homes .main-header nav {display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);}
-body.page-orchard-mesa-homes .logo {text-decoration:none;}
-body.page-orchard-mesa-homes .logo-main {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--white);letter-spacing:0.04em;}
-body.page-orchard-mesa-homes .nav-menu {display:flex;list-style:none;gap:2.25rem;align-items:center;}
-body.page-orchard-mesa-homes .nav-menu a {text-decoration:none;color:rgba(255,255,255,0.82);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-body.page-orchard-mesa-homes .nav-menu a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .btn-nav {background:transparent!important;border:1px solid rgba(184,146,58,0.55)!important;color:var(--gold-lt)!important;padding:0.5rem 1.3rem;border-radius:40px;}
-body.page-orchard-mesa-homes .mobile-toggle {display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-body.page-orchard-mesa-homes .mobile-toggle span {display:block;width:24px;height:1.5px;background:var(--white);border-radius:2px;}
-body.page-orchard-mesa-homes .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-orchard-mesa-homes .btn-primary {background:var(--gold);color:var(--white);box-shadow:0 4px 20px rgba(184,146,58,0.35);}
-body.page-orchard-mesa-homes .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-navy {background:var(--navy);color:var(--white);}
-body.page-orchard-mesa-homes .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-orchard-mesa-homes .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-orchard-mesa-homes .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-orchard-mesa-homes .section-label.centered {justify-content:center;}
-body.page-orchard-mesa-homes .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-orchard-mesa-homes .divider::before, body.page-orchard-mesa-homes .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-orchard-mesa-homes .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-orchard-mesa-homes .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
@@ -4198,15 +3498,6 @@ body.page-orchard-mesa-homes .stat-box {background:var(--cream);padding:1.75rem 
 body.page-orchard-mesa-homes .stat-val {font-family:"Cormorant Garamond",serif;font-size:2.4rem;color:var(--navy);line-height:1;}
 body.page-orchard-mesa-homes .stat-val span {font-size:1.3rem;color:var(--gold);}
 body.page-orchard-mesa-homes .stat-lbl {font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:0.35rem;}
-body.page-orchard-mesa-homes .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-orchard-mesa-homes .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-orchard-mesa-homes .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-orchard-mesa-homes .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .card:hover::before {opacity:1;}
-body.page-orchard-mesa-homes .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-orchard-mesa-homes .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-orchard-mesa-homes .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-orchard-mesa-homes .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-orchard-mesa-homes .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-orchard-mesa-homes .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-orchard-mesa-homes .dark-inner {position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
@@ -4243,32 +3534,8 @@ body.page-orchard-mesa-homes .consent-note a {color:var(--navy);text-decoration:
 body.page-orchard-mesa-homes #formMsg {display:none;padding:0.85rem 1rem;border-radius:var(--radius-sm);margin-top:1rem;font-size:0.9rem;}
 body.page-orchard-mesa-homes #formMsg.success {background:rgba(100,180,100,0.12);border:1px solid rgba(100,180,100,0.3);color:#2d6a2d;}
 body.page-orchard-mesa-homes #formMsg.error {background:rgba(200,60,60,0.08);border:1px solid rgba(200,60,60,0.2);color:#8b2020;}
-body.page-orchard-mesa-homes .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
-body.page-orchard-mesa-homes .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
-body.page-orchard-mesa-homes .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
-body.page-orchard-mesa-homes .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-orchard-mesa-homes .main-footer {background:var(--navy-mid);border-top:1px solid rgba(184,146,58,0.15);padding:3.5rem 0 2rem;}
-body.page-orchard-mesa-homes .footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-body.page-orchard-mesa-homes .logo-footer {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--white);display:block;margin-bottom:0.75rem;}
-body.page-orchard-mesa-homes .footer-brand p {color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.7;margin-bottom:0.5rem;}
-body.page-orchard-mesa-homes .footer-links h4, body.page-orchard-mesa-homes .footer-contact h4 {font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-body.page-orchard-mesa-homes .footer-links ul, body.page-orchard-mesa-homes .footer-contact ul {list-style:none;}
-body.page-orchard-mesa-homes .footer-links li, body.page-orchard-mesa-homes .footer-contact li {margin-bottom:0.6rem;}
-body.page-orchard-mesa-homes .footer-links a, body.page-orchard-mesa-homes .footer-contact a {color:rgba(255,255,255,0.52);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
-body.page-orchard-mesa-homes .footer-links a:hover, body.page-orchard-mesa-homes .footer-contact a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .footer-bottom {border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
-body.page-orchard-mesa-homes .footer-bottom p, body.page-orchard-mesa-homes .footer-bottom a {color:rgba(255,255,255,0.28);font-size:0.8rem;text-decoration:none;}
-body.page-orchard-mesa-homes .footer-bottom a:hover {color:var(--gold-lt);}
-body.page-orchard-mesa-homes .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-orchard-mesa-homes .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
-body.page-orchard-mesa-homes .nav-menu {position:fixed;top:72px;left:-100%;width:100%;height:calc(100vh - 72px);background:rgba(12,26,61,0.97);flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem;transition:left 0.3s;}
-body.page-orchard-mesa-homes .nav-menu.active {left:0;}
-body.page-orchard-mesa-homes .mobile-toggle {display:flex;}
 body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
-body.page-orchard-mesa-homes .footer-grid {grid-template-columns:1fr;gap:2rem;}
-body.page-orchard-mesa-homes .footer-bottom {flex-direction:column;text-align:center;}
 }
 @media (max-width:640px) {
 body.page-orchard-mesa-homes .form-row {grid-template-columns:1fr;}
@@ -4323,34 +3590,7 @@ body.page-redlands-homes *, body.page-redlands-homes *::before, body.page-redlan
 html {scroll-behavior: smooth;}
 body.page-redlands-homes {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-redlands-homes h1, body.page-redlands-homes h2, body.page-redlands-homes h3, body.page-redlands-homes h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-redlands-homes .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-redlands-homes section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-redlands-homes .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-redlands-homes .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-redlands-homes .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-redlands-homes .logo {text-decoration: none;}
-body.page-redlands-homes .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-redlands-homes .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-redlands-homes .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-redlands-homes .nav-menu a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-redlands-homes .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-redlands-homes .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-redlands-homes .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-redlands-homes .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-redlands-homes .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-redlands-homes .btn-navy {background: var(--navy); color: var(--white);}
-body.page-redlands-homes .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-redlands-homes .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-redlands-homes .btn-outline-gold:hover {background: rgba(184,146,58,0.12); transform: translateY(-2px);}
-body.page-redlands-homes .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-redlands-homes .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-redlands-homes .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-redlands-homes .section-label.centered {justify-content: center;}
-body.page-redlands-homes .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-redlands-homes .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-redlands-homes .divider::before, body.page-redlands-homes .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-redlands-homes .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-redlands-homes .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-redlands-homes .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
@@ -4371,15 +3611,6 @@ body.page-redlands-homes .stat-val {font-family: "Cormorant Garamond", serif; fo
 body.page-redlands-homes .stat-val span {font-size: 1.3rem; color: var(--gold);}
 body.page-redlands-homes .stat-lbl {font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 0.35rem;}
 body.page-redlands-homes .identity-section {background: var(--cream);}
-body.page-redlands-homes .card-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 1.25rem; margin-top: 2.75rem;}
-body.page-redlands-homes .card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;}
-body.page-redlands-homes .card::before {content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.28s;}
-body.page-redlands-homes .card:hover {transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22);}
-body.page-redlands-homes .card:hover::before {opacity: 1;}
-body.page-redlands-homes .card-icon {width: 48px; height: 48px; border-radius: 12px; background: rgba(184,146,58,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;}
-body.page-redlands-homes .card-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-redlands-homes .card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
-body.page-redlands-homes .card p {color: var(--muted); font-size: 0.95rem; line-height: 1.8;}
 body.page-redlands-homes .dark-band {background: var(--navy); position: relative; overflow: hidden;}
 body.page-redlands-homes .dark-band::before {content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none;}
 body.page-redlands-homes .dark-band-inner {position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
@@ -4416,32 +3647,8 @@ body.page-redlands-homes .consent-note a {color: var(--navy); text-decoration: u
 body.page-redlands-homes #formMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-redlands-homes #formMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-redlands-homes #formMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-redlands-homes .link-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1rem; margin-top: 2rem;}
-body.page-redlands-homes .link-card {background: var(--cream); border: 1px solid var(--sand); border-radius: var(--radius-sm); padding: 1.25rem; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; transition: border-color 0.22s, transform 0.22s;}
-body.page-redlands-homes .link-card:hover {border-color: var(--gold); transform: translateY(-2px);}
-body.page-redlands-homes .link-card svg {width: 15px; height: 15px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0;}
-body.page-redlands-homes .link-card span {font-size: 0.88rem; font-weight: 600; color: var(--navy);}
-body.page-redlands-homes .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-redlands-homes .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-redlands-homes .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-redlands-homes .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-redlands-homes .footer-links h4, body.page-redlands-homes .footer-contact h4 {font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-redlands-homes .footer-links ul, body.page-redlands-homes .footer-contact ul {list-style: none;}
-body.page-redlands-homes .footer-links li, body.page-redlands-homes .footer-contact li {margin-bottom: 0.6rem;}
-body.page-redlands-homes .footer-links a, body.page-redlands-homes .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-redlands-homes .footer-links a:hover, body.page-redlands-homes .footer-contact a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-redlands-homes .footer-bottom p, body.page-redlands-homes .footer-bottom a {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-decoration: none;}
-body.page-redlands-homes .footer-bottom a:hover {color: var(--gold-lt);}
-body.page-redlands-homes .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-redlands-homes .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-redlands-homes .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-redlands-homes .nav-menu.active {left: 0;}
-body.page-redlands-homes .mobile-toggle {display: flex;}
 body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-redlands-homes .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-redlands-homes .footer-bottom {flex-direction: column; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
@@ -4467,35 +3674,7 @@ body.page-selling-in-fruita *, body.page-selling-in-fruita *::before, body.page-
 html {scroll-behavior: smooth;}
 body.page-selling-in-fruita {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-fruita h1, body.page-selling-in-fruita h2, body.page-selling-in-fruita h3, body.page-selling-in-fruita h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-fruita .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-selling-in-fruita section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-selling-in-fruita .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-selling-in-fruita .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-selling-in-fruita .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-fruita .logo {text-decoration: none;}
-body.page-selling-in-fruita .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-selling-in-fruita .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-selling-in-fruita .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-selling-in-fruita .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-fruita .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-selling-in-fruita .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-selling-in-fruita .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-selling-in-fruita .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-fruita .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-fruita .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-fruita .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-fruita .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-fruita .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-selling-in-fruita .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-fruita .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-selling-in-fruita .section-label.centered {justify-content: center;}
-body.page-selling-in-fruita .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-fruita .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-selling-in-fruita .divider::before, body.page-selling-in-fruita .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-selling-in-fruita .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-selling-in-fruita .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
@@ -4518,15 +3697,6 @@ body.page-selling-in-fruita .snap-val {font-family: "Cormorant Garamond", serif;
 body.page-selling-in-fruita .snap-val span {font-size: 1.3rem; color: var(--gold);}
 body.page-selling-in-fruita .snap-label {font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 0.35rem;}
 body.page-selling-in-fruita .profile-section {background: var(--cream);}
-body.page-selling-in-fruita .profile-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; margin-top: 2.75rem;}
-body.page-selling-in-fruita .profile-card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;}
-body.page-selling-in-fruita .profile-card::before {content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.28s;}
-body.page-selling-in-fruita .profile-card:hover {transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22);}
-body.page-selling-in-fruita .profile-card:hover::before {opacity: 1;}
-body.page-selling-in-fruita .profile-icon {width: 48px; height: 48px; border-radius: 12px; background: rgba(184,146,58,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;}
-body.page-selling-in-fruita .profile-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-selling-in-fruita .profile-card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
-body.page-selling-in-fruita .profile-card p {color: var(--muted); font-size: 0.95rem; line-height: 1.8;}
 body.page-selling-in-fruita .process-section {background: var(--navy); position: relative; overflow: hidden;}
 body.page-selling-in-fruita .process-section::before {content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none;}
 body.page-selling-in-fruita .process-inner {position: relative; z-index: 1;}
@@ -4563,33 +3733,11 @@ body.page-selling-in-fruita .consent-note a {color: var(--navy); text-decoration
 body.page-selling-in-fruita #fruFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-selling-in-fruita #fruFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-selling-in-fruita #fruFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-fruita .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-selling-in-fruita .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-selling-in-fruita .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-selling-in-fruita .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-selling-in-fruita .footer-links h4, body.page-selling-in-fruita .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-selling-in-fruita .footer-links ul, body.page-selling-in-fruita .footer-contact ul {list-style: none;}
-body.page-selling-in-fruita .footer-links li, body.page-selling-in-fruita .footer-contact li {margin-bottom: 0.6rem;}
-body.page-selling-in-fruita .footer-links a, body.page-selling-in-fruita .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-selling-in-fruita .footer-links a:hover, body.page-selling-in-fruita .footer-contact a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-selling-in-fruita .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-selling-in-fruita .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-selling-in-fruita .footer-bottom a:hover {color: var(--gold-lt);}
-body.page-selling-in-fruita .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-selling-in-fruita .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-selling-in-fruita .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-selling-in-fruita .nav-menu.active {left: 0;}
-body.page-selling-in-fruita .mobile-toggle {display: flex;}
 body.page-selling-in-fruita .snapshot-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-selling-in-fruita .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-fruita .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-selling-in-fruita .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-selling-in-fruita .hero h1 {font-size: 2.4rem;}
-body.page-selling-in-fruita .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 }
 
@@ -4613,35 +3761,7 @@ body.page-selling-in-palisade *, body.page-selling-in-palisade *::before, body.p
 html {scroll-behavior: smooth;}
 body.page-selling-in-palisade {font-family: "Raleway", sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden;}
 body.page-selling-in-palisade h1, body.page-selling-in-palisade h2, body.page-selling-in-palisade h3, body.page-selling-in-palisade h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-palisade .container {max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
 body.page-selling-in-palisade section {padding: clamp(3.5rem,6vw,5rem) 0;}
-body.page-selling-in-palisade .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background 0.35s, box-shadow 0.35s;}
-body.page-selling-in-palisade .main-header.scrolled {background: rgba(12,26,61,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-selling-in-palisade .main-header nav {display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-selling-in-palisade .logo {text-decoration: none;}
-body.page-selling-in-palisade .logo-main {font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-selling-in-palisade .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-selling-in-palisade .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;}
-body.page-selling-in-palisade .nav-menu a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .btn-nav {background: transparent !important; border: 1px solid rgba(184,146,58,0.55) !important; color: var(--gold-lt) !important; padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-selling-in-palisade .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-selling-in-palisade .mobile-toggle {display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-selling-in-palisade .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-selling-in-palisade .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-palisade .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-palisade .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-palisade .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-palisade .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-palisade .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-selling-in-palisade .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-palisade .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-selling-in-palisade .section-label.centered {justify-content: center;}
-body.page-selling-in-palisade .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-palisade .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-selling-in-palisade .divider::before, body.page-selling-in-palisade .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-selling-in-palisade .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-selling-in-palisade .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
@@ -4670,15 +3790,6 @@ body.page-selling-in-palisade .stat-val span {font-size: 1.3rem; color: var(--go
 body.page-selling-in-palisade .stat-lbl {font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: 0.35rem;}
 body.page-selling-in-palisade .stat-note-sm {font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem;}
 body.page-selling-in-palisade .diff-section {background: var(--cream);}
-body.page-selling-in-palisade .diff-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.25rem; margin-top: 2.75rem;}
-body.page-selling-in-palisade .diff-card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;}
-body.page-selling-in-palisade .diff-card::before {content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.28s;}
-body.page-selling-in-palisade .diff-card:hover {transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22);}
-body.page-selling-in-palisade .diff-card:hover::before {opacity: 1;}
-body.page-selling-in-palisade .diff-icon {width: 48px; height: 48px; border-radius: 12px; background: rgba(184,146,58,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;}
-body.page-selling-in-palisade .diff-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-selling-in-palisade .diff-card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
-body.page-selling-in-palisade .diff-card p {color: var(--muted); font-size: 0.95rem; line-height: 1.8;}
 body.page-selling-in-palisade .pricing-section {background: var(--navy); position: relative; overflow: hidden;}
 body.page-selling-in-palisade .pricing-section::before {content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%); pointer-events: none;}
 body.page-selling-in-palisade .pricing-inner {position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;}
@@ -4696,55 +3807,12 @@ body.page-selling-in-palisade .pricing-row:last-of-type {border-bottom: none;}
 body.page-selling-in-palisade .pricing-row .pr-label {color: rgba(255,255,255,0.55); font-size: 0.88rem;}
 body.page-selling-in-palisade .pricing-row .pr-val {color: var(--gold-lt); font-family: "Cormorant Garamond", serif; font-size: 1.5rem;}
 body.page-selling-in-palisade .pricing-note {color: rgba(255,255,255,0.35); font-size: 0.78rem; margin-top: 1rem; font-style: italic;}
-body.page-selling-in-palisade .contact-section {background: var(--cream);}
-body.page-selling-in-palisade .contact-inner {display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;}
-body.page-selling-in-palisade .contact-copy h2 {margin-bottom: 0.85rem;}
-body.page-selling-in-palisade .contact-copy p {color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 1.5rem;}
-body.page-selling-in-palisade .contact-bullets {list-style: none;}
-body.page-selling-in-palisade .contact-bullets li {display: flex; align-items: flex-start; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; margin-bottom: 0.85rem;}
-body.page-selling-in-palisade .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-selling-in-palisade .form-card {background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg); border: 1px solid var(--sand);}
-body.page-selling-in-palisade .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
-body.page-selling-in-palisade .form-card .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
-body.page-selling-in-palisade .form-row {display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;}
-body.page-selling-in-palisade .form-group {margin-bottom: 1rem;}
-body.page-selling-in-palisade .form-group label {display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 0.4rem;}
-body.page-selling-in-palisade .form-group input, body.page-selling-in-palisade .form-group select, body.page-selling-in-palisade .form-group textarea {width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--sand); border-radius: var(--radius-sm); font-family: "Raleway", sans-serif; font-size: 0.95rem; color: var(--text); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none;}
-body.page-selling-in-palisade .form-group input:focus, body.page-selling-in-palisade .form-group select:focus, body.page-selling-in-palisade .form-group textarea:focus {border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,146,58,0.12);}
-body.page-selling-in-palisade .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
-body.page-selling-in-palisade .consent-note {font-size: 0.78rem; color: var(--muted); margin-top: 0.85rem; line-height: 1.6; font-style: italic;}
-body.page-selling-in-palisade .consent-note a {color: var(--navy); text-decoration: underline; font-style: normal;}
-body.page-selling-in-palisade #palFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
-body.page-selling-in-palisade #palFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
-body.page-selling-in-palisade #palFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-palisade .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-selling-in-palisade .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-selling-in-palisade .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-selling-in-palisade .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-selling-in-palisade .footer-links h4, body.page-selling-in-palisade .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-selling-in-palisade .footer-links ul, body.page-selling-in-palisade .footer-contact ul {list-style: none;}
-body.page-selling-in-palisade .footer-links li, body.page-selling-in-palisade .footer-contact li {margin-bottom: 0.6rem;}
-body.page-selling-in-palisade .footer-links a, body.page-selling-in-palisade .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-selling-in-palisade .footer-links a:hover, body.page-selling-in-palisade .footer-contact a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-selling-in-palisade .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-selling-in-palisade .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-selling-in-palisade .footer-bottom a:hover {color: var(--gold-lt);}
-body.page-selling-in-palisade .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-selling-in-palisade .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
-body.page-selling-in-palisade .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-selling-in-palisade .nav-menu.active {left: 0;}
-body.page-selling-in-palisade .mobile-toggle {display: flex;}
 body.page-selling-in-palisade .identity-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-palisade .pricing-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-palisade .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-palisade .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-selling-in-palisade .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-selling-in-palisade .hero h1 {font-size: 2.4rem;}
-body.page-selling-in-palisade .form-row {grid-template-columns: 1fr;}
 body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pricing-card {margin-top: 1rem;}
 }
 
@@ -4777,51 +3845,38 @@ body.page-services {font-family: "Raleway", sans-serif;
 body.page-services h1, body.page-services h2, body.page-services h3, body.page-services h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-services .container {max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-services .main-header {position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       transition: background 0.35s, box-shadow 0.35s;}
-body.page-services .main-header.scrolled {background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-services .main-header nav {display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-services .logo {text-decoration: none;}
-body.page-services .logo-main {font-family: "Cormorant Garamond", serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--white);
       letter-spacing: 0.04em;}
-body.page-services .nav-menu {display: flex;
       list-style: none;
       gap: 2.25rem;
       align-items: center;}
-body.page-services .nav-menu a {text-decoration: none;
       color: rgba(255,255,255,0.82);
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.2s;}
-body.page-services .nav-menu a:hover, body.page-services .nav-menu a.active {color: var(--gold-lt);}
-body.page-services .btn-nav {background: transparent !important;
       border: 1px solid rgba(184,146,58,0.55) !important;
       color: var(--gold-lt) !important;
       padding: 0.5rem 1.3rem;
       border-radius: 40px;
       transition: background 0.22s, border-color 0.22s !important;}
-body.page-services .btn-nav:hover {background: rgba(184,146,58,0.12) !important;
       border-color: var(--gold-lt) !important;}
-body.page-services .mobile-toggle {display: none;}
-body.page-services .btn {display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
@@ -4835,40 +3890,30 @@ body.page-services .btn {display: inline-flex;
       transition: all 0.25s;
       cursor: pointer;
       border: none;}
-body.page-services .btn-primary {background: var(--gold);
       color: var(--white);
       box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-services .btn-primary:hover {background: var(--gold-lt);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-services .section-label {display: flex;
       align-items: center;
       gap: 0.8rem;
       margin-bottom: 1.1rem;}
-body.page-services .section-label::before {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-services .section-label span {font-size: 0.72rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;}
-body.page-services .section-label.centered {justify-content: center;}
-body.page-services .section-label.centered::after {content: "";
       display: block;
       width: 28px;
       height: 1px;
       background: var(--gold);}
-body.page-services .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
       padding: 0 clamp(1.25rem,4vw,2.5rem);
       max-width: 1120px;
       margin: 0 auto;}
-body.page-services .divider::before, body.page-services .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-services .divider-diamond {width: 8px; height: 8px;
       background: var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
@@ -4930,7 +3975,6 @@ body.page-services .hero-cta {display: flex;
       animation: fadeUp 0.9s 0.55s forwards;
       position: relative;
       z-index: 1;}
-body.page-services .btn-outline-white {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -4943,7 +3987,6 @@ body.page-services .btn-outline-white {display: inline-flex;
       border: 1px solid rgba(255,255,255,0.3);
       color: rgba(255,255,255,0.82);
       transition: all 0.25s;}
-body.page-services .btn-outline-white:hover {border-color: var(--gold-lt);
       color: var(--gold-lt);
       transform: translateY(-2px);}
 body.page-services .services-main {padding: clamp(4.5rem, 8vw, 7rem) 0;
@@ -5100,7 +4143,6 @@ body.page-services .fee-full-copy h4 {font-size: 1.4rem;
 body.page-services .fee-full-copy p {color: rgba(255,255,255,0.58);
       font-size: 0.97rem;
       line-height: 1.8;}
-body.page-services .btn-gold-outline {display: inline-flex;
       align-items: center;
       text-decoration: none;
       font-family: "Raleway", sans-serif;
@@ -5117,7 +4159,6 @@ body.page-services .btn-gold-outline {display: inline-flex;
       flex-shrink: 0;
       position: relative;
       z-index: 1;}
-body.page-services .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(184,146,58,0.35);}
@@ -5139,44 +4180,28 @@ body.page-services .cta-band-inner p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-body.page-services .main-footer {background: var(--navy-mid);
       border-top: 1px solid rgba(184,146,58,0.15);
       padding: 3.5rem 0 2rem;}
-body.page-services .footer-grid {display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 3rem;
       margin-bottom: 2.5rem;}
-body.page-services .logo-footer {font-family: "Cormorant Garamond", serif;
       font-size: 1.5rem;
       color: var(--white);
       margin-bottom: 0.75rem;}
-body.page-services .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-services .footer-links h4, body.page-services .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 1rem;}
-body.page-services .footer-links ul, body.page-services .footer-contact ul {list-style: none;}
-body.page-services .footer-links li, body.page-services .footer-contact li {margin-bottom: 0.6rem;}
-body.page-services .footer-links a, body.page-services .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
       font-size: 0.9rem; transition: color 0.2s;}
-body.page-services .footer-links a:hover, body.page-services .footer-contact a:hover {color: var(--gold-lt);}
-body.page-services .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;}
-body.page-services .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
-body.page-services .reveal {opacity: 0;
       transform: translateY(26px);
       transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-services .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 980px) {
 body.page-services .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-services .service-block:nth-child(even) .service-meta {order: 0;}
 body.page-services .service-block:nth-child(even) .service-details {order: 0;}
 body.page-services .fee-grid {grid-template-columns: 1fr;}
 body.page-services .fee-full {grid-template-columns: 1fr; gap: 1.75rem;}
-body.page-services .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
-body.page-services .nav-menu {display: none;}
-body.page-services .mobile-toggle {display: flex !important;
         flex-direction: column;
         gap: 5px;
         background: none;
@@ -5184,15 +4209,10 @@ body.page-services .mobile-toggle {display: flex !important;
         cursor: pointer;
         padding: 6px;
         z-index: 200;}
-body.page-services .mobile-toggle span {display: block;
         width: 24px; height: 1.5px;
         background: var(--white);
         border-radius: 2px;
         transition: transform 0.25s ease, opacity 0.2s ease;}
-body.page-services .mobile-toggle.active span:nth-child(1) {transform: translateY(6.5px) rotate(45deg);}
-body.page-services .mobile-toggle.active span:nth-child(2) {opacity: 0; transform: scaleX(0);}
-body.page-services .mobile-toggle.active span:nth-child(3) {transform: translateY(-6.5px) rotate(-45deg);}
-body.page-services .nav-menu.active {display: flex !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -5209,8 +4229,6 @@ body.page-services .nav-menu.active {display: flex !important;
         list-style: none;
         margin: 0;
         padding: 0;}
-body.page-services .nav-menu.active li {list-style: none;}
-body.page-services .nav-menu.active a {font-size: 1.5rem;
         color: var(--white);
         text-decoration: none;
         font-family: "Cormorant Garamond", serif;
@@ -5218,8 +4236,6 @@ body.page-services .nav-menu.active a {font-size: 1.5rem;
         letter-spacing: 0.05em;
         opacity: 0.85;
         transition: opacity 0.2s, color 0.2s;}
-body.page-services .nav-menu.active a:hover {opacity: 1; color: var(--gold-lt);}
-body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
         padding: 0.6rem 1.8rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -5504,8 +4520,6 @@ body[class^="page-"] .main-header {
 }
 
 body[class^="page-"] .main-header.scrolled,
-body.page-contact .main-header,
-body.page-privacy .main-header {
   background: rgba(12, 26, 61, 0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -6260,6 +5274,143 @@ body.page-selling-in-palisade .link-card span {
 }
 
 /* =========================================================
+   Neighborhood card and link-grid family
+   Scope: neighborhood and local landing pages
+   ========================================================= */
+
+body.page-clifton-grand-junction .card-grid,
+body.page-downtown-grand-junction .card-grid,
+body.page-loma-mack-grand-junction .card-grid,
+body.page-north-grand-junction .card-grid,
+body.page-northeast-grand-junction .card-grid,
+body.page-northwest-grand-junction .card-grid,
+body.page-orchard-mesa-homes .card-grid,
+body.page-redlands-homes .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+
+body.page-clifton-grand-junction .card,
+body.page-downtown-grand-junction .card,
+body.page-loma-mack-grand-junction .card,
+body.page-north-grand-junction .card,
+body.page-northeast-grand-junction .card,
+body.page-northwest-grand-junction .card,
+body.page-orchard-mesa-homes .card,
+body.page-redlands-homes .card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+body.page-clifton-grand-junction .card::before,
+body.page-downtown-grand-junction .card::before,
+body.page-loma-mack-grand-junction .card::before,
+body.page-north-grand-junction .card::before,
+body.page-northeast-grand-junction .card::before,
+body.page-northwest-grand-junction .card::before,
+body.page-orchard-mesa-homes .card::before,
+body.page-redlands-homes .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+body.page-clifton-grand-junction .card:hover,
+body.page-downtown-grand-junction .card:hover,
+body.page-loma-mack-grand-junction .card:hover,
+body.page-north-grand-junction .card:hover,
+body.page-northeast-grand-junction .card:hover,
+body.page-northwest-grand-junction .card:hover,
+body.page-orchard-mesa-homes .card:hover,
+body.page-redlands-homes .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184, 146, 58, 0.22);
+}
+
+body.page-clifton-grand-junction .card:hover::before,
+body.page-downtown-grand-junction .card:hover::before,
+body.page-loma-mack-grand-junction .card:hover::before,
+body.page-north-grand-junction .card:hover::before,
+body.page-northeast-grand-junction .card:hover::before,
+body.page-northwest-grand-junction .card:hover::before,
+body.page-orchard-mesa-homes .card:hover::before,
+body.page-redlands-homes .card:hover::before {
+  opacity: 1;
+}
+
+body.page-clifton-grand-junction .card-icon,
+body.page-downtown-grand-junction .card-icon,
+body.page-loma-mack-grand-junction .card-icon,
+body.page-north-grand-junction .card-icon,
+body.page-northeast-grand-junction .card-icon,
+body.page-northwest-grand-junction .card-icon,
+body.page-orchard-mesa-homes .card-icon,
+body.page-redlands-homes .card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(184, 146, 58, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+body.page-clifton-grand-junction .card-icon svg,
+body.page-downtown-grand-junction .card-icon svg,
+body.page-loma-mack-grand-junction .card-icon svg,
+body.page-north-grand-junction .card-icon svg,
+body.page-northeast-grand-junction .card-icon svg,
+body.page-northwest-grand-junction .card-icon svg,
+body.page-orchard-mesa-homes .card-icon svg,
+body.page-redlands-homes .card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
+body.page-clifton-grand-junction .card h3,
+body.page-downtown-grand-junction .card h3,
+body.page-loma-mack-grand-junction .card h3,
+body.page-north-grand-junction .card h3,
+body.page-northeast-grand-junction .card h3,
+body.page-northwest-grand-junction .card h3,
+body.page-orchard-mesa-homes .card h3,
+body.page-redlands-homes .card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+body.page-clifton-grand-junction .card p,
+body.page-downtown-grand-junction .card p,
+body.page-loma-mack-grand-junction .card p,
+body.page-north-grand-junction .card p,
+body.page-northeast-grand-junction .card p,
+body.page-northwest-grand-junction .card p,
+body.page-orchard-mesa-homes .card p,
+body.page-redlands-homes .card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
    CTA standardization layer
    Scoped to CTA structures only
 ========================================================= */
@@ -6561,7 +5712,6 @@ body[class*="page-"] .footer-bottom {
 }
 
 /* Privacy page cleanup to match page-family convention */
-body.page-privacy .footer-bottom {
   justify-content: space-between;
   align-items: center;
 }
@@ -6787,7 +5937,6 @@ body.page-privacy {
     var(--cream);
 }
 
-body.page-privacy .main-header {
   background: rgba(12, 26, 61, 0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -6997,3 +6146,271 @@ body.page-privacy .privacy-footer-copy {
   font-size:0.8rem;
   margin:0;
 }
+
+/* =========================
+   Seller Page Shared Sections — Fruita + Palisade
+========================= */
+body.page-selling-in-fruita .profile-grid,
+body.page-selling-in-palisade .diff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+
+body.page-selling-in-fruita .profile-card,
+body.page-selling-in-palisade .diff-card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+body.page-selling-in-fruita .profile-card::before,
+body.page-selling-in-palisade .diff-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+body.page-selling-in-fruita .profile-card:hover,
+body.page-selling-in-palisade .diff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184,146,58,0.22);
+}
+
+body.page-selling-in-fruita .profile-card:hover::before,
+body.page-selling-in-palisade .diff-card:hover::before {
+  opacity: 1;
+}
+
+body.page-selling-in-fruita .profile-icon,
+body.page-selling-in-palisade .diff-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(184,146,58,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+body.page-selling-in-fruita .profile-icon svg,
+body.page-selling-in-palisade .diff-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
+body.page-selling-in-fruita .profile-card h3,
+body.page-selling-in-palisade .diff-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+body.page-selling-in-fruita .profile-card p,
+body.page-selling-in-palisade .diff-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+body.page-selling-in-fruita .contact-section,
+body.page-selling-in-palisade .contact-section {
+  background: var(--cream);
+}
+
+body.page-selling-in-fruita .contact-inner,
+body.page-selling-in-palisade .contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+body.page-selling-in-fruita .contact-copy h2,
+body.page-selling-in-palisade .contact-copy h2 {
+  margin-bottom: 0.85rem;
+}
+
+body.page-selling-in-fruita .contact-copy p,
+body.page-selling-in-palisade .contact-copy p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+body.page-selling-in-fruita .contact-bullets,
+body.page-selling-in-palisade .contact-bullets {
+  list-style: none;
+}
+
+body.page-selling-in-fruita .contact-bullets li,
+body.page-selling-in-palisade .contact-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.85rem;
+}
+
+body.page-selling-in-fruita .contact-bullets li svg,
+body.page-selling-in-palisade .contact-bullets li svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+body.page-selling-in-fruita .form-card,
+body.page-selling-in-palisade .form-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--sand);
+}
+
+body.page-selling-in-fruita .form-card h3,
+body.page-selling-in-palisade .form-card h3 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+body.page-selling-in-fruita .form-card .form-sub,
+body.page-selling-in-palisade .form-card .form-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+body.page-selling-in-fruita .form-row,
+body.page-selling-in-palisade .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+body.page-selling-in-fruita .form-group,
+body.page-selling-in-palisade .form-group {
+  margin-bottom: 1rem;
+}
+
+body.page-selling-in-fruita .form-group label,
+body.page-selling-in-palisade .form-group label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+body.page-selling-in-fruita .form-group input,
+body.page-selling-in-fruita .form-group select,
+body.page-selling-in-fruita .form-group textarea,
+body.page-selling-in-palisade .form-group input,
+body.page-selling-in-palisade .form-group select,
+body.page-selling-in-palisade .form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+body.page-selling-in-fruita .form-group input:focus,
+body.page-selling-in-fruita .form-group select:focus,
+body.page-selling-in-fruita .form-group textarea:focus,
+body.page-selling-in-palisade .form-group input:focus,
+body.page-selling-in-palisade .form-group select:focus,
+body.page-selling-in-palisade .form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,146,58,0.12);
+}
+
+body.page-selling-in-fruita .form-submit,
+body.page-selling-in-palisade .form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+body.page-selling-in-fruita .consent-note,
+body.page-selling-in-palisade .consent-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.85rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+body.page-selling-in-fruita .consent-note a,
+body.page-selling-in-palisade .consent-note a {
+  color: var(--navy);
+  text-decoration: underline;
+  font-style: normal;
+}
+
+body.page-selling-in-fruita #fruFormMsg,
+body.page-selling-in-palisade #palFormMsg {
+  display: none;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+body.page-selling-in-fruita #fruFormMsg.success,
+body.page-selling-in-palisade #palFormMsg.success {
+  background: rgba(100,180,100,0.12);
+  border: 1px solid rgba(100,180,100,0.3);
+  color: #2d6a2d;
+}
+
+body.page-selling-in-fruita #fruFormMsg.error,
+body.page-selling-in-palisade #palFormMsg.error {
+  background: rgba(200,60,60,0.08);
+  border: 1px solid rgba(200,60,60,0.2);
+  color: #8b2020;
+}
+
+@media (max-width: 900px) {
+  body.page-selling-in-fruita .contact-inner,
+  body.page-selling-in-palisade .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body.page-selling-in-fruita .form-row,
+  body.page-selling-in-palisade .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
