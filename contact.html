@@ -13,13 +13,28 @@
 <meta content="Contact Orion Love | Start Your Journey | Grand Junction Realtor®" name="twitter:title"/>
 <meta content="Contact Orion Love for Grand Junction real estate help, home-selling strategy, buyer guidance, or a no-pressure market conversation." name="twitter:description"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="https://unpkg.com/lucide@0.263.1" defer></script>
 <link href="styles.css" rel="stylesheet"/>
 <script defer="" src="script.js"></script>
 </head>
 <body class="page-hero-aligned page-contact">
 <!-- NAV -->
 <div id="siteHeader"></div>
+<noscript>
+<header class="noscript-header" role="banner">
+<div class="container">
+<a href="index.html">Orion Love Real Estate</a>
+<nav aria-label="Primary navigation">
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="services.html">Sellers</a> |
+<a href="buyers.html">Buyers</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+</noscript>
 <!-- HERO -->
 <section class="contact-hero hero">
 <div class="container">
@@ -80,28 +95,28 @@
 <form id="contactForm" novalidate="">
 <div class="form-row">
 <div class="form-group">
-<label for="firstName">First Name <span aria-hidden="true">*</span></label>
-<input id="firstName" name="firstName" placeholder="Jane" required="" type="text"/>
+<label for="contactFirstName">First Name <span aria-hidden="true">*</span></label>
+<input id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
 </div>
 <div class="form-group">
-<label for="lastName">Last Name <span aria-hidden="true">*</span></label>
-<input id="lastName" name="lastName" placeholder="Smith" required="" type="text"/>
+<label for="contactLastName">Last Name <span aria-hidden="true">*</span></label>
+<input id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
 </div>
 </div>
 <div class="form-row">
 <div class="form-group">
-<label for="email">Email <span aria-hidden="true">*</span></label>
-<input id="email" name="email" placeholder="jane@email.com" required="" type="email"/>
+<label for="contactEmail">Email <span aria-hidden="true">*</span></label>
+<input id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
 </div>
 <div class="form-group">
-<label for="phone">Phone</label>
-<input id="phone" name="phone" placeholder="(970) 000-0000" type="tel"/>
+<label for="contactPhone">Phone</label>
+<input id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
 </div>
 </div>
 <div class="form-group">
-<label for="inquiry">I'm Interested In</label>
+<label for="contactInquiry">I'm Interested In</label>
 <div class="select-wrap">
-<select id="inquiry" name="inquiry">
+<select id="contactInquiry" name="inquiry">
 <option value="">Select an option</option>
 <option value="selling">Selling My Home</option>
 <option value="buying">Buying a Home</option>
@@ -112,8 +127,8 @@
 </div>
 </div>
 <div class="form-group">
-<label for="message">Message <span aria-hidden="true">*</span></label>
-<textarea id="message" name="message" placeholder="Tell me about your goals, timeline, or any questions you have about the market…" required=""></textarea>
+<label for="contactMessage">Message <span aria-hidden="true">*</span></label>
+<textarea id="contactMessage" name="message" placeholder="Tell me about your goals, timeline, or any questions you have about the market…" required=""></textarea>
 </div>
 <div class="consent-block">
 <p>
@@ -153,5 +168,16 @@
 <div id="featuredAreasLinks"></div>
 <!-- FOOTER -->
 <div id="siteFooter"></div>
+<noscript>
+<footer class="noscript-footer" role="contentinfo">
+<div class="container">
+<p>© Orion Love Real Estate</p>
+<nav aria-label="Footer navigation">
+<a href="privacy.html">Privacy</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</footer>
+</noscript>
 </body>
 </html>

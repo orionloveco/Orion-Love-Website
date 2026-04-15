@@ -7077,3 +7077,17 @@ body.page-privacy .privacy-footer-copy {
   font-size:0.8rem;
   margin:0;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .js .reveal,
+  .reveal.visible,
+  .reveal.is-visible,
+  [class*="reveal-delay-"],
+  [class*="reveal-d"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
