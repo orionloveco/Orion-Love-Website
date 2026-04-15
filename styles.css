@@ -6566,6 +6566,86 @@ body.page-privacy .footer-bottom {
   align-items: center;
 }
 
+/* Hero typography/spacing normalization across page-family templates */
+body.page-hero-aligned .hero .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  font-weight: 600;
+}
+
+body.page-hero-aligned .hero .hero-eyebrow::before,
+body.page-hero-aligned .hero .hero-eyebrow::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+body.page-hero-aligned .hero .hero-eyebrow span {
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-weight: inherit;
+}
+
+body.page-hero-aligned .hero h1,
+body.page-hero-aligned .hero .hero-title {
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 1.35rem;
+  max-width: 16ch;
+}
+
+body.page-hero-aligned .hero h1 em,
+body.page-hero-aligned .hero .hero-title em {
+  color: var(--gold-lt);
+}
+
+body.page-hero-aligned .hero .hero-lead,
+body.page-hero-aligned .hero .hero-subtitle {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 56ch;
+  line-height: 1.85;
+  margin: 0 0 2.25rem;
+}
+
+body.page-hero-aligned .hero .hero-cta {
+  margin-bottom: 2.75rem;
+}
+
+body.page-contact .contact-hero .hero-inner,
+body.page-faq .faq-hero .hero-inner,
+body.page-services .services-hero .hero-inner {
+  text-align: center;
+}
+
+body.page-contact .contact-hero .hero-inner .hero-eyebrow,
+body.page-faq .faq-hero .hero-inner .hero-eyebrow,
+body.page-services .services-hero .hero-inner .hero-eyebrow {
+  justify-content: center;
+}
+
+body.page-contact .contact-hero .hero-inner .hero-lead,
+body.page-faq .faq-hero .hero-inner .hero-lead,
+body.page-services .services-hero .hero-inner .hero-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.page-contact .contact-hero .hero-inner .hero-cta,
+body.page-faq .faq-hero .hero-inner .hero-cta,
+body.page-services .services-hero .hero-inner .hero-cta {
+  justify-content: center;
+}
+
 /* ============================================================
    Standardization pass
    Moved repeated inline HTML styles into shared classes/utilities
