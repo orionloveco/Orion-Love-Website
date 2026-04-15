@@ -1444,14 +1444,14 @@ body.page-buyers .cta-band {background: var(--cream);
       border-top: 1px solid var(--sand);
       padding: clamp(4rem, 7vw, 6rem) 0;
       text-align: center;}
-body.page-buyers .cta-inner {max-width: 720px;
+body.page-buyers .cta-band-copy {max-width: 720px;
       margin: 0 auto;}
-body.page-buyers .cta-inner h2 {font-size: clamp(2.2rem, 4vw, 3.2rem);
+body.page-buyers .cta-band-copy h2 {font-size: clamp(2.2rem, 4vw, 3.2rem);
       color: var(--navy);
       font-weight: 300;
       margin-bottom: 1rem;}
-body.page-buyers .cta-inner h2 em {font-style: italic; color: var(--gold);}
-body.page-buyers .cta-inner p {color: var(--muted);
+body.page-buyers .cta-band-copy h2 em {font-style: italic; color: var(--gold);}
+body.page-buyers .cta-band-copy p {color: var(--muted);
       font-size: 1.05rem;
       line-height: 1.85;
       margin-bottom: 2.25rem;
@@ -1499,8 +1499,8 @@ body.page-clifton-grand-junction .hero-eyebrow::before, body.page-downtown-grand
 body.page-clifton-grand-junction .hero h1, body.page-downtown-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-clifton-grand-junction .hero h1 em, body.page-downtown-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-clifton-grand-junction .copy h2 {margin-bottom:0.85rem;}
-body.page-clifton-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
+body.page-clifton-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
+body.page-clifton-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-clifton-grand-junction .link-card, body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-clifton-grand-junction .link-card:hover, body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -2735,8 +2735,8 @@ body.page-loma-mack-grand-junction .hero-eyebrow::before {content:"";display:blo
 body.page-loma-mack-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-loma-mack-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-loma-mack-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-body.page-loma-mack-grand-junction .copy h2 {margin-bottom:0.85rem;}
-body.page-loma-mack-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
+body.page-loma-mack-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
+body.page-loma-mack-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
@@ -2892,8 +2892,8 @@ body.page-orchard-mesa-homes .hero-eyebrow::before {content:"";display:block;wid
 body.page-orchard-mesa-homes .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-orchard-mesa-homes .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-orchard-mesa-homes .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-body.page-orchard-mesa-homes .copy h2 {margin-bottom:0.85rem;}
-body.page-orchard-mesa-homes .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
+body.page-orchard-mesa-homes .intro-copy h2 {margin-bottom:0.85rem;}
+body.page-orchard-mesa-homes .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
 body.page-orchard-mesa-homes .stat-grid {display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sand);border:1px solid var(--sand);border-radius:var(--radius-md);overflow:hidden;}
 body.page-orchard-mesa-homes .stat-box {background:var(--cream);padding:1.75rem 1.5rem;text-align:center;}
 body.page-orchard-mesa-homes .stat-val {font-family:"Cormorant Garamond",serif;font-size:2.4rem;color:var(--navy);line-height:1;}
