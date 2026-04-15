@@ -1410,9 +1410,6 @@ body.page-buyers .cta-band-copy p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-@media (max-width: 700px) {
-body.page-buyers .promise-grid {grid-template-columns: 1fr;}
-}
 @media (max-width: 980px) {
 body.page-buyers .promise-grid {grid-template-columns: 1fr;}
 body.page-buyers .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
@@ -1457,14 +1454,63 @@ body:is(.page-grand-junction-home-value,
   border-color: var(--gold-lt);
 }
 
+/* ===== local-area shared hero system (Clifton, Downtown, Loma/Mack, North, Northeast, Northwest, Orchard Mesa) ===== */
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero h1 em {font-style:italic;color:var(--gold-lt);}
+
 /* ===== clifton-grand-junction.html ===== */
-body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-clifton-grand-junction .hero, body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-clifton-grand-junction .hero::after, body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .hero-eyebrow, body.page-downtown-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-clifton-grand-junction .hero-eyebrow::before, body.page-downtown-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .hero h1, body.page-downtown-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-clifton-grand-junction .hero h1 em, body.page-downtown-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-clifton-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-clifton-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
@@ -2343,13 +2389,6 @@ body.page-index .usp-grid {grid-template-columns: 1fr;}
 body.page-index .process-grid {grid-template-columns: 1fr;}
 }
 /* ===== loma-mack-grand-junction.html ===== */
-body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-loma-mack-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-loma-mack-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-loma-mack-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-loma-mack-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-loma-mack-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
@@ -2362,13 +2401,6 @@ body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5re
 }
 
 /* ===== north-grand-junction.html ===== */
-body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-north-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-north-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-north-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-north-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
@@ -2380,13 +2412,6 @@ body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem
 }
 
 /* ===== northeast-grand-junction.html ===== */
-body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-northeast-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-northeast-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-northeast-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-northeast-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
@@ -2398,13 +2423,6 @@ body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 }
 
 /* ===== northwest-grand-junction.html ===== */
-body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-northwest-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-northwest-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-northwest-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-northwest-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
@@ -2416,13 +2434,6 @@ body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.
 }
 
 /* ===== orchard-mesa-homes.html ===== */
-body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body.page-orchard-mesa-homes .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body.page-orchard-mesa-homes .hero h1 em {font-style:italic;color:var(--gold-lt);}
 body.page-orchard-mesa-homes .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 body.page-orchard-mesa-homes .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-orchard-mesa-homes .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
@@ -3175,9 +3186,6 @@ body.page-services .cta-band-inner p {
 /* =========================
    Alignment + spacing fixes
 ========================= */
-.hero-content {
-  text-align: left;
-}
 
 body.page-index .process-preview .process-steps {
   margin-bottom: 2.5rem;
