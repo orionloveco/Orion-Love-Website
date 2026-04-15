@@ -4610,6 +4610,11 @@ body.page-faq .faq-hero .hero-inner {
   padding-bottom: 0;
 }
 
+body.page-hero-aligned .hero .container > :is(.hero-inner, .hero-content) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Compatibility alias: normalize all page-hero-aligned eyebrow variants */
 body.page-hero-aligned .hero .hero-eyebrow {
   display: flex;
