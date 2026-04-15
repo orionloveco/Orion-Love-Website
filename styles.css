@@ -4373,7 +4373,7 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-title
 body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-text {
   display: block;
   font-size: 0.93rem;
-  line-height: 1.72;
+  line-height: 1.62;
   font-weight: 500;
   color: var(--muted);
 }
@@ -7280,7 +7280,7 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
   background: rgba(255,255,255,0.82);
   border: 1px solid rgba(184,146,58,0.14);
   border-radius: 18px;
-  padding: 1rem 0.95rem;
+  padding: 0.9rem 0.9rem;
 }
 
 .area-feature-split {
@@ -7317,9 +7317,9 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
 }
 
 .feature-callout i {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7480,13 +7480,13 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
 
 .ne-value-cell {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 0.9rem;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 0.8rem;
   align-items: start;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 18px;
-  padding: 1rem 0.95rem;
+  padding: 0.9rem 0.9rem;
 }
 
 .ne-value-cell--wide {
@@ -7496,9 +7496,9 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
 }
 
 .ne-value-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7513,15 +7513,15 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
 }
 
 .ne-value-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.9;
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.85;
 }
 
 .ne-value-label {
   display: block;
-  margin-bottom: 0.45rem;
-  font-size: 0.7rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.66rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.72;
@@ -7531,7 +7531,7 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
 .ne-value-body p,
 .ne-value-cell p {
   color: rgba(255,255,255,0.82);
-  line-height: 1.72;
+  line-height: 1.62;
 }
 
 .ne-value-board-top p {
@@ -7554,4 +7554,55 @@ body.page-orchard-mesa-homes .market-strip-eyebrow span {
   .ne-value-cell {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* Northeast value board tightened */
+.ne-value-board {
+  padding: 1.15rem;
+  border-radius: 24px;
+}
+
+.ne-value-board-top {
+  margin-bottom: 0.8rem;
+}
+
+.ne-value-board-grid {
+  gap: 0.7rem;
+}
+
+.ne-value-cell {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 0.65rem;
+  border-radius: 16px;
+  padding: 0.72rem 0.75rem;
+}
+
+.ne-value-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+}
+
+.ne-value-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 1.9;
+}
+
+.ne-value-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+}
+
+.ne-value-body p,
+.ne-value-cell p {
+  line-height: 1.5;
+  font-size: 0.94rem;
+}
+
+.ne-value-board-top p {
+  margin-top: 0.35rem;
+  line-height: 1.55;
 }
