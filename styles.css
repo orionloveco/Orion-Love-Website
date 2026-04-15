@@ -1991,38 +1991,19 @@ body.page-clifton-grand-junction .divider::before, body.page-clifton-grand-junct
 body.page-clifton-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-clifton-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-clifton-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-clifton-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-clifton-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-clifton-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-clifton-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-clifton-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-clifton-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-clifton-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-clifton-grand-junction .copy h2 {margin-bottom:0.85rem;}
 body.page-clifton-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-clifton-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-clifton-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-clifton-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-clifton-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-clifton-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-clifton-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);}
-body.page-clifton-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-clifton-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-clifton-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-clifton-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-clifton-grand-junction .card:hover::before {opacity:1;}
-body.page-clifton-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-clifton-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-clifton-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-clifton-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-clifton-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-clifton-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-clifton-grand-junction .dark-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-clifton-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-clifton-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-clifton-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-clifton-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-clifton-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-clifton-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-clifton-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -2565,40 +2546,21 @@ body.page-downtown-grand-junction .divider::before, body.page-downtown-grand-jun
 body.page-downtown-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-downtown-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-downtown-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-downtown-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-downtown-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-downtown-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-downtown-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-downtown-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-downtown-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-downtown-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-downtown-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-downtown-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-downtown-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-downtown-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-downtown-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-downtown-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-downtown-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-downtown-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-downtown-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-downtown-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-downtown-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-downtown-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-downtown-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-downtown-grand-junction .card:hover::before {opacity:1;}
-body.page-downtown-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-downtown-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-downtown-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-downtown-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-downtown-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-downtown-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-downtown-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-downtown-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-downtown-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-downtown-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-downtown-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-downtown-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-downtown-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3791,31 +3753,13 @@ body.page-loma-mack-grand-junction .divider::before, body.page-loma-mack-grand-j
 body.page-loma-mack-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-loma-mack-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-loma-mack-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-loma-mack-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-loma-mack-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-loma-mack-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-loma-mack-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-loma-mack-grand-junction .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-loma-mack-grand-junction .copy h2 {margin-bottom:0.85rem;}
 body.page-loma-mack-grand-junction .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-loma-mack-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-loma-mack-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-loma-mack-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-loma-mack-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-loma-mack-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--navy);}
-body.page-loma-mack-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-loma-mack-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-loma-mack-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-loma-mack-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-loma-mack-grand-junction .card:hover::before {opacity:1;}
-body.page-loma-mack-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-loma-mack-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-loma-mack-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-loma-mack-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-loma-mack-grand-junction .note-box {background:rgba(184,146,58,0.06);border:1px solid rgba(184,146,58,0.22);border-radius:var(--radius-md);padding:1.75rem 1.5rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .note-box h4 {font-family:"Raleway",sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.75rem;}
 body.page-loma-mack-grand-junction .note-box p {color:var(--text);font-size:0.95rem;line-height:1.8;}
@@ -3825,7 +3769,6 @@ body.page-loma-mack-grand-junction .dark-inner {position:relative;z-index:1;text
 body.page-loma-mack-grand-junction .dark-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-loma-mack-grand-junction .dark-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-loma-mack-grand-junction .dark-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-loma-mack-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-loma-mack-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3890,40 +3833,21 @@ body.page-north-grand-junction .divider::before, body.page-north-grand-junction 
 body.page-north-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-north-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-north-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-north-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-north-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-north-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-north-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-north-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-north-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-north-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-north-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-north-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-north-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-north-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-north-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-north-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-north-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-north-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-north-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-north-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-north-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-north-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-north-grand-junction .card:hover::before {opacity:1;}
-body.page-north-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-north-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-north-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-north-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-north-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-north-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-north-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-north-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-north-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-north-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-north-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-north-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-north-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -3988,40 +3912,21 @@ body.page-northeast-grand-junction .divider::before, body.page-northeast-grand-j
 body.page-northeast-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-northeast-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-northeast-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-northeast-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-northeast-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-northeast-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-northeast-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-northeast-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-northeast-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northeast-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northeast-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northeast-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-northeast-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-northeast-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-northeast-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-northeast-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-northeast-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-northeast-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northeast-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-northeast-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-northeast-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-northeast-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-northeast-grand-junction .card:hover::before {opacity:1;}
-body.page-northeast-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-northeast-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-northeast-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-northeast-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-northeast-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-northeast-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-northeast-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-northeast-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-northeast-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-northeast-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-northeast-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northeast-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northeast-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -4086,40 +3991,21 @@ body.page-northwest-grand-junction .divider::before, body.page-northwest-grand-j
 body.page-northwest-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-northwest-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-northwest-grand-junction .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-northwest-grand-junction .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-northwest-grand-junction .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-northwest-grand-junction .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-northwest-grand-junction .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-northwest-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-northwest-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-northwest-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
 body.page-northwest-grand-junction .intro-copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
-body.page-northwest-grand-junction .quick-facts {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-md);padding:1.75rem 1.5rem;}
-body.page-northwest-grand-junction .quick-facts h4 {font-family:"Raleway",sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
-body.page-northwest-grand-junction .fact-row {display:flex;justify-content:space-between;align-items:center;padding:0.65rem 0;border-bottom:1px solid var(--sand);}
-body.page-northwest-grand-junction .fact-row:last-child {border-bottom:none;}
-body.page-northwest-grand-junction .fact-label {font-size:0.88rem;color:var(--muted);}
-body.page-northwest-grand-junction .fact-value {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--navy);}
 body.page-northwest-grand-junction .market-note {font-size:0.78rem;letter-spacing:0.04em;color:var(--muted);margin:-0.35rem 0 0.9rem;}
-body.page-northwest-grand-junction .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-northwest-grand-junction .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-northwest-grand-junction .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-northwest-grand-junction .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-northwest-grand-junction .card:hover::before {opacity:1;}
-body.page-northwest-grand-junction .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-northwest-grand-junction .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-northwest-grand-junction .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-northwest-grand-junction .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-northwest-grand-junction .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-northwest-grand-junction .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-northwest-grand-junction .dark-band-inner {position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
 body.page-northwest-grand-junction .dark-band-inner h2 {color:var(--white);font-weight:300;margin-bottom:1rem;}
 body.page-northwest-grand-junction .dark-band-inner h2 em {font-style:italic;color:var(--gold-lt);}
 body.page-northwest-grand-junction .dark-band-inner p {color:rgba(255,255,255,0.58);font-size:1rem;line-height:1.85;margin-bottom:2rem;}
-body.page-northwest-grand-junction .cta-pair {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 body.page-northwest-grand-junction .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 body.page-northwest-grand-junction .link-card {background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius-sm);padding:1.25rem;text-decoration:none;display:flex;align-items:center;gap:0.75rem;transition:border-color 0.22s,transform 0.22s;}
 body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
@@ -4184,13 +4070,10 @@ body.page-orchard-mesa-homes .divider::before, body.page-orchard-mesa-homes .div
 body.page-orchard-mesa-homes .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .hero-inner {position:relative;z-index:1;max-width:760px;padding-top:4rem;}
 body.page-orchard-mesa-homes .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.page-orchard-mesa-homes .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.page-orchard-mesa-homes .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
 body.page-orchard-mesa-homes .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body.page-orchard-mesa-homes .hero-lead {font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:56ch;line-height:1.9;margin-bottom:2.5rem;}
-body.page-orchard-mesa-homes .hero-cta {display:flex;gap:1rem;flex-wrap:wrap;}
 body.page-orchard-mesa-homes .two-col {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 body.page-orchard-mesa-homes .copy h2 {margin-bottom:0.85rem;}
 body.page-orchard-mesa-homes .copy p {color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:1rem;}
@@ -4199,15 +4082,6 @@ body.page-orchard-mesa-homes .stat-box {background:var(--cream);padding:1.75rem 
 body.page-orchard-mesa-homes .stat-val {font-family:"Cormorant Garamond",serif;font-size:2.4rem;color:var(--navy);line-height:1;}
 body.page-orchard-mesa-homes .stat-val span {font-size:1.3rem;color:var(--gold);}
 body.page-orchard-mesa-homes .stat-lbl {font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:0.35rem;}
-body.page-orchard-mesa-homes .card-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:2.75rem;}
-body.page-orchard-mesa-homes .card {background:var(--white);border:1px solid var(--sand);border-radius:var(--radius-md);padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform 0.28s,box-shadow 0.28s,border-color 0.28s;}
-body.page-orchard-mesa-homes .card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.28s;}
-body.page-orchard-mesa-homes .card:hover {transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(184,146,58,0.22);}
-body.page-orchard-mesa-homes .card:hover::before {opacity:1;}
-body.page-orchard-mesa-homes .card-icon {width:48px;height:48px;border-radius:12px;background:rgba(184,146,58,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
-body.page-orchard-mesa-homes .card-icon svg {width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;}
-body.page-orchard-mesa-homes .card h3 {font-size:1.15rem;color:var(--navy);margin-bottom:0.6rem;}
-body.page-orchard-mesa-homes .card p {color:var(--muted);font-size:0.95rem;line-height:1.8;}
 body.page-orchard-mesa-homes .dark-band {background:var(--navy);position:relative;overflow:hidden;}
 body.page-orchard-mesa-homes .dark-band::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(184,146,58,0.07),transparent 70%);pointer-events:none;}
 body.page-orchard-mesa-homes .dark-inner {position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
@@ -6679,6 +6553,289 @@ body.page-services .services-hero .hero-inner .hero-cta {
 
 .section-shell-cream {
   background: var(--cream);
+}
+
+/* Shared neighborhood template layer (additive) */
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  padding-top: 4rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero-lead {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 56ch;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184,146,58,0.22);
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card:hover::before {
+  opacity: 1;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(184,146,58,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction,
+  .page-orchard-mesa-homes
+) .card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .quick-facts {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .quick-facts h4 {
+  font-family: "Raleway",sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .fact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .fact-row:last-child {
+  border-bottom: none;
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .fact-label {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .fact-value {
+  font-family: "Cormorant Garamond",serif;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+body:is(
+  .page-clifton-grand-junction,
+  .page-downtown-grand-junction,
+  .page-loma-mack-grand-junction,
+  .page-north-grand-junction,
+  .page-northeast-grand-junction,
+  .page-northwest-grand-junction
+) .cta-pair {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .section-shell-top {
