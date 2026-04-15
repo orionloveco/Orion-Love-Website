@@ -909,6 +909,7 @@ p { color: var(--text); }
 
 /* ===== Shared mobile overlay helper ===== */
 #mobileNavOverlay { display:none; position:fixed; inset:0; width:100vw; height:100vh; background:rgb(12,26,61); flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; z-index:99999; list-style:none; margin:0; padding:0; }
+#mobileNavOverlay.open { display:flex; }
 #mobileNavOverlay a { font-size:1.5rem; color:#ffffff; text-decoration:none; font-family:"Cormorant Garamond", serif; font-weight:400; letter-spacing:0.05em; }
 #mobileNavOverlay .btn-nav { border:1px solid rgba(184,146,58,0.55); border-radius:999px; padding:0.75rem 1.6rem; color:#d4aa5a; }
 body.mobile-nav-open { overflow:hidden; }

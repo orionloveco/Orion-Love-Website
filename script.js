@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <span class="logo-main">Orion Love | Colorado Realtor®</span>
     </a>
     <ul class="nav-menu" id="navMenu">${navItems}</ul>
-    <button aria-label="Toggle menu" class="mobile-toggle" id="mobileToggle">
+    <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavOverlay" class="mobile-toggle" id="mobileToggle">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -195,20 +195,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const openMenu = () => {
-      overlay.style.display = 'flex';
+      overlay.classList.add('open');
       mobileToggle.classList.add('active');
+      mobileToggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('mobile-nav-open');
     };
 
     const closeMenu = () => {
-      overlay.style.display = 'none';
+      overlay.classList.remove('open');
       mobileToggle.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('mobile-nav-open');
     };
 
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (overlay.style.display === 'flex') closeMenu();
+      if (overlay.classList.contains('open')) closeMenu();
       else openMenu();
     });
 
