@@ -5256,7 +5256,7 @@ body[class*="page-"] .cta-content .lead {
 }
 
 /* Normalize hero width across standardized core/local pages */
-body.page-index .hero-content,
+body.page-index .hero-inner,
 body.page-about .hero-content,
 body.page-buyers .hero-inner,
 body.page-contact .hero-inner,
