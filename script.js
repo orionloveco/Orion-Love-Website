@@ -21,6 +21,120 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add(`page-${pageSlug}`);
   }
 
+
+  const SHARED_NAV_ITEMS = [
+    { href: 'index.html', label: 'Home' },
+    { href: 'services.html', label: 'Sellers' },
+    { href: 'buyers.html', label: 'Buyers' },
+    { href: 'about.html', label: 'About' },
+    { href: 'faq.html', label: 'FAQ' },
+    { href: 'contact.html', label: 'Contact', isButton: true },
+  ];
+
+  const FEATURED_AREA_LINKS = [
+    { href: 'grand-junction-home-value.html', icon: 'building-2', label: 'Grand Junction' },
+    { href: 'selling-in-fruita.html', icon: 'bike', label: 'Fruita' },
+    { href: 'selling-in-palisade.html', icon: 'leaf', label: 'Palisade' },
+    { href: 'clifton-grand-junction.html', icon: 'house', label: 'Clifton' },
+    { href: 'loma-mack-grand-junction.html', icon: 'mountain', label: 'Loma / Mack' },
+  ];
+
+  function renderSharedHeader(currentPath) {
+    const target = document.getElementById('siteHeader');
+    if (!target) return;
+
+    const navItems = SHARED_NAV_ITEMS.map((item) => {
+      const isActive = currentPath === item.href;
+      const activeClass = isActive ? ' class="active"' : '';
+      const currentAttr = isActive ? ' aria-current="page"' : '';
+      const btnClass = item.isButton ? ' class="btn-nav"' : activeClass;
+      const classAttr = item.isButton ? btnClass : activeClass;
+
+      return `<li><a${classAttr} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
+    }).join('');
+
+    target.innerHTML = `
+<header class="main-header" id="mainHeader">
+  <nav>
+    <a class="logo" href="index.html">
+      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">${navItems}</ul>
+    <button aria-label="Toggle menu" class="mobile-toggle" id="mobileToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>`;
+  }
+
+  function renderFeaturedAreas() {
+    const target = document.getElementById('featuredAreasLinks');
+    if (!target) return;
+
+    const links = FEATURED_AREA_LINKS.map(
+      (item) =>
+        `<a class="link-card" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
+    ).join('');
+
+    target.innerHTML = `
+<section class="bottom-city-links">
+  <div class="container">
+    <div class="bottom-city-links-shell">
+      <div class="bottom-city-links-intro">
+        <div class="bottom-city-links-label"><span>Featured Areas</span></div>
+        <h2>Explore Key Markets Around Mesa County</h2>
+        <p>A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+      </div>
+      <div class="link-grid">${links}</div>
+    </div>
+  </div>
+</section>`;
+  }
+
+  function renderSharedFooter() {
+    const target = document.getElementById('siteFooter');
+    if (!target) return;
+
+    target.innerHTML = `
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="logo-footer">Orion Love</h3>
+        <p>Helping Grand Junction homeowners buy and sell<br/>with clarity, confidence, and honest communication.</p>
+        <p class="footer-brand-note">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Sellers</a></li>
+          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:orion@orionlove.com">orion@orionlove.com</a></li>
+          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ${new Date().getFullYear()} Orion Love Real Estate. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>`;
+  }
+
+  renderSharedHeader(path);
+  renderFeaturedAreas();
+  renderSharedFooter();
+
   /* ============================================================
      Icons
      ============================================================ */
