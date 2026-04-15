@@ -5273,7 +5273,7 @@ body.page-orchard-mesa-homes .hero-inner,
 body.page-redlands-homes .hero-inner,
 body.page-selling-in-fruita .hero-inner,
 body.page-selling-in-palisade .hero-inner {
-  max-width: 760px;
+  max-width: 860px;
 }
 
 /* Keep CTA copy readable even when older page-specific rules linger */
