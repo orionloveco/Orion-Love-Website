@@ -1337,39 +1337,6 @@ body.page-about .cta-inner p {color: var(--muted);
       margin-left: auto;
       margin-right: auto;}
 body.page-about .cta-inner .btn-primary {display: inline-flex;}
-body.page-about .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-about .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-about .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-about .footer-brand p {color: rgba(255,255,255,0.48);
-      font-size: 0.9rem;
-      line-height: 1.7;}
-body.page-about .footer-links h4, body.page-about .footer-contact h4 {font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;}
-body.page-about .footer-links ul, body.page-about .footer-contact ul {list-style: none;}
-body.page-about .footer-links li, body.page-about .footer-contact li {margin-bottom: 0.6rem;}
-body.page-about .footer-links a, body.page-about .footer-contact a {text-decoration: none;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.9rem;
-      transition: color 0.2s;}
-body.page-about .footer-links a:hover, body.page-about .footer-contact a:hover {color: var(--gold-lt);}
-body.page-about .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-about .footer-bottom p {color: rgba(255,255,255,0.3);
-      font-size: 0.8rem;
-      text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }}
 body.page-about .reveal {opacity: 0;
@@ -1388,7 +1355,6 @@ body.page-about .approach-sticky {position: static;}
 body.page-about .stats-grid {grid-template-columns: 1fr;}
 body.page-about .stat + .stat::before {left: 20%; right: 20%; top: 0; bottom: auto;
         width: auto; height: 1px;}
-body.page-about .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-about .nav-menu {display: none;}
 body.page-about .mobile-toggle {display: flex;
         flex-direction: column;
@@ -1801,29 +1767,6 @@ body.page-buyers .cta-inner p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-body.page-buyers .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-buyers .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-buyers .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-buyers .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-buyers .footer-links h4, body.page-buyers .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;}
-body.page-buyers .footer-links ul, body.page-buyers .footer-contact ul {list-style: none;}
-body.page-buyers .footer-links li, body.page-buyers .footer-contact li {margin-bottom: 0.6rem;}
-body.page-buyers .footer-links a, body.page-buyers .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;}
-body.page-buyers .footer-links a:hover, body.page-buyers .footer-contact a:hover {color: var(--gold-lt);}
-body.page-buyers .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-buyers .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
 body.page-buyers .reveal {opacity: 0;
@@ -1839,7 +1782,6 @@ body.page-buyers .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-buyers .service-block:nth-child(even) .service-meta {order: 0;}
 body.page-buyers .service-block:nth-child(even) .service-details {order: 0;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-buyers .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-buyers .nav-menu {display: none;}
 body.page-buyers .mobile-toggle {display: flex !important;
         flex-direction: column;
@@ -2283,26 +2225,6 @@ body.page-contact .btn-gold-outline {display: inline-flex;
 body.page-contact .btn-gold-outline:hover {background: var(--gold);
       color: var(--white);
       transform: translateY(-2px);}
-body.page-contact .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-contact .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-contact .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-contact .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-contact .footer-links h4, body.page-contact .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;}
-body.page-contact .footer-links ul, body.page-contact .footer-contact ul {list-style: none;}
-body.page-contact .footer-links li, body.page-contact .footer-contact li {margin-bottom: 0.6rem;}
-body.page-contact .footer-links a, body.page-contact .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;}
-body.page-contact .footer-links a:hover, body.page-contact .footer-contact a:hover {color: var(--gold-lt);}
 body.page-contact .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;
       display: flex;
@@ -2323,7 +2245,6 @@ body.page-contact .reveal.visible {opacity: 1; transform: none;}
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
 body.page-contact .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-contact .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
 body.page-contact .form-row {grid-template-columns: 1fr;}
@@ -2735,29 +2656,6 @@ body.page-faq .cta-band-copy h2 em {font-style: italic; color: var(--gold-lt);}
 body.page-faq .cta-band-copy p {color: rgba(255,255,255,0.55);
       font-size: 1rem;
       line-height: 1.8;}
-body.page-faq .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-faq .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-faq .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-faq .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-faq .footer-links h4, body.page-faq .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;}
-body.page-faq .footer-links ul, body.page-faq .footer-contact ul {list-style: none;}
-body.page-faq .footer-links li, body.page-faq .footer-contact li {margin-bottom: 0.6rem;}
-body.page-faq .footer-links a, body.page-faq .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;}
-body.page-faq .footer-links a:hover, body.page-faq .footer-contact a:hover {color: var(--gold-lt);}
-body.page-faq .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-faq .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
 body.page-faq .reveal {opacity: 0;
@@ -2769,7 +2667,6 @@ body.page-faq .faq-grid {grid-template-columns: 1fr;}
 body.page-faq .faq-item.full {grid-column: auto;}
 body.page-faq .faq-panel-header {grid-template-columns: 1fr; gap: 1.25rem;}
 body.page-faq .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-faq .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
 body.page-faq .nav-menu {display: none;}
@@ -2985,19 +2882,6 @@ body.page-grand-junction-home-value .cta-band {background: linear-gradient(180de
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
-body.page-grand-junction-home-value .main-footer {background: var(--navy-mid); border-top: 1px solid rgba(184,146,58,0.15); padding: 3.5rem 0 2rem;}
-body.page-grand-junction-home-value .footer-grid {display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;}
-body.page-grand-junction-home-value .logo-footer {font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 400; color: var(--white); display: block; margin-bottom: 0.75rem;}
-body.page-grand-junction-home-value .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .footer-links h4, body.page-grand-junction-home-value .footer-contact h4 {font-family: "Raleway", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;}
-body.page-grand-junction-home-value .footer-links ul, body.page-grand-junction-home-value .footer-contact ul {list-style: none;}
-body.page-grand-junction-home-value .footer-links li, body.page-grand-junction-home-value .footer-contact li {margin-bottom: 0.6rem;}
-body.page-grand-junction-home-value .footer-links a, body.page-grand-junction-home-value .footer-contact a {color: rgba(255,255,255,0.52); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;}
-body.page-grand-junction-home-value .footer-links a:hover, body.page-grand-junction-home-value .footer-contact a:hover {color: var(--gold-lt);}
-body.page-grand-junction-home-value .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
-body.page-grand-junction-home-value .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-grand-junction-home-value .footer-bottom a {color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.8rem;}
-body.page-grand-junction-home-value .footer-bottom a:hover {color: var(--gold-lt);}
 body.page-grand-junction-home-value .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
 body.page-grand-junction-home-value .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
@@ -3008,7 +2892,6 @@ body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2
 body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
 body.page-grand-junction-home-value .stat-item:nth-child(1), body.page-grand-junction-home-value .stat-item:nth-child(2) {border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-grand-junction-home-value .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-grand-junction-home-value .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
@@ -3369,39 +3252,6 @@ body.page-index .process-step h3 {font-size: 1.15rem;
 body.page-index .process-step p {color: var(--muted);
       font-size: 0.93rem;
       line-height: 1.8;}
-body.page-index .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-index .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-index .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-index .footer-brand p {color: rgba(255,255,255,0.45);
-      font-size: 0.9rem;
-      line-height: 1.7;}
-body.page-index .footer-links h4, body.page-index .footer-contact h4 {font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;}
-body.page-index .footer-links ul, body.page-index .footer-contact ul {list-style: none;}
-body.page-index .footer-links li, body.page-index .footer-contact li {margin-bottom: 0.6rem;}
-body.page-index .footer-links a, body.page-index .footer-contact a {text-decoration: none;
-      color: rgba(255,255,255,0.52);
-      font-size: 0.9rem;
-      transition: color 0.2s;}
-body.page-index .footer-links a:hover, body.page-index .footer-contact a:hover {color: var(--gold-lt);}
-body.page-index .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-index .footer-bottom p {color: rgba(255,255,255,0.28);
-      font-size: 0.8rem;
-      text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }}
 body.page-index .reveal {opacity: 0;
@@ -3416,7 +3266,6 @@ body.page-index .process-grid::before {display: none;}
 }
 @media (max-width: 768px) {
 body.page-index .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
-body.page-index .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-index .nav-menu {display: none;}
 body.page-index .mobile-toggle {display: flex;
         flex-direction: column;
@@ -4451,29 +4300,6 @@ body.page-services .cta-band-inner p {color: var(--muted);
       max-width: 52ch;
       margin-left: auto;
       margin-right: auto;}
-body.page-services .main-footer {background: var(--navy-mid);
-      border-top: 1px solid rgba(184,146,58,0.15);
-      padding: 3.5rem 0 2rem;}
-body.page-services .footer-grid {display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 2.5rem;}
-body.page-services .logo-footer {font-family: "Cormorant Garamond", serif;
-      font-size: 1.5rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;}
-body.page-services .footer-brand p {color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7;}
-body.page-services .footer-links h4, body.page-services .footer-contact h4 {font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1rem;}
-body.page-services .footer-links ul, body.page-services .footer-contact ul {list-style: none;}
-body.page-services .footer-links li, body.page-services .footer-contact li {margin-bottom: 0.6rem;}
-body.page-services .footer-links a, body.page-services .footer-contact a {text-decoration: none; color: rgba(255,255,255,0.52);
-      font-size: 0.9rem; transition: color 0.2s;}
-body.page-services .footer-links a:hover, body.page-services .footer-contact a:hover {color: var(--gold-lt);}
-body.page-services .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;}
-body.page-services .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem; text-align: center;}
 @keyframes fadeUp {from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }}
 body.page-services .reveal {opacity: 0;
@@ -4486,7 +4312,6 @@ body.page-services .service-block:nth-child(even) .service-meta {order: 0;}
 body.page-services .service-block:nth-child(even) .service-details {order: 0;}
 body.page-services .fee-grid {grid-template-columns: 1fr;}
 body.page-services .fee-full {grid-template-columns: 1fr; gap: 1.75rem;}
-body.page-services .footer-grid {grid-template-columns: 1fr; gap: 2rem;}
 body.page-services .nav-menu {display: none;}
 body.page-services .mobile-toggle {display: flex !important;
         flex-direction: column;
@@ -4551,15 +4376,6 @@ body.page-services .nav-menu.active .btn-nav {border: 1px solid var(--gold);
 .form-message.error,   #fruFormMsg.error,   #palFormMsg.error,   #valFormMsg.error   { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
 .success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
 .error   { background: rgba(200,60,60,0.08);  border: 1px solid rgba(200,60,60,0.2);  color: #8b2020; }
-
-/* Footer bottom flex layout (used on most pages) */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
 
 /* Shared bottom city cards across main pages and area pages */
 .bottom-city-links .link-grid {
