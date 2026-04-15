@@ -4360,15 +4360,6 @@ body.page-services .cta-band-inner p {
   text-align: left;
 }
 
-.hero-content.centered .hero-subtitle {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.hero-eyebrow.centered {
-  justify-content: flex-start;
-}
-
 body.page-index .process-preview .process-steps {
   margin-bottom: 2.5rem;
 }
@@ -6058,10 +6049,6 @@ body.page-privacy .last-updated svg {
 
 body.page-privacy .privacy-content {
   padding: 2.2rem 2.2rem 2.6rem;
-}
-
-@media (max-width: 900px) {
-  body.page-privacy .privacy-intro,
 }
 
 @media (max-width: 640px) {
