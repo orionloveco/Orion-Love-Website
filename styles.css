@@ -106,7 +106,8 @@ p { color: var(--text); }
 .section-header.centered { text-align: center; }
 .section-header h2 { margin-bottom: 0.5rem; }
 
-.section-intro {
+.section-intro,
+.lead {
   font-size: 1.05rem;
   color: var(--muted);
   margin-top: 0.6rem;
@@ -410,13 +411,20 @@ p { color: var(--text); }
     linear-gradient(rgba(12, 26, 61, 0.72), rgba(12, 26, 61, 0.72));
 }
 
-.hero-content {
+.hero-content,
+.hero-inner {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   padding: clamp(4.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) 3.25rem;
+  text-align: left;
+}
+
+.hero .container > .hero-inner {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .hero-eyebrow {
@@ -458,7 +466,8 @@ p { color: var(--text); }
   color: var(--gold-lt);
 }
 
-.hero-subtitle {
+.hero-subtitle,
+.hero-lead {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
   color: rgba(255, 255, 255, 0.78);
   max-width: 54ch;
@@ -3867,417 +3876,6 @@ body.page-index .process-preview .process-steps {
 }
 
 /* =========================================================
-   Shared nav + hero standardization
-   Scope: nav/header and hero only
-   Added after HTML standardization pass so shared patterns
-   override older page-specific rules without touching lower sections.
-========================================================= */
-
-/* ---------- Shared nav ---------- */
-body[class^="page-"] .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: background 0.35s, box-shadow 0.35s;
-}
-
-body[class^="page-"] .main-header.scrolled,
-body.page-contact .main-header,
-body.page-privacy .main-header {
-  background: rgba(12, 26, 61, 0.97);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(184, 146, 58, 0.18);
-}
-
-body[class^="page-"] .main-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-}
-
-body[class^="page-"] .logo {
-  text-decoration: none;
-}
-
-body[class^="page-"] .logo-main {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--white);
-  letter-spacing: 0.04em;
-}
-
-body[class^="page-"] .nav-menu {
-  display: flex;
-  gap: 2.25rem;
-  list-style: none;
-  align-items: center;
-}
-
-body[class^="page-"] .nav-menu a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-  position: relative;
-}
-
-body[class^="page-"] .nav-menu a:not(.btn-nav)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.25s ease;
-}
-
-body[class^="page-"] .nav-menu a:not(.btn-nav):hover::after,
-body[class^="page-"] .nav-menu a.active::after {
-  width: 100%;
-}
-
-body[class^="page-"] .nav-menu a:hover,
-body[class^="page-"] .nav-menu a.active {
-  color: var(--gold-lt);
-}
-
-body[class^="page-"] .btn-nav {
-  background: transparent !important;
-  border: 1px solid rgba(184, 146, 58, 0.55) !important;
-  color: var(--gold-lt) !important;
-  padding: 0.5rem 1.3rem;
-  border-radius: 40px;
-  transition: background 0.22s, border-color 0.22s !important;
-}
-
-body[class^="page-"] .btn-nav:hover {
-  background: rgba(184, 146, 58, 0.12) !important;
-  border-color: var(--gold-lt) !important;
-}
-
-body[class^="page-"] .btn-nav::after {
-  display: none !important;
-}
-
-body[class^="page-"] .mobile-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-
-body[class^="page-"] .mobile-toggle span {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.25s ease;
-}
-
-/* ---------- Shared hero wrappers ---------- */
-/* Compatibility alias: .buyers-hero/.services-hero/.contact-hero/.faq-hero all carry .hero */
-body.page-hero-aligned .hero {
-  position: relative;
-  overflow: hidden;
-  color: var(--white);
-}
-
-body.page-hero-aligned:not(.page-buyers):not(.page-services):not(.page-contact):not(.page-faq) .hero {
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-}
-
-body.page-buyers .hero,
-body.page-services .hero,
-body.page-contact .contact-hero,
-body.page-faq .faq-hero {
-  padding: clamp(7rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 6rem);
-  text-align: left;
-}
-
-body.page-buyers .hero .container,
-body.page-services .hero .container,
-body.page-contact .contact-hero .container,
-body.page-faq .faq-hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Compatibility alias: support legacy .hero-content and current .hero-inner */
-body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1120px;
-  margin: 0;
-  padding: clamp(4.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) 3.25rem;
-  text-align: left;
-}
-
-body.page-buyers .hero .hero-inner,
-body.page-services .hero .hero-inner,
-body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-body.page-hero-aligned .hero .container > :is(.hero-inner, .hero-content) {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Compatibility alias: normalize all page-hero-aligned eyebrow variants */
-body.page-hero-aligned .hero .hero-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-lt);
-  font-weight: 600;
-}
-
-body.page-hero-aligned .hero .hero-eyebrow::before,
-body.page-hero-aligned .hero .hero-eyebrow::after {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.6;
-}
-
-body.page-hero-aligned .hero .hero-eyebrow span {
-  color: inherit;
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  font-weight: inherit;
-}
-
-/* Compatibility alias: map .hero-title and plain h1 into one contract */
-body.page-hero-aligned .hero :is(h1, .hero-title) {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: 0.01em;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  max-width: 14ch;
-}
-
-body.page-hero-aligned .hero :is(h1, .hero-title) em {
-  color: var(--gold-lt);
-  font-style: italic;
-}
-
-/* Compatibility alias: map legacy .hero-subtitle and current .hero-lead */
-body.page-hero-aligned .hero :is(.hero-lead, .hero-subtitle) {
-  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 54ch;
-  line-height: 1.85;
-  margin: 0 0 2.5rem;
-  font-weight: 300;
-}
-
-body.page-hero-aligned .hero .hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-body.page-index .hero-trust,
-body.page-about .hero-trust {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-@media (max-width: 968px) {
-  body[class^="page-"] .mobile-toggle {
-    display: flex;
-  }
-
-  body[class^="page-"] .nav-menu {
-    position: fixed;
-    top: 72px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 72px);
-    background: rgba(12, 26, 61, 0.97);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2.5rem 2rem;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  body[class^="page-"] .nav-menu.active {
-    left: 0;
-  }
-
-  body.page-hero-aligned .hero :is(.hero-inner, .hero-content) {
-    padding-top: clamp(6rem, 10vw, 7rem);
-    padding-bottom: 2.5rem;
-  }
-
-  body.page-hero-aligned .hero .hero-cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* =========================================================
-   Standardization pass: shared section headers + spacing only
-   Scoped to standardized page families. No card/CTA/footer changes.
-   ========================================================= */
-
-body[class^="page-"] .section-header {
-  margin-bottom: 2rem;
-}
-
-body[class^="page-"] .section-header.centered {
-  text-align: center;
-}
-
-body[class^="page-"] .section-header h2 {
-  margin-bottom: 0.5rem;
-}
-
-body[class^="page-"] .section-intro,
-body[class^="page-"] .lead {
-  font-size: 1.05rem;
-  color: var(--muted);
-  margin-top: 0.6rem;
-  max-width: 62ch;
-  line-height: 1.85;
-}
-
-body[class^="page-"] .section-header.centered .section-intro,
-body[class^="page-"] .section-header.centered .lead,
-body[class^="page-"] .cta-content .section-intro,
-body[class^="page-"] .cta-content .lead {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body[class^="page-"] .section-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.1rem;
-}
-
-body[class^="page-"] .section-label.centered {
-  justify-content: center;
-}
-
-body[class^="page-"] .usp-grid,
-body[class^="page-"] .process-steps,
-body[class^="page-"] .promise-grid,
-body[class^="page-"] .card-grid,
-body[class^="page-"] .stat-grid,
-body[class^="page-"] .stats-grid,
-body[class^="page-"] .link-grid,
-body[class^="page-"] .intro-grid,
-body[class^="page-"] .snapshot-inner,
-body[class^="page-"] .identity-inner,
-body[class^="page-"] .two-col,
-body[class^="page-"] .contact-layout {
-  margin-top: 0;
-}
-
-body[class^="page-"] .section-header + .usp-grid,
-body[class^="page-"] .section-header + .process-steps,
-body[class^="page-"] .section-header + .promise-grid,
-body[class^="page-"] .section-header + .card-grid,
-body[class^="page-"] .section-header + .stats-grid,
-body[class^="page-"] .section-header + .link-grid,
-body[class^="page-"] .section-header + .intro-grid,
-body[class^="page-"] .section-header + .snapshot-inner,
-body[class^="page-"] .section-header + .identity-inner,
-body[class^="page-"] .section-header + .two-col,
-body[class^="page-"] .section-header + .contact-layout {
-  margin-top: 0;
-}
-
-body[class^="page-"] .usp-grid,
-body[class^="page-"] .process-steps,
-body[class^="page-"] .promise-grid,
-body[class^="page-"] .card-grid,
-body[class^="page-"] .stats-grid,
-body[class^="page-"] .link-grid,
-body[class^="page-"] .intro-grid,
-body[class^="page-"] .snapshot-inner,
-body[class^="page-"] .identity-inner,
-body[class^="page-"] .two-col,
-body[class^="page-"] .contact-layout {
-  margin-bottom: 2.5rem;
-}
-
-body.page-index .process-preview .process-steps {
-  margin-bottom: 2.5rem;
-}
-
-body.page-services #services .process-steps {
-  margin-bottom: 2.5rem;
-}
-
-body[class^="page-"] .cta-center,
-body[class^="page-"] .cta-content,
-body[class^="page-"] .faq-panel-header,
-body[class^="page-"] .promise-header {
-  margin-top: 0;
-}
-
-@media (max-width: 768px) {
-  body[class^="page-"] .section-header {
-    margin-bottom: 1.6rem;
-  }
-
-  body[class^="page-"] .usp-grid,
-  body[class^="page-"] .process-steps,
-  body[class^="page-"] .promise-grid,
-  body[class^="page-"] .card-grid,
-  body[class^="page-"] .stats-grid,
-  body[class^="page-"] .link-grid,
-  body[class^="page-"] .intro-grid,
-  body[class^="page-"] .snapshot-inner,
-  body[class^="page-"] .identity-inner,
-  body[class^="page-"] .two-col,
-  body[class^="page-"] .contact-layout {
-    margin-bottom: 2rem;
-  }
-}
-
-/* =========================================================
    Standardized card system overrides
    Scope: cards only
    ========================================================= */
@@ -4336,29 +3934,11 @@ body.page-buyers .promise-icon svg {
 }
 
 /* Bottom area link cards */
-body.page-clifton-grand-junction .link-grid,
-body.page-downtown-grand-junction .link-grid,
-body.page-loma-mack-grand-junction .link-grid,
-body.page-north-grand-junction .link-grid,
-body.page-northeast-grand-junction .link-grid,
-body.page-northwest-grand-junction .link-grid,
-body.page-orchard-mesa-homes .link-grid,
-body.page-redlands-homes .link-grid,
-body.page-selling-in-fruita .link-grid,
-body.page-selling-in-palisade .link-grid {
+body.page-local-area .link-grid {
   gap: 1rem;
 }
 
-body.page-clifton-grand-junction .link-card,
-body.page-downtown-grand-junction .link-card,
-body.page-loma-mack-grand-junction .link-card,
-body.page-north-grand-junction .link-card,
-body.page-northeast-grand-junction .link-card,
-body.page-northwest-grand-junction .link-card,
-body.page-orchard-mesa-homes .link-card,
-body.page-redlands-homes .link-card,
-body.page-selling-in-fruita .link-card,
-body.page-selling-in-palisade .link-card {
+body.page-local-area .link-card {
   position: relative;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
   border: 1px solid rgba(230, 224, 211, 0.95);
@@ -4372,16 +3952,7 @@ body.page-selling-in-palisade .link-card {
   transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
 }
 
-body.page-clifton-grand-junction .link-card::after,
-body.page-downtown-grand-junction .link-card::after,
-body.page-loma-mack-grand-junction .link-card::after,
-body.page-north-grand-junction .link-card::after,
-body.page-northeast-grand-junction .link-card::after,
-body.page-northwest-grand-junction .link-card::after,
-body.page-orchard-mesa-homes .link-card::after,
-body.page-redlands-homes .link-card::after,
-body.page-selling-in-fruita .link-card::after,
-body.page-selling-in-palisade .link-card::after {
+body.page-local-area .link-card::after {
   content: "→";
   margin-left: auto;
   color: var(--gold);
@@ -4390,31 +3961,13 @@ body.page-selling-in-palisade .link-card::after {
   opacity: 0.8;
 }
 
-body.page-clifton-grand-junction .link-card:hover,
-body.page-downtown-grand-junction .link-card:hover,
-body.page-loma-mack-grand-junction .link-card:hover,
-body.page-north-grand-junction .link-card:hover,
-body.page-northeast-grand-junction .link-card:hover,
-body.page-northwest-grand-junction .link-card:hover,
-body.page-orchard-mesa-homes .link-card:hover,
-body.page-redlands-homes .link-card:hover,
-body.page-selling-in-fruita .link-card:hover,
-body.page-selling-in-palisade .link-card:hover {
+body.page-local-area .link-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
   border-color: rgba(184, 146, 58, 0.28);
 }
 
-body.page-clifton-grand-junction .link-card svg,
-body.page-downtown-grand-junction .link-card svg,
-body.page-loma-mack-grand-junction .link-card svg,
-body.page-north-grand-junction .link-card svg,
-body.page-northeast-grand-junction .link-card svg,
-body.page-northwest-grand-junction .link-card svg,
-body.page-orchard-mesa-homes .link-card svg,
-body.page-redlands-homes .link-card svg,
-body.page-selling-in-fruita .link-card svg,
-body.page-selling-in-palisade .link-card svg {
+body.page-local-area .link-card svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -4422,16 +3975,7 @@ body.page-selling-in-palisade .link-card svg {
   flex-shrink: 0;
 }
 
-body.page-clifton-grand-junction .link-card span,
-body.page-downtown-grand-junction .link-card span,
-body.page-loma-mack-grand-junction .link-card span,
-body.page-north-grand-junction .link-card span,
-body.page-northeast-grand-junction .link-card span,
-body.page-northwest-grand-junction .link-card span,
-body.page-orchard-mesa-homes .link-card span,
-body.page-redlands-homes .link-card span,
-body.page-selling-in-fruita .link-card span,
-body.page-selling-in-palisade .link-card span {
+body.page-local-area .link-card span {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
@@ -4651,165 +4195,6 @@ body[class*="page-"] .footer-bottom a:hover {
     gap: 0.75rem;
     text-align: center;
   }
-}
-
-/* =========================================================
-   Final cleanup pass
-   Keeps the standardized page system in control when older
-   page-specific rules still exist earlier in the stylesheet.
-   Scoped to shared patterns only.
-========================================================= */
-
-/* Shared page-family body behavior */
-body[class*="page-"] {
-  overflow-x: hidden;
-}
-
-/* Normalize leftover intro paragraphs that still use .lead */
-body[class*="page-"] .section-header .lead,
-body[class*="page-"] .promise-header .lead,
-body[class*="page-"] .faq-panel-header > p,
-body[class*="page-"] .cta-content .lead {
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.85;
-  max-width: 62ch;
-}
-
-body[class*="page-"] .section-header.centered .lead,
-body[class*="page-"] .section-header.centered .section-intro,
-body[class*="page-"] .promise-header.centered .lead,
-body[class*="page-"] .cta-content .lead {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Normalize hero width across standardized core/local pages */
-body.page-index .hero-inner,
-body.page-about .hero-content,
-body.page-buyers .hero-inner,
-body.page-contact .hero-inner,
-body.page-faq .hero-inner,
-body.page-services .hero-inner,
-body.page-grand-junction-home-value .hero-inner,
-body.page-clifton-grand-junction .hero-inner,
-body.page-downtown-grand-junction .hero-inner,
-body.page-loma-mack-grand-junction .hero-inner,
-body.page-north-grand-junction .hero-inner,
-body.page-northeast-grand-junction .hero-inner,
-body.page-northwest-grand-junction .hero-inner,
-body.page-orchard-mesa-homes .hero-inner,
-body.page-redlands-homes .hero-inner,
-body.page-selling-in-fruita .hero-inner,
-body.page-selling-in-palisade .hero-inner {
-  max-width: 860px;
-}
-
-/* Keep CTA copy readable even when older page-specific rules linger */
-body[class*="page-"] .cta-band-copy h2,
-body[class*="page-"] .cta-band-copy h3 {
-  color: var(--white);
-}
-
-body[class*="page-"] .cta-band-copy p {
-  color: rgba(255, 255, 255, 0.74);
-}
-
-/* Standardize footer alignment if old page-specific styles remain */
-body[class*="page-"] .footer-bottom {
-  text-align: left;
-}
-
-@media (max-width: 900px) {
-  body[class*="page-"] .footer-bottom {
-    text-align: center;
-  }
-}
-
-/* Privacy page cleanup to match page-family convention */
-body.page-privacy .footer-bottom {
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Hero typography/spacing normalization across page-family templates */
-body.page-hero-aligned .hero .hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.35rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-lt);
-  font-weight: 600;
-}
-
-body.page-hero-aligned .hero .hero-eyebrow::before,
-body.page-hero-aligned .hero .hero-eyebrow::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.65;
-}
-
-body.page-hero-aligned .hero .hero-eyebrow span {
-  color: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  font-weight: inherit;
-}
-
-body.page-hero-aligned .hero h1,
-body.page-hero-aligned .hero .hero-title {
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1.35rem;
-  max-width: 16ch;
-}
-
-body.page-hero-aligned .hero h1 em,
-body.page-hero-aligned .hero .hero-title em {
-  color: var(--gold-lt);
-}
-
-body.page-hero-aligned .hero .hero-lead,
-body.page-hero-aligned .hero .hero-subtitle {
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 56ch;
-  line-height: 1.85;
-  margin: 0 0 2.25rem;
-}
-
-body.page-hero-aligned .hero .hero-cta {
-  margin-bottom: 2.75rem;
-}
-
-body.page-contact .contact-hero .hero-inner,
-body.page-faq .faq-hero .hero-inner,
-body.page-services .services-hero .hero-inner {
-  text-align: left;
-}
-
-body.page-contact .contact-hero .hero-inner .hero-eyebrow,
-body.page-faq .faq-hero .hero-inner .hero-eyebrow,
-body.page-services .services-hero .hero-inner .hero-eyebrow {
-  justify-content: flex-start;
-}
-
-body.page-contact .contact-hero .hero-inner .hero-lead,
-body.page-faq .faq-hero .hero-inner .hero-lead,
-body.page-services .services-hero .hero-inner .hero-lead {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-body.page-contact .contact-hero .hero-inner .hero-cta,
-body.page-faq .faq-hero .hero-inner .hero-cta,
-body.page-services .services-hero .hero-inner .hero-cta {
-  justify-content: flex-start;
 }
 
 /* ============================================================
