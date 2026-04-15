@@ -1421,23 +1421,44 @@ body.page-buyers .service-block:nth-child(even) .service-details {order: 0;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 
+/* ===== Shared local-area primitive bridge ===== */
+body:is(.page-clifton-grand-junction,
+        .page-downtown-grand-junction,
+        .page-grand-junction-home-value,
+        .page-loma-mack-grand-junction,
+        .page-north-grand-junction,
+        .page-northeast-grand-junction,
+        .page-northwest-grand-junction,
+        .page-orchard-mesa-homes,
+        .page-redlands-homes,
+        .page-selling-in-fruita,
+        .page-selling-in-palisade) .btn-outline-gold {
+  padding: 0.9rem 2.2rem;
+  border-color: rgba(184,146,58,0.55);
+}
+body:is(.page-clifton-grand-junction,
+        .page-downtown-grand-junction,
+        .page-grand-junction-home-value,
+        .page-loma-mack-grand-junction,
+        .page-north-grand-junction,
+        .page-northeast-grand-junction,
+        .page-northwest-grand-junction,
+        .page-orchard-mesa-homes,
+        .page-redlands-homes,
+        .page-selling-in-fruita,
+        .page-selling-in-palisade) .btn-outline-gold:hover {
+  background: rgba(184,146,58,0.12);
+  color: var(--gold-lt);
+  box-shadow: none;
+}
+body:is(.page-grand-junction-home-value,
+        .page-selling-in-fruita,
+        .page-selling-in-palisade) .btn-outline-gold:hover {
+  border-color: var(--gold-lt);
+}
+
 /* ===== clifton-grand-junction.html ===== */
 body.page-clifton-grand-junction h1, body.page-clifton-grand-junction h2, body.page-clifton-grand-junction h3, body.page-clifton-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-clifton-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-clifton-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-clifton-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-clifton-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-clifton-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-clifton-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-clifton-grand-junction .section-label, body.page-downtown-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-clifton-grand-junction .section-label::before, body.page-downtown-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .section-label span, body.page-downtown-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-clifton-grand-junction .section-label.centered, body.page-downtown-grand-junction .section-label.centered {justify-content:center;}
-body.page-clifton-grand-junction .section-label.centered::after, body.page-downtown-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-clifton-grand-junction .divider, body.page-downtown-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-clifton-grand-junction .divider::before, body.page-clifton-grand-junction .divider::after, body.page-downtown-grand-junction .divider::before, body.page-downtown-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-clifton-grand-junction .divider-diamond, body.page-downtown-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-clifton-grand-junction .hero, body.page-downtown-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-clifton-grand-junction .hero::after, body.page-downtown-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-clifton-grand-junction .hero-eyebrow, body.page-downtown-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -1452,8 +1473,6 @@ body.page-clifton-grand-junction .link-card, body.page-downtown-grand-junction .
 body.page-clifton-grand-junction .link-card:hover, body.page-downtown-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-clifton-grand-junction .link-card svg, body.page-downtown-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-clifton-grand-junction .link-card span, body.page-downtown-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-clifton-grand-junction .reveal, body.page-downtown-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-clifton-grand-junction .reveal.visible, body.page-downtown-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-clifton-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -1698,13 +1717,6 @@ body.page-contact .form-row {grid-template-columns: 1fr;}
 
 /* ===== downtown-grand-junction.html ===== */
 body.page-downtown-grand-junction h1, body.page-downtown-grand-junction h2, body.page-downtown-grand-junction h3, body.page-downtown-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-downtown-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-downtown-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-downtown-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-downtown-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-downtown-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-downtown-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
 body.page-downtown-grand-junction .nbhd-intro {background:var(--white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
 body.page-downtown-grand-junction .intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 body.page-downtown-grand-junction .intro-copy h2 {margin-bottom:0.85rem;}
@@ -1972,30 +1984,6 @@ body.page-grand-junction-home-value .btn-nav:hover {background: rgba(184,146,58,
 body.page-grand-junction-home-value .mobile-toggle {display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-grand-junction-home-value .btn {display: inline-flex; align-items: center; gap: 0.5rem;
-      text-decoration: none; font-family: "Raleway", sans-serif;
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px;
-      transition: all 0.25s; cursor: pointer; border: none;}
-body.page-grand-junction-home-value .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-grand-junction-home-value .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,146,58,0.45);}
-body.page-grand-junction-home-value .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-grand-junction-home-value .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-grand-junction-home-value .btn-outline-gold {background: transparent; color: var(--gold-lt);
-      border: 1px solid rgba(184,146,58,0.55); border-radius: 50px;
-      padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: all 0.25s;}
-body.page-grand-junction-home-value .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-grand-junction-home-value .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-grand-junction-home-value .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-grand-junction-home-value .section-label.centered {justify-content: center;}
-body.page-grand-junction-home-value .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-grand-junction-home-value .divider::before, body.page-grand-junction-home-value .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-grand-junction-home-value .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-grand-junction-home-value .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
@@ -2088,8 +2076,6 @@ body.page-grand-junction-home-value .cta-band {background: linear-gradient(180de
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
-body.page-grand-junction-home-value .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-grand-junction-home-value .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
 body.page-grand-junction-home-value .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
 body.page-grand-junction-home-value .nav-menu.active {left: 0;}
@@ -2420,21 +2406,6 @@ body.page-index .process-grid {grid-template-columns: 1fr;}
 }
 /* ===== loma-mack-grand-junction.html ===== */
 body.page-loma-mack-grand-junction h1, body.page-loma-mack-grand-junction h2, body.page-loma-mack-grand-junction h3, body.page-loma-mack-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-loma-mack-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-loma-mack-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-loma-mack-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-loma-mack-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-loma-mack-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-loma-mack-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-loma-mack-grand-junction .section-label.centered {justify-content:center;}
-body.page-loma-mack-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-loma-mack-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-loma-mack-grand-junction .divider::before, body.page-loma-mack-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-loma-mack-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-loma-mack-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-loma-mack-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-loma-mack-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -2452,29 +2423,12 @@ body.page-loma-mack-grand-junction .link-card {background:var(--cream);border:1p
 body.page-loma-mack-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-loma-mack-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-loma-mack-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-loma-mack-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-loma-mack-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-loma-mack-grand-junction .two-col {grid-template-columns:1fr;gap:2.5rem;}
 }
 
 /* ===== north-grand-junction.html ===== */
 body.page-north-grand-junction h1, body.page-north-grand-junction h2, body.page-north-grand-junction h3, body.page-north-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-north-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-north-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-north-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-north-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-north-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-north-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-north-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-north-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-north-grand-junction .section-label.centered {justify-content:center;}
-body.page-north-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-north-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-north-grand-junction .divider::before, body.page-north-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-north-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-north-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-north-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-north-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -2491,29 +2445,12 @@ body.page-north-grand-junction .link-card {background:var(--cream);border:1px so
 body.page-north-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-north-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-north-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-north-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-north-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-north-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
 
 /* ===== northeast-grand-junction.html ===== */
 body.page-northeast-grand-junction h1, body.page-northeast-grand-junction h2, body.page-northeast-grand-junction h3, body.page-northeast-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northeast-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northeast-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northeast-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northeast-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northeast-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northeast-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-northeast-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-northeast-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-northeast-grand-junction .section-label.centered {justify-content:center;}
-body.page-northeast-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northeast-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-northeast-grand-junction .divider::before, body.page-northeast-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-northeast-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northeast-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northeast-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-northeast-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -2530,29 +2467,12 @@ body.page-northeast-grand-junction .link-card {background:var(--cream);border:1p
 body.page-northeast-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-northeast-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-northeast-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northeast-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-northeast-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-northeast-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
 
 /* ===== northwest-grand-junction.html ===== */
 body.page-northwest-grand-junction h1, body.page-northwest-grand-junction h2, body.page-northwest-grand-junction h3, body.page-northwest-grand-junction h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-northwest-grand-junction .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-northwest-grand-junction .btn-primary {background:var(--gold);color:var(--white);}
-body.page-northwest-grand-junction .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-navy {background:var(--navy);color:var(--white);}
-body.page-northwest-grand-junction .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-northwest-grand-junction .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-northwest-grand-junction .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-northwest-grand-junction .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-northwest-grand-junction .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-northwest-grand-junction .section-label.centered {justify-content:center;}
-body.page-northwest-grand-junction .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-northwest-grand-junction .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-northwest-grand-junction .divider::before, body.page-northwest-grand-junction .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-northwest-grand-junction .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-northwest-grand-junction .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-northwest-grand-junction .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-northwest-grand-junction .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -2569,29 +2489,12 @@ body.page-northwest-grand-junction .link-card {background:var(--cream);border:1p
 body.page-northwest-grand-junction .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-northwest-grand-junction .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-northwest-grand-junction .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-northwest-grand-junction .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-northwest-grand-junction .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-northwest-grand-junction .intro-grid {grid-template-columns:1fr;gap:2.5rem;}
 }
 
 /* ===== orchard-mesa-homes.html ===== */
 body.page-orchard-mesa-homes h1, body.page-orchard-mesa-homes h2, body.page-orchard-mesa-homes h3, body.page-orchard-mesa-homes h4 {font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.15;}
-body.page-orchard-mesa-homes .btn {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;font-family:"Raleway",sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.2rem;border-radius:50px;transition:all 0.25s;cursor:pointer;border:none;}
-body.page-orchard-mesa-homes .btn-primary {background:var(--gold);color:var(--white);box-shadow:0 4px 20px rgba(184,146,58,0.35);}
-body.page-orchard-mesa-homes .btn-primary:hover {background:var(--gold-lt);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-navy {background:var(--navy);color:var(--white);}
-body.page-orchard-mesa-homes .btn-navy:hover {background:var(--navy-mid);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .btn-outline-gold {background:transparent;color:var(--gold-lt);border:1px solid rgba(184,146,58,0.55);border-radius:50px;padding:0.9rem 2.2rem;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.25s;}
-body.page-orchard-mesa-homes .btn-outline-gold:hover {background:rgba(184,146,58,0.12);transform:translateY(-2px);}
-body.page-orchard-mesa-homes .section-label {display:flex;align-items:center;gap:0.8rem;margin-bottom:1.25rem;}
-body.page-orchard-mesa-homes .section-label::before {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .section-label span {font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;}
-body.page-orchard-mesa-homes .section-label.centered {justify-content:center;}
-body.page-orchard-mesa-homes .section-label.centered::after {content:"";display:block;width:28px;height:1px;background:var(--gold);}
-body.page-orchard-mesa-homes .divider {display:flex;align-items:center;gap:1.5rem;padding:0 clamp(1.25rem,4vw,2.5rem);max-width:1120px;margin:0 auto;}
-body.page-orchard-mesa-homes .divider::before, body.page-orchard-mesa-homes .divider::after {content:"";flex:1;height:1px;background:var(--sand);}
-body.page-orchard-mesa-homes .divider-diamond {width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:0.6;}
 body.page-orchard-mesa-homes .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.page-orchard-mesa-homes .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
 body.page-orchard-mesa-homes .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
@@ -2644,8 +2547,6 @@ body.page-orchard-mesa-homes .link-card {background:var(--cream);border:1px soli
 body.page-orchard-mesa-homes .link-card:hover {border-color:var(--gold);transform:translateY(-2px);}
 body.page-orchard-mesa-homes .link-card svg {width:15px;height:15px;stroke:var(--gold);stroke-width:2;flex-shrink:0;}
 body.page-orchard-mesa-homes .link-card span {font-size:0.88rem;font-weight:600;color:var(--navy);}
-body.page-orchard-mesa-homes .reveal {opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease;}
-body.page-orchard-mesa-homes .reveal.visible {opacity:1;transform:none;}
 @media (max-width:968px) {
 body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
 }
@@ -2693,21 +2594,6 @@ body.page-privacy .contact-box a:hover {color: var(--accent);}
 
 /* ===== redlands-homes.html ===== */
 body.page-redlands-homes h1, body.page-redlands-homes h2, body.page-redlands-homes h3, body.page-redlands-homes h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-redlands-homes .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-redlands-homes .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-redlands-homes .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-redlands-homes .btn-navy {background: var(--navy); color: var(--white);}
-body.page-redlands-homes .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-redlands-homes .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-redlands-homes .btn-outline-gold:hover {background: rgba(184,146,58,0.12); transform: translateY(-2px);}
-body.page-redlands-homes .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-redlands-homes .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-redlands-homes .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-redlands-homes .section-label.centered {justify-content: center;}
-body.page-redlands-homes .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-redlands-homes .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-redlands-homes .divider::before, body.page-redlands-homes .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-redlands-homes .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-redlands-homes .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background: linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%), url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-redlands-homes .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(184,146,58,0.22);}
@@ -2775,8 +2661,6 @@ body.page-redlands-homes .link-card {background: var(--cream); border: 1px solid
 body.page-redlands-homes .link-card:hover {border-color: var(--gold); transform: translateY(-2px);}
 body.page-redlands-homes .link-card svg {width: 15px; height: 15px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0;}
 body.page-redlands-homes .link-card span {font-size: 0.88rem; font-weight: 600; color: var(--navy);}
-body.page-redlands-homes .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-redlands-homes .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
 body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 }
@@ -2786,21 +2670,6 @@ body.page-redlands-homes .form-row {grid-template-columns: 1fr;}
 
 /* ===== selling-in-fruita.html ===== */
 body.page-selling-in-fruita h1, body.page-selling-in-fruita h2, body.page-selling-in-fruita h3, body.page-selling-in-fruita h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-fruita .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-fruita .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-fruita .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-fruita .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-fruita .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-fruita .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-fruita .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-selling-in-fruita .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-fruita .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-selling-in-fruita .section-label.centered {justify-content: center;}
-body.page-selling-in-fruita .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-fruita .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-selling-in-fruita .divider::before, body.page-selling-in-fruita .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-selling-in-fruita .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-selling-in-fruita .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
@@ -2868,8 +2737,6 @@ body.page-selling-in-fruita .consent-note a {color: var(--navy); text-decoration
 body.page-selling-in-fruita #fruFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-selling-in-fruita #fruFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-selling-in-fruita #fruFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-fruita .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-selling-in-fruita .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
 body.page-selling-in-fruita .snapshot-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-fruita .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
@@ -2882,21 +2749,6 @@ body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 
 /* ===== selling-in-palisade.html ===== */
 body.page-selling-in-palisade h1, body.page-selling-in-palisade h2, body.page-selling-in-palisade h3, body.page-selling-in-palisade h4 {font-family: "Cormorant Garamond", serif; font-weight: 400; line-height: 1.15;}
-body.page-selling-in-palisade .btn {display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-family: "Raleway", sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 50px; transition: all 0.25s; cursor: pointer; border: none;}
-body.page-selling-in-palisade .btn-primary {background: var(--gold); color: var(--white); box-shadow: 0 4px 20px rgba(184,146,58,0.35);}
-body.page-selling-in-palisade .btn-primary:hover {background: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-navy {background: var(--navy); color: var(--white); box-shadow: var(--shadow-sm);}
-body.page-selling-in-palisade .btn-navy:hover {background: var(--navy-mid); transform: translateY(-2px);}
-body.page-selling-in-palisade .btn-outline-gold {background: transparent; color: var(--gold-lt); border: 1px solid rgba(184,146,58,0.55); border-radius: 50px; padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.25s;}
-body.page-selling-in-palisade .btn-outline-gold:hover {background: rgba(184,146,58,0.12); border-color: var(--gold-lt); transform: translateY(-2px);}
-body.page-selling-in-palisade .section-label {display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.25rem;}
-body.page-selling-in-palisade .section-label::before {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-palisade .section-label span {font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600;}
-body.page-selling-in-palisade .section-label.centered {justify-content: center;}
-body.page-selling-in-palisade .section-label.centered::after {content: ""; display: block; width: 28px; height: 1px; background: var(--gold);}
-body.page-selling-in-palisade .divider {display: flex; align-items: center; gap: 1.5rem; padding: 0 clamp(1.25rem,4vw,2.5rem); max-width: 1120px; margin: 0 auto;}
-body.page-selling-in-palisade .divider::before, body.page-selling-in-palisade .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-selling-in-palisade .divider-diamond {width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; opacity: 0.6;}
 body.page-selling-in-palisade .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
       background:
         linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
@@ -2972,8 +2824,6 @@ body.page-selling-in-palisade .consent-note a {color: var(--navy); text-decorati
 body.page-selling-in-palisade #palFormMsg {display: none; padding: 0.85rem 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;}
 body.page-selling-in-palisade #palFormMsg.success {background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d;}
 body.page-selling-in-palisade #palFormMsg.error {background: rgba(200,60,60,0.08); border: 1px solid rgba(200,60,60,0.2); color: #8b2020;}
-body.page-selling-in-palisade .reveal {opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease;}
-body.page-selling-in-palisade .reveal.visible {opacity: 1; transform: none;}
 @media (max-width: 968px) {
 body.page-selling-in-palisade .identity-inner {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-selling-in-palisade .pricing-inner {grid-template-columns: 1fr; gap: 3rem;}
