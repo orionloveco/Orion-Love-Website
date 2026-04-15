@@ -1441,9 +1441,6 @@ body.page-buyers .cta-band-copy p {color: var(--muted);
       margin-right: auto;}
 @media (max-width: 980px) {
 body.page-buyers .promise-grid {grid-template-columns: 1fr;}
-body.page-buyers .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-buyers .service-block:nth-child(even) .service-meta {order: 0;}
-body.page-buyers .service-block:nth-child(even) .service-details {order: 0;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 
@@ -1710,7 +1707,6 @@ body.page-contact .footer-bottom a:hover {color: var(--gold-lt);}
 @media (max-width: 900px) {
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
-body.page-contact .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
 body.page-contact .form-row {grid-template-columns: 1fr;}
@@ -1920,7 +1916,6 @@ body.page-faq .faq-no-results {display: none;
 body.page-faq .faq-grid {grid-template-columns: 1fr;}
 body.page-faq .faq-item.full {grid-column: auto;}
 body.page-faq .faq-panel-header {grid-template-columns: 1fr; gap: 1.25rem;}
-body.page-faq .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 @media (max-width: 640px) {
 body.page-faq .faq-tab {padding: 1rem 1rem; font-size: 0.72rem;}
@@ -2374,7 +2369,9 @@ body.page-orchard-mesa-homes .check-list li svg {width:16px;height:16px;stroke:v
 body.page-orchard-mesa-homes .form-submit {width:100%;margin-top:0.5rem;justify-content:center;}
 body.page-orchard-mesa-homes .link-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:2rem;}
 @media (max-width:968px) {
-body.page-orchard-mesa-homes .two-col, body.page-orchard-mesa-homes .dark-inner, body.page-orchard-mesa-homes .form-inner {grid-template-columns:1fr;gap:2.5rem;}
+body.page-orchard-mesa-homes .two-col,
+body.page-orchard-mesa-homes .dark-inner,
+body.page-orchard-mesa-homes .form-inner {gap:2.5rem;}
 }
 
 /* ===== privacy.html ===== */
@@ -2471,7 +2468,9 @@ body.page-redlands-homes .check-list li svg {width: 16px; height: 16px; stroke: 
 body.page-redlands-homes .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
 body.page-redlands-homes .link-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 1rem; margin-top: 2rem;}
 @media (max-width: 968px) {
-body.page-redlands-homes .snapshot-inner, body.page-redlands-homes .dark-band-inner, body.page-redlands-homes .form-inner {grid-template-columns: 1fr; gap: 2.5rem;}
+body.page-redlands-homes .snapshot-inner,
+body.page-redlands-homes .dark-band-inner,
+body.page-redlands-homes .form-inner {gap: 2.5rem;}
 }
 
 /* ===== selling-in-fruita.html ===== */
@@ -2530,11 +2529,10 @@ body.page-selling-in-fruita .contact-bullets li {display: flex; align-items: fle
 body.page-selling-in-fruita .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
 body.page-selling-in-fruita .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
 @media (max-width: 968px) {
-body.page-selling-in-fruita .snapshot-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-selling-in-fruita .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
+body.page-selling-in-fruita .snapshot-inner {gap: 2.5rem;}
+body.page-selling-in-fruita .contact-inner {gap: 3rem;}
 }
 @media (max-width: 640px) {
-body.page-selling-in-fruita .hero h1 {font-size: 2.4rem;}
 body.page-selling-in-fruita .snapshot-stats {grid-template-columns: 1fr;}
 }
 
@@ -2603,12 +2601,11 @@ body.page-selling-in-palisade .contact-bullets li {display: flex; align-items: f
 body.page-selling-in-palisade .contact-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
 body.page-selling-in-palisade .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
 @media (max-width: 968px) {
-body.page-selling-in-palisade .identity-inner {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-selling-in-palisade .pricing-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-selling-in-palisade .contact-inner {grid-template-columns: 1fr; gap: 3rem;}
+body.page-selling-in-palisade .identity-inner {gap: 2.5rem;}
+body.page-selling-in-palisade .pricing-inner {gap: 3rem;}
+body.page-selling-in-palisade .contact-inner {gap: 3rem;}
 }
 @media (max-width: 640px) {
-body.page-selling-in-palisade .hero h1 {font-size: 2.4rem;}
 body.page-selling-in-palisade .identity-stats, body.page-selling-in-palisade .pricing-card {margin-top: 1rem;}
 }
 
@@ -2862,9 +2859,6 @@ body.page-services .cta-band-copy {max-width: 720px;
       margin: 0 auto 2rem;}
 body.page-services .cta-band-copy p {color: rgba(255,255,255,0.74);}
 @media (max-width: 980px) {
-body.page-services .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
-body.page-services .service-block:nth-child(even) .service-meta {order: 0;}
-body.page-services .service-block:nth-child(even) .service-details {order: 0;}
 body.page-services .fee-grid {grid-template-columns: 1fr;}
 body.page-services .fee-full {grid-template-columns: 1fr; gap: 1.75rem;}
 body.page-services .nav-menu {display: none;}
@@ -3135,6 +3129,18 @@ body.page-buyers .cta-band-copy {
   }
 }
 
+@media (max-width: 980px) {
+  body:is(.page-buyers, .page-services) .service-block {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  body:is(.page-buyers, .page-services) .service-block:nth-child(even) .service-meta,
+  body:is(.page-buyers, .page-services) .service-block:nth-child(even) .service-details {
+    order: 0;
+  }
+}
+
 /* ============================================================
    Standardization pass
    Moved repeated inline HTML styles into shared classes/utilities
@@ -3235,9 +3241,21 @@ body.local-area-contract-v2 :is(.local-area-stat-grid .stat-lbl, .local-area-sta
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
+    grid-template-columns: 1fr;
+  }
+
+  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
+    gap: 2.5rem;
+  }
 }
 
 @media (max-width: 640px) {
+  body.local-area-seller-variant .hero h1 {
+    font-size: 2.4rem;
+  }
+
   body.local-area-contract-v2 .local-area-stat-grid {
     grid-template-columns: 1fr;
   }
