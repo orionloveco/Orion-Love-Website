@@ -2969,18 +2969,6 @@ body.page-services .cta-band {background: linear-gradient(rgba(8,18,50,0.82), rg
       text-align: center;}
 body.page-services .cta-band-inner {max-width: 720px;
       margin: 0 auto;}
-body.page-services .cta-band-inner h2 {font-size: clamp(2.2rem, 4vw, 3.2rem);
-      color: var(--navy);
-      font-weight: 300;
-      margin-bottom: 1rem;}
-body.page-services .cta-band-inner h2 em {font-style: italic; color: var(--gold);}
-body.page-services .cta-band-inner p {color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.85;
-      margin-bottom: 2.25rem;
-      max-width: 52ch;
-      margin-left: auto;
-      margin-right: auto;}
 @media (max-width: 980px) {
 body.page-services .service-block {grid-template-columns: 1fr; gap: 2.5rem;}
 body.page-services .service-block:nth-child(even) .service-meta {order: 0;}
@@ -3802,18 +3790,14 @@ body:is(
   color: var(--navy);
 }
 
-body:is(
-  .page-clifton-grand-junction,
-  .page-downtown-grand-junction,
-  .page-loma-mack-grand-junction,
-  .page-north-grand-junction,
-  .page-northeast-grand-junction,
-  .page-northwest-grand-junction
-) .cta-pair {
+.cta-action-row {
   display: flex;
   gap: 1rem;
-  justify-content: center;
   flex-wrap: wrap;
+}
+
+.cta-pair {
+  justify-content: center;
 }
 
 .section-shell-top {
@@ -3852,9 +3836,6 @@ body:is(
 
 .cta-row-wrap {
   margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .section-label-gold span {
