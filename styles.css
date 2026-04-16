@@ -3229,6 +3229,39 @@ body.page-services .method-spine {
   padding: clamp(4.5rem, 8vw, 7rem) 0;
 }
 
+body.page-services .method-intro-section {
+  background: var(--white);
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+body.page-services .method-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 2.8rem);
+  align-items: start;
+}
+
+body.page-services .method-intro-layout h2 {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  margin-bottom: 0;
+}
+
+body.page-services .method-intro-layout h2 em {
+  color: var(--gold);
+}
+
+body.page-services .method-intro-layout p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+body.page-services .method-intro-support {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+}
+
 body.page-services .method-stage-list {
   display: flex;
   flex-direction: column;
@@ -3260,37 +3293,31 @@ body.page-services .method-stage-kicker {
 body.page-services .method-stage h3 {
   color: var(--navy);
   font-size: clamp(1.75rem, 2.8vw, 2.35rem);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
-body.page-services .method-stage-grid {
+body.page-services .method-stage-goal {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+body.page-services .method-stage-points {
+  margin: 0;
+  padding-left: 1.05rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem 1.5rem;
+  gap: 0.5rem;
 }
 
-body.page-services .method-stage-grid h4 {
-  font-size: 0.95rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--navy);
-  font-weight: 600;
-  margin-bottom: 0.45rem;
-}
-
-body.page-services .method-stage-grid p,
-body.page-services .method-stage-grid li {
+body.page-services .method-stage-points li {
   font-size: 0.95rem;
   line-height: 1.78;
   color: var(--muted);
 }
 
-body.page-services .method-stage-grid ul {
-  margin: 0;
-  padding-left: 1.05rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
+body.page-services .method-stage-points strong {
+  color: var(--navy);
 }
 
 body.page-services .decision-gates {
@@ -3298,8 +3325,30 @@ body.page-services .decision-gates {
   padding: clamp(4.25rem, 7.5vw, 6rem) 0;
 }
 
+body.page-services .decision-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 2.8rem);
+}
+
+body.page-services .decision-intro h2 {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.75rem;
+}
+
+body.page-services .decision-intro h2 em {
+  color: var(--gold);
+}
+
+body.page-services .decision-intro p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 42ch;
+}
+
 body.page-services .gate-list {
-  margin-top: clamp(1.8rem, 4vw, 2.7rem);
+  margin-top: 0.25rem;
   display: grid;
   gap: 0.95rem;
 }
@@ -3353,28 +3402,27 @@ body.page-services .protocol-copy p {
 }
 
 body.page-services .protocol-points {
+  display: none;
+}
+
+body.page-services .protocol-rail {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid rgba(184, 146, 58, 0.6);
+  padding-left: 1.05rem;
   display: grid;
-  grid-template-columns: 1fr;
   gap: 0.9rem;
 }
 
-body.page-services .protocol-points > div {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: 14px;
-  padding: 1rem 1.05rem;
-}
-
-body.page-services .protocol-points h3 {
-  font-size: 1.05rem;
-  color: var(--navy);
-  margin-bottom: 0.35rem;
-}
-
-body.page-services .protocol-points p {
-  font-size: 0.94rem;
-  line-height: 1.72;
+body.page-services .protocol-rail li {
   color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+body.page-services .protocol-rail strong {
+  color: var(--navy);
 }
 
 body.page-services .scope-section {
@@ -3397,6 +3445,23 @@ body.page-services .scope-shell > p {
   color: var(--muted);
   line-height: 1.85;
   margin-bottom: 1rem;
+}
+
+body.page-services .scope-band {
+  border-left: 2px solid rgba(184, 146, 58, 0.55);
+  padding-left: 0.9rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+body.page-services .scope-band p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+body.page-services .scope-band strong {
+  color: var(--navy);
 }
 
 body.page-services .scope-list {
@@ -3486,7 +3551,8 @@ body.page-services .routing-links a {
 }
 
 @media (max-width: 980px) {
-  body.page-services .method-stage-grid,
+  body.page-services .method-intro-layout,
+  body.page-services .decision-layout,
   body.page-services .routing-grid,
   body.page-services .protocol-layout {
     grid-template-columns: 1fr;
