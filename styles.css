@@ -4417,3 +4417,82 @@ body.page-privacy .privacy-content {
     animation: none !important;
   }
 }
+
+
+/* ===== seller-neighborhood framework v2 shared contracts ===== */
+.seller-buyer-response-section {
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.seller-buyer-response-section .seller-buyer-response-header {
+  margin-bottom: 2rem;
+}
+
+.seller-buyer-response-section .seller-buyer-response-intro {
+  max-width: 68ch;
+}
+
+.seller-buyer-response-section .seller-buyer-response-grid {
+  margin-top: 2.25rem;
+}
+
+.seller-neighborhood-approach-band {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.seller-neighborhood-approach-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
+  pointer-events: none;
+}
+
+.seller-neighborhood-approach-band :is(.dark-band-inner, .process-inner, .pricing-inner) {
+  position: relative;
+  z-index: 1;
+}
+
+.seller-neighborhood-approach-band.approach-band-process :is(.process-header h2, .dark-copy h2) {
+  color: var(--white);
+  font-weight: 300;
+}
+
+.seller-neighborhood-approach-band.approach-band-process :is(.process-header p, .dark-copy p) {
+  color: rgba(255,255,255,0.62);
+}
+
+.seller-neighborhood-approach-band.approach-band-process .step-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.seller-neighborhood-approach-band.approach-band-process .step-card h3 {
+  color: var(--white);
+}
+
+.seller-neighborhood-approach-band.approach-band-process .step-card p {
+  color: rgba(255,255,255,0.68);
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy :is(.pricing-copy h2, .pricing-copy p) {
+  color: var(--white);
+}
+
+.seller-neighborhood-nearby-shell {
+  background: var(--cream);
+  border-top: 1px solid var(--sand);
+}
+
+.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+}
+
+.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-copy {
+  color: var(--muted);
+}
