@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeClass = groupIsActive ? ' active' : '';
 
         return `<li class="nav-dropdown${activeClass}">
-          <button aria-expanded="false" aria-haspopup="true" class="nav-dropdown-toggle" type="button">${item.label}</button>
-          <div class="nav-dropdown-menu" role="menu">${childLinks}</div>
+          <button aria-controls="areasDropdownMenu" aria-expanded="false" aria-haspopup="true" class="nav-dropdown-toggle" type="button">${item.label}</button>
+          <div class="nav-dropdown-menu" id="areasDropdownMenu">${childLinks}</div>
         </li>`;
       }
 
@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       try {
-        const validationError = validate ? validate() : '';
+        const validationError = validate ? validate(form) : '';
         if (validationError) {
           showFormMsg(msg, validationError, 'error');
           return;
@@ -573,6 +573,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.querySelectorAll('[data-message-line]').forEach((field) => {
       const label = field.getAttribute('data-message-line');
       const value = field.value.trim();
+      if (!value) return;
       lines.push(`${label}: ${value}`);
     });
     return lines.join('\n');
@@ -640,10 +641,11 @@ document.addEventListener('DOMContentLoaded', function () {
       formId: 'contactForm',
       submitBtnId: 'submitBtn',
       messageId: 'formMessage',
-      validate: () => {
-        const requiredIds = ['contactFirstName', 'contactLastName', 'contactEmail', 'contactMessage'];
-        const hasAllValues = requiredIds.every((id) => getTrimmedValue(id));
-        return hasAllValues ? '' : 'Please fill in all required fields.';
+      validate: (form) => {
+        if (!form.checkValidity()) {
+          return 'Please fill in all required fields with valid information.';
+        }
+        return '';
       },
       payloadBuilder: () => ({
         firstName: getTrimmedValue('contactFirstName'),

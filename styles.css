@@ -1046,23 +1046,10 @@ body.seller-neighborhood-framework .seller-neighborhood-buyer-response {
    Responsive
 ========================= */
 @media (max-width: 968px) {
-  /* Mobile nav drawer */
+  /* Shared mobile nav system uses #mobileNavOverlay */
   .nav-menu {
-    position: fixed;
-    top: 72px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 72px);
-    background: rgba(12, 26, 61, 0.97);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2.5rem 2rem;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: none;
   }
-  .nav-menu.active { left: 0; }
   .mobile-toggle { display: flex; }
 
   .hero-cta { flex-direction: column; align-items: flex-start; }
@@ -2212,8 +2199,6 @@ body.page-grand-junction-home-value .cta-content {text-align: center; max-width:
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
 @media (max-width: 968px) {
-body.page-grand-junction-home-value .nav-menu {position: fixed; top: 72px; left: -100%; width: 100%; height: calc(100vh - 72px); background: rgba(12,26,61,0.97); flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 2.5rem 2rem; gap: 1.5rem; transition: left 0.3s;}
-body.page-grand-junction-home-value .nav-menu.active {left: 0;}
 body.page-grand-junction-home-value .mobile-toggle {display: flex;}
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2, 1fr);}
 body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
@@ -2804,44 +2789,6 @@ body.local-area-seller-variant .link-grid {
   gap: 1rem;
   margin-top: 2rem;
 }
-
-/* ===== privacy.html ===== */
-body.page-privacy .privacy-hero {margin-top: 80px;
-            padding: 3rem 0;
-            background: var(--off-white);
-            text-align: center;}
-body.page-privacy .privacy-content {max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;}
-body.page-privacy .privacy-content h2 {margin: 3rem 0 1.5rem 0;
-            padding-top: 2rem;
-            border-top: 1px solid var(--light-gray);}
-body.page-privacy .privacy-content h2:first-of-type {margin-top: 0;
-            padding-top: 0;
-            border-top: none;}
-body.page-privacy .privacy-content p {color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 1.25rem;}
-body.page-privacy .privacy-content ul {margin: 1.5rem 0;
-            padding-left: 2rem;}
-body.page-privacy .privacy-content li {color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 0.75rem;}
-body.page-privacy .privacy-content strong {color: var(--primary);}
-body.page-privacy .last-updated {color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            font-style: italic;}
-body.page-privacy .contact-box {background: var(--off-white);
-            padding: 2rem;
-            margin: 3rem 0;
-            border-left: 4px solid var(--accent);}
-body.page-privacy .contact-box h3 {margin-bottom: 1rem;}
-body.page-privacy .contact-box p {margin-bottom: 0.5rem;}
-body.page-privacy .contact-box a {color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;}
-body.page-privacy .contact-box a:hover {color: var(--accent);}
 
 /* ===== seller-area page-specific variants ===== */
 /* Fruita hero keeps its own background crop/overlay emphasis. */
