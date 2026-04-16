@@ -22,10 +22,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+  const AREA_NAV_GROUPS = [
+    {
+      label: 'Core Areas',
+      items: [
+        { href: 'grand-junction-home-value.html', label: 'Grand Junction' },
+        { href: 'clifton-grand-junction.html', label: 'Clifton' },
+        { href: 'selling-in-fruita.html', label: 'Fruita' },
+        { href: 'selling-in-palisade.html', label: 'Palisade' },
+        { href: 'loma-mack-grand-junction.html', label: 'Loma / Mack' },
+      ],
+    },
+    {
+      label: 'Grand Junction Neighborhoods',
+      items: [
+        { href: 'downtown-grand-junction.html', label: 'Downtown Grand Junction' },
+        { href: 'north-grand-junction.html', label: 'North Grand Junction' },
+        { href: 'northeast-grand-junction.html', label: 'Northeast Grand Junction' },
+        { href: 'northwest-grand-junction.html', label: 'Northwest Grand Junction' },
+        { href: 'orchard-mesa-homes.html', label: 'Orchard Mesa' },
+        { href: 'redlands-homes.html', label: 'Redlands' },
+      ],
+    },
+  ];
+
   const SHARED_NAV_ITEMS = [
     { href: 'index.html', label: 'Home' },
-    { href: 'services.html', label: 'Sellers' },
+    { href: 'services.html', label: 'Sell' },
     { href: 'buyers.html', label: 'Buyers' },
+    { href: 'grand-junction-home-value.html', label: 'Home Value' },
+    { label: 'Areas', key: 'areas', children: AREA_NAV_GROUPS },
     { href: 'about.html', label: 'About' },
     { href: 'faq.html', label: 'FAQ' },
     { href: 'contact.html', label: 'Contact', isButton: true },
@@ -44,6 +70,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!target) return;
 
     const navItems = SHARED_NAV_ITEMS.map((item) => {
+      if (item.children?.length) {
+        const childLinks = item.children
+          .map((group) => {
+            const links = group.items
+              .map((child) => {
+                const childIsActive = currentPath === child.href;
+                const childActiveClass = childIsActive ? ' class="active"' : '';
+                const childCurrent = childIsActive ? ' aria-current="page"' : '';
+                return `<li><a${childActiveClass} href="${child.href}"${childCurrent}>${child.label}</a></li>`;
+              })
+              .join('');
+
+            return `<div class="nav-dropdown-group"><p class="nav-dropdown-heading">${group.label}</p><ul>${links}</ul></div>`;
+          })
+          .join('');
+
+        const groupIsActive = item.children.some((group) =>
+          group.items.some((child) => child.href === currentPath)
+        );
+        const activeClass = groupIsActive ? ' active' : '';
+
+        return `<li class="nav-dropdown${activeClass}">
+          <button aria-expanded="false" aria-haspopup="true" class="nav-dropdown-toggle" type="button">${item.label}</button>
+          <div class="nav-dropdown-menu" role="menu">${childLinks}</div>
+        </li>`;
+      }
+
       const isActive = currentPath === item.href;
       const activeClass = isActive ? ' class="active"' : '';
       const currentAttr = isActive ? ' aria-current="page"' : '';
@@ -67,13 +120,41 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>`;
   }
 
+  function renderMobileNavMarkup(currentPath) {
+    const rows = SHARED_NAV_ITEMS.map((item) => {
+      if (item.children?.length) {
+        const grouped = item.children
+          .map((group) => {
+            const links = group.items
+              .map((child) => {
+                const active = currentPath === child.href ? ' class="active"' : '';
+                const current = currentPath === child.href ? ' aria-current="page"' : '';
+                return `<li><a${active} href="${child.href}"${current}>${child.label}</a></li>`;
+              })
+              .join('');
+            return `<div class="mobile-nav-group"><p>${group.label}</p><ul>${links}</ul></div>`;
+          })
+          .join('');
+
+        return `<li class="mobile-nav-areas"><span class="mobile-nav-title">${item.label}</span>${grouped}</li>`;
+      }
+
+      const activeClass = currentPath === item.href ? ' class="active"' : '';
+      const currentAttr = currentPath === item.href ? ' aria-current="page"' : '';
+      const buttonClass = item.isButton ? ' class="btn-nav"' : activeClass;
+      return `<li><a${buttonClass} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
+    }).join('');
+
+    return `<ul class="mobile-nav-list">${rows}</ul>`;
+  }
+
   function renderFeaturedAreas() {
     const target = document.getElementById('featuredAreasLinks');
     if (!target) return;
 
     const links = FEATURED_AREA_LINKS.map(
       (item) =>
-        `<a class="link-card" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
+        `<a class="link-card card-link" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
     ).join('');
 
     target.innerHTML = `
@@ -190,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.id = 'mobileNavOverlay';
-      overlay.innerHTML = navMenu.innerHTML;
+      overlay.innerHTML = renderMobileNavMarkup(path);
       document.body.appendChild(overlay);
     }
 
@@ -217,6 +298,24 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
     });
+
+    const areaToggle = document.querySelector('.nav-dropdown-toggle');
+    const areaDropdown = document.querySelector('.nav-dropdown');
+    if (areaToggle && areaDropdown) {
+      areaToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const willOpen = !areaDropdown.classList.contains('open');
+        areaDropdown.classList.toggle('open', willOpen);
+        areaToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!areaDropdown.contains(e.target)) {
+          areaDropdown.classList.remove('open');
+          areaToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
