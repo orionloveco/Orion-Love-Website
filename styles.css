@@ -1144,7 +1144,6 @@ body.page-about .about-intro-section,
 body.page-about .about-think-section,
 body.page-about .about-proof-section,
 body.page-about .about-contrast-section,
-body.page-about .about-cred-strip,
 body.page-about .about-final-cta {
   padding: clamp(3.5rem, 6vw, 5.75rem) 0;
 }
@@ -1365,35 +1364,8 @@ body.page-about .contrast-head > div + div {
   border-left: 1px solid rgba(232, 225, 208, 0.95);
 }
 
-body.page-about .about-cred-strip {
-  padding-top: 1.8rem;
-  padding-bottom: 1.8rem;
-  background: var(--cream);
-}
-
-body.page-about .cred-strip-inner {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-body.page-about .cred-item {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.8rem 0.9rem;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(184, 146, 58, 0.2);
-  border-radius: var(--radius-sm);
-  font-size: 0.84rem;
-  color: var(--text);
-}
-
-body.page-about .cred-item svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--gold);
-  flex-shrink: 0;
+body.page-about #featuredAreasLinks {
+  display: none;
 }
 
 body.page-about .about-final-cta {
@@ -1419,7 +1391,6 @@ body.page-about .about-final-cta-inner h2 {
   body.page-about .about-intro-grid,
   body.page-about .about-proof-grid,
   body.page-about .think-grid,
-  body.page-about .cred-strip-inner,
   body.page-about .contrast-head,
   body.page-about .contrast-row {
     grid-template-columns: 1fr;
