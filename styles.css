@@ -568,13 +568,29 @@ p { color: var(--text); }
 .page-family-flagship {}
 .page-family-support {}
 .page-family-neighborhood {}
+.seller-neighborhood-framework {}
 
 .hero-flagship {}
 .hero-support {}
 .hero-neighborhood {}
+.seller-neighborhood-hero {}
+.seller-neighborhood-market-snapshot {}
+.seller-neighborhood-value-shapers {}
+.seller-neighborhood-buyer-response {}
+.seller-neighborhood-approach {}
+.seller-neighborhood-cta {}
 
 .hero-neighborhood .hero-cta .btn {
   min-width: 170px;
+}
+
+body.seller-neighborhood-framework :is(.seller-neighborhood-value-shapers, .seller-neighborhood-buyer-response) .card-grid {
+  margin-top: 2.25rem;
+}
+
+body.seller-neighborhood-framework .seller-neighborhood-buyer-response {
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
 }
 
 .card-value {}
