@@ -18,17 +18,57 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"How do I choose the right realtor in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"In Grand Junction, the right agent should know neighborhood-by-neighborhood pricing (Redlands vs Clifton vs Fruita), local inspection priorities (radon, sewer scope, roof/HVAC age), and how HOAs and irrigation water rights affect value."}},
-      {"@type":"Question","name":"Is now a good time to buy a home in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"It depends on your budget, timeline, and which part of Mesa County you're targeting. In Grand Junction, some price ranges move fast while others allow negotiation."}},
-      {"@type":"Question","name":"What are the best neighborhoods to buy in Grand Junction and Mesa County?","acceptedAnswer":{"@type":"Answer","text":"It depends on lifestyle and budget. The Redlands is popular for scenery and proximity to trails; North Grand Junction often offers convenience; Orchard Mesa can offer more space/value; Fruita is loved for its community feel and biking; Palisade is known for charm and wineries."}},
       {"@type":"Question","name":"How do I choose the right listing agent in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Look for an agent who prices based on recent Mesa County closed sales, can explain neighborhood-specific demand, and has a clear plan for photography, online exposure, and negotiation."}},
       {"@type":"Question","name":"How much is my home worth in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Value depends on recent comparable sales, condition, location, and buyer demand. A local market analysis is more reliable than automated estimates alone."}}
+      ,{"@type":"Question","name":"Is now a good time to sell in Mesa County?","acceptedAnswer":{"@type":"Answer","text":"Timing depends on your goals, competition, and price point. In Mesa County, preparation and pricing strategy usually have more impact than season alone."}}
+      ,{"@type":"Question","name":"How do you price a home correctly in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"Pricing is based on recent closed sales, current active competition, and buyer behavior — adjusted for condition, location, and features like irrigation water or HOA costs."}}
+      ,{"@type":"Question","name":"What are common seller closing costs in Mesa County?","acceptedAnswer":{"@type":"Answer","text":"Costs vary but may include agent compensation, title-related fees, and negotiated concessions or repairs. A net sheet upfront helps clarify likely proceeds."}}
+      ,{"@type":"Question","name":"Should I accept the highest offer?","acceptedAnswer":{"@type":"Answer","text":"Not always. The best offer balances price with reliability, financing strength, timelines, and risk. Clean terms can outperform a higher-risk offer."}}
+      ,{"@type":"Question","name":"What happens during the inspection period as a seller?","acceptedAnswer":{"@type":"Answer","text":"The buyer completes inspections and may request repairs or credits. Responses should balance reasonableness, risk control, and protection of your net."}}
+      ,{"@type":"Question","name":"What if the appraisal comes in low as a seller?","acceptedAnswer":{"@type":"Answer","text":"Options may include renegotiation, providing better comps, or adjusting terms depending on the contract and buyer strength."}}
+      ,{"@type":"Question","name":"Does irrigation water increase buyer demand in Grand Junction?","acceptedAnswer":{"@type":"Answer","text":"It often does, especially for buyers who value landscaping and lower watering costs. Sellers should clearly confirm what is included, active status, and ongoing costs."}}
     ]
   }
   </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Allura&amp;display=swap" rel="stylesheet"/>
 <script src="https://unpkg.com/lucide@latest" defer></script>
 <link href="styles.css" rel="stylesheet"/>
+<style>
+  .faq-utility-header {
+    padding: 2.5rem 0 1.25rem;
+  }
+  .faq-utility-header .utility-title {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .faq-utility-header h1 {
+    margin-bottom: .75rem;
+  }
+  .faq-utility-header p {
+    margin: 0 auto;
+    max-width: 60ch;
+  }
+  .faq-help-row {
+    padding-top: 1rem;
+  }
+  .faq-help-row .faq-help-inner {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .85rem 1.15rem;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 16px;
+    padding: 1rem 1.15rem;
+  }
+  .faq-help-row p {
+    margin: 0;
+  }
+  body.page-faq #featuredAreasLinks {
+    display: none;
+  }
+</style>
 <script defer="" src="script.js"></script>
 </head>
 <body class="page-hero-aligned page-faq page-family-support">
@@ -49,28 +89,23 @@
 </div>
 </header>
 </noscript>
-<!-- HERO -->
-<section class="site-section faq-hero hero hero-support">
+<!-- COMPACT UTILITY HEADER -->
+<section class="site-section faq-utility-header">
 <div class="container">
-<div class="hero-inner">
-<div class="hero-eyebrow"><span>Grand Junction Real Estate</span></div>
-<h1>Real Answers.<br/><em>Local Knowledge.</em></h1>
-<p class="hero-lead">
-      Real estate in Grand Junction, the Redlands, Clifton, Orchard Mesa,
-      Fruita, and Palisade comes with real local nuance. These are the questions
-      that actually matter — answered honestly, without the runaround.
-    </p>
+<div class="utility-title">
+<h1>Grand Junction Real Estate FAQ</h1>
+<p>Get fast answers to common selling and buying questions, with seller guidance prioritized first.</p>
 </div>
 </div>
 </section>
 <!-- STICKY TAB NAV -->
 <nav aria-label="FAQ categories" class="faq-nav">
 <div class="faq-nav-inner">
-<button aria-selected="true" class="faq-tab active" data-panel="buyers">
-<i data-lucide="home"></i>Buyer FAQs
-    </button>
-<button aria-selected="false" class="faq-tab" data-panel="sellers">
+<button aria-selected="true" class="faq-tab active" data-panel="sellers">
 <i data-lucide="trending-up"></i>Seller FAQs
+    </button>
+<button aria-selected="false" class="faq-tab" data-panel="buyers">
+<i data-lucide="home"></i>Buyer FAQs
     </button>
 </div>
 </nav>
@@ -78,16 +113,15 @@
 <section class="site-section faq-section">
 <div class="container">
 <!-- ── BUYERS PANEL ── -->
-<div class="faq-panel active" id="panel-buyers">
+<div class="faq-panel" id="panel-buyers">
 <div class="faq-panel-header reveal">
 <div>
 <div class="section-label"><span>For Buyers</span></div>
 <h2>Buying in <em>Grand Junction</em></h2>
 </div>
 <p>
-          These are general answers based on common situations across Mesa County.
-          Every buyer's path is different — if you want a route mapped out for your
-          specific situation, I'm happy to do that.
+          Quick buyer answers for common Mesa County scenarios.
+          For a tailored plan, reach out anytime.
         </p>
 </div>
 <div class="faq-search-wrap reveal reveal-delay-010">
@@ -185,16 +219,15 @@
 </div>
 </div>
 <!-- ── SELLERS PANEL ── -->
-<div class="faq-panel" id="panel-sellers">
+<div class="faq-panel active" id="panel-sellers">
 <div class="faq-panel-header reveal">
 <div>
 <div class="section-label"><span>For Sellers</span></div>
 <h2>Selling in <em>Grand Junction</em></h2>
 </div>
 <p>
-          These are general answers based on common Mesa County situations.
-          Pricing, timing, and strategy vary by neighborhood and property type —
-          tell me about your home and I'll chart a specific course.
+          Fast seller-first answers for pricing, prep, offers, timing, and closing.
+          Ask directly if you need guidance for your exact property.
         </p>
 </div>
 <div class="faq-search-wrap reveal reveal-delay-010">
@@ -297,19 +330,14 @@
 </div>
 </div>
 </section>
-<!-- CTA BAND -->
-<section class="site-section cta-band">
+<!-- COMPACT HELP ROW -->
+<section class="site-section faq-help-row">
 <div class="container">
-<div class="cta-band-inner reveal">
-<div class="cta-band-copy">
-<div class="section-label"><span>Ready to Start?</span></div>
-<h2>Want Advice for<br/><em>Your Situation?</em></h2>
-<p>
-          Tell me what you're trying to do and I'll give you a clear plan
-          based on today's Grand Junction market — no pressure, no obligation.
-        </p>
+<div class="faq-help-inner reveal">
+<p><strong>Need a specific answer?</strong> Get direct guidance for your timeline, neighborhood, and property details.</p>
+<div class="faq-help-actions">
+<a class="btn-gold-outline" href="contact.html">Contact Orion</a>
 </div>
-<a class="btn-gold-outline" href="contact.html">Schedule a Consultation</a>
 </div>
 </div>
 </section>
