@@ -41,6 +41,16 @@
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 28px;
+
+  /* Shared CTA button system */
+  --btn-radius: 999px;
+  --btn-pad-y: 0.9rem;
+  --btn-pad-x: 2.2rem;
+  --btn-lift: -2px;
+  --btn-transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+  --btn-shadow: 0 6px 20px rgba(12, 26, 61, 0.12);
+  --btn-shadow-hover: 0 12px 28px rgba(12, 26, 61, 0.16);
+  --btn-focus-ring: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
 }
 
 /* =========================
@@ -382,30 +392,34 @@ p { color: var(--text); }
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 2.2rem;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
   font-family: "Raleway", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  border: none;
-  border-radius: 50px;
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--btn-shadow);
   cursor: pointer;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+  transition: var(--btn-transition);
   will-change: transform;
 }
 
-.btn:hover { transform: translateY(-2px); }
+.btn:hover {
+  transform: translateY(var(--btn-lift));
+  box-shadow: var(--btn-shadow-hover);
+}
 
 .btn-primary {
   background: var(--gold);
   color: var(--white);
-  box-shadow: 0 4px 20px rgba(184, 146, 58, 0.35);
+  --btn-shadow: 0 6px 20px rgba(184, 146, 58, 0.32);
+  --btn-shadow-hover: 0 12px 28px rgba(184, 146, 58, 0.4);
 }
 .btn-primary:hover {
   background: var(--gold-lt);
-  box-shadow: 0 8px 28px rgba(184, 146, 58, 0.45);
 }
 
 .btn-secondary {
@@ -432,11 +446,11 @@ p { color: var(--text); }
 .btn-navy {
   background: var(--navy);
   color: var(--white);
-  box-shadow: var(--shadow-sm);
+  --btn-shadow: 0 6px 20px rgba(12, 26, 61, 0.2);
+  --btn-shadow-hover: 0 12px 28px rgba(12, 26, 61, 0.28);
 }
 .btn-navy:hover {
   background: var(--navy-mid);
-  box-shadow: var(--shadow-md);
 }
 
 /* Gold outline variant (single authority for .btn-outline-gold + .btn-gold-outline) */
@@ -450,18 +464,6 @@ p { color: var(--text); }
 .btn-outline-gold:hover {
   background: rgba(184, 146, 58, 0.12);
   color: var(--gold-lt);
-  box-shadow: none;
-}
-
-/* Explicit behavior variants */
-.btn-gold-outline--fill-hover:hover {
-  background: var(--gold);
-  color: var(--white);
-  box-shadow: 0 8px 28px rgba(184, 146, 58, 0.35);
-  border-color: var(--gold);
-}
-.btn-gold-outline--hover-border-light:hover {
-  border-color: var(--gold-lt);
 }
 
 /* White outline for dark hero use */
@@ -478,7 +480,7 @@ p { color: var(--text); }
 /* Shared keyboard focus contract (core interactive controls) */
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
+  box-shadow: var(--btn-shadow), var(--btn-focus-ring);
 }
 
 :is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
@@ -1173,15 +1175,6 @@ body.page-about .hero-cta {
   gap: 0.75rem;
 }
 
-body.page-about .hero-cta .btn-outline {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.36);
-}
-
-body.page-about .hero-cta .btn-outline:hover {
-  color: var(--gold-lt);
-  border-color: var(--gold-lt);
-}
 
 body.page-about .about-intro-section,
 body.page-about .about-think-section,
@@ -2190,11 +2183,6 @@ body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormor
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .btn-outline {background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.35);}
-body.page-index .btn-outline:hover {border-color: var(--gold-lt);
-      color: var(--gold-lt);}
 body.page-index .section-label {margin-bottom: 1.25rem;}
 body.page-index .divider {display: flex;
       align-items: center;
@@ -4513,11 +4501,6 @@ body.page-buyers .buyers-hero p {
   margin: 0 0 1.65rem;
   max-width: 62ch;
 }
-body.page-buyers .buyers-hero .btn-outline {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: var(--white);
-}
-
 body.page-buyers .buyers-editorial,
 body.page-buyers .buyers-realities,
 body.page-buyers .buyers-trust,
