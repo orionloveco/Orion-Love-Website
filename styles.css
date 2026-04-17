@@ -4797,7 +4797,7 @@ body.page-buyers .phase-panel {
   padding: 1.25rem;
 }
 body.page-buyers .phase-number {
-  color: var(--gold-deep);
+  color: var(--gold);
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -4825,7 +4825,7 @@ body.page-buyers .phase-panel li {
   line-height: 1.6;
 }
 body.page-buyers .phase-panel strong {
-  color: var(--ink);
+  color: var(--text);
 }
 
 body.page-buyers .buyers-trust {
@@ -4840,7 +4840,7 @@ body.page-buyers .buyers-trust-row {
   border: 1px solid var(--sand);
   border-radius: var(--radius-sm);
   padding: 0.8rem 1rem;
-  color: var(--ink);
+  color: var(--text);
 }
 
 body.page-buyers .buyers-close {
