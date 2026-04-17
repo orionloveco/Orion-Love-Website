@@ -570,6 +570,40 @@ p { color: var(--text); }
 .page-family-neighborhood {}
 .seller-neighborhood-framework {}
 
+.page-family-flagship .hero.hero-flagship:not(.services-hero) {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.page-family-flagship.page-photo-hero .hero.hero-flagship {
+  min-height: 82vh;
+}
+
+body.page-family-neighborhood .hero.hero-neighborhood {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body:is(.page-family-support, .page-family-flagship) .hero.hero-support,
+body.page-family-flagship .hero.hero-flagship.services-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
+  text-align: center;
+}
+
+body.page-family-neighborhood .hero.hero-neighborhood .hero-inner,
+body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
+  max-width: 760px;
+  padding-top: 4rem;
+}
+
 .hero-flagship {}
 .hero-support {}
 .hero-neighborhood {}
@@ -1421,11 +1455,7 @@ body.page-about .about-final-cta-inner h2 {
 }
 
 /* ===== buyers.html ===== */
-body.page-buyers .buyers-hero {position: relative;
-      padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
-      background: var(--navy);
-      overflow: hidden;
-      text-align: center;}
+body.page-buyers .buyers-hero {background: var(--navy);}
 body.page-buyers .buyers-hero::before {content: "";
       position: absolute;
       inset: 0;
@@ -1659,9 +1689,9 @@ body:is(.page-grand-junction-home-value,
 }
 
 /* ===== Local-area template contract v2: shared hero scaffold ===== */
-body.local-area-contract-v2 .hero {position:relative;min-height:82vh;display:flex;align-items:center;background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body.local-area-contract-v2 .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.local-area-contract-v2 .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body.local-area-contract-v2 .hero-inner {position: relative;z-index: 1;max-width: 760px;padding-top: 4rem;}
+body.local-area-contract-v2 .hero-inner {position: relative;z-index: 1;}
 body.local-area-contract-v2 .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
 body.local-area-contract-v2 .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
 body.local-area-contract-v2 .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
@@ -1679,7 +1709,6 @@ body.page-contact .main-header {position: fixed;
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
 body.page-contact .contact-hero {background: var(--navy);
-      position: relative;
       min-height: clamp(320px, 48vh, 460px);}
 body.page-contact .contact-hero::before {content: "";
       position: absolute;
@@ -2136,13 +2165,12 @@ body.page-grand-junction-home-value .btn-nav:hover {background: rgba(184,146,58,
 body.page-grand-junction-home-value .mobile-toggle {display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 6px;}
 body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
-body.page-grand-junction-home-value .hero {position: relative; min-height: 82vh; display: flex; align-items: center;
-      background:
+body.page-grand-junction-home-value .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-grand-junction-home-value .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0;
       height: 1px; background: rgba(184,146,58,0.22);}
-body.page-grand-junction-home-value .hero-inner {position: relative; z-index: 1; max-width: 760px; padding-top: 4rem;}
+body.page-grand-junction-home-value .hero-inner {position: relative; z-index: 1;}
 body.page-grand-junction-home-value .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem;
       font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
@@ -2277,14 +2305,10 @@ body.page-index .divider-diamond {width: 8px; height: 8px;
       transform: rotate(45deg);
       flex-shrink: 0;
       opacity: 0.6;}
-body.page-index .hero {position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background:
+body.page-index .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;
-      overflow: hidden;}
+}
 body.page-index .hero > .container {max-width: none;
       margin: 0;}
 body.page-index .hero::before {content: "";
@@ -3167,11 +3191,7 @@ body.page-services .section-label.centered::after {
 }
 
 body.page-services .services-hero {
-  position: relative;
-  padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
   background: var(--navy);
-  overflow: hidden;
-  text-align: center;
 }
 
 body.page-services .services-hero::before {
