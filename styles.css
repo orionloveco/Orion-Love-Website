@@ -1395,10 +1395,6 @@ body.page-about .contrast-head > div + div {
   border-left: 1px solid rgba(232, 225, 208, 0.95);
 }
 
-body.page-about #featuredAreasLinks {
-  display: none;
-}
-
 body.page-about .about-final-cta {
   background: var(--white);
   padding-top: clamp(3rem, 5vw, 4rem);
@@ -4822,12 +4818,4 @@ body.page-faq .faq-help-row .faq-help-inner {
 }
 body.page-faq .faq-help-row p {
   margin: 0;
-}
-body.page-faq #featuredAreasLinks {
-  display: none;
-}
-
-/* services.html migrated inline style attribute */
-body.page-services #featuredAreasLinks {
-  display: none;
 }
