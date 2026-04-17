@@ -148,16 +148,26 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<ul class="mobile-nav-list">${rows}</ul>`;
   }
 
-  function renderFeaturedAreas() {
+  function renderFeaturedAreasMarkup(mode) {
+    const mountMode = mode === 'inner' ? 'inner' : 'full';
     const target = document.getElementById('featuredAreasLinks');
-    if (!target) return;
+    if (!target) return '';
 
     const links = FEATURED_AREA_LINKS.map(
       (item) =>
         `<a class="link-card card-link" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
     ).join('');
 
-    target.innerHTML = `
+    if (mountMode === 'inner') {
+      return `
+<div class="container">
+  <div class="bottom-city-links-shell">
+    <div class="link-grid">${links}</div>
+  </div>
+</div>`;
+    }
+
+    return `
 <section class="bottom-city-links">
   <div class="container">
     <div class="bottom-city-links-shell">
@@ -170,6 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </div>
 </section>`;
+  }
+
+  function renderFeaturedAreas() {
+    const target = document.getElementById('featuredAreasLinks');
+    if (!target) return;
+
+    const mode = target.dataset.featuredAreasMount === 'inner' ? 'inner' : 'full';
+    target.innerHTML = renderFeaturedAreasMarkup(mode);
   }
 
   function renderSharedFooter() {
