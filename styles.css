@@ -441,12 +441,30 @@ p { color: var(--text); }
 
 /* Gold outline variant (single authority for .btn-outline-gold + .btn-gold-outline) */
 .btn-gold-outline,
-.btn-outline-gold { /* legacy alias */
+.btn-outline-gold,
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
   padding: 0.9rem 2.2rem;
+  transition: transform 0.22s, box-shadow 0.22s, background 0.22s, color 0.22s, border-color 0.22s;
+  will-change: transform;
+}
+
+.btn-gold-outline,
+.btn-outline-gold { /* legacy alias */
   border: 1px solid rgba(184, 146, 58, 0.55);
   color: var(--gold-lt);
   background: transparent;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s, color 0.22s, border-color 0.22s;
 }
 .btn-gold-outline:hover,
 .btn-outline-gold:hover {
@@ -468,19 +486,21 @@ p { color: var(--text); }
 
 /* White outline for dark hero use */
 .btn-outline-white {
-  padding: 0.9rem 2.2rem;
   border: 1px solid rgba(255, 255, 255, 0.32);
   color: rgba(255, 255, 255, 0.82);
   background: transparent;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s, color 0.22s, border-color 0.22s;
 }
 .btn-outline-white:hover {
   border-color: var(--gold-lt);
   color: var(--gold-lt);
 }
 
+:is(.btn-gold-outline, .btn-outline-gold, .btn-outline-white):hover {
+  transform: translateY(-2px);
+}
+
 /* Shared keyboard focus contract (core interactive controls) */
-:is(.btn, .btn-nav, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+:is(.btn, .btn-nav, .btn-gold-outline, .btn-outline-gold, .btn-outline-white, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
   outline: none;
   border-radius: 999px;
   box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
@@ -1037,11 +1057,11 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
   gap: 0.5rem;
 }
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.52);
   font-size: 0.8rem;
 }
 .footer-bottom a {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 0.8rem;
 }
@@ -2308,7 +2328,7 @@ body.page-index .hero-cta {display: flex;
 body.page-index .hero-trust {font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.55);
       opacity: 0;
       animation: fadeUp 0.9s 0.7s forwards;}
 body.page-index .usp-section {padding: clamp(5rem, 9vw, 8rem) 0;
