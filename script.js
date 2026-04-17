@@ -148,10 +148,17 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<ul class="mobile-nav-list">${rows}</ul>`;
   }
 
+  function resolveFeaturedAreasMountMode(value) {
+    if (value === 'inner' || value === 'disabled') return value;
+    return 'full';
+  }
+
   function renderFeaturedAreasMarkup(mode) {
-    const mountMode = mode === 'inner' ? 'inner' : 'full';
-    const target = document.getElementById('featuredAreasLinks');
-    if (!target) return '';
+    const mountMode = resolveFeaturedAreasMountMode(mode);
+
+    if (mountMode === 'disabled') {
+      return '';
+    }
 
     const links = FEATURED_AREA_LINKS.map(
       (item) =>
@@ -186,7 +193,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const target = document.getElementById('featuredAreasLinks');
     if (!target) return;
 
-    const mode = target.dataset.featuredAreasMount === 'inner' ? 'inner' : 'full';
+    const mode = resolveFeaturedAreasMountMode(target.dataset.featuredAreasMount);
+    if (mode === 'disabled') {
+      target.innerHTML = '';
+      return;
+    }
+
     target.innerHTML = renderFeaturedAreasMarkup(mode);
   }
 
