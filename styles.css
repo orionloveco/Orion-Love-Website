@@ -2452,8 +2452,10 @@ body.page-index .seller-hub-callout {max-width: 420px;
       border: 1px solid rgba(184,146,58,0.34);
       box-shadow: none;}
 body.page-index .seller-hub-callout h3 {font-size: 1.16rem;
+      color: var(--white);
       margin-bottom: 0.65rem;}
 body.page-index .seller-hub-callout p {font-size: 0.96rem;
+      color: rgba(255,255,255,0.82);
       line-height: 1.72;
       margin-bottom: 1.1rem;}
 body.page-index .process-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
