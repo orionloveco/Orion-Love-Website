@@ -500,7 +500,7 @@ p { color: var(--text); }
 }
 
 /* Shared keyboard focus contract (core interactive controls) */
-:is(.btn, .btn-nav, .btn-gold-outline, .btn-outline-gold, .btn-outline-white, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+:is(.btn, .btn-nav, .btn-gold-outline, .btn-outline-gold, .btn-outline-white, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
   outline: none;
   border-radius: 999px;
   box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
