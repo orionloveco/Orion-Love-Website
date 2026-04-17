@@ -477,6 +477,17 @@ p { color: var(--text); }
   color: var(--gold-lt);
 }
 
+/* Single secondary CTA style for dark/photo hero rows */
+.btn-hero-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.82);
+  background: transparent;
+}
+.btn-hero-secondary:hover {
+  border-color: var(--gold-lt);
+  color: var(--gold-lt);
+}
+
 /* Shared keyboard focus contract (core interactive controls) */
 .btn:focus-visible {
   outline: none;
