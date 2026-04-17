@@ -2777,13 +2777,6 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-submit 
   justify-content: center;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .link-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
 /* ===== seller-area page-specific variants ===== */
 /* Fruita hero keeps its own background crop/overlay emphasis. */
 body.page-selling-in-fruita .hero {
@@ -3536,7 +3529,7 @@ body.page-services .routing-links a {
 .form-message.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
 .form-message.error { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
 
-/* Shared bottom city cards across main pages and area pages */
+/* Shared bottom city cards across featured + local-area sections (single authority) */
 .bottom-city-links .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -3564,18 +3557,19 @@ body.page-services .routing-links a {
   color: var(--gold);
   font-size: 0.95rem;
   line-height: 1;
+  opacity: 0.8;
 }
 
 .bottom-city-links .link-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
+  border-color: rgba(184, 146, 58, 0.28);
 }
 
 .bottom-city-links .link-card svg,
 .bottom-city-links .link-card i {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   stroke: var(--gold);
   stroke-width: 2;
   color: var(--gold);
@@ -3583,7 +3577,7 @@ body.page-services .routing-links a {
 }
 
 .bottom-city-links .link-card span {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
 }
@@ -3706,54 +3700,6 @@ body.page-buyers .promise-icon svg {
   height: 22px;
   stroke: var(--gold);
   stroke-width: 1.8;
-}
-
-/* Bottom area link cards (shared local-area system; replaces per-page duplicates) */
-body.page-local-area .link-grid {
-  gap: 1rem;
-}
-
-body.page-local-area .link-card {
-  position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
-  border: 1px solid rgba(230, 224, 211, 0.95);
-  border-radius: var(--radius-sm);
-  padding: 1.2rem 1.25rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  box-shadow: 0 8px 24px rgba(12, 26, 61, 0.08);
-  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
-}
-
-body.page-local-area .link-card::after {
-  content: "→";
-  margin-left: auto;
-  color: var(--gold);
-  font-size: 0.95rem;
-  line-height: 1;
-  opacity: 0.8;
-}
-
-body.page-local-area .link-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
-  border-color: rgba(184, 146, 58, 0.28);
-}
-
-body.page-local-area .link-card svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--gold);
-  stroke-width: 2;
-  flex-shrink: 0;
-}
-
-body.page-local-area .link-card span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--navy);
 }
 
 /* =========================================================
