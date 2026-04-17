@@ -257,6 +257,17 @@ p { color: var(--text); }
 .nav-menu a:hover,
 .nav-menu a.active { color: var(--gold-lt); }
 
+/* Shared keyboard focus contract (nav links) */
+.nav-menu a:focus-visible {
+  outline: none;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
+}
+
+.nav-menu a:not(.btn-nav):focus-visible::after {
+  width: 100%;
+}
+
 .nav-dropdown {
   position: relative;
 }
@@ -455,6 +466,18 @@ p { color: var(--text); }
 .btn-outline-white:hover {
   border-color: var(--gold-lt);
   color: var(--gold-lt);
+}
+
+/* Shared keyboard focus contract (core interactive controls) */
+:is(.btn, .btn-nav, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+  outline: none;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
+}
+
+/* Keep card-link focus shape aligned to card geometry */
+:is(a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+  border-radius: var(--radius-sm);
 }
 
 /* =========================
@@ -1089,7 +1112,8 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
 #mobileNavOverlay a { font-size:1.15rem; color:#ffffff; text-decoration:none; font-family:"Cormorant Garamond", serif; font-weight:400; letter-spacing:0.03em; display:block; padding:0.25rem 0; }
 #mobileNavOverlay li { list-style: none; }
 #mobileNavOverlay a:hover,
-#mobileNavOverlay a.active { color: var(--gold-lt); }
+#mobileNavOverlay a.active,
+#mobileNavOverlay a:focus-visible { color: var(--gold-lt); }
 #mobileNavOverlay .btn-nav { border:1px solid rgba(184,146,58,0.55); border-radius:999px; padding:0.65rem 1rem; color:#d4aa5a; display:inline-block; margin-top:0.25rem; }
 #mobileNavOverlay .mobile-nav-title { display:block; font-size:0.8rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(212,170,90,0.92); margin-bottom:0.55rem; font-weight:600; }
 #mobileNavOverlay .mobile-nav-group { margin-bottom:0.65rem; }
@@ -3511,8 +3535,6 @@ body.page-services .routing-links a {
 .form-message { display: none; padding: 1rem 1.25rem; border-radius: 12px; font-size: 0.93rem; font-weight: 500; margin-bottom: 1.5rem; }
 .form-message.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
 .form-message.error { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
-.success { background: rgba(100,180,100,0.12); border: 1px solid rgba(100,180,100,0.3); color: #2d6a2d; }
-.error   { background: rgba(200,60,60,0.08);  border: 1px solid rgba(200,60,60,0.2);  color: #8b2020; }
 
 /* Shared bottom city cards across main pages and area pages */
 .bottom-city-links .link-grid {
