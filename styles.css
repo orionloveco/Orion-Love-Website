@@ -1864,18 +1864,6 @@ body.page-contact .form-submit {width: 100%;
 body.page-contact .form-submit:disabled {opacity: 0.6;
       cursor: not-allowed;
       transform: none !important;}
-body.page-contact .form-message {display: none;
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.93rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;}
-body.page-contact .form-message.success {background: #edf7ee;
-      border: 1px solid #b9debb;
-      color: #1a5c22;}
-body.page-contact .form-message.error {background: #fdf2f2;
-      border: 1px solid #f0c6c6;
-      color: #7a1f1f;}
 body.page-contact .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
       padding-top: 1.5rem;
       display: flex;
@@ -1901,26 +1889,6 @@ body.page-contact .form-row {grid-template-columns: 1fr;}
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .section-label {display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.1rem;}
-body.page-faq .section-label::before {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
-body.page-faq .section-label span {font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;}
-body.page-faq .section-label.centered {justify-content: center;}
-body.page-faq .section-label.centered::after {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
 body.page-faq .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -2238,26 +2206,7 @@ body.page-index .btn-navy {background: var(--navy);
 body.page-index .btn-navy:hover {background: var(--navy-mid);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);}
-body.page-index .section-label {display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.25rem;}
-body.page-index .section-label::before {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
-body.page-index .section-label span {font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;}
-body.page-index .section-label.centered {justify-content: center;}
-body.page-index .section-label.centered::before, body.page-index .section-label.centered::after {content: "";
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);}
+body.page-index .section-label {margin-bottom: 1.25rem;}
 body.page-index .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -3051,40 +3000,6 @@ body.page-services .btn-primary {
   box-shadow: 0 4px 20px rgba(184, 146, 58, 0.35);
 }
 
-body.page-services .section-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.1rem;
-}
-
-body.page-services .section-label::before {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-}
-
-body.page-services .section-label span {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-body.page-services .section-label.centered {
-  justify-content: center;
-}
-
-body.page-services .section-label.centered::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-}
 
 body.page-services .services-hero {
   background: var(--navy);
