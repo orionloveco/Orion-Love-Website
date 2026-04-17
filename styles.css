@@ -565,10 +565,6 @@ p { color: var(--text); }
    Architecture pass: page-family + hero + component roles
 ========================= */
 
-.page-family-flagship {}
-.page-family-support {}
-.page-family-neighborhood {}
-.seller-neighborhood-framework {}
 
 .page-family-flagship .hero.hero-flagship:not(.services-hero) {
   position: relative;
@@ -604,15 +600,6 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
   padding-top: 4rem;
 }
 
-.hero-flagship {}
-.hero-support {}
-.hero-neighborhood {}
-.seller-neighborhood-hero {}
-.seller-neighborhood-market-snapshot {}
-.seller-neighborhood-value-shapers {}
-.seller-neighborhood-buyer-response {}
-.seller-neighborhood-approach {}
-.seller-neighborhood-cta {}
 
 .hero-neighborhood .hero-cta .btn {
   min-width: 170px;
@@ -622,10 +609,6 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
   margin-top: 2.25rem;
 }
 
-.card-value {}
-.card-link {}
-.card-stat {}
-.card-trust {}
 
 .card-value:is(.value-card, .usp-card, .card, .profile-card, .diff-card),
 .value-card,
@@ -656,11 +639,6 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
   border-radius: var(--radius-md);
 }
 
-.site-section {}
-.section-shell {}
-.section-kicker {}
-.section-title {}
-.section-lead {}
 
 .layout-split,
 .layout-grid-2 {
