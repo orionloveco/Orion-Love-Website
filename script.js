@@ -168,18 +168,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mountMode === 'inner') {
       return `
 <div class="container">
-  <div class="bottom-city-links-shell">
+  <div class="nearby-area-links-shell">
     <div class="link-grid">${links}</div>
   </div>
 </div>`;
     }
 
     return `
-<section class="bottom-city-links">
+<section class="nearby-area-shell">
   <div class="container">
-    <div class="bottom-city-links-shell">
-      <div class="bottom-city-links-intro">
-        <div class="bottom-city-links-label"><span>Featured Areas</span></div>
+    <div class="nearby-area-links-shell">
+      <div class="nearby-area-intro">
+        <div class="nearby-area-label"><span>Featured Areas</span></div>
         <h2>Explore Key Markets Around Mesa County</h2>
         <p>A few of the places buyers and sellers ask about most across the Grand Valley.</p>
       </div>

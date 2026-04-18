@@ -2925,15 +2925,15 @@ body.page-services .routing-links a {
 .form-message.success { background: #edf7ee; border: 1px solid #b9debb; color: #1a5c22; }
 .form-message.error { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
 
-/* Shared bottom city cards across featured + local-area sections (single authority) */
-.bottom-city-links .link-grid {
+/* Shared nearby-area cards across featured + local-area sections (canonical authority) */
+:is(.nearby-area-shell, .bottom-city-links) .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.bottom-city-links .link-card {
+:is(.nearby-area-shell, .bottom-city-links) .link-card {
   position: relative;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
   border: 1px solid rgba(230, 224, 211, 0.95);
@@ -2947,7 +2947,7 @@ body.page-services .routing-links a {
   transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
 }
 
-.bottom-city-links .link-card::after {
+:is(.nearby-area-shell, .bottom-city-links) .link-card::after {
   content: "→";
   margin-left: auto;
   color: var(--gold);
@@ -2956,14 +2956,14 @@ body.page-services .routing-links a {
   opacity: 0.8;
 }
 
-.bottom-city-links .link-card:hover {
+:is(.nearby-area-shell, .bottom-city-links) .link-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
   border-color: rgba(184, 146, 58, 0.28);
 }
 
-.bottom-city-links .link-card svg,
-.bottom-city-links .link-card i {
+:is(.nearby-area-shell, .bottom-city-links) .link-card svg,
+:is(.nearby-area-shell, .bottom-city-links) .link-card i {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -2972,7 +2972,7 @@ body.page-services .routing-links a {
   flex-shrink: 0;
 }
 
-.bottom-city-links .link-card span {
+:is(.nearby-area-shell, .bottom-city-links) .link-card span {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
@@ -3135,15 +3135,15 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   --shared-cta-gap: 1rem;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) > .container {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) > .container {
   position: relative;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) .section-header {
   margin-bottom: var(--shared-section-header-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header.centered {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) .section-header.centered {
   text-align: center;
 }
 
@@ -3268,7 +3268,7 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
 .section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
 .section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
 .section-shell-top .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-.bottom-city-links .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
+:is(.bottom-city-links, .nearby-area-shell) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
   margin-top: 0;
 }
 
@@ -3569,13 +3569,15 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-top: 2rem;
 }
 
-/* Shared bottom city links intro */
+/* Shared nearby-area shell (canonical; bottom-city-links remains migration alias) */
+.nearby-area-shell,
 .bottom-city-links {
   background: var(--cream);
   border-top: 1px solid var(--sand);
   padding: clamp(3rem,5vw,4rem) 0;
 }
 
+.nearby-area-intro,
 .bottom-city-links-intro {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -3584,6 +3586,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-right: auto;
 }
 
+.nearby-area-label,
 .bottom-city-links-label {
   display: flex;
   align-items: center;
@@ -3592,6 +3595,8 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-bottom: 1.25rem;
 }
 
+.nearby-area-label::before,
+.nearby-area-label::after,
 .bottom-city-links-label::before,
 .bottom-city-links-label::after {
   content: "";
@@ -3601,6 +3606,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   background: var(--gold);
 }
 
+.nearby-area-label span,
 .bottom-city-links-label span {
   font-size: 0.72rem;
   letter-spacing: 0.2em;
@@ -3609,6 +3615,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   font-weight: 600;
 }
 
+.nearby-area-intro h2,
 .bottom-city-links-intro h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
@@ -3616,6 +3623,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-bottom: 0.55rem;
 }
 
+.nearby-area-intro p,
 .bottom-city-links-intro p {
   color: var(--muted);
   font-size: 0.98rem;
@@ -3956,16 +3964,10 @@ body.page-privacy .privacy-content {
 }
 
 /* Nearby-area family contract
-   Canonical: .nearby-area-shell/.nearby-area-intro/.nearby-area-copy
+   Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
+   Migration alias: .bottom-city-links*
 */
-.nearby-area-shell {
-  background: var(--cream);
-  border-top: 1px solid var(--sand);
-}
-
 .nearby-area-shell .nearby-area-intro {
-  text-align: center;
-  max-width: 720px;
   margin: 0 auto 1.5rem;
 }
 
