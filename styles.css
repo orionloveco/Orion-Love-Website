@@ -1046,6 +1046,10 @@ a.card-base:hover {
   font-size: 0.94rem;
 }
 
+.card-base.card-grid-4.card-value--spacious {
+  padding: clamp(1.35rem, 2.6vw, 1.75rem);
+}
+
 /* Variant: card-grid-3-dark (dark trust/process card) */
 .card-base.card-grid-3-dark {
   background: var(--color-surface-dark);
@@ -1647,7 +1651,7 @@ a.card-base:hover {
 
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .hero.hero-support .hero-cta { align-items: center; }
-  .layout-split,
+  .layout-split { grid-template-columns: 1fr; }
 
   .nav-dropdown-menu { display: none; }
 
@@ -3559,7 +3563,7 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
   margin-top: 0;
 }
 
-body.page-family-neighborhood .dark-band :is(.dark-band-inner) {
+body.page-family-neighborhood .dark-band:not(.dark-band-split):not(.dark-band-process-cards):not(.dark-band-checklist) :is(.dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3567,17 +3571,17 @@ body.page-family-neighborhood .dark-band :is(.dark-band-inner) {
   margin: 0 auto;
 }
 
-body.page-family-neighborhood .dark-band :is(.dark-band-inner) h2 {
+body.page-family-neighborhood .dark-band:not(.dark-band-split):not(.dark-band-process-cards):not(.dark-band-checklist) :is(.dark-band-inner) h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.page-family-neighborhood .dark-band :is(.dark-band-inner) h2 em {
+body.page-family-neighborhood .dark-band:not(.dark-band-split):not(.dark-band-process-cards):not(.dark-band-checklist) :is(.dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.page-family-neighborhood .dark-band :is(.dark-band-inner) p {
+body.page-family-neighborhood .dark-band:not(.dark-band-split):not(.dark-band-process-cards):not(.dark-band-checklist) :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
