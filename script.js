@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   const initSellerLeadForms = () => {
-    document.querySelectorAll('form[data-lead-form="seller"]').forEach((form) => {
+    document.querySelectorAll('form[data-lead-form="seller"]:not([data-form-handler="contact"])').forEach((form) => {
       initSellerLeadForm(form);
     });
   };

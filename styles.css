@@ -1884,52 +1884,15 @@ body.page-contact .response-card p {font-size: 0.93rem;
       z-index: 1;}
 body.page-contact .response-card p strong {color: var(--gold-lt);
       font-weight: 500;}
-body.page-contact .form-card {background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-lg);
-      padding: clamp(1.8rem, 3.8vw, 2.65rem);
-      box-shadow: var(--shadow-lg);}
-body.page-contact .form-card h3 {font-size: 2rem;
-      color: var(--navy);
+.form-card--contact h3 {
+      font-size: 2rem;
       margin-bottom: 0.5rem;
       font-weight: 300;}
-body.page-contact .form-card-sub {color: var(--muted);
+.form-card--contact .form-card-sub {
+      color: var(--muted);
       font-size: 0.97rem;
       margin-bottom: 1.55rem;
       line-height: 1.65;}
-body.page-contact #contactForm {display: grid;
-      gap: 1rem;}
-body.page-contact .form-row {display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;}
-body.page-contact .form-group {margin-bottom: 0;}
-body.page-contact .form-group label {display: block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 0.45rem;}
-body.page-contact .form-group input, body.page-contact .form-group select, body.page-contact .form-group textarea {width: 100%;
-      min-height: 48px;
-      padding: 0.8rem 1rem;
-      background: var(--cream);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-sm);
-      font-family: "Raleway", sans-serif;
-      font-size: 0.97rem;
-      color: var(--text);
-      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
-      appearance: none;
-      -webkit-appearance: none;}
-body.page-contact .form-group input::placeholder, body.page-contact .form-group textarea::placeholder {color: rgba(26,26,46,0.35);}
-body.page-contact .form-group input:focus, body.page-contact .form-group select:focus, body.page-contact .form-group textarea:focus {outline: none;
-      border-color: var(--gold);
-      background: var(--white);
-      box-shadow: 0 0 0 3px rgba(184,146,58,0.1);}
-body.page-contact .form-group textarea {resize: vertical;
-      min-height: 126px;
-      line-height: 1.6;}
 body.page-contact .select-wrap {position: relative;}
 body.page-contact .select-wrap::after {content: "";
       position: absolute;
@@ -1953,8 +1916,6 @@ body.page-contact .consent-block p {font-size: 0.82rem;
 body.page-contact .consent-block a {color: var(--navy);
       text-underline-offset: 2px;}
 body.page-contact .consent-block a:hover {color: var(--gold);}
-body.page-contact .form-submit {width: 100%;
-      margin-top: 0.35rem;}
 body.page-contact .form-submit:disabled {opacity: 0.6;
       cursor: not-allowed;
       transform: none !important;}
@@ -1971,9 +1932,6 @@ body.page-contact .footer-bottom a:hover {color: var(--gold-lt);}
 @media (max-width: 900px) {
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
-}
-@media (max-width: 640px) {
-body.page-contact .form-row {grid-template-columns: 1fr;}
 }
 
 
@@ -2198,11 +2156,6 @@ body.page-grand-junction-home-value .valuation-bullets {list-style: none;}
 body.page-grand-junction-home-value .valuation-bullets li {display: flex; align-items: flex-start; gap: 0.75rem;
       color: rgba(255,255,255,0.72); font-size: 0.95rem; margin-bottom: 0.9rem;}
 body.page-grand-junction-home-value .valuation-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-grand-junction-home-value .form-card {background: var(--white); border-radius: var(--radius-lg);
-      padding: 2.5rem 2.25rem; box-shadow: var(--shadow-lg);}
-body.page-grand-junction-home-value .form-card h3 {font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem;}
-body.page-grand-junction-home-value .form-card .form-sub {font-size: 0.9rem; color: var(--muted); margin-bottom: 1.75rem;}
-body.page-grand-junction-home-value .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
 body.page-grand-junction-home-value .why-section {background: var(--cream);}
 body.page-grand-junction-home-value .why-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem;}
 body.page-grand-junction-home-value .card-trust {padding: 1.75rem; box-shadow: none; transition: transform 0.25s, box-shadow 0.25s;}
@@ -2513,12 +2466,6 @@ body.local-area-seller-variant :is(.check-list, .contact-bullets) li svg {
   stroke-width: 2;
   flex-shrink: 0;
   margin-top: 3px;
-}
-
-body.local-area-seller-variant .form-submit {
-  width: 100%;
-  margin-top: 0.5rem;
-  justify-content: center;
 }
 
 /* ===== seller-area page-specific variants ===== */
@@ -3397,8 +3344,16 @@ body.local-area-contract-v2 .card-value p {
   line-height: 1.8;
 }
 
-/* Shared local-area lead form card shell */
-body.local-area-seller-variant .form-card {
+/* Canonical shared form section + shell contract */
+.form-section {
+  background: var(--cream);
+}
+
+.form-section .form-inner {
+  align-items: start;
+}
+
+.form-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2.25rem;
@@ -3406,19 +3361,39 @@ body.local-area-seller-variant .form-card {
   border: 1px solid var(--sand);
 }
 
-body.local-area-seller-variant .form-card h3 {
+.form-card h3 {
   font-size: 1.5rem;
   color: var(--navy);
   margin-bottom: 0.4rem;
 }
 
-body.local-area-seller-variant :is(.form-sub, .form-card .form-sub) {
+.form-card :is(.form-sub, .form-card-sub) {
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 1.75rem;
+  line-height: 1.65;
+}
+
+.form-card--contact {
+  padding: clamp(1.8rem, 3.8vw, 2.65rem);
+}
+
+.form-card--valuation {
+  border-color: transparent;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  justify-content: center;
 }
 
 /* Shared seller lead form contract */
+form[data-lead-form="seller"] {
+  display: grid;
+  gap: 1rem;
+}
+
 form[data-lead-form="seller"] .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3426,47 +3401,56 @@ form[data-lead-form="seller"] .form-row {
 }
 
 form[data-lead-form="seller"] .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 form[data-lead-form="seller"] .form-group label {
   display: block;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--navy);
-  font-weight: 600;
-  margin-bottom: 0.4rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
 }
 
 form[data-lead-form="seller"] .form-group :is(input, select, textarea) {
   width: 100%;
+  min-height: 48px;
   padding: 0.8rem 1rem;
+  background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-sm);
   font-family: "Raleway", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   color: var(--text);
-  background: var(--cream);
-  transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+form[data-lead-form="seller"] .form-group :is(input, textarea)::placeholder {
+  color: rgba(26,26,46,0.35);
 }
 
 form[data-lead-form="seller"] .form-group :is(input, select, textarea):focus {
+  outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(184,146,58,0.12);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(184,146,58,0.1);
 }
 
 form[data-lead-form="seller"] .form-group textarea {
   resize: vertical;
-  min-height: 90px;
+  min-height: 126px;
+  line-height: 1.6;
 }
 
 form[data-lead-form="seller"] .consent-note {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--muted);
-  margin-top: 0.85rem;
-  line-height: 1.6;
+  margin-top: 0.35rem;
+  line-height: 1.55;
   font-style: italic;
 }
 
