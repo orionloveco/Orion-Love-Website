@@ -517,14 +517,41 @@ p { color: var(--text); }
   align-items: center;
   overflow: hidden;
   color: var(--white);
+  --hero-inner-max: 1120px;
+  --hero-inner-align: left;
+  --hero-inner-top: clamp(4.5rem, 8vw, 6.5rem);
+  --hero-inner-bottom: 3.25rem;
+  --hero-overlay-before: none;
+  --hero-overlay-after: none;
 }
 
-/* Atmospheric overlay â€” applied per-page on .hero::before */
+.hero::before,
+.hero::after,
 .hero-overlay {
   position: absolute;
+  pointer-events: none;
+}
+
+.hero::before {
+  content: "";
   inset: 0;
   z-index: 0;
-  pointer-events: none;
+  background: var(--hero-overlay-before);
+}
+
+.hero::after {
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  z-index: 1;
+  background: var(--hero-overlay-after);
+}
+
+.hero-overlay {
+  inset: 0;
+  z-index: 0;
   background:
     radial-gradient(900px 450px at 50% -20%, rgba(184, 150, 58, 0.14), transparent 60%),
     linear-gradient(rgba(12, 26, 61, 0.72), rgba(12, 26, 61, 0.72));
@@ -535,10 +562,10 @@ p { color: var(--text); }
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1120px;
+  max-width: var(--hero-inner-max);
   margin: 0 auto;
-  padding: clamp(4.5rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2.5rem) 3.25rem;
-  text-align: left;
+  padding: var(--hero-inner-top) clamp(1.25rem, 4vw, 2.5rem) var(--hero-inner-bottom);
+  text-align: var(--hero-inner-align);
 }
 
 .hero .container > .hero-inner {
@@ -585,6 +612,20 @@ p { color: var(--text); }
   color: var(--gold-lt);
 }
 
+.hero h1:not(.hero-title) {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
 .hero-subtitle,
 .hero-lead {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
@@ -614,38 +655,61 @@ p { color: var(--text); }
 ========================= */
 
 
-.page-family-flagship .hero.hero-flagship:not(.services-hero) {
-  position: relative;
+.hero.hero-flagship {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  --hero-inner-max: 820px;
+  --hero-inner-align: left;
+  --hero-inner-top: clamp(5.5rem, 9.5vw, 7.75rem);
+  --hero-inner-bottom: clamp(3rem, 5vw, 4rem);
 }
 
-body.page-family-flagship.page-photo-hero .hero.hero-flagship {
+.hero.hero-flagship h1:not(.hero-title) {
+  font-size: clamp(2.6rem, 5.4vw, 4.9rem);
+}
+
+body.page-photo-hero .hero.hero-flagship {
+  min-height: 84vh;
+}
+
+.hero.hero-support {
+  min-height: clamp(320px, 50vh, 520px);
+  --hero-inner-max: 880px;
+  --hero-inner-align: center;
+  --hero-inner-top: clamp(7rem, 12vw, 10.5rem);
+  --hero-inner-bottom: clamp(3rem, 5vw, 4.75rem);
+  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184, 146, 58, 0.11), transparent 65%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.38), transparent);
+}
+
+.hero.hero-support .hero-eyebrow {
+  justify-content: center;
+}
+
+.hero.hero-support .hero-cta {
+  justify-content: center;
+}
+
+.hero.hero-support .hero-lead,
+.hero.hero-support .hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero.hero-support h1:not(.hero-title) {
+  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+}
+
+.hero.hero-neighborhood {
   min-height: 82vh;
+  --hero-inner-max: 760px;
+  --hero-inner-align: left;
+  --hero-inner-top: clamp(4rem, 7vw, 5rem);
+  --hero-inner-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  --hero-overlay-after: rgba(184,146,58,0.22);
 }
 
-body:is(.page-family-neighborhood, .seller-neighborhood-contract) .hero.hero-neighborhood {
-  position: relative;
-  min-height: 82vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-body:is(.page-family-support, .page-family-flagship) .hero.hero-support,
-body.page-family-flagship .hero.hero-flagship.services-hero {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
-  text-align: center;
-}
-
-body:is(.page-family-neighborhood, .seller-neighborhood-contract) .hero.hero-neighborhood .hero-inner,
-body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
-  max-width: 760px;
-  padding-top: 4rem;
+.hero.hero-neighborhood h1:not(.hero-title) {
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
 }
 
 
@@ -1108,6 +1172,7 @@ body.page-family-flagship.page-photo-hero .hero.hero-flagship .hero-inner {
   .mobile-toggle { display: flex; }
 
   .hero-cta { flex-direction: column; align-items: flex-start; }
+  .hero.hero-support .hero-cta { align-items: center; }
   .layout-split,
   .layout-grid-2,
   .layout-sidebar { grid-template-columns: 1fr; }
@@ -1464,41 +1529,21 @@ body.page-about .about-final-cta-inner h2 {
 }
 
 /* ===== buyers.html ===== */
-body.page-buyers .buyers-hero {background: var(--navy);}
-body.page-buyers .buyers-hero::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
-      pointer-events: none;}
-body.page-buyers .buyers-hero::after {content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
+body.page-buyers .buyers-hero {background: var(--navy);
+      --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
+      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
 body.page-buyers .hero-eyebrow {display: flex;
       opacity: 0;
       animation: fadeUp 0.8s 0.1s forwards;}
-body.page-buyers .buyers-hero h1 {font-size: clamp(3rem, 7.5vw, 6rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      position: relative;
+body.page-buyers .buyers-hero h1 {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.25s forwards;}
-body.page-buyers .buyers-hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-buyers .buyers-hero p {font-size: clamp(1rem, 1.8vw, 1.12rem);
-      color: rgba(255,255,255,0.65);
-      max-width: 54ch;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
-      line-height: 1.85;
-      position: relative;
+body.page-buyers .buyers-hero p {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.4s forwards;}
 body.page-buyers .hero-cta {display: flex;
-      justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
       opacity: 0;
@@ -1663,14 +1708,7 @@ body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
 
 /* ===== Local-area template contract v2: shared hero scaffold ===== */
 body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero::after {content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(184,146,58,0.22);}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero-inner {position: relative;z-index: 1;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero-eyebrow {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.5rem;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero-eyebrow::before {content:"";display:block;width:22px;height:1px;background:var(--gold);}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero h1 {color:var(--white);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;margin-bottom:1.25rem;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero h1 em {font-style:italic;color:var(--gold-lt);}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero-lead {font-size: 1.1rem;color: rgba(255,255,255,0.72);max-width: 56ch;line-height: 1.9;margin-bottom: 2.5rem;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero-cta {display: flex;gap: 1rem;flex-wrap: wrap;}
+body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
 
 
 /* ===== contact.html ===== */
@@ -1683,39 +1721,20 @@ body.page-contact .main-header {position: fixed;
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
 body.page-contact .contact-hero {background: var(--navy);
       min-height: clamp(320px, 48vh, 460px);}
-body.page-contact .contact-hero::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
-      pointer-events: none;}
-body.page-contact .contact-hero::after {content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);}
+body.page-contact .contact-hero {--hero-overlay-before: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
+      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);}
 body.page-contact .hero-eyebrow {opacity: 0;
       animation: fadeUp 0.8s 0.1s forwards;}
-body.page-contact .contact-hero h1 {font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 0.85rem;
-      position: relative;
+body.page-contact .contact-hero h1 {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.25s forwards;}
-body.page-contact .contact-hero h1 em {font-style: italic;
-      color: var(--gold-lt);}
-body.page-contact .contact-hero p {font-size: clamp(1rem, 1.8vw, 1.1rem);
-      color: rgba(255,255,255,0.65);
-      max-width: 56ch;
-      margin: 0 auto;
-      font-weight: 300;
-      line-height: 1.75;
-      position: relative;
+body.page-contact .contact-hero p {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.4s forwards;}
-body.page-contact .contact-hero .hero-inner {padding: clamp(3.4rem, 6.2vw, 4.8rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);}
+body.page-contact .contact-hero {--hero-inner-top: clamp(3.4rem, 6.2vw, 4.8rem);
+      --hero-inner-bottom: clamp(1.75rem, 3.5vw, 2.5rem);}
 body.page-contact .contact-section {padding: clamp(4rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-contact .contact-layout {display: grid;
@@ -1902,38 +1921,15 @@ body.page-faq .divider-diamond {width: 8px; height: 8px;
       flex-shrink: 0;
       opacity: 0.6;}
 body.page-faq .faq-hero {background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-downtown.jpg") center / cover no-repeat;
-      position: relative;
-      padding: clamp(8rem, 14vw, 12rem) 0 clamp(4.5rem, 8vw, 7rem);
-      overflow: hidden;
-      text-align: center;}
-body.page-faq .faq-hero::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
-      pointer-events: none;}
-body.page-faq .faq-hero::after {content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
+      --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
+      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
 body.page-faq .hero-eyebrow {opacity: 0;
       animation: fadeUp 0.8s 0.1s forwards;}
-body.page-faq .faq-hero h1 {font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      position: relative;
+body.page-faq .faq-hero h1 {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.25s forwards;}
-body.page-faq .faq-hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-faq .faq-hero p {font-size: clamp(1rem, 1.8vw, 1.1rem);
-      color: rgba(255,255,255,0.62);
-      max-width: 62ch;
-      margin: 0 auto;
-      font-weight: 300;
-      line-height: 1.85;
-      position: relative;
+body.page-faq .faq-hero p {position: relative;
       z-index: 1;
       opacity: 0;
       animation: fadeUp 0.9s 0.4s forwards;}
@@ -2104,17 +2100,7 @@ body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 
 body.page-grand-junction-home-value .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;}
-body.page-grand-junction-home-value .hero::after {content: ""; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 1px; background: rgba(184,146,58,0.22);}
-body.page-grand-junction-home-value .hero-inner {position: relative; z-index: 1;}
-body.page-grand-junction-home-value .hero-eyebrow {display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold-lt); font-weight: 600; margin-bottom: 1.5rem;}
-body.page-grand-junction-home-value .hero-eyebrow::before {content: ""; display: block; width: 22px; height: 1px; background: var(--gold);}
-body.page-grand-junction-home-value .hero h1 {color: var(--white); font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; margin-bottom: 1.25rem;}
-body.page-grand-junction-home-value .hero h1 em {font-style: italic; color: var(--gold-lt);}
-body.page-grand-junction-home-value .hero-lead {font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 56ch; line-height: 1.9; margin-bottom: 2.5rem;}
-body.page-grand-junction-home-value .hero-cta {display: flex; gap: 1rem; flex-wrap: wrap;}
+body.page-grand-junction-home-value .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
 body.page-grand-junction-home-value .market-stats {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .stats-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;}
 body.page-grand-junction-home-value .stat-item {padding: 2.25rem 1.5rem; text-align: center;
@@ -2213,19 +2199,11 @@ body.page-index .divider-diamond {width: 8px; height: 8px;
 body.page-index .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;
+      --hero-overlay-before: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
+      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
 }
 body.page-index .hero > .container {max-width: none;
       margin: 0;}
-body.page-index .hero::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
-      pointer-events: none;}
-body.page-index .hero::after {content: "";
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);}
 body.page-index .hero-scroll {position: absolute;
       bottom: 2.5rem;
       left: 50%;
@@ -2797,70 +2775,14 @@ body.page-services h4 {
 
 body.page-services .services-hero {
   background: var(--navy);
-}
-
-body.page-services .services-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184, 146, 58, 0.11), transparent 65%);
-  pointer-events: none;
-}
-
-body.page-services .services-hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.38), transparent);
+  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184, 146, 58, 0.11), transparent 65%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.38), transparent);
 }
 
 body.page-services .hero-eyebrow {
   display: flex;
   opacity: 0;
   animation: fadeUp 0.8s 0.1s forwards;
-}
-
-body.page-services .services-hero h1 {
-  font-size: clamp(3rem, 7.5vw, 6rem);
-  font-weight: 300;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.25s forwards;
-}
-
-body.page-services .services-hero h1 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-body.page-services .services-hero p {
-  font-size: clamp(1rem, 1.8vw, 1.12rem);
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 54ch;
-  margin: 0 auto 2.5rem;
-  font-weight: 300;
-  line-height: 1.85;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.4s forwards;
-}
-
-body.page-services .hero-cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.55s forwards;
-  position: relative;
-  z-index: 1;
 }
 
 body.page-services .method-spine {
@@ -4014,61 +3936,23 @@ body.page-privacy .main-header {
 }
 
 body.page-privacy .privacy-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 8.5rem 0 4rem;
   background:
     linear-gradient(rgba(12, 26, 61, 0.9), rgba(12, 26, 61, 0.88)),
     radial-gradient(700px 280px at 50% 0%, rgba(184, 146, 58, 0.12), transparent 70%);
-}
-
-body.page-privacy .privacy-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top center, rgba(212, 170, 90, 0.08), transparent 45%);
-  pointer-events: none;
+  --hero-overlay-before: radial-gradient(circle at top center, rgba(212, 170, 90, 0.08), transparent 45%);
 }
 
 body.page-privacy .privacy-hero .container {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 880px;
-}
-
-body.page-privacy .privacy-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 1.1rem;
-  color: var(--gold-lt);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-body.page-privacy .privacy-eyebrow::before,
-body.page-privacy .privacy-eyebrow::after {
-  content: "";
-  width: 32px;
-  height: 1px;
-  background: rgba(212, 170, 90, 0.7);
+  max-width: 980px;
 }
 
 body.page-privacy .privacy-hero h1 {
-  color: var(--white);
   font-size: clamp(2.8rem, 6vw, 4.8rem);
-  font-weight: 300;
   margin-bottom: 0.9rem;
 }
 
 body.page-privacy .privacy-hero p {
-  color: rgba(255, 255, 255, 0.72);
-  max-width: 54ch;
-  margin: 0 auto;
-  line-height: 1.85;
+  margin-bottom: 0;
 }
 
 body.page-privacy .privacy-shell {
@@ -4426,25 +4310,6 @@ body.page-privacy .privacy-content {
 /* ===== Migrated inline styles from page templates ===== */
 
 /* buyers.html migrated inline <style> */
-body.page-buyers .buyers-hero {
-  text-align: left;
-  padding: clamp(7rem, 11vw, 9rem) 0 clamp(3.2rem, 5vw, 4.2rem);
-}
-body.page-buyers .buyers-hero .hero-inner {
-  max-width: 780px;
-}
-body.page-buyers .buyers-hero .hero-eyebrow,
-body.page-buyers .buyers-hero .hero-cta {
-  justify-content: flex-start;
-}
-body.page-buyers .buyers-hero h1 {
-  font-size: clamp(2.4rem, 5vw, 4.4rem);
-  margin-bottom: 1rem;
-}
-body.page-buyers .buyers-hero p {
-  margin: 0 0 1.65rem;
-  max-width: 62ch;
-}
 body.page-buyers .buyers-editorial,
 body.page-buyers .buyers-realities,
 body.page-buyers .buyers-trust,
