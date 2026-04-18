@@ -163,6 +163,39 @@ p { color: var(--text); }
   flex-shrink: 0;
 }
 
+
+/* Shared section-header/intro/label modifiers */
+.section-header-spacious {
+  margin-bottom: clamp(2rem, 4.5vw, 3rem);
+}
+
+.section-header-inline {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.section-header-inline .section-intro {
+  max-width: 50ch;
+  margin-bottom: 0;
+}
+
+.section-header-inline .cta-center {
+  text-align: left;
+  margin-top: 1.75rem;
+}
+
+.section-header-narrow {
+  max-width: 760px;
+}
+
+.section-header-intro-relaxed :is(.section-intro, .lead) {
+  margin-top: 0.85rem;
+}
+
+.section-label-spacious {
+  margin-bottom: 1.25rem;
+}
+
 /* Decorative diamond divider */
 .divider {
   display: flex;
@@ -1554,27 +1587,16 @@ body.page-about .credential-pill svg {
 
 body.page-about .about-think-section { background: var(--white); }
 
-body.page-about .section-header {
-  text-align: center;
-  margin-bottom: clamp(2rem, 4.5vw, 3rem);
-}
-
-body.page-about .section-header h2 {
+.section-header-about h2 {
   font-size: clamp(1.9rem, 4vw, 2.95rem);
   color: var(--navy);
   margin-bottom: 0.8rem;
   font-weight: 300;
 }
 
-body.page-about .section-header h2 em {
+.section-header-about h2 em {
   color: var(--gold);
   font-style: italic;
-}
-
-body.page-about .section-header .section-intro {
-  max-width: 62ch;
-  margin: 0 auto;
-  color: var(--muted);
 }
 
 body.page-about .think-grid {
@@ -2223,7 +2245,6 @@ body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormor
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .section-label {margin-bottom: 1.25rem;}
 body.page-index .divider {display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -2244,17 +2265,10 @@ body.page-index .hero {background:
         url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-index .usp-section {padding: clamp(5rem, 9vw, 8rem) 0;
       background: var(--cream);}
-body.page-index .section-header {text-align: center;
-}
 body.page-index .section-header h2 {font-size: clamp(2rem, 4.5vw, 3.2rem);
       color: var(--navy);
       margin-bottom: 1rem;
       font-weight: 300;}
-body.page-index .section-header .lead {max-width: 56ch;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.85;}
 body.page-index .usp-grid {display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
@@ -2309,17 +2323,11 @@ body.page-index .process-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
 body.page-index .process-section .layout-split {grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       gap: clamp(2rem, 5vw, 4.5rem);
       align-items: start;}
-body.page-index .process-section .section-header {text-align: left;
-      margin-bottom: 0;}
-body.page-index .process-section .section-header .section-intro {max-width: 50ch;
-      margin-bottom: 0;}
 body.page-index .process-support {margin-top: 0.9rem;
       color: var(--muted);
       max-width: 46ch;
       font-size: 0.96rem;
       line-height: 1.7;}
-body.page-index .process-section .section-header .cta-center {text-align: left;
-      margin-top: 1.75rem;}
 body.page-index .process-grid {display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.2rem;
@@ -2381,7 +2389,7 @@ body.page-index .mobile-toggle span {display: block;
 @media (max-width: 560px) {
 body.page-index .usp-grid {grid-template-columns: 1fr;}
 body.page-index .process-grid {grid-template-columns: 1fr;}
-body.page-index .process-section .section-header .cta-center {text-align: center;}
+.section-header-inline .cta-center {text-align: center;}
 }
 
 
@@ -3038,15 +3046,6 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-text 
 /* ===== services page cleanup: seller guidance spacing + dark CTA text ===== */
 body.page-services #services {
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
-}
-
-body.page-services #services .section-header {
-  max-width: 760px;
-}
-
-body.page-services #services .section-intro,
-body.page-services #services .lead {
-  margin-top: 0.85rem;
 }
 
 body.page-services #services .process-steps,
