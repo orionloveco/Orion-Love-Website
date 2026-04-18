@@ -2404,84 +2404,27 @@ body.page-family-neighborhood :is(.identity-section, .profile-section, .diff-sec
   background: var(--cream);
 }
 
-body.page-family-neighborhood .dark-band .dark-copy h2 {
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-body.page-family-neighborhood .dark-band .dark-copy h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-body.page-family-neighborhood .dark-band .dark-copy p {
-  font-size: 1rem;
-  line-height: 1.85;
-  margin-bottom: 1.25rem;
-}
-
-body.page-family-neighborhood .dark-list {
+.dark-band.seller-neighborhood-approach-band .dark-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
 }
 
-body.page-family-neighborhood .dark-list li {
+.dark-band.seller-neighborhood-approach-band .dark-list li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
 }
 
-body.page-family-neighborhood .dark-list li svg {
+.dark-band.seller-neighborhood-approach-band .dark-list li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
   stroke-width: 2;
   flex-shrink: 0;
   margin-top: 3px;
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  transition: background 0.25s;
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  color: rgba(184,146,58,0.4);
-  line-height: 1;
-  flex-shrink: 0;
-  width: 2rem;
-  text-align: center;
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item p {
-  font-size: 0.88rem;
-  line-height: 1.7;
 }
 
 body.page-family-neighborhood :is(.check-list, .contact-bullets) {
@@ -2525,36 +2468,6 @@ body.page-selling-in-palisade .stat-note-sm {
   font-size: 0.72rem;
   color: var(--muted);
   margin-top: 0.2rem;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row:last-of-type {
-  border-bottom: none;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-label {
-  color: rgba(255,255,255,0.55);
-  font-size: 0.88rem;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-val {
-  color: var(--gold-lt);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-note {
-  color: rgba(255,255,255,0.35);
-  font-size: 0.78rem;
-  margin-top: 1rem;
-  font-style: italic;
 }
 
 @media (max-width: 640px) {
@@ -3813,26 +3726,72 @@ body.page-privacy .privacy-content {
   margin-top: 2.25rem;
 }
 
-.dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header h2, .dark-copy h2),
-.dark-band.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header h2, .dark-copy h2) {
+.dark-band.seller-neighborhood-approach-band :is(.process-header h2, .dark-copy h2, .pricing-copy h2) {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-.dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header p, .dark-copy p),
-.dark-band.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header p, .dark-copy p) {
+.dark-band.seller-neighborhood-approach-band :is(.process-header p, .dark-copy p, .pricing-copy p) {
   color: var(--surface-dark-muted);
 }
 
-.dark-band.seller-neighborhood-approach-band .dark-copy h2 em {
+.dark-band.seller-neighborhood-approach-band :is(.dark-copy h2, .pricing-copy h2) em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-.dark-band.seller-neighborhood-approach-band .dark-copy p {
+.dark-band.seller-neighborhood-approach-band :is(.dark-copy p, .pricing-copy p) {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
+}
+
+.dark-band.seller-neighborhood-approach-band :is(.step-item, .step-card) {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.dark-band.seller-neighborhood-approach-band :is(.step-item:hover, .step-card:hover) {
+  background: rgba(255,255,255,0.1);
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n,
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-num {
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n {
+  font-size: 2rem;
+  color: rgba(184,146,58,0.4);
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: center;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item p {
+  font-size: 0.88rem;
+  line-height: 1.7;
 }
 
 .dark-band.seller-neighborhood-approach-band.approach-band-process-cards .process-header {
@@ -3855,24 +3814,14 @@ body.page-privacy .privacy-content {
 }
 
 .dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-md);
   padding: 2rem 1.5rem;
   text-align: center;
-  transition: background 0.25s, border-color 0.25s;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card:hover {
-  background: rgba(255,255,255,0.1);
   border-color: rgba(184,146,58,0.3);
 }
 
 .dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-num {
-  font-family: "Cormorant Garamond", serif;
   font-size: 2.8rem;
   color: rgba(184,146,58,0.3);
-  line-height: 1;
   margin-bottom: 0.75rem;
 }
 
@@ -3901,19 +3850,9 @@ body.page-privacy .privacy-content {
 
 .dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 {
   font-size: clamp(1.8rem,3vw,2.6rem);
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
 }
 
 .dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy p {
-  color: var(--surface-dark-muted);
-  font-size: 1rem;
-  line-height: 1.85;
   margin-bottom: 1.5rem;
 }
 
@@ -3955,6 +3894,36 @@ body.page-privacy .privacy-content {
 .dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row:last-of-type {
+  border-bottom: none;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-label {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.88rem;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-val {
+  color: var(--gold-lt);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+}
+
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-note {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.78rem;
+  margin-top: 1rem;
+  font-style: italic;
 }
 
 @media (max-width: 968px) {
