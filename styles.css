@@ -5097,3 +5097,52 @@ body.page-faq .faq-help-row p {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* === NEIGHBORHOOD TIER MODIFIERS === */
+body.tier-premium .hero.hero-neighborhood {
+  --hero-inner-top: clamp(5rem, 8.5vw, 6.3rem);
+  --hero-inner-bottom: clamp(3.15rem, 5.2vw, 4.2rem);
+}
+
+body.tier-premium .hero-neighborhood h1 {
+  --hero-h1-size: clamp(2.45rem, 5.15vw, 4.2rem);
+  font-weight: 400;
+}
+
+body.tier-premium .stat-box .stat-val {
+  font-size: 2.55rem;
+}
+
+body.tier-premium .section-label span {
+  letter-spacing: 0.215em;
+  font-weight: 700;
+}
+
+body.tier-lifestyle .dark-band {
+  padding-top: clamp(3.7rem, 6.3vw, 5.45rem);
+}
+
+body.tier-lifestyle :is(.card-grid-3 h3, .card-grid-3-editorial h3) {
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+body.tier-lifestyle .hero-lead {
+  max-width: 58ch;
+}
+
+body.tier-value .stat-box .stat-val {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+body.tier-value :is(.snapshot-section, .identity-section) {
+  padding-top: clamp(3.15rem, 5.3vw, 4.35rem);
+  padding-bottom: clamp(3.15rem, 5.3vw, 4.35rem);
+}
+
+body.tier-value .hero.hero-neighborhood {
+  --hero-inner-top: clamp(4.2rem, 7.2vw, 5.3rem);
+  --hero-inner-bottom: clamp(2.45rem, 4.2vw, 3.35rem);
+}
