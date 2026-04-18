@@ -954,9 +954,7 @@ p { color: var(--text); }
 /* Shared dark-surface contract (single authority for dark bands/components) */
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) {
   --surface-dark-heading: var(--white);
   --surface-dark-body: rgba(255, 255, 255, 0.72);
@@ -966,9 +964,7 @@ p { color: var(--text); }
 
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) :is(
   h2,
   h3,
@@ -983,9 +979,7 @@ p { color: var(--text); }
 
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) :is(
   p,
   .section-intro,
@@ -1000,9 +994,7 @@ p { color: var(--text); }
 
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) :is(
   .section-label span,
   .section-label-accent span,
@@ -1019,9 +1011,7 @@ p { color: var(--text); }
 
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) :is(
   .card h3,
   .step h3,
@@ -1034,9 +1024,7 @@ p { color: var(--text); }
 
 :is(
   .cta-band,
-  .local-area-dark-band,
-  .seller-neighborhood-approach-band,
-  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
+  .dark-band
 ) :is(
   .card p,
   .pricing-card p
@@ -1096,6 +1084,61 @@ p { color: var(--text); }
 
 .cta-band :is(.btn, .btn-secondary, .btn-primary, .btn-navy, .btn-gold-outline, .btn-outline, .btn-hero-secondary) {
   align-self: center;
+}
+
+
+
+.dark-band {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
+  pointer-events: none;
+}
+
+.dark-band :is(.dark-band-inner, .process-inner, .pricing-inner) {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-band.cta-band--light {
+  background: var(--cream);
+  border-top: 1px solid var(--sand);
+  padding: clamp(4rem, 7vw, 6rem) 0;
+  text-align: center;
+}
+
+.cta-band.cta-band--light .cta-band-copy {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-band.cta-band--light .cta-band-copy h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: var(--navy);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.cta-band.cta-band--light .cta-band-copy h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.cta-band.cta-band--light .cta-band-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 2.25rem;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Buyers CTA (white bg) */
@@ -1750,24 +1793,7 @@ body.page-buyers .compensation-copy p {color: rgba(255,255,255,0.58);
       font-size: 0.97rem;
       line-height: 1.8;
       max-width: 58ch;}
-body.page-buyers .cta-band {background: var(--cream);
-      border-top: 1px solid var(--sand);
-      padding: clamp(4rem, 7vw, 6rem) 0;
-      text-align: center;}
-body.page-buyers .cta-band-copy {max-width: 720px;
-      margin: 0 auto;}
-body.page-buyers .cta-band-copy h2 {font-size: clamp(2.2rem, 4vw, 3.2rem);
-      color: var(--navy);
-      font-weight: 300;
-      margin-bottom: 1rem;}
-body.page-buyers .cta-band-copy h2 em {font-style: italic; color: var(--gold);}
-body.page-buyers .cta-band-copy p {color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.85;
-      margin-bottom: 2.25rem;
-      max-width: 52ch;
-      margin-left: auto;
-      margin-right: auto;}
+
 @media (max-width: 980px) {
 body.page-buyers .promise-grid {grid-template-columns: 1fr;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
@@ -2185,7 +2211,7 @@ body.page-grand-junction-home-value .why-num {font-family: "Cormorant Garamond",
       color: rgba(184,146,58,0.25); line-height: 1; margin-bottom: 0.5rem;}
 body.page-grand-junction-home-value .card-trust h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem;}
 body.page-grand-junction-home-value .card-trust p {font-size: 0.95rem; color: var(--muted); line-height: 1.8;}
-body.page-grand-junction-home-value .cta-band {background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
+.cta-band.cta-band--soft {background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
@@ -2270,28 +2296,17 @@ body.page-index .usp-card p {color: var(--muted);
       font-size: 0.96rem;
       line-height: 1.8;}
 body.page-index .cta-center {text-align: center;}
-body.page-index .cta-band {background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      padding: clamp(4rem, 7vw, 6rem) 0;}
-body.page-index .cta-band::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.08), transparent 70%);
-      pointer-events: none;}
-body.page-index .cta-band-inner {position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.9fr);
-      align-items: center;
+.cta-band.cta-band--feature {padding: clamp(4rem, 7vw, 6rem) 0;}
+.cta-band.cta-band--feature::before {background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.08), transparent 70%);}
+.cta-band.cta-band--feature .cta-band-inner {grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.9fr);
       gap: clamp(1.75rem, 4vw, 3.25rem);}
-body.page-index .cta-band-copy {max-width: 62ch;}
-body.page-index .cta-band-copy h2 {font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+.cta-band.cta-band--feature .cta-band-copy {max-width: 62ch;}
+.cta-band.cta-band--feature .cta-band-copy h2 {font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       font-weight: 300;
       margin-bottom: 0.75rem;}
-body.page-index .cta-band-copy h2 em {font-style: italic;
+.cta-band.cta-band--feature .cta-band-copy h2 em {font-style: italic;
       color: var(--gold-lt);}
-body.page-index .cta-band-copy p {font-size: 1rem;
+.cta-band.cta-band--feature .cta-band-copy p {font-size: 1rem;
       line-height: 1.8;
       max-width: 52ch;}
 body.page-index .seller-hub-callout {max-width: 420px;
@@ -2365,7 +2380,7 @@ body.page-index .process-section .layout-split {grid-template-columns: 1fr;
 body.page-index .process-grid {grid-template-columns: repeat(2, 1fr); gap: 1rem;}
 }
 @media (max-width: 768px) {
-body.page-index .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
+.cta-band.cta-band--feature .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
 body.page-index .seller-hub-callout {max-width: 100%;}
 body.page-index .nav-menu {display: none;}
 body.page-index .mobile-toggle {display: flex;
@@ -2398,36 +2413,17 @@ body.local-area-seller-variant :is(.identity-section, .profile-section, .diff-se
   background: var(--cream);
 }
 
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-  pointer-events: none;
-}
-
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-band-inner {
-  position: relative;
-  z-index: 1;
-}
-
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 {
+body.local-area-seller-variant .dark-band .dark-copy h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 em {
+body.local-area-seller-variant .dark-band .dark-copy h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy p {
+body.local-area-seller-variant .dark-band .dark-copy p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
@@ -2456,13 +2452,13 @@ body.local-area-seller-variant .dark-list li svg {
   margin-top: 3px;
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -2473,11 +2469,11 @@ body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-
   transition: background 0.25s;
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
   background: rgba(255,255,255,0.1);
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-n {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   color: rgba(184,146,58,0.4);
@@ -2487,12 +2483,12 @@ body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-
   text-align: center;
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
-body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item p {
+body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item p {
   font-size: 0.88rem;
   line-height: 1.7;
 }
@@ -2546,7 +2542,7 @@ body.page-selling-in-palisade .stat-note-sm {
   margin-top: 0.2rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2554,22 +2550,22 @@ body.page-selling-in-palisade .stat-note-sm {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row:last-of-type {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row:last-of-type {
   border-bottom: none;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-label {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-label {
   color: rgba(255,255,255,0.55);
   font-size: 0.88rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-val {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-val {
   color: var(--gold-lt);
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-note {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-note {
   color: rgba(255,255,255,0.35);
   font-size: 0.78rem;
   margin-top: 1rem;
@@ -2579,7 +2575,7 @@ body.page-selling-in-palisade .stat-note-sm {
 @media (max-width: 640px) {
   body.page-selling-in-fruita .snapshot-stats,
   body.page-selling-in-palisade .identity-stats,
-  .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
+  .dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
     margin-top: 1rem;
   }
 }
@@ -3126,9 +3122,7 @@ body.page-buyers .promise-icon svg {
 body.page-about .cta-content,
 body.page-contact .cta-content,
 body.page-faq .cta-content,
-body.page-grand-junction-home-value .cta-content,
-body.page-buyers .cta-band-inner,
-body.page-buyers .cta-band-copy {
+body.page-grand-junction-home-value .cta-content {
   position: relative;
 }
 
@@ -3338,21 +3332,7 @@ body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
   margin-top: 0;
 }
 
-body.local-area-core .local-area-dark-band {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-body.local-area-core .local-area-dark-band::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-  pointer-events: none;
-}
-
-body.local-area-core .local-area-dark-band :is(.dark-band-inner) {
+body.local-area-core .dark-band :is(.dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3360,17 +3340,17 @@ body.local-area-core .local-area-dark-band :is(.dark-band-inner) {
   margin: 0 auto;
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-band-inner) h2 {
+body.local-area-core .dark-band :is(.dark-band-inner) h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-band-inner) h2 em {
+body.local-area-core .dark-band :is(.dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-band-inner) p {
+body.local-area-core .dark-band :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
@@ -3882,53 +3862,34 @@ body.page-privacy .privacy-content {
   margin-top: 2.25rem;
 }
 
-.seller-neighborhood-approach-band {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-.seller-neighborhood-approach-band::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-  pointer-events: none;
-}
-
-.seller-neighborhood-approach-band :is(.dark-band-inner, .process-inner, .pricing-inner) {
-  position: relative;
-  z-index: 1;
-}
-
-.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header h2, .dark-copy h2),
-.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header h2, .dark-copy h2) {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header h2, .dark-copy h2),
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header h2, .dark-copy h2) {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header p, .dark-copy p),
-.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header p, .dark-copy p) {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header p, .dark-copy p),
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header p, .dark-copy p) {
   color: var(--surface-dark-muted);
 }
 
-.seller-neighborhood-approach-band .dark-copy h2 em {
+.dark-band.seller-neighborhood-approach-band .dark-copy h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-.seller-neighborhood-approach-band .dark-copy p {
+.dark-band.seller-neighborhood-approach-band .dark-copy p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .process-header {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .process-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .process-header p {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .process-header p {
   font-size: 1rem;
   margin-top: 0.75rem;
   max-width: 52ch;
@@ -3936,13 +3897,13 @@ body.page-privacy .privacy-content {
   margin-right: auto;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .steps-grid {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .step-card {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -3951,12 +3912,12 @@ body.page-privacy .privacy-content {
   transition: background 0.25s, border-color 0.25s;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .step-card:hover {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card:hover {
   background: rgba(255,255,255,0.1);
   border-color: rgba(184,146,58,0.3);
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .step-num {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-num {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.8rem;
   color: rgba(184,146,58,0.3);
@@ -3964,61 +3925,61 @@ body.page-privacy .privacy-content {
   margin-bottom: 0.75rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .step-card h3 {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .step-card p {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .step-card p {
   color: var(--surface-dark-body);
   font-size: 0.9rem;
   line-height: 1.8;
 }
 
-.seller-neighborhood-approach-band.approach-band-process-cards .process-cta {
+.dark-band.seller-neighborhood-approach-band.approach-band-process-cards .process-cta {
   text-align: center;
   margin-top: 3rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 {
   font-size: clamp(1.8rem,3vw,2.6rem);
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 em {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy p {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy p {
   color: var(--surface-dark-muted);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.5rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li svg {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -4027,26 +3988,26 @@ body.page-privacy .privacy-content {
   margin-top: 3px;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li span {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li span {
   color: var(--surface-dark-body);
   font-size: 0.95rem;
   line-height: 1.7;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card h3 {
+.dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
 @media (max-width: 968px) {
-  .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
+  .dark-band.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
     gap: 3rem;
   }
 }
