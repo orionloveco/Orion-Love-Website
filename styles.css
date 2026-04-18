@@ -947,7 +947,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) {
   --surface-dark-heading: var(--white);
   --surface-dark-body: rgba(255, 255, 255, 0.72);
@@ -959,7 +959,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   h2,
   h3,
@@ -976,7 +976,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   p,
   .section-intro,
@@ -993,7 +993,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .section-label span,
   .section-label-gold span,
@@ -1012,7 +1012,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .card h3,
   .profile-card h3,
@@ -1029,7 +1029,7 @@ p { color: var(--text); }
   .cta-band,
   .local-area-dark-band,
   .seller-neighborhood-approach-band,
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+  body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .card p,
   .profile-card p,
@@ -1774,8 +1774,8 @@ body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 
 /* ===== Local-area template contract v2: shared hero scaffold ===== */
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
+body.local-area-contract-v2 .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body.local-area-contract-v2 .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
 
 
 /* ===== contact.html ===== */
@@ -2409,22 +2409,22 @@ body.page-index .process-section .section-header .cta-center {text-align: center
 
 
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.snapshot-section, .identity-section) {
+body.local-area-seller-variant :is(.snapshot-section, .identity-section) {
   border-top: 1px solid var(--sand);
   border-bottom: 1px solid var(--sand);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
+body.local-area-seller-variant :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
   background: var(--cream);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) {
   background: var(--navy);
   position: relative;
   overflow: hidden;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)::before {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -2432,42 +2432,42 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:no
   pointer-events: none;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-band-inner {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-band-inner {
   position: relative;
   z-index: 1;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 em {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-copy p {
+body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band) .dark-copy p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list {
+body.local-area-seller-variant .dark-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list li {
+body.local-area-seller-variant .dark-list li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list li svg {
+body.local-area-seller-variant .dark-list li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -2476,13 +2476,13 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list li
   margin-top: 3px;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -2493,11 +2493,11 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neigh
   transition: background 0.25s;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
   background: rgba(255,255,255,0.1);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-n {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-n {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   color: rgba(184,146,58,0.4);
@@ -2507,90 +2507,21 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neigh
   text-align: center;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item p {
+body.local-area-seller-variant .seller-neighborhood-approach-band.approach-band-process-list .step-item p {
   font-size: 0.88rem;
   line-height: 1.7;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card-grid, .profile-grid, .diff-grid) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2.75rem;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card) {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.28s;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card):hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(184,146,58,0.22);
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card):hover::before {
-  opacity: 1;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card-icon, .profile-icon, .diff-icon) {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(184,146,58,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.1rem;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card-icon, .profile-icon, .diff-icon) svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--gold);
-  stroke-width: 1.8;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card) h3 {
-  font-size: 1.15rem;
-  color: var(--navy);
-  margin-bottom: 0.6rem;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.card, .profile-card, .diff-card) p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.check-list, .contact-bullets) {
+body.local-area-seller-variant :is(.check-list, .contact-bullets) {
   list-style: none;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.check-list, .contact-bullets) li {
+body.local-area-seller-variant :is(.check-list, .contact-bullets) li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -2599,7 +2530,7 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.check-li
   margin-bottom: 0.85rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.check-list, .contact-bullets) li svg {
+body.local-area-seller-variant :is(.check-list, .contact-bullets) li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -2608,7 +2539,7 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.check-li
   margin-top: 3px;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-submit {
+body.local-area-seller-variant .form-submit {
   width: 100%;
   margin-top: 0.5rem;
   justify-content: center;
@@ -2627,47 +2558,6 @@ body.page-selling-in-palisade .hero {
   background:
     linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%),
     url("images/gj-landscape.jpg") center 40% / cover no-repeat;
-}
-
-/* Palisade retains unique identity highlights + pricing card section. */
-body.page-selling-in-palisade .identity-highlights {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-body.page-selling-in-palisade .highlight-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  padding: 1rem 1.1rem;
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-sm);
-}
-
-body.page-selling-in-palisade .highlight-item svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--gold);
-  stroke-width: 2;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-body.page-selling-in-palisade .highlight-item div {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.7;
-}
-
-body.page-selling-in-palisade .highlight-item strong {
-  color: var(--navy);
-  display: block;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.15rem;
 }
 
 body.page-selling-in-palisade .stat-note-sm {
@@ -3323,7 +3213,7 @@ body.page-buyers .cta-band-copy {
 }
 
 /* Shared section rhythm + layout contract (flagship/support/neighborhood) */
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) {
   --shared-section-header-gap: clamp(2rem, 4vw, 2.75rem);
   --shared-intro-max: 62ch;
   --shared-split-gap: clamp(1.5rem, 4vw, 4rem);
@@ -3331,75 +3221,75 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, 
   --shared-cta-gap: 1rem;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) > .container {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) > .container {
   position: relative;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header {
   margin-bottom: var(--shared-section-header-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header.centered {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .bottom-city-links) .section-header.centered {
   text-align: center;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.section-intro, .lead) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-intro, .lead) {
   max-width: var(--shared-intro-max);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) .section-header.centered :is(.section-intro, .lead) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) .section-header.centered :is(.section-intro, .lead) {
   margin-left: auto;
   margin-right: auto;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.layout-split, .split-layout, .layout-grid-2) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-split, .split-layout, .layout-grid-2) {
   gap: var(--shared-split-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.layout-grid-3, .layout-grid-4, .usp-grid, .card-grid, .link-grid) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-grid-3, .layout-grid-4, .usp-grid, .card-grid, .link-grid) {
   gap: var(--shared-grid-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood, .seller-neighborhood-contract) :is(.hero-cta, .cta-action-row, .cta-pair) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.hero-cta, .cta-action-row, .cta-pair) {
   gap: var(--shared-cta-gap);
 }
 
 
 /* Local-area template contract v2: shared section scaffolding (single authority) */
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
+body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: start;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .local-area-intro .split-layout.split-layout-align-center {
+body.local-area-contract-v2 .local-area-intro .split-layout.split-layout-align-center {
   align-items: center;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.snapshot-inner, .dark-band-inner) {
+body.local-area-contract-v2 :is(.snapshot-inner, .dark-band-inner) {
   align-items: center;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
+body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
   margin-bottom: 0.85rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.intro-copy, .snapshot-copy, .identity-copy) p {
+body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.form-copy, .contact-copy) p {
+body.local-area-contract-v2 :is(.form-copy, .contact-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1.5rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
+body.local-area-contract-v2 :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
@@ -3409,25 +3299,25 @@ body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-grid, 
   overflow: hidden;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-box, .snap-stat) {
+body.local-area-contract-v2 :is(.stat-box, .snap-stat) {
   background: var(--cream);
   padding: 1.75rem 1.5rem;
   text-align: center;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-val, .snap-val) {
+body.local-area-contract-v2 :is(.stat-val, .snap-val) {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.4rem;
   color: var(--navy);
   line-height: 1;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-val, .snap-val) span {
+body.local-area-contract-v2 :is(.stat-val, .snap-val) span {
   font-size: 1.3rem;
   color: var(--gold);
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-lbl, .snap-label) {
+body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3437,26 +3327,26 @@ body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.stat-lbl, .
 }
 
 @media (max-width: 968px) {
-  body:is(.local-area-contract-v2, .seller-neighborhood-contract) :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner) {
+  body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
+  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
     grid-template-columns: 1fr;
   }
 
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
+  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
     gap: 2.5rem;
   }
 }
 
 @media (max-width: 640px) {
-  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .hero h1 {
+  body.local-area-seller-variant .hero h1 {
     font-size: 2.4rem;
   }
 
-  body:is(.local-area-contract-v2, .seller-neighborhood-contract) .local-area-stat-grid {
+  body.local-area-contract-v2 .local-area-stat-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -3508,14 +3398,14 @@ body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) p 
   margin-bottom: 2rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card-grid {
+body.local-area-contract-v2 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
   gap: 1.25rem;
   margin-top: 2.75rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card {
+body.local-area-contract-v2 .card {
   background: var(--white);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
@@ -3525,7 +3415,7 @@ body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card {
   transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card::before {
+body.local-area-contract-v2 .card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -3537,17 +3427,17 @@ body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card::before {
   transition: opacity 0.28s;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card:hover {
+body.local-area-contract-v2 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: rgba(184,146,58,0.22);
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card:hover::before {
+body.local-area-contract-v2 .card:hover::before {
   opacity: 1;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card-icon {
+body.local-area-contract-v2 .card-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -3558,27 +3448,27 @@ body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card-icon {
   margin-bottom: 1.1rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card-icon svg {
+body.local-area-contract-v2 .card-icon svg {
   width: 20px;
   height: 20px;
   stroke: var(--gold);
   stroke-width: 1.8;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card h3 {
+body.local-area-contract-v2 .card h3 {
   font-size: 1.15rem;
   color: var(--navy);
   margin-bottom: 0.6rem;
 }
 
-body:is(.local-area-contract-v2, .seller-neighborhood-contract) .card p {
+body.local-area-contract-v2 .card p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
 /* Shared local-area lead form card shell */
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-card {
+body.local-area-seller-variant .form-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2.25rem;
@@ -3586,13 +3476,13 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-card {
   border: 1px solid var(--sand);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-card h3 {
+body.local-area-seller-variant .form-card h3 {
   font-size: 1.5rem;
   color: var(--navy);
   margin-bottom: 0.4rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.form-sub, .form-card .form-sub) {
+body.local-area-seller-variant :is(.form-sub, .form-card .form-sub) {
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 1.75rem;
@@ -3667,14 +3557,14 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts {
   background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
   padding: 1.75rem 1.5rem;
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts h4 {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts h4 {
   font-family: "Raleway",sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
@@ -3684,7 +3574,7 @@ body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contr
   margin-bottom: 1rem;
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts .fact-row {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3692,16 +3582,16 @@ body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contr
   border-bottom: 1px solid var(--sand);
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts .fact-row:last-child {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-row:last-child {
   border-bottom: none;
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts .fact-label {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-label {
   font-size: 0.88rem;
   color: var(--muted);
 }
 
-body:is(.local-area-core, .local-area-seller-variant, .seller-neighborhood-contract) .local-area-quick-facts .fact-value {
+body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-value {
   font-family: "Cormorant Garamond",serif;
   font-size: 1.2rem;
   color: var(--navy);
