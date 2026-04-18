@@ -1799,9 +1799,9 @@ body.page-buyers .promise-grid {grid-template-columns: 1fr;}
 body.page-buyers .compensation-inner {grid-template-columns: 1fr; gap: 2rem;}
 }
 
-/* ===== Local-area template contract v2: shared hero scaffold ===== */
-body.local-area-contract-v2 .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.local-area-contract-v2 .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
+/* ===== Neighborhood family: shared hero scaffold ===== */
+body.page-family-neighborhood .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body.page-family-neighborhood .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
 
 
 /* ===== contact.html ===== */
@@ -2357,46 +2357,46 @@ body.page-index .process-section .section-header .cta-center {text-align: center
 
 
 
-body.local-area-seller-variant :is(.snapshot-section, .identity-section) {
+body.page-family-neighborhood :is(.snapshot-section, .identity-section) {
   border-top: 1px solid var(--sand);
   border-bottom: 1px solid var(--sand);
 }
 
-body.local-area-seller-variant :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
+body.page-family-neighborhood :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
   background: var(--cream);
 }
 
-body.local-area-seller-variant .dark-band .dark-copy h2 {
+body.page-family-neighborhood .dark-band .dark-copy h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.local-area-seller-variant .dark-band .dark-copy h2 em {
+body.page-family-neighborhood .dark-band .dark-copy h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.local-area-seller-variant .dark-band .dark-copy p {
+body.page-family-neighborhood .dark-band .dark-copy p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
 }
 
-body.local-area-seller-variant .dark-list {
+body.page-family-neighborhood .dark-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
 }
 
-body.local-area-seller-variant .dark-list li {
+body.page-family-neighborhood .dark-list li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
 }
 
-body.local-area-seller-variant .dark-list li svg {
+body.page-family-neighborhood .dark-list li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -2405,13 +2405,13 @@ body.local-area-seller-variant .dark-list li svg {
   margin-top: 3px;
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -2422,11 +2422,11 @@ body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.appr
   transition: background 0.25s;
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
   background: rgba(255,255,255,0.1);
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-n {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   color: rgba(184,146,58,0.4);
@@ -2436,21 +2436,21 @@ body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.appr
   text-align: center;
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
-body.local-area-seller-variant .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item p {
+body.page-family-neighborhood .dark-band.seller-neighborhood-approach-band.approach-band-process-list .step-item p {
   font-size: 0.88rem;
   line-height: 1.7;
 }
 
-body.local-area-seller-variant :is(.check-list, .contact-bullets) {
+body.page-family-neighborhood :is(.check-list, .contact-bullets) {
   list-style: none;
 }
 
-body.local-area-seller-variant :is(.check-list, .contact-bullets) li {
+body.page-family-neighborhood :is(.check-list, .contact-bullets) li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -2459,7 +2459,7 @@ body.local-area-seller-variant :is(.check-list, .contact-bullets) li {
   margin-bottom: 0.85rem;
 }
 
-body.local-area-seller-variant :is(.check-list, .contact-bullets) li svg {
+body.page-family-neighborhood :is(.check-list, .contact-bullets) li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -3176,39 +3176,39 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
 }
 
 
-/* Local-area template contract v2: shared section scaffolding (single authority) */
-body.local-area-contract-v2 :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
+/* Neighborhood family: shared section scaffolding (single authority) */
+body.page-family-neighborhood :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
   gap: 5rem;
   align-items: start;
 }
 
-body.local-area-contract-v2 .local-area-intro .layout-split.split-layout-align-center {
+body.page-family-neighborhood .local-area-intro .layout-split.split-layout-align-center {
   align-items: center;
 }
 
-body.local-area-contract-v2 :is(.snapshot-inner, .dark-band-inner) {
+body.page-family-neighborhood :is(.snapshot-inner, .dark-band-inner) {
   align-items: center;
 }
 
-body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
+body.page-family-neighborhood :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
   margin-bottom: 0.85rem;
 }
 
-body.local-area-contract-v2 :is(.intro-copy, .snapshot-copy, .identity-copy) p {
+body.page-family-neighborhood :is(.intro-copy, .snapshot-copy, .identity-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1rem;
 }
 
-body.local-area-contract-v2 :is(.form-copy, .contact-copy) p {
+body.page-family-neighborhood :is(.form-copy, .contact-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1.5rem;
 }
 
-body.local-area-contract-v2 :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
+body.page-family-neighborhood :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
@@ -3218,25 +3218,25 @@ body.local-area-contract-v2 :is(.stat-grid, .snapshot-stats, .identity-stats, .l
   overflow: hidden;
 }
 
-body.local-area-contract-v2 :is(.stat-box, .snap-stat) {
+body.page-family-neighborhood :is(.stat-box, .snap-stat) {
   background: var(--cream);
   padding: 1.75rem 1.5rem;
   text-align: center;
 }
 
-body.local-area-contract-v2 :is(.stat-val, .snap-val) {
+body.page-family-neighborhood :is(.stat-val, .snap-val) {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.4rem;
   color: var(--navy);
   line-height: 1;
 }
 
-body.local-area-contract-v2 :is(.stat-val, .snap-val) span {
+body.page-family-neighborhood :is(.stat-val, .snap-val) span {
   font-size: 1.3rem;
   color: var(--gold);
 }
 
-body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
+body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3246,26 +3246,26 @@ body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
 }
 
 @media (max-width: 968px) {
-  body.local-area-contract-v2 :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
+  body.page-family-neighborhood :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  body.local-area-seller-variant :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
+  body.page-family-neighborhood :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
     grid-template-columns: 1fr;
   }
 
-  body.local-area-seller-variant :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
+  body.page-family-neighborhood :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
     gap: 2.5rem;
   }
 }
 
 @media (max-width: 640px) {
-  body.local-area-seller-variant .hero h1 {
+  body.page-family-neighborhood .hero h1 {
     font-size: 2.4rem;
   }
 
-  body.local-area-contract-v2 .local-area-stat-grid {
+  body.page-family-neighborhood .local-area-stat-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -3279,7 +3279,7 @@ body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
   margin-top: 0;
 }
 
-body.local-area-core .dark-band :is(.dark-band-inner) {
+body.page-family-neighborhood .dark-band :is(.dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3287,34 +3287,34 @@ body.local-area-core .dark-band :is(.dark-band-inner) {
   margin: 0 auto;
 }
 
-body.local-area-core .dark-band :is(.dark-band-inner) h2 {
+body.page-family-neighborhood .dark-band :is(.dark-band-inner) h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.local-area-core .dark-band :is(.dark-band-inner) h2 em {
+body.page-family-neighborhood .dark-band :is(.dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.local-area-core .dark-band :is(.dark-band-inner) p {
+body.page-family-neighborhood .dark-band :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
 }
 
-body.local-area-contract-v2 .card-grid {
+body.page-family-neighborhood .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
   gap: 1.25rem;
   margin-top: 2.75rem;
 }
 
-body.local-area-contract-v2 .card-value {
+body.page-family-neighborhood .card-value {
   padding: 2rem 1.75rem;
 }
 
-body.local-area-contract-v2 .card-icon {
+body.page-family-neighborhood .card-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -3325,20 +3325,20 @@ body.local-area-contract-v2 .card-icon {
   margin-bottom: 1.1rem;
 }
 
-body.local-area-contract-v2 .card-icon svg {
+body.page-family-neighborhood .card-icon svg {
   width: 20px;
   height: 20px;
   stroke: var(--gold);
   stroke-width: 1.8;
 }
 
-body.local-area-contract-v2 .card-value h3 {
+body.page-family-neighborhood .card-value h3 {
   font-size: 1.15rem;
   color: var(--navy);
   margin-bottom: 0.6rem;
 }
 
-body.local-area-contract-v2 .card-value p {
+body.page-family-neighborhood .card-value p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
@@ -3471,14 +3471,14 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts {
+body.page-family-neighborhood .local-area-quick-facts {
   background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
   padding: 1.75rem 1.5rem;
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts h4 {
+body.page-family-neighborhood .local-area-quick-facts h4 {
   font-family: "Raleway",sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
@@ -3488,7 +3488,7 @@ body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts h4
   margin-bottom: 1rem;
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-row {
+body.page-family-neighborhood .local-area-quick-facts .fact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3496,16 +3496,16 @@ body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .f
   border-bottom: 1px solid var(--sand);
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-row:last-child {
+body.page-family-neighborhood .local-area-quick-facts .fact-row:last-child {
   border-bottom: none;
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-label {
+body.page-family-neighborhood .local-area-quick-facts .fact-label {
   font-size: 0.88rem;
   color: var(--muted);
 }
 
-body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .fact-value {
+body.page-family-neighborhood .local-area-quick-facts .fact-value {
   font-family: "Cormorant Garamond",serif;
   font-size: 1.2rem;
   color: var(--navy);
@@ -3998,23 +3998,19 @@ body.page-privacy .privacy-content {
 
 /* Nearby-area family contract
    Canonical: .nearby-area-shell/.nearby-area-intro/.nearby-area-copy
-   Deprecated aliases: .seller-neighborhood-nearby-*
 */
-.nearby-area-shell,
-.seller-neighborhood-nearby-shell { /* legacy alias */
+.nearby-area-shell {
   background: var(--cream);
   border-top: 1px solid var(--sand);
 }
 
-.nearby-area-shell .nearby-area-intro,
-.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-intro { /* legacy alias */
+.nearby-area-shell .nearby-area-intro {
   text-align: center;
   max-width: 720px;
   margin: 0 auto 1.5rem;
 }
 
-.nearby-area-shell .nearby-area-copy,
-.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-copy { /* legacy alias */
+.nearby-area-shell .nearby-area-copy {
   color: var(--muted);
 }
 
@@ -4022,20 +4018,8 @@ body.page-privacy .privacy-content {
 /* ===== Migrated inline styles from page templates ===== */
 
 /* buyers.html migrated inline <style> */
-body.page-buyers .buyers-editorial,
-body.page-buyers .buyers-realities,
-body.page-buyers .buyers-trust,
-body.page-buyers .buyers-close {
+body.page-buyers :is(.buyers-editorial, .buyers-realities, .buyers-trust, .buyers-close) {
   border-top: 1px solid var(--sand);
-}
-
-body.page-buyers .buyers-editorial,
-body.page-buyers .buyers-realities {
-  background: var(--white);
-}
-
-body.page-buyers .buyers-main {
-  background: var(--cream);
 }
 
 body.page-buyers .rows-stack {
@@ -4104,9 +4088,6 @@ body.page-buyers .phase-panel strong {
   color: var(--text);
 }
 
-body.page-buyers .buyers-trust {
-  background: var(--cream);
-}
 body.page-buyers .buyers-trust-list {
   display: grid;
   gap: 0.65rem;
@@ -4120,7 +4101,6 @@ body.page-buyers .buyers-trust-row {
 }
 
 body.page-buyers .buyers-close {
-  background: var(--white);
   padding: clamp(3.2rem, 6vw, 4.6rem) 0;
 }
 body.page-buyers .buyers-close-inner {
