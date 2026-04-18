@@ -1519,9 +1519,7 @@ body.page-about .about-final-cta-inner h2 {
 }
 
 /* ===== buyers.html ===== */
-body.page-buyers .buyers-hero {background: var(--navy);
-      --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
-      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
+body.page-buyers .buyers-hero {background: var(--navy);}
 body.page-buyers .promise-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--white);}
 body.page-buyers .promise-header {text-align: center;
@@ -1876,9 +1874,7 @@ body.page-faq .divider-diamond {width: 8px; height: 8px;
       transform: rotate(45deg);
       flex-shrink: 0;
       opacity: 0.6;}
-body.page-faq .faq-hero {background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-downtown.jpg") center / cover no-repeat;
-      --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.11), transparent 65%);
-      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.38), transparent);}
+body.page-faq .faq-hero {background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-downtown.jpg") center / cover no-repeat;}
 body.page-faq .faq-nav {background: var(--white);
       border-bottom: 1px solid var(--sand);
       position: sticky;
@@ -3796,7 +3792,6 @@ body.page-privacy .privacy-hero {
   background:
     linear-gradient(rgba(12, 26, 61, 0.9), rgba(12, 26, 61, 0.88)),
     radial-gradient(700px 280px at 50% 0%, rgba(184, 146, 58, 0.12), transparent 70%);
-  --hero-overlay-before: radial-gradient(circle at top center, rgba(212, 170, 90, 0.08), transparent 45%);
 }
 
 body.page-privacy .privacy-shell {
@@ -4274,41 +4269,7 @@ body.page-buyers .buyers-close p {
 
 /* faq.html migrated inline <style> */
 body.page-faq .faq-utility-header {
-  position: relative;
-  background: linear-gradient(165deg, rgba(8, 18, 50, 0.95) 0%, rgba(11, 24, 58, 0.88) 62%, rgba(8, 18, 50, 0.95) 100%), url("images/gj-downtown.jpg") center 22%/cover no-repeat;
-  color: var(--white);
-  padding: 0;
   border-bottom: 1px solid rgba(184, 146, 58, 0.2);
-  overflow: hidden;
-}
-body.page-faq .faq-utility-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 18% 12%, rgba(184, 146, 58, 0.16), transparent 45%);
-  pointer-events: none;
-}
-body.page-faq .faq-utility-header .utility-title {
-  position: relative;
-  z-index: 1;
-  max-width: var(--hero-inner-max);
-  margin: 0 auto;
-  text-align: center;
-}
-body.page-faq .faq-utility-header .section-label {
-  justify-content: center;
-  margin-bottom: .6rem;
-}
-body.page-faq .faq-utility-header h1 {
-  color: var(--white);
-  margin-bottom: 1.25rem;
-}
-body.page-faq .faq-utility-header p {
-  margin: 0 auto var(--hero-lead-space);
-  max-width: var(--hero-lead-max);
-  color: var(--hero-lead-color);
-  line-height: 1.85;
-  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
 }
 body.page-faq .faq-help-row {
   padding-top: 1rem;
