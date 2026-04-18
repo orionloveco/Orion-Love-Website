@@ -786,11 +786,8 @@ p { color: var(--text); }
 
 /* Split/Grid family contract
    Canonical: .layout-split
-   Deprecated aliases: .layout-grid-2, .split-layout (still supported)
 */
-.layout-split,
-.layout-grid-2,
-.split-layout {
+.layout-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 4rem);
@@ -1308,7 +1305,6 @@ p { color: var(--text); }
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .hero.hero-support .hero-cta { align-items: center; }
   .layout-split,
-  .layout-grid-2,
   .layout-sidebar { grid-template-columns: 1fr; }
   .nav-dropdown-menu { display: none; }
 
@@ -3246,7 +3242,7 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   margin-right: auto;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-split, .split-layout, .layout-grid-2) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-split) {
   gap: var(--shared-split-gap);
 }
 
@@ -3260,14 +3256,12 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
 
 
 /* Local-area template contract v2: shared section scaffolding (single authority) */
-body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+body.local-area-contract-v2 :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
   gap: 5rem;
   align-items: start;
 }
 
-body.local-area-contract-v2 .local-area-intro .split-layout.split-layout-align-center {
+body.local-area-contract-v2 .local-area-intro .layout-split.split-layout-align-center {
   align-items: center;
 }
 
@@ -3331,16 +3325,16 @@ body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
 }
 
 @media (max-width: 968px) {
-  body.local-area-contract-v2 :is(.local-area-intro .split-layout, .snapshot-inner, .identity-inner) {
+  body.local-area-contract-v2 :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
+  body.local-area-seller-variant :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
     grid-template-columns: 1fr;
   }
 
-  body.local-area-seller-variant :is(.two-col, .dark-inner, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
+  body.local-area-seller-variant :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
     gap: 2.5rem;
   }
 }
@@ -3357,10 +3351,10 @@ body.local-area-contract-v2 :is(.stat-lbl, .snap-label) {
 
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 
-.section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.two-col,.contact-layout),
-.section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.two-col,.contact-layout),
-.section-shell-top .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.two-col,.contact-layout),
-.bottom-city-links .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.two-col,.contact-layout) {
+.section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
+.section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
+.section-shell-top .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
+.bottom-city-links .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
   margin-top: 0;
 }
 
@@ -3378,7 +3372,7 @@ body.local-area-core .local-area-dark-band::before {
   pointer-events: none;
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) {
+body.local-area-core .local-area-dark-band :is(.dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3386,17 +3380,17 @@ body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) {
   margin: 0 auto;
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2 {
+body.local-area-core .local-area-dark-band :is(.dark-band-inner) h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2 em {
+body.local-area-core .local-area-dark-band :is(.dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) p {
+body.local-area-core .local-area-dark-band :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
