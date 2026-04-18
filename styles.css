@@ -755,13 +755,39 @@ p { color: var(--text); }
 }
 
 
-.card-value:is(.value-card, .usp-card, .card, .profile-card, .diff-card),
-.value-card,
-.usp-card,
-.card,
-.profile-card,
-.diff-card {
+.card {
   border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-value {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 2rem 1.75rem;
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+.card-value::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+.card-value:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184,146,58,0.22);
+}
+
+.card-value:hover::before {
+  opacity: 1;
 }
 
 .card-link:is(.link-card),
@@ -776,12 +802,12 @@ p { color: var(--text); }
   text-align: center;
 }
 
-.card-trust:is(.detail-card, .info-card, .response-card, .why-card),
-.detail-card,
-.info-card,
-.response-card,
-.why-card {
-  border-radius: var(--radius-md);
+.card-trust {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 1.5rem 1.3rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
 }
 
 /* Split/Grid family contract
@@ -831,26 +857,11 @@ p { color: var(--text); }
 }
 
 .usp-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,244,237,0.94));
-  border: 1px solid rgba(230, 224, 211, 0.92);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
   box-shadow: var(--shadow-card);
 }
 
 /* Gold top shimmer on hover */
-.usp-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.28s;
-}
+.usp-card::before { content: none; }
 /* Ambient gold glow */
 .usp-card::after {
   content: "";
@@ -861,11 +872,8 @@ p { color: var(--text); }
 }
 
 .usp-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(184, 146, 58, 0.22);
 }
-.usp-card:hover::before { opacity: 1; }
 
 /* Icon badge */
 .usp-icon {
@@ -1016,8 +1024,6 @@ p { color: var(--text); }
   body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .card h3,
-  .profile-card h3,
-  .diff-card h3,
   .step h3,
   .step-item h4,
   .step-card h3,
@@ -1033,8 +1039,6 @@ p { color: var(--text); }
   body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .card p,
-  .profile-card p,
-  .diff-card p,
   .pricing-card p
 ) {
   color: var(--surface-dark-body);
@@ -1699,29 +1703,25 @@ body.page-buyers .service-meta > p {color: var(--muted);
 body.page-buyers .service-details {display: flex;
       flex-direction: column;
       gap: 1rem;}
-body.page-buyers .detail-card {background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      padding: 1.6rem 1.75rem;
+body.page-buyers .card-trust {padding: 1.6rem 1.75rem;
       transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-      position: relative;
-      overflow: hidden;}
-body.page-buyers .detail-card::before {content: "";
+}
+body.page-buyers .card-trust::before {content: "";
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       opacity: 0;
       transition: opacity 0.28s;}
-body.page-buyers .detail-card:hover {transform: translateY(-3px);
+body.page-buyers .card-trust:hover {transform: translateY(-3px);
       box-shadow: var(--shadow-md);
       border-color: rgba(184,146,58,0.2);}
-body.page-buyers .detail-card:hover::before {opacity: 1;}
-body.page-buyers .detail-card h4 {font-size: 1.05rem;
+body.page-buyers .card-trust:hover::before {opacity: 1;}
+body.page-buyers .card-trust h4 {font-size: 1.05rem;
       color: var(--navy);
       font-weight: 500;
       margin-bottom: 0.55rem;}
-body.page-buyers .detail-card p {color: var(--muted);
+body.page-buyers .card-trust p {color: var(--muted);
       font-size: 0.94rem;
       line-height: 1.8;}
 body.page-buyers .compensation-band {background:
@@ -1799,11 +1799,7 @@ body.page-contact .contact-info {display: flex;
       gap: 1.25rem;
       position: sticky;
       top: 100px;}
-body.page-contact .info-card {background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      padding: 1.5rem 1.3rem;
-      box-shadow: var(--shadow-sm);}
+body.page-contact .card-trust {padding: 1.5rem 1.3rem;}
 body.page-contact .info-card-title {font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -1840,11 +1836,11 @@ body.page-contact .info-value a {color: var(--navy);
       transition: color 0.2s;}
 body.page-contact .info-value a:hover {color: var(--gold);}
 body.page-contact .response-card {background: var(--navy);
-      border-radius: var(--radius-md);
+      border: none;
+      box-shadow: none;
       margin-top: 0.85rem;
       padding: 1.1rem 1.15rem;
-      position: relative;
-      overflow: hidden;}
+}
 body.page-contact .response-card::before {content: "";
       position: absolute;
       inset: 0;
@@ -2156,20 +2152,13 @@ body.page-grand-junction-home-value .value-intro h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .value-intro p {color: var(--muted); font-size: 1.05rem; line-height: 1.85;}
 body.page-grand-junction-home-value .value-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .value-card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md);
-      padding: 2rem 1.75rem; transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-      position: relative; overflow: hidden;}
-body.page-grand-junction-home-value .value-card::before {content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0; transition: opacity 0.28s;}
-body.page-grand-junction-home-value .value-card:hover {transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(184,146,58,0.22);}
-body.page-grand-junction-home-value .value-card:hover::before {opacity: 1;}
+body.page-grand-junction-home-value .card-value {padding: 2rem 1.75rem;}
 body.page-grand-junction-home-value .value-icon {width: 48px; height: 48px; border-radius: 12px;
       background: rgba(184,146,58,0.1); display: flex; align-items: center;
       justify-content: center; margin-bottom: 1.1rem;}
 body.page-grand-junction-home-value .value-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-grand-junction-home-value .value-card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
-body.page-grand-junction-home-value .value-card p {color: var(--muted); font-size: 0.96rem; line-height: 1.8;}
+body.page-grand-junction-home-value .card-value h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
+body.page-grand-junction-home-value .card-value p {color: var(--muted); font-size: 0.96rem; line-height: 1.8;}
 body.page-grand-junction-home-value .valuation-section {background: var(--navy); position: relative; overflow: hidden;}
 body.page-grand-junction-home-value .valuation-section::before {content: ""; position: absolute; inset: 0;
       background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
@@ -2190,13 +2179,12 @@ body.page-grand-junction-home-value .form-card .form-sub {font-size: 0.9rem; col
 body.page-grand-junction-home-value .form-submit {width: 100%; margin-top: 0.5rem; justify-content: center;}
 body.page-grand-junction-home-value .why-section {background: var(--cream);}
 body.page-grand-junction-home-value .why-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .why-card {background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius-md);
-      padding: 1.75rem; transition: transform 0.25s, box-shadow 0.25s;}
-body.page-grand-junction-home-value .why-card:hover {transform: translateY(-3px); box-shadow: var(--shadow-md);}
+body.page-grand-junction-home-value .card-trust {padding: 1.75rem; box-shadow: none; transition: transform 0.25s, box-shadow 0.25s;}
+body.page-grand-junction-home-value .card-trust:hover {transform: translateY(-3px); box-shadow: var(--shadow-md);}
 body.page-grand-junction-home-value .why-num {font-family: "Cormorant Garamond", serif; font-size: 2.4rem;
       color: rgba(184,146,58,0.25); line-height: 1; margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .why-card h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .why-card p {font-size: 0.95rem; color: var(--muted); line-height: 1.8;}
+body.page-grand-junction-home-value .card-trust h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem;}
+body.page-grand-junction-home-value .card-trust p {font-size: 0.95rem; color: var(--muted); line-height: 1.8;}
 body.page-grand-junction-home-value .cta-band {background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
@@ -2254,24 +2242,16 @@ body.page-index .usp-grid {display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
       margin-bottom: 3rem;}
-body.page-index .usp-card {position: relative;
-      padding: 2.25rem 1.75rem;
+body.page-index .card-value {padding: 2.25rem 1.75rem;
       background: var(--white);
       border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-      overflow: hidden;}
-body.page-index .usp-card::before {content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;}
-body.page-index .usp-card:hover {transform: translateY(-5px);
+}
+body.page-index .card-value::before {transition: opacity 0.3s;}
+body.page-index .card-value:hover {transform: translateY(-5px);
       box-shadow: var(--shadow-md);
       border-color: rgba(184,146,58,0.22);}
-body.page-index .usp-card:hover::before {opacity: 1;}
+body.page-index .card-value:hover::before {opacity: 1;}
 body.page-index .usp-icon {width: 48px; height: 48px;
       background: rgba(184,146,58,0.1);
       border-radius: 14px;
@@ -3403,36 +3383,8 @@ body.local-area-contract-v2 .card-grid {
   margin-top: 2.75rem;
 }
 
-body.local-area-contract-v2 .card {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-md);
+body.local-area-contract-v2 .card-value {
   padding: 2rem 1.75rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-}
-
-body.local-area-contract-v2 .card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity: 0;
-  transition: opacity 0.28s;
-}
-
-body.local-area-contract-v2 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(184,146,58,0.22);
-}
-
-body.local-area-contract-v2 .card:hover::before {
-  opacity: 1;
 }
 
 body.local-area-contract-v2 .card-icon {
@@ -3453,13 +3405,13 @@ body.local-area-contract-v2 .card-icon svg {
   stroke-width: 1.8;
 }
 
-body.local-area-contract-v2 .card h3 {
+body.local-area-contract-v2 .card-value h3 {
   font-size: 1.15rem;
   color: var(--navy);
   margin-bottom: 0.6rem;
 }
 
-body.local-area-contract-v2 .card p {
+body.local-area-contract-v2 .card-value p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
