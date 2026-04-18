@@ -699,6 +699,8 @@ p { color: var(--text); }
   --hero-eyebrow-space: 1.15rem;
   --hero-cta-gap: 1rem;
   --hero-trust-color: rgba(255, 255, 255, 0.5);
+  --hero-overlay-before: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
 }
 
 .hero.hero-support {
@@ -739,6 +741,7 @@ p { color: var(--text); }
   --hero-lead-max: 56ch;
   --hero-lead-space: 2.35rem;
   --hero-eyebrow-space: 1.05rem;
+  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
   --hero-overlay-after: rgba(184,146,58,0.22);
 }
 
@@ -1690,8 +1693,6 @@ body.page-contact .main-header {position: fixed;
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
 body.page-contact .contact-hero {background: var(--navy);
 }
-body.page-contact .contact-hero {--hero-overlay-before: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
-      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);}
 body.page-contact .contact-section {padding: clamp(4rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-contact .contact-layout {display: grid;
@@ -2142,10 +2143,7 @@ body.page-index .divider-diamond {width: 8px; height: 8px;
       opacity: 0.6;}
 body.page-index .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
-        url("images/gj-landscape.jpg") center / cover no-repeat;
-      --hero-overlay-before: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
-      --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
-}
+        url("images/gj-landscape.jpg") center / cover no-repeat;}
 body.page-index .usp-section {padding: clamp(5rem, 9vw, 8rem) 0;
       background: var(--cream);}
 body.page-index .section-header {text-align: center;
@@ -2534,14 +2532,14 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .form-submit 
 /* Fruita hero keeps its own background crop/overlay emphasis. */
 body.page-selling-in-fruita .hero {
   background:
-    linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
+    linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%),
     url("images/gj-landscape.jpg") center 30% / cover no-repeat;
 }
 
 /* Palisade hero keeps a softer crop and tint. */
 body.page-selling-in-palisade .hero {
   background:
-    linear-gradient(160deg, rgba(8,18,50,0.80) 0%, rgba(12,26,61,0.60) 55%, rgba(10,22,55,0.88) 100%),
+    linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%),
     url("images/gj-landscape.jpg") center 40% / cover no-repeat;
 }
 
@@ -2642,8 +2640,6 @@ body.page-services h4 {
 
 body.page-services .services-hero {
   background: var(--navy);
-  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184, 146, 58, 0.11), transparent 65%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.38), transparent);
 }
 
 body.page-services .method-spine {
@@ -4281,7 +4277,7 @@ body.page-faq .faq-utility-header {
   position: relative;
   background: linear-gradient(165deg, rgba(8, 18, 50, 0.95) 0%, rgba(11, 24, 58, 0.88) 62%, rgba(8, 18, 50, 0.95) 100%), url("images/gj-downtown.jpg") center 22%/cover no-repeat;
   color: var(--white);
-  padding: clamp(5.4rem, 9vw, 6.4rem) 0 clamp(1.25rem, 2.8vw, 1.8rem);
+  padding: 0;
   border-bottom: 1px solid rgba(184, 146, 58, 0.2);
   overflow: hidden;
 }
@@ -4295,7 +4291,7 @@ body.page-faq .faq-utility-header::before {
 body.page-faq .faq-utility-header .utility-title {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  max-width: var(--hero-inner-max);
   margin: 0 auto;
   text-align: center;
 }
@@ -4305,15 +4301,14 @@ body.page-faq .faq-utility-header .section-label {
 }
 body.page-faq .faq-utility-header h1 {
   color: var(--white);
-  margin-bottom: .55rem;
-  font-size: clamp(2rem, 4.2vw, 2.75rem);
-  line-height: 1.06;
+  margin-bottom: 1.25rem;
 }
 body.page-faq .faq-utility-header p {
-  margin: 0 auto;
-  max-width: 58ch;
-  color: rgba(255,255,255,.8);
-  font-size: clamp(.95rem, 1.6vw, 1.05rem);
+  margin: 0 auto var(--hero-lead-space);
+  max-width: var(--hero-lead-max);
+  color: var(--hero-lead-color);
+  line-height: 1.85;
+  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
 }
 body.page-faq .faq-help-row {
   padding-top: 1rem;
