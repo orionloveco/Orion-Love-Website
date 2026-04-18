@@ -768,6 +768,18 @@ p { color: var(--text); }
   transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
 }
 
+.card-value h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.card-value p {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
 .card-value::before {
   content: "";
   position: absolute;
@@ -790,6 +802,48 @@ p { color: var(--text); }
   opacity: 1;
 }
 
+/* Shared card modifiers */
+.card-value--soft-surface {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,244,237,0.94));
+  border: 1px solid rgba(230, 224, 211, 0.92);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.card-value--spacious {
+  padding: 2.25rem 1.75rem;
+}
+
+.card-value.card-value--lift-strong:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(184, 146, 58, 0.22);
+}
+
+.card-value.card-value--lift-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184,146,58,0.22);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(184,146,58,0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
 .card-link:is(.link-card),
 .link-card {
   border-radius: var(--radius-sm);
@@ -808,6 +862,29 @@ p { color: var(--text); }
   padding: 1.5rem 1.3rem;
   box-shadow: var(--shadow-sm);
   transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+
+.card-trust--pad-lg {
+  padding: 1.75rem;
+}
+
+.card-trust--flat {
+  box-shadow: none;
+}
+
+.card-trust.card-trust--lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-trust--body-sm p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.card-trust--title-tight h3 {
+  margin-bottom: 0.5rem;
 }
 
 /* Split/Grid family contract
@@ -1682,10 +1759,6 @@ body.page-buyers .promise-grid {display: grid;
       gap: 1.25rem;}
 body.page-buyers .promise-card {position: relative;
       padding: 2.25rem 2rem;
-      background: var(--cream);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       overflow: hidden;}
 body.page-buyers .promise-card::before {content: "";
       position: absolute;
@@ -1694,9 +1767,6 @@ body.page-buyers .promise-card::before {content: "";
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       opacity: 0;
       transition: opacity 0.3s;}
-body.page-buyers .promise-card:hover {transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(184,146,58,0.22);}
 body.page-buyers .promise-card:hover::before {opacity: 1;}
 body.page-buyers .promise-icon {width: 48px; height: 48px;
       background: rgba(184,146,58,0.1);
@@ -1709,12 +1779,8 @@ body.page-buyers .promise-icon {width: 48px; height: 48px;
 body.page-buyers .promise-card:hover .promise-icon {background: rgba(184,146,58,0.18);}
 body.page-buyers .promise-icon svg {width: 22px; height: 22px; stroke: var(--gold);}
 body.page-buyers .promise-card h3 {font-size: 1.25rem;
-      color: var(--navy);
       margin-bottom: 0.75rem;
       font-weight: 500;}
-body.page-buyers .promise-card p {color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.8;}
 body.page-buyers .buyers-main {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--cream);}
 body.page-buyers .service-block {display: grid;
@@ -1746,27 +1812,6 @@ body.page-buyers .service-meta > p {color: var(--muted);
 body.page-buyers .service-details {display: flex;
       flex-direction: column;
       gap: 1rem;}
-body.page-buyers .card-trust {padding: 1.6rem 1.75rem;
-      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-}
-body.page-buyers .card-trust::before {content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.28s;}
-body.page-buyers .card-trust:hover {transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(184,146,58,0.2);}
-body.page-buyers .card-trust:hover::before {opacity: 1;}
-body.page-buyers .card-trust h4 {font-size: 1.05rem;
-      color: var(--navy);
-      font-weight: 500;
-      margin-bottom: 0.55rem;}
-body.page-buyers .card-trust p {color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.8;}
 body.page-buyers .compensation-band {background:
         linear-gradient(rgba(8,18,50,0.80), rgba(8,18,50,0.80)),
         url("images/gj-neighborhood.jpg") center / cover no-repeat;
@@ -2136,13 +2181,10 @@ body.page-grand-junction-home-value .value-intro h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .value-intro p {color: var(--muted); font-size: 1.05rem; line-height: 1.85;}
 body.page-grand-junction-home-value .value-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .card-value {padding: 2rem 1.75rem;}
 body.page-grand-junction-home-value .value-icon {width: 48px; height: 48px; border-radius: 12px;
       background: rgba(184,146,58,0.1); display: flex; align-items: center;
       justify-content: center; margin-bottom: 1.1rem;}
 body.page-grand-junction-home-value .value-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-grand-junction-home-value .card-value h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.6rem;}
-body.page-grand-junction-home-value .card-value p {color: var(--muted); font-size: 0.96rem; line-height: 1.8;}
 body.page-grand-junction-home-value .valuation-section {background: var(--navy); position: relative; overflow: hidden;}
 body.page-grand-junction-home-value .valuation-section::before {content: ""; position: absolute; inset: 0;
       background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
@@ -2158,12 +2200,8 @@ body.page-grand-junction-home-value .valuation-bullets li {display: flex; align-
 body.page-grand-junction-home-value .valuation-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
 body.page-grand-junction-home-value .why-section {background: var(--cream);}
 body.page-grand-junction-home-value .why-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .card-trust {padding: 1.75rem; box-shadow: none; transition: transform 0.25s, box-shadow 0.25s;}
-body.page-grand-junction-home-value .card-trust:hover {transform: translateY(-3px); box-shadow: var(--shadow-md);}
 body.page-grand-junction-home-value .why-num {font-family: "Cormorant Garamond", serif; font-size: 2.4rem;
       color: rgba(184,146,58,0.25); line-height: 1; margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .card-trust h3 {font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem;}
-body.page-grand-junction-home-value .card-trust p {font-size: 0.95rem; color: var(--muted); line-height: 1.8;}
 .cta-band.cta-band--soft {background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
@@ -2221,15 +2259,7 @@ body.page-index .usp-grid {display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
       margin-bottom: 3rem;}
-body.page-index .card-value {padding: 2.25rem 1.75rem;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
 body.page-index .card-value::before {transition: opacity 0.3s;}
-body.page-index .card-value:hover {transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(184,146,58,0.22);}
 body.page-index .card-value:hover::before {opacity: 1;}
 body.page-index .usp-icon {width: 48px; height: 48px;
       background: rgba(184,146,58,0.1);
@@ -3025,42 +3055,6 @@ body.page-services #services .usp-grid {
 }
 
 /* =========================================================
-   Standardized card system overrides
-   Scope: cards only
-   ========================================================= */
-
-/* Shared primary cards */
-body.page-buyers .promise-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,244,237,0.94));
-  border: 1px solid rgba(230, 224, 211, 0.92);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
-
-body.page-buyers .promise-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(184, 146, 58, 0.22);
-}
-
-body.page-buyers .promise-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(184, 146, 58, 0.1);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-body.page-buyers .promise-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke: var(--gold);
-  stroke-width: 1.8;
-}
-
-/* =========================================================
    CTA standardization layer
    Scoped to CTA structures only
 ========================================================= */
@@ -3308,40 +3302,6 @@ body.page-family-neighborhood .card-grid {
   grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
   gap: 1.25rem;
   margin-top: 2.75rem;
-}
-
-body.page-family-neighborhood .card-value {
-  padding: 2rem 1.75rem;
-}
-
-body.page-family-neighborhood .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(184,146,58,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.1rem;
-}
-
-body.page-family-neighborhood .card-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--gold);
-  stroke-width: 1.8;
-}
-
-body.page-family-neighborhood .card-value h3 {
-  font-size: 1.15rem;
-  color: var(--navy);
-  margin-bottom: 0.6rem;
-}
-
-body.page-family-neighborhood .card-value p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.8;
 }
 
 /* Canonical shared form section + shell contract */
