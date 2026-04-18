@@ -197,7 +197,6 @@ p { color: var(--text); }
 
 /* Section label family contract
    Canonical: .section-label, .section-label.centered, .section-label-accent
-   Deprecated alias: .section-label-gold (kept as passthrough)
 */
 .section-label {
   display: flex;
@@ -557,34 +556,24 @@ p { color: var(--text); }
   background: var(--navy-mid);
 }
 
-/* Button family contract
-   Canonical: .btn-gold-outline
-   Deprecated alias: .btn-outline-gold (kept as passthrough)
-*/
-.btn-gold-outline,
-.btn-outline-gold { /* legacy alias */
+/* Button family contract */
+.btn-gold-outline {
   border: 1px solid rgba(184, 146, 58, 0.55);
   color: var(--gold-lt);
   background: transparent;
 }
-.btn-gold-outline:hover,
-.btn-outline-gold:hover {
+.btn-gold-outline:hover {
   background: rgba(184, 146, 58, 0.12);
   color: var(--gold-lt);
 }
 
-/* Hero-secondary button contract
-   Canonical: .btn-hero-secondary
-   Deprecated alias: .btn-outline-white (kept as passthrough)
-*/
-.btn-hero-secondary,
-.btn-outline-white { /* legacy alias */
+/* Hero-secondary button contract */
+.btn-hero-secondary {
   border: 1px solid rgba(255, 255, 255, 0.32);
   color: rgba(255, 255, 255, 0.82);
   background: transparent;
 }
-.btn-hero-secondary:hover,
-.btn-outline-white:hover { /* legacy alias */
+.btn-hero-secondary:hover {
   border-color: var(--gold-lt);
   color: var(--gold-lt);
 }
@@ -595,14 +584,14 @@ p { color: var(--text); }
   box-shadow: var(--btn-shadow), var(--btn-focus-ring);
 }
 
-:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, a.link-card, a.card-link, a.usp-card):focus-visible {
   outline: none;
   border-radius: 999px;
   box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
 }
 
 /* Keep card-link focus shape aligned to card geometry */
-:is(a.link-card, a.card-link, a.link-card-detailed, a.usp-card):focus-visible {
+:is(a.link-card, a.card-link, a.usp-card):focus-visible {
   border-radius: var(--radius-sm);
 }
 
@@ -638,8 +627,7 @@ p { color: var(--text); }
 }
 
 .hero::before,
-.hero::after,
-.hero-overlay {
+.hero::after {
   position: absolute;
   pointer-events: none;
 }
@@ -661,15 +649,6 @@ p { color: var(--text); }
   background: var(--hero-overlay-after);
 }
 
-.hero-overlay {
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(900px 450px at 50% -20%, rgba(184, 150, 58, 0.14), transparent 60%),
-    linear-gradient(rgba(12, 26, 61, 0.72), rgba(12, 26, 61, 0.72));
-}
-
-.hero-content,
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -746,7 +725,6 @@ p { color: var(--text); }
   color: var(--gold-lt);
 }
 
-.hero-subtitle,
 .hero-lead {
   font-size: clamp(0.97rem, 1.8vw, 1.1rem);
   color: var(--hero-lead-color);
@@ -780,81 +758,6 @@ p { color: var(--text); }
   text-transform: uppercase;
   color: var(--hero-trust-color);
 }
-
-/* =========================
-   Architecture pass: page-family + hero + component roles
-========================= */
-
-
-.hero.hero-flagship {
-  min-height: 92vh;
-  --hero-inner-max: 820px;
-  --hero-inner-align: left;
-  --hero-inner-top: clamp(5.25rem, 9vw, 7rem);
-  --hero-inner-bottom: clamp(3rem, 5vw, 4rem);
-  --hero-h1-size: clamp(2.7rem, 5.8vw, 5rem);
-  --hero-h1-line: 1.03;
-  --hero-h1-max: 15ch;
-  --hero-lead-max: 52ch;
-  --hero-lead-space: 2.65rem;
-  --hero-eyebrow-space: 1.15rem;
-  --hero-cta-gap: 1rem;
-  --hero-trust-color: rgba(255, 255, 255, 0.5);
-  --hero-overlay-before: linear-gradient(to bottom, rgba(8,18,50,0.72) 0%, rgba(8,18,50,0.58) 50%, rgba(8,18,50,0.75) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.4), transparent);
-}
-
-.hero.hero-support {
-  min-height: clamp(360px, 54vh, 560px);
-  --hero-inner-max: 860px;
-  --hero-inner-align: center;
-  --hero-inner-top: clamp(5.4rem, 9vw, 7.2rem);
-  --hero-inner-bottom: clamp(2.6rem, 4.6vw, 3.6rem);
-  --hero-h1-size: clamp(2.4rem, 5.6vw, 4.4rem);
-  --hero-h1-line: 1.06;
-  --hero-h1-max: 17ch;
-  --hero-lead-max: 60ch;
-  --hero-lead-space: 2.1rem;
-  --hero-eyebrow-space: 1rem;
-  --hero-eyebrow-justify: center;
-  --hero-cta-justify: center;
-  --hero-cta-gap: 0.9rem;
-  --hero-trust-color: rgba(255, 255, 255, 0.5);
-  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184, 146, 58, 0.11), transparent 65%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.38), transparent);
-}
-
-.hero.hero-support .hero-lead,
-.hero.hero-support .hero-subtitle {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero.hero-neighborhood {
-  min-height: 84vh;
-  --hero-inner-max: 760px;
-  --hero-inner-align: left;
-  --hero-inner-top: clamp(4.5rem, 7.8vw, 5.8rem);
-  --hero-inner-bottom: clamp(2.8rem, 4.8vw, 3.8rem);
-  --hero-h1-size: clamp(2.35rem, 4.9vw, 4.05rem);
-  --hero-h1-line: 1.06;
-  --hero-h1-max: 16ch;
-  --hero-lead-max: 56ch;
-  --hero-lead-space: 2.35rem;
-  --hero-eyebrow-space: 1.05rem;
-  --hero-overlay-before: radial-gradient(ellipse 75% 65% at 50% 40%, rgba(184,146,58,0.10), transparent 65%);
-  --hero-overlay-after: rgba(184,146,58,0.22);
-}
-
-
-.hero-neighborhood .hero-cta .btn {
-  min-width: 170px;
-}
-
-.seller-neighborhood-value-shapers .card-grid {
-  margin-top: 2.25rem;
-}
-
 
 .card {
   border-radius: var(--radius-md);
@@ -997,11 +900,6 @@ p { color: var(--text); }
   gap: clamp(1.5rem, 4vw, 4rem);
 }
 
-.layout-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-}
 
 .layout-grid-4 {
   display: grid;
@@ -1234,11 +1132,6 @@ a.card-base:hover {
   }
 }
 
-.layout-sidebar {
-  display: grid;
-  grid-template-columns: minmax(250px, 340px) 1fr;
-  gap: 2rem;
-}
 
 .tone-default { background: var(--white); }
 .tone-cream { background: var(--cream); }
@@ -1755,7 +1648,7 @@ a.card-base:hover {
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .hero.hero-support .hero-cta { align-items: center; }
   .layout-split,
-  .layout-sidebar { grid-template-columns: 1fr; }
+
   .nav-dropdown-menu { display: none; }
 
   .cta-band-inner {
@@ -3376,13 +3269,13 @@ body.page-services .routing-links a {
 }
 
 /* ===== Grand Junction home value area cards ===== */
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-grid-detailed {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .link-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.45rem;
   margin-top: 2.4rem;
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .card-link {
   border-radius: 20px;
   align-items: flex-start;
   gap: 1.1rem;
@@ -3391,18 +3284,18 @@ body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-deta
   box-shadow: 0 14px 30px rgba(12, 26, 61, 0.10);
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed:hover {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .card-link:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 38px rgba(12, 26, 61, 0.14);
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed::after {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .card-link::after {
   content: "";
   display: none;
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed i,
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed svg {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .card-link i,
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .card-link svg {
   width: 20px;
   height: 20px;
   margin-top: 0;
@@ -3412,13 +3305,13 @@ body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-deta
   box-sizing: content-box;
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-content {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .link-card-content {
   display: flex;
   flex-direction: column;
   gap: 0.48rem;
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-title {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .link-card-title {
   display: block;
   font-size: 1.03rem;
   font-weight: 700;
@@ -3426,7 +3319,7 @@ body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-titl
   line-height: 1.25;
 }
 
-body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-text {
+body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .link-card-text {
   display: block;
   font-size: 0.93rem;
   line-height: 1.72;
@@ -3435,7 +3328,7 @@ body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-text
 }
 
 @media (max-width: 900px) {
-  body.page-grand-junction-home-value .nearby-area-shell--detailed .link-grid-detailed {
+  body.page-grand-junction-home-value #sellerHubNeighborhoodLinks .link-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -3532,15 +3425,15 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   --shared-cta-gap: 1rem;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) > .container {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) > .container {
   position: relative;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) .section-header {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header {
   margin-bottom: var(--shared-section-header-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) .section-header.centered {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header.centered {
   text-align: center;
 }
 
@@ -3557,7 +3450,7 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   gap: var(--shared-split-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-grid-3, .layout-grid-4, .usp-grid, .card-grid, .link-grid) {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-grid-4, .usp-grid, .link-grid) {
   gap: var(--shared-grid-gap);
 }
 
@@ -3572,9 +3465,6 @@ body.page-family-neighborhood :is(.local-area-intro .layout-split, .snapshot-inn
   align-items: start;
 }
 
-body.page-family-neighborhood .local-area-intro .layout-split.split-layout-align-center {
-  align-items: center;
-}
 
 body.page-family-neighborhood :is(.snapshot-inner, .dark-band-inner) {
   align-items: center;
@@ -3662,10 +3552,10 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
 
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 
-.section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-.section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-.section-shell-top .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-.nearby-area-shell .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
+.section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
+.section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
+
+.nearby-area-shell .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
   margin-top: 0;
 }
 
@@ -3691,13 +3581,6 @@ body.page-family-neighborhood .dark-band :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
-}
-
-body.page-family-neighborhood .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
-  gap: 1.25rem;
-  margin-top: 2.75rem;
 }
 
 /* Canonical shared form section + shell contract */
@@ -3877,28 +3760,6 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   justify-content: center;
 }
 
-.section-shell-top {
-  background: var(--white);
-  border-top: 1px solid var(--sand);
-  padding: clamp(3rem,5vw,4rem) 0;
-}
-
-.section-intro-center {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 2rem;
-}
-
-.section-intro-center h2 {
-  font-size: clamp(1.5rem,2.5vw,2.2rem);
-  margin-bottom: 0.55rem;
-}
-
-.section-intro-center p {
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.8;
-}
 
 .section-copy-narrow {
   max-width: 640px;
@@ -3915,8 +3776,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-top: 1.5rem;
 }
 
-.section-label-accent span,
-.section-label-gold span { /* legacy alias */
+.section-label-accent span {
   color: var(--gold-lt);
 }
 
@@ -5174,5 +5034,3 @@ body.tier-value .hero.hero-neighborhood {
   --hero-inner-top: clamp(4.2rem, 7.2vw, 5.3rem);
   --hero-inner-bottom: clamp(2.45rem, 4.2vw, 3.35rem);
 }
-
-
