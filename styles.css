@@ -2545,13 +2545,13 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list li
   margin-top: 3px;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) :is(.steps-col, .dark-band-steps) {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list :is(.steps-col, .dark-band-steps) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-item {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-md);
@@ -2562,11 +2562,11 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-item {
   transition: background 0.25s;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-item:hover {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item:hover {
   background: rgba(255,255,255,0.1);
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-n {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-n {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   color: rgba(184,146,58,0.4);
@@ -2576,13 +2576,13 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-n {
   text-align: center;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-item h4 {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
   color: var(--white);
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
-body:is(.local-area-seller-variant, .seller-neighborhood-contract) .step-item p {
+body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item p {
   color: rgba(255,255,255,0.5);
   font-size: 0.88rem;
   line-height: 1.7;
@@ -2700,104 +2700,6 @@ body.page-selling-in-palisade .hero {
     url("images/gj-landscape.jpg") center 40% / cover no-repeat;
 }
 
-/* Redlands dark-copy intentionally omits a paragraph margin before list items. */
-body.page-redlands-homes .dark-copy p {
-  margin-bottom: 0;
-}
-
-body.page-redlands-homes .dark-list {
-  margin-top: 1.25rem;
-}
-
-/* Fruita process section remains distinct (centered + step-card presentation). */
-body.page-selling-in-fruita .process-section {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-body.page-selling-in-fruita .process-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-  pointer-events: none;
-}
-
-body.page-selling-in-fruita .process-inner {
-  position: relative;
-  z-index: 1;
-}
-
-body.page-selling-in-fruita .process-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-body.page-selling-in-fruita .process-header h2 {
-  color: var(--white);
-  font-weight: 300;
-}
-
-body.page-selling-in-fruita .process-header h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-body.page-selling-in-fruita .process-header p {
-  color: rgba(255,255,255,0.55);
-  font-size: 1rem;
-  margin-top: 0.75rem;
-  max-width: 52ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.page-selling-in-fruita .steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-}
-
-body.page-selling-in-fruita .step-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: background 0.25s, border-color 0.25s;
-}
-
-body.page-selling-in-fruita .step-card:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(184,146,58,0.3);
-}
-
-body.page-selling-in-fruita .step-num {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.8rem;
-  color: rgba(184,146,58,0.3);
-  line-height: 1;
-  margin-bottom: 0.75rem;
-}
-
-body.page-selling-in-fruita .step-card h3 {
-  font-size: 1.1rem;
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-
-body.page-selling-in-fruita .step-card p {
-  color: rgba(255,255,255,0.52);
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-body.page-selling-in-fruita .process-cta {
-  text-align: center;
-  margin-top: 3rem;
-}
-
 /* Palisade retains unique identity highlights + pricing card section. */
 body.page-selling-in-palisade .identity-highlights {
   margin-top: 1.5rem;
@@ -2845,90 +2747,7 @@ body.page-selling-in-palisade .stat-note-sm {
   margin-top: 0.2rem;
 }
 
-body.page-selling-in-palisade .pricing-section {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-body.page-selling-in-palisade .pricing-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-  pointer-events: none;
-}
-
-body.page-selling-in-palisade .pricing-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-body.page-selling-in-palisade .pricing-copy h2 {
-  color: var(--white);
-  font-size: clamp(1.8rem,3vw,2.6rem);
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-body.page-selling-in-palisade .pricing-copy h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-body.page-selling-in-palisade .pricing-copy p {
-  color: rgba(255,255,255,0.58);
-  font-size: 1rem;
-  line-height: 1.85;
-  margin-bottom: 1.5rem;
-}
-
-body.page-selling-in-palisade .pricing-points {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-body.page-selling-in-palisade .pricing-points li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-body.page-selling-in-palisade .pricing-points li svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--gold);
-  stroke-width: 2;
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-body.page-selling-in-palisade .pricing-points li span {
-  color: rgba(255,255,255,0.72);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-body.page-selling-in-palisade .pricing-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-}
-
-body.page-selling-in-palisade .pricing-card h3 {
-  color: var(--white);
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-body.page-selling-in-palisade .pricing-row {
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2936,38 +2755,32 @@ body.page-selling-in-palisade .pricing-row {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-body.page-selling-in-palisade .pricing-row:last-of-type {
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row:last-of-type {
   border-bottom: none;
 }
 
-body.page-selling-in-palisade .pricing-row .pr-label {
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-label {
   color: rgba(255,255,255,0.55);
   font-size: 0.88rem;
 }
 
-body.page-selling-in-palisade .pricing-row .pr-val {
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-row .pr-val {
   color: var(--gold-lt);
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
 }
 
-body.page-selling-in-palisade .pricing-note {
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-note {
   color: rgba(255,255,255,0.35);
   font-size: 0.78rem;
   margin-top: 1rem;
   font-style: italic;
 }
 
-@media (max-width: 968px) {
-  body.page-selling-in-palisade .pricing-inner {
-    gap: 3rem;
-  }
-}
-
 @media (max-width: 640px) {
   body.page-selling-in-fruita .snapshot-stats,
   body.page-selling-in-palisade .identity-stats,
-  body.page-selling-in-palisade .pricing-card {
+  .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
     margin-top: 1rem;
   }
 }
@@ -4436,13 +4249,15 @@ body.page-privacy .privacy-content {
   z-index: 1;
 }
 
-.seller-neighborhood-approach-band.approach-band-process :is(.process-header h2, .dark-copy h2) {
+.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header h2, .dark-copy h2),
+.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header h2, .dark-copy h2) {
   color: var(--white);
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process :is(.process-header p, .dark-copy p) {
+.seller-neighborhood-approach-band.approach-band-process-list :is(.process-header p, .dark-copy p),
+.seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header p, .dark-copy p) {
   color: rgba(255,255,255,0.62);
 }
 
@@ -4457,21 +4272,139 @@ body.page-privacy .privacy-content {
   margin-bottom: 1.25rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process .step-card {
+.seller-neighborhood-approach-band.approach-band-process-cards .process-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-process-cards .process-header p {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seller-neighborhood-approach-band.approach-band-process-cards .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-process-cards .step-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.25s, border-color 0.25s;
 }
 
-.seller-neighborhood-approach-band.approach-band-process .step-card h3 {
+.seller-neighborhood-approach-band.approach-band-process-cards .step-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(184,146,58,0.3);
+}
+
+.seller-neighborhood-approach-band.approach-band-process-cards .step-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  color: rgba(184,146,58,0.3);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-process-cards .step-card h3 {
   color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
-.seller-neighborhood-approach-band.approach-band-process .step-card p {
+.seller-neighborhood-approach-band.approach-band-process-cards .step-card p {
   color: rgba(255,255,255,0.68);
+  font-size: 0.9rem;
+  line-height: 1.8;
 }
 
-.seller-neighborhood-approach-band.approach-band-strategy :is(.pricing-copy h2, .pricing-copy p) {
+.seller-neighborhood-approach-band.approach-band-process-cards .process-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 {
   color: var(--white);
+  font-size: clamp(1.8rem,3vw,2.6rem);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy p {
+  color: rgba(255,255,255,0.58);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li span {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.seller-neighborhood-approach-band.approach-band-strategy-pricing :is(.pricing-copy h2, .pricing-copy p) {
+  color: var(--white);
+}
+
+@media (max-width: 968px) {
+  .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-inner {
+    gap: 3rem;
+  }
 }
 
 .seller-neighborhood-nearby-shell {
