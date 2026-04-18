@@ -127,7 +127,10 @@ p { color: var(--text); }
   margin-right: auto;
 }
 
-/* Section label â€” gold rule + uppercase tag */
+/* Section label family contract
+   Canonical: .section-label, .section-label.centered, .section-label-accent
+   Deprecated alias: .section-label-gold (kept as passthrough)
+*/
 .section-label {
   display: flex;
   align-items: center;
@@ -453,7 +456,10 @@ p { color: var(--text); }
   background: var(--navy-mid);
 }
 
-/* Gold outline variant (single authority for .btn-outline-gold + .btn-gold-outline) */
+/* Button family contract
+   Canonical: .btn-gold-outline
+   Deprecated alias: .btn-outline-gold (kept as passthrough)
+*/
 .btn-gold-outline,
 .btn-outline-gold { /* legacy alias */
   border: 1px solid rgba(184, 146, 58, 0.55);
@@ -466,24 +472,18 @@ p { color: var(--text); }
   color: var(--gold-lt);
 }
 
-/* White outline for dark hero use */
-.btn-outline-white {
+/* Hero-secondary button contract
+   Canonical: .btn-hero-secondary
+   Deprecated alias: .btn-outline-white (kept as passthrough)
+*/
+.btn-hero-secondary,
+.btn-outline-white { /* legacy alias */
   border: 1px solid rgba(255, 255, 255, 0.32);
   color: rgba(255, 255, 255, 0.82);
   background: transparent;
 }
-.btn-outline-white:hover {
-  border-color: var(--gold-lt);
-  color: var(--gold-lt);
-}
-
-/* Single secondary CTA style for dark/photo hero rows */
-.btn-hero-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  color: rgba(255, 255, 255, 0.82);
-  background: transparent;
-}
-.btn-hero-secondary:hover {
+.btn-hero-secondary:hover,
+.btn-outline-white:hover { /* legacy alias */
   border-color: var(--gold-lt);
   color: var(--gold-lt);
 }
@@ -784,9 +784,13 @@ p { color: var(--text); }
   border-radius: var(--radius-md);
 }
 
-
+/* Split/Grid family contract
+   Canonical: .layout-split
+   Deprecated aliases: .layout-grid-2, .split-layout (still supported)
+*/
 .layout-split,
-.layout-grid-2 {
+.layout-grid-2,
+.split-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 4rem);
@@ -938,7 +942,7 @@ p { color: var(--text); }
   max-width: 60ch;
 }
 
-.cta-content :is(.btn, .btn-secondary, .btn-primary, .btn-navy, .btn-gold-outline, .btn-outline-gold, .btn-outline, .btn-outline-white) {
+.cta-content :is(.btn, .btn-secondary, .btn-primary, .btn-navy, .btn-gold-outline, .btn-outline, .btn-hero-secondary) {
   margin-top: 0.25rem;
 }
 
@@ -996,7 +1000,7 @@ p { color: var(--text); }
   body.local-area-seller-variant .dark-band:not(.seller-neighborhood-approach-band)
 ) :is(
   .section-label span,
-  .section-label-gold span,
+  .section-label-accent span,
   .pricing-points li,
   .dark-list li,
   .check-list li,
@@ -1089,7 +1093,7 @@ p { color: var(--text); }
   margin: 0;
 }
 
-.cta-band :is(.btn, .btn-secondary, .btn-primary, .btn-navy, .btn-gold-outline, .btn-outline-gold, .btn-outline, .btn-outline-white) {
+.cta-band :is(.btn, .btn-secondary, .btn-primary, .btn-navy, .btn-gold-outline, .btn-outline, .btn-hero-secondary) {
   align-self: center;
 }
 
@@ -3645,7 +3649,8 @@ body:is(.local-area-core, .local-area-seller-variant) .local-area-quick-facts .f
   margin-top: 1.5rem;
 }
 
-.section-label-gold span {
+.section-label-accent span,
+.section-label-gold span { /* legacy alias */
   color: var(--gold-lt);
 }
 
@@ -4100,18 +4105,25 @@ body.page-privacy .privacy-content {
   }
 }
 
-.seller-neighborhood-nearby-shell {
+/* Nearby-area family contract
+   Canonical: .nearby-area-shell/.nearby-area-intro/.nearby-area-copy
+   Deprecated aliases: .seller-neighborhood-nearby-*
+*/
+.nearby-area-shell,
+.seller-neighborhood-nearby-shell { /* legacy alias */
   background: var(--cream);
   border-top: 1px solid var(--sand);
 }
 
-.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-intro {
+.nearby-area-shell .nearby-area-intro,
+.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-intro { /* legacy alias */
   text-align: center;
   max-width: 720px;
   margin: 0 auto 1.5rem;
 }
 
-.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-copy {
+.nearby-area-shell .nearby-area-copy,
+.seller-neighborhood-nearby-shell .seller-neighborhood-nearby-copy { /* legacy alias */
   color: var(--muted);
 }
 
