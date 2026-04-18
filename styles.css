@@ -942,6 +942,103 @@ p { color: var(--text); }
   margin-top: 0.25rem;
 }
 
+/* Shared dark-surface contract (single authority for dark bands/components) */
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) {
+  --surface-dark-heading: var(--white);
+  --surface-dark-body: rgba(255, 255, 255, 0.72);
+  --surface-dark-muted: rgba(255, 255, 255, 0.62);
+  --surface-dark-soft: rgba(255, 255, 255, 0.5);
+}
+
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) :is(
+  h2,
+  h3,
+  h4,
+  .process-header h2,
+  .dark-copy h2,
+  .pricing-copy h2,
+  .cta-band-copy h2
+) {
+  color: var(--surface-dark-heading);
+}
+
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) :is(
+  p,
+  .section-intro,
+  .lead,
+  .process-header p,
+  .dark-copy p,
+  .pricing-copy p,
+  .cta-band-copy p
+) {
+  color: var(--surface-dark-muted);
+}
+
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) :is(
+  .section-label span,
+  .section-label-gold span,
+  .pricing-points li,
+  .dark-list li,
+  .check-list li,
+  .contact-bullets li,
+  .step p,
+  .step-item p,
+  .step-card p
+) {
+  color: var(--surface-dark-body);
+}
+
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) :is(
+  .card h3,
+  .profile-card h3,
+  .diff-card h3,
+  .step h3,
+  .step-item h4,
+  .step-card h3,
+  .pricing-card h3
+) {
+  color: var(--surface-dark-heading);
+}
+
+:is(
+  .cta-band,
+  .local-area-dark-band,
+  .seller-neighborhood-approach-band,
+  body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band)
+) :is(
+  .card p,
+  .profile-card p,
+  .diff-card p,
+  .pricing-card p
+) {
+  color: var(--surface-dark-body);
+}
+
 /* Dark CTA band */
 .cta-band {
   background: var(--navy);
@@ -2210,13 +2307,11 @@ body.page-index .cta-band-inner {position: relative;
       gap: clamp(1.75rem, 4vw, 3.25rem);}
 body.page-index .cta-band-copy {max-width: 62ch;}
 body.page-index .cta-band-copy h2 {font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: var(--white);
       font-weight: 300;
       margin-bottom: 0.75rem;}
 body.page-index .cta-band-copy h2 em {font-style: italic;
       color: var(--gold-lt);}
-body.page-index .cta-band-copy p {color: rgba(255,255,255,0.6);
-      font-size: 1rem;
+body.page-index .cta-band-copy p {font-size: 1rem;
       line-height: 1.8;
       max-width: 52ch;}
 body.page-index .seller-hub-callout {max-width: 420px;
@@ -2343,7 +2438,6 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:no
 }
 
 body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-copy h2 {
-  color: var(--white);
   font-weight: 300;
   margin-bottom: 1rem;
 }
@@ -2354,7 +2448,6 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:no
 }
 
 body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-band:not(.seller-neighborhood-approach-band) .dark-copy p {
-  color: rgba(255,255,255,0.58);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
@@ -2371,7 +2464,6 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .dark-list li
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  color: rgba(255,255,255,0.72);
   font-size: 0.95rem;
 }
 
@@ -2416,13 +2508,11 @@ body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neigh
 }
 
 body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item h4 {
-  color: var(--white);
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
 body:is(.local-area-seller-variant, .seller-neighborhood-contract) .seller-neighborhood-approach-band.approach-band-process-list .step-item p {
-  color: rgba(255,255,255,0.5);
   font-size: 0.88rem;
   line-height: 1.7;
 }
@@ -3403,7 +3493,6 @@ body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) {
 }
 
 body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2 {
-  color: var(--white);
   font-weight: 300;
   margin-bottom: 1rem;
 }
@@ -3414,7 +3503,6 @@ body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) h2
 }
 
 body.local-area-core .local-area-dark-band :is(.dark-inner, .dark-band-inner) p {
-  color: rgba(255,255,255,0.58);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
@@ -3974,14 +4062,13 @@ body.page-privacy .privacy-content {
 
 .seller-neighborhood-approach-band.approach-band-process-list :is(.process-header h2, .dark-copy h2),
 .seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header h2, .dark-copy h2) {
-  color: var(--white);
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
 .seller-neighborhood-approach-band.approach-band-process-list :is(.process-header p, .dark-copy p),
 .seller-neighborhood-approach-band.approach-band-process-cards :is(.process-header p, .dark-copy p) {
-  color: rgba(255,255,255,0.62);
+  color: var(--surface-dark-muted);
 }
 
 .seller-neighborhood-approach-band .dark-copy h2 em {
@@ -4037,13 +4124,12 @@ body.page-privacy .privacy-content {
 }
 
 .seller-neighborhood-approach-band.approach-band-process-cards .step-card h3 {
-  color: var(--white);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .seller-neighborhood-approach-band.approach-band-process-cards .step-card p {
-  color: rgba(255,255,255,0.68);
+  color: var(--surface-dark-body);
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -4061,7 +4147,6 @@ body.page-privacy .privacy-content {
 }
 
 .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy h2 {
-  color: var(--white);
   font-size: clamp(1.8rem,3vw,2.6rem);
   font-weight: 300;
   margin-bottom: 1rem;
@@ -4073,7 +4158,7 @@ body.page-privacy .privacy-content {
 }
 
 .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-copy p {
-  color: rgba(255,255,255,0.58);
+  color: var(--surface-dark-muted);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 1.5rem;
@@ -4102,7 +4187,7 @@ body.page-privacy .privacy-content {
 }
 
 .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-points li span {
-  color: rgba(255,255,255,0.72);
+  color: var(--surface-dark-body);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -4115,13 +4200,8 @@ body.page-privacy .privacy-content {
 }
 
 .seller-neighborhood-approach-band.approach-band-strategy-pricing .pricing-card h3 {
-  color: var(--white);
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
-}
-
-.seller-neighborhood-approach-band.approach-band-strategy-pricing :is(.pricing-copy h2, .pricing-copy p) {
-  color: var(--white);
 }
 
 @media (max-width: 968px) {
