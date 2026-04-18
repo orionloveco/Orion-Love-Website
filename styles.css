@@ -4019,6 +4019,34 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   line-height: 1.8;
 }
 
+.nearby-area-links-shell {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  border: 1px solid rgba(12, 26, 61, 0.08);
+  border-radius: clamp(16px, 2vw, 24px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 40px rgba(12, 26, 61, 0.06);
+  padding: clamp(1.25rem, 2.3vw, 2rem);
+}
+
+.nearby-area-links-shell #featuredAreasLinks {
+  min-height: clamp(220px, 28vw, 320px);
+  display: block;
+}
+
+.nearby-area-links-shell #featuredAreasLinks:empty::before {
+  content: "Nearby area comparisons are loading…";
+  display: grid;
+  place-items: center;
+  min-height: inherit;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(184, 146, 58, 0.07), rgba(12, 26, 61, 0.03));
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .footer-brand-note {
   margin-top: 0.75rem;
 }
@@ -5148,71 +5176,3 @@ body.tier-value .hero.hero-neighborhood {
 }
 
 
-
-/* === NEARBY AREA SECTION PATTERN === */
-.nearby-area-section {
-  padding: clamp(3.75rem, 6vw, 5.5rem) 0;
-  background:
-    linear-gradient(180deg, rgba(247, 244, 237, 0.92) 0%, rgba(255, 255, 255, 0.96) 100%),
-    var(--cream);
-  border-top: 1px solid rgba(184, 146, 58, 0.18);
-  border-bottom: 1px solid rgba(184, 146, 58, 0.1);
-}
-
-.nearby-area-section .container {
-  max-width: 1120px;
-}
-
-.nearby-area-section .nearby-area-intro {
-  margin-bottom: 0;
-}
-
-.nearby-area-section .nearby-area-intro h2 {
-  font-size: clamp(1.95rem, 3.1vw, 2.8rem);
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.8rem;
-}
-
-.nearby-area-section .nearby-area-intro .nearby-area-copy {
-  font-size: 1rem;
-  max-width: 66ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.nearby-area-divider {
-  width: min(820px, 100%);
-  height: 1px;
-  margin: clamp(1.75rem, 3vw, 2.5rem) auto;
-  background: linear-gradient(90deg, rgba(184, 146, 58, 0), rgba(184, 146, 58, 0.42), rgba(184, 146, 58, 0));
-}
-
-.nearby-area-links-mount {
-  width: min(1040px, 100%);
-  margin: 0 auto;
-  border: 1px solid rgba(12, 26, 61, 0.08);
-  border-radius: clamp(16px, 2vw, 24px);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 16px 40px rgba(12, 26, 61, 0.06);
-  padding: clamp(1.25rem, 2.3vw, 2rem);
-}
-
-.nearby-area-links-mount #featuredAreasLinks,
-.nearby-area-section #featuredAreasLinks {
-  min-height: clamp(220px, 28vw, 320px);
-  display: block;
-}
-
-.nearby-area-section #featuredAreasLinks:empty::before {
-  content: "Nearby area comparisons are loading…";
-  display: grid;
-  place-items: center;
-  min-height: inherit;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(184, 146, 58, 0.07), rgba(12, 26, 61, 0.03));
-  color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}

@@ -166,12 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ).join('');
 
     if (mountMode === 'inner') {
-      return `
-<div class="container">
-  <div class="nearby-area-links-shell">
-    <div class="link-grid">${links}</div>
-  </div>
-</div>`;
+      return `<div class="link-grid">${links}</div>`;
     }
 
     return `
