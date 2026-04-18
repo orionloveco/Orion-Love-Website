@@ -1309,7 +1309,7 @@ a.card-base:hover {
   .cta-band,
   .dark-band
 ) :is(
-  .card h3,
+  .card-trust h3,
   .step h3,
   .step-item h4,
   .step-card h3,
@@ -1322,7 +1322,7 @@ a.card-base:hover {
   .cta-band,
   .dark-band
 ) :is(
-  .card p,
+  .card-trust p,
   .pricing-card p
 ) {
   color: var(--surface-dark-body);
@@ -4531,6 +4531,7 @@ body.page-faq .faq-help-row p {
 
 :is(.dark-band-split, .dark-band.seller-neighborhood-approach-band.approach-band-process-list) .dark-band-steps {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--dark-band-gap);
 }
 
@@ -4743,6 +4744,10 @@ body.page-faq .faq-help-row p {
   }
 
   :is(.dark-band-process-cards, .dark-band.seller-neighborhood-approach-band.approach-band-process-cards) .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.dark-band-split, .dark-band.seller-neighborhood-approach-band.approach-band-process-list) .dark-band-steps {
     grid-template-columns: 1fr;
   }
 
