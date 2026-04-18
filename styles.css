@@ -2839,14 +2839,14 @@ body.page-services .routing-links a {
 .form-message.error { background: #fdf2f2; border: 1px solid #f0c6c6; color: #7a1f1f; }
 
 /* Shared nearby-area cards across featured + local-area sections (canonical authority) */
-:is(.nearby-area-shell, .bottom-city-links) .link-grid {
+.nearby-area-shell .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
 
-:is(.nearby-area-shell, .bottom-city-links) .link-card {
+.nearby-area-shell .link-card {
   position: relative;
   background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
   border: 1px solid rgba(230, 224, 211, 0.95);
@@ -2860,7 +2860,7 @@ body.page-services .routing-links a {
   transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
 }
 
-:is(.nearby-area-shell, .bottom-city-links) .link-card::after {
+.nearby-area-shell .link-card::after {
   content: "→";
   margin-left: auto;
   color: var(--gold);
@@ -2869,14 +2869,14 @@ body.page-services .routing-links a {
   opacity: 0.8;
 }
 
-:is(.nearby-area-shell, .bottom-city-links) .link-card:hover {
+.nearby-area-shell .link-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(12, 26, 61, 0.12);
   border-color: rgba(184, 146, 58, 0.28);
 }
 
-:is(.nearby-area-shell, .bottom-city-links) .link-card svg,
-:is(.nearby-area-shell, .bottom-city-links) .link-card i {
+.nearby-area-shell .link-card svg,
+.nearby-area-shell .link-card i {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -2885,20 +2885,20 @@ body.page-services .routing-links a {
   flex-shrink: 0;
 }
 
-:is(.nearby-area-shell, .bottom-city-links) .link-card span {
+.nearby-area-shell .link-card span {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
 }
 
 /* ===== Grand Junction home value area cards ===== */
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-grid-detailed {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-grid-detailed {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.45rem;
   margin-top: 2.4rem;
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed {
   border-radius: 20px;
   align-items: flex-start;
   gap: 1.1rem;
@@ -2907,18 +2907,18 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detai
   box-shadow: 0 14px 30px rgba(12, 26, 61, 0.10);
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed:hover {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 38px rgba(12, 26, 61, 0.14);
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed::after {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed::after {
   content: "";
   display: none;
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed i,
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detailed svg {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed i,
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-detailed svg {
   width: 20px;
   height: 20px;
   margin-top: 0;
@@ -2928,13 +2928,13 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-detai
   box-sizing: content-box;
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-content {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-content {
   display: flex;
   flex-direction: column;
   gap: 0.48rem;
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-title {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-title {
   display: block;
   font-size: 1.03rem;
   font-weight: 700;
@@ -2942,7 +2942,7 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-title
   line-height: 1.25;
 }
 
-body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-text {
+body.page-grand-junction-home-value .nearby-area-shell--detailed .link-card-text {
   display: block;
   font-size: 0.93rem;
   line-height: 1.72;
@@ -2951,7 +2951,7 @@ body.page-grand-junction-home-value .bottom-city-links-detailed .link-card-text 
 }
 
 @media (max-width: 900px) {
-  body.page-grand-junction-home-value .bottom-city-links-detailed .link-grid-detailed {
+  body.page-grand-junction-home-value .nearby-area-shell--detailed .link-grid-detailed {
     grid-template-columns: 1fr;
   }
 }
@@ -3048,15 +3048,15 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   --shared-cta-gap: 1rem;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) > .container {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) > .container {
   position: relative;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) .section-header {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) .section-header {
   margin-bottom: var(--shared-section-header-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell, .bottom-city-links) .section-header.centered {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .section-shell-top, .nearby-area-shell) .section-header.centered {
   text-align: center;
 }
 
@@ -3181,7 +3181,7 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
 .section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
 .section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
 .section-shell-top .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-:is(.bottom-city-links, .nearby-area-shell) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
+.nearby-area-shell .section-header + :is(.usp-grid,.process-steps,.promise-grid,.card-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
   margin-top: 0;
 }
 
@@ -3482,16 +3482,14 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-top: 2rem;
 }
 
-/* Shared nearby-area shell (canonical; bottom-city-links remains migration alias) */
-.nearby-area-shell,
-.bottom-city-links {
+/* Shared nearby-area shell (canonical authority) */
+.nearby-area-shell {
   background: var(--cream);
   border-top: 1px solid var(--sand);
   padding: clamp(3rem,5vw,4rem) 0;
 }
 
-.nearby-area-intro,
-.bottom-city-links-intro {
+.nearby-area-intro {
   text-align: center;
   margin-bottom: 1.5rem;
   max-width: 720px;
@@ -3499,8 +3497,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   margin-right: auto;
 }
 
-.nearby-area-label,
-.bottom-city-links-label {
+.nearby-area-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3509,9 +3506,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
 }
 
 .nearby-area-label::before,
-.nearby-area-label::after,
-.bottom-city-links-label::before,
-.bottom-city-links-label::after {
+.nearby-area-label::after {
   content: "";
   display: block;
   width: 28px;
@@ -3519,8 +3514,7 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   background: var(--gold);
 }
 
-.nearby-area-label span,
-.bottom-city-links-label span {
+.nearby-area-label span {
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -3528,16 +3522,14 @@ body.page-family-neighborhood .local-area-quick-facts .fact-value {
   font-weight: 600;
 }
 
-.nearby-area-intro h2,
-.bottom-city-links-intro h2 {
+.nearby-area-intro h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: clamp(1.5rem,2.5vw,2.2rem);
   margin-bottom: 0.55rem;
 }
 
-.nearby-area-intro p,
-.bottom-city-links-intro p {
+.nearby-area-intro p {
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.8;
@@ -3689,7 +3681,7 @@ body.page-privacy .privacy-content {
   margin-bottom: 0.25rem;
   color: var(--gold);
 }
-.bottom-city-links.bottom-city-links-white {
+.nearby-area-shell.nearby-area-shell--white {
   background: var(--white);
 }
 
@@ -3934,7 +3926,6 @@ body.page-privacy .privacy-content {
 
 /* Nearby-area family contract
    Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
-   Migration alias: .bottom-city-links*
 */
 .nearby-area-shell .nearby-area-intro {
   margin: 0 auto 1.5rem;
