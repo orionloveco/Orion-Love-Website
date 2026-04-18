@@ -2785,6 +2785,197 @@ body.page-services .services-hero {
   background: var(--navy);
 }
 
+/* === CANONICAL HERO SYSTEM === */
+.hero {
+  --hero-inner-max: 1120px;
+  --hero-inner-align: left;
+  --hero-inner-top: clamp(4.75rem, 8vw, 6.6rem);
+  --hero-inner-bottom: clamp(2.75rem, 4.8vw, 3.8rem);
+  --hero-h1-size: clamp(2.3rem, 5vw, 4.3rem);
+  --hero-h1-line: 1.04;
+  --hero-h1-max: 16ch;
+  --hero-lead-max: 56ch;
+  --hero-lead-space: 2.35rem;
+  --hero-eyebrow-space: 1.05rem;
+  --hero-cta-justify: flex-start;
+  --hero-cta-gap: 0.95rem;
+}
+
+.hero-inner {
+  max-width: var(--hero-inner-max);
+  text-align: var(--hero-inner-align);
+}
+
+.hero-eyebrow {
+  margin-bottom: var(--hero-eyebrow-space);
+}
+
+.hero-lead {
+  max-width: var(--hero-lead-max);
+  margin-bottom: var(--hero-lead-space);
+}
+
+.hero h1,
+.hero-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--hero-h1-size);
+  line-height: var(--hero-h1-line);
+  max-width: var(--hero-h1-max);
+}
+
+.hero h1 em,
+.hero-title em {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--gold-lt);
+}
+
+.hero-cta {
+  justify-content: var(--hero-cta-justify);
+  gap: var(--hero-cta-gap);
+}
+
+.btn-hero-secondary {
+  backdrop-filter: blur(1.5px);
+}
+
+.hero.hero-flagship {
+  min-height: clamp(680px, 92vh, 980px);
+  --hero-inner-max: 840px;
+  --hero-inner-top: clamp(5.8rem, 9.5vw, 7.6rem);
+  --hero-inner-bottom: clamp(3rem, 5vw, 4.15rem);
+  --hero-h1-size: clamp(3rem, 6vw, 5.45rem);
+  --hero-h1-line: 1.01;
+  --hero-h1-max: 14ch;
+  --hero-lead-max: 54ch;
+  --hero-lead-space: 2.7rem;
+  --hero-eyebrow-space: 1.15rem;
+  --hero-cta-gap: 1rem;
+  --hero-overlay-before: linear-gradient(170deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 55%, rgba(12,26,61,0.9) 100%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.5), transparent);
+}
+
+.hero.hero-neighborhood {
+  min-height: clamp(580px, 83vh, 900px);
+  --hero-inner-max: 780px;
+  --hero-inner-top: clamp(5rem, 8.2vw, 6.3rem);
+  --hero-inner-bottom: clamp(2.7rem, 4.7vw, 3.6rem);
+  --hero-h1-size: clamp(2.65rem, 5.35vw, 4.65rem);
+  --hero-h1-line: 1.03;
+  --hero-h1-max: 15ch;
+  --hero-lead-max: 55ch;
+  --hero-lead-space: 2.3rem;
+  --hero-eyebrow-space: 1rem;
+  --hero-overlay-before:
+    radial-gradient(1200px 460px at 82% -10%, rgba(184,146,58,0.14), transparent 70%),
+    linear-gradient(165deg, rgba(8,18,50,0.81) 0%, rgba(12,26,61,0.6) 52%, rgba(12,26,61,0.88) 100%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.3), transparent);
+}
+
+.hero.hero-support {
+  min-height: clamp(430px, 62vh, 620px);
+  color: var(--navy);
+  --hero-inner-max: 860px;
+  --hero-inner-align: center;
+  --hero-inner-top: clamp(4.7rem, 8.4vw, 6.1rem);
+  --hero-inner-bottom: clamp(2.2rem, 4vw, 3.1rem);
+  --hero-h1-size: clamp(2.2rem, 4.75vw, 3.85rem);
+  --hero-h1-line: 1.05;
+  --hero-h1-max: 17ch;
+  --hero-lead-max: 60ch;
+  --hero-lead-space: 1.95rem;
+  --hero-eyebrow-space: 0.95rem;
+  --hero-eyebrow-justify: center;
+  --hero-cta-justify: center;
+  --hero-cta-gap: 0.85rem;
+  --hero-lead-color: rgba(12, 26, 61, 0.72);
+  --hero-trust-color: rgba(12, 26, 61, 0.56);
+  --hero-overlay-before:
+    radial-gradient(920px 420px at 50% 5%, rgba(184,146,58,0.12), transparent 73%),
+    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.94));
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);
+}
+
+.hero.hero-support :is(h1, .hero-title) {
+  color: var(--navy);
+}
+
+.hero.hero-support .hero-eyebrow span {
+  color: var(--gold);
+}
+
+.hero.hero-support .btn-hero-secondary {
+  color: rgba(12, 26, 61, 0.8);
+  border-color: rgba(12, 26, 61, 0.28);
+}
+
+.hero.hero-support .btn-hero-secondary:hover {
+  color: var(--navy);
+  border-color: rgba(184,146,58,0.7);
+  background: rgba(184,146,58,0.08);
+}
+
+.hero.hero-hub,
+body.page-grand-junction-home-value #sellerHubHero {
+  min-height: clamp(620px, 88vh, 940px);
+  --hero-inner-max: 810px;
+  --hero-inner-top: clamp(5.3rem, 8.8vw, 7rem);
+  --hero-inner-bottom: clamp(2.9rem, 4.9vw, 3.9rem);
+  --hero-h1-size: clamp(2.85rem, 5.7vw, 5rem);
+  --hero-h1-line: 1.02;
+  --hero-h1-max: 15ch;
+  --hero-lead-max: 54ch;
+  --hero-lead-space: 2.55rem;
+  --hero-eyebrow-space: 1.1rem;
+  --hero-overlay-before:
+    radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
+    linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.45), transparent);
+}
+
+body.page-buyers .buyers-hero,
+body.page-contact .contact-hero,
+body.page-faq .faq-hero,
+body.page-about .about-trust-hero {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,244,237,0.96)),
+    radial-gradient(1000px 360px at 50% -12%, rgba(184,146,58,0.14), transparent 72%);
+}
+
+@media (max-width: 968px) {
+  .hero.hero-flagship {
+    min-height: clamp(620px, 84vh, 840px);
+  }
+
+  .hero.hero-neighborhood {
+    min-height: clamp(540px, 78vh, 760px);
+  }
+
+  .hero.hero-hub,
+  body.page-grand-junction-home-value #sellerHubHero {
+    min-height: clamp(560px, 82vh, 800px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    --hero-inner-top: clamp(4.7rem, 11vw, 5.7rem);
+    --hero-inner-bottom: clamp(2.25rem, 6vw, 3rem);
+  }
+
+  .hero-cta {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn,
+  .btn-hero-secondary {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
 body.page-services .method-spine {
   background: var(--cream);
   padding: clamp(4.5rem, 8vw, 7rem) 0;
