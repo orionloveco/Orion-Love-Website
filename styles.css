@@ -11,7 +11,75 @@
 /* =========================
    Design Tokens
 ========================= */
+/* === DESIGN TOKENS — CANONICAL SYSTEM === */
 :root {
+  /* Colors */
+  --brand-navy: #0c1a3d;
+  --brand-navy-soft: #16275a;
+  --brand-gold: #b8923a;
+  --brand-gold-light: #d4aa5a;
+  --brand-cream: #f7f4ed;
+  --brand-white: #ffffff;
+  --brand-ink: #1a1a2e;
+  --brand-sand: #e8e1d0;
+
+  --color-surface-primary: var(--brand-white);
+  --color-surface-secondary: var(--brand-cream);
+  --color-surface-dark: var(--brand-navy);
+  --color-text-primary: var(--brand-ink);
+  --color-text-muted: rgba(26, 26, 46, 0.62);
+  --color-border-soft: var(--brand-sand);
+  --color-accent: var(--brand-gold);
+  --color-accent-soft: rgba(184, 146, 58, 0.12);
+
+  /* Typography */
+  --font-family-serif: "Cormorant Garamond", serif;
+  --font-family-sans: "Raleway", sans-serif;
+
+  --font-size-body: 1rem;
+  --font-size-body-lg: 1.05rem;
+  --font-size-label: 0.78rem;
+  --font-size-heading-sm: 1.2rem;
+  --font-size-heading-md: clamp(1.8rem, 3.5vw, 2.8rem);
+  --font-size-display: clamp(2.4rem, 5vw, 4.2rem);
+
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.7;
+  --line-height-relaxed: 1.85;
+
+  --font-weight-serif-light: 300;
+  --font-weight-serif-regular: 400;
+  --font-weight-serif-medium: 500;
+  --font-weight-sans-regular: 400;
+  --font-weight-sans-medium: 500;
+  --font-weight-sans-semibold: 600;
+  --font-weight-sans-bold: 700;
+
+  --type-section-label: var(--font-weight-sans-semibold) var(--font-size-label) / 1.2 var(--font-family-sans);
+
+  /* Spacing */
+  --space-micro: 0.35rem;
+  --space-tight: 0.5rem;
+  --space-compact: 0.75rem;
+  --space-cozy: 1rem;
+  --space-roomy: 1.25rem;
+  --space-spacious: 1.5rem;
+  --space-section: clamp(3.5rem, 6vw, 5rem);
+  --space-section-loose: clamp(4.5rem, 8vw, 7rem);
+
+  --space-card-padding: 1.5rem;
+  --space-grid-gap: 1.25rem;
+  --space-container-gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Components */
+  --radius-card: 20px;
+  --radius-button: 999px;
+  --shadow-card: 0 6px 32px rgba(12, 26, 61, 0.1);
+  --shadow-card-hover: 0 18px 46px rgba(12, 26, 61, 0.14);
+  --size-icon-md: 48px;
+  --focus-ring: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
+
   /* Brand */
   --navy:     #0c1a3d;
   --navy-mid: #16275a;
