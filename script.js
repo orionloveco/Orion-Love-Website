@@ -28,29 +28,29 @@ document.addEventListener('DOMContentLoaded', function () {
       items: [
         { href: 'areas.html', label: 'All Areas Index' },
         { href: 'grand-junction-home-value.html', label: 'Grand Junction' },
-        { href: 'clifton-grand-junction.html', label: 'Clifton' },
-        { href: 'selling-in-fruita.html', label: 'Fruita' },
-        { href: 'selling-in-palisade.html', label: 'Palisade' },
-        { href: 'loma-mack-grand-junction.html', label: 'Loma / Mack' },
+        { href: 'sell-clifton.html', label: 'Clifton' },
+        { href: 'sell-fruita.html', label: 'Fruita' },
+        { href: 'sell-palisade.html', label: 'Palisade' },
+        { href: 'sell-loma-mack.html', label: 'Loma / Mack' },
       ],
     },
     {
       label: 'Grand Junction Neighborhoods',
       items: [
-        { href: 'downtown-grand-junction.html', label: 'Downtown Grand Junction' },
-        { href: 'north-grand-junction.html', label: 'North Grand Junction' },
-        { href: 'northeast-grand-junction.html', label: 'Northeast Grand Junction' },
-        { href: 'northwest-grand-junction.html', label: 'Northwest Grand Junction' },
-        { href: 'orchard-mesa-homes.html', label: 'Orchard Mesa' },
-        { href: 'redlands-homes.html', label: 'Redlands' },
+        { href: 'sell-downtown-grand-junction.html', label: 'Downtown Grand Junction' },
+        { href: 'sell-north-grand-junction.html', label: 'North Grand Junction' },
+        { href: 'sell-northeast-grand-junction.html', label: 'Northeast Grand Junction' },
+        { href: 'sell-northwest-grand-junction.html', label: 'Northwest Grand Junction' },
+        { href: 'sell-orchard-mesa.html', label: 'Orchard Mesa' },
+        { href: 'sell-redlands.html', label: 'Redlands' },
       ],
     },
   ];
 
   const SHARED_NAV_ITEMS = [
     { href: 'index.html', label: 'Home' },
-    { href: 'services.html', label: 'Sell' },
-    { href: 'buyers.html', label: 'Buyers' },
+    { href: 'sell-with-orion.html', label: 'Sell' },
+    { href: 'buy-with-orion.html', label: 'Buyers' },
     { href: 'grand-junction-home-value.html', label: 'Home Value' },
     { label: 'Areas', key: 'areas', children: AREA_NAV_GROUPS },
     { href: 'about.html', label: 'About' },
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const FEATURED_AREA_LINKS = [
     { href: 'areas.html', icon: 'map', label: 'All Areas Index' },
     { href: 'grand-junction-home-value.html', icon: 'building-2', label: 'Grand Junction' },
-    { href: 'selling-in-fruita.html', icon: 'bike', label: 'Fruita' },
-    { href: 'selling-in-palisade.html', icon: 'leaf', label: 'Palisade' },
-    { href: 'clifton-grand-junction.html', icon: 'house', label: 'Clifton' },
-    { href: 'loma-mack-grand-junction.html', icon: 'mountain', label: 'Loma / Mack' },
+    { href: 'sell-fruita.html', icon: 'bike', label: 'Fruita' },
+    { href: 'sell-palisade.html', icon: 'leaf', label: 'Palisade' },
+    { href: 'sell-clifton.html', icon: 'house', label: 'Clifton' },
+    { href: 'sell-loma-mack.html', icon: 'mountain', label: 'Loma / Mack' },
   ];
 
   function renderSharedHeader(currentPath) {
@@ -216,9 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <h4>Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Sellers</a></li>
+          <li><a href="sell-with-orion.html">Sellers</a></li>
           <li><a href="areas.html">Areas</a></li>
-          <li><a href="buyers.html">Buyers</a></li>
+          <li><a href="buy-with-orion.html">Buyers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
