@@ -1951,7 +1951,7 @@ body.page-about .about-final-cta-inner h2 {
   body.page-about .about-trust-hero { background-position: 35% 20%; }
 }
 
-/* ===== buyers.html ===== */
+/* ===== buy-with-orion.html ===== */
 body.page-buyers .buyers-hero {background: var(--navy);}
 body.page-buyers .promise-section {padding: clamp(4.5rem, 8vw, 7rem) 0;
       background: var(--white);}
@@ -2642,7 +2642,7 @@ body.page-selling-in-palisade .stat-note-sm {
   }
 }
 
-/* ===== services.html ===== */
+/* ===== sell-with-orion.html ===== */
 body.page-services h1,
 body.page-services h2,
 body.page-services h3,
@@ -4171,7 +4171,7 @@ body.page-family-neighborhood .area-faq-item p {
 
 /* ===== Migrated inline styles from page templates ===== */
 
-/* buyers.html migrated inline <style> */
+/* buy-with-orion.html migrated inline <style> */
 body.page-buyers :is(.buyers-editorial, .buyers-realities, .buyers-trust, .buyers-close) {
   border-top: 1px solid var(--sand);
 }
