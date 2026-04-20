@@ -2878,39 +2878,6 @@ body.page-services .method-spine {
   padding: clamp(4.5rem, 8vw, 7rem) 0;
 }
 
-body.page-services .method-intro-section {
-  background: var(--white);
-  padding: clamp(3.5rem, 6vw, 5rem) 0;
-}
-
-body.page-services .method-intro-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(1.5rem, 4vw, 2.8rem);
-  align-items: start;
-}
-
-body.page-services .method-intro-layout h2 {
-  color: var(--navy);
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  margin-bottom: 0;
-}
-
-body.page-services .method-intro-layout h2 em {
-  color: var(--gold);
-}
-
-body.page-services .method-intro-layout p {
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.85;
-}
-
-body.page-services .method-intro-support {
-  margin-top: 0.6rem;
-  font-size: 0.92rem;
-}
-
 body.page-services .method-stage-list {
   display: flex;
   flex-direction: column;
@@ -5042,4 +5009,118 @@ body.tier-value :is(.snapshot-section, .identity-section) {
 body.tier-value .hero.hero-neighborhood {
   --hero-inner-top: clamp(4.2rem, 7.2vw, 5.3rem);
   --hero-inner-bottom: clamp(2.45rem, 4.2vw, 3.35rem);
+}
+
+/* === Architecture pass: canonical dark-band variants === */
+.dark-band-full-process {
+  padding: clamp(4.5rem, 7.5vw, 6.6rem) 0;
+}
+
+.dark-band-full-process .process-inner,
+.dark-band-full-process .pricing-inner,
+.dark-band-full-process .cta-band-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(1.25rem, 2.8vw, 2.25rem);
+}
+
+.dark-band-full-process .process-header,
+.dark-band-full-process .cta-band-copy {
+  text-align: center;
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+.dark-band-full-process :is(.steps-grid, .dark-band-steps) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--dark-band-gap);
+}
+
+.dark-band-full-process :is(.step-card, .step-item, .pricing-card, .dark-band-summary) {
+  padding: clamp(1.3rem, 2.4vw, 2.05rem);
+}
+
+.dark-band-full-process :is(.pricing-inner, .dark-band-inner) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.dark-band-full-process :is(.cta-center, .process-cta) {
+  text-align: center;
+}
+
+@media (max-width: 1080px) {
+  .dark-band-full-process :is(.pricing-inner, .dark-band-inner, .steps-grid, .dark-band-steps) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Services architecture cleanup */
+body.page-services .method-spine {
+  padding: clamp(5.1rem, 9vw, 7.4rem) 0 clamp(4.4rem, 7.4vw, 6.1rem);
+}
+
+body.page-services .method-spine .section-header {
+  margin-bottom: clamp(1.8rem, 3.4vw, 2.8rem);
+}
+
+/* Tier differentiation strengthened for neighborhood pages */
+body.tier-premium .hero.hero-neighborhood {
+  --hero-inner-top: clamp(5.4rem, 9vw, 6.8rem);
+  --hero-h1-size: clamp(2.75rem, 5.6vw, 4.6rem);
+}
+
+body.tier-premium :is(.snapshot-section, .identity-section) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 244, 237, 0.68));
+}
+
+body.tier-premium .stat-box {
+  border-color: rgba(184, 146, 58, 0.35);
+}
+
+body.tier-lifestyle .hero.hero-neighborhood {
+  --hero-lead-max: 60ch;
+  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.4), transparent);
+}
+
+body.tier-lifestyle :is(.card-grid-3, .card-grid-3-editorial) {
+  border-radius: 20px;
+}
+
+body.tier-lifestyle .dark-band-split .step-item {
+  border-color: rgba(184, 146, 58, 0.24);
+}
+
+body.tier-value .hero.hero-neighborhood {
+  --hero-inner-top: clamp(4rem, 7vw, 5.1rem);
+  --hero-h1-size: clamp(2.35rem, 4.85vw, 3.95rem);
+}
+
+body.tier-value :is(.snapshot-section, .identity-section, .market-snapshot) {
+  background: #fff;
+}
+
+body.tier-value :is(.card-base, .stat-box) {
+  border-color: rgba(8, 18, 50, 0.14);
+  box-shadow: 0 7px 20px rgba(8, 18, 50, 0.08);
+}
+
+/* Areas index page */
+body.page-areas .areas-hero {
+  background: linear-gradient(160deg, rgba(8, 18, 50, 0.84) 0%, rgba(12, 26, 61, 0.68) 58%, rgba(12, 26, 61, 0.9) 100%),
+    url("images/gj-landscape.jpg") center/cover no-repeat;
+}
+
+body.page-areas .areas-tier-section {
+  padding: clamp(4.2rem, 7.4vw, 6.1rem) 0;
+}
+
+body.page-areas .areas-tier-section .cta-close-routing-grid {
+  margin-top: clamp(1.3rem, 3vw, 2.2rem);
+}
+
+body.page-areas .areas-tier-section .cta-route-card {
+  min-height: 100%;
 }
