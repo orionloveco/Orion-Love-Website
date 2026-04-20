@@ -4033,6 +4033,78 @@ body.page-privacy .privacy-content {
   margin-top: 2.25rem;
 }
 
+/* Compact local briefing strip (neighborhood family) */
+body.page-family-neighborhood .local-briefing-strip {
+  margin: 0 0 1.35rem;
+}
+body.page-family-neighborhood .local-briefing-eyebrow {
+  margin: 0 0 0.55rem;
+  font-size: 0.73rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
+body.page-family-neighborhood .local-briefing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+body.page-family-neighborhood .local-briefing-item {
+  background: rgba(247, 244, 237, 0.55);
+  border: 1px solid var(--sand);
+  border-left: 3px solid rgba(184, 146, 58, 0.65);
+  border-radius: var(--radius-sm);
+  padding: 0.72rem 0.8rem;
+}
+body.page-family-neighborhood .local-briefing-item h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+body.page-family-neighborhood .local-briefing-item p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Light area FAQ block for neighborhood briefings */
+body.page-family-neighborhood .area-faq-shell {
+  border-top: 1px solid var(--sand);
+}
+body.page-family-neighborhood .area-faq-grid {
+  display: grid;
+  gap: 0.7rem;
+}
+body.page-family-neighborhood .area-faq-item {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 0.95rem;
+}
+body.page-family-neighborhood .area-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--text);
+}
+body.page-family-neighborhood .area-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+body.page-family-neighborhood .area-faq-item p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+@media (max-width: 900px) {
+  body.page-family-neighborhood .local-briefing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Nearby-area family contract
    Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
 */
