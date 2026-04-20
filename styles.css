@@ -4033,6 +4033,37 @@ body.page-privacy .privacy-content {
   margin-top: 2.25rem;
 }
 
+.seller-buyer-response-section .seller-buyer-response-grid--rows {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  border-left: 3px solid rgba(184, 146, 58, 0.68);
+  border-radius: var(--radius-sm);
+  background: rgba(247, 244, 237, 0.45);
+  padding: 0.95rem 1.05rem;
+  box-shadow: none;
+}
+
+.seller-buyer-response-section .seller-buyer-response-grid--rows .card-icon {
+  margin: 0.12rem 0 0;
+}
+
+.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base h3 {
+  margin: 0 0 0.22rem;
+  font-size: 1rem;
+}
+
+.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
 /* Compact local briefing strip (neighborhood family) */
 body.page-family-neighborhood .local-briefing-strip {
   margin: 0 0 1.35rem;
@@ -4070,6 +4101,22 @@ body.page-family-neighborhood .local-briefing-item p {
   color: var(--muted);
 }
 
+body.page-family-neighborhood .local-briefing-strip .briefing-pace { order: 1; }
+body.page-family-neighborhood .local-briefing-strip .briefing-leverage { order: 2; }
+body.page-family-neighborhood .local-briefing-strip .briefing-risk { order: 3; }
+
+body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-leverage { order: 1; }
+body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-pace { order: 2; }
+body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-risk { order: 3; }
+
+body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-risk { order: 1; }
+body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-leverage { order: 2; }
+body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-pace { order: 3; }
+body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-risk {
+  border-left-color: rgba(151, 54, 54, 0.62);
+  background: rgba(250, 242, 241, 0.72);
+}
+
 /* Light area FAQ block for neighborhood briefings */
 body.page-family-neighborhood .area-faq-shell {
   border-top: 1px solid var(--sand);
@@ -4102,6 +4149,11 @@ body.page-family-neighborhood .area-faq-item p {
 @media (max-width: 900px) {
   body.page-family-neighborhood .local-briefing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .seller-buyer-response-section .seller-buyer-response-grid--rows .card-base {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
   }
 }
 
