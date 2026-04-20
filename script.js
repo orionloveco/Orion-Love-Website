@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       label: 'Core Areas',
       items: [
+        { href: 'areas.html', label: 'All Areas Index' },
         { href: 'grand-junction-home-value.html', label: 'Grand Junction' },
         { href: 'clifton-grand-junction.html', label: 'Clifton' },
         { href: 'selling-in-fruita.html', label: 'Fruita' },
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   ];
 
   const FEATURED_AREA_LINKS = [
+    { href: 'areas.html', icon: 'map', label: 'All Areas Index' },
     { href: 'grand-junction-home-value.html', icon: 'building-2', label: 'Grand Junction' },
     { href: 'selling-in-fruita.html', icon: 'bike', label: 'Fruita' },
     { href: 'selling-in-palisade.html', icon: 'leaf', label: 'Palisade' },
@@ -174,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="container">
     <div class="nearby-area-links-shell">
       <div class="nearby-area-intro">
-        <div class="nearby-area-label"><span>Featured Areas</span></div>
-        <h2>Explore Key Markets Around Mesa County</h2>
-        <p>A few of the places buyers and sellers ask about most across the Grand Valley.</p>
+        <div class="nearby-area-label"><span>Area Links</span></div>
+        <h2>Route to a Seller Area Page</h2>
+        <p>Use the areas index for full routing by neighborhood tier.</p>
       </div>
       <div class="link-grid">${links}</div>
     </div>
@@ -215,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Sellers</a></li>
+          <li><a href="areas.html">Areas</a></li>
           <li><a href="buyers.html">Buyers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
