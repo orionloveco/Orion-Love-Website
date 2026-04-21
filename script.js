@@ -155,7 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
       return `<li><a${buttonClass} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
     }).join('');
 
-    return `<ul class="mobile-nav-list">${rows}</ul>`;
+    return `
+<div class="mobile-nav-head">
+  <p>Menu</p>
+  <button aria-label="Close menu" class="mobile-nav-close" type="button">×</button>
+</div>
+<ul class="mobile-nav-list">${rows}</ul>`;
   }
 
   function resolveFeaturedAreasMountMode(value) {
@@ -283,9 +288,14 @@ document.addEventListener('DOMContentLoaded', function () {
      ============================================================ */
   const header = document.getElementById('mainHeader');
   if (header) {
+    const hasHero = !!document.querySelector('.hero');
+
     const updateHeader = () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
+      const isScrolled = window.scrollY > 40;
+      header.classList.toggle('scrolled', isScrolled);
+      header.classList.toggle('solid', !hasHero || isScrolled);
     };
+
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
   }
@@ -330,26 +340,53 @@ document.addEventListener('DOMContentLoaded', function () {
       link.addEventListener('click', closeMenu);
     });
 
+    const mobileClose = overlay.querySelector('.mobile-nav-close');
+    if (mobileClose) {
+      mobileClose.addEventListener('click', closeMenu);
+    }
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeMenu();
+    });
+
     const areaToggle = document.querySelector('.nav-dropdown-toggle');
     const areaDropdown = document.querySelector('.nav-dropdown');
     if (areaToggle && areaDropdown) {
+      const syncAreaAria = (isOpen) => {
+        areaDropdown.classList.toggle('open', isOpen);
+        areaToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
       areaToggle.addEventListener('click', (e) => {
         e.preventDefault();
-        const willOpen = !areaDropdown.classList.contains('open');
-        areaDropdown.classList.toggle('open', willOpen);
-        areaToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        syncAreaAria(!areaDropdown.classList.contains('open'));
+      });
+
+      areaDropdown.addEventListener('mouseenter', () => syncAreaAria(true));
+      areaDropdown.addEventListener('mouseleave', () => syncAreaAria(false));
+
+      areaDropdown.addEventListener('focusin', () => syncAreaAria(true));
+      areaDropdown.addEventListener('focusout', () => {
+        requestAnimationFrame(() => {
+          if (!areaDropdown.contains(document.activeElement)) {
+            syncAreaAria(false);
+          }
+        });
       });
 
       document.addEventListener('click', (e) => {
         if (!areaDropdown.contains(e.target)) {
-          areaDropdown.classList.remove('open');
-          areaToggle.setAttribute('aria-expanded', 'false');
+          syncAreaAria(false);
         }
       });
     }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 968) closeMenu();
     });
   }
 
