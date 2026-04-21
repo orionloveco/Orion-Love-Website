@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const SHARED_NAV_ITEMS = [
     { href: 'index.html', label: 'Home' },
     { href: 'sell-with-orion.html', label: 'Sell' },
-    { href: 'buy-with-orion.html', label: 'Buyers' },
     { href: 'grand-junction-home-value.html', label: 'Home Value' },
     { label: 'Areas', key: 'areas', children: AREA_NAV_GROUPS },
     { href: 'about.html', label: 'About' },
@@ -71,14 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
     { href: 'contact.html', label: 'Contact', isButton: true },
   ];
 
-  const FEATURED_AREA_LINKS = [
-    { href: 'areas.html', icon: 'map', label: 'All Areas Index' },
-    { href: 'grand-junction-home-value.html', icon: 'building-2', label: 'Grand Junction' },
-    { href: 'sell-fruita.html', icon: 'bike', label: 'Fruita' },
-    { href: 'sell-palisade.html', icon: 'leaf', label: 'Palisade' },
-    { href: 'sell-clifton.html', icon: 'house', label: 'Clifton' },
-    { href: 'sell-loma-mack.html', icon: 'mountain', label: 'Loma / Mack' },
-  ];
+  const SHARED_CONVERSATION_CTA = {
+    href: 'contact.html',
+    label: 'Start the Conversation',
+  };
 
   function renderSharedHeader(currentPath) {
     const target = document.getElementById('siteHeader');
@@ -175,13 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return '';
     }
 
-    const links = FEATURED_AREA_LINKS.map(
-      (item) =>
-        `<a class="link-card card-link" href="${item.href}"><span aria-hidden="true" class="link-card-icon"><i data-lucide="${item.icon}"></i></span><span>${item.label}</span></a>`
-    ).join('');
-
     if (mountMode === 'inner') {
-      return `<div class="link-grid">${links}</div>`;
+      return `<div class="cta-center"><a class="btn btn-primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>`;
     }
 
     return `
@@ -189,11 +179,11 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="container">
     <div class="nearby-area-links-shell">
       <div class="nearby-area-intro">
-        <div class="nearby-area-label"><span>Area Links</span></div>
-        <h2>Route to a Seller Area Page</h2>
-        <p>Use the areas index for full routing by neighborhood tier.</p>
+        <div class="nearby-area-label"><span>Next Step</span></div>
+        <h2>Have Questions About Selling?</h2>
+        <p>Get direct guidance for your home, your timeline, and your Mesa County market.</p>
       </div>
-      <div class="link-grid">${links}</div>
+      <div class="cta-center"><a class="btn btn-primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>
     </div>
   </div>
 </section>`;
@@ -222,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="footer-grid">
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
-        <p>Helping Grand Junction homeowners buy and sell<br/>with clarity, confidence, and honest communication.</p>
+        <p>Helping Mesa County home sellers move with clarity, confidence, and honest communication.</p>
         <p class="footer-brand-note">Serving ${BUSINESS_IDENTITY.serviceAreaPrimary}<br/>including Grand Junction, Fruita, Palisade, and Clifton</p>
       </div>
       <div class="footer-links">
@@ -231,7 +221,6 @@ document.addEventListener('DOMContentLoaded', function () {
           <li><a href="index.html">Home</a></li>
           <li><a href="sell-with-orion.html">Sellers</a></li>
           <li><a href="areas.html">Areas</a></li>
-          <li><a href="buy-with-orion.html">Buyers</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
