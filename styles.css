@@ -649,6 +649,8 @@ p { color: var(--text); }
   --hero-eyebrow-justify: flex-start;
   --hero-cta-justify: flex-start;
   --hero-cta-gap: 0.95rem;
+  --hero-heading-color: var(--white);
+  --hero-eyebrow-color: var(--gold-lt);
   --hero-trust-color: rgba(255, 255, 255, 0.4);
   --hero-overlay-before: none;
   --hero-overlay-after: none;
@@ -710,7 +712,7 @@ p { color: var(--text); }
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold-lt);
+  color: var(--hero-eyebrow-color);
   font-weight: 600;
 }
 /* Centered hero eyebrow variant */
@@ -721,7 +723,7 @@ p { color: var(--text); }
 .hero-title {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  color: var(--white);
+  color: var(--hero-heading-color);
   font-size: clamp(3rem, 8vw, 6.5rem);
   line-height: 1.0;
   margin-bottom: 1.5rem;
@@ -738,7 +740,7 @@ p { color: var(--text); }
   font-family: "Cormorant Garamond", serif;
   font-size: var(--hero-h1-size);
   font-weight: 300;
-  color: var(--white);
+  color: var(--hero-heading-color);
   line-height: var(--hero-h1-line);
   max-width: var(--hero-h1-max);
   margin-bottom: 1.25rem;
@@ -1639,9 +1641,6 @@ body.mobile-nav-open { overflow:hidden; }
 /* ===== about.html ===== */
 body.page-about .about-trust-hero {
   position: relative;
-  background: linear-gradient(rgba(8, 18, 50, 0.90), rgba(8, 18, 50, 0.84)),
-    url("images/headshot.jpg") 28% 20% / cover no-repeat;
-  border-bottom: 1px solid rgba(184, 146, 58, 0.32);
 }
 
 
@@ -1778,8 +1777,6 @@ body.page-about .think-card p {
   font-size: 0.94rem;
   line-height: 1.7;
 }
-
-body.page-about .about-proof-section { background: var(--cream); }
 
 body.page-about .about-proof-grid {
   display: grid;
@@ -2049,7 +2046,6 @@ body.page-faq .divider-diamond {width: 8px; height: 8px;
       transform: rotate(45deg);
       flex-shrink: 0;
       opacity: 0.6;}
-body.page-faq .faq-hero {background: linear-gradient(rgba(8,18,50,0.75), rgba(8,18,50,0.75)), url("images/gj-downtown.jpg") center / cover no-repeat;}
 body.page-faq .faq-nav {background: var(--white);
       border-bottom: 1px solid var(--sand);
       position: sticky;
@@ -2552,20 +2548,14 @@ body.page-services .services-hero {
   --hero-eyebrow-justify: center;
   --hero-cta-justify: center;
   --hero-cta-gap: 0.85rem;
+  --hero-heading-color: var(--navy);
+  --hero-eyebrow-color: var(--gold);
   --hero-lead-color: rgba(12, 26, 61, 0.72);
   --hero-trust-color: rgba(12, 26, 61, 0.56);
   --hero-overlay-before:
     radial-gradient(920px 420px at 50% 5%, rgba(184,146,58,0.12), transparent 73%),
     linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.94));
   --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);
-}
-
-.hero.hero-support :is(h1, .hero-title) {
-  color: var(--navy);
-}
-
-.hero.hero-support .hero-eyebrow span {
-  color: var(--gold);
 }
 
 .hero.hero-support .btn-hero-secondary {
