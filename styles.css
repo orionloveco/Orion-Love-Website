@@ -4525,7 +4525,7 @@ body.page-areas .areas-jump-links a {
    Scoped to rewritten homepage markup on .page-index
    ============================================================ */
 
-body.page-index {
+.page-index {
   --home-max-narrative: 33rem;
   --home-max-copy: 46rem;
   --home-section-gap-tight: clamp(3.75rem, 6vw, 5rem);
@@ -4540,33 +4540,33 @@ body.page-index {
    Global homepage pacing
 --------------------------------- */
 
-body.page-index .site-section {
+.page-index .home-section {
   position: relative;
 }
 
-body.page-index .home-section--post-hero {
+.page-index .home-section--post-hero {
   padding-top: var(--home-section-gap-loose);
 }
 
-body.page-index .site-section + .site-section {
+.page-index .home-section + .home-section {
   padding-top: var(--home-section-gap-tight);
 }
 
-body.page-index .home-section--close {
+.page-index .home-section--close {
   padding-bottom: var(--home-section-gap-loose);
 }
 
 /* Create less uniform rhythm than the default site stack */
-body.page-index .home-rhythm-secondary {
+.page-index .home-rhythm-secondary {
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
 }
 
-body.page-index .home-rhythm-tertiary {
+.page-index .home-rhythm-tertiary {
   padding-top: clamp(4rem, 6vw, 5.25rem);
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
 }
 
-body.page-index .home-rhythm-quaternary {
+.page-index .home-rhythm-quaternary {
   padding-top: clamp(5rem, 8vw, 6.75rem);
   padding-bottom: clamp(4rem, 6vw, 5.5rem);
 }
@@ -4641,15 +4641,15 @@ body.page-index .home-rhythm-quaternary {
    Section header tone
 --------------------------------- */
 
-body.page-index .section-label {
+.page-index .home-section-header .section-label {
   margin-bottom: 1rem;
 }
 
-body.page-index .section-label span {
+.page-index .home-section-header .section-label span {
   letter-spacing: 0.18em;
 }
 
-body.page-index .section-header h2 {
+.page-index .home-section-header h2 {
   max-width: 12ch;
   margin-bottom: 0.7rem;
   line-height: 1.02;
@@ -4657,17 +4657,17 @@ body.page-index .section-header h2 {
   text-wrap: balance;
 }
 
-body.page-index .section-intro {
+.page-index .home-section-header .section-intro {
   max-width: var(--home-max-copy);
   font-size: 1.02rem;
   line-height: 1.88;
 }
 
-body.page-index .section-header-inline {
+.page-index .home-section-header.section-header-inline {
   max-width: var(--home-max-narrative);
 }
 
-body.page-index .section-header-inline .section-intro + .section-intro {
+.page-index .home-section-header.section-header-inline .section-intro + .section-intro {
   margin-top: 0.95rem;
 }
 
@@ -4703,7 +4703,7 @@ body.page-index .section-header-inline .section-intro + .section-intro {
   transform: translateY(12px);
 }
 
-.page-index .home-card-stack .card-base:hover {
+.page-index .home-card-stack .home-card:hover {
   transform: translateY(-3px);
 }
 
@@ -4711,7 +4711,7 @@ body.page-index .section-header-inline .section-intro + .section-intro {
    Homepage cards
 --------------------------------- */
 
-body.page-index .card-base {
+.page-index .home-card {
   border-radius: var(--home-card-radius);
   border: 1px solid var(--home-card-border);
   box-shadow: var(--home-card-shadow);
@@ -4722,18 +4722,18 @@ body.page-index .card-base {
     background-color 0.28s ease;
 }
 
-body.page-index .card-base:hover {
+.page-index .home-card:hover {
   box-shadow: var(--home-card-shadow-hover);
 }
 
-body.page-index .card-base.card-grid-3 {
+.page-index .home-card.card-grid-3 {
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: clamp(1.45rem, 2.6vw, 1.85rem);
 }
 
-body.page-index .card-base.card-grid-3 h3 {
+.page-index .home-card.card-grid-3 h3 {
   font-family: var(--font-family-serif);
   font-weight: var(--font-weight-serif-medium);
   font-size: clamp(1.35rem, 2.1vw, 1.65rem);
@@ -4742,12 +4742,12 @@ body.page-index .card-base.card-grid-3 h3 {
   color: var(--navy);
 }
 
-body.page-index .card-base.card-grid-3 p {
+.page-index .home-card.card-grid-3 p {
   font-size: 0.98rem;
   line-height: 1.85;
 }
 
-body.page-index .card-base.card-grid-3 .card-icon {
+.page-index .home-card.card-grid-3 .card-icon {
   width: 46px;
   height: 46px;
   border-radius: 14px;
@@ -4755,7 +4755,7 @@ body.page-index .card-base.card-grid-3 .card-icon {
   background: rgba(184, 146, 58, 0.1);
 }
 
-body.page-index .card-base.card-grid-3 .card-icon svg {
+.page-index .home-card.card-grid-3 .card-icon svg {
   width: 20px;
   height: 20px;
 }
@@ -4789,7 +4789,7 @@ body.page-index .card-base.card-grid-3 .card-icon svg {
   margin-top: 2rem;
 }
 
-.page-index .home-process .card-base {
+.page-index .home-process .home-card {
   background: rgba(255, 255, 255, 0.76);
   padding: clamp(1.5rem, 2.4vw, 1.8rem);
 }
@@ -4807,7 +4807,7 @@ body.page-index .card-base.card-grid-3 .card-icon svg {
   letter-spacing: 0.1em;
 }
 
-.page-index .home-process .card-base h3 {
+.page-index .home-process .home-card h3 {
   font-family: var(--font-family-serif);
   font-weight: var(--font-weight-serif-medium);
   font-size: clamp(1.45rem, 2vw, 1.75rem);
@@ -4819,7 +4819,7 @@ body.page-index .card-base.card-grid-3 .card-icon svg {
   transform: translateY(10px);
 }
 
-.page-index .home-process-grid .card-base:hover {
+.page-index .home-process-grid .home-card:hover {
   transform: translateY(-3px);
 }
 
@@ -4842,7 +4842,7 @@ body.page-index .card-base.card-grid-3 .card-icon svg {
    Closing CTA
 --------------------------------- */
 
-body.page-index .cta-close {
+.page-index .home-section--close {
   --section-pad: clamp(5.5rem, 9vw, 7.5rem);
   background:
     linear-gradient(180deg, rgba(247, 244, 237, 0.35), rgba(247, 244, 237, 0.94)),
@@ -4864,9 +4864,9 @@ body.page-index .cta-close {
    Cleanup from older homepage modules
 --------------------------------- */
 
-body.page-index .usp-section,
-body.page-index .cta-close-routing,
-body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
+.page-index .usp-section,
+.page-index .cta-close-routing,
+.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
   display: none;
 }
 
@@ -4936,9 +4936,9 @@ body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
     min-width: 0;
   }
 
-  .page-index .section-header h2,
-  .page-index .section-header-inline,
-  .page-index .section-intro {
+  .page-index .home-section-header h2,
+  .page-index .home-section-header.section-header-inline,
+  .page-index .home-section-header .section-intro {
     max-width: 100%;
   }
 
@@ -4951,9 +4951,9 @@ body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
     transform: none;
   }
 
-  .page-index .card-base.card-grid-3,
+  .page-index .home-card.card-grid-3,
   .page-index .home-editorial-card,
-  .page-index .home-process .card-base {
+  .page-index .home-process .home-card {
     padding: 1.35rem 1.2rem;
   }
 
@@ -4961,11 +4961,11 @@ body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
     margin-top: 1.5rem;
   }
 
-  .page-index .site-section + .site-section {
+  .page-index .home-section + .home-section {
     padding-top: clamp(3.5rem, 10vw, 4.5rem);
   }
 
-  .page-index .cta-close {
+  .page-index .home-section--close {
     --section-pad: 4.5rem;
   }
 }
