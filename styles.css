@@ -5427,3 +5427,86 @@ body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
     padding-bottom: 4.5rem;
   }
 }
+
+/* ============================================================
+   HOMEPAGE POLISH PASS
+   Paste at very bottom of styles.css
+   ============================================================ */
+
+/* Stronger left-side dominance in editorial split sections */
+.page-index .layout-split {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.page-index .layout-split .card-grid-3-wrap {
+  margin-top: 2.5rem;
+}
+
+/* Slight editorial stagger so cards feel placed, not perfectly generated */
+.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(2) {
+  transform: translateY(6px);
+}
+
+.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(3) {
+  transform: translateY(12px);
+}
+
+.page-index .layout-split .card-grid-3-wrap .card-base:hover {
+  transform: translateY(-3px);
+}
+
+/* Tighten heading typography slightly */
+.page-index h2 {
+  letter-spacing: -0.01em;
+}
+
+/* Process section: keep centered but slightly tighter and more intentional */
+.page-index .process-section .section-header {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-index .process-section .process-grid {
+  margin-top: 2rem;
+}
+
+.page-index .process-section .process-grid .card-base:nth-child(2) {
+  transform: translateY(10px);
+}
+
+.page-index .process-section .process-grid .card-base:hover {
+  transform: translateY(-3px);
+}
+
+/* CTA: stronger button presence and tighter text width */
+.page-index .cta-close .section-intro {
+  max-width: 36ch;
+}
+
+.page-index .cta-close .btn-primary {
+  padding: 1.1rem 2.8rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+}
+
+/* Mobile cleanup: remove stagger where it would feel awkward */
+@media (max-width: 767px) {
+  .page-index .layout-split .card-grid-3-wrap .card-base:nth-child(2),
+  .page-index .layout-split .card-grid-3-wrap .card-base:nth-child(3),
+  .page-index .process-section .process-grid .card-base:nth-child(2) {
+    transform: none;
+  }
+
+  .page-index .layout-split {
+    grid-template-columns: 1fr;
+  }
+
+  .page-index .layout-split .card-grid-3-wrap {
+    margin-top: 1.5rem;
+  }
+
+  .page-index .cta-close .section-intro {
+    max-width: 100%;
+  }
+}
