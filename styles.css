@@ -1950,8 +1950,8 @@ body.page-about .about-final-cta-inner h2 {
 }
 
 /* ===== Neighborhood family: shared hero scaffold ===== */
-body.page-family-neighborhood .hero {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.page-family-neighborhood .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
+body.seller-neighborhood-page .hero.hero-neighborhood {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
+body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgba(184,146,58,0.22);}
 
 
 /* ===== contact.html ===== */
@@ -2274,20 +2274,20 @@ body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
 }
 
-body.page-family-neighborhood :is(.snapshot-section, .identity-section) {
+body.seller-neighborhood-page :is(.snapshot-section, .identity-section) {
   border-top: 1px solid var(--sand);
   border-bottom: 1px solid var(--sand);
 }
 
-body.page-family-neighborhood :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
+body.seller-neighborhood-page :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
   background: var(--cream);
 }
 
-body.page-family-neighborhood :is(.check-list, .contact-bullets) {
+body.seller-neighborhood-page :is(.check-list, .contact-bullets) {
   list-style: none;
 }
 
-body.page-family-neighborhood :is(.check-list, .contact-bullets) li {
+body.seller-neighborhood-page :is(.check-list, .contact-bullets) li {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -2296,7 +2296,7 @@ body.page-family-neighborhood :is(.check-list, .contact-bullets) li {
   margin-bottom: 0.85rem;
 }
 
-body.page-family-neighborhood :is(.check-list, .contact-bullets) li svg {
+body.seller-neighborhood-page :is(.check-list, .contact-bullets) li svg {
   width: 16px;
   height: 16px;
   stroke: var(--gold);
@@ -3039,36 +3039,36 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
 
 
 /* Neighborhood family: shared section scaffolding (single authority) */
-body.page-family-neighborhood :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
+body.seller-neighborhood-page :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
   --split-gap: 5rem;
   gap: var(--split-gap);
   align-items: start;
 }
 
 
-body.page-family-neighborhood :is(.snapshot-inner, .dark-band-inner) {
+body.seller-neighborhood-page :is(.snapshot-inner, .dark-band-inner) {
   align-items: center;
 }
 
-body.page-family-neighborhood :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
+body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
   margin-bottom: 0.85rem;
 }
 
-body.page-family-neighborhood :is(.intro-copy, .snapshot-copy, .identity-copy) p {
+body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1rem;
 }
 
-body.page-family-neighborhood :is(.form-copy, .contact-copy) p {
+body.seller-neighborhood-page :is(.form-copy, .contact-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.85;
   margin-bottom: 1.5rem;
 }
 
-body.page-family-neighborhood :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
+body.seller-neighborhood-page :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
@@ -3078,25 +3078,25 @@ body.page-family-neighborhood :is(.stat-grid, .snapshot-stats, .identity-stats, 
   overflow: hidden;
 }
 
-body.page-family-neighborhood :is(.stat-box, .snap-stat) {
+body.seller-neighborhood-page :is(.stat-box, .snap-stat) {
   background: var(--cream);
   padding: 1.75rem 1.5rem;
   text-align: center;
 }
 
-body.page-family-neighborhood :is(.stat-val, .snap-val) {
+body.seller-neighborhood-page :is(.stat-val, .snap-val) {
   font-family: "Cormorant Garamond", serif;
   font-size: 2.4rem;
   color: var(--navy);
   line-height: 1;
 }
 
-body.page-family-neighborhood :is(.stat-val, .snap-val) span {
+body.seller-neighborhood-page :is(.stat-val, .snap-val) span {
   font-size: 1.3rem;
   color: var(--gold);
 }
 
-body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
+body.seller-neighborhood-page :is(.stat-lbl, .snap-label) {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3106,27 +3106,27 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
 }
 
 @media (max-width: 968px) {
-  body.page-family-neighborhood :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
+  body.seller-neighborhood-page :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  body.page-family-neighborhood :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
+  body.seller-neighborhood-page :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
     grid-template-columns: 1fr;
   }
 
-  body.page-family-neighborhood :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
+  body.seller-neighborhood-page :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
     --split-gap: 2.5rem;
     gap: var(--split-gap);
   }
 }
 
 @media (max-width: 640px) {
-  body.page-family-neighborhood .hero h1 {
+  body.seller-neighborhood-page .hero.hero-neighborhood h1 {
     font-size: 2.4rem;
   }
 
-  body.page-family-neighborhood .local-area-stat-grid {
+  body.seller-neighborhood-page .local-area-stat-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -3137,7 +3137,7 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
   margin-top: 0;
 }
 
-body.page-family-neighborhood .dark-band.dark-band-full-process :is(.dark-band-inner) {
+body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3145,17 +3145,17 @@ body.page-family-neighborhood .dark-band.dark-band-full-process :is(.dark-band-i
   margin: 0 auto;
 }
 
-body.page-family-neighborhood .dark-band.dark-band-full-process :is(.dark-band-inner) h2 {
+body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) h2 {
   font-weight: 300;
   margin-bottom: 1rem;
 }
 
-body.page-family-neighborhood .dark-band.dark-band-full-process :is(.dark-band-inner) h2 em {
+body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) h2 em {
   font-style: italic;
   color: var(--gold-lt);
 }
 
-body.page-family-neighborhood .dark-band.dark-band-full-process :is(.dark-band-inner) p {
+body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) p {
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 2rem;
@@ -3288,14 +3288,14 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-body.page-family-neighborhood .local-area-quick-facts {
+body.seller-neighborhood-page .local-area-quick-facts {
   background: var(--cream);
   border: 1px solid var(--sand);
   border-radius: var(--radius-md);
   padding: 1.75rem 1.5rem;
 }
 
-body.page-family-neighborhood .local-area-quick-facts h4 {
+body.seller-neighborhood-page .local-area-quick-facts h4 {
   font-family: "Raleway",sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
@@ -3305,7 +3305,7 @@ body.page-family-neighborhood .local-area-quick-facts h4 {
   margin-bottom: 1rem;
 }
 
-body.page-family-neighborhood .local-area-quick-facts .fact-row {
+body.seller-neighborhood-page .local-area-quick-facts .fact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3313,16 +3313,16 @@ body.page-family-neighborhood .local-area-quick-facts .fact-row {
   border-bottom: 1px solid var(--sand);
 }
 
-body.page-family-neighborhood .local-area-quick-facts .fact-row:last-child {
+body.seller-neighborhood-page .local-area-quick-facts .fact-row:last-child {
   border-bottom: none;
 }
 
-body.page-family-neighborhood .local-area-quick-facts .fact-label {
+body.seller-neighborhood-page .local-area-quick-facts .fact-label {
   font-size: 0.88rem;
   color: var(--muted);
 }
 
-body.page-family-neighborhood .local-area-quick-facts .fact-value {
+body.seller-neighborhood-page .local-area-quick-facts .fact-value {
   font-family: "Cormorant Garamond",serif;
   font-size: 1.2rem;
   color: var(--navy);
@@ -3716,10 +3716,10 @@ body.page-privacy .privacy-content {
 }
 
 /* Compact local briefing strip (neighborhood family) */
-body.page-family-neighborhood .local-briefing-strip {
+body.seller-neighborhood-page .local-briefing-strip {
   margin: 0 0 1.35rem;
 }
-body.page-family-neighborhood .local-briefing-eyebrow {
+body.seller-neighborhood-page .local-briefing-eyebrow {
   margin: 0 0 0.55rem;
   font-size: 0.73rem;
   letter-spacing: 0.14em;
@@ -3727,78 +3727,78 @@ body.page-family-neighborhood .local-briefing-eyebrow {
   color: var(--gold);
   font-weight: 700;
 }
-body.page-family-neighborhood .local-briefing-grid {
+body.seller-neighborhood-page .local-briefing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.7rem;
 }
-body.page-family-neighborhood .local-briefing-item {
+body.seller-neighborhood-page .local-briefing-item {
   background: rgba(247, 244, 237, 0.55);
   border: 1px solid var(--sand);
   border-left: 3px solid rgba(184, 146, 58, 0.65);
   border-radius: var(--radius-sm);
   padding: 0.72rem 0.8rem;
 }
-body.page-family-neighborhood .local-briefing-item h3 {
+body.seller-neighborhood-page .local-briefing-item h3 {
   margin: 0 0 0.2rem;
   font-size: 0.84rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-body.page-family-neighborhood .local-briefing-item p {
+body.seller-neighborhood-page .local-briefing-item p {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--muted);
 }
 
-body.page-family-neighborhood .local-briefing-strip .briefing-pace { order: 1; }
-body.page-family-neighborhood .local-briefing-strip .briefing-leverage { order: 2; }
-body.page-family-neighborhood .local-briefing-strip .briefing-risk { order: 3; }
+body.seller-neighborhood-page .local-briefing-strip .briefing-pace { order: 1; }
+body.seller-neighborhood-page .local-briefing-strip .briefing-leverage { order: 2; }
+body.seller-neighborhood-page .local-briefing-strip .briefing-risk { order: 3; }
 
-body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-leverage { order: 1; }
-body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-pace { order: 2; }
-body.page-family-neighborhood .local-briefing-strip--leverage-first .briefing-risk { order: 3; }
+body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-leverage { order: 1; }
+body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-pace { order: 2; }
+body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-risk { order: 3; }
 
-body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-risk { order: 1; }
-body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-leverage { order: 2; }
-body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-pace { order: 3; }
-body.page-family-neighborhood .local-briefing-strip--risk-first .briefing-risk {
+body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-risk { order: 1; }
+body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-leverage { order: 2; }
+body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-pace { order: 3; }
+body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-risk {
   border-left-color: rgba(151, 54, 54, 0.62);
   background: rgba(250, 242, 241, 0.72);
 }
 
 /* Light area FAQ block for neighborhood briefings */
-body.page-family-neighborhood .area-faq-shell {
+body.seller-neighborhood-page .area-faq-shell {
   border-top: 1px solid var(--sand);
 }
-body.page-family-neighborhood .area-faq-grid {
+body.seller-neighborhood-page .area-faq-grid {
   display: grid;
   gap: 0.7rem;
 }
-body.page-family-neighborhood .area-faq-item {
+body.seller-neighborhood-page .area-faq-item {
   background: var(--white);
   border: 1px solid var(--sand);
   border-radius: var(--radius-sm);
   padding: 0.85rem 0.95rem;
 }
-body.page-family-neighborhood .area-faq-item summary {
+body.seller-neighborhood-page .area-faq-item summary {
   cursor: pointer;
   list-style: none;
   font-weight: 600;
   color: var(--text);
 }
-body.page-family-neighborhood .area-faq-item summary::-webkit-details-marker {
+body.seller-neighborhood-page .area-faq-item summary::-webkit-details-marker {
   display: none;
 }
-body.page-family-neighborhood .area-faq-item p {
+body.seller-neighborhood-page .area-faq-item p {
   margin: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.65;
 }
 @media (max-width: 900px) {
-  body.page-family-neighborhood .local-briefing-grid {
+   body.seller-neighborhood-page .local-briefing-grid {
     grid-template-columns: 1fr;
   }
 
