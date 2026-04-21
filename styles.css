@@ -2089,18 +2089,6 @@ body.page-contact .contact-info {position: static;}
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .divider {display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);
-      max-width: 1120px;
-      margin: 0 auto;}
-body.page-faq .divider::before, body.page-faq .divider::after {content: ""; flex: 1; height: 1px; background: var(--sand);}
-body.page-faq .divider-diamond {width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      opacity: 0.6;}
 body.page-faq .faq-nav {background: var(--white);
       border-bottom: 1px solid var(--sand);
       position: sticky;
@@ -2301,21 +2289,6 @@ body.page-index h1, body.page-index h2, body.page-index h3 {font-family: "Cormor
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: 0.01em;}
-body.page-index .divider {display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);
-      max-width: 1120px;
-      margin: 0 auto;}
-body.page-index .divider::before, body.page-index .divider::after {content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--sand);}
-body.page-index .divider-diamond {width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      opacity: 0.6;}
 body.page-index .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.82) 0%, rgba(12,26,61,0.60) 55%, rgba(12,26,61,0.88) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;}
