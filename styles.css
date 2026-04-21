@@ -3804,6 +3804,10 @@ body.page-privacy .privacy-content {
 }
 
 
+/* Potential duplicate with canonical reduced-motion reveal block at ~L1608.
+   Kept intentionally for now because this block includes broader selectors
+   beyond `.js .reveal` and may affect non-IntersectionObserver reveal helpers.
+   Confirm before deletion. */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .js .reveal,
