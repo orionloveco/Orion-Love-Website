@@ -2974,22 +2974,22 @@ body.page-grand-junction-home-value .cta-content {
    ============================================================ */
 
 /* Delay utilities replacing inline transition-delay styles */
-.reveal-delay-005 { transition-delay: 0.05s !important; }
-.reveal-delay-010 { transition-delay: 0.10s !important; }
-.reveal-delay-012 { transition-delay: 0.12s !important; }
-.reveal-delay-013 { transition-delay: 0.13s !important; }
-.reveal-delay-014 { transition-delay: 0.14s !important; }
-.reveal-delay-015 { transition-delay: 0.15s !important; }
-.reveal-delay-019 { transition-delay: 0.19s !important; }
-.reveal-delay-020 { transition-delay: 0.20s !important; }
-.reveal-delay-021 { transition-delay: 0.21s !important; }
-.reveal-delay-023 { transition-delay: 0.23s !important; }
-.reveal-delay-025 { transition-delay: 0.25s !important; }
-.reveal-delay-026 { transition-delay: 0.26s !important; }
-.reveal-delay-029 { transition-delay: 0.29s !important; }
-.reveal-delay-030 { transition-delay: 0.30s !important; }
-.reveal-delay-033 { transition-delay: 0.33s !important; }
-.reveal-delay-040 { transition-delay: 0.40s !important; }
+.js .reveal.reveal-delay-005 { transition-delay: 0.05s; }
+.js .reveal.reveal-delay-010 { transition-delay: 0.10s; }
+.js .reveal.reveal-delay-012 { transition-delay: 0.12s; }
+.js .reveal.reveal-delay-013 { transition-delay: 0.13s; }
+.js .reveal.reveal-delay-014 { transition-delay: 0.14s; }
+.js .reveal.reveal-delay-015 { transition-delay: 0.15s; }
+.js .reveal.reveal-delay-019 { transition-delay: 0.19s; }
+.js .reveal.reveal-delay-020 { transition-delay: 0.20s; }
+.js .reveal.reveal-delay-021 { transition-delay: 0.21s; }
+.js .reveal.reveal-delay-023 { transition-delay: 0.23s; }
+.js .reveal.reveal-delay-025 { transition-delay: 0.25s; }
+.js .reveal.reveal-delay-026 { transition-delay: 0.26s; }
+.js .reveal.reveal-delay-029 { transition-delay: 0.29s; }
+.js .reveal.reveal-delay-030 { transition-delay: 0.30s; }
+.js .reveal.reveal-delay-033 { transition-delay: 0.33s; }
+.js .reveal.reveal-delay-040 { transition-delay: 0.40s; }
 
 /* Shared section shells */
 .section-shell-white {
@@ -3140,10 +3140,7 @@ body.page-family-neighborhood :is(.stat-lbl, .snap-label) {
 
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 
-.section-shell-white .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-.section-shell-cream .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout),
-
-.nearby-area-shell .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
+:is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split,.contact-layout) {
   margin-top: 0;
 }
 
@@ -4554,7 +4551,7 @@ body.page-index .site-section {
   position: relative;
 }
 
-body.page-index .hero + .site-section {
+body.page-index .home-section--post-hero {
   padding-top: var(--home-section-gap-loose);
 }
 
@@ -4562,21 +4559,21 @@ body.page-index .site-section + .site-section {
   padding-top: var(--home-section-gap-tight);
 }
 
-body.page-index .site-section:last-of-type {
+body.page-index .home-section--close {
   padding-bottom: var(--home-section-gap-loose);
 }
 
 /* Create less uniform rhythm than the default site stack */
-body.page-index .site-section:nth-of-type(2) {
+body.page-index .home-rhythm-secondary {
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
 }
 
-body.page-index .site-section:nth-of-type(3) {
+body.page-index .home-rhythm-tertiary {
   padding-top: clamp(4rem, 6vw, 5.25rem);
   padding-bottom: clamp(4.5rem, 7vw, 6rem);
 }
 
-body.page-index .site-section:nth-of-type(4) {
+body.page-index .home-rhythm-quaternary {
   padding-top: clamp(5rem, 8vw, 6.75rem);
   padding-bottom: clamp(4rem, 6vw, 5.5rem);
 }
@@ -4705,11 +4702,11 @@ body.page-index .layout-split .card-grid-3-wrap {
   margin-top: 2.5rem;
 }
 
-body.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(2) {
+body.page-index .layout-split .card-grid-3-wrap .card-offset-sm {
   transform: translateY(6px);
 }
 
-body.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(3) {
+body.page-index .layout-split .card-grid-3-wrap .card-offset-md {
   transform: translateY(12px);
 }
 
@@ -4825,7 +4822,7 @@ body.page-index .process-section .card-base h3 {
   margin-bottom: 0.55rem;
 }
 
-body.page-index .process-section .process-grid .card-base:nth-child(2) {
+body.page-index .process-section .process-grid .card-offset-process {
   transform: translateY(10px);
 }
 
@@ -4982,9 +4979,8 @@ body.page-index #featuredAreasLinks[data-featured-areas-mount="disabled"] {
     grid-template-columns: 1fr;
   }
 
-  body.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(2),
-  body.page-index .layout-split .card-grid-3-wrap .card-base:nth-child(3),
-  body.page-index .process-section .process-grid .card-base:nth-child(2) {
+  body.page-index .layout-split .card-grid-3-wrap :is(.card-offset-sm, .card-offset-md),
+  body.page-index .process-section .process-grid .card-offset-process {
     transform: none;
   }
 
