@@ -3952,10 +3952,6 @@ body.page-family-neighborhood .area-faq-item p {
 /* Nearby-area family contract
    Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
 */
-.nearby-area-shell .nearby-area-intro {
-  margin: 0 auto 1.5rem;
-}
-
 .nearby-area-shell .nearby-area-copy {
   color: var(--muted);
 }
