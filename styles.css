@@ -2044,6 +2044,7 @@ body.page-contact .response-card p {font-size: 0.93rem;
       z-index: 1;}
 body.page-contact .response-card p strong {color: var(--gold-lt);
       font-weight: 500;}
+/* Step 4 ownership note: contact hero heading/subcopy intentionally diverge from shared .form-card typography. */
 .form-card--contact h3 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
@@ -2076,6 +2077,7 @@ body.page-contact .consent-block p {font-size: 0.82rem;
 body.page-contact .consent-block a {color: var(--navy);
       text-underline-offset: 2px;}
 body.page-contact .consent-block a:hover {color: var(--gold);}
+/* Step 4 ownership note: disabled-state behavior is contact-page specific (no shared seller-form equivalent). */
 body.page-contact .form-submit:disabled {opacity: 0.6;
       cursor: not-allowed;
       transform: none !important;}
