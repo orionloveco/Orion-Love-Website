@@ -1,9 +1,22 @@
 /* ============================================================
-   Orion Love Real Estate — Shared Script
+   Orion Love | Keller Williams Colorado West Realty — Shared Script
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
   document.documentElement.classList.add('js');
+
+  const BUSINESS_IDENTITY = {
+    name: 'Orion Love',
+    title: 'Real Estate Broker',
+    brokerage: 'Keller Williams Colorado West Realty',
+    attribution: 'Orion Love | Keller Williams Colorado West Realty',
+    email: 'orion.love.co@gmail.com',
+    phoneDisplay: '(970) 644-6781',
+    phoneLink: '9706446781',
+    addressLine1: '2474 Patterson Rd #100',
+    cityStateZip: 'Grand Junction, CO 81505',
+    serviceAreaPrimary: 'Mesa County, Colorado',
+  };
 
   /* ============================================================
      Page identity fallback
@@ -112,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <header class="main-header" id="mainHeader">
   <nav>
     <a class="logo" href="index.html">
-      <span class="logo-main">Orion Love | Colorado Realtor®</span>
+      <span class="logo-main">${BUSINESS_IDENTITY.attribution}</span>
     </a>
     <ul class="nav-menu" id="navMenu">${navItems}</ul>
     <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavOverlay" class="mobile-toggle" id="mobileToggle">
@@ -210,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="footer-brand">
         <h3 class="logo-footer">Orion Love</h3>
         <p>Helping Grand Junction homeowners buy and sell<br/>with clarity, confidence, and honest communication.</p>
-        <p class="footer-brand-note">Serving Grand Junction, Fruita, Palisade,<br/>and Western Colorado</p>
+        <p class="footer-brand-note">Serving ${BUSINESS_IDENTITY.serviceAreaPrimary}<br/>including Grand Junction, Fruita, Palisade, and Clifton</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
@@ -227,13 +240,14 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="footer-contact">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:orion@orionlove.com">orion@orionlove.com</a></li>
-          <li><a href="tel:9706446781">(970) 644-6781</a></li>
+          <li><a href="mailto:${BUSINESS_IDENTITY.email}">${BUSINESS_IDENTITY.email}</a></li>
+          <li><a href="tel:${BUSINESS_IDENTITY.phoneLink}">${BUSINESS_IDENTITY.phoneDisplay}</a></li>
+          <li>${BUSINESS_IDENTITY.addressLine1}<br/>${BUSINESS_IDENTITY.cityStateZip}</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© ${new Date().getFullYear()} Orion Love Real Estate. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} ${BUSINESS_IDENTITY.attribution}. All rights reserved.</p>
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
@@ -552,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
     payloadBuilder,
     successMessage,
     submitButtonDefaultText,
-    errorMessage = 'Something went wrong. Please call (970) 644-6781.',
+    errorMessage = `Something went wrong. Please call ${BUSINESS_IDENTITY.phoneDisplay}.`,
     validate,
   }) => {
     const form = document.getElementById(formId);
@@ -617,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const inquiry = form.dataset.inquiry || 'Home Value Request';
     const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Submit';
     const errorMessage =
-      form.dataset.errorMessage || 'Something went wrong. Please call (970) 644-6781.';
+      form.dataset.errorMessage || `Something went wrong. Please call ${BUSINESS_IDENTITY.phoneDisplay}.`;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
