@@ -347,13 +347,14 @@ p { color: var(--text); }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.4rem;
   height: 72px;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
-.logo { text-decoration: none; }
+.logo { text-decoration: none; flex-shrink: 0; }
 
 .logo-main {
   font-family: "Cormorant Garamond", serif;
@@ -366,9 +367,10 @@ p { color: var(--text); }
 
 .nav-menu {
   display: flex;
-  gap: 2.25rem;
+  gap: clamp(1.05rem, 1.8vw, 2.25rem);
   list-style: none;
   align-items: center;
+  white-space: nowrap;
 }
 
 .nav-menu a {
@@ -423,11 +425,33 @@ p { color: var(--text); }
   text-transform: uppercase;
   cursor: pointer;
   font-family: "Raleway", sans-serif;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.25s ease;
 }
 
 .nav-dropdown.active .nav-dropdown-toggle,
-.nav-dropdown-toggle:hover {
+.nav-dropdown.open .nav-dropdown-toggle,
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
   color: var(--gold-lt);
+}
+
+.nav-dropdown.active .nav-dropdown-toggle::after,
+.nav-dropdown.open .nav-dropdown-toggle::after,
+.nav-dropdown-toggle:hover::after,
+.nav-dropdown-toggle:focus-visible::after {
+  width: 100%;
 }
 
 .nav-dropdown-menu {
@@ -612,7 +636,7 @@ p { color: var(--text); }
   box-shadow: var(--btn-shadow), var(--btn-focus-ring);
 }
 
-:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, a.link-card, a.card-link, a.usp-card):focus-visible {
+:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, #mobileNavOverlay .mobile-nav-close, a.link-card, a.card-link, a.usp-card):focus-visible {
   outline: none;
   border-radius: 999px;
   box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
@@ -1622,8 +1646,50 @@ a.card-base:hover {
 }
 
 /* ===== Shared mobile overlay helper ===== */
-#mobileNavOverlay { display:none; position:fixed; inset:0; width:100vw; height:100vh; background:rgb(12,26,61); flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:1.1rem; z-index:99999; list-style:none; margin:0; padding:5.25rem 1.5rem 2rem; overflow-y:auto; }
-#mobileNavOverlay.open { display:flex; }
+#mobileNavOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(12, 26, 61, 0.98);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  z-index: 1400;
+  list-style: none;
+  margin: 0;
+  padding: 1.2rem 1.5rem 2rem;
+  overflow-y: auto;
+}
+#mobileNavOverlay.open { display: flex; }
+#mobileNavOverlay .mobile-nav-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+#mobileNavOverlay .mobile-nav-head p {
+  margin: 0;
+  color: rgba(212, 170, 90, 0.95);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#mobileNavOverlay .mobile-nav-close {
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
 #mobileNavOverlay .mobile-nav-list { list-style:none; width:100%; }
 #mobileNavOverlay > .mobile-nav-list > li { padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.08); }
 #mobileNavOverlay a { font-size:1.15rem; color:#ffffff; text-decoration:none; font-family:"Cormorant Garamond", serif; font-weight:400; letter-spacing:0.03em; display:block; padding:0.25rem 0; }
@@ -1637,6 +1703,7 @@ a.card-base:hover {
 #mobileNavOverlay .mobile-nav-group p { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.62); margin:0.4rem 0; font-weight:600; }
 #mobileNavOverlay .mobile-nav-group a { font-size:1rem; line-height:1.35; }
 body.mobile-nav-open { overflow:hidden; }
+
 
 /* ===== about.html ===== */
 body.page-about .about-trust-hero {
@@ -1888,8 +1955,6 @@ body.page-about .about-final-cta-inner h2 {
     border-left: none;
   }
 
-  body.page-about .nav-menu { display: none; }
-  body.page-about .mobile-toggle { display: flex; }
 }
 
 @media (max-width: 600px) {
@@ -2014,16 +2079,6 @@ body.page-contact .consent-block a:hover {color: var(--gold);}
 body.page-contact .form-submit:disabled {opacity: 0.6;
       cursor: not-allowed;
       transform: none !important;}
-body.page-contact .footer-bottom {border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;}
-body.page-contact .footer-bottom p {color: rgba(255,255,255,0.28); font-size: 0.8rem;}
-body.page-contact .footer-bottom a {color: rgba(255,255,255,0.38); text-decoration: none;}
-body.page-contact .footer-bottom a:hover {color: var(--gold-lt);}
 @media (max-width: 900px) {
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
@@ -2186,30 +2241,6 @@ body.page-faq .faq-tab {padding: 1rem 1rem; font-size: 0.72rem;}
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-grand-junction-home-value .main-header {position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;}
-body.page-grand-junction-home-value .main-header.scrolled {background: rgba(12,26,61,0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-grand-junction-home-value .main-header nav {display: flex; align-items: center; justify-content: space-between;
-      height: 72px; max-width: 1120px; margin: 0 auto;
-      padding: 0 clamp(1.25rem,4vw,2.5rem);}
-body.page-grand-junction-home-value .logo {text-decoration: none;}
-body.page-grand-junction-home-value .logo-main {font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem; font-weight: 500; color: var(--white); letter-spacing: 0.04em;}
-body.page-grand-junction-home-value .nav-menu {display: flex; list-style: none; gap: 2.25rem; align-items: center;}
-body.page-grand-junction-home-value .nav-menu a {text-decoration: none; color: rgba(255,255,255,0.82);
-      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      transition: color 0.2s;}
-body.page-grand-junction-home-value .nav-menu a:hover, body.page-grand-junction-home-value .nav-menu a.active {color: var(--gold-lt);}
-body.page-grand-junction-home-value .btn-nav {background: transparent !important;
-      border: 1px solid rgba(184,146,58,0.55) !important;
-      color: var(--gold-lt) !important;
-      padding: 0.5rem 1.3rem; border-radius: 40px;}
-body.page-grand-junction-home-value .btn-nav:hover {background: rgba(184,146,58,0.12) !important;}
-body.page-grand-junction-home-value .mobile-toggle {display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 6px;}
-body.page-grand-junction-home-value .mobile-toggle span {display: block; width: 24px; height: 1.5px; background: var(--white); border-radius: 2px;}
 body.page-grand-junction-home-value .hero {background:
         linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
         url("images/gj-landscape.jpg") center / cover no-repeat;}
@@ -2256,12 +2287,10 @@ body.page-grand-junction-home-value .cta-content {text-align: center; max-width:
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
 body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
 @media (max-width: 968px) {
-body.page-grand-junction-home-value .mobile-toggle {display: flex;}
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2, 1fr);}
 body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
 body.page-grand-junction-home-value .stat-item:nth-child(1), body.page-grand-junction-home-value .stat-item:nth-child(2) {border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr; gap: 3rem;}
-body.page-grand-junction-home-value .footer-bottom {flex-direction: column; gap: 0.75rem; text-align: center;}
 }
 @media (max-width: 640px) {
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
@@ -2400,18 +2429,6 @@ body.page-index .process-grid {grid-template-columns: repeat(2, 1fr); gap: 1rem;
 @media (max-width: 768px) {
 .cta-band.cta-band--feature .cta-band-inner {grid-template-columns: 1fr; gap: 2rem;}
 body.page-index .seller-hub-callout {max-width: 100%;}
-body.page-index .nav-menu {display: none;}
-body.page-index .mobile-toggle {display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;}
-body.page-index .mobile-toggle span {display: block;
-        width: 24px; height: 1.5px;
-        background: var(--white);
-        border-radius: 2px;}
 }
 @media (max-width: 560px) {
 body.page-index .usp-grid {grid-template-columns: 1fr;}
@@ -2933,9 +2950,6 @@ body.page-services .routing-links a {
     grid-template-columns: 1fr;
   }
 
-  body.page-services .nav-menu {
-    display: none;
-  }
 }
 
 /* Neighbourhood link card (shared across pages) */
