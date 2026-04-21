@@ -1973,7 +1973,7 @@ body.page-contact .response-card h4 {font-size: 1.1rem;
       position: relative;
       z-index: 1;}
 body.page-contact .response-card p {font-size: 0.93rem;
-      color: rgba(255,255,255,0.58);
+      color: rgba(255,255,255,0.74);
       line-height: 1.6;
       position: relative;
       z-index: 1;}
@@ -2416,7 +2416,7 @@ body.page-index .mobile-toggle span {display: block;
 @media (max-width: 560px) {
 body.page-index .usp-grid {grid-template-columns: 1fr;}
 body.page-index .process-grid {grid-template-columns: 1fr;}
-.section-header-inline .cta-center {text-align: center;}
+body.page-index .section-header-inline .cta-center {text-align: center;}
 }
 
 
@@ -2567,6 +2567,12 @@ body.page-services .services-hero {
   color: var(--navy);
   border-color: rgba(184,146,58,0.7);
   background: rgba(184,146,58,0.08);
+}
+
+/* Centered support hero copy should stay visually centered at constrained measures. */
+.hero.hero-support :is(h1:not(.hero-title), .hero-title, .hero-lead, .hero-inner > p:not([class]), .about-hero-support) {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero.hero-hub,
