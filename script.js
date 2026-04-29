@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
      Adds body class from filename if missing
      example: about.html -> page-about
      ============================================================ */
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname === '/' ? '/' : window.location.pathname;
   const pageSlug = path
+    .replace(/^\//, '')
     .replace(/\.html?$/i, '')
     .replace(/[^a-z0-9]+/gi, '-')
     .replace(/^-+|-+$/g, '')
@@ -39,39 +40,39 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       label: 'Core Areas',
       items: [
-        { href: 'areas.html', label: 'All Areas Index' },
-        { href: 'grand-junction-home-value.html', label: 'Grand Junction' },
-        { href: 'sell-clifton.html', label: 'Clifton' },
-        { href: 'sell-fruita.html', label: 'Fruita' },
-        { href: 'sell-palisade.html', label: 'Palisade' },
-        { href: 'sell-loma-mack.html', label: 'Loma / Mack' },
+        { href: '/areas.html', label: 'All Areas Index' },
+        { href: '/grand-junction-home-value.html', label: 'Grand Junction' },
+        { href: '/sell-clifton.html', label: 'Clifton' },
+        { href: '/sell-fruita.html', label: 'Fruita' },
+        { href: '/sell-palisade.html', label: 'Palisade' },
+        { href: '/sell-loma-mack.html', label: 'Loma / Mack' },
       ],
     },
     {
       label: 'Grand Junction Neighborhoods',
       items: [
-        { href: 'sell-downtown-grand-junction.html', label: 'Downtown Grand Junction' },
-        { href: 'sell-north-grand-junction.html', label: 'North Grand Junction' },
-        { href: 'sell-northeast-grand-junction.html', label: 'Northeast Grand Junction' },
-        { href: 'sell-northwest-grand-junction.html', label: 'Northwest Grand Junction' },
-        { href: 'sell-orchard-mesa.html', label: 'Orchard Mesa' },
-        { href: 'sell-redlands.html', label: 'Redlands' },
+        { href: '/sell-downtown-grand-junction.html', label: 'Downtown Grand Junction' },
+        { href: '/sell-north-grand-junction.html', label: 'North Grand Junction' },
+        { href: '/sell-northeast-grand-junction.html', label: 'Northeast Grand Junction' },
+        { href: '/sell-northwest-grand-junction.html', label: 'Northwest Grand Junction' },
+        { href: '/sell-orchard-mesa.html', label: 'Orchard Mesa' },
+        { href: '/sell-redlands.html', label: 'Redlands' },
       ],
     },
   ];
 
   const SHARED_NAV_ITEMS = [
-    { href: 'index.html', label: 'Home' },
-    { href: 'sell-with-orion.html', label: 'Sell' },
-    { href: 'grand-junction-home-value.html', label: 'Home Value' },
+    { href: '/', label: 'Home' },
+    { href: '/sell-with-orion.html', label: 'Sell' },
+    { href: '/grand-junction-home-value.html', label: 'Home Value' },
     { label: 'Areas', key: 'areas', children: AREA_NAV_GROUPS },
-    { href: 'about.html', label: 'About' },
-    { href: 'faq.html', label: 'FAQ' },
-    { href: 'contact.html', label: 'Contact', isButton: true },
+    { href: '/about.html', label: 'About' },
+    { href: '/faq.html', label: 'FAQ' },
+    { href: '/contact.html', label: 'Contact', isButton: true },
   ];
 
   const SHARED_CONVERSATION_CTA = {
-    href: 'contact.html',
+    href: '/contact.html',
     label: 'Start the Conversation',
   };
 
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     target.innerHTML = `
 <header class="main-header" id="mainHeader">
   <nav>
-    <a class="logo" href="index.html">
+    <a class="logo" href="/">
       <span class="logo-main">${BUSINESS_IDENTITY.attribution}</span>
     </a>
     <ul class="nav-menu" id="navMenu">${navItems}</ul>
@@ -224,11 +225,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <h4>Quick Links</h4>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="sell-with-orion.html">Sellers</a></li>
-          <li><a href="areas.html">Areas</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/sell-with-orion.html">Sellers</a></li>
+          <li><a href="/areas.html">Areas</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -242,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div class="footer-bottom">
       <p>© ${new Date().getFullYear()} ${BUSINESS_IDENTITY.attribution}. All rights reserved.</p>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
   </div>
 </footer>`;
