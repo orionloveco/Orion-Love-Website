@@ -154,6 +154,10 @@ else:
         "/palisade": "/sell-palisade",
         "/clifton": "/sell-clifton",
         "/loma-mack": "/sell-loma-mack",
+        "/clifton-grand-junction": "/sell-clifton",
+        "/clifton-grand-junction.html": "/sell-clifton",
+        "/loma-mack-grand-junction": "/sell-loma-mack",
+        "/loma-mack-grand-junction.html": "/sell-loma-mack",
     }
 
     redirect_map = dict(pairs)
