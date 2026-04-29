@@ -835,8 +835,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!accordion) return;
 
-      input.addEventListener('input', () => {
+      const hasActiveFaqFilter = () => {
+        const filterSelectors = [
+          'input[type="checkbox"][data-faq-filter]:checked',
+          'input[type="radio"][data-faq-filter]:checked:not([value="all"])',
+          'select[data-faq-filter]',
+        ];
+
+        return filterSelectors.some((selector) => {
+          const filters = accordion.closest('.faq-panel')?.querySelectorAll(selector) || [];
+          return Array.from(filters).some((filterEl) => {
+            if (filterEl.tagName === 'SELECT') {
+              return String(filterEl.value || '').trim().toLowerCase() !== 'all' && String(filterEl.value || '').trim() !== '';
+            }
+
+            return true;
+          });
+        });
+      };
+
+      const applyFaqSearch = ({ markInteracted = false } = {}) => {
         const query = input.value.toLowerCase().trim();
+        const hasQuery = query.length > 0;
+        const hasFilter = hasActiveFaqFilter();
         let visibleCount = 0;
 
         accordion.querySelectorAll('details.faq-item').forEach((item) => {
@@ -847,9 +868,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (noResults) {
-          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+          const hasInteraction = markInteracted || input.dataset.hasInteracted === 'true';
+          noResults.style.display = hasInteraction && (hasQuery || hasFilter) && visibleCount === 0 ? 'block' : 'none';
         }
+      };
+
+      input.dataset.hasInteracted = 'false';
+      if (noResults) noResults.style.display = 'none';
+      accordion.querySelectorAll('details.faq-item').forEach((item) => {
+        item.style.display = '';
       });
+
+      input.addEventListener('input', () => {
+        input.dataset.hasInteracted = 'true';
+        applyFaqSearch({ markInteracted: true });
+      });
+
+      applyFaqSearch();
     });
   }
 });
