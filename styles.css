@@ -1545,6 +1545,31 @@ a.card-base:hover {
 .footer-links a:hover,
 .footer-contact a:hover { color: var(--gold-lt); }
 
+
+.footer-profiles__title {
+  font: var(--type-section-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 0.9rem;
+}
+
+.footer-profiles__list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-profiles__list a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.94rem;
+}
+
+.footer-profiles__list a:hover {
+  color: var(--gold-lt);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   padding-top: 1.5rem;
@@ -1700,7 +1725,22 @@ body.page-about .about-trust-hero {
 body.page-about .about-intro-section,
 body.page-about .about-think-section,
 body.page-about .about-proof-section,
-body.page-about .about-contrast-section,
+body.page-about .about-contrast-section {
+  scroll-margin-top: 110px;
+}
+
+body.page-about .profile-link-list a {
+  text-decoration: none;
+  color: var(--navy);
+  border-bottom: 1px solid rgba(184, 146, 58, 0.32);
+  padding-bottom: 0.08rem;
+}
+
+body.page-about .profile-link-list a:hover {
+  color: var(--brand-gold);
+  border-bottom-color: rgba(184, 146, 58, 0.6);
+}
+
 body.page-about .about-final-cta {
   padding: clamp(3.5rem, 6vw, 5.75rem) 0;
 }
@@ -1906,6 +1946,25 @@ body.page-about .contrast-row > div {
 body.page-about .contrast-row > div + div,
 body.page-about .contrast-head > div + div {
   border-left: 1px solid rgba(232, 225, 208, 0.95);
+}
+
+body.page-about .profile-link-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+body.page-about .profile-link-list a {
+  text-decoration: none;
+  color: var(--navy);
+  border-bottom: 1px solid rgba(184, 146, 58, 0.32);
+  padding-bottom: 0.08rem;
+}
+
+body.page-about .profile-link-list a:hover {
+  color: var(--brand-gold);
+  border-bottom-color: rgba(184, 146, 58, 0.6);
 }
 
 body.page-about .about-final-cta {
