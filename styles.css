@@ -2033,7 +2033,7 @@ body.page-contact .response-card p {font-size: 0.93rem;
 body.page-contact .response-card p strong {color: var(--gold-lt);
       font-weight: 500;}
 /* Step 4 ownership note: contact hero heading/subcopy intentionally diverge from shared .form-card typography. */
-.form-card--contact h3 {
+.form-card--contact :is(h2, h3) {
       font-size: 2rem;
       margin-bottom: 0.5rem;
       font-weight: 300;}
@@ -2446,10 +2446,11 @@ body.page-grand-junction-home-value #sellerHubHero {
 }
 
 body.page-faq .faq-hero,
-body.page-about .about-trust-hero {
+body.page-about .about-trust-hero,
+body.page-contact .contact-hero {
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,244,237,0.96)),
-    radial-gradient(1000px 360px at 50% -12%, rgba(184,146,58,0.14), transparent 72%);
+    radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
+    linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
 }
 
 @media (max-width: 968px) {
