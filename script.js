@@ -152,6 +152,16 @@ document.addEventListener('DOMContentLoaded', function () {
           <li>${BUSINESS_IDENTITY.addressLine1}<br/>${BUSINESS_IDENTITY.cityStateZip}</li>
         </ul>
       </div>
+      <div class="footer-profiles" aria-label="Professional profiles">
+        <p class="footer-profiles__title">Professional Profiles</p>
+        <ul class="footer-profiles__list">
+          <li><a href="https://share.google/L2Jv06TsswRhSzWnd" target="_blank" rel="noopener noreferrer">Google Business Profile</a></li>
+          <li><a href="https://www.zillow.com/profile/OrionLove" target="_blank" rel="noopener noreferrer">Zillow</a></li>
+          <li><a href="https://www.realtor.com/realestateagents/6960e90c720b6c832a10ce6b" target="_blank" rel="noopener noreferrer">Realtor.com</a></li>
+          <li><a href="https://www.linkedin.com/in/orionlove/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <!-- TODO: Add Keller Williams profile to visible Professional Profiles once KW public profile phone/photo are corrected. URL: https://kw.com/agent/orion-love/2000137810 -->
     </div>
     <div class="footer-bottom">
       <p>© ${new Date().getFullYear()} ${BUSINESS_IDENTITY.attribution}. All rights reserved.</p>
