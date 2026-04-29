@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
      example: about.html -> page-about
      ============================================================ */
   const path = window.location.pathname === '/' ? '/' : window.location.pathname;
+
+
+  const normalizePath = (value) => {
+    if (!value || value === '/') return '/';
+    return value
+      .replace(/^https?:\/\/[^/]+/i, '')
+      .replace(/\/$/, '')
+      .replace(/\.html$/i, '');
+  };
+
   const pageSlug = path
     .replace(/^\//, '')
     .replace(/\.html?$/i, '')
@@ -40,39 +50,39 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       label: 'Core Areas',
       items: [
-        { href: '/areas.html', label: 'All Areas Index' },
-        { href: '/grand-junction-home-value.html', label: 'Grand Junction' },
-        { href: '/sell-clifton.html', label: 'Clifton' },
-        { href: '/sell-fruita.html', label: 'Fruita' },
-        { href: '/sell-palisade.html', label: 'Palisade' },
-        { href: '/sell-loma-mack.html', label: 'Loma / Mack' },
+        { href: '/areas', label: 'All Areas Index' },
+        { href: '/grand-junction-home-value', label: 'Grand Junction' },
+        { href: '/sell-clifton', label: 'Clifton' },
+        { href: '/sell-fruita', label: 'Fruita' },
+        { href: '/sell-palisade', label: 'Palisade' },
+        { href: '/sell-loma-mack', label: 'Loma / Mack' },
       ],
     },
     {
       label: 'Grand Junction Neighborhoods',
       items: [
-        { href: '/sell-downtown-grand-junction.html', label: 'Downtown Grand Junction' },
-        { href: '/sell-north-grand-junction.html', label: 'North Grand Junction' },
-        { href: '/sell-northeast-grand-junction.html', label: 'Northeast Grand Junction' },
-        { href: '/sell-northwest-grand-junction.html', label: 'Northwest Grand Junction' },
-        { href: '/sell-orchard-mesa.html', label: 'Orchard Mesa' },
-        { href: '/sell-redlands.html', label: 'Redlands' },
+        { href: '/sell-downtown-grand-junction', label: 'Downtown Grand Junction' },
+        { href: '/sell-north-grand-junction', label: 'North Grand Junction' },
+        { href: '/sell-northeast-grand-junction', label: 'Northeast Grand Junction' },
+        { href: '/sell-northwest-grand-junction', label: 'Northwest Grand Junction' },
+        { href: '/sell-orchard-mesa', label: 'Orchard Mesa' },
+        { href: '/sell-redlands', label: 'Redlands' },
       ],
     },
   ];
 
   const SHARED_NAV_ITEMS = [
     { href: '/', label: 'Home' },
-    { href: '/sell-with-orion.html', label: 'Sell' },
-    { href: '/grand-junction-home-value.html', label: 'Home Value' },
+    { href: '/sell-with-orion', label: 'Sell' },
+    { href: '/grand-junction-home-value', label: 'Home Value' },
     { label: 'Areas', key: 'areas', children: AREA_NAV_GROUPS },
-    { href: '/about.html', label: 'About' },
-    { href: '/faq.html', label: 'FAQ' },
-    { href: '/contact.html', label: 'Contact', isButton: true },
+    { href: '/about', label: 'About' },
+    { href: '/faq', label: 'FAQ' },
+    { href: '/contact', label: 'Contact', isButton: true },
   ];
 
   const SHARED_CONVERSATION_CTA = {
-    href: '/contact.html',
+    href: '/contact',
     label: 'Start the Conversation',
   };
 
@@ -86,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .map((group) => {
             const links = group.items
               .map((child) => {
-                const childIsActive = currentPath === child.href;
+                const childIsActive = normalizePath(child.href) === normalizePath(currentPath);
                 const childActiveClass = childIsActive ? ' class="active"' : '';
                 const childCurrent = childIsActive ? ' aria-current="page"' : '';
                 return `<li><a${childActiveClass} href="${child.href}"${childCurrent}>${child.label}</a></li>`;
@@ -98,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .join('');
 
         const groupIsActive = item.children.some((group) =>
-          group.items.some((child) => child.href === currentPath)
+          group.items.some((child) => normalizePath(child.href) === normalizePath(currentPath))
         );
         const activeClass = groupIsActive ? ' active' : '';
 
@@ -108,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </li>`;
       }
 
-      const isActive = currentPath === item.href;
+      const isActive = normalizePath(item.href) === normalizePath(currentPath);
       const activeClass = isActive ? ' class="active"' : '';
       const currentAttr = isActive ? ' aria-current="page"' : '';
       const btnClass = item.isButton ? ' class="btn-nav"' : activeClass;
@@ -138,8 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
           .map((group) => {
             const links = group.items
               .map((child) => {
-                const active = currentPath === child.href ? ' class="active"' : '';
-                const current = currentPath === child.href ? ' aria-current="page"' : '';
+                const active = normalizePath(child.href) === normalizePath(currentPath) ? ' class="active"' : '';
+                const current = normalizePath(child.href) === normalizePath(currentPath) ? ' aria-current="page"' : '';
                 return `<li><a${active} href="${child.href}"${current}>${child.label}</a></li>`;
               })
               .join('');
@@ -150,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return `<li class="mobile-nav-areas"><span class="mobile-nav-title">${item.label}</span>${grouped}</li>`;
       }
 
-      const activeClass = currentPath === item.href ? ' class="active"' : '';
-      const currentAttr = currentPath === item.href ? ' aria-current="page"' : '';
+      const activeClass = normalizePath(item.href) === normalizePath(currentPath) ? ' class="active"' : '';
+      const currentAttr = normalizePath(item.href) === normalizePath(currentPath) ? ' aria-current="page"' : '';
       const buttonClass = item.isButton ? ' class="btn-nav"' : activeClass;
       return `<li><a${buttonClass} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
     }).join('');
@@ -225,11 +235,11 @@ document.addEventListener('DOMContentLoaded', function () {
         <h4>Quick Links</h4>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sell-with-orion.html">Sellers</a></li>
-          <li><a href="/areas.html">Areas</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/sell-with-orion">Sellers</a></li>
+          <li><a href="/areas">Areas</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -243,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div class="footer-bottom">
       <p>© ${new Date().getFullYear()} ${BUSINESS_IDENTITY.attribution}. All rights reserved.</p>
-      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/privacy">Privacy Policy</a>
     </div>
   </div>
 </footer>`;
