@@ -442,11 +442,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function formatDays(value) {
-    return Number.isFinite(value) ? `${Math.round(value)} days` : '-- days';
+    return Number.isFinite(value) ? `${Math.round(value)} days` : 'Stats update monthly';
   }
 
   function formatNumber(value) {
-    return Number.isFinite(value) ? Math.round(value).toLocaleString() : '--';
+    return Number.isFinite(value) ? Math.round(value).toLocaleString() : 'Monthly snapshot';
+  }
+
+  function setMarketFallbackState(blockEl) {
+    if (!blockEl) return;
+
+    const fallbackByKey = {
+      medianPrice: 'Monthly market snapshot',
+      averageDaysOnMarket: 'Stats update monthly',
+      newListings: 'Request latest listing pace',
+      totalListings: 'Request active inventory count',
+    };
+
+    blockEl.querySelectorAll('[data-market-stat]').forEach((statEl) => {
+      const statKey = statEl.dataset.marketStat;
+      const fallbackValue = fallbackByKey[statKey] || 'Market snapshot available by request';
+      statEl.textContent = fallbackValue;
+    });
+
+    const noteEl = blockEl.querySelector('[data-market-note]');
+    if (noteEl) {
+      const areaLabel = blockEl.dataset.marketAreaLabel || 'this neighborhood';
+      noteEl.textContent = `Market stats update monthly. Request a current seller briefing for the latest ${areaLabel} numbers.`;
+    }
   }
 
   function formatUpdatedDate(value, areaLabel) {
@@ -528,9 +551,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!marketBlocks.length) return;
 
     try {
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 5000);
+
       const res = await fetch(MARKET_STATS_URL, {
         headers: { Accept: 'application/json' },
+        signal: controller.signal,
       });
+      window.clearTimeout(timeoutId);
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
@@ -542,8 +570,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!areaData) {
           console.error(`Market stats area not found: ${areaKey}`);
-          const noteEl = blockEl.querySelector('[data-market-note]');
-          if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+          setMarketFallbackState(blockEl);
           return;
         }
 
@@ -552,8 +579,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (err) {
       console.error('Market stats load failed:', err);
       marketBlocks.forEach((blockEl) => {
-        const noteEl = blockEl.querySelector('[data-market-note]');
-        if (noteEl) noteEl.textContent = 'Live market data temporarily unavailable';
+        setMarketFallbackState(blockEl);
       });
     }
   }
