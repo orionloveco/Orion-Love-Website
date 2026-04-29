@@ -71,109 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 
-  const SHARED_NAV_ITEMS = [
-    { href: '/', label: 'Home' },
-    { href: '/sell-with-orion', label: 'Sell' },
-    { href: '/grand-junction-home-value', label: 'Home Value' },
-    { href: '/areas', label: 'Areas' },
-    { label: 'Neighborhoods', key: 'areas', children: AREA_NAV_GROUPS },
-    { href: '/about', label: 'About' },
-    { href: '/faq', label: 'FAQ' },
-    { href: '/contact', label: 'Contact', isButton: true },
-  ];
-
   const SHARED_CONVERSATION_CTA = {
     href: '/contact',
     label: 'Start the Conversation',
   };
-
-  function renderSharedHeader(currentPath) {
-    const target = document.getElementById('siteHeader');
-    if (!target) return;
-
-    const navItems = SHARED_NAV_ITEMS.map((item) => {
-      if (item.children?.length) {
-        const childLinks = item.children
-          .map((group) => {
-            const links = group.items
-              .map((child) => {
-                const childIsActive = normalizePath(child.href) === normalizePath(currentPath);
-                const childActiveClass = childIsActive ? ' class="active"' : '';
-                const childCurrent = childIsActive ? ' aria-current="page"' : '';
-                return `<li><a${childActiveClass} href="${child.href}"${childCurrent}>${child.label}</a></li>`;
-              })
-              .join('');
-
-            return `<div class="nav-dropdown-group"><p class="nav-dropdown-heading">${group.label}</p><ul>${links}</ul></div>`;
-          })
-          .join('');
-
-        const groupIsActive = item.children.some((group) =>
-          group.items.some((child) => normalizePath(child.href) === normalizePath(currentPath))
-        );
-        const activeClass = groupIsActive ? ' active' : '';
-
-        return `<li class="nav-dropdown${activeClass}">
-          <button aria-controls="areasDropdownMenu" aria-expanded="false" aria-haspopup="true" class="nav-dropdown-toggle" type="button">${item.label}</button>
-          <div class="nav-dropdown-menu" id="areasDropdownMenu">${childLinks}</div>
-        </li>`;
-      }
-
-      const isActive = normalizePath(item.href) === normalizePath(currentPath);
-      const activeClass = isActive ? ' class="active"' : '';
-      const currentAttr = isActive ? ' aria-current="page"' : '';
-      const btnClass = item.isButton ? ' class="btn-nav"' : activeClass;
-      const classAttr = item.isButton ? btnClass : activeClass;
-
-      return `<li><a${classAttr} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
-    }).join('');
-
-    target.innerHTML = `
-<header class="main-header" id="mainHeader">
-  <nav>
-    <a class="logo" href="/">
-      <span class="logo-main">${BUSINESS_IDENTITY.attribution}</span>
-    </a>
-    <ul class="nav-menu" id="navMenu">${navItems}</ul>
-    <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavOverlay" class="mobile-toggle" id="mobileToggle">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>`;
-  }
-
-  function renderMobileNavMarkup(currentPath) {
-    const rows = SHARED_NAV_ITEMS.map((item) => {
-      if (item.children?.length) {
-        const grouped = item.children
-          .map((group) => {
-            const links = group.items
-              .map((child) => {
-                const active = normalizePath(child.href) === normalizePath(currentPath) ? ' class="active"' : '';
-                const current = normalizePath(child.href) === normalizePath(currentPath) ? ' aria-current="page"' : '';
-                return `<li><a${active} href="${child.href}"${current}>${child.label}</a></li>`;
-              })
-              .join('');
-            return `<div class="mobile-nav-group"><p>${group.label}</p><ul>${links}</ul></div>`;
-          })
-          .join('');
-
-        return `<li class="mobile-nav-areas"><span class="mobile-nav-title">${item.label}</span>${grouped}</li>`;
-      }
-
-      const activeClass = normalizePath(item.href) === normalizePath(currentPath) ? ' class="active"' : '';
-      const currentAttr = normalizePath(item.href) === normalizePath(currentPath) ? ' aria-current="page"' : '';
-      const buttonClass = item.isButton ? ' class="btn-nav"' : activeClass;
-      return `<li><a${buttonClass} href="${item.href}"${currentAttr}>${item.label}</a></li>`;
-    }).join('');
-
-    return `
-<div class="mobile-nav-head">
-  <p>Menu</p>
-  <button aria-label="Close menu" class="mobile-nav-close" type="button">×</button>
-</div>
-<ul class="mobile-nav-list">${rows}</ul>`;
-  }
 
   function resolveFeaturedAreasMountMode(value) {
     if (value === 'inner' || value === 'disabled') return value;
@@ -260,9 +161,27 @@ document.addEventListener('DOMContentLoaded', function () {
 </footer>`;
   }
 
-  renderSharedHeader(path);
   renderFeaturedAreas();
   renderSharedFooter();
+  syncSharedNavState(path);
+
+  function syncSharedNavState(currentPath) {
+    const normalizedCurrent = normalizePath(currentPath);
+    const areaLinks = AREA_NAV_GROUPS.flatMap((group) => group.items.map((item) => item.href));
+
+    document.querySelectorAll('#navMenu a, #mobileNavOverlay a').forEach((link) => {
+      const isActive = normalizePath(link.getAttribute('href')) === normalizedCurrent;
+      link.classList.toggle('active', isActive && !link.classList.contains('btn-nav'));
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+
+    const areaDropdown = document.querySelector('.nav-dropdown');
+    if (areaDropdown) {
+      const groupActive = areaLinks.some((href) => normalizePath(href) === normalizedCurrent);
+      areaDropdown.classList.toggle('active', groupActive);
+    }
+  }
 
   /* ============================================================
      Icons
@@ -319,14 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
-    let overlay = document.getElementById('mobileNavOverlay');
-
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'mobileNavOverlay';
-      overlay.innerHTML = renderMobileNavMarkup(path);
-      document.body.appendChild(overlay);
-    }
+    const overlay = document.getElementById('mobileNavOverlay');
+    if (!overlay) return;
 
     const openMenu = () => {
       overlay.classList.add('open');
