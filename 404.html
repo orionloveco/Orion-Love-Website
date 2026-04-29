@@ -23,14 +23,79 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div id="siteHeader"></div>
-  <noscript>
-    <header class="noscript-header" role="banner">
-      <div class="container">
-        <a href="/">Orion Love | Keller Williams Colorado West Realty</a>
-      </div>
-    </header>
-  </noscript>
+  <header class="main-header" id="mainHeader">
+  <nav>
+    <a class="logo" href="/">
+      <span class="logo-main">Orion Love | Keller Williams Colorado West Realty</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/sell-with-orion">Sellers</a></li>
+      <li><a href="/grand-junction-home-value">Home Value</a></li>
+      <li><a href="/areas">Areas</a></li>
+      <li class="nav-dropdown">
+        <button aria-controls="areasDropdownMenu" aria-expanded="false" aria-haspopup="true" class="nav-dropdown-toggle" type="button">Neighborhoods</button>
+        <div class="nav-dropdown-menu" id="areasDropdownMenu">
+          <div class="nav-dropdown-group"><p class="nav-dropdown-heading">Core Areas</p><ul>
+            <li><a href="/areas">All Areas Index</a></li>
+            <li><a href="/grand-junction-home-value">Grand Junction</a></li>
+            <li><a href="/sell-clifton">Clifton</a></li>
+            <li><a href="/sell-fruita">Fruita</a></li>
+            <li><a href="/sell-palisade">Palisade</a></li>
+            <li><a href="/sell-loma-mack">Loma / Mack</a></li>
+          </ul></div>
+          <div class="nav-dropdown-group"><p class="nav-dropdown-heading">Grand Junction Neighborhoods</p><ul>
+            <li><a href="/sell-downtown-grand-junction">Downtown Grand Junction</a></li>
+            <li><a href="/sell-north-grand-junction">North Grand Junction</a></li>
+            <li><a href="/sell-northeast-grand-junction">Northeast Grand Junction</a></li>
+            <li><a href="/sell-northwest-grand-junction">Northwest Grand Junction</a></li>
+            <li><a href="/sell-orchard-mesa">Orchard Mesa</a></li>
+            <li><a href="/sell-redlands">Redlands</a></li>
+          </ul></div>
+        </div>
+      </li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a class="btn-nav" href="/contact">Contact</a></li>
+    </ul>
+    <button aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavOverlay" class="mobile-toggle" id="mobileToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+<div id="mobileNavOverlay" aria-hidden="true">
+  <div class="mobile-nav-head">
+    <p>Menu</p>
+    <button aria-label="Close menu" class="mobile-nav-close" type="button">×</button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="/">Home</a></li>
+    <li><a href="/sell-with-orion">Sellers</a></li>
+    <li><a href="/grand-junction-home-value">Home Value</a></li>
+    <li><a href="/areas">Areas</a></li>
+    <li class="mobile-nav-areas"><span class="mobile-nav-title">Neighborhoods</span>
+      <div class="mobile-nav-group"><p>Core Areas</p><ul>
+        <li><a href="/areas">All Areas Index</a></li>
+        <li><a href="/grand-junction-home-value">Grand Junction</a></li>
+        <li><a href="/sell-clifton">Clifton</a></li>
+        <li><a href="/sell-fruita">Fruita</a></li>
+        <li><a href="/sell-palisade">Palisade</a></li>
+        <li><a href="/sell-loma-mack">Loma / Mack</a></li>
+      </ul></div>
+      <div class="mobile-nav-group"><p>Grand Junction Neighborhoods</p><ul>
+        <li><a href="/sell-downtown-grand-junction">Downtown Grand Junction</a></li>
+        <li><a href="/sell-north-grand-junction">North Grand Junction</a></li>
+        <li><a href="/sell-northeast-grand-junction">Northeast Grand Junction</a></li>
+        <li><a href="/sell-northwest-grand-junction">Northwest Grand Junction</a></li>
+        <li><a href="/sell-orchard-mesa">Orchard Mesa</a></li>
+        <li><a href="/sell-redlands">Redlands</a></li>
+      </ul></div>
+    </li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a class="btn-nav" href="/contact">Contact</a></li>
+  </ul>
+</div>
 
   <main class="site-section">
     <div class="container">
