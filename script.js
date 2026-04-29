@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="sell-with-orion.html">Sellers</a></li>
           <li><a href="areas.html">Areas</a></li>
           <li><a href="about.html">About</a></li>
