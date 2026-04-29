@@ -1629,8 +1629,6 @@ a.card-base:hover {
 @media (max-width: 640px) {
   .process-steps { grid-template-columns: 1fr; }
   .usp-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.8rem; }
-  .hero-cta .btn { width: 100%; max-width: 340px; }
 }
 
 /* ===== Shared mobile overlay helper ===== */
