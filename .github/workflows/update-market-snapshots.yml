@@ -31,6 +31,40 @@ jobs:
             echo "No package.json found; skipping npm install."
           fi
 
+      - name: Preflight market API debug (safe)
+        run: |
+          echo "MARKET_STATS_BASE_URL present: $([ -n "${MARKET_STATS_BASE_URL:-}" ] && echo yes || echo no)"
+          echo "MARKET_STATS_API_KEY present: $([ -n "${MARKET_STATS_API_KEY:-}" ] && echo yes || echo no)"
+          node -e '''
+            const base = process.env.MARKET_STATS_BASE_URL || "https://orion-market-stats.orion-love-co.workers.dev";
+            const endpoint = new URL("/api/market-stats", base).toString();
+            const key = process.env.MARKET_STATS_API_KEY;
+            const methods = [
+              ["bearer", key ? { Accept: "application/json", Authorization: `Bearer ${key}` } : { Accept: "application/json" }],
+              ["x-api-key", key ? { Accept: "application/json", "x-api-key": key } : { Accept: "application/json" }],
+              ["none", { Accept: "application/json" }],
+            ];
+
+            async function run() {
+              for (const [name, headers] of methods) {
+                try {
+                  const res = await fetch(endpoint, { headers });
+                  console.log(`[probe:${name}] status=${res.status}`);
+                  let data = null;
+                  try { data = await res.json(); } catch {}
+                  if (data && typeof data === "object") {
+                    console.log(`[probe:${name}] top-level keys=${Object.keys(data).join(",") || "(none)"}`);
+                    const areaKeys = data?.areas && typeof data.areas === "object" ? Object.keys(data.areas) : [];
+                    console.log(`[probe:${name}] area keys=${areaKeys.join(",") || "(none)"}`);
+                  }
+                } catch (err) {
+                  console.log(`[probe:${name}] fetch error=${err.message}`);
+                }
+              }
+            }
+            run();
+          '''
+
       - name: Update market snapshots
         run: node scripts/update-market-snapshots.mjs
 
