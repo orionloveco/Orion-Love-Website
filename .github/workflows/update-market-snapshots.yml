@@ -1,0 +1,61 @@
+name: Update Market Snapshots
+
+on:
+  schedule:
+    - cron: "0 16 15 * *"
+  workflow_dispatch:
+
+env:
+  MARKET_STATS_BASE_URL: ${{ vars.MARKET_STATS_BASE_URL }}
+  MARKET_STATS_API_KEY: ${{ secrets.MARKET_STATS_API_KEY }}
+
+jobs:
+  sync-market-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies (if package.json exists)
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          else
+            echo "No package.json found; skipping npm install."
+          fi
+
+      - name: Update market snapshots
+        run: node scripts/update-market-snapshots.mjs
+
+      - name: Validate site (if validate_site.py exists)
+        run: |
+          if [ -f validate_site.py ]; then
+            python validate_site.py
+          else
+            echo "No validate_site.py found; skipping validation."
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sell-*.html market-data/*.json scripts/update-market-snapshots.mjs .github/workflows/update-market-snapshots.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh market snapshots"
+          git push
+
+      - name: Trigger Cloudflare deploy hook (optional)
+        if: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK != '' }}
+        run: curl -fsS -X POST "$CLOUDFLARE_PAGES_DEPLOY_HOOK"
+        env:
+          CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
