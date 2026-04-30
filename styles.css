@@ -1552,7 +1552,11 @@ a.card-base:hover {
 }
 
 .footer-links ul,
-.footer-contact ul { list-style: none; }
+.footer-contact ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 .footer-links li,
 .footer-contact li { margin-bottom: var(--space-1); }
@@ -1562,6 +1566,7 @@ a.card-base:hover {
   color: rgba(255, 255, 255, 0.66);
   text-decoration: none;
   font-size: 0.92rem;
+  line-height: 1.55;
   transition: color 0.2s;
 }
 .footer-links a:hover,
@@ -1575,6 +1580,7 @@ a.card-base:hover {
 
 .footer-contact li {
   color: rgba(255, 255, 255, 0.66);
+  line-height: 1.55;
 }
 
 .footer-profiles__title {
@@ -1595,6 +1601,7 @@ a.card-base:hover {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.66);
   font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .footer-profiles__list a:hover {
@@ -1613,11 +1620,14 @@ a.card-base:hover {
 .footer-bottom p {
   color: rgba(255, 255, 255, 0.46);
   font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
 }
 .footer-bottom a {
   color: rgba(255, 255, 255, 0.52);
   text-decoration: none;
   font-size: 0.8rem;
+  line-height: 1.5;
 }
 .footer-bottom a:hover { color: var(--gold-lt); }
 
