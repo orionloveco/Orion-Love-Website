@@ -1583,6 +1583,10 @@ a.card-base:hover {
   line-height: 1.55;
 }
 
+.footer-profiles {
+  margin-top: var(--space-1);
+}
+
 .footer-profiles__title {
   font: var(--type-section-label);
   letter-spacing: 0.14em;
@@ -1688,8 +1692,8 @@ a.card-base:hover {
     gap: 2rem;
   }
 
-  .footer-grid { grid-template-columns: 1fr; gap: var(--space-4); }
-  .footer-support { grid-template-columns: 1fr; gap: var(--space-3); }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  .footer-support { grid-template-columns: 1fr; gap: var(--space-4); }
   .footer-bottom { flex-direction: column; gap: var(--space-1); text-align: center; }
 }
 
