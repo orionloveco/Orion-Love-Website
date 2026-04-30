@@ -59,18 +59,19 @@
   --type-section-label: var(--font-weight-sans-semibold) var(--font-size-label) / 1.2 var(--font-family-sans);
 
   /* Spacing */
-  --space-micro: 0.35rem;
-  --space-tight: 0.5rem;
-  --space-compact: 0.75rem;
-  --space-cozy: 1rem;
-  --space-roomy: 1.25rem;
-  --space-spacious: 1.5rem;
-  --space-section: clamp(3.5rem, 6vw, 5rem);
-  --space-section-loose: clamp(4.5rem, 8vw, 7rem);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 80px;
+  --space-section: var(--space-7);
+  --space-section-loose: var(--space-7);
 
-  --space-card-padding: 1.5rem;
-  --space-grid-gap: 1.25rem;
-  --space-container-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --space-card-padding: var(--space-4);
+  --space-grid-gap: var(--space-4);
+  --space-container-gutter: var(--space-4);
 
   /* Components */
   --radius-card: 20px;
@@ -173,12 +174,23 @@ a { color: inherit; }
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
-section { padding: clamp(3.5rem, 6vw, 5rem) 0; }
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
-.site-section { padding: var(--section-pad, var(--space-section)) 0; }
-.site-section.section-density-tight { --section-pad: clamp(3rem, 5vw, 4.25rem); }
-.site-section.section-density-standard { --section-pad: var(--space-section); }
-.site-section.section-density-airy { --section-pad: var(--space-section-loose); }
+.site-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.site-section.section-density-tight,
+.site-section.section-density-standard,
+.site-section.section-density-airy {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
 
 /* =========================
    Typography
@@ -2019,7 +2031,8 @@ body.page-contact .main-header {position: fixed;
       background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-contact .contact-section {padding: clamp(4rem, 8vw, 7rem) 0;
+body.page-contact .contact-section {padding-top: 80px;
+  padding-bottom: 80px;
       background: var(--cream);}
 body.page-contact .contact-layout {display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
@@ -2165,7 +2178,8 @@ body.page-faq .faq-tab svg {width: 16px; height: 16px; stroke: currentColor;}
 body.page-faq .faq-tab:hover {color: var(--navy);}
 body.page-faq .faq-tab.active {color: var(--navy);
       border-bottom-color: var(--gold);}
-body.page-faq .faq-section {padding: clamp(4rem, 7vw, 6rem) 0;
+body.page-faq .faq-section {padding-top: 80px;
+  padding-bottom: 80px;
       background: var(--cream);}
 body.page-faq .faq-panel {display: none;}
 body.page-faq .faq-panel.active {display: block;}
@@ -2545,7 +2559,7 @@ body.page-contact .contact-hero {
 
 body.page-services .method-spine {
   background: var(--cream);
-  --section-pad: clamp(4.5rem, 8vw, 7rem);
+  --section-pad: 80px;
 }
 
 body.page-services .method-stage-list {
@@ -2608,7 +2622,7 @@ body.page-services .method-stage-points strong {
 
 body.page-services .decision-gates {
   background: var(--white);
-  --section-pad: clamp(4.25rem, 7.5vw, 6rem);
+  --section-pad: 80px;
 }
 
 body.page-services .decision-layout {
@@ -4435,7 +4449,7 @@ body.page-faq .faq-help-row p {
 
 /* Services architecture cleanup */
 body.page-services .method-spine {
-  --section-pad: clamp(5.1rem, 9vw, 7.4rem);
+  --section-pad: 80px;
   padding-bottom: clamp(4.4rem, 7.4vw, 6.1rem);
 }
 
@@ -4901,7 +4915,7 @@ body.page-areas .areas-jump-links a {
 --------------------------------- */
 
 .page-index .home-section--close {
-  --section-pad: clamp(5.5rem, 9vw, 7.5rem);
+  --section-pad: 80px;
   background:
     linear-gradient(180deg, rgba(247, 244, 237, 0.35), rgba(247, 244, 237, 0.94)),
     radial-gradient(circle at 50% 0%, rgba(184, 146, 58, 0.1), transparent 42%);
@@ -5024,6 +5038,17 @@ body.page-areas .areas-jump-links a {
   }
 
   .page-index .home-section--close {
-    --section-pad: 4.5rem;
+    --section-pad: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  section,
+  .site-section,
+  .site-section.section-density-tight,
+  .site-section.section-density-standard,
+  .site-section.section-density-airy {
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }
