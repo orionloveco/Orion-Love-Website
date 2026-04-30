@@ -2578,9 +2578,10 @@ body.page-contact .contact-hero {
     min-height: clamp(540px, 78vh, 760px);
   }
 
+  .hero.hero-support,
   .hero.hero-hub,
   body.page-grand-junction-home-value #sellerHubHero {
-    min-height: clamp(560px, 82vh, 800px);
+    min-height: clamp(430px, 62vh, 620px);
   }
 }
 
@@ -4956,7 +4957,7 @@ body.page-areas .areas-jump-links a {
   }
 
   .page-index .home-process-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -5100,4 +5101,3 @@ body.page-areas .areas-jump-links a {
     padding: 24px;
   }
 }
-
