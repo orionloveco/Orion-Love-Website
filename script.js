@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
       <div class="footer-profiles" aria-label="Professional profiles">
-        <p class="footer-profiles__title">Professional Profiles</p>
+        <p class="footer-profiles__title">Verified Profiles</p>
         <ul class="footer-profiles__list">
           <li><a href="https://share.google/L2Jv06TsswRhSzWnd" target="_blank" rel="noopener noreferrer">Google Business Profile</a></li>
           <li><a href="https://www.zillow.com/profile/OrionLove" target="_blank" rel="noopener noreferrer">Zillow</a></li>
