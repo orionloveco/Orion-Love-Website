@@ -69,12 +69,12 @@
   --space-section: var(--space-7);
   --space-section-loose: var(--space-7);
 
-  --space-card-padding: var(--space-4);
+  --space-card-padding: var(--space-3);
   --space-grid-gap: var(--space-4);
   --space-container-gutter: var(--space-4);
 
   /* Components */
-  --radius-card: 20px;
+  --radius-card: 16px;
   --radius-button: 999px;
   --shadow-card-hover: 0 18px 46px rgba(12, 26, 61, 0.14);
   --size-icon-md: 48px;
@@ -928,7 +928,7 @@ p { color: var(--text); }
 .card-trust {
   background: var(--white);
   border: 1px solid var(--sand);
-  padding: 1.5rem 1.3rem;
+  padding: var(--space-card-padding);
   box-shadow: var(--shadow-sm);
   transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
 }
@@ -1089,7 +1089,7 @@ a.card-base:hover {
 .card-base.card-grid-4 {
   background: var(--color-surface-primary);
   border: 1px solid var(--color-border-soft);
-  padding: clamp(1.1rem, 2vw, 1.35rem);
+  padding: var(--space-card-padding);
 }
 
 .card-base.card-grid-4 .card-icon {
@@ -1115,7 +1115,7 @@ a.card-base:hover {
 }
 
 .card-base.card-grid-4.card-value--spacious {
-  padding: clamp(1.35rem, 2.6vw, 1.75rem);
+  padding: var(--space-card-padding);
 }
 
 /* Variant: card-grid-3-dark / card--dark (dark trust/process card) */
@@ -1163,7 +1163,7 @@ a.card-base:hover {
 .card-base.card--editorial {
   background: var(--color-surface-secondary);
   border: 1px solid var(--color-border-soft);
-  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  padding: var(--space-card-padding);
 }
 
 .card-base.card-grid-3-editorial h3,
@@ -2043,7 +2043,7 @@ body.page-contact .contact-info {display: flex;
       gap: 1.25rem;
       position: sticky;
       top: 100px;}
-body.page-contact .card-trust {padding: 1.5rem 1.3rem;}
+body.page-contact .card-trust {padding: var(--space-card-padding);}
 body.page-contact .info-card-title {font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -3152,7 +3152,7 @@ body.seller-neighborhood-page :is(.stat-grid, .snapshot-stats, .identity-stats, 
 
 body.seller-neighborhood-page :is(.stat-box, .snap-stat) {
   background: var(--cream);
-  padding: 1.75rem 1.5rem;
+  padding: var(--space-card-padding);
   text-align: center;
 }
 
@@ -3244,8 +3244,8 @@ body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-i
 
 .form-card {
   background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2.25rem;
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--sand);
 }
@@ -3264,7 +3264,7 @@ body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-i
 }
 
 .form-card--contact {
-  padding: clamp(1.8rem, 3.8vw, 2.65rem);
+  padding: var(--space-card-padding);
 }
 
 .form-card--valuation {
@@ -4349,11 +4349,11 @@ body.page-faq .faq-help-row p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--space-roomy);
+  gap: var(--space-3);
   min-height: 100%;
-  padding: clamp(1.25rem, 2.3vw, 1.85rem);
+  padding: var(--space-card-padding);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-card);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(247, 244, 237, 0.6) 100%);
   box-shadow: var(--shadow-sm);
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
