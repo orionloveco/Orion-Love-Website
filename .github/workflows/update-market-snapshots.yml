@@ -89,7 +89,7 @@ jobs:
           git push
 
       - name: Trigger Cloudflare deploy hook (optional)
-        if: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK != '' }}
-        run: curl -fsS -X POST "$CLOUDFLARE_PAGES_DEPLOY_HOOK"
+        if: ${{ env.DEPLOY_HOOK != '' }}
+        run: curl -fsS -X POST "$DEPLOY_HOOK"
         env:
-          CLOUDFLARE_PAGES_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
+          DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_PAGES_DEPLOY_HOOK }}
