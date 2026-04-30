@@ -103,7 +103,7 @@ The site must feel:
 Do not:
 
 * use real estate template patterns
-* use card grids
+* build generic, repetitive card grids
 * use routing sections ("choose your path")
 * create visual clutter
 
@@ -113,6 +113,15 @@ Prefer:
 * whitespace
 * asymmetric layouts
 * clear section intent
+
+---
+
+
+## Design System Enforcement (Critical)
+
+All visual implementation must follow the design system defined in README.md.
+
+Editorial design must come from composition, hierarchy, and content structure — not arbitrary spacing, inconsistent layouts, or one-off component styles.
 
 ---
 
@@ -126,15 +135,18 @@ Prefer:
 
 ### CTA
 
-* one action per page
+* each page should have one primary action
 * same action across site (conversation)
-* no competing CTAs
+* secondary actions are allowed only when visually subordinate
+* no competing primary CTAs
 
 ### Sections
 
-* avoid uniform spacing rhythm
-* avoid repeated card clusters
-* avoid unnecessary containers
+* maintain a consistent spacing system
+* avoid generic, repetitive card grids and repeated card clusters
+* use card systems intentionally when they improve hierarchy and scannability
+* variation is allowed in composition, density, and section order, not in random spacing or component drift
+* avoid excessive nesting, but keep consistent layout wrappers for alignment
 
 ---
 
@@ -215,6 +227,21 @@ All pages must include at least one local-specific observation.
 
 * must include at least one observation an out-of-area agent would not know
 * cannot use generic market statements
+
+---
+
+
+## System Compliance Check (Required)
+
+Before finalizing any non-trivial change, agents must verify:
+
+* spacing uses only approved values from README.md
+* no new component systems were introduced
+* CTA hierarchy is correct
+* layout alignment is consistent
+* no visual drift was introduced
+
+If violations exist, the agent must fix them before output.
 
 ---
 

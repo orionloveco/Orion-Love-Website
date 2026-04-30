@@ -225,6 +225,72 @@ This site does not look like a real estate website. It looks like an editorial b
 
 ---
 
+## Implementation Rules (Non-Negotiable)
+
+The design philosophy defines how the site should feel.
+These rules define how it must be built.
+
+### Spacing System
+Only the following spacing values are allowed:
+8, 16, 24, 32, 48, 64, 80
+
+No arbitrary spacing values.
+
+### Section Padding
+Desktop: 80px top/bottom
+Mobile: 56px top/bottom
+
+All sections must align to this baseline before variation is applied.
+
+### Layout Structure
+All sections must use consistent layout wrappers.
+
+Asymmetry is achieved through:
+- content arrangement
+- column balance
+- image placement
+
+NOT by breaking spacing or alignment rules.
+
+### Card Usage
+Card systems are allowed when used intentionally.
+
+Avoid:
+- repetitive, identical card grids
+- generic “3-up feature box” layouts
+
+Use:
+- structured content blocks
+- consistent spacing
+- clear hierarchy
+
+### CTA Hierarchy
+Each page must include:
+- one primary CTA
+- optional secondary actions that are visually subordinate
+
+Primary CTAs must:
+- be visually dominant
+- have clear surrounding space
+- stand out from secondary actions
+
+### Section Rhythm
+Section density may vary, but spacing values must always come from the defined scale.
+
+Variation does not mean randomness.
+
+### System Consistency Rule
+Do not introduce:
+- new spacing systems
+- new layout patterns
+- one-off components
+
+If a new pattern is required:
+- define it once
+- reuse it consistently
+
+---
+
 ## Typography
 
 | Role | Style | Notes |
@@ -260,14 +326,15 @@ This site does not look like a real estate website. It looks like an editorial b
 - Editorial splits (text left, image right — or reversed with intent)
 - Asymmetric composition
 - Variable section density (dense, then open, then dense — not uniform)
+- Structured layouts with intentional variation and strong hierarchy
 - Large, unhurried hero spacing
 - Generous whitespace around key statements
 
 **Never use:**
-- Card grids
+- Generic, repetitive card grids
 - Boxed layouts with equal padding
 - Routing modules ("Choose your path")
-- Uniform section rhythm
+- Rigid, template-like uniform layouts
 - Dividers between every section
 
 ---
@@ -350,7 +417,7 @@ These rules override any vendor, template, or personal preference:
 2. **No duplicated intent.** Two pages cannot own the same keyword or purpose.
 3. **No fake proof.** No purchased reviews, inflated stats, or vague authority claims.
 4. **No template feel.** If it looks like it came from a real estate website builder, redesign it.
-5. **One CTA per page.** The same action, repeated once. Never two different actions competing.
+5. **One primary CTA per page.** Secondary actions are allowed only when visually subordinate. Never two primary actions competing.
 6. **Sellers dominate.** Every key page speaks to a seller first. Buyers are not ignored — they are secondary.
 7. **The one-insight rule.** Every area page, every local claim must contain something only a local expert would know.
 8. **Copy before design.** Page structure is determined by what needs to be said, not by what looks balanced.
