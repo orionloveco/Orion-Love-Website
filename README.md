@@ -28,7 +28,7 @@ The following must not be JavaScript-only:
 
 The footer is intentionally duplicated in static HTML across all pages so AI crawlers, search engines, scrapers, and non-JS systems can read it directly from the raw HTML source.
 
-If the footer is edited, update the same footer block consistently across every HTML page.
+If footer content changes, update every footer instance in the same commit. Do not leave partial footer drift across pages.
 
 Do not reintroduce JavaScript footer rendering.
 
@@ -43,21 +43,9 @@ Footer content that must remain present in raw HTML includes:
 - Brokerage/entity/trust signals
 
 Validation requirement:
-After any footer edit, verify:
+After any footer edit, verify the static footer exists on every page, JavaScript footer rendering has not been reintroduced, and raw HTML still contains profile links plus contact information.
 
-- No page contains <div id="siteFooter"></div>
-- Every HTML page contains <footer class="main-footer" id="siteFooter">
-- script.js does not contain renderSharedFooter()
-- Raw HTML source contains the verified profile links and contact information
-
-Suggested checks:
-
-```bash
-rg -n "<div id=\"siteFooter\"></div>" *.html
-rg -n "<footer class=\"main-footer\" id=\"siteFooter\"" *.html
-rg -n "renderSharedFooter" script.js
-rg -n "Google Business Profile|Zillow|Realtor.com|LinkedIn|Keller Williams|mailto:orion.love.co@gmail.com|tel:9706446781" *.html
-```
+Use AGENTS.md for exact validation commands.
 
 ---
 
@@ -115,7 +103,7 @@ AI language models surface authoritative, structured, geographically consistent 
 ### Implementation Requirements
 
 **NAP Consistency (Name, Address, Phone)**
-The exact same name, phone number, and brokerage must appear on every page — header, footer, and contact sections. No variations.
+The exact same name, phone number, and brokerage must appear on every page — header, footer, and contact sections. No variation in factual identity fields. Natural phrasing may vary in page copy.
 
 **Geographic Repetition**
 Use "Grand Junction," "Mesa County," and specific neighborhood names naturally throughout copy. AI models weight geographic specificity heavily.
