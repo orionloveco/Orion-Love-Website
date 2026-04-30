@@ -24,6 +24,41 @@ The following must not be JavaScript-only:
 - JSON-LD structured data
 - Trust signals, credentials, brokerage info, and verified profile links
 
+### Static Footer Maintenance Rule
+
+The footer is intentionally duplicated in static HTML across all pages so AI crawlers, search engines, scrapers, and non-JS systems can read it directly from the raw HTML source.
+
+If the footer is edited, update the same footer block consistently across every HTML page.
+
+Do not reintroduce JavaScript footer rendering.
+
+Footer content that must remain present in raw HTML includes:
+
+- Orion Love identity
+- Keller Williams Colorado West Realty attribution
+- Phone and email
+- Service area language
+- Internal footer links
+- Verified profile links
+- Brokerage/entity/trust signals
+
+Validation requirement:
+After any footer edit, verify:
+
+- No page contains <div id="siteFooter"></div>
+- Every HTML page contains <footer class="main-footer" id="siteFooter">
+- script.js does not contain renderSharedFooter()
+- Raw HTML source contains the verified profile links and contact information
+
+Suggested checks:
+
+```bash
+rg -n "<div id=\"siteFooter\"></div>" *.html
+rg -n "<footer class=\"main-footer\" id=\"siteFooter\"" *.html
+rg -n "renderSharedFooter" script.js
+rg -n "Google Business Profile|Zillow|Realtor.com|LinkedIn|Keller Williams|mailto:orion.love.co@gmail.com|tel:9706446781" *.html
+```
+
 ---
 
 # PART ONE: STRATEGIC FOUNDATION
