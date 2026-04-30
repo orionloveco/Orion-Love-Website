@@ -2121,6 +2121,36 @@ body.page-contact .response-card p strong {color: var(--gold-lt);
       font-size: 0.97rem;
       margin-bottom: 1.55rem;
       line-height: 1.65;}
+body.page-contact .contact-trust-block {
+      margin-bottom: var(--space-3);
+      padding: var(--space-3);
+      background: var(--white);
+      border: 1px solid rgba(232,225,208,0.9);
+      border-radius: var(--radius-sm);}
+body.page-contact .contact-trust-block p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: var(--space-2);}
+body.page-contact .contact-trust-list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-1);}
+body.page-contact .contact-trust-list li {
+      position: relative;
+      padding-left: var(--space-3);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--muted);}
+body.page-contact .contact-trust-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.7em;
+      left: var(--space-1);
+      width: var(--space-1);
+      height: var(--space-1);
+      border-radius: 50%;
+      background: var(--gold);}
 body.page-contact .select-wrap {position: relative;}
 body.page-contact .select-wrap::after {content: "";
       position: absolute;
@@ -2148,6 +2178,17 @@ body.page-contact .consent-block a:hover {color: var(--gold);}
 body.page-contact .form-submit:disabled {opacity: 0.6;
       cursor: not-allowed;
       transform: none !important;}
+body.page-contact form[data-lead-form="seller"] {
+      gap: var(--space-2);}
+body.page-contact form[data-lead-form="seller"] .form-row {
+      gap: var(--space-2);}
+body.page-contact form[data-lead-form="seller"] .form-group label {
+      margin-bottom: var(--space-1);}
+body.page-contact form[data-lead-form="seller"] .form-group :is(input, select, textarea) {
+      padding: var(--space-2);
+      border-color: rgba(232,225,208,0.95);}
+body.page-contact form[data-lead-form="seller"] .form-group :is(input, select, textarea):focus {
+      box-shadow: var(--btn-focus-ring);}
 @media (max-width: 900px) {
 body.page-contact .contact-layout {grid-template-columns: 1fr;}
 body.page-contact .contact-info {position: static;}
