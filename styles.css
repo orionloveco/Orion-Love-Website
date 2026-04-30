@@ -5015,3 +5015,89 @@ body.page-areas .areas-jump-links a {
     padding-bottom: 56px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .cta-action-row {
+    gap: 16px;
+  }
+
+  .cta-action-row > .btn,
+  .cta-action-row > * > .btn {
+    width: 100%;
+  }
+
+  form[data-lead-form="seller"] {
+    gap: 16px;
+  }
+
+  form[data-lead-form="seller"] .form-row {
+    gap: 16px;
+  }
+
+  form[data-lead-form="seller"] .form-group label {
+    margin-bottom: 8px;
+  }
+
+  form[data-lead-form="seller"] .consent-note {
+    margin-top: 8px;
+  }
+
+  .form-submit {
+    margin-top: 16px;
+  }
+
+  body.page-areas .areas-orientation-grid,
+  body.page-areas .areas-jump-links {
+    gap: 16px;
+  }
+
+  body.page-areas .areas-jump-links {
+    margin-top: 16px;
+  }
+
+  body.page-areas .areas-jump-links a {
+    padding: 8px 16px;
+  }
+
+  body.page-faq .faq-accordion,
+  body.page-faq .faq-grid {
+    gap: 16px;
+  }
+
+  body.page-faq .faq-item summary {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  body.page-faq .faq-body {
+    padding: 0 24px 24px;
+  }
+
+  body.page-faq .faq-body p {
+    padding-top: 16px;
+  }
+
+  .footer-grid {
+    gap: 32px;
+  }
+
+  .footer-support {
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    gap: 16px;
+  }
+
+  .page-index .home-card-stack {
+    margin-top: 24px;
+  }
+
+  .page-index .home-card.card-grid-3,
+  .page-index .home-editorial-card,
+  .page-index .home-process .home-card {
+    padding: 24px;
+  }
+}
+
