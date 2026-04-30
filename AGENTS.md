@@ -16,6 +16,28 @@ README.md overrides AGENTS.md.
 
 ---
 
+## AI / SEO Rendering Rule
+
+To protect AI discoverability, SEO visibility, crawlability, trust, and page meaning, all critical information must be visible in the raw HTML response.
+
+- Critical content must be present in raw HTML.
+- JavaScript is allowed for enhancements, animations, UI behavior, mobile menu behavior, progressive enhancement, and optional dynamic stats.
+- JavaScript must not be the only source for critical content.
+- If disabling JavaScript would cause an AI crawler, search engine, scraper, or link preview tool to miss or misunderstand the page, that content belongs in HTML.
+- HTML is the source of truth. JavaScript is the enhancement layer.
+
+The following must not be JavaScript-only:
+- Main headings and body copy
+- Local service area context
+- Internal links and navigation
+- Footer authority/profile links
+- Contact information
+- Canonical/meta/Open Graph tags
+- JSON-LD structured data
+- Trust signals, credentials, brokerage info, and verified profile links
+
+---
+
 ## Core Directive
 
 This website exists to:
@@ -251,6 +273,8 @@ If violations exist, the agent must fix them before output.
 * remove dead or legacy classes
 * consolidate repeated patterns
 * do not introduce duplicate systems (nav, hero, layout, etc.)
+
+Shared JavaScript renderers may be used for visual consistency, but crawl-critical content must also exist in raw HTML or another crawler-visible static source. Do not assume AI crawlers will execute script.js.
 * preserve factual business information
 
 ---
