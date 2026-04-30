@@ -133,24 +133,26 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>Helping Mesa County home sellers move with clarity, confidence, and honest communication.</p>
         <p class="footer-brand-note">Serving ${BUSINESS_IDENTITY.serviceAreaPrimary}<br/>including Grand Junction, Fruita, Palisade, and Clifton</p>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sell-with-orion">Sellers</a></li>
-          <li><a href="/areas">Areas</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:${BUSINESS_IDENTITY.email}">${BUSINESS_IDENTITY.email}</a></li>
-          <li><a href="tel:${BUSINESS_IDENTITY.phoneLink}">${BUSINESS_IDENTITY.phoneDisplay}</a></li>
-          <li>${BUSINESS_IDENTITY.addressLine1}<br/>${BUSINESS_IDENTITY.cityStateZip}</li>
-        </ul>
+      <div class="footer-support">
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/sell-with-orion">Sellers</a></li>
+            <li><a href="/areas">Areas</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:${BUSINESS_IDENTITY.email}">${BUSINESS_IDENTITY.email}</a></li>
+            <li><a href="tel:${BUSINESS_IDENTITY.phoneLink}">${BUSINESS_IDENTITY.phoneDisplay}</a></li>
+            <li>${BUSINESS_IDENTITY.addressLine1}<br/>${BUSINESS_IDENTITY.cityStateZip}</li>
+          </ul>
+        </div>
       </div>
       <div class="footer-profiles" aria-label="Professional profiles">
         <p class="footer-profiles__title">Professional Profiles</p>

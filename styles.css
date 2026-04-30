@@ -1509,30 +1509,31 @@ a.card-base:hover {
 .main-footer {
   background: var(--navy-mid);
   border-top: 1px solid rgba(184, 146, 58, 0.15);
-  padding: 3.5rem 0 2rem;
+  padding: var(--space-6) 0 var(--space-4);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 2.5rem;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+  align-items: start;
 }
 
 .logo-footer {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--white);
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-2);
 }
 
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
   line-height: 1.7;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-2);
 }
 .footer-location {
   color: rgba(255, 255, 255, 0.45);
@@ -1547,44 +1548,53 @@ a.card-base:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-2);
 }
 
 .footer-links ul,
 .footer-contact ul { list-style: none; }
 
 .footer-links li,
-.footer-contact li { margin-bottom: 0.6rem; }
+.footer-contact li { margin-bottom: var(--space-1); }
 
 .footer-links a,
 .footer-contact a {
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 0.66);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   transition: color 0.2s;
 }
 .footer-links a:hover,
 .footer-contact a:hover { color: var(--gold-lt); }
 
+.footer-support {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.footer-contact li {
+  color: rgba(255, 255, 255, 0.66);
+}
 
 .footer-profiles__title {
   font: var(--type-section-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-lt);
-  margin-bottom: 0.9rem;
+  margin-bottom: var(--space-2);
 }
 
 .footer-profiles__list {
   list-style: none;
   display: grid;
-  gap: 0.55rem;
+  gap: var(--space-1);
 }
 
 .footer-profiles__list a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.92rem;
 }
 
 .footer-profiles__list a:hover {
@@ -1593,19 +1603,19 @@ a.card-base:hover {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
-  padding-top: 1.5rem;
+  padding-top: var(--space-3);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-1);
 }
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 0.46);
   font-size: 0.8rem;
 }
 .footer-bottom a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.52);
   text-decoration: none;
   font-size: 0.8rem;
 }
@@ -1668,8 +1678,9 @@ a.card-base:hover {
     gap: 2rem;
   }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .footer-support { grid-template-columns: 1fr; gap: var(--space-3); }
+  .footer-bottom { flex-direction: column; gap: var(--space-1); text-align: center; }
 }
 
 @media (max-width: 640px) {
@@ -3594,7 +3605,8 @@ body.seller-neighborhood-page .local-area-quick-facts .fact-value {
 }
 
 .footer-brand-note {
-  margin-top: 0.75rem;
+  margin-top: var(--space-2);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Privacy page rules moved out of inline style block */
