@@ -1,0 +1,20 @@
+{
+  "areaKey": "fruita",
+  "areaName": "Fruita",
+  "generatedAt": "2026-04-15T08:00:40.460Z",
+  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "stats": {
+    "areaKey": "fruita",
+    "zips": [
+      "81521"
+    ],
+    "labels": [
+      "Fruita"
+    ],
+    "lastUpdatedDate": null,
+    "medianPrice": 499700,
+    "averageDaysOnMarket": 67,
+    "newListings": 30,
+    "totalListings": 201
+  }
+}

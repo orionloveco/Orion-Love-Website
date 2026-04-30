@@ -1,0 +1,22 @@
+{
+  "areaKey": "loma_mack",
+  "areaName": "Loma / Mack",
+  "generatedAt": "2026-04-15T08:00:40.460Z",
+  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "stats": {
+    "areaKey": "loma_mack",
+    "zips": [
+      "81524",
+      "81525"
+    ],
+    "labels": [
+      "Loma",
+      "Mack"
+    ],
+    "lastUpdatedDate": null,
+    "medianPrice": 659900,
+    "averageDaysOnMarket": 104,
+    "newListings": 2,
+    "totalListings": 21
+  }
+}
