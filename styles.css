@@ -203,9 +203,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.01em;
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
-h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+h1 { font-size: clamp(2.55rem, 5.4vw, 4.45rem); line-height: 1.08; }
+h2 { font-size: clamp(1.95rem, 3.7vw, 3rem); line-height: 1.12; }
+h3 { font-size: clamp(1.2rem, 1.95vw, 1.52rem); line-height: 1.18; }
 
 p { color: var(--text); }
 
@@ -220,11 +220,11 @@ p { color: var(--text); }
 
 .section-intro,
 .lead {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--muted);
   margin-top: 0.6rem;
   max-width: var(--measure-intro);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 .section-header.centered .section-intro {
   margin-left: auto;
@@ -253,8 +253,8 @@ p { color: var(--text); }
   flex-shrink: 0;
 }
 .section-label span {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 600;
@@ -685,7 +685,7 @@ p { color: var(--text); }
   --hero-inner-top: clamp(64px, 8vw, 80px);
   --hero-inner-bottom: clamp(32px, 5vw, 48px);
   --hero-h1-size: clamp(2.3rem, 5vw, 4.3rem);
-  --hero-h1-line: 1.04;
+  --hero-h1-line: 1.01;
   --hero-h1-max: 16ch;
   --hero-lead-max: 56ch;
   --hero-lead-color: rgba(255, 255, 255, 0.78);
@@ -754,8 +754,8 @@ p { color: var(--text); }
   opacity: 0.6;
 }
 .hero-eyebrow span {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--hero-eyebrow-color);
   font-weight: 600;
@@ -800,20 +800,20 @@ p { color: var(--text); }
 }
 
 .hero-lead {
-  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.98rem, 1.55vw, 1.06rem);
   color: var(--hero-lead-color);
   max-width: var(--hero-lead-max);
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: var(--hero-lead-space);
   font-weight: 300;
 }
 
 .hero .hero-inner > p:not([class]),
 .hero .about-hero-support {
-  font-size: clamp(0.97rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.98rem, 1.55vw, 1.06rem);
   color: var(--hero-lead-color);
   max-width: var(--hero-lead-max);
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: var(--hero-lead-space);
   font-weight: 300;
 }
@@ -1033,11 +1033,11 @@ a.card-base:hover {
 }
 
 .card-base h3 {
-  font-size: clamp(1.12rem, 1.4vw, 1.26rem);
+  font-size: clamp(1.06rem, 1.22vw, 1.16rem);
 }
 
 .card-base h4 {
-  font-size: clamp(1.02rem, 1.2vw, 1.14rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
 }
 
 .card-base p {
@@ -1333,10 +1333,10 @@ a.card-base:hover {
 .cta-content p,
 .cta-content .section-intro,
 .cta-content .lead {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--muted);
   margin: 0 auto 1.75rem;
-  line-height: 1.85;
+  line-height: 1.8;
   max-width: 60ch;
 }
 
@@ -1424,7 +1424,7 @@ a.card-base:hover {
 .cta-band.cta-band--light .cta-band-copy p {
   color: var(--muted);
   font-size: 1.05rem;
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 2.25rem;
   max-width: var(--measure-cta);
   margin-left: auto;
@@ -2199,13 +2199,13 @@ body.page-faq .faq-panel-header {display: grid;
       margin-bottom: clamp(2.5rem, 5vw, 4rem);
       padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--sand);}
-body.page-faq .faq-panel-header h2 {font-size: clamp(2rem, 4vw, 3rem);
+body.page-faq .faq-panel-header h2 {font-size: clamp(2.1rem, 4.3vw, 3.25rem);
       color: var(--navy);
       font-weight: 300;}
 body.page-faq .faq-panel-header h2 em {font-style: italic; color: var(--gold);}
 body.page-faq .faq-panel-header p {color: var(--muted);
       font-size: 1.02rem;
-      line-height: 1.85;}
+      line-height: 1.8;}
 body.page-faq .faq-accordion {display: flex;
       flex-direction: column;
       gap: 0.75rem;}
@@ -2230,7 +2230,7 @@ body.page-faq .faq-item summary:focus-visible {outline: 2px solid var(--gold);
       outline-offset: -2px;
       border-radius: var(--radius-md);}
 body.page-faq .faq-q {font-family: "Cormorant Garamond", serif;
-      font-size: 1.13rem;
+      font-size: 1.08rem;
       font-weight: 500;
       color: var(--navy);
       line-height: 1.3;
@@ -2244,7 +2244,7 @@ body.page-faq .faq-body {padding: 0 1.6rem 1.5rem;
       border-top: 1px solid var(--sand);}
 body.page-faq .faq-body p {color: var(--muted);
       font-size: 0.97rem;
-      line-height: 1.85;
+      line-height: 1.8;
       padding-top: 1.25rem;}
 body.page-faq .faq-grid {display: grid;
       grid-template-columns: 1fr 1fr;
@@ -2316,7 +2316,7 @@ body.page-grand-junction-home-value .stat-note {font-size: 0.75rem; color: var(-
 body.page-grand-junction-home-value .value-section {background: var(--cream);}
 body.page-grand-junction-home-value .value-intro {max-width: 64ch;}
 body.page-grand-junction-home-value .value-intro h2 {margin-bottom: 0.75rem;}
-body.page-grand-junction-home-value .value-intro p {color: var(--muted); font-size: 1.05rem; line-height: 1.85;}
+body.page-grand-junction-home-value .value-intro p {color: var(--muted); font-size: 1.05rem; line-height: 1.8;}
 body.page-grand-junction-home-value .value-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem; margin-top: 3rem;}
 body.page-grand-junction-home-value .value-icon {width: 48px; height: 48px; border-radius: 12px;
@@ -2331,7 +2331,7 @@ body.page-grand-junction-home-value .valuation-inner {position: relative; z-inde
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;}
 body.page-grand-junction-home-value .valuation-copy h2 {color: var(--white); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 300; margin-bottom: 1rem;}
 body.page-grand-junction-home-value .valuation-copy h2 em {font-style: italic; color: var(--gold-lt);}
-body.page-grand-junction-home-value .valuation-copy p {color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem;}
+body.page-grand-junction-home-value .valuation-copy p {color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;}
 body.page-grand-junction-home-value .valuation-bullets {list-style: none;}
 body.page-grand-junction-home-value .valuation-bullets li {display: flex; align-items: flex-start; gap: 0.75rem;
       color: rgba(255,255,255,0.72); font-size: 0.95rem; margin-bottom: 0.9rem;}
@@ -2343,7 +2343,7 @@ body.page-grand-junction-home-value .why-num {font-family: "Cormorant Garamond",
 .cta-band.cta-band--soft {background: linear-gradient(180deg, rgba(12,26,61,0.04), rgba(12,26,61,0.09)); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .cta-content {text-align: center; max-width: 680px; margin: 0 auto;}
 body.page-grand-junction-home-value .cta-content h2 {margin-bottom: 0.75rem;}
-body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.85;}
+body.page-grand-junction-home-value .cta-content p {font-size: 1.05rem; color: var(--muted); margin: 0 auto 1.75rem; line-height: 1.8;}
 @media (max-width: 968px) {
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2, 1fr);}
 body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
@@ -2691,7 +2691,7 @@ body.page-services .protocol-copy h2 em {
 body.page-services .protocol-copy p {
   color: var(--muted);
   max-width: var(--measure-cta);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 body.page-services .protocol-points {
@@ -2736,7 +2736,7 @@ body.page-services .scope-shell h2 {
 
 body.page-services .scope-shell > p {
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 1rem;
 }
 
@@ -3117,19 +3117,21 @@ body.seller-neighborhood-page :is(.snapshot-inner, .dark-band-inner) {
 
 body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
   margin-bottom: 0.85rem;
+  font-size: clamp(1.9rem, 3.25vw, 2.6rem);
+  line-height: 1.12;
 }
 
 body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 1rem;
 }
 
 body.seller-neighborhood-page :is(.form-copy, .contact-copy) p {
   color: var(--muted);
   font-size: 1.02rem;
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
@@ -3162,8 +3164,8 @@ body.seller-neighborhood-page :is(.stat-val, .snap-val) span {
 }
 
 body.seller-neighborhood-page :is(.stat-lbl, .snap-label) {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
@@ -3222,7 +3224,7 @@ body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-i
 
 body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) p {
   font-size: 1rem;
-  line-height: 1.85;
+  line-height: 1.8;
   margin-bottom: 2rem;
 }
 
@@ -3244,7 +3246,7 @@ body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-i
 }
 
 .form-card h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
   color: var(--navy);
   margin-bottom: 0.4rem;
 }
@@ -3288,8 +3290,8 @@ form[data-lead-form="seller"] .form-group {
 
 form[data-lead-form="seller"] .form-group label {
   display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--navy);
   font-weight: 700;
@@ -3412,7 +3414,7 @@ body.seller-neighborhood-page .local-area-quick-facts .fact-value {
   color: var(--muted);
   font-size: 1.02rem;
   margin-top: 0.75rem;
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .cta-row-wrap {
@@ -3502,8 +3504,8 @@ body.seller-neighborhood-page .local-area-quick-facts .fact-value {
 }
 
 .nearby-area-label span {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 600;
@@ -3605,7 +3607,7 @@ body.page-privacy .privacy-intro {
 body.page-privacy .privacy-intro-copy p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 body.page-privacy .last-updated {
@@ -4089,7 +4091,7 @@ body.page-faq .faq-help-row p {
   max-width: 58ch;
   color: var(--dark-band-body);
   font-size: clamp(1rem, 1.8vw, 1.1rem);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .dark-band-full-process :is(.cta-center, .section-action-lg, .process-cta) {
@@ -4760,7 +4762,7 @@ body.page-areas .areas-jump-links a {
 
 .page-index .home-card.card-grid-3 p {
   font-size: 0.98rem;
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .page-index .home-card.card-grid-3 .card-icon {
