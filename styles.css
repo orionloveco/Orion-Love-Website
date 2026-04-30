@@ -682,18 +682,18 @@ p { color: var(--text); }
   color: var(--white);
   --hero-inner-max: 1120px;
   --hero-inner-align: left;
-  --hero-inner-top: clamp(4.75rem, 8vw, 6.6rem);
-  --hero-inner-bottom: clamp(2.75rem, 4.8vw, 3.8rem);
+  --hero-inner-top: clamp(64px, 8vw, 80px);
+  --hero-inner-bottom: clamp(32px, 5vw, 48px);
   --hero-h1-size: clamp(2.3rem, 5vw, 4.3rem);
   --hero-h1-line: 1.04;
   --hero-h1-max: 16ch;
   --hero-lead-max: 56ch;
   --hero-lead-color: rgba(255, 255, 255, 0.78);
-  --hero-lead-space: 2.35rem;
-  --hero-eyebrow-space: 1.05rem;
+  --hero-lead-space: 32px;
+  --hero-eyebrow-space: 16px;
   --hero-eyebrow-justify: flex-start;
   --hero-cta-justify: flex-start;
-  --hero-cta-gap: 0.95rem;
+  --hero-cta-gap: 16px;
   --hero-heading-color: var(--white);
   --hero-eyebrow-color: var(--gold-lt);
   --hero-trust-color: rgba(255, 255, 255, 0.4);
@@ -823,7 +823,7 @@ p { color: var(--text); }
   flex-wrap: wrap;
   justify-content: var(--hero-cta-justify);
   gap: var(--hero-cta-gap);
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 }
 
 .hero-trust {
@@ -2432,54 +2432,56 @@ body.page-services .services-hero {
 }
 
 .hero.hero-flagship {
-  min-height: clamp(680px, 92vh, 980px);
+  min-height: clamp(640px, 92vh, 960px);
   --hero-inner-max: 840px;
-  --hero-inner-top: clamp(5.8rem, 9.5vw, 7.6rem);
-  --hero-inner-bottom: clamp(3rem, 5vw, 4.15rem);
+  --hero-inner-top: clamp(64px, 9vw, 80px);
+  --hero-inner-bottom: clamp(32px, 5vw, 48px);
   --hero-h1-size: clamp(3rem, 6vw, 5.45rem);
   --hero-h1-line: 1.01;
   --hero-h1-max: 14ch;
   --hero-lead-max: 54ch;
-  --hero-lead-space: 2.7rem;
-  --hero-eyebrow-space: 1.15rem;
-  --hero-cta-gap: 1rem;
+  --hero-lead-space: 32px;
+  --hero-eyebrow-space: 16px;
+  --hero-cta-gap: 16px;
   --hero-overlay-before: linear-gradient(170deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 55%, rgba(12,26,61,0.9) 100%);
   --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.5), transparent);
 }
 
 .hero.hero-neighborhood {
-  min-height: clamp(580px, 83vh, 900px);
+  min-height: clamp(560px, 83vh, 880px);
   --hero-inner-max: 780px;
-  --hero-inner-top: clamp(5rem, 8.2vw, 6.3rem);
-  --hero-inner-bottom: clamp(2.7rem, 4.7vw, 3.6rem);
+  --hero-inner-top: clamp(64px, 8vw, 80px);
+  --hero-inner-bottom: clamp(32px, 5vw, 48px);
   --hero-h1-size: clamp(2.65rem, 5.35vw, 4.65rem);
   --hero-h1-line: 1.03;
   --hero-h1-max: 15ch;
   --hero-lead-max: 55ch;
-  --hero-lead-space: 2.3rem;
-  --hero-eyebrow-space: 1rem;
+  --hero-lead-space: 32px;
+  --hero-eyebrow-space: 16px;
   --hero-overlay-before:
     radial-gradient(1200px 460px at 82% -10%, rgba(184,146,58,0.14), transparent 70%),
     linear-gradient(165deg, rgba(8,18,50,0.81) 0%, rgba(12,26,61,0.6) 52%, rgba(12,26,61,0.88) 100%);
   --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.3), transparent);
 }
 
-.hero.hero-support {
+.hero.hero-support,
+.hero.hero-hub,
+body.page-grand-junction-home-value #sellerHubHero {
   min-height: clamp(430px, 62vh, 620px);
   color: var(--navy);
   --hero-inner-max: 860px;
   --hero-inner-align: center;
-  --hero-inner-top: clamp(4.7rem, 8.4vw, 6.1rem);
-  --hero-inner-bottom: clamp(2.2rem, 4vw, 3.1rem);
+  --hero-inner-top: clamp(64px, 8vw, 80px);
+  --hero-inner-bottom: clamp(32px, 5vw, 48px);
   --hero-h1-size: clamp(2.2rem, 4.75vw, 3.85rem);
   --hero-h1-line: 1.05;
   --hero-h1-max: 17ch;
   --hero-lead-max: 60ch;
-  --hero-lead-space: 1.95rem;
-  --hero-eyebrow-space: 0.95rem;
+  --hero-lead-space: 32px;
+  --hero-eyebrow-space: 16px;
   --hero-eyebrow-justify: center;
   --hero-cta-justify: center;
-  --hero-cta-gap: 0.85rem;
+  --hero-cta-gap: 16px;
   --hero-heading-color: var(--navy);
   --hero-eyebrow-color: var(--gold);
   --hero-lead-color: rgba(12, 26, 61, 0.72);
@@ -2507,24 +2509,6 @@ body.page-services .services-hero {
   margin-right: auto;
 }
 
-.hero.hero-hub,
-body.page-grand-junction-home-value #sellerHubHero {
-  min-height: clamp(620px, 88vh, 940px);
-  --hero-inner-max: 810px;
-  --hero-inner-top: clamp(5.3rem, 8.8vw, 7rem);
-  --hero-inner-bottom: clamp(2.9rem, 4.9vw, 3.9rem);
-  --hero-h1-size: clamp(2.85rem, 5.7vw, 5rem);
-  --hero-h1-line: 1.02;
-  --hero-h1-max: 15ch;
-  --hero-lead-max: 54ch;
-  --hero-lead-space: 2.55rem;
-  --hero-eyebrow-space: 1.1rem;
-  --hero-overlay-before:
-    radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
-    linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.45), transparent);
-}
-
 body.page-faq .faq-hero,
 body.page-about .about-trust-hero,
 body.page-contact .contact-hero {
@@ -2550,8 +2534,8 @@ body.page-contact .contact-hero {
 
 @media (max-width: 640px) {
   .hero {
-    --hero-inner-top: clamp(4.7rem, 11vw, 5.7rem);
-    --hero-inner-bottom: clamp(2.25rem, 6vw, 3rem);
+    --hero-inner-top: clamp(48px, 11vw, 64px);
+    --hero-inner-bottom: clamp(24px, 6vw, 32px);
   }
 
   .hero-cta {
@@ -4468,8 +4452,6 @@ body.page-services .method-spine .section-header {
 
 /* Tier differentiation strengthened for neighborhood pages */
 body.tier-premium .hero.hero-neighborhood {
-  --hero-inner-top: clamp(5.8rem, 9.6vw, 7.3rem);
-  --hero-h1-size: clamp(2.95rem, 5.9vw, 4.95rem);
   --hero-overlay-before:
     radial-gradient(980px 420px at 68% -4%, rgba(184, 146, 58, 0.24), transparent 66%),
     linear-gradient(166deg, rgba(8,18,50,0.9) 0%, rgba(12,26,61,0.7) 52%, rgba(8,18,50,0.92) 100%);
@@ -4488,9 +4470,6 @@ body.tier-premium .stat-box {
 }
 
 body.tier-lifestyle .hero.hero-neighborhood {
-  --hero-inner-top: clamp(5.2rem, 8.9vw, 6.5rem);
-  --hero-h1-size: clamp(2.7rem, 5.45vw, 4.5rem);
-  --hero-lead-max: 62ch;
   --hero-overlay-before:
     radial-gradient(1200px 420px at 45% -10%, rgba(184, 146, 58, 0.14), transparent 70%),
     linear-gradient(168deg, rgba(8,18,50,0.77) 0%, rgba(12,26,61,0.52) 56%, rgba(8,18,50,0.8) 100%);
@@ -4512,8 +4491,6 @@ body.tier-lifestyle :is(.snapshot-section, .identity-section) {
 }
 
 body.tier-value .hero.hero-neighborhood {
-  --hero-inner-top: clamp(4.35rem, 7.2vw, 5.35rem);
-  --hero-h1-size: clamp(2.3rem, 4.65vw, 3.75rem);
   --hero-overlay-before: linear-gradient(166deg, rgba(8,18,50,0.9) 0%, rgba(12,26,61,0.72) 56%, rgba(8,18,50,0.92) 100%);
   --hero-overlay-after: none;
 }
@@ -4657,9 +4634,6 @@ body.page-areas .areas-jump-links a {
 --------------------------------- */
 
 .page-index .home-hero {
-  min-height: 94vh;
-  display: flex;
-  align-items: center;
   background:
     linear-gradient(180deg, rgba(12, 26, 61, 0.74) 0%, rgba(12, 26, 61, 0.58) 48%, rgba(12, 26, 61, 0.66) 100%),
     radial-gradient(circle at 20% 18%, rgba(212, 170, 90, 0.12), transparent 32%),
@@ -4669,45 +4643,6 @@ body.page-areas .areas-jump-links a {
 .page-index .home-hero::after {
   background: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.45), transparent);
   opacity: 0.55;
-}
-
-.page-index .home-hero-inner {
-  max-width: 58rem;
-  margin-left: 0;
-  padding-top: clamp(6.5rem, 10vw, 8.75rem);
-  padding-bottom: clamp(4rem, 7vw, 5.5rem);
-}
-
-.page-index .home-hero-eyebrow {
-  margin-bottom: 1.35rem;
-}
-
-.page-index .home-hero-eyebrow::before,
-.page-index .home-hero-eyebrow::after {
-  width: 44px;
-  opacity: 0.7;
-}
-
-.page-index .home-hero-eyebrow span {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-}
-
-.page-index .home-hero-title {
-  max-width: 10ch;
-  margin-bottom: 1.15rem;
-  font-size: clamp(3.9rem, 8vw, 6.7rem);
-  line-height: 0.96;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-.page-index .home-hero-lead {
-  max-width: 34rem;
-  margin-bottom: 2rem;
-  font-size: clamp(1.02rem, 1.75vw, 1.12rem);
-  line-height: 1.9;
-  color: rgba(247, 244, 237, 0.86);
 }
 
 .page-index .home-hero-cta {
@@ -4956,10 +4891,6 @@ body.page-areas .areas-jump-links a {
 --------------------------------- */
 
 @media (max-width: 1024px) {
-  .page-index .home-hero {
-    min-height: 88vh;
-  }
-
   .page-index .home-split {
     --split-cols: 1fr;
     --split-gap: 2rem;
@@ -4975,38 +4906,6 @@ body.page-areas .areas-jump-links a {
 }
 
 @media (max-width: 767px) {
-  .page-index .home-hero {
-    min-height: auto;
-    padding-top: 1.25rem;
-  }
-
-  .page-index .home-hero-inner {
-    max-width: none;
-    padding-top: 6.5rem;
-    padding-bottom: 3.25rem;
-  }
-
-  .page-index .home-hero-title {
-    max-width: 100%;
-    font-size: clamp(3rem, 13vw, 4.2rem);
-    line-height: 0.98;
-  }
-
-  .page-index .home-hero-lead {
-    max-width: 100%;
-    font-size: 1rem;
-    line-height: 1.82;
-  }
-
-  .page-index .home-hero-eyebrow {
-    gap: 0.7rem;
-  }
-
-  .page-index .home-hero-eyebrow::before,
-  .page-index .home-hero-eyebrow::after {
-    width: 26px;
-  }
-
   .page-index .home-hero-cta {
     width: 100%;
   }
