@@ -120,61 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     target.innerHTML = renderFeaturedAreasMarkup(mode);
   }
 
-  function renderSharedFooter() {
-    const target = document.getElementById('siteFooter');
-    if (!target) return;
-
-    target.innerHTML = `
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3 class="logo-footer">Orion Love</h3>
-        <p>Helping Mesa County home sellers move with clarity, confidence, and honest communication.</p>
-        <p class="footer-brand-note">Serving ${BUSINESS_IDENTITY.serviceAreaPrimary}<br/>including Grand Junction, Fruita, Palisade, and Clifton</p>
-      </div>
-      <div class="footer-support">
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/sell-with-orion">Sellers</a></li>
-            <li><a href="/areas">Areas</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:${BUSINESS_IDENTITY.email}">${BUSINESS_IDENTITY.email}</a></li>
-            <li><a href="tel:${BUSINESS_IDENTITY.phoneLink}">${BUSINESS_IDENTITY.phoneDisplay}</a></li>
-            <li>${BUSINESS_IDENTITY.addressLine1}<br/>${BUSINESS_IDENTITY.cityStateZip}</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-profiles" aria-label="Professional profiles">
-        <p class="footer-profiles__title">Verified Profiles</p>
-        <ul class="footer-profiles__list">
-          <li><a href="https://share.google/L2Jv06TsswRhSzWnd" target="_blank" rel="noopener noreferrer">Google Business Profile</a></li>
-          <li><a href="https://www.zillow.com/profile/OrionLove" target="_blank" rel="noopener noreferrer">Zillow</a></li>
-          <li><a href="https://www.realtor.com/realestateagents/6960e90c720b6c832a10ce6b" target="_blank" rel="noopener noreferrer">Realtor.com</a></li>
-          <li><a href="https://www.linkedin.com/in/orionlove/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://kw.com/agent/orion-love/2000137810" target="_blank" rel="noopener noreferrer">Keller Williams</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© ${new Date().getFullYear()} ${BUSINESS_IDENTITY.attribution}. All rights reserved.</p>
-      <a href="/privacy">Privacy Policy</a>
-    </div>
-  </div>
-</footer>`;
-  }
-
   renderFeaturedAreas();
-  renderSharedFooter();
   syncSharedNavState(path);
 
   function syncSharedNavState(currentPath) {
