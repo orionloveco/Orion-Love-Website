@@ -4843,3 +4843,46 @@ body.page-areas .areas-jump-links a {
   }
 
 }
+
+/* ============================================================
+   Homepage Editorial Cover System
+   Scope: .page-index
+============================================================ */
+.page-index .home-section{padding:clamp(3.5rem,7vw,6.5rem) 0;}
+.page-index .homepage-eyebrow{font:600 .74rem/1.2 'Raleway',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold,#b8923a);margin-bottom:1rem;}
+.page-index .homepage-cover{position:relative;color:#fff;background:linear-gradient(120deg,rgba(12,26,61,.92),rgba(12,26,61,.72)),url('images/gj-landscape.jpg') center/cover no-repeat;min-height:78vh;display:flex;align-items:flex-end;padding-top:7.25rem;}
+.page-index .homepage-cover__grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.8fr);gap:clamp(1.5rem,3.2vw,3rem);align-items:end;}
+.page-index .homepage-cover__title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5.3rem);line-height:.93;letter-spacing:.01em;margin:0 0 1.2rem;}
+.page-index .homepage-cover__title span{display:block;white-space:nowrap;}
+.page-index .homepage-cover__deck{max-width:42ch;color:rgba(255,255,255,.9);}
+.page-index .homepage-cover__actions{display:flex;gap:.85rem;flex-wrap:wrap;margin:1.2rem 0 1rem;}
+.page-index .homepage-cover__note{max-width:54ch;font-size:.95rem;color:rgba(255,255,255,.84);margin:0;}
+.page-index .homepage-cover__rail{border-left:1px solid rgba(247,244,237,.45);padding-left:1.2rem;background:rgba(12,26,61,.24);backdrop-filter:blur(2px);}
+.page-index .homepage-cover__rail-title{font-size:.83rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand,#e8e1d0);margin:0 0 .8rem;}
+.page-index .homepage-cover__rail ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.page-index .homepage-cover__rail li{font-size:1rem;color:#fff}.page-index .homepage-cover__rail span{color:var(--gold,#b8923a);margin-right:.4rem}
+.page-index .homepage-pov__grid,.page-index .homepage-signals__grid,.page-index .homepage-next-step__grid,.page-index .homepage-atlas__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,4vw,4rem)}
+.page-index .homepage-pov h2,.page-index .homepage-feature h2,.page-index .homepage-brief h2,.page-index .homepage-signals h2,.page-index .homepage-atlas h2,.page-index .homepage-next-step h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.2vw,3.55rem);line-height:1.02;margin:.1rem 0 1rem;color:var(--navy,#0c1a3d)}
+.page-index .homepage-pov blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.7vw,2rem);max-width:18ch;border-left:1px solid var(--gold,#b8923a);padding-left:1rem;color:var(--navy,#0c1a3d);margin:1.2rem 0 0}
+.page-index .homepage-pov__label,.page-index .homepage-signals__label,.page-index .homepage-feature__note-label{font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;color:var(--navy-mid,#16275a)}
+.page-index .homepage-pov__caption{font-style:italic;border-top:1px solid var(--sand,#e8e1d0);margin-top:1rem;padding-top:1rem;color:#374166}
+.page-index .homepage-pov__index{display:flex;flex-wrap:wrap;gap:.7rem 1.2rem;list-style:none;padding:0;margin:1rem 0 0;border-top:1px solid var(--sand,#e8e1d0);padding-top:1rem}
+.page-index .homepage-pov__index span{color:var(--gold,#b8923a);margin-right:.35rem}
+.page-index .homepage-feature{position:relative;color:#fff;background:linear-gradient(120deg,rgba(12,26,61,.78),rgba(12,26,61,.25)),url('images/gj-landscape.jpg') center/cover no-repeat;min-height:68vh;display:flex;align-items:flex-end}
+.page-index .homepage-feature__inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:end}
+.page-index .homepage-feature__bg{position:absolute;left:0;top:-2.1rem;font:600 clamp(2.4rem,9vw,7rem)/.9 'Raleway',sans-serif;letter-spacing:.15em;opacity:.14;margin:0}
+.page-index .homepage-feature h2,.page-index .homepage-feature p{color:#fff}
+.page-index .homepage-feature__note{max-width:25ch;margin-left:auto;padding:1rem 0 0;border-top:1px solid rgba(255,255,255,.44)}
+.page-index .homepage-brief__micro{max-width:55ch}.page-index .homepage-brief__rows article{display:grid;grid-template-columns:110px minmax(0,220px) 1fr;gap:1rem;align-items:start;padding:1.3rem 0;border-top:1px solid var(--sand,#e8e1d0)}
+.page-index .homepage-brief__rows article:last-child{border-bottom:1px solid var(--sand,#e8e1d0)}
+.page-index .homepage-brief .num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,4vw,3.6rem);line-height:.8;color:var(--gold,#b8923a);margin:0}
+.page-index .homepage-signals{background:var(--navy,#0c1a3d);color:#fff}.page-index .homepage-signals h2,.page-index .homepage-signals .homepage-eyebrow{color:#fff}.page-index .homepage-signals .homepage-eyebrow{opacity:.8}
+.page-index .homepage-signals__strip{display:flex;flex-wrap:wrap;gap:.7rem;list-style:none;padding:1.1rem 0 0;margin:1.2rem 0 0;border-top:1px solid rgba(255,255,255,.25)}
+.page-index .homepage-signals__strip li{padding:.35rem .85rem;border:1px solid rgba(212,170,90,.5)}
+.page-index .homepage-atlas__links{display:grid;grid-template-columns:1fr 1fr;gap:1rem 2rem}.page-index .homepage-atlas__links ul{list-style:none;padding:0;margin:.55rem 0 0;display:grid;gap:.35rem}
+.page-index .homepage-atlas__links a{color:var(--navy,#0c1a3d);text-decoration:none;border-bottom:1px solid transparent}.page-index .homepage-atlas__links a:hover{border-color:var(--gold,#b8923a)}
+.page-index .homepage-next-step{position:relative;background:var(--cream,#f7f4ed)}.page-index .homepage-next-step__bg{font:600 clamp(2.1rem,8vw,6rem)/.85 'Raleway',sans-serif;letter-spacing:.16em;opacity:.1;margin:0 0 .5rem;color:var(--navy,#0c1a3d)}
+.page-index .homepage-next-step__card{background:#fff;border:1px solid var(--sand,#e8e1d0);padding:1.2rem;align-self:center}.page-index .homepage-next-step__actions{display:grid;gap:.75rem;margin-top:1rem}
+.page-index .main-footer{background:#fbfaf7}
+@media (max-width:1024px){.page-index .homepage-cover{min-height:unset;padding-top:6.2rem}.page-index .homepage-cover__grid,.page-index .homepage-pov__grid,.page-index .homepage-signals__grid,.page-index .homepage-next-step__grid,.page-index .homepage-atlas__grid,.page-index .homepage-feature__inner{grid-template-columns:1fr}.page-index .homepage-cover__rail{max-width:420px}.page-index .homepage-feature{min-height:58vh}.page-index .homepage-brief__rows article{grid-template-columns:72px 1fr}}
+@media (max-width:768px){.page-index .homepage-cover__title span{white-space:normal}.page-index .homepage-cover__actions .btn{width:100%;text-align:center}.page-index .homepage-atlas__links{grid-template-columns:1fr}.page-index .homepage-feature__bg{top:-1rem}}
