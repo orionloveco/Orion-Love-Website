@@ -344,17 +344,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function formatUpdatedDate(value, areaLabel) {
-    const suffix = areaLabel ? ` · ${areaLabel}` : '';
-    if (!value) return `Live market data${suffix}`;
+  function formatUpdatedDate(value) {
+    if (!value) return 'Source: RentCast market data.';
 
     const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return `Live market data${suffix}`;
+    if (Number.isNaN(parsed.getTime())) return 'Source: RentCast market data.';
 
-    return `Updated ${parsed.toLocaleDateString('en-US', {
+    return `Source: RentCast market data. Last updated: ${parsed.toLocaleDateString('en-US', {
       month: 'long',
+      day: 'numeric',
       year: 'numeric',
-    })}${suffix}`;
+    })}.`;
   }
 
   function showFormMsg(el, text, type) {
@@ -413,9 +413,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const noteEl = blockEl.querySelector('[data-market-note]');
     if (!noteEl) return;
 
-    const areaLabel = blockEl.dataset.marketAreaLabel || '';
     const updated = areaData.lastUpdatedDate || generatedAt;
-    noteEl.textContent = formatUpdatedDate(updated, areaLabel);
+    noteEl.textContent = formatUpdatedDate(updated);
   }
 
   async function loadMarketStatsBlocks() {
