@@ -186,14 +186,14 @@
 
 .page-index .main-footer.editorial-footer .logo-footer{color:#fff}
 
-.page-index .main-footer.editorial-footer h4,
+.page-index .main-footer.editorial-footer .footer-contact h4,
 .page-index .main-footer.editorial-footer .footer-profiles__title{
   color:#d4aa5a;
-  font-family:"Raleway",sans-serif;
-  font-size:.68rem;
-  letter-spacing:.18em;
+  font-family:"Cormorant Garamond",serif;
+  font-size:.74rem;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  font-weight:700;
+  font-weight:500;
   margin-bottom:.75rem;
 }
 
