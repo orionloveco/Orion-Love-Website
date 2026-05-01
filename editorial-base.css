@@ -7,13 +7,27 @@
   -webkit-backdrop-filter:blur(8px);
 }
 
-.main-header nav{min-height:74px}
+.main-header nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.4rem;
+  height:72px;
+  min-height:72px;
+  max-width:1240px;
+  margin:0 auto;
+  padding:clamp(.65rem,1.9vh,1rem) clamp(1rem,2.8vw,2.5rem);
+}
 
 .main-header .logo-main{
   font-family:'Raleway',sans-serif;
   letter-spacing:.12em;
   font-size:.72rem;
   color:rgba(247,244,237,.95);
+}
+
+.main-header .nav-menu{
+  gap:clamp(1.05rem,1.8vw,2.25rem);
 }
 
 .main-header .nav-menu a,
@@ -46,6 +60,16 @@
 
 .main-header .btn-nav:hover{background:rgba(184,146,58,.28);color:#f7f4ed}
 .main-header .mobile-toggle span{background:#f7f4ed}
+
+.main-header .nav-dropdown-menu{
+  background:rgba(8,18,50,.97);
+  border-color:rgba(184,146,58,.26);
+}
+
+.main-header .nav-dropdown-heading{
+  color:rgba(212,170,90,.9);
+  letter-spacing:.13em;
+}
 
 .main-footer{
   background:#0c1a3d;
@@ -98,12 +122,12 @@
 .main-footer .footer-bottom a{font-size:.74rem;line-height:1.45}
 
 @media (max-width:900px){
-  .main-header nav{min-height:70px}
+  .main-header nav{height:70px;min-height:70px}
   .main-footer .footer-grid{grid-template-columns:1fr;gap:1.25rem}
   .main-footer .footer-support{display:grid}
 }
 
 @media (max-width:768px){
-  .main-header nav{min-height:68px}
+  .main-header nav{height:68px;min-height:68px}
   .main-header .logo-main{font-size:.68rem;letter-spacing:.11em}
 }

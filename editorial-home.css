@@ -65,8 +65,8 @@
 /* Homepage-only editorial chrome refinements */
 .page-index .main-header{position:fixed;top:0;left:0;right:0;z-index:1200;background:transparent;border-bottom:0;box-shadow:none}
 .page-index .main-header::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,50,.9) 0%,rgba(12,26,61,.56) 45%,rgba(12,26,61,0) 100%);pointer-events:none;z-index:0}
-.page-index .main-header nav{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(.65rem,1.9vh,1rem) clamp(1rem,2.8vw,2.5rem)}
 .page-index .main-header.scrolled{background:transparent;box-shadow:none}
+.page-index .main-header nav{position:relative;z-index:1}
 
 .page-index .editorial-homepage .eh-cover,
 .page-index .editorial-homepage .eh-cover-layout{
