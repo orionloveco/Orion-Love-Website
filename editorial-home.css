@@ -197,6 +197,15 @@
 .page-index .main-footer.editorial-footer .footer-contact{justify-self:end;min-width:180px;padding-left:0}
 .page-index .main-footer.editorial-footer .footer-profiles{justify-self:end;min-width:210px}
 
+
+.page-index .main-footer.editorial-footer .footer-contact,
+.page-index .main-footer.editorial-footer .footer-profiles{margin-top:0;padding-top:0;align-self:start}
+
+.page-index .main-footer.editorial-footer .footer-contact h4,
+.page-index .main-footer.editorial-footer .footer-profiles__title{margin-top:0}
+
+.page-index .main-footer.editorial-footer .footer-contact ul,
+.page-index .main-footer.editorial-footer .footer-profiles__list{margin-top:0;padding-top:0}
 .page-index .main-footer.editorial-footer .logo-footer{color:#fff;font-size:clamp(1.9rem,3vw,2.35rem);line-height:1.06;margin-bottom:.65rem}
 
 .page-index .main-footer.editorial-footer .footer-contact h4,
