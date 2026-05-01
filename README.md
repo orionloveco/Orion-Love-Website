@@ -1,6 +1,25 @@
-# ORION LOVE — WEBSITE SOURCE OF TRUTH
+# ORION LOVE WEBSITE SOURCE OF TRUTH
 ### Grand Junction Real Estate · Seller Specialist · Mesa County, Colorado
-**Version 1.2 — This document governs all site decisions. When in doubt, return here.**
+**Version 1.3 - Editorial Design Standard. This document governs all site decisions. When in doubt, return here.**
+
+---
+
+## Non-Negotiable Brand Standard
+
+This site must not drift toward a generic Realtor website, generic SaaS landing page, local-business template, or lead-capture funnel.
+
+The intended design language is:
+
+- Premium local editorial
+- Mesa County seller advisor
+- Calm authority
+- Magazine-like pacing
+- Strategic, not salesy
+- Polished, grounded, and human
+
+Every code, layout, copy, SEO, schema, or performance decision must support that direction.
+
+If a change makes the site technically cleaner but visually more generic, call it out before making it.
 
 ---
 
@@ -15,6 +34,7 @@ To protect AI discoverability, SEO visibility, crawlability, trust, and page mea
 - HTML is the source of truth. JavaScript is the enhancement layer.
 
 The following must not be JavaScript-only:
+
 - Main headings and body copy
 - Local service area context
 - Internal links and navigation
@@ -52,42 +72,58 @@ Use AGENTS.md for exact validation commands.
 # PART ONE: STRATEGIC FOUNDATION
 
 ## Who This Site Is For
+
 **Primary audience:** Homeowners in Mesa County, Colorado who are preparing to sell or actively considering it.
+
 **Secondary audience:** Homeowners who want to understand their home's value before committing to anything.
-**Not the audience:** Buyers. Buyers are acknowledged, not served.
+
+**Not the audience:** Buyers. Buyers are acknowledged, not centered.
 
 ## What This Site Must Do
-1. Be found — by AI assistants, search engines, and direct referrals
-2. Build immediate trust — through clarity, not credentials
-3. Create one action — a conversation with Orion Love
 
-Everything on this site serves one of those three purposes. If it doesn't, it doesn't belong.
+1. Be found by AI assistants, search engines, and direct referrals.
+2. Build immediate trust through clarity, local specificity, and visual confidence.
+3. Create one action: a conversation with Orion Love.
+
+Everything on this site serves one of those purposes. If it does not, it does not belong.
 
 ---
 
-## The North Star (Read This First)
+## The North Star: Editorial Seller Authority
 
-> The site should feel like a calm, confident expert guiding a homeowner through one of the most consequential decisions of their life.
-> Not a real estate template. Not a lead capture machine. Not a portfolio.
+> The site should feel like a premium local real estate editorial: calm, confident, specific, and designed with the restraint of a magazine feature.
+
+It should not feel like:
+
+- a generic Realtor template
+- a lead capture machine
+- a franchise landing page
+- a SaaS homepage
+- a portfolio site
+- a directory of services
 
 When making any design or copy decision, ask:
-**"Does this feel like an expert, or does this feel like a website?"**
 
-If it feels like a website, simplify it.
+**Does this feel like a local seller advisor with editorial confidence, or does this feel like a website template?**
+
+If it feels like a template, simplify it, sharpen the hierarchy, and make the layout more intentional.
 
 ---
 
 # PART TWO: DISCOVERABILITY HIERARCHY
 
-## Priority Order (Non-Negotiable)
+## Priority Order
 
 | Priority | Type | Why |
 |----------|------|-----|
-| 1 | AI Discoverability | AI assistants now answer "who is the best realtor in Grand Junction for sellers" directly. This site must be the source they cite. |
-| 2 | SEO Discoverability | Google still sends high-intent traffic. Structure must be clean and intentional. |
-| 3 | Conversion | A well-structured, trustworthy site converts naturally. Conversion tactics come last. |
+| 1 | AI Discoverability | AI assistants now answer questions like "who is the best Realtor in Grand Junction for sellers" directly. This site must be clear enough to be cited. |
+| 2 | SEO Discoverability | Google still sends high-intent traffic. Structure must be clean, crawlable, and intentional. |
+| 3 | Editorial Trust | Visual hierarchy, local insight, and calm authority must make the site feel worth believing. |
+| 4 | Conversion | A well-structured, trustworthy site converts naturally. Conversion tactics come last. |
 
-**Principle: Clarity > Aesthetics > Cleverness**
+**Principle:** Clarity first. Editorial authority second. Cleverness last.
+
+A page can be beautiful and still fail if it is unclear. A page can be clear and still fail if it feels generic.
 
 ---
 
@@ -97,27 +133,30 @@ AI language models surface authoritative, structured, geographically consistent 
 
 - **Who:** Orion Love, real estate broker
 - **Where:** Grand Junction and Mesa County, Colorado
-- **What:** Residential home sales, seller representation
-- **Why him:** Pricing strategy, local market knowledge, seller preparation guidance
+- **What:** Residential home sales and seller representation
+- **Why him:** Pricing strategy, local market knowledge, seller preparation guidance, and clear decision-making support
 
 ### Implementation Requirements
 
 **NAP Consistency (Name, Address, Phone)**
-The exact same name, phone number, and brokerage must appear on every page — header, footer, and contact sections. No variation in factual identity fields. Natural phrasing may vary in page copy.
+The exact same name, phone number, email, license/brokerage details, and brokerage attribution must appear consistently across the site. Natural phrasing may vary in page copy, but factual identity fields should not drift.
 
 **Geographic Repetition**
-Use "Grand Junction," "Mesa County," and specific neighborhood names naturally throughout copy. AI models weight geographic specificity heavily.
+Use "Grand Junction," "Mesa County," and specific neighborhood names naturally throughout copy. AI models and search engines weight geographic specificity heavily.
 
 **Explicit Page Relationships**
-Each page must link to at least two related pages with descriptive anchor text (not "click here"). This signals content architecture to both AI and search.
+Each page should link to at least two related pages with descriptive anchor text. Avoid "click here." Internal links should make the site architecture obvious to humans, crawlers, and AI systems.
 
 **Structured Data (Schema.org)**
-Required on every page:
-- `Person` schema — Orion Love, broker, Mesa County
-- `LocalBusiness` schema — brokerage name, address, service area
-- `RealEstateAgent` schema — specialization, geographic coverage
-- `BreadcrumbList` — on all interior pages
-- `FAQPage` — where relevant (Home Value page especially)
+Required where page-appropriate:
+
+- `Person` schema for Orion Love
+- `RealEstateAgent` schema with stable entity ID
+- `LocalBusiness` or brokerage/entity reference where appropriate
+- `BreadcrumbList` on interior pages
+- `FAQPage` where the page actually contains FAQ content
+
+Schema must reinforce, not conflict with, visible page content.
 
 ---
 
@@ -125,44 +164,48 @@ Required on every page:
 
 ### Page-Level Keyword Ownership
 
-Each page owns exactly one search intent. No two pages compete.
+Each page owns one primary search intent. No two pages should compete for the same job.
 
 | Page | Primary Keyword | Search Intent |
 |------|----------------|---------------|
-| Homepage | Grand Junction realtor for home sellers | Who to hire |
+| Homepage | Grand Junction Realtor for home sellers | Who to hire |
 | Seller Page | How to sell a home in Mesa County | How it works |
 | Home Value Page | What is my home worth in Grand Junction | Self-research |
 | About Page | Orion Love Grand Junction real estate | Trust/vetting |
 | Area Pages | Selling a home in [Neighborhood] | Local specificity |
 
 ### Technical SEO Checklist (Per Page)
-- [ ] Unique `<title>` tag (60 characters max)
-- [ ] Unique meta description (155 characters max)
-- [ ] Canonical tag pointing to itself
-- [ ] Open Graph image (1200×630px, consistent branding)
-- [ ] H1 clearly represents primary keyword — naturally, not forced
+
+- [ ] Unique `<title>` tag, ideally 60 characters or fewer
+- [ ] Unique meta description, ideally 155 characters or fewer
+- [ ] Canonical tag pointing to the preferred clean URL
+- [ ] Open Graph image, 1200 x 630px when available
+- [ ] H1 clearly represents the page intent naturally
 - [ ] No duplicate page intent across the site
+- [ ] Crawl-critical content present in raw HTML
 
 ---
 
-## Entity Reinforcement Rule (Critical)
+## Entity Reinforcement Rule
 
-AI systems build authority by encountering the same entity definition repeatedly and consistently across an entire site. Variation weakens it. Repetition creates it.
+AI systems build authority by encountering the same entity definition repeatedly and consistently across the site. Variation weakens it. Consistency strengthens it.
 
 Every page must reinforce this identity:
 
 > **Orion Love** is a real estate broker specializing in **home sellers** in **Mesa County, Colorado**.
 
-This must appear — naturally — in:
+This must appear naturally in:
+
 - Page copy
-- Headings (at least once per page)
+- Headings where appropriate
 - Meta titles and descriptions
 - Schema markup
 - Internal link anchor text
+- Footer and contact areas
 
-This is not about stuffing a phrase. It's about never letting a page exist in isolation from the core identity. A visitor — or an AI — landing on any page should be able to answer: *who is this, what do they do, and where?* within the first two seconds.
+This is not keyword stuffing. It is entity clarity.
 
-**The test:** Read any page in isolation. If the answer to those three questions isn't immediate, the page needs revision.
+**The test:** Read any page in isolation. Within the first two seconds, a visitor or crawler should understand who Orion is, what he does, and where he works.
 
 ---
 
@@ -172,19 +215,24 @@ This is not about stuffing a phrase. It's about never letting a page exist in is
 
 **One job:** Convince a Mesa County homeowner that Orion Love is the right person to call before they list.
 
-**Structure:**
-1. **Hero** — One statement. One CTA. No subheadings competing with it.
-2. **Differentiation** — Editorial split: why sellers choose Orion specifically (not generically)
-3. **Process** — Three steps: Price / Prepare / Execute. No more.
-4. **Local Insight** — One specific, real market observation. Not a generic market update.
-5. **CTA** — Repeat the one action. Different phrasing, same destination.
+**Editorial role:** The homepage should feel like the cover of a local seller magazine, not a directory and not a homepage stuffed with modules.
+
+**Preferred structure:**
+
+1. **Editorial Hero / Cover Moment** - One dominant seller-focused statement, one primary CTA, strong visual hierarchy, and a clear Mesa County signal.
+2. **Feature Spread** - A visually distinct section explaining why sellers need guidance before they list. This should feel custom, not like a generic content block.
+3. **Process** - Three steps: Price / Prepare / Execute. Keep it tight.
+4. **Local Insight** - One specific Mesa County observation or market behavior note.
+5. **Closing CTA** - Repeat the same action with a quieter, confident close.
 
 **Rules:**
-- No routing grids ("For Buyers / For Sellers / For Investors")
-- No testimonial carousels
-- No card clusters
-- No competing CTAs
-- Hero message must be written for a seller, not a general visitor
+
+- No routing grids such as "For Buyers / For Sellers / For Investors."
+- No testimonial carousels.
+- No unnecessary card clusters.
+- No competing hero CTAs.
+- Hero message must be written for a seller, not a general visitor.
+- The first screen should feel like an editorial cover, not a generic landing page.
 
 ---
 
@@ -192,18 +240,25 @@ This is not about stuffing a phrase. It's about never letting a page exist in is
 
 **One job:** Make a homeowner feel confident that Orion's process removes uncertainty.
 
-**Structure:**
-1. **Seller Intro** — What working with Orion actually feels like (emotional before logical)
-2. **The Experience** — Two or three concrete moments in the process, written narratively
-3. **Process** — Three steps, labeled simply, with one-sentence explanations
-4. **Local Judgment** — A specific claim about Mesa County pricing or buyer behavior that only someone local would know
-5. **CTA** — Consultation framed as low-commitment ("Let's talk about your home")
+**Editorial role:** This page should feel like a seller strategy feature, not a service list.
+
+**Preferred structure:**
+
+1. **Seller Intro** - What working with Orion actually feels like. Emotional clarity before process details.
+2. **Feature Statement / Pull Quote** - One strong line that captures the seller problem in plain language.
+3. **The Experience** - Two or three concrete moments in the process, written narratively.
+4. **Process** - Three steps, labeled simply, with short explanations.
+5. **Local Judgment** - A specific claim about Mesa County pricing, prep, or buyer behavior.
+6. **CTA** - Consultation framed as low-commitment and practical.
 
 **Rules:**
-- No framework-heavy language ("synergistic approach," "full-service experience")
-- No numbered lists of features
-- No vague trust statements ("dedicated to your success")
-- Copy should pass this test: *could a national franchise write this exact sentence?* If yes, rewrite it.
+
+- No framework-heavy language.
+- No long numbered feature lists.
+- No vague trust statements.
+- Avoid turning every idea into a card.
+- Use pull quotes, narrow columns, and visual pacing to prevent long article fatigue.
+- Copy should pass this test: could a national franchise write this exact sentence? If yes, rewrite it.
 
 ---
 
@@ -211,16 +266,19 @@ This is not about stuffing a phrase. It's about never letting a page exist in is
 
 **One job:** Capture a high-quality consultation request from a motivated seller.
 
-**Structure:**
-1. **Headline** — Specific, calm, confident ("Know what your home is actually worth")
-2. **What You Get** — Three deliverables, written as outcomes not features
-3. **Why Estimates Fail** — One short section explaining why Zillow/Redfin miss Mesa County nuance
-4. **Form** — Address, name, contact. Nothing else.
-5. **Reassurance** — Below the form: no obligation, no spam, response time
+**Editorial role:** This page should feel like a premium intake and value briefing, not a lead-generation trap.
 
-**Tone:** Simple. Calm. Confident. This page should feel like a premium intake form, not a lead gen trap.
+**Preferred structure:**
 
-**SEO note:** This page should have an FAQ schema block answering: "How accurate is Zillow in Grand Junction?" and "How do I find out what my home is worth in Mesa County?"
+1. **Headline** - Specific, calm, confident.
+2. **What You Get** - Three outcomes, not feature bullets.
+3. **Why Estimates Fail** - One short, local explanation of why automated estimates miss Mesa County nuance.
+4. **Form** - Address, name, contact. Keep it simple.
+5. **Reassurance** - No obligation, no spam, clear response expectation.
+
+**Tone:** Simple. Calm. Confident.
+
+**SEO note:** This page may use FAQ schema when the visible page includes matching FAQ content about valuation accuracy in Grand Junction and Mesa County.
 
 ---
 
@@ -228,37 +286,48 @@ This is not about stuffing a phrase. It's about never letting a page exist in is
 
 **One job:** Convert a researching homeowner into a trusting one.
 
-**Structure:**
-1. **Positioning Statement** — What Orion does and who he does it for. First sentence, no preamble.
-2. **Why This Way** — The reasoning behind the seller-first approach. Specific, personal, not rehearsed.
-3. **Client Experience** — What working together actually looks like, written from the client's perspective
-4. **Grounding** — Local and professional context (years in Mesa County, brokerage, market knowledge)
-5. **CTA** — Soft: "If you're thinking about selling, let's have a conversation."
+**Editorial role:** The About page should feel like a profile feature, not a LinkedIn bio.
+
+**Preferred structure:**
+
+1. **Profile Hero** - Positioning statement, portrait or strong visual, and immediate seller/local context.
+2. **Why This Way** - The reasoning behind the seller-first approach. Specific and personal, not rehearsed.
+3. **Client Experience** - What working together feels like from the client's perspective.
+4. **Grounding** - Brokerage, license, service area, verified profiles, and local context.
+5. **CTA** - Soft, conversational, and seller-focused.
 
 **Rules:**
-- No third-person bio language in a first-person section
-- No credential lists ("licensed in Colorado since...")
-- No mission statements
-- The page should feel like meeting someone, not reading a LinkedIn profile
+
+- No third-person bio language in first-person sections.
+- No generic credential dump.
+- No mission statements.
+- Use visual trust signals without making the page feel like a resume.
+- The page should feel like meeting Orion, not reading a profile page.
 
 ---
 
 ## Area Pages
 
-**One job:** Rank for "[Neighborhood] home seller" searches while demonstrating genuine local knowledge.
+**One job:** Rank for local seller searches while demonstrating genuine local knowledge.
 
-**Structure:**
-1. **Hero** — Area name, seller-focused headline
-2. **Area Positioning** — What makes this neighborhood's real estate market distinct
-3. **Value Drivers** — Two or three specific factors that affect home prices here (not generic)
-4. **Buyer Behavior** — Who is buying in this area and why (informs seller strategy)
-5. **Sell Strategy** — What a seller specifically needs to know about timing, pricing, or prep in this area
-6. **CTA** — Area-specific ("Selling in Redlands? Let's talk.")
-7. **Nearby Areas** — Internal links to adjacent area pages
+**Editorial role:** Area pages should feel like neighborhood seller guides, not data dashboards.
 
-**The one-insight rule:** Every area page must contain at least one observation that could only come from someone who has sold homes there. If it reads like it was written from a Wikipedia article, rewrite it.
+**Preferred structure:**
 
-**Clone prevention:** Before publishing any area page, read it alongside two others. If the structure is identical and the insights are interchangeable, it fails.
+1. **Hero** - Area name, seller-focused headline, and local identity.
+2. **At-a-Glance Briefing** - A concise stat or market snapshot strip when useful, visually subordinate to the story.
+3. **Area Positioning** - What makes this market distinct.
+4. **Value Drivers** - Two or three specific factors that affect home prices there.
+5. **Buyer Behavior** - Who is buying there and why that matters for sellers.
+6. **Sell Strategy** - What sellers should know about timing, pricing, prep, or presentation.
+7. **CTA** - Area-specific and calm.
+8. **Nearby Areas** - Internal links to adjacent area pages.
+
+**The one-insight rule:** Every area page must contain at least one observation that could only come from someone who understands that area locally.
+
+**Clone prevention:** Before publishing any area page, read it alongside two others. If the insights are interchangeable, it fails.
+
+**Stats rule:** Stats should support the local story. Do not let data modules become the page's first impression unless the visual design makes them feel like an editorial briefing.
 
 ---
 
@@ -266,73 +335,162 @@ This is not about stuffing a phrase. It's about never letting a page exist in is
 
 ## Design Philosophy
 
-This site does not look like a real estate website. It looks like an editorial brand that happens to sell homes — calm, typographic, considered. Every design decision should widen the distance between this site and a franchise template.
+This site should feel like an editorial brand that happens to sell homes. It should be calm, typographic, considered, and locally grounded.
+
+The goal is not merely to look clean. The goal is to feel like a premium Mesa County seller briefing: useful, composed, specific, and worth trusting.
+
+Every design decision should widen the distance between this site and a franchise real estate template.
 
 ---
 
-## Implementation Rules (Non-Negotiable)
+## Editorial Visual Direction
 
-The design philosophy defines how the site should feel.
-These rules define how it must be built.
+The visual goal is:
 
-### Spacing System
-Only the following spacing values are allowed:
-8, 16, 24, 32, 48, 64, 80
+- editorial magazine pacing
+- confident negative space
+- strong typographic hierarchy
+- calm, premium color usage
+- local Mesa County specificity
+- seller-first clarity
+- polished but not flashy
+- refined, grounded, and human
 
-No arbitrary spacing values.
+The site should feel more like a thoughtful seller guide or local market briefing than a lead-capture template.
+
+Avoid:
+
+- generic SaaS-style section stacking
+- overused card grids
+- excessive centered text
+- loud marketing language
+- cluttered CTAs
+- template-looking Realtor design
+- unnecessary visual effects
+- weak hierarchy where every section has the same weight
+
+Favor:
+
+- asymmetrical layouts where appropriate
+- feature-spread sections
+- editorial pull quotes
+- restrained gold accents
+- dark navy anchor sections
+- large serif headlines
+- short supporting copy
+- clear seller decision framing
+- purposeful use of imagery and whitespace
+
+---
+
+## Visual Hierarchy Rules
+
+Every page should have a clear editorial rhythm.
+
+A strong page usually includes:
+
+- one flagship hero or cover moment
+- one or two feature-spread sections
+- quieter explanatory sections
+- one dark navy anchor section when useful
+- concise CTA moments
+- selective card grids only when the content truly needs comparison
+
+Avoid making every section visually equal.
+
+Do not solve every layout problem with another 3-card grid.
+
+---
+
+## Spacing System
+
+Use a consistent spacing scale as the default:
+
+- 8
+- 16
+- 24
+- 32
+- 48
+- 64
+- 80
+
+These values should govern most margins, gaps, and padding.
+
+Editorial variation is allowed when it creates intentional hierarchy, but one-off spacing must be rare, documented in CSS, and reusable if it becomes a pattern.
 
 ### Section Padding
-Desktop: 80px top/bottom
-Mobile: 56px top/bottom
 
-All sections must align to this baseline before variation is applied.
+Baseline section padding:
 
-### Layout Structure
-All sections must use consistent layout wrappers.
+- Desktop: 80px top/bottom
+- Mobile: 56px top/bottom
 
-Asymmetry is achieved through:
+Variation is allowed for:
+
+- hero / cover moments
+- closing CTA sections
+- feature-spread sections
+- compact utility sections
+
+Variation must look intentional, not accidental.
+
+---
+
+## Layout Structure
+
+Use consistent layout wrappers for site stability.
+
+Asymmetry should be achieved through:
+
 - content arrangement
 - column balance
 - image placement
+- typographic scale
+- contrast between dense and open sections
 
-NOT by breaking spacing or alignment rules.
+Do not achieve asymmetry by breaking alignment, using random spacing, or creating one-off wrappers.
 
-### Card Usage
-Card systems are allowed when used intentionally.
+Good patterns:
+
+- asymmetrical hero layouts
+- text/image editorial splits
+- narrow readable text columns
+- strong spacing between major ideas
+- feature sections with one dominant idea
+- pull quotes for key positioning lines
+- visual rhythm changes between sections
+- local guide or briefing-style modules
 
 Avoid:
-- repetitive, identical card grids
-- generic “3-up feature box” layouts
+
+- repetitive centered sections
+- too many equal-weight cards
+- cramped mobile spacing
+- long walls of paragraph text
+- excessive button repetition
+- visual sameness from page to page
+
+---
+
+## Card Usage
+
+Cards are allowed when they serve comparison, grouping, or scannability.
+
+Avoid:
+
+- repetitive identical card grids
+- generic 3-up feature boxes
+- card clusters used only to fill space
+- cards with equal visual weight when one idea matters more
 
 Use:
+
 - structured content blocks
-- consistent spacing
-- clear hierarchy
+- editorial feature cards
+- short comparison modules
+- clear hierarchy between primary and secondary cards
 
-### CTA Hierarchy
-Each page must include:
-- one primary CTA
-- optional secondary actions that are visually subordinate
-
-Primary CTAs must:
-- be visually dominant
-- have clear surrounding space
-- stand out from secondary actions
-
-### Section Rhythm
-Section density may vary, but spacing values must always come from the defined scale.
-
-Variation does not mean randomness.
-
-### System Consistency Rule
-Do not introduce:
-- new spacing systems
-- new layout patterns
-- one-off components
-
-If a new pattern is required:
-- define it once
-- reuse it consistently
+If a section can be stronger as a pull quote, split layout, or editorial note, do not default to cards.
 
 ---
 
@@ -340,67 +498,126 @@ If a new pattern is required:
 
 | Role | Style | Notes |
 |------|-------|-------|
-| Headlines | Serif — weighted, editorial | Conveys permanence and authority |
-| Subheadings | Serif or lightweight sans | Never bold sans — too "startup" |
-| Body | Clean sans-serif | Legible, unobtrusive |
+| Headlines | Serif, editorial, confident | Carries permanence and authority |
+| Subheadings | Serif or light sans | Avoid heavy startup-style sans headers |
+| Body | Clean sans-serif | Legible, restrained, unobtrusive |
 | Labels / Tags | Small caps or tracked sans | Sparse use only |
+| Pull Quotes | Serif, oversized or distinct | Use for core positioning lines |
 
 **Rules:**
-- Fewer labels, not more
-- Copy should be tighter than it feels necessary — then cut 20% more
-- No sentence should be doing two jobs
+
+- Serif type should carry major headlines and editorial emphasis.
+- Sans-serif type should support clarity, navigation, labels, and body structure.
+- Headlines should feel intentional, not oversized by accident.
+- Use fewer labels, not more.
+- Avoid generic marketing headline patterns.
+- Copy should be tighter than it feels necessary, then cut again.
+- No sentence should be doing two jobs.
 
 ---
 
 ## Color
 
+Core palette:
+
 | Role | Color |
 |------|-------|
-| Primary | Deep navy |
-| Background | Warm cream / off-white |
-| Accent | Muted gold — used sparingly, never decoratively |
-| Text | Near-black on cream; cream on navy |
+| Navy | `#0c1a3d` |
+| Mid Navy | `#16275a` |
+| Gold | `#b8923a` |
+| Light Gold | `#d4aa5a` |
+| Cream | `#f7f4ed` |
+| Sand | `#e8e1d0` |
+| Text | `#1a1a2e` |
+| White | `#ffffff` |
 
-**Gold is a punctuation mark, not a paint color.** One use per section maximum.
+**Rules:**
 
----
-
-## Layout
-
-**Use:**
-- Editorial splits (text left, image right — or reversed with intent)
-- Asymmetric composition
-- Variable section density (dense, then open, then dense — not uniform)
-- Structured layouts with intentional variation and strong hierarchy
-- Large, unhurried hero spacing
-- Generous whitespace around key statements
-
-**Never use:**
-- Generic, repetitive card grids
-- Boxed layouts with equal padding
-- Routing modules ("Choose your path")
-- Rigid, template-like uniform layouts
-- Dividers between every section
+- Gold is punctuation, not paint.
+- Use gold as an accent, not decoration everywhere.
+- Dark navy sections should feel premium and anchoring, not heavy or overused.
+- Cream and sand backgrounds should create warmth without looking beige or flat.
+- Do not introduce new brand colors without a documented reason.
 
 ---
 
 ## Imagery
 
-- Fewer images, higher quality
-- Consistent color grading across all photos
-- No stock photography of strangers shaking hands
-- Landscape and architectural photography preferred
-- Images should establish place, not demonstrate activity
+- Fewer images, higher quality.
+- Consistent color grading across all photos.
+- No stock photography of strangers shaking hands.
+- Landscape, architectural, neighborhood, detail, and profile photography are preferred.
+- Images should establish place, confidence, and editorial tone.
+- Images should not feel like filler.
+
+For the magazine feel, imagery should function like an editorial spread or location note, not decoration.
 
 ---
 
 ## Motion
 
-- Subtle entrance animations on scroll (opacity + slight upward movement)
-- No parallax effects
-- No hover animations on text
-- CTAs may have a gentle hover state
-- Nothing should move unless it adds clarity
+- Subtle entrance animations on scroll are acceptable.
+- Use opacity and slight upward movement only.
+- No parallax effects.
+- No hover animations on body text.
+- CTAs may have a gentle hover state.
+- Nothing should move unless it adds clarity.
+
+Do not let animation create crawler, accessibility, or layout timing problems.
+
+---
+
+## CTA Hierarchy
+
+Each page should have one primary action.
+
+Preferred CTA language includes:
+
+- Start the Conversation
+- Request a Seller Briefing
+- Get a Clearer Read
+- Talk Through the Sale
+
+Avoid:
+
+- Get Started Now
+- Sell Fast
+- Claim Your Free Offer
+- Unlock Your Home Value
+- generic high-pressure lead-capture language
+
+CTA styling should vary by context:
+
+- Hero CTAs can be stronger.
+- Mid-page CTAs can be quieter.
+- Closing CTAs can feel like editorial cards.
+- Avoid repeating the same button treatment too many times on one page.
+
+---
+
+## Copy and Visual Relationship
+
+The copy is intentionally calm, strategic, and seller-focused.
+
+Design should support that tone.
+
+Do not make the site look louder than the copy.
+
+Avoid:
+
+- hype-driven visuals
+- urgency gimmicks
+- overuse of badges
+- generic "top agent" styling
+- stock real estate tropes
+
+Favor:
+
+- decision clarity
+- local expertise
+- calm confidence
+- seller strategy
+- market perspective
 
 ---
 
@@ -409,91 +626,135 @@ If a new pattern is required:
 ## Voice
 
 Orion's copy voice is:
-- **Direct** — Says the thing, then stops
-- **Specific** — Uses real numbers, real neighborhoods, real observations
-- **Calm** — Never urgent, never salesy
-- **Local** — Speaks to Mesa County homeowners, not a national audience
 
-## Trust Without Testimonials
+- **Direct** - Says the thing, then stops.
+- **Specific** - Uses real neighborhoods, real observations, and grounded market context.
+- **Calm** - Never urgent, never salesy.
+- **Local** - Speaks to Mesa County homeowners, not a national audience.
+- **Strategic** - Helps sellers make better decisions before they list.
+
+## Trust Without Hype
 
 This site builds trust through:
-- **Process clarity** — Explaining exactly what happens and when
-- **Local specificity** — Observations no out-of-area agent could make
-- **Deliverables** — Concrete outputs (pricing analysis, prep guidance, timeline)
-- **Grounded language** — No superlatives, no vague promises
+
+- **Process clarity** - Explaining what happens and why.
+- **Local specificity** - Observations no out-of-area agent could make.
+- **Deliverables** - Concrete outputs such as pricing analysis, prep guidance, and timeline planning.
+- **Grounded language** - No superlatives, no vague promises.
+- **Visual restraint** - The design should feel confident enough not to shout.
 
 **Banned phrases:**
+
 - "dedicated to your success"
 - "full-service"
 - "passion for real estate"
 - "going above and beyond"
-- "your dream home" (this is a seller site)
-- Any sentence that could appear on another agent's website unchanged
+- "your dream home" on seller pages
+- "sell fast" as a primary promise
+- any sentence that could appear on another agent's website unchanged
 
 ---
 
 # PART SIX: TECHNICAL REQUIREMENTS
 
 ## Per-Page Checklist
+
 - [ ] Unique `<title>` and meta description
 - [ ] Canonical tag
-- [ ] OG image (1200×630)
-- [ ] H1 clearly represents primary keyword — naturally, not forced
+- [ ] OG image when available
+- [ ] H1 clearly represents primary keyword naturally
 - [ ] At least two internal links with descriptive anchor text
-- [ ] Schema markup (page-appropriate type)
+- [ ] Schema markup with page-appropriate type
 - [ ] NAP in footer matches sitewide standard exactly
+- [ ] Critical content visible in raw HTML
+- [ ] Visual hierarchy supports the page's one job
+- [ ] Page does not feel like a generic template
 
 ## Sitewide Requirements
-- [ ] Consistent NAP in footer on every page
 
-Shared JavaScript renderers may be used for visual consistency, but crawl-critical content must also exist in raw HTML or another crawler-visible static source. Do not assume AI crawlers will execute script.js.
-- [ ] `Person` + `LocalBusiness` + `RealEstateAgent` schema on homepage
-- [ ] XML sitemap
+- [ ] Consistent NAP in footer on every page
+- [ ] Crawl-critical content present in raw HTML
+- [ ] `Person` + `RealEstateAgent` identity reinforced consistently
+- [ ] XML sitemap present and valid
 - [ ] robots.txt configured
-- [ ] Page speed: Core Web Vitals passing on mobile
+- [ ] Core Web Vitals passing on mobile when possible
 - [ ] No broken internal links
 - [ ] Google Search Console verified
+
+Shared JavaScript renderers may be used for visual consistency, but crawl-critical content must also exist in raw HTML or another crawler-visible static source. Do not assume AI crawlers will execute script.js.
 
 ---
 
 # PART SEVEN: BUILD RULES
 
-These rules override any vendor, template, or personal preference:
+These rules override vendor defaults, templates, agent assumptions, and personal preference:
 
 1. **No routing-first design.** The homepage is not a directory.
 2. **No duplicated intent.** Two pages cannot own the same keyword or purpose.
 3. **No fake proof.** No purchased reviews, inflated stats, or vague authority claims.
 4. **No template feel.** If it looks like it came from a real estate website builder, redesign it.
-5. **One primary CTA per page.** Secondary actions are allowed only when visually subordinate. Never two primary actions competing.
-6. **Sellers dominate.** Every key page speaks to a seller first. Buyers are not ignored — they are secondary.
-7. **The one-insight rule.** Every area page, every local claim must contain something only a local expert would know.
-8. **Copy before design.** Page structure is determined by what needs to be said, not by what looks balanced.
+5. **One primary action per page.** Secondary actions are allowed only when visually subordinate.
+6. **Sellers dominate.** Every key page speaks to a seller first. Buyers are secondary.
+7. **The one-insight rule.** Every area page must include something only a local expert would know.
+8. **Copy before design.** Page structure is determined by what needs to be said, not by what fills a layout.
+9. **Hierarchy before polish.** Make the page easier to understand before making it prettier.
+10. **Editorial rhythm before module count.** Fewer, stronger sections beat more generic sections.
+11. **Do not add cards by default.** Use cards only when they improve comprehension.
+12. **Do not make every section equal.** Strong pages have dominant moments and quiet supporting moments.
+
+---
+
+# PART EIGHT: AGENT QA CHECKLIST
+
+Before completing any visual, layout, CSS, or page-structure change, verify:
+
+- Does this still feel premium and editorial?
+- Does this look like Orion Love's brand, not a generic Realtor template?
+- Is the hierarchy stronger than before?
+- Is the page easier to scan?
+- Did we avoid unnecessary new cards?
+- Did we preserve the navy, gold, cream, and serif editorial system?
+- Does mobile still feel spacious and intentional?
+- Are CTAs clear without feeling pushy?
+- Is the page more trustworthy, not just prettier?
+- Is critical content still present in raw HTML?
+- Did we avoid JS-only rendering for crawl-critical content?
+
+If a change improves technical cleanliness but weakens the brand feel, do not make it without calling that out.
 
 ---
 
 # APPENDIX: QUICK REFERENCE
 
-## Target Pages at Launch
+## Target Pages
+
 - [ ] Homepage
 - [ ] Seller Page
 - [ ] Home Value Page
 - [ ] About Page
-- [ ] Area Pages (minimum 4 at launch — prioritize highest search volume areas)
-- [ ] Contact Page (minimal — name, phone, form)
+- [ ] Area Pages
+- [ ] Contact Page
+- [ ] FAQ Page
 
-## Content Maintenance (Post-Launch)
+## Content Maintenance
+
 To sustain and grow AI and SEO discoverability:
-- **Monthly:** One local market observation published as a short page or post
-- **Quarterly:** Area page audit — update any insight that is no longer current
-- **Annually:** Full README review — strategy, keywords, schema
+
+- **Monthly:** Publish or update one local market observation, seller insight, or market update.
+- **Quarterly:** Audit area pages and update insights that are no longer current.
+- **Annually:** Full README review covering strategy, keywords, schema, design direction, and page architecture.
 
 ## Questions to Ask Before Publishing Any Page
+
 1. Does this page have one clear job?
-2. Could a national franchise publish this page unchanged? (If yes — rewrite)
+2. Could a national franchise publish this page unchanged? If yes, rewrite it.
 3. Is there at least one observation only a local expert would know?
-4. Is the CTA the same action as every other page?
+4. Is the CTA clear and consistent with the rest of the site?
 5. Does the copy feel calm and confident, or eager and salesy?
+6. Does the layout feel editorial and intentional, or modular and generic?
+7. Does the page create trust within the first screen?
+8. Can a crawler understand the critical content from raw HTML?
 
 ---
 
-*This document is the authority. If a vendor, designer, or plugin conflicts with it — this document wins.*
+*This document is the authority. If a vendor, designer, plugin, agent, or generic best practice conflicts with it, this document wins.*
