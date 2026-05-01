@@ -209,30 +209,53 @@ This is not keyword stuffing. It is entity clarity.
 
 ---
 
+# PART TWO-AND-A-HALF: APPROVED PAGE-BY-PAGE REBUILD WORKFLOW
+
+## Approved Page-by-Page Rebuild Workflow
+
+When executing major redesigns, use this workflow to preserve brand quality, crawlability, and implementation discipline:
+
+1. Rebuild one page at a time.
+2. Create or approve a visual mockup before implementation begins for that page.
+3. Once approved, the mockup becomes the page-level design source of truth.
+4. Implement only that page before moving to another page.
+5. Preserve SEO and crawl-critical infrastructure during every rebuild, including schema, canonical tags, metadata, raw HTML content, static navigation, static footer, NAP consistency, brokerage/license details, verified profile links, and crawl-critical internal links.
+6. Test the rebuilt page visually across desktop, tablet, and mobile before proceeding to the next page.
+7. Do not generalize newly introduced patterns across other pages until that page family is intentionally approved.
+8. Legacy page content may be rewritten to fit an approved editorial layout.
+9. Do not weaken an approved layout to preserve old copy order, old section structure, or outdated page modules.
+
+---
+
 # PART THREE: PAGE ARCHITECTURE
 
 ## Homepage
 
 **One job:** Convince a Mesa County homeowner that Orion Love is the right person to call before they list.
 
-**Editorial role:** The homepage should feel like the cover of a local seller magazine, not a directory and not a homepage stuffed with modules.
+**Editorial role:** The homepage should feel like the cover and table of contents of a local seller magazine, not a directory, generic landing page, or stuffed module page.
 
-**Preferred structure:**
+**Approved structure:**
 
-1. **Editorial Hero / Cover Moment** - One dominant seller-focused statement, one primary CTA, strong visual hierarchy, and a clear Mesa County signal.
-2. **Feature Spread** - A visually distinct section explaining why sellers need guidance before they list. This should feel custom, not like a generic content block.
-3. **Process** - Three steps: Price / Prepare / Execute. Keep it tight.
-4. **Local Insight** - One specific Mesa County observation or market behavior note.
-5. **Closing CTA** - Repeat the same action with a quieter, confident close.
+1. **Editorial Cover Hero**
+2. **Point of View Spread**
+3. **Feature Image Spread**
+4. **Seller Brief**
+5. **Market Reality / Signal Section**
+6. **Area Atlas**
+7. **Closing CTA**
+8. **Quiet Footer**
 
 **Rules:**
 
 - No routing grids such as "For Buyers / For Sellers / For Investors."
+- The Area Atlas is allowed because it supports local seller context and internal site architecture, not generic routing.
 - No testimonial carousels.
 - No unnecessary card clusters.
 - No competing hero CTAs.
 - Hero message must be written for a seller, not a general visitor.
 - The first screen should feel like an editorial cover, not a generic landing page.
+- The approved homepage mockup controls layout; rewrite content to fit it instead of forcing legacy content into the design.
 
 ---
 
@@ -697,6 +720,7 @@ These rules override vendor defaults, templates, agent assumptions, and personal
 6. **Sellers dominate.** Every key page speaks to a seller first. Buyers are secondary.
 7. **The one-insight rule.** Every area page must include something only a local expert would know.
 8. **Copy before design.** Page structure is determined by what needs to be said, not by what fills a layout.
+   - For approved page redesigns, an approved visual mockup may become the page-level source of truth. In that case, copy should be rewritten to fit the approved editorial structure rather than forcing legacy copy into the new layout.
 9. **Hierarchy before polish.** Make the page easier to understand before making it prettier.
 10. **Editorial rhythm before module count.** Fewer, stronger sections beat more generic sections.
 11. **Do not add cards by default.** Use cards only when they improve comprehension.
