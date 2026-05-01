@@ -169,21 +169,20 @@
   background:#0c1a3d;
   color:rgba(247,244,237,.82);
   border-top:1px solid rgba(212,170,90,.72);
-  padding:clamp(2.4rem,4vw,3.25rem) 0 clamp(1.6rem,3vw,2.35rem);
+  padding:clamp(2.5rem,4vw,3.4rem) 0 clamp(1.7rem,3vw,2.4rem);
 }
 
 .page-index .main-footer.editorial-footer::before{display:none}
 .page-index .main-footer.editorial-footer .container{max-width:1240px}
 .page-index .main-footer.editorial-footer .footer-grid{
   display:grid;
-  grid-template-columns:minmax(280px,1.05fr) minmax(190px,.72fr) minmax(210px,.78fr);
+  grid-template-columns:minmax(380px,1.35fr) minmax(180px,.48fr) minmax(210px,.52fr);
+  column-gap:clamp(2rem,4vw,4.5rem);
+  row-gap:clamp(1rem,2vw,1.6rem);
   align-items:start;
-  justify-content:start;
-  max-width:980px;
-  margin-left:auto;
-  margin-right:auto;
-  gap:clamp(2rem,4vw,3.5rem);
-  padding:clamp(1.1rem,2vw,1.6rem) 0 clamp(.9rem,1.6vw,1.25rem);
+  width:min(1180px,calc(100vw - 52px));
+  margin:0 auto;
+  padding:clamp(1.5rem,2.5vw,2rem) 0 clamp(1rem,2vw,1.4rem);
 }
 
 .page-index .main-footer.editorial-footer .footer-brand,
@@ -193,6 +192,10 @@
 .page-index .main-footer.editorial-footer .footer-brand,
 .page-index .main-footer.editorial-footer .footer-contact,
 .page-index .main-footer.editorial-footer .footer-profiles{align-self:start}
+
+.page-index .main-footer.editorial-footer .footer-brand{justify-self:start;max-width:520px}
+.page-index .main-footer.editorial-footer .footer-contact{justify-self:end;min-width:180px;padding-left:0}
+.page-index .main-footer.editorial-footer .footer-profiles{justify-self:end;min-width:210px}
 
 .page-index .main-footer.editorial-footer .logo-footer{color:#fff;font-size:clamp(1.9rem,3vw,2.35rem);line-height:1.06;margin-bottom:.65rem}
 
@@ -213,10 +216,9 @@
 .page-index .main-footer.editorial-footer a{color:rgba(247,244,237,.87);font-size:.91rem;line-height:1.6}
 
 .page-index .main-footer.editorial-footer a:hover{color:#d4aa5a}
-.page-index .main-footer.editorial-footer .footer-contact{padding-left:0}
 .page-index .main-footer.editorial-footer .footer-support{display:contents}
 .page-index .main-footer.editorial-footer .footer-links{display:none}
-.page-index .main-footer.editorial-footer .footer-bottom{border-top:1px solid rgba(247,244,237,.13);margin-top:.55rem;padding-top:.85rem;gap:.45rem;max-width:980px;margin-left:auto;margin-right:auto}
+.page-index .main-footer.editorial-footer .footer-bottom{border-top:1px solid rgba(247,244,237,.13);margin-top:.55rem;padding-top:.85rem;gap:.45rem;width:min(1180px,calc(100vw - 52px));margin-left:auto;margin-right:auto}
 .page-index .main-footer.editorial-footer .footer-bottom p,
 .page-index .main-footer.editorial-footer .footer-bottom a{font-size:.74rem;line-height:1.45}
 
