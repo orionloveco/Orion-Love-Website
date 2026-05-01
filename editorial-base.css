@@ -1,0 +1,109 @@
+/* Shared editorial system: sitewide header/nav + footer treatment */
+
+.main-header{
+  background:rgba(8,18,50,.86);
+  border-bottom:1px solid rgba(212,170,90,.22);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.main-header nav{min-height:74px}
+
+.main-header .logo-main{
+  font-family:'Raleway',sans-serif;
+  letter-spacing:.12em;
+  font-size:.72rem;
+  color:rgba(247,244,237,.95);
+}
+
+.main-header .nav-menu a,
+.main-header .nav-dropdown-toggle{
+  color:rgba(247,244,237,.92);
+  font-family:'Raleway',sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:.72rem;
+}
+
+.main-header .nav-menu a:not(.btn-nav)::after,
+.main-header .nav-dropdown-toggle::after{background:rgba(212,170,90,.75)}
+
+.main-header .nav-menu a:hover,
+.main-header .nav-menu a.active,
+.main-header .nav-dropdown-toggle:hover,
+.main-header .nav-dropdown-toggle:focus-visible,
+.main-header .nav-dropdown.open .nav-dropdown-toggle{color:#d4aa5a}
+
+.main-header .btn-nav{
+  border:1px solid rgba(184,146,58,.62);
+  background:rgba(247,244,237,.08);
+  color:#f7f4ed;
+  border-radius:999px;
+  padding:.62rem 1.15rem;
+  font-size:.68rem;
+  letter-spacing:.11em;
+}
+
+.main-header .btn-nav:hover{background:rgba(184,146,58,.28);color:#f7f4ed}
+.main-header .mobile-toggle span{background:#f7f4ed}
+
+.main-footer{
+  background:#0c1a3d;
+  color:rgba(247,244,237,.87);
+  padding:clamp(2.2rem,4.5vw,3.4rem) 0 .85rem;
+}
+
+.main-footer::before{display:none}
+.main-footer .container{max-width:1240px}
+.main-footer .footer-grid{
+  grid-template-columns:minmax(280px,1.35fr) minmax(180px,.72fr) minmax(210px,.8fr);
+  align-items:start;
+  gap:clamp(1.2rem,2.2vw,2rem);
+}
+
+.main-footer .footer-brand{justify-self:start;max-width:520px}
+.main-footer .footer-contact{justify-self:end;min-width:180px;padding-left:0}
+.main-footer .footer-profiles{justify-self:end;min-width:210px}
+.main-footer .footer-support{display:contents}
+.main-footer .footer-links{display:none}
+.main-footer .logo-footer{color:#fff;font-size:clamp(1.9rem,3vw,2.35rem);line-height:1.06;margin-bottom:.65rem}
+
+.main-footer .footer-contact h4,
+.main-footer .footer-profiles__title{
+  color:#d4aa5a;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.18rem;
+  font-weight:500;
+  letter-spacing:.015em;
+  text-transform:none;
+  margin:0 0 .65rem;
+}
+
+.main-footer p,
+.main-footer li,
+.main-footer a{color:rgba(247,244,237,.87);font-size:.91rem;line-height:1.6}
+.main-footer a:hover{color:#d4aa5a}
+
+.main-footer .footer-bottom{
+  border-top:1px solid rgba(247,244,237,.09);
+  margin-top:clamp(.65rem,1.3vw,1rem);
+  padding-top:.65rem;
+  gap:.45rem;
+  width:min(1180px,calc(100vw - 52px));
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.main-footer .footer-bottom p,
+.main-footer .footer-bottom a{font-size:.74rem;line-height:1.45}
+
+@media (max-width:900px){
+  .main-header nav{min-height:70px}
+  .main-footer .footer-grid{grid-template-columns:1fr;gap:1.25rem}
+  .main-footer .footer-support{display:grid}
+}
+
+@media (max-width:768px){
+  .main-header nav{min-height:68px}
+  .main-header .logo-main{font-size:.68rem;letter-spacing:.11em}
+}
