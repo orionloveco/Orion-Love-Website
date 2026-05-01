@@ -700,6 +700,9 @@ p { color: var(--text); }
   --hero-overlay-before: none;
   --hero-overlay-after: none;
 }
+/* Canonical hero contract:
+   .hero (core) + approved variants only: .hero-flagship, .hero-support/.hero-hub, .hero-neighborhood.
+   Any transitional homepage treatment should map through these hero tokens to avoid parallel systems. */
 
 .hero::before,
 .hero::after {
@@ -1013,6 +1016,9 @@ p { color: var(--text); }
   box-shadow: var(--shadow-card);
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background-color 0.28s ease, color 0.28s ease;
 }
+/* Canonical card foundation. Prefer semantic variants:
+   .card-base.card--info | .card-base.card--dark | .card-base.card--editorial.
+   Legacy aliases (e.g., .card-grid-3*) remain temporarily for safe migration. */
 
 a.card-base {
   text-decoration: none;
@@ -4001,12 +4007,20 @@ body.page-faq .faq-help-row p {
   color: var(--dark-band-heading);
 }
 
+.dark-band :is(a:not(.btn), h5, h6, strong, em) {
+  color: var(--dark-band-body);
+}
+
 .dark-band :is(p, .section-intro, .lead, .dark-copy p, .process-header p, .pricing-copy p) {
   color: var(--dark-band-muted);
 }
 
 .dark-band :is(.section-label span, .section-label-accent span, .dark-list li, .pricing-points li) {
   color: var(--dark-band-body);
+}
+
+.dark-band :is(hr, .section-divider) {
+  border-color: var(--dark-band-border);
 }
 
 .dark-band :is(.card-base, .step-item, .step-card, .pricing-card, .dark-band-summary) {
@@ -4018,6 +4032,9 @@ body.page-faq .faq-help-row p {
 
 .dark-band :is(.btn-gold-outline) {
   margin-top: 0.35rem;
+}
+.dark-band :is(.btn-primary, .btn-gold-outline) {
+  color: var(--brand-white);
 }
 
 /* A) Split: copy/checklist left + numbered steps right */
@@ -4654,8 +4671,15 @@ body.page-areas .areas-jump-links a {
 .page-index .home-section { position: relative; }
 
 .page-index .editorial-cover-hero {
+  /* Transitional homepage-only hero treatment.
+     Explicitly binds to canonical hero token contract to avoid legacy style collisions. */
   background: linear-gradient(160deg, rgba(8, 18, 50, 0.9) 0%, rgba(12, 26, 61, 0.82) 56%, rgba(15, 34, 79, 0.88) 100%);
   color: var(--white);
+  --hero-inner-max: 1120px;
+  --hero-h1-max: 16ch;
+  --hero-lead-max: 54ch;
+  --hero-eyebrow-justify: flex-start;
+  --hero-cta-justify: flex-start;
 }
 
 .page-index .editorial-cover-layout {
@@ -4700,6 +4724,14 @@ body.page-areas .areas-jump-links a {
 .page-index .editorial-process-sequence__list article { padding: 1rem 0 1rem 1rem; border-left: 1px solid rgba(255,255,255,.28); }
 .page-index .editorial-process-sequence .cta-center { text-align:left; margin-top: 1.5rem; }
 
+/* Canonical CTA layout wrappers */
+.hero-cta,
+.cta-action-row,
+.cta-close-actions {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .page-index .local-market-feature { background: linear-gradient(180deg, var(--cream), #f2ecdf); }
 .page-index .pull-quote-panel { margin:1.5rem 0; padding:1.2rem 1.25rem; border-left:3px solid var(--gold); font-family: var(--font-family-serif); font-size: clamp(1.4rem,3.2vw,2rem); line-height:1.15; color:var(--navy); }
 .page-index .local-market-feature__notes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
@@ -4724,6 +4756,12 @@ body.page-areas .areas-jump-links a {
 }
 
 @media (max-width: 768px) {
+  /* Breakpoint normalization target for future consolidation:
+     - 390/430 mobile QA
+     - 768 tablet
+     - 1024 small desktop
+     - 1440 desktop
+     Existing breakpoint fragments are retained in this stabilization pass for low-risk compatibility. */
   section,
   .site-section,
   .site-section.section-density-tight,
