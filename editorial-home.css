@@ -213,7 +213,7 @@
   color:#d4aa5a;
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(.95rem,1.2vw,1.08rem);
-  letter-spacing:.1em;
+  letter-spacing:.07em;
   text-transform:none;
   font-weight:500;
   line-height:1.2;
@@ -227,7 +227,7 @@
 .page-index .main-footer.editorial-footer a:hover{color:#d4aa5a}
 .page-index .main-footer.editorial-footer .footer-support{display:contents}
 .page-index .main-footer.editorial-footer .footer-links{display:none}
-.page-index .main-footer.editorial-footer .footer-bottom{border-top:1px solid rgba(247,244,237,.13);margin-top:.55rem;padding-top:.85rem;gap:.45rem;width:min(1180px,calc(100vw - 52px));margin-left:auto;margin-right:auto}
+.page-index .main-footer.editorial-footer .footer-bottom{border-top:1px solid rgba(247,244,237,.09);margin-top:clamp(.65rem,1.3vw,1rem);padding-top:.65rem;gap:.45rem;width:min(1180px,calc(100vw - 52px));margin-left:auto;margin-right:auto}
 .page-index .main-footer.editorial-footer .footer-bottom p,
 .page-index .main-footer.editorial-footer .footer-bottom a{font-size:.74rem;line-height:1.45}
 
