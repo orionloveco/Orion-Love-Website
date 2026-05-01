@@ -21,8 +21,9 @@
 
 .main-header .logo-main{
   font-family:'Raleway',sans-serif;
-  letter-spacing:.12em;
   font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.12em;
   color:rgba(247,244,237,.95);
 }
 
@@ -34,9 +35,14 @@
 .main-header .nav-dropdown-toggle{
   color:rgba(247,244,237,.92);
   font-family:'Raleway',sans-serif;
+  font-size:.72rem;
+  font-weight:500;
   letter-spacing:.08em;
   text-transform:uppercase;
-  font-size:.72rem;
+}
+
+.main-header .nav-dropdown-toggle{
+  padding:.25rem 0;
 }
 
 .main-header .nav-menu a:not(.btn-nav)::after,
@@ -55,15 +61,27 @@
   border-radius:999px;
   padding:.62rem 1.15rem;
   font-size:.68rem;
+  font-weight:500;
   letter-spacing:.11em;
 }
 
 .main-header .btn-nav:hover{background:rgba(184,146,58,.28);color:#f7f4ed}
-.main-header .mobile-toggle span{background:#f7f4ed}
+
+.main-header .mobile-toggle{
+  gap:5px;
+  padding:6px;
+}
+
+.main-header .mobile-toggle span{
+  width:24px;
+  height:1.5px;
+  background:#f7f4ed;
+}
 
 .main-header .nav-dropdown-menu{
   background:rgba(8,18,50,.97);
   border-color:rgba(184,146,58,.26);
+  border-radius:16px;
 }
 
 .main-header .nav-dropdown-heading{
