@@ -9,21 +9,10 @@
 }
 
 .seller-kicker {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
   font-size: 0.67rem;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
   color: var(--gold-lt);
-  font-weight: 700;
-}
-
-.seller-kicker span {
-  display: inline-block;
-  width: 2.8rem;
-  height: 1px;
-  background: currentColor;
+  gap: 0.9rem;
 }
 
 .seller-kicker--dark {
@@ -383,18 +372,8 @@
 }
 
 .sell-with-orion-editorial .btn.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  border-radius: 999px;
   color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-size: 0.72rem;
   box-shadow: 0 16px 36px rgba(184, 146, 58, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .sell-with-orion-editorial .btn.btn-primary:hover {
@@ -533,7 +512,7 @@
 }
 
 @media (max-width: 720px) {
-.seller-shell {
+  .seller-shell {
     width: var(--editorial-page-width-mobile);
   }
 
