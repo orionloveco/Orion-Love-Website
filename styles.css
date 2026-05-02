@@ -328,7 +328,8 @@ p { color: var(--text); }
 }
 
 /* =========================
-   Navigation
+   Navigation (legacy/global fallback layer)
+   Forward visual presentation for shared header/nav lives in editorial-base.css.
 ========================= */
 .main-header {
   position: fixed;
@@ -355,25 +356,16 @@ p { color: var(--text); }
   justify-content: space-between;
   gap: 1.4rem;
   height: 72px;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 .logo { text-decoration: none; flex-shrink: 0; }
 
 .logo-main {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--white);
-  letter-spacing: 0.04em;
   transition: color 0.2s;
 }
 
 .nav-menu {
   display: flex;
-  gap: clamp(1.05rem, 1.8vw, 2.25rem);
   list-style: none;
   align-items: center;
   white-space: nowrap;
@@ -1504,7 +1496,8 @@ a.card-base:hover {
 ========================= */
 
 /* =========================
-   Footer
+   Footer (legacy/global fallback layer)
+   Forward visual presentation for shared footer lives in editorial-base.css.
 ========================= */
 .main-footer {
   background: var(--navy-mid);
@@ -1692,9 +1685,9 @@ a.card-base:hover {
     gap: 2rem;
   }
 
-  .footer-grid { grid-template-columns: 1fr; gap: var(--space-5); }
-  .footer-support { grid-template-columns: 1fr; gap: var(--space-4); }
-  .footer-bottom { flex-direction: column; gap: var(--space-1); text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-support { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 640px) {
