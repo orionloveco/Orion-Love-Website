@@ -4,7 +4,7 @@
 }
 
 .seller-shell {
-  width: min(1180px, calc(100vw - 52px));
+  width: var(--editorial-page-width);
   margin: 0 auto;
 }
 
@@ -533,8 +533,8 @@
 }
 
 @media (max-width: 720px) {
-  .seller-shell {
-    width: calc(100vw - 32px);
+.seller-shell {
+    width: var(--editorial-page-width-mobile);
   }
 
   .seller-premise,
