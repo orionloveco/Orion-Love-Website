@@ -35,7 +35,7 @@
   overflow: hidden;
   background: var(--navy);
   color: #fff;
-  padding: 6.8rem 0 3.5rem;
+  padding: clamp(6.2rem, 9vh, 6.8rem) 0 clamp(2.7rem, 4.4vh, 3.4rem);
 }
 
 .seller-hero__bg {
@@ -49,10 +49,10 @@
 .seller-hero__inner {
   position: relative;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 0.95fr 0.85fr;
+  gap: clamp(1.6rem, 2.8vw, 2.8rem);
+  grid-template-columns: 0.98fr 0.82fr;
   align-items: center;
-  min-height: calc(100svh - 10rem);
+  min-height: calc(100svh - 9.35rem);
 }
 
 .seller-hero h1 {
@@ -76,8 +76,8 @@
 .seller-hero__image-wrap {
   position: relative;
   aspect-ratio: 4 / 5;
-  max-height: 69vh;
-  min-height: 460px;
+  max-height: 71vh;
+  min-height: 470px;
   padding: 0.75rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -132,7 +132,7 @@
 .seller-before,
 .seller-response,
 .seller-close {
-  padding: 5.5rem 0;
+  padding: clamp(4.9rem, 8.4vw, 5.8rem) 0;
 }
 
 .seller-premise__inner {
@@ -197,7 +197,7 @@
 
 .seller-before {
   background: var(--sand);
-  padding: 5rem 0;
+  padding: clamp(4.7rem, 7.8vw, 5.3rem) 0;
 }
 .seller-before__top {
   display: grid;
@@ -353,10 +353,10 @@
 }
 
 .seller-close__actions {
-  margin-top: 2rem;
+  margin-top: clamp(1.6rem, 2.5vw, 2.2rem);
   display: grid;
-  grid-template-columns: 1fr minmax(260px, 340px);
-  gap: 1.4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 1.2rem clamp(1.3rem, 2.8vw, 2rem);
   align-items: end;
 }
 
@@ -376,11 +376,16 @@
 }
 
 .sell-with-orion-editorial .btn.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   border-radius: 999px;
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.13em;
+  font-size: 0.72rem;
   box-shadow: 0 16px 36px rgba(184, 146, 58, 0.28);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -391,8 +396,8 @@
 }
 
 .seller-close__cta .btn {
-  padding: 0.84rem 1.8rem;
-  font-size: 0.66rem;
+  width: 100%;
+  padding: 0.86rem 1.22rem;
 }
 
 .seller-close__phone {
@@ -424,6 +429,7 @@
 
   .seller-hero {
     padding-top: 6.1rem;
+    padding-bottom: 3.1rem;
   }
 
   .seller-hero__image-wrap {
@@ -459,6 +465,7 @@
 
   .seller-close__cta {
     justify-self: start;
+    max-width: 340px;
   }
 }
 
