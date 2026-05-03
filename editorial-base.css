@@ -192,12 +192,13 @@
   --editorial-radius-card:0;
   --editorial-rule:1px solid rgba(12,26,61,.12);
   --editorial-rule-strong:1px solid rgba(12,26,61,.18);
-  --editorial-ink:#1a1a2e;
-  --editorial-navy:#0c1a3d;
-  --editorial-gold:#b8923a;
-  --editorial-gold-light:#d4aa5a;
-  --editorial-cream:#f7f4ed;
-  --editorial-sand:#e8e1d0;
+  /* Forward editorial tokens map to shared brand tokens from styles.css to reduce drift. */
+  --editorial-ink:var(--text, #1a1a2e);
+  --editorial-navy:var(--navy, #0c1a3d);
+  --editorial-gold:var(--gold, #b8923a);
+  --editorial-gold-light:var(--gold-lt, #d4aa5a);
+  --editorial-cream:var(--cream, #f7f4ed);
+  --editorial-sand:var(--sand, #e8e1d0);
 }
 
 .editorial-section{
