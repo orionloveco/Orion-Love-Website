@@ -12,6 +12,8 @@
    Design Tokens
 ========================= */
 /* === DESIGN TOKENS — CANONICAL SYSTEM === */
+/* NOTE: editorial-base.css owns --editorial-* primitives and components.
+   Keep brand tokens here stable for legacy pages and for editorial token mapping. */
 :root {
   /* Colors */
   --brand-navy: #0c1a3d;
