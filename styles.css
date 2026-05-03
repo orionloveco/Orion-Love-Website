@@ -330,8 +330,11 @@ p { color: var(--text); }
 }
 
 /* =========================
-   Navigation (legacy/global fallback layer)
-   Forward visual presentation for shared header/nav lives in editorial-base.css.
+   Navigation (legacy/global compatibility layer during rebuild)
+   - Transitional ownership: rebuilt editorial pages load editorial-base.css after this file.
+   - Duplicate selectors with editorial-base.css are currently intentional for migration safety.
+   - Keep this block fallback-friendly; avoid adding new visual authority here for rebuilt pages.
+   - New shared header/nav primitive work belongs in editorial-base.css.
 ========================= */
 .main-header {
   position: fixed;
@@ -1498,8 +1501,11 @@ a.card-base:hover {
 ========================= */
 
 /* =========================
-   Footer (legacy/global fallback layer)
-   Forward visual presentation for shared footer lives in editorial-base.css.
+   Footer (legacy/global compatibility layer during rebuild)
+   - Transitional ownership: rebuilt editorial pages rely on editorial-base.css for footer primitives.
+   - This block remains for legacy/unmigrated support and migration rollback safety.
+   - Do not remove until all dependent pages are confirmed migrated.
+   - Do not add rebuilt-page-specific footer variants here.
 ========================= */
 .main-footer {
   background: var(--navy-mid);
@@ -2052,6 +2058,12 @@ body.seller-neighborhood-page .hero.hero-neighborhood {background:linear-gradien
 body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgba(184,146,58,0.22);}
 
 
+/* ===== Transitional header variants (legacy support pending rebuild) =====
+   These page-level .main-header overrides are intentionally retained for pages
+   that still depend on a solid/scrolled-like header treatment.
+   Do not copy this pattern to new rebuilt pages; use shared variants in
+   editorial-base.css when introducing new header behavior.
+*/
 /* ===== contact.html ===== */
 body.page-contact .main-header {position: fixed;
       top: 0; left: 0; right: 0;
