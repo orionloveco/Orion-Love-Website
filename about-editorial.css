@@ -20,7 +20,7 @@
 .profile-hero__portrait::before { content: ''; position: absolute; inset: 0 auto 0 0; width: clamp(2.5rem,6vw,5.5rem); background: linear-gradient(90deg, var(--about-paper), rgba(251,248,241,0)); }
 .profile-hero__mini { position: absolute; left: calc((39% - var(--mini-size)) / 2); bottom: 0; z-index: 4; width: var(--mini-size); aspect-ratio: 1/1; background: linear-gradient(180deg, rgba(12,26,61,.02), rgba(12,26,61,.22)), var(--about-mini-portrait) center top / cover no-repeat; box-shadow: 0 18px 44px rgba(12,26,61,.11); }
 .profile-hero__lower { display: grid; grid-template-columns: minmax(270px,.43fr) minmax(360px,.57fr); gap: clamp(2rem,5.2vw,5.2rem); align-items: end; margin-top: clamp(1.6rem,3.5vw,3rem); padding-left: clamp(4rem,10vw,9.4rem); }
-.profile-rail { max-width: 370px; text-align: right; justify-self: end; transform: translate(clamp(1rem,2.5vw,2.5rem),clamp(-3.5rem,-5vw,-2rem)); }
+.profile-rail { max-width: 370px; text-align: right; justify-self: end; transform: translate(clamp(1rem,2.5vw,2.5rem),clamp(-9rem,-12vw,-6rem)); }
 .profile-rail__heading { margin: 0 0 clamp(.8rem,1.8vw,1.2rem); text-align: right; color: var(--editorial-navy); font-family: 'Cormorant Garamond', serif; font-size: clamp(1.85rem,3vw,2.6rem); font-style: italic; font-weight: 300; letter-spacing: -.04em; line-height: 1; }
 .profile-rail__heading::before { content: ''; display: block; width: 44px; height: 1px; margin: 0 0 .9rem auto; background: var(--about-gold-rule); }
 .profile-rail__details { display: grid; gap: .55rem; max-width: 330px; margin: 0 auto; }
