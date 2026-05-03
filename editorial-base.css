@@ -1,5 +1,13 @@
-/* Shared editorial ownership layer: sitewide header/nav/mobile-nav presentation + footer presentation.
-   styles.css retains legacy/global fallback structure for pages not on the editorial layer. */
+/* Shared editorial ownership layer (rebuilt system primitives).
+   Owns: .main-header, .nav-menu presentation, mobile-nav presentation, .main-footer,
+   .footer-grid presentation, and editorial-shell/tokens.
+
+   Rebuild boundary:
+   - styles.css may retain temporary duplicate selectors for legacy compatibility.
+   - rebuilt pages should rely on this file as the source of truth for shared primitives.
+   - new page CSS must not add page-scoped overrides for .main-header, .nav-menu,
+     .main-footer, or .footer-grid; add shared variants here instead.
+*/
 
 .main-header{
   position:fixed;
