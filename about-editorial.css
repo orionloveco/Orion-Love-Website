@@ -41,7 +41,7 @@
 .profile-copy__label small { display: block; margin-top: .7rem; color: rgba(26,26,46,.48); font-size: .58rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; text-transform: uppercase; }
 .profile-copy__statement { margin: 0; max-width: 980px; color: var(--editorial-navy); font-family: 'Cormorant Garamond', serif; font-size: clamp(2.25rem,5vw,5rem); font-weight: 300; letter-spacing: -.06em; line-height: .92; }
 .profile-copy__statement em { color: var(--editorial-gold); font-style: italic; font-weight: 400; }
-.profile-copy__article { max-width: 980px; margin-left: clamp(2rem, 8vw, 7rem); margin-right: auto; }
+.profile-copy__article { max-width: 980px; margin-left: auto; }
 .profile-copy__text { columns: 2; column-gap: clamp(1.8rem,4vw,3.5rem); }
 .profile-copy__text p { margin: 0 0 1.15rem; color: rgba(26,26,46,.7); font-size: clamp(.98rem,1.16vw,1.06rem); line-height: 1.86; break-inside: avoid; }
 .profile-copy__text p:first-child::first-letter { float: left; padding: .08rem .58rem 0 0; color: var(--editorial-gold); font-family: 'Cormorant Garamond', serif; font-size: 4.4rem; line-height: .7; }
