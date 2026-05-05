@@ -2072,9 +2072,25 @@ body.page-contact .main-header {position: fixed;
       background: rgba(12, 26, 61, 0.97);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
-body.page-contact .contact-section {padding-top: 80px;
+body.page-contact .contact-section {padding-top: clamp(6.5rem, 10vw, 8rem);
   padding-bottom: 80px;
       background: var(--cream);}
+body.page-contact .contact-utility-header {
+      max-width: 740px;
+      margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+body.page-contact .contact-utility-header h1 {
+      font-size: clamp(2.4rem, 5vw, 4.1rem);
+      line-height: 0.98;
+      margin-bottom: 0.85rem;
+      color: var(--navy);
+}
+body.page-contact .contact-utility-header p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+}
 body.page-contact .contact-layout {display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
       gap: clamp(1.5rem, 3vw, 2.25rem);
@@ -2120,30 +2136,7 @@ body.page-contact .info-value a {color: var(--navy);
       text-decoration: none;
       transition: color 0.2s;}
 body.page-contact .info-value a:hover {color: var(--gold);}
-body.page-contact .response-card {background: var(--navy);
-      border: none;
-      box-shadow: none;
-      margin-top: 0.85rem;
-      padding: 1.1rem 1.15rem;
-}
-body.page-contact .response-card::before {content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,146,58,0.12), transparent 65%);
-      pointer-events: none;}
-body.page-contact .response-card h4 {font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-      position: relative;
-      z-index: 1;}
-body.page-contact .response-card p {font-size: 0.93rem;
-      color: rgba(255,255,255,0.74);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;}
-body.page-contact .response-card p strong {color: var(--gold-lt);
-      font-weight: 500;}
-/* Step 4 ownership note: contact hero heading/subcopy intentionally diverge from shared .form-card typography. */
+/* Contact page utility form heading/subcopy intentionally diverge from shared .form-card typography. */
 .form-card--contact :is(h2, h3) {
       font-size: 2rem;
       margin-bottom: 0.5rem;
@@ -2153,36 +2146,6 @@ body.page-contact .response-card p strong {color: var(--gold-lt);
       font-size: 0.97rem;
       margin-bottom: 1.55rem;
       line-height: 1.65;}
-body.page-contact .contact-trust-block {
-      margin-bottom: var(--space-3);
-      padding: var(--space-3);
-      background: var(--white);
-      border: 1px solid rgba(232,225,208,0.9);
-      border-radius: var(--radius-sm);}
-body.page-contact .contact-trust-block p {
-      font-size: 0.93rem;
-      line-height: 1.6;
-      color: var(--text);
-      margin-bottom: var(--space-2);}
-body.page-contact .contact-trust-list {
-      list-style: none;
-      display: grid;
-      gap: var(--space-1);}
-body.page-contact .contact-trust-list li {
-      position: relative;
-      padding-left: var(--space-3);
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--muted);}
-body.page-contact .contact-trust-list li::before {
-      content: "";
-      position: absolute;
-      top: 0.7em;
-      left: var(--space-1);
-      width: var(--space-1);
-      height: var(--space-1);
-      border-radius: 50%;
-      background: var(--gold);}
 body.page-contact .select-wrap {position: relative;}
 body.page-contact .select-wrap::after {content: "";
       position: absolute;
@@ -2583,8 +2546,7 @@ body.page-grand-junction-home-value #sellerHubHero {
 }
 
 body.page-faq .faq-hero,
-body.page-about .about-trust-hero,
-body.page-contact .contact-hero {
+body.page-about .about-trust-hero {
   background:
     radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
     linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
