@@ -103,113 +103,85 @@
   </ul>
 </div>
 <!-- CONTACT SECTION -->
-<section class="site-section contact-section">
-<div class="container">
-<div class="contact-utility-header reveal">
-<h1>Contact Orion Love</h1>
-<p>Have a question about selling, timing, pricing, or what to do before you list? Send a quick message, call, or text. I’ll help you get clear on the next step.</p>
-</div>
-<div class="contact-direct-strip reveal reveal-delay-005" aria-label="Fast contact options">
-<a class="contact-direct-action contact-direct-action--phone" href="tel:+19706446781">
-<span class="contact-direct-label">Call or Text</span>
-<span class="contact-direct-value">(970) 644-6781</span>
-</a>
-<a class="contact-direct-action" href="mailto:orion.love.co@gmail.com">
-<span class="contact-direct-label">Email</span>
-<span class="contact-direct-value">orion.love.co@gmail.com</span>
-</a>
-</div>
-<div class="contact-layout">
-<!-- Form -->
-<div class="form-card form-card--contact reveal reveal-delay-012">
-<h2>Send a quick message</h2>
-<p class="form-card-sub">Share a few details about the home or the decision you’re working through. I’ll respond within 24 hours.</p>
-<div class="form-message" id="formMessage" role="alert"></div>
-<form action="/contact" data-form-handler="contact" data-lead-form="seller" id="contactForm" method="post">
-<div class="form-row">
-<div class="form-group">
-<label for="contactFirstName">First Name <span aria-hidden="true">*</span></label>
-<input id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="contactLastName">Last Name <span aria-hidden="true">*</span></label>
-<input id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
-</div>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
-<input id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="contactPhone">Phone Number</label>
-<input id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
-</div>
-</div>
-<div class="form-group">
-<label for="contactMessage">Message <span aria-hidden="true">*</span></label>
-<textarea id="contactMessage" name="message" placeholder="I’m thinking about selling, curious about value, or trying to decide what to do before listing..." required=""></textarea>
-</div>
-<div class="consent-block">
-<p>
-              By submitting this form, I agree to be contacted by Orion Love via call, email, and text
-              for real estate services. Data will not be sold or shared with third parties for marketing
-              or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply.
-              <a href="/privacy">Privacy Policy</a>.
-            </p>
-</div>
-<button class="btn btn-primary form-submit" id="submitBtn" type="submit">
-            Send Message
-          </button>
-</form>
-</div>
-<!-- Support / reassurance -->
-<aside class="contact-info reveal" aria-label="Contact support details">
-          <div class="info-card card card-trust">
-<div class="info-card-title">Contact Details</div>
-<div class="info-item">
-<div class="info-icon"><i data-lucide="phone"></i></div>
-<div class="info-text">
-<div class="info-label">Call or Text</div>
-<div class="info-value"><a href="tel:+19706446781">(970) 644-6781</a></div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-icon"><i data-lucide="mail"></i></div>
-<div class="info-text">
-<div class="info-label">Email</div>
-<div class="info-value"><a href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a></div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-icon"><i data-lucide="map-pin"></i></div>
-<div class="info-text">
-<div class="info-label">Office</div>
-<div class="info-value">2474 Patterson Rd #100<br/>Grand Junction, CO 81505</div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-icon"><i data-lucide="map"></i></div>
-<div class="info-text">
-<div class="info-label">Service Area</div>
-<div class="info-value">Mesa County, Colorado</div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-icon"><i data-lucide="badge-check"></i></div>
-<div class="info-text">
-<div class="info-label">License</div>
-<div class="info-value">Licensed in Colorado: Orion Love, Associate Broker License #FA.100110841<br/>Brokerage: Keller Williams Colorado West Realty</div>
-</div>
-</div>
-</div>
-</aside>
-</div>
-<div class="contact-secondary-link">
-<p>Not ready to reach out yet? Review the <a href="/sell-with-orion">Mesa County seller process</a> or <a href="/faq">read common seller questions</a>.</p>
-</div>
-</div>
-</section>
+<main class="contact-editorial">
+  <div class="editorial-shell contact-shell">
+    <section class="contact-composition" aria-labelledby="contact-title">
+      <div class="form-sheet-wrap">
+        <div class="form-sheet">
+          <div class="form-header">
+            <div>
+              <p class="editorial-eyebrow editorial-eyebrow--dark contact-eyebrow">Mesa County real estate</p>
+              <h1 id="contact-title">Contact Orion Love</h1>
+              <p class="intro-copy">Have a question about selling, timing, pricing, or what to do before you list? Send a quick message, call, or text. I’ll help you find the next step.</p>
+            </div>
+          </div>
+
+          <div class="form-message" id="formMessage" role="alert"></div>
+          <form action="/contact" data-form-handler="contact" data-lead-form="seller" id="contactForm" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactFirstName">First Name <span aria-hidden="true">*</span></label>
+                <input id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+              </div>
+              <div class="form-group">
+                <label for="contactLastName">Last Name <span aria-hidden="true">*</span></label>
+                <input id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
+                <input id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Phone Number</label>
+                <input id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">What are you trying to figure out? <span aria-hidden="true">*</span></label>
+              <textarea id="contactMessage" name="message" placeholder="I’m thinking about selling, curious about value, or trying to decide what to do before listing..." required=""></textarea>
+            </div>
+            <div class="consent-block">
+              <p>By submitting this form, I agree to be contacted by Orion Love via call, email, and text for real estate services. Data will not be sold or shared with third parties for marketing or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. <a href="/privacy">Privacy Policy</a>.</p>
+            </div>
+            <div class="button-row">
+              <button class="editorial-btn contact-submit form-submit" id="submitBtn" type="submit">Send Message</button>
+              <p class="response-note">I’ll take a look and get back to you<br/>within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="contact-aside" aria-label="Direct contact details">
+        <div>
+          <h2 class="aside-heading">Rather reach out directly?</h2>
+          <p class="aside-copy">Call, text, or email if that is easier.</p>
+        </div>
+
+        <div>
+          <div class="direct-stack">
+            <div class="direct-item">
+              <span class="direct-label">Call or Text</span>
+              <a class="direct-value" href="tel:+19706446781">(970) 644-6781</a>
+            </div>
+            <div class="direct-item">
+              <span class="direct-label">Email</span>
+              <a class="direct-value" href="mailto:orion.love.co@gmail.com">orion.love.co@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="identity-block">
+            <p><strong>Orion Love</strong><br/>Keller Williams Colorado West Realty</p>
+            <p>Colorado Associate Broker<br/>License #FA.100110841</p>
+            <p>2474 Patterson Rd #100<br/>Grand Junction, CO 81505</p>
+            <p>Mesa County, Colorado</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </div>
+</main>
 <!-- NEIGHBORHOODS -->
 <div id="featuredAreasLinks" data-featured-areas-mount="disabled"></div>
 <!-- FOOTER -->
