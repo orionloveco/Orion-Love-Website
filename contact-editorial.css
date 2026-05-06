@@ -1,7 +1,7 @@
 /* ===== contact.html ===== */
 body.page-contact .contact-editorial {
   min-height: 100vh;
-  padding: clamp(6.75rem, 11vw, 9rem) 24px clamp(64px, 8vw, 104px);
+  padding: clamp(88px, 7vw, 100px) 24px clamp(64px, 8vw, 104px);
   background: var(--cream);
 }
 
@@ -331,7 +331,7 @@ body.page-contact .response-note {
 
 @media (max-width: 680px) {
   body.page-contact .contact-editorial {
-    padding: 6.65rem 18px 62px;
+    padding: 92px 18px 62px;
   }
 
   body.page-contact #contact-title {
