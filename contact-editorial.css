@@ -15,6 +15,7 @@ body.page-contact .contact-composition {
   grid-template-columns: minmax(0, 1fr) minmax(285px, 0.38fr);
   gap: clamp(32px, 6vw, 78px);
   align-items: start;
+  padding: 0;
 }
 
 body.page-contact .contact-eyebrow {
