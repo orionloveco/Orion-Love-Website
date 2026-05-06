@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
         message: getTrimmedValue('contactMessage'),
       }),
       successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
-      submitButtonDefaultText: 'Start the Conversation',
+      submitButtonDefaultText: 'Send Message',
       errorMessage: 'Something went wrong. Please call or email me directly.',
     });
   };
