@@ -2065,13 +2065,6 @@ body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgb
    editorial-base.css when introducing new header behavior.
 */
 /* ===== contact.html ===== */
-body.page-contact .main-header {position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      transition: background 0.35s, box-shadow 0.35s;
-      background: rgba(12, 26, 61, 0.97);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(184,146,58,0.18);}
 body.page-contact .contact-section {padding-top: clamp(6.5rem, 10vw, 8rem);
   padding-bottom: 80px;
       background: var(--cream);}
