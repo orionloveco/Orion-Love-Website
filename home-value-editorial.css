@@ -13,6 +13,7 @@ body.page-grand-junction-home-value .home-value-hero{
   position:relative;
   isolation:isolate;
   overflow:hidden;
+  margin-top:0;
   padding-top:0;
   padding-bottom:0;
   color:#fff;
@@ -54,7 +55,8 @@ body.page-grand-junction-home-value .home-value-hero__inner{
   grid-template-columns:150px minmax(0,1fr);
   align-items:start;
   gap:clamp(2rem,4vw,3rem);
-  padding-top:calc(var(--header-height, 72px) + clamp(1rem, 2vh, 1.35rem));
+  margin-top:0;
+  padding-top:72px;
   padding-bottom:clamp(2.5rem,5vw,3.1rem);
 }
 
@@ -87,6 +89,8 @@ body.page-grand-junction-home-value .home-value-hero__rail div{
 
 body.page-grand-junction-home-value .home-value-hero__content{
   max-width:56rem;
+  margin-top:0;
+  padding-top:0;
 }
 
 body.page-grand-junction-home-value .home-value-hero__mobile-kicker{
@@ -662,7 +666,7 @@ body.page-grand-junction-home-value .home-value-local-context__aside a{
 @media (max-width:720px){
   body.page-grand-junction-home-value .home-value-hero__inner{
     min-height:auto;
-    padding-top:calc(var(--header-height, 72px) + 1rem);
+    padding-top:72px;
     padding-bottom:3.1rem;
   }
 
