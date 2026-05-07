@@ -25,6 +25,7 @@
 <script src="https://unpkg.com/lucide@0.468.0" defer></script>
 <link href="styles.css" rel="stylesheet"/>
 <link href="editorial-base.css" rel="stylesheet"/>
+<link href="home-value-editorial.css" rel="stylesheet"/>
 <script defer="" src="script.js"></script>
 
   <script type="application/ld+json">
@@ -105,107 +106,190 @@
   </ul>
 </div>
 
-<section class="site-section hero hero-flagship" id="valuation-intake-hero">
-<div class="container">
-<div class="hero-inner">
-<div class="hero-eyebrow"><span>Mesa County, Colorado Seller Intake</span></div>
-<h1>Know What Your Grand Junction Home Is Actually Worth</h1>
-<p class="hero-lead">
-          I'm Orion Love, a real estate broker with Keller Williams Colorado West Realty. If you're considering a sale in Grand Junction or elsewhere in Mesa County, this is a simple way to start a pricing conversation with local context.
-        </p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#valuation-form">Request Your Value Review</a>
-</div>
-</div>
-</div>
-</section>
+<main class="home-value-page" id="main-content">
+  <section class="home-value-hero editorial-surface-navy" aria-labelledby="home-value-title">
+    <div class="home-value-hero__media" aria-hidden="true"></div>
+    <div class="home-value-hero__overlay" aria-hidden="true"></div>
+    <div class="home-value-hero__header-rule" aria-hidden="true"></div>
+    <div class="home-value-hero__bottom-rule" aria-hidden="true"></div>
 
-<section class="site-section decision-gates section-shell-white" id="valuation-deliverables">
-<div class="container">
-<div class="decision-layout">
-<div class="decision-intro reveal">
-<div class="section-label"><span>What You Get</span></div>
-<h2>A Clear Starting Point Before You List</h2>
-<ul>
-<li>A realistic value range based on recent comparable sales near your address.</li>
-<li>A quick read on your current competition and how buyers are comparing options.</li>
-<li>Next-step guidance for timing, prep, and pricing if you decide to sell.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+    <div class="editorial-shell home-value-hero__inner">
+      <aside class="home-value-hero__rail" aria-label="Home value review context">
+        <p>Mesa County Home Value Review</p>
+        <div>Grand Junction<br/>Local Value Review</div>
+      </aside>
 
-<section class="site-section value-section" id="valuation-estimate-context">
-<div class="container">
-<div class="reveal">
-<div class="section-label"><span>Why Online Estimates Miss</span></div>
-<div class="value-intro">
-<h2>Automated Estimates Miss Local Nuance</h2>
-<p>
-            Zillow and other automated tools are useful for a rough starting point, but they cannot fully interpret condition, lot utility, Colorado National Monument view premiums, or block-by-block shifts between areas like the Redlands and Orchard Mesa.
-          </p>
-</div>
-</div>
-</div>
-</section>
+      <div class="home-value-hero__content">
+        <p class="editorial-eyebrow home-value-hero__mobile-kicker">Mesa County Home Value Review</p>
+        <h1 id="home-value-title">A local read on what your home could sell for.</h1>
+        <div class="home-value-hero__deck">
+          <p>For Grand Junction and Mesa County homeowners who want more than an automated estimate. I look at the sales, competition, condition, location, and buyer context behind the number.</p>
+          <p>No instant estimate. No pressure to list. A grounded local review from a Mesa County broker.</p>
+        </div>
+        <div class="home-value-hero__actions" aria-label="Home value page actions">
+          <a class="editorial-btn home-value-btn home-value-btn--primary" href="#value-form">Request a Local Value Review</a>
+          <a class="home-value-link-btn" href="#what-i-review">Read the Method</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="site-section valuation-section dark-band" id="valuation-form">
-<div class="container">
-<div class="valuation-inner">
-<div class="valuation-copy reveal">
-<div class="section-label valuation-label"><span>Seller Value Intake</span></div>
-<h2>Request Your <em>Local</em> Home Value Review</h2>
-<p>
-            Share the essentials and I'll follow up with a focused review for your home in Grand Junction or Mesa County.
-          </p>
-</div>
-<div class="form-card form-card--valuation reveal reveal-delay-015">
-<h3>Start the Conversation</h3>
-<p class="form-sub">Response target: within 24 hours.</p>
-<form class="seller-lead-form" data-inquiry="Home Value Request — Grand Junction" data-lead-form="seller" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm" novalidate="">
-<div class="form-row">
-<div class="form-group">
-<label for="gjFirstName">First Name *</label>
-<input data-lead-field="firstName" id="gjFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
-</div>
-<div class="form-group">
-<label for="gjLastName">Last Name *</label>
-<input data-lead-field="lastName" id="gjLastName" name="lastName" placeholder="Smith" required="" type="text"/>
-</div>
-</div>
-<div class="form-group">
-<label for="gjAddress">Property Address *</label>
-<input data-message-line="Address" id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
-</div>
-<div class="form-row">
-<div class="form-group">
-<label for="gjEmail">Email Address *</label>
-<input data-lead-field="email" id="gjEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="gjPhone">Phone Number *</label>
-<input data-lead-field="phone" id="gjPhone" name="phone" placeholder="(970) 555-0000" required="" type="tel"/>
-</div>
-</div>
-<button class="btn btn-primary form-submit" data-submit-button="" id="valSubmit" type="submit">
-              Request My Value Review
-            </button>
-<div class="form-message" id="valFormMsg" role="alert"></div>
-<p class="consent-note">
-              No sales scripts or auto-drip funnels. Your information stays private and is only used for your home value request. For details, review the <a href="/privacy">privacy policy</a>.
-            </p>
-<p class="consent-note">
-              Looking for the full seller process first? Read how Orion Love guides Mesa County homeowners through pricing and preparation on the <a href="/sell-with-orion">Mesa County home seller guide</a>, or <a href="/contact">contact Orion Love directly</a>.
-            </p>
-</form>
-</div>
-</div>
-</div>
-</section>
+  <section class="editorial-section editorial-surface-cream home-value-method" id="what-i-review" aria-labelledby="home-value-method-title">
+    <div class="editorial-shell">
+      <div class="home-value-method__frame">
+        <div class="home-value-method__heading-row">
+          <aside class="home-value-method__rail">
+            <p class="editorial-eyebrow editorial-eyebrow--dark">Valuation Method</p>
+            <div class="home-value-method__pricing-lens">
+              <p>Pricing Lens</p>
+              <p>Property first. Market second. Buyer behavior always.</p>
+            </div>
+          </aside>
 
-<div id="featuredAreasLinks" data-featured-areas-mount="disabled"></div>
+          <div class="home-value-method__intro">
+            <p class="home-value-method__ghost" aria-hidden="true">01–05</p>
+            <h2 id="home-value-method-title">Five questions before<br/>the number matters.</h2>
+            <p>A useful value range starts with your property, then moves outward to the market around it: the homes buyers compare, the choices they have, and the details that change their confidence.</p>
+          </div>
+        </div>
 
+        <div class="home-value-method__grid" aria-label="Questions included in a local home value review">
+          <article class="home-value-method__item home-value-method__item--top">
+            <p class="home-value-method__number">01</p>
+            <h3>What buyers would compare</h3>
+            <p>The review narrows the field to homes a buyer would realistically weigh against yours, not every nearby sale with similar square footage.</p>
+          </article>
+
+          <article class="home-value-method__item home-value-method__item--top home-value-method__item--number-large">
+            <p class="home-value-method__number">02</p>
+            <h3>What buyers can choose instead</h3>
+            <p>Your value is shaped by today’s active competition, not only what closed months ago.</p>
+          </article>
+
+          <article class="home-value-method__item home-value-method__item--top">
+            <p class="home-value-method__number">03</p>
+            <h3>What condition changes</h3>
+            <p>Some improvements change buyer confidence. Others may not be worth doing before you sell.</p>
+          </article>
+
+          <article class="home-value-method__item home-value-method__item--wide home-value-method__item--number-wide">
+            <p class="home-value-method__number">04</p>
+            <div>
+              <h3>Where the property gains leverage</h3>
+              <p>Subdivision, street, view, irrigation, lot utility, and buyer lifestyle expectations can all change the read.</p>
+            </div>
+          </article>
+
+          <article class="home-value-method__item home-value-method__item--wide">
+            <p class="home-value-method__number">05</p>
+            <div>
+              <h3>Where the price should sit</h3>
+              <p>The goal is a realistic range with the reasoning behind it, not an inflated number that sounds good but does not help.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section editorial-surface-navy home-value-form-section" id="value-form" aria-labelledby="home-value-form-title">
+    <div class="editorial-shell home-value-form-section__grid">
+      <div class="home-value-form-section__copy">
+        <p class="editorial-eyebrow">Request the review</p>
+        <h2 id="home-value-form-title">Request your local value review.</h2>
+        <p>Share the address and a little context. I’ll review the property, nearby sales, and current competition so you have a clearer starting point.</p>
+
+        <div class="home-value-next-steps" aria-labelledby="home-value-next-title">
+          <h3 id="home-value-next-title">What happens next</h3>
+          <div class="home-value-next-steps__item">
+            <span aria-hidden="true">1</span>
+            <p>You send the address and a little context.</p>
+          </div>
+          <div class="home-value-next-steps__item">
+            <span aria-hidden="true">2</span>
+            <p>I review the property, nearby sales, and active competition.</p>
+          </div>
+          <div class="home-value-next-steps__item">
+            <span aria-hidden="true">3</span>
+            <p>I follow up with a realistic range and the reasoning behind it.</p>
+          </div>
+          <p>You do not need to be ready to list. Many homeowners start here months before making a decision.</p>
+        </div>
+      </div>
+
+      <div class="home-value-form-frame">
+        <div class="home-value-form-outline" aria-hidden="true"></div>
+        <form class="seller-lead-form home-value-form" data-inquiry="Home Value Request — Grand Junction" data-lead-form="seller" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm" novalidate="">
+          <div class="home-value-form__header">
+            <p>Home Value Request</p>
+          </div>
+
+          <div class="home-value-form__grid">
+            <div class="home-value-form__field">
+              <label for="gjFirstName">First Name <span aria-hidden="true">*</span></label>
+              <input class="editorial-input" data-lead-field="firstName" id="gjFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+            </div>
+            <div class="home-value-form__field">
+              <label for="gjLastName">Last Name <span aria-hidden="true">*</span></label>
+              <input class="editorial-input" data-lead-field="lastName" id="gjLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+            </div>
+          </div>
+
+          <div class="home-value-form__field">
+            <label for="gjAddress">Property Address <span aria-hidden="true">*</span></label>
+            <input class="editorial-input" data-message-line="Address" id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
+          </div>
+
+          <div class="home-value-form__grid">
+            <div class="home-value-form__field">
+              <label for="gjEmail">Email Address <span aria-hidden="true">*</span></label>
+              <input class="editorial-input" data-lead-field="email" id="gjEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+            </div>
+            <div class="home-value-form__field">
+              <label for="gjPhone">Phone Number</label>
+              <input class="editorial-input" data-lead-field="phone" id="gjPhone" name="phone" placeholder="(970) 555-0000" type="tel"/>
+            </div>
+          </div>
+
+          <div class="home-value-form__field">
+            <label for="gjContext">What are you trying to understand?</label>
+            <textarea class="editorial-textarea" data-message-line="Context" id="gjContext" name="context" placeholder="Value range, timing, whether to make updates, selling in the next year, etc."></textarea>
+          </div>
+
+          <button class="editorial-btn home-value-form__submit form-submit" data-submit-button="" id="valSubmit" type="submit">Request My Value Review</button>
+          <div class="form-message" id="valFormMsg" role="alert"></div>
+
+          <div class="home-value-form__consent consent-block">
+            <p>By submitting this form, I agree to be contacted by Orion Love via call, email, and text for real estate services. Data will not be sold or shared with third parties for marketing or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. <a href="/privacy">Privacy Policy</a>.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-section editorial-surface-sand home-value-local-context" aria-labelledby="home-value-local-title">
+    <div class="home-value-local-context__panel" aria-hidden="true"></div>
+    <div class="editorial-shell home-value-local-context__grid">
+      <div class="home-value-local-context__statement">
+        <p class="editorial-eyebrow editorial-eyebrow--dark">Local pricing context</p>
+        <h2 id="home-value-local-title">The same square footage can tell a different story depending on where it sits.</h2>
+      </div>
+
+      <div class="home-value-local-context__copy">
+        <div>
+          <p>Mesa County pricing often turns on details broad averages miss: views, irrigation, road exposure, subdivision feel, lot utility, and the homes a buyer would choose instead.</p>
+          <p>A Redlands view property, an Orchard Mesa home, a Downtown bungalow, and a Palisade acreage may all require different comp judgment even when the basic numbers look similar.</p>
+        </div>
+
+        <aside class="home-value-local-context__aside" aria-label="Area comparison link">
+          <p>Local</p>
+          <p>Area lens</p>
+          <a href="/areas">Compare Areas</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
 <footer class="main-footer" id="siteFooter">
   <div class="container">
     <div class="footer-grid">
