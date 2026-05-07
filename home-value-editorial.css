@@ -13,6 +13,8 @@ body.page-grand-junction-home-value .home-value-hero{
   position:relative;
   isolation:isolate;
   overflow:hidden;
+  padding-top:0;
+  padding-bottom:0;
   color:#fff;
 }
 
@@ -59,9 +61,9 @@ body.page-grand-junction-home-value .home-value-hero__inner{
   display:grid;
   min-height:88svh;
   grid-template-columns:150px minmax(0,1fr);
-  align-items:end;
+  align-items:start;
   gap:clamp(2rem,4vw,3rem);
-  padding-top:clamp(7.2rem,11vw,8.2rem);
+  padding-top:calc(var(--header-height, 72px));
   padding-bottom:clamp(2.5rem,5vw,3.1rem);
 }
 
@@ -668,7 +670,7 @@ body.page-grand-junction-home-value .home-value-local-context__aside a{
 @media (max-width:720px){
   body.page-grand-junction-home-value .home-value-hero__inner{
     min-height:auto;
-    padding-top:6.8rem;
+    padding-top:calc(var(--header-height, 72px));
     padding-bottom:3.1rem;
   }
 
