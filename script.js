@@ -126,17 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function syncSharedNavState(currentPath) {
     const normalizedCurrent = normalizePath(currentPath);
     const areaLinks = AREA_NAV_GROUPS.flatMap((group) => group.items.map((item) => item.href));
+    const topLevelNavActive = [...document.querySelectorAll('#navMenu > li > a')]
+      .some((link) => normalizePath(link.getAttribute('href')) === normalizedCurrent);
 
     document.querySelectorAll('#navMenu a, #mobileNavOverlay a').forEach((link) => {
       const isActive = normalizePath(link.getAttribute('href')) === normalizedCurrent;
-      link.classList.toggle('active', isActive && !link.classList.contains('btn-nav'));
-      if (isActive) link.setAttribute('aria-current', 'page');
+      const isAreaSubnavLink = !!link.closest('.nav-dropdown-menu, .mobile-nav-areas');
+      const shouldShowActive = isActive && !link.classList.contains('btn-nav') && !(topLevelNavActive && isAreaSubnavLink);
+      link.classList.toggle('active', shouldShowActive);
+      if (shouldShowActive) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
 
     const areaDropdown = document.querySelector('.nav-dropdown');
     if (areaDropdown) {
-      const groupActive = areaLinks.some((href) => normalizePath(href) === normalizedCurrent);
+      const groupActive = !topLevelNavActive && areaLinks.some((href) => normalizePath(href) === normalizedCurrent);
       areaDropdown.classList.toggle('active', groupActive);
     }
   }
