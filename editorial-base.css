@@ -339,10 +339,16 @@
 
 .editorial-form-outline{
   position:absolute;
-  inset:var(--editorial-form-outline-inset,16px -12px -12px 16px);
+  inset:var(--editorial-form-outline-inset,18px -14px -14px 18px);
   z-index:-1;
-  border:1px solid var(--editorial-form-outline-color,rgba(184,146,58,.65));
+  border:1px solid var(--editorial-form-outline-color,rgba(184,146,58,.48));
   pointer-events:none;
+}
+
+@media (max-width:680px){
+  .editorial-form-outline{
+    display:none;
+  }
 }
 
 .editorial-form-sheet{
