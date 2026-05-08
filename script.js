@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = form.querySelector('[data-submit-button], button[type="submit"]');
     const msgEl = form.querySelector('.form-message');
     const successMessage =
-      form.dataset.successMessage || "Thank you! I'll be in touch within 24 hours.";
+      form.dataset.successMessage || "Thank you! I'll be in touch within one business day.";
     const inquiry = form.dataset.inquiry || 'Home Value Request';
     const submitDefaultText = submitBtn ? submitBtn.textContent.trim() : 'Submit';
     const errorMessage =
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inquiry: document.getElementById('contactInquiry')?.value || 'General Inquiry',
         message: getTrimmedValue('contactMessage'),
       }),
-      successMessage: "Thank you for reaching out. I'll be in touch within 24 hours.",
+      successMessage: "Thank you for reaching out. I'll be in touch within one business day.",
       submitButtonDefaultText: 'Send Message',
       errorMessage: 'Something went wrong. Please call or email me directly.',
     });
