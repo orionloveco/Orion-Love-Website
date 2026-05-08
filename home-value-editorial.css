@@ -407,10 +407,6 @@ body.page-grand-junction-home-value .home-value-next-steps > p:last-child{
   color:rgba(247,244,237,.62);
 }
 
-body.page-grand-junction-home-value .home-value-form-outline{
-  display:none;
-}
-
 body.page-grand-junction-home-value .home-value-form__submit{
   letter-spacing:.18em;
 }
