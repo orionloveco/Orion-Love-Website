@@ -548,8 +548,37 @@ document.addEventListener('DOMContentLoaded', function () {
     return field ? field.value.trim() : '';
   };
 
+  const getStructuredProperty = (form) => {
+    const property = {};
+
+    form.querySelectorAll('[data-property-field]').forEach((field) => {
+      const key = field.getAttribute('data-property-field');
+      const value = field.value.trim();
+      if (!key || !value) return;
+      property[key] = key === 'state' ? value.toUpperCase() : value;
+    });
+
+    return Object.keys(property).length ? property : null;
+  };
+
+  const formatStructuredPropertyAddress = (property) => {
+    if (!property) return '';
+
+    const street = property.street || '';
+    const city = property.city || '';
+    const stateZip = [property.state, property.code].filter(Boolean).join(' ');
+
+    return [street, city, stateZip].filter(Boolean).join(', ');
+  };
+
   const buildSellerLeadMessage = (form) => {
     const lines = [];
+    const propertyAddress = formatStructuredPropertyAddress(getStructuredProperty(form));
+
+    if (propertyAddress) {
+      lines.push(`Property Address: ${propertyAddress}`);
+    }
+
     form.querySelectorAll('[data-message-line]').forEach((field) => {
       const label = field.getAttribute('data-message-line');
       const value = field.value.trim();
@@ -585,14 +614,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       try {
-        await submitToProxy({
+        const payload = {
           firstName: getLeadFieldValue(form, 'firstName'),
           lastName: getLeadFieldValue(form, 'lastName'),
           email: getLeadFieldValue(form, 'email'),
           phone: getLeadFieldValue(form, 'phone'),
           inquiry,
           message: buildSellerLeadMessage(form),
-        });
+        };
+        const eventType = form.dataset.fubEventType;
+        const property = getStructuredProperty(form);
+
+        if (eventType) payload.type = eventType;
+        if (property) payload.property = property;
+
+        await submitToProxy(payload);
 
         showFormMsg(msgEl, successMessage, 'success');
         form.reset();

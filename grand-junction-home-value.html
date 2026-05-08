@@ -219,7 +219,7 @@
 
       <div class="editorial-form-frame home-value-form-frame">
         <div class="editorial-form-outline home-value-form-outline" aria-hidden="true"></div>
-        <form class="editorial-form-sheet seller-lead-form home-value-form" data-inquiry="Home Value Request — Grand Junction" data-lead-form="seller" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm" novalidate="">
+        <form class="editorial-form-sheet seller-lead-form home-value-form" data-fub-event-type="Seller Inquiry" data-inquiry="Home Value Request — Grand Junction" data-lead-form="seller" data-success-message="Thank you! I'll have your home value review ready within 24 hours." id="valForm" novalidate="">
           <div class="editorial-form-header home-value-form__header">
             <p>Home Value Request</p>
           </div>
@@ -236,8 +236,24 @@
           </div>
 
           <div class="editorial-form-field home-value-form__field">
-            <label for="gjAddress">Property Address <span aria-hidden="true">*</span></label>
-            <input class="editorial-input editorial-input--line" data-message-line="Address" id="gjAddress" name="address" placeholder="123 Main St, Grand Junction, CO" required="" type="text"/>
+            <label for="gjPropertyStreet">Street Address <span aria-hidden="true">*</span></label>
+            <input class="editorial-input editorial-input--line" data-property-field="street" id="gjPropertyStreet" name="propertyStreet" placeholder="123 Main St" required="" type="text"/>
+          </div>
+
+          <div class="editorial-form-grid home-value-form__grid">
+            <div class="editorial-form-field home-value-form__field">
+              <label for="gjPropertyCity">City <span aria-hidden="true">*</span></label>
+              <input class="editorial-input editorial-input--line" data-property-field="city" id="gjPropertyCity" name="propertyCity" placeholder="Grand Junction" required="" type="text"/>
+            </div>
+            <div class="editorial-form-field home-value-form__field">
+              <label for="gjPropertyState">State <span aria-hidden="true">*</span></label>
+              <input class="editorial-input editorial-input--line" data-property-field="state" id="gjPropertyState" name="propertyState" required="" type="text" value="CO"/>
+            </div>
+          </div>
+
+          <div class="editorial-form-field home-value-form__field">
+            <label for="gjPropertyZip">ZIP Code <span aria-hidden="true">*</span></label>
+            <input class="editorial-input editorial-input--line" data-property-field="code" id="gjPropertyZip" inputmode="numeric" name="propertyZip" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="81501" required="" type="text"/>
           </div>
 
           <div class="editorial-form-grid home-value-form__grid">
