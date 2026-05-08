@@ -236,24 +236,8 @@
           </div>
 
           <div class="editorial-form-field home-value-form__field">
-            <label for="gjPropertyStreet">Street Address <span aria-hidden="true">*</span></label>
-            <input class="editorial-input editorial-input--line" data-property-field="street" id="gjPropertyStreet" name="propertyStreet" placeholder="123 Main St" required="" type="text"/>
-          </div>
-
-          <div class="editorial-form-grid home-value-form__grid">
-            <div class="editorial-form-field home-value-form__field">
-              <label for="gjPropertyCity">City <span aria-hidden="true">*</span></label>
-              <input class="editorial-input editorial-input--line" data-property-field="city" id="gjPropertyCity" name="propertyCity" placeholder="Grand Junction" required="" type="text"/>
-            </div>
-            <div class="editorial-form-field home-value-form__field">
-              <label for="gjPropertyState">State <span aria-hidden="true">*</span></label>
-              <input class="editorial-input editorial-input--line" data-property-field="state" id="gjPropertyState" name="propertyState" required="" type="text" value="CO"/>
-            </div>
-          </div>
-
-          <div class="editorial-form-field home-value-form__field">
-            <label for="gjPropertyZip">ZIP Code <span aria-hidden="true">*</span></label>
-            <input class="editorial-input editorial-input--line" data-property-field="code" id="gjPropertyZip" inputmode="numeric" name="propertyZip" pattern="[0-9]{5}(-[0-9]{4})?" placeholder="81501" required="" type="text"/>
+            <label for="gjPropertyAddress">Property Address <span aria-hidden="true">*</span></label>
+            <input autocomplete="street-address" class="editorial-input editorial-input--line" data-property-field="street" id="gjPropertyAddress" name="propertyAddress" placeholder="123 Main St, Grand Junction, CO 81501" required="" type="text"/>
           </div>
 
           <div class="editorial-form-grid home-value-form__grid">
