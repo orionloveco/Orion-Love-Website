@@ -13,9 +13,6 @@ body.page-grand-junction-home-value .home-value-hero{
   position:relative;
   isolation:isolate;
   overflow:hidden;
-  margin-top:0;
-  padding-top:0;
-  padding-bottom:0;
   color:#fff;
 }
 
@@ -28,35 +25,43 @@ body.page-grand-junction-home-value .home-value-hero__overlay{
 
 body.page-grand-junction-home-value .home-value-hero__media{
   z-index:-3;
-  background:url('images/gj-valley.jpg') center 24%/cover no-repeat;
-  opacity:1;
+  background:url('images/gj-valley.jpg') center 46%/cover no-repeat;
+  opacity:.72;
 }
 
 body.page-grand-junction-home-value .home-value-hero__overlay{
   z-index:-2;
   background:
-    linear-gradient(90deg,rgba(8,18,50,.42) 0%,rgba(12,26,61,.25) 34%,rgba(12,26,61,.08) 62%,rgba(12,26,61,.16) 100%),
-    linear-gradient(180deg,rgba(8,18,50,.12) 0%,rgba(12,26,61,.06) 42%,rgba(12,26,61,.32) 100%);
+    linear-gradient(90deg,rgba(8,18,50,.96) 0%,rgba(12,26,61,.88) 34%,rgba(12,26,61,.58) 62%,rgba(12,26,61,.74) 100%),
+    linear-gradient(180deg,rgba(8,18,50,.58) 0%,rgba(12,26,61,.34) 42%,rgba(12,26,61,.92) 100%);
 }
 
+body.page-grand-junction-home-value .home-value-hero__header-rule,
 body.page-grand-junction-home-value .home-value-hero__bottom-rule{
   position:absolute;
   left:0;
   right:0;
-  bottom:0;
   height:1px;
-  background:rgba(212,170,90,.35);
   pointer-events:none;
+}
+
+body.page-grand-junction-home-value .home-value-hero__header-rule{
+  top:72px;
+  background:rgba(255,255,255,.12);
+}
+
+body.page-grand-junction-home-value .home-value-hero__bottom-rule{
+  bottom:0;
+  background:rgba(212,170,90,.35);
 }
 
 body.page-grand-junction-home-value .home-value-hero__inner{
   display:grid;
   min-height:88svh;
   grid-template-columns:150px minmax(0,1fr);
-  align-items:start;
+  align-items:end;
   gap:clamp(2rem,4vw,3rem);
-  margin-top:0;
-  padding-top:72px;
+  padding-top:clamp(7.2rem,11vw,8.2rem);
   padding-bottom:clamp(2.5rem,5vw,3.1rem);
 }
 
@@ -89,8 +94,6 @@ body.page-grand-junction-home-value .home-value-hero__rail div{
 
 body.page-grand-junction-home-value .home-value-hero__content{
   max-width:56rem;
-  margin-top:0;
-  padding-top:0;
 }
 
 body.page-grand-junction-home-value .home-value-hero__mobile-kicker{
@@ -99,7 +102,7 @@ body.page-grand-junction-home-value .home-value-hero__mobile-kicker{
 }
 
 body.page-grand-junction-home-value .home-value-hero h1{
-  max-width:14.25ch;
+  max-width:11ch;
   margin:0;
   color:#fff;
   font-family:'Cormorant Garamond',serif;
@@ -107,7 +110,6 @@ body.page-grand-junction-home-value .home-value-hero h1{
   font-weight:300;
   line-height:.9;
   letter-spacing:-.035em;
-  text-wrap:balance;
 }
 
 body.page-grand-junction-home-value .home-value-hero__deck{
@@ -666,7 +668,7 @@ body.page-grand-junction-home-value .home-value-local-context__aside a{
 @media (max-width:720px){
   body.page-grand-junction-home-value .home-value-hero__inner{
     min-height:auto;
-    padding-top:72px;
+    padding-top:6.8rem;
     padding-bottom:3.1rem;
   }
 
