@@ -107,9 +107,10 @@
 <main class="contact-editorial">
   <div class="editorial-shell contact-shell">
     <section class="contact-composition" aria-labelledby="contact-title">
-      <div class="form-sheet-wrap">
-        <div class="form-sheet">
-          <div class="form-header">
+      <div class="editorial-form-frame form-sheet-wrap">
+        <div class="editorial-form-outline" aria-hidden="true"></div>
+        <div class="editorial-form-sheet form-sheet">
+          <div class="editorial-form-header form-header">
             <div>
               <p class="editorial-eyebrow editorial-eyebrow--dark contact-eyebrow">Mesa County real estate</p>
               <h1 id="contact-title">Contact Orion Love</h1>
@@ -119,31 +120,31 @@
 
           <div class="form-message" id="formMessage" role="alert"></div>
           <form action="/contact" data-form-handler="contact" data-lead-form="seller" id="contactForm" method="post">
-            <div class="form-row">
-              <div class="form-group">
+            <div class="editorial-form-grid form-row">
+              <div class="editorial-form-field form-group">
                 <label for="contactFirstName">First Name <span aria-hidden="true">*</span></label>
-                <input id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
+                <input class="editorial-input editorial-input--line" id="contactFirstName" name="firstName" placeholder="Jane" required="" type="text"/>
               </div>
-              <div class="form-group">
+              <div class="editorial-form-field form-group">
                 <label for="contactLastName">Last Name <span aria-hidden="true">*</span></label>
-                <input id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
+                <input class="editorial-input editorial-input--line" id="contactLastName" name="lastName" placeholder="Smith" required="" type="text"/>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
+            <div class="editorial-form-grid form-row">
+              <div class="editorial-form-field form-group">
                 <label for="contactEmail">Email Address <span aria-hidden="true">*</span></label>
-                <input id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
+                <input class="editorial-input editorial-input--line" id="contactEmail" name="email" placeholder="jane@email.com" required="" type="email"/>
               </div>
-              <div class="form-group">
+              <div class="editorial-form-field form-group">
                 <label for="contactPhone">Phone Number</label>
-                <input id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
+                <input class="editorial-input editorial-input--line" id="contactPhone" name="phone" placeholder="(970) 000-0000" type="tel"/>
               </div>
             </div>
-            <div class="form-group">
+            <div class="editorial-form-field form-group">
               <label for="contactMessage">What are you trying to figure out? <span aria-hidden="true">*</span></label>
-              <textarea id="contactMessage" name="message" placeholder="I’m thinking about selling, curious about value, or trying to decide what to do before listing..." required=""></textarea>
+              <textarea class="editorial-textarea editorial-textarea--boxed" id="contactMessage" name="message" placeholder="I’m thinking about selling, curious about value, or trying to decide what to do before listing..." required=""></textarea>
             </div>
-            <div class="consent-block">
+            <div class="editorial-form-consent consent-block">
               <p>By submitting this form, I agree to be contacted by Orion Love via call, email, and text for real estate services. Data will not be sold or shared with third parties for marketing or promotional purposes. To opt out, reply 'stop' at any time. Message and data rates may apply. <a href="/privacy">Privacy Policy</a>.</p>
             </div>
             <div class="button-row">
