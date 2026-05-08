@@ -113,8 +113,6 @@ body.page-contact .identity-block strong {
 }
 
 body.page-contact .form-sheet-wrap {
-  --editorial-form-outline-color: rgba(184, 146, 58, 0.48);
-  --editorial-form-outline-inset: 18px -14px -14px 18px;
   --editorial-form-background:
     radial-gradient(circle at 17% 19%, rgba(12, 26, 61, 0.008) 0 1px, transparent 1.7px),
     radial-gradient(circle at 68% 43%, rgba(184, 146, 58, 0.01) 0 1px, transparent 1.7px),
@@ -264,10 +262,6 @@ body.page-contact .response-note {
   body.page-contact .contact-aside {
     grid-template-columns: 1fr;
     gap: 18px;
-  }
-
-  body.page-contact .form-sheet-wrap .editorial-form-outline {
-    display: none;
   }
 
   body.page-contact .form-sheet-wrap {
