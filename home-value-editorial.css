@@ -26,14 +26,14 @@ body.page-grand-junction-home-value .home-value-hero__overlay{
 body.page-grand-junction-home-value .home-value-hero__media{
   z-index:-3;
   background:url('images/gj-valley.jpg') center 46%/cover no-repeat;
-  opacity:.72;
+  opacity:.86;
 }
 
 body.page-grand-junction-home-value .home-value-hero__overlay{
   z-index:-2;
   background:
-    linear-gradient(90deg,rgba(8,18,50,.96) 0%,rgba(12,26,61,.88) 34%,rgba(12,26,61,.58) 62%,rgba(12,26,61,.74) 100%),
-    linear-gradient(180deg,rgba(8,18,50,.58) 0%,rgba(12,26,61,.34) 42%,rgba(12,26,61,.92) 100%);
+    linear-gradient(90deg,rgba(8,18,50,.86) 0%,rgba(12,26,61,.64) 34%,rgba(12,26,61,.28) 62%,rgba(12,26,61,.42) 100%),
+    linear-gradient(180deg,rgba(8,18,50,.36) 0%,rgba(12,26,61,.18) 42%,rgba(12,26,61,.72) 100%);
 }
 
 body.page-grand-junction-home-value .home-value-hero__header-rule,
