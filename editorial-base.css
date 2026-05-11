@@ -297,6 +297,41 @@
   pointer-events:none;
 }
 
+
+.editorial-action-list{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--editorial-action-rule-color,rgba(12,26,61,.14));
+}
+
+.editorial-action-link{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:1rem;
+  align-items:center;
+  padding:var(--editorial-action-link-padding,.82rem 0);
+  border-bottom:1px solid var(--editorial-action-rule-color,rgba(12,26,61,.14));
+  color:var(--editorial-action-link-color,var(--editorial-navy));
+  font-size:var(--editorial-action-link-font-size,.66rem);
+  font-weight:800;
+  letter-spacing:.13em;
+  line-height:1.4;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.editorial-action-link::after{
+  content:"→";
+  color:var(--editorial-action-link-arrow-color,var(--editorial-gold));
+  font-size:.95rem;
+  line-height:1;
+  transition:transform 160ms ease;
+}
+
+.editorial-action-link:hover::after{
+  transform:translateX(4px);
+}
+
 .editorial-card{
   border-top:var(--editorial-rule);
   border-bottom:var(--editorial-rule);
