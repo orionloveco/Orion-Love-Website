@@ -34,19 +34,13 @@
   color:inherit;
 }
 
-.ad-shell{
+.area-detail .editorial-shell{
   width:var(--area-page);
-  margin:0 auto;
 }
 
-.ad-article{
-  width:var(--area-article);
-  margin:0 auto;
-}
 
-.ad-eyebrow{
+.area-detail .area-eyebrow{
   display:inline-flex;
-  align-items:center;
   gap:.85rem;
   margin:0 0 1.1rem;
   color:var(--editorial-gold);
@@ -54,20 +48,13 @@
   font-weight:800;
   letter-spacing:.18em;
   line-height:1.5;
-  text-transform:uppercase;
 }
 
-.ad-eyebrow::before{
-  content:"";
+.area-detail .area-eyebrow::before{
   width:34px;
-  height:1px;
-  background:currentColor;
   opacity:.7;
 }
 
-.ad-eyebrow--light{
-  color:var(--editorial-gold);
-}
 
 .area-detail h1,
 .area-detail h2,
@@ -227,7 +214,7 @@
   align-items:end;
 }
 
-.area-market-read__copy p:not(.ad-eyebrow){
+.area-market-read__copy p:not(.editorial-eyebrow){
   max-width:520px;
   margin-top:1.1rem;
 }
@@ -328,7 +315,7 @@
   min-width:0;
 }
 
-.area-article__rail .ad-eyebrow{
+.area-article__rail .editorial-eyebrow{
   margin-bottom:.7rem;
 }
 
@@ -423,7 +410,7 @@
   color:var(--editorial-navy);
 }
 
-.area-related-cta__intro p:not(.ad-eyebrow){
+.area-related-cta__intro p:not(.editorial-eyebrow){
   max-width:520px;
   padding-top:1rem;
   border-top:1px solid rgba(184, 146, 58, .42);
@@ -432,7 +419,7 @@
   line-height:1.72;
 }
 
-.area-related-cta .ad-eyebrow{
+.area-related-cta .editorial-eyebrow{
   color:var(--editorial-gold);
 }
 
@@ -459,37 +446,14 @@
   text-transform:uppercase;
 }
 
-.area-action-list{
-  display:grid;
-  border-top:1px solid rgba(12, 26, 61, .14);
+.area-action-group__links{
+  --editorial-action-rule-color:rgba(12, 26, 61, .14);
+  --editorial-action-link-padding:.95rem 0;
+  --editorial-action-link-color:var(--editorial-navy);
+  --editorial-action-link-font-size:.68rem;
+  --editorial-action-link-arrow-color:var(--editorial-gold);
 }
 
-.area-action-link{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:1rem;
-  align-items:center;
-  padding:.95rem 0;
-  border-bottom:1px solid rgba(12, 26, 61, .14);
-  color:var(--editorial-navy);
-  font-size:.68rem;
-  font-weight:800;
-  letter-spacing:.13em;
-  line-height:1.45;
-  text-decoration:none;
-  text-transform:uppercase;
-}
-
-.area-action-link::after{
-  content:"→";
-  color:var(--editorial-gold);
-  font-size:.95rem;
-  transition:transform 160ms ease;
-}
-
-.area-action-link:hover::after{
-  transform:translateX(4px);
-}
 
 .area-action-group--primary{
   padding:0;
@@ -498,8 +462,7 @@
 }
 
 @media (max-width:1000px){
-  .ad-shell,
-  .ad-article{
+  .area-detail .editorial-shell{
     width:var(--area-page-mobile);
   }
 
