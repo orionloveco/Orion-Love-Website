@@ -325,21 +325,36 @@ document.addEventListener('DOMContentLoaded', function () {
     return Number.isFinite(value) ? Math.round(value).toLocaleString() : 'Monthly snapshot';
   }
 
+  const MARKET_STAT_SOURCE_KEYS = {
+    medianPrice: ['medianPrice', 'medianSalePrice', 'medianListPrice'],
+    averageDaysOnMarket: ['averageDaysOnMarket', 'avgDaysOnMarket', 'averageDom'],
+    newListings: ['newListings', 'newListings30d', 'newListings30Days'],
+    totalListings: ['totalListings', 'activeListings'],
+  };
+
+  function parseMarketStatValue(value) {
+    if (typeof value === 'number') return Number.isFinite(value) ? value : null;
+    if (typeof value !== 'string' || value.trim() === '') return null;
+
+    const numericValue = Number(value.replace(/[$,]/g, '').replace(/\s*days?$/i, '').trim());
+    return Number.isFinite(numericValue) ? numericValue : null;
+  }
+
+  function getMarketStatValue(areaData, statKey) {
+    const sourceKeys = MARKET_STAT_SOURCE_KEYS[statKey] || [statKey];
+
+    for (const sourceKey of sourceKeys) {
+      if (!Object.prototype.hasOwnProperty.call(areaData, sourceKey)) continue;
+
+      const numericValue = parseMarketStatValue(areaData[sourceKey]);
+      if (numericValue !== null) return numericValue;
+    }
+
+    return null;
+  }
+
   function setMarketFallbackState(blockEl) {
     if (!blockEl) return;
-
-    const fallbackByKey = {
-      medianPrice: 'Monthly market snapshot',
-      averageDaysOnMarket: 'Stats update monthly',
-      newListings: 'Request latest listing pace',
-      totalListings: 'Request active inventory count',
-    };
-
-    blockEl.querySelectorAll('[data-market-stat]').forEach((statEl) => {
-      const statKey = statEl.dataset.marketStat;
-      const fallbackValue = fallbackByKey[statKey] || 'Market snapshot available by request';
-      statEl.textContent = fallbackValue;
-    });
 
     const noteEl = blockEl.querySelector('[data-market-note]');
     if (noteEl) {
@@ -392,25 +407,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     blockEl.querySelectorAll('[data-market-stat]').forEach((statEl) => {
       const statKey = statEl.dataset.marketStat;
+      const statValue = getMarketStatValue(areaData, statKey);
+
+      if (statValue === null) return;
 
       if (statKey === 'medianPrice') {
-        if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(areaData.medianPrice);
-        else statEl.textContent = formatCurrency(areaData.medianPrice);
+        if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(statValue);
+        else statEl.textContent = formatCurrency(statValue);
         return;
       }
 
       if (statKey === 'averageDaysOnMarket') {
-        statEl.textContent = formatDays(areaData.averageDaysOnMarket);
+        statEl.textContent = formatDays(statValue);
         return;
       }
 
-      if (statKey === 'newListings') {
-        statEl.textContent = formatNumber(areaData.newListings);
-        return;
-      }
-
-      if (statKey === 'totalListings') {
-        statEl.textContent = formatNumber(areaData.totalListings);
+      if (statKey === 'newListings' || statKey === 'totalListings') {
+        statEl.textContent = formatNumber(statValue);
       }
     });
 
