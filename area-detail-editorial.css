@@ -21,7 +21,7 @@
   color:var(--editorial-ink);
   font-family:Raleway, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height:1.72;
-  overflow-x:hidden;
+  overflow-x:visible;
 }
 
 .area-detail *,
@@ -133,6 +133,7 @@
   min-height:clamp(620px, 78svh, 780px);
   display:grid;
   overflow:hidden;
+  padding:0;
   color:#fff;
   background:var(--editorial-navy);
 }
@@ -172,7 +173,7 @@
   max-width:720px;
 }
 
-.area-hero__deck{
+.area-hero .area-hero__deck{
   max-width:580px;
   margin-top:clamp(1rem, 1.8vw, 1.35rem);
   color:rgba(247, 244, 237, .78);
@@ -374,10 +375,10 @@
 .area-article__copy:first-of-type p:first-child::first-letter{
   float:left;
   margin:.08em .18em 0 0;
-  color:var(--editorial-gold);
+  color:var(--editorial-gold, #b8923a);
   font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:3.2rem;
-  line-height:.82;
+  font-size:clamp(3.8rem, 6vw, 5.4rem);
+  line-height:.72;
 }
 
 .area-article__close{
@@ -544,6 +545,10 @@
   .area-related-cta__intro,
   .area-related-cta__actions{
     grid-template-columns:1fr;
+  }
+
+  .area-article__rail{
+    position:static;
   }
 }
 
