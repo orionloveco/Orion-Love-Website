@@ -352,6 +352,56 @@ When executing major redesigns, use this workflow to preserve brand quality, cra
 
 **Stats rule:** Stats should support the local story. Do not let data modules become the page's first impression unless the visual design makes them feel like an editorial briefing.
 
+### Area-Detail Implementation Model
+
+The finished Redlands page is the current approved implementation model for area-detail pages. Do not change the Redlands design when using it as the model for future area pages.
+
+Area-detail pages should load these stylesheets in this order:
+
+1. `styles.css`
+2. `editorial-base.css`
+3. `area-detail-editorial.css`
+
+Shared editorial primitives must come from `editorial-base.css`:
+
+- `editorial-shell`
+- `editorial-eyebrow`
+- `editorial-action-list`
+- `editorial-action-link`
+- `editorial-btn` where needed
+
+Page-family composition belongs in `area-detail-editorial.css`:
+
+- `area-detail`
+- `area-hero`
+- `area-market-read`
+- `area-stat-grid`
+- `area-local-details`
+- `area-article`
+- `area-related-cta`
+
+Area-specific styling should be limited to modifier classes such as:
+
+- `area-detail--redlands`
+- `area-detail--fruita`
+- `area-detail--palisade`
+
+Do not reintroduce duplicate local primitives such as:
+
+- `ad-shell`
+- `ad-eyebrow`
+- `area-action-list`
+- `area-action-link`
+
+Each area-detail page should keep this four-section structure:
+
+1. **Hero**
+2. **Market Read**
+3. **Local Details**
+4. **Compare & Continue**
+
+Market stat hooks and raw fallback values must remain crawlable in static HTML. Seller actions should route to `/grand-junction-home-value` and `/contact` rather than embedding a form on area-detail pages. Schema, footer, navigation, canonical tags, and raw HTML crawlability must be preserved.
+
 ---
 
 # PART FOUR: DESIGN SYSTEM
