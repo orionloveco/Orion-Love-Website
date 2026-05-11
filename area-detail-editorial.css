@@ -263,6 +263,7 @@
 
 .area-stat strong{
   display:block;
+  white-space:nowrap;
   color:var(--editorial-navy);
   font-family:"Cormorant Garamond", Georgia, serif;
   font-size:clamp(1.75rem, 2.85vw, 2.85rem);
@@ -271,7 +272,7 @@
   line-height:.9;
 }
 
-.area-stat span{
+.area-stat > span{
   display:block;
   margin-top:.68rem;
   color:rgba(26, 26, 46, .54);
