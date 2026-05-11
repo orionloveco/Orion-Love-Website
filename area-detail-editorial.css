@@ -331,7 +331,7 @@
   text-transform:none;
 }
 
-.area-article__lead{
+.area-detail .area-article__lead{
   max-width:15.5ch;
   color:var(--editorial-navy);
   font-family:"Cormorant Garamond", Georgia, serif;
@@ -341,7 +341,7 @@
   line-height:.9;
 }
 
-.area-article__lead em{
+.area-detail .area-article__lead em{
   color:var(--editorial-gold);
   font-style:italic;
   font-weight:400;
