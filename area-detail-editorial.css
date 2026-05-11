@@ -136,6 +136,17 @@
     url('/images/gj-monument.jpg') center / cover no-repeat;
 }
 
+.area-detail--palisade .area-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(90deg, rgba(8, 18, 50, .96) 0%, rgba(12, 26, 61, .9) 43%, rgba(12, 26, 61, .42) 72%, rgba(12, 26, 61, .78) 100%),
+    linear-gradient(180deg, rgba(8, 18, 50, .08), rgba(8, 18, 50, .62)),
+    url('/images/gj-landscape.jpg') center 42% / cover no-repeat;
+}
+
 .area-hero::after{
   content:"";
   position:absolute;
