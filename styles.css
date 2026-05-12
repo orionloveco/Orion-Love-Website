@@ -720,7 +720,8 @@ p { color: var(--text); }
   --hero-overlay-after: none;
 }
 /* Canonical hero contract:
-   .hero (core) + approved variants only: .hero-flagship, .hero-support/.hero-hub, .hero-neighborhood.
+   .hero (core) + approved active variants: .hero-flagship and .hero-support/.hero-hub.
+   Area detail pages now use area-detail-editorial.css instead of the retired .hero-neighborhood variant.
    Any transitional homepage treatment should map through these hero tokens to avoid parallel systems. */
 
 .hero::before,
@@ -1808,11 +1809,6 @@ body.mobile-nav-open { overflow:hidden; }
    - Keep local context visible in raw HTML; do not add JS-only critical content.
 ========================= */
 
-/* ===== Neighborhood family: shared hero scaffold ===== */
-body.seller-neighborhood-page .hero.hero-neighborhood {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
-body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgba(184,146,58,0.22);}
-
-
 /* ===== Transitional header variants (legacy support pending rebuild) =====
    These page-level .main-header overrides are intentionally retained for pages
    that still depend on a solid/scrolled-like header treatment.
@@ -2025,65 +2021,6 @@ body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
 }
 
-body.seller-neighborhood-page :is(.snapshot-section, .identity-section) {
-  border-top: 1px solid var(--sand);
-  border-bottom: 1px solid var(--sand);
-}
-
-body.seller-neighborhood-page :is(.identity-section, .profile-section, .diff-section, .form-section, .contact-section) {
-  background: var(--cream);
-}
-
-body.seller-neighborhood-page :is(.check-list, .contact-bullets) {
-  list-style: none;
-}
-
-body.seller-neighborhood-page :is(.check-list, .contact-bullets) li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.85rem;
-}
-
-body.seller-neighborhood-page :is(.check-list, .contact-bullets) li svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--gold);
-  stroke-width: 2;
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-/* ===== seller-area page-specific variants ===== */
-/* Fruita hero keeps its own background crop/overlay emphasis. */
-body.page-selling-in-fruita .hero {
-  background:
-    linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%),
-    url("images/gj-landscape.jpg") center 30% / cover no-repeat;
-}
-
-/* Palisade hero keeps a softer crop and tint. */
-body.page-selling-in-palisade .hero {
-  background:
-    linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.62) 55%, rgba(12,26,61,0.90) 100%),
-    url("images/gj-landscape.jpg") center 40% / cover no-repeat;
-}
-
-body.page-selling-in-palisade .stat-note-sm {
-  font-size: 0.72rem;
-  color: var(--muted);
-  margin-top: 0.2rem;
-}
-
-@media (max-width: 640px) {
-  body.page-selling-in-fruita .snapshot-stats,
-  body.page-selling-in-palisade .identity-stats {
-    margin-top: 1rem;
-  }
-}
-
 /* ===== Shared legacy hero variants ===== */
 
 .btn-hero-secondary {
@@ -2104,23 +2041,6 @@ body.page-selling-in-palisade .stat-note-sm {
   --hero-cta-gap: 16px;
   --hero-overlay-before: linear-gradient(170deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 55%, rgba(12,26,61,0.9) 100%);
   --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.5), transparent);
-}
-
-.hero.hero-neighborhood {
-  min-height: clamp(560px, 83vh, 880px);
-  --hero-inner-max: 780px;
-  --hero-inner-top: clamp(64px, 8vw, 80px);
-  --hero-inner-bottom: clamp(32px, 5vw, 48px);
-  --hero-h1-size: clamp(2.65rem, 5.35vw, 4.65rem);
-  --hero-h1-line: 1.03;
-  --hero-h1-max: 15ch;
-  --hero-lead-max: 55ch;
-  --hero-lead-space: 32px;
-  --hero-eyebrow-space: 16px;
-  --hero-overlay-before:
-    radial-gradient(1200px 460px at 82% -10%, rgba(184,146,58,0.14), transparent 70%),
-    linear-gradient(165deg, rgba(8,18,50,0.81) 0%, rgba(12,26,61,0.6) 52%, rgba(12,26,61,0.88) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.3), transparent);
 }
 
 .hero.hero-support,
@@ -2176,10 +2096,6 @@ body.page-faq .faq-hero {
 @media (max-width: 968px) {
   .hero.hero-flagship {
     min-height: clamp(620px, 84vh, 840px);
-  }
-
-  .hero.hero-neighborhood {
-    min-height: clamp(540px, 78vh, 760px);
   }
 
   .hero.hero-support,
@@ -2333,129 +2249,10 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
 }
 
 
-/* Neighborhood family: shared section scaffolding (single authority) */
-body.seller-neighborhood-page :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner, .dark-band-inner, .form-inner, .contact-inner, .pricing-inner) {
-  --split-gap: 5rem;
-  gap: var(--split-gap);
-  align-items: start;
-}
-
-
-body.seller-neighborhood-page :is(.snapshot-inner, .dark-band-inner) {
-  align-items: center;
-}
-
-body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy, .form-copy, .contact-copy) h2 {
-  margin-bottom: 0.85rem;
-  font-size: clamp(1.9rem, 3.25vw, 2.6rem);
-  line-height: 1.12;
-}
-
-body.seller-neighborhood-page :is(.intro-copy, .snapshot-copy, .identity-copy) p {
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-body.seller-neighborhood-page :is(.form-copy, .contact-copy) p {
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-body.seller-neighborhood-page :is(.stat-grid, .snapshot-stats, .identity-stats, .local-area-stat-grid) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--sand);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-body.seller-neighborhood-page :is(.stat-box, .snap-stat) {
-  background: var(--cream);
-  padding: var(--space-card-padding);
-  text-align: center;
-}
-
-body.seller-neighborhood-page :is(.stat-val, .snap-val) {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.4rem;
-  color: var(--navy);
-  line-height: 1;
-}
-
-body.seller-neighborhood-page :is(.stat-val, .snap-val) span {
-  font-size: 1.3rem;
-  color: var(--gold);
-}
-
-body.seller-neighborhood-page :is(.stat-lbl, .snap-label) {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-  margin-top: 0.35rem;
-}
-
-@media (max-width: 968px) {
-  body.seller-neighborhood-page :is(.local-area-intro .layout-split, .snapshot-inner, .identity-inner) {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  body.seller-neighborhood-page :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner, .pricing-inner, .contact-inner) {
-    grid-template-columns: 1fr;
-  }
-
-  body.seller-neighborhood-page :is(.layout-split, .dark-band-inner, .form-inner, .snapshot-inner, .identity-inner) {
-    --split-gap: 2.5rem;
-    gap: var(--split-gap);
-  }
-}
-
-@media (max-width: 640px) {
-  body.seller-neighborhood-page .hero.hero-neighborhood h1 {
-    font-size: 2.4rem;
-  }
-
-  body.seller-neighborhood-page .local-area-stat-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 
 :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split) {
   margin-top: 0;
-}
-
-body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) h2 {
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) h2 em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-
-body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-inner) p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
 }
 
 /* =========================
@@ -2591,46 +2388,6 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-body.seller-neighborhood-page .local-area-quick-facts {
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
-}
-
-body.seller-neighborhood-page .local-area-quick-facts h4 {
-  font-family: "Raleway",sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-body.seller-neighborhood-page .local-area-quick-facts .fact-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--sand);
-}
-
-body.seller-neighborhood-page .local-area-quick-facts .fact-row:last-child {
-  border-bottom: none;
-}
-
-body.seller-neighborhood-page .local-area-quick-facts .fact-label {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
-
-body.seller-neighborhood-page .local-area-quick-facts .fact-value {
-  font-family: "Cormorant Garamond",serif;
-  font-size: 1.2rem;
-  color: var(--navy);
-}
-
 .cta-action-row {
   display: flex;
   gap: var(--space-2);
@@ -2659,13 +2416,6 @@ body.seller-neighborhood-page .local-area-quick-facts .fact-value {
 
 .section-label-accent span {
   color: var(--gold-lt);
-}
-
-.market-note {
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin: -0.35rem 0 1rem 0;
 }
 
 .stats-updated-note {
@@ -2904,42 +2654,6 @@ body.page-privacy .privacy-content {
   margin: 0 auto 3rem;
 }
 .mt-35 { margin-top: 3.5rem; }
-.market-stats-flush { padding: 0; }
-.stat-note-sm-center {
-  text-align: center;
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
-}
-.market-status-note {
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-  text-align: center;
-}
-.market-status-note-uppercase {
-  margin-top: 0.85rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: center;
-}
-.info-callout {
-  padding: 1.5rem;
-  background: rgba(184,146,58,0.06);
-  border: 1px solid rgba(184,146,58,0.2);
-  border-radius: var(--radius-md);
-}
-.info-callout p {
-  font-size: 0.88rem;
-  color: var(--navy);
-  line-height: 1.75;
-}
-.info-callout strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--gold);
-}
 .nearby-area-shell.nearby-area-shell--white {
   background: var(--white);
 }
@@ -2962,160 +2676,6 @@ body.page-privacy .privacy-content {
   }
 }
 
-
-/* ===== seller-neighborhood framework v2 shared contracts ===== */
-.seller-buyer-response-section {
-  border-top: 1px solid var(--sand);
-  border-bottom: 1px solid var(--sand);
-}
-
-.seller-buyer-response-section .seller-buyer-response-header {
-  margin-bottom: 2rem;
-}
-
-.seller-buyer-response-section .seller-buyer-response-intro {
-  max-width: 68ch;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid {
-  margin-top: 2.25rem;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid--rows {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.85rem;
-  align-items: start;
-  border-left: 3px solid rgba(184, 146, 58, 0.68);
-  border-radius: var(--radius-sm);
-  background: rgba(247, 244, 237, 0.45);
-  padding: 0.95rem 1.05rem;
-  box-shadow: none;
-}
-
-.card-base.card--row {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.85rem;
-  align-items: start;
-  border-left: 3px solid rgba(184, 146, 58, 0.68);
-  border-radius: var(--radius-sm);
-  background: rgba(247, 244, 237, 0.45);
-  padding: 0.95rem 1.05rem;
-  box-shadow: none;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid--rows .card-icon {
-  margin: 0.12rem 0 0;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base h3 {
-  margin: 0 0 0.22rem;
-  font-size: 1rem;
-}
-
-.seller-buyer-response-section .seller-buyer-response-grid--rows .card-base p {
-  margin: 0;
-  font-size: 0.92rem;
-}
-
-/* Compact local briefing strip (neighborhood family) */
-body.seller-neighborhood-page .local-briefing-strip {
-  margin: 0 0 1.35rem;
-}
-body.seller-neighborhood-page .local-briefing-eyebrow {
-  margin: 0 0 0.55rem;
-  font-size: 0.73rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-}
-body.seller-neighborhood-page .local-briefing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.7rem;
-}
-body.seller-neighborhood-page .local-briefing-item {
-  background: rgba(247, 244, 237, 0.55);
-  border: 1px solid var(--sand);
-  border-left: 3px solid rgba(184, 146, 58, 0.65);
-  border-radius: var(--radius-sm);
-  padding: 0.72rem 0.8rem;
-}
-body.seller-neighborhood-page .local-briefing-item h3 {
-  margin: 0 0 0.2rem;
-  font-size: 0.84rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-body.seller-neighborhood-page .local-briefing-item p {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-body.seller-neighborhood-page .local-briefing-strip .briefing-pace { order: 1; }
-body.seller-neighborhood-page .local-briefing-strip .briefing-leverage { order: 2; }
-body.seller-neighborhood-page .local-briefing-strip .briefing-risk { order: 3; }
-
-body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-leverage { order: 1; }
-body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-pace { order: 2; }
-body.seller-neighborhood-page .local-briefing-strip--leverage-first .briefing-risk { order: 3; }
-
-body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-risk { order: 1; }
-body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-leverage { order: 2; }
-body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-pace { order: 3; }
-body.seller-neighborhood-page .local-briefing-strip--risk-first .briefing-risk {
-  border-left-color: rgba(151, 54, 54, 0.62);
-  background: rgba(250, 242, 241, 0.72);
-}
-
-/* Light area FAQ block for neighborhood briefings */
-body.seller-neighborhood-page .area-faq-shell {
-  border-top: 1px solid var(--sand);
-}
-body.seller-neighborhood-page .area-faq-grid {
-  display: grid;
-  gap: 0.7rem;
-}
-body.seller-neighborhood-page .area-faq-item {
-  background: var(--white);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 0.95rem;
-}
-body.seller-neighborhood-page .area-faq-item summary {
-  cursor: pointer;
-  list-style: none;
-  font-weight: 600;
-  color: var(--text);
-}
-body.seller-neighborhood-page .area-faq-item summary::-webkit-details-marker {
-  display: none;
-}
-body.seller-neighborhood-page .area-faq-item p {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.65;
-}
-@media (max-width: 900px) {
-   body.seller-neighborhood-page .local-briefing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .seller-buyer-response-section .seller-buyer-response-grid--rows .card-base {
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-  }
-}
 
 /* Nearby-area family contract
    Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
@@ -3699,62 +3259,6 @@ body.page-faq .faq-help-row p {
   }
 }
 
-
-/* Tier differentiation strengthened for neighborhood pages */
-body.tier-premium .hero.hero-neighborhood {
-  --hero-overlay-before:
-    radial-gradient(980px 420px at 68% -4%, rgba(184, 146, 58, 0.24), transparent 66%),
-    linear-gradient(166deg, rgba(8,18,50,0.9) 0%, rgba(12,26,61,0.7) 52%, rgba(8,18,50,0.92) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.52), transparent);
-}
-
-body.tier-premium :is(.snapshot-section, .identity-section) {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 244, 237, 0.62));
-  padding-top: clamp(4rem, 6.1vw, 5.2rem);
-  padding-bottom: clamp(4rem, 6.1vw, 5.2rem);
-}
-
-body.tier-premium .stat-box {
-  border-color: rgba(184, 146, 58, 0.35);
-  box-shadow: 0 14px 36px rgba(8, 18, 50, 0.18);
-}
-
-body.tier-lifestyle .hero.hero-neighborhood {
-  --hero-overlay-before:
-    radial-gradient(1200px 420px at 45% -10%, rgba(184, 146, 58, 0.14), transparent 70%),
-    linear-gradient(168deg, rgba(8,18,50,0.77) 0%, rgba(12,26,61,0.52) 56%, rgba(8,18,50,0.8) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.34), transparent);
-}
-
-body.tier-lifestyle :is(.card-grid-3, .card-grid-3-editorial) {
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,244,237,0.82));
-}
-
-body.tier-lifestyle .dark-band-split .step-item {
-  border-color: rgba(184, 146, 58, 0.24);
-}
-
-body.tier-lifestyle :is(.snapshot-section, .identity-section) {
-  padding-top: clamp(4.35rem, 6.8vw, 5.8rem);
-  padding-bottom: clamp(4.35rem, 6.8vw, 5.8rem);
-}
-
-body.tier-value .hero.hero-neighborhood {
-  --hero-overlay-before: linear-gradient(166deg, rgba(8,18,50,0.9) 0%, rgba(12,26,61,0.72) 56%, rgba(8,18,50,0.92) 100%);
-  --hero-overlay-after: none;
-}
-
-body.tier-value :is(.snapshot-section, .identity-section, .market-snapshot) {
-  background: #fff;
-  padding-top: clamp(3.2rem, 5.1vw, 4.2rem);
-  padding-bottom: clamp(3.2rem, 5.1vw, 4.2rem);
-}
-
-body.tier-value :is(.card-base, .stat-box) {
-  border-color: rgba(8, 18, 50, 0.14);
-  box-shadow: 0 5px 14px rgba(8, 18, 50, 0.06);
-}
 
 /* =========================
    Ownership boundary: Transitional homepage styles
