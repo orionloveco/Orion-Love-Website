@@ -1,0 +1,552 @@
+/* Page composition ownership boundary.
+   Buyer-specific composition only. Shared editorial primitives remain in editorial-base.css. */
+
+body.page-buy-with-orion{
+  background:var(--editorial-cream);
+  color:var(--editorial-ink);
+}
+
+body.page-buy-with-orion .buyer-editorial{
+  min-height:100vh;
+  overflow-x:hidden;
+  background:var(--editorial-cream);
+}
+
+body.page-buy-with-orion .buyer-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  color:#fff;
+}
+
+body.page-buy-with-orion .buyer-hero__media,
+body.page-buy-with-orion .buyer-hero__overlay{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+body.page-buy-with-orion .buyer-hero__media{
+  z-index:-3;
+  background:url('images/gj-valley.jpg') center 46%/cover no-repeat;
+  opacity:.82;
+}
+
+body.page-buy-with-orion .buyer-hero__overlay{
+  z-index:-2;
+  background:
+    linear-gradient(90deg,rgba(8,18,50,.88) 0%,rgba(12,26,61,.66) 36%,rgba(12,26,61,.32) 64%,rgba(12,26,61,.48) 100%),
+    linear-gradient(180deg,rgba(8,18,50,.4) 0%,rgba(12,26,61,.2) 42%,rgba(12,26,61,.76) 100%);
+}
+
+body.page-buy-with-orion .buyer-hero__header-rule,
+body.page-buy-with-orion .buyer-hero__bottom-rule{
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+  pointer-events:none;
+}
+
+body.page-buy-with-orion .buyer-hero__header-rule{
+  top:var(--site-header-height);
+  background:rgba(255,255,255,.12);
+}
+
+body.page-buy-with-orion .buyer-hero__bottom-rule{
+  bottom:0;
+  background:rgba(212,170,90,.35);
+}
+
+body.page-buy-with-orion .buyer-hero__inner{
+  display:grid;
+  min-height:88svh;
+  grid-template-columns:150px minmax(0,1fr);
+  align-items:end;
+  gap:clamp(2rem,4vw,3rem);
+  padding-top:clamp(7.2rem,11vw,8.2rem);
+  padding-bottom:clamp(2.5rem,5vw,3.1rem);
+}
+
+body.page-buy-with-orion .buyer-hero__rail{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid rgba(255,255,255,.12);
+  padding-right:1.35rem;
+}
+
+body.page-buy-with-orion .buyer-hero__rail p,
+body.page-buy-with-orion .buyer-hero__rail div{
+  margin:0;
+  text-transform:uppercase;
+  font-size:.63rem;
+  letter-spacing:.22em;
+}
+
+body.page-buy-with-orion .buyer-hero__rail p{
+  color:var(--editorial-gold-light);
+  font-weight:800;
+}
+
+body.page-buy-with-orion .buyer-hero__rail div{
+  color:rgba(255,255,255,.45);
+  line-height:1.7;
+}
+
+body.page-buy-with-orion .buyer-hero__content{
+  max-width:58rem;
+}
+
+body.page-buy-with-orion .buyer-hero__mobile-kicker{
+  display:none;
+  margin:0 0 1.8rem;
+}
+
+body.page-buy-with-orion .buyer-hero h1{
+  max-width:13ch;
+  margin:0;
+  color:#fff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.4rem,7.3vw,6.7rem);
+  font-weight:300;
+  line-height:.9;
+  letter-spacing:-.035em;
+}
+
+body.page-buy-with-orion .buyer-hero__deck{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(14rem,.72fr);
+  gap:clamp(1.4rem,3vw,2rem);
+  max-width:48rem;
+  margin-top:2rem;
+  border-top:1px solid rgba(255,255,255,.16);
+  padding-top:1.75rem;
+}
+
+body.page-buy-with-orion .buyer-hero__deck p{
+  margin:0;
+  color:rgba(247,244,237,.78);
+  font-size:clamp(1.05rem,1.45vw,1.18rem);
+  line-height:1.75;
+}
+
+body.page-buy-with-orion .buyer-hero__deck p + p{
+  border-left:1px solid rgba(212,170,90,.45);
+  padding-left:1.25rem;
+  color:rgba(247,244,237,.64);
+  font-size:.9rem;
+  line-height:1.8;
+}
+
+body.page-buy-with-orion .buyer-hero__actions{
+  margin-top:2.2rem;
+}
+
+body.page-buy-with-orion .buyer-btn--primary,
+body.page-buy-with-orion .buyer-form__submit{
+  --editorial-btn-primary-shadow:0 18px 34px rgba(184,146,58,.2);
+}
+
+body.page-buy-with-orion .buyer-btn--primary{
+  --editorial-btn-padding:.8rem 1.55rem;
+}
+
+body.page-buy-with-orion .buyer-link-btn{
+  --editorial-btn-min-height:44px;
+  --editorial-btn-padding:.45rem .15rem;
+  --editorial-btn-outline-rule:rgba(212,170,90,.7);
+  --editorial-btn-letter-spacing:.16em;
+  --editorial-btn-font-weight:800;
+}
+
+body.page-buy-with-orion .buyer-link-btn:focus-visible,
+body.page-buy-with-orion .buyer-local-context__aside a:focus-visible{
+  outline:2px solid rgba(212,170,90,.85);
+  outline-offset:4px;
+}
+
+body.page-buy-with-orion .buyer-method__frame{
+  border-top:1px solid rgba(12,26,61,.14);
+  border-bottom:1px solid rgba(12,26,61,.14);
+  padding:clamp(2rem,4vw,2.55rem) 0;
+}
+
+body.page-buy-with-orion .buyer-method__heading-row{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr);
+  gap:clamp(2rem,4vw,3rem);
+  align-items:start;
+}
+
+body.page-buy-with-orion .buyer-method__rail .editorial-eyebrow{
+  color:var(--editorial-gold);
+  font-size:.63rem;
+  letter-spacing:.24em;
+}
+
+body.page-buy-with-orion .buyer-method__lens{
+  display:grid;
+  justify-items:center;
+  gap:.75rem;
+  margin-top:2rem;
+  text-align:center;
+  --editorial-note-border-top:1px solid rgba(12,26,61,.14);
+  --editorial-note-padding-top:1.25rem;
+}
+
+body.page-buy-with-orion .buyer-method__lens p{
+  margin:0;
+}
+
+body.page-buy-with-orion .buyer-method__lens p:last-child{
+  max-width:8.75rem;
+  color:rgba(26,26,46,.46);
+  font-size:.72rem;
+  line-height:1.8;
+}
+
+body.page-buy-with-orion .buyer-method__intro{
+  position:relative;
+  isolation:isolate;
+  max-width:47rem;
+  padding:.25rem 1rem 2.5rem 0;
+}
+
+body.page-buy-with-orion .buyer-method__ghost{
+  position:absolute;
+  right:4.75rem;
+  bottom:5.35rem;
+  z-index:-1;
+  margin:0;
+  color:rgba(184,146,58,.1);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(7rem,14vw,12rem);
+  font-weight:300;
+  line-height:1;
+  letter-spacing:-.08em;
+  pointer-events:none;
+}
+
+body.page-buy-with-orion .buyer-method__intro h2,
+body.page-buy-with-orion .buyer-form-section h2,
+body.page-buy-with-orion .buyer-local-context__statement h2{
+  margin:0;
+  color:var(--editorial-navy);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  letter-spacing:-.025em;
+}
+
+body.page-buy-with-orion .buyer-method__intro h2{
+  max-width:18ch;
+  font-size:clamp(2.35rem,4.2vw,4.25rem);
+  line-height:.98;
+}
+
+body.page-buy-with-orion .buyer-method__intro > p:last-child{
+  max-width:29rem;
+  margin:1.25rem 0 0;
+  color:rgba(26,26,46,.64);
+  font-size:1rem;
+  line-height:1.9;
+}
+
+body.page-buy-with-orion .buyer-method__grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  margin-top:2.5rem;
+  background:rgba(12,26,61,.14);
+}
+
+body.page-buy-with-orion .buyer-method__item{
+  min-height:250px;
+  border:0;
+  background:var(--editorial-cream);
+  padding:clamp(1.5rem,2.6vw,1.8rem);
+}
+
+body.page-buy-with-orion .buyer-method__number{
+  margin:0;
+  color:var(--editorial-gold);
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.15rem;
+  font-weight:300;
+  line-height:.9;
+}
+
+body.page-buy-with-orion .buyer-method__item--number-large .buyer-method__number{
+  font-size:3.65rem;
+}
+
+body.page-buy-with-orion .buyer-method__item h3{
+  margin:2rem 0 0;
+  color:var(--editorial-navy);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,2.7vw,2.65rem);
+  font-weight:300;
+  line-height:.98;
+}
+
+body.page-buy-with-orion .buyer-method__item p:not(.buyer-method__number){
+  max-width:38rem;
+  margin:1.05rem 0 0;
+  color:rgba(26,26,46,.62);
+  font-size:.9rem;
+  line-height:1.8;
+}
+
+body.page-buy-with-orion .buyer-form-section{
+  color:#fff;
+}
+
+body.page-buy-with-orion .buyer-form-section__grid{
+  display:grid;
+  grid-template-columns:.86fr 1.14fr;
+  gap:clamp(2.5rem,5vw,4rem);
+  align-items:start;
+}
+
+body.page-buy-with-orion .buyer-form-section__copy h2{
+  max-width:12ch;
+  color:#fff;
+  font-size:clamp(2.75rem,5vw,4.9rem);
+  line-height:.96;
+}
+
+body.page-buy-with-orion .buyer-form-section__copy > p:not(.editorial-eyebrow){
+  max-width:37rem;
+  margin:1.5rem 0 0;
+  color:rgba(247,244,237,.72);
+  font-size:1.05rem;
+  line-height:1.9;
+}
+
+body.page-buy-with-orion .buyer-next-steps{
+  display:grid;
+  gap:.75rem;
+  margin-top:2rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  padding-top:1.75rem;
+}
+
+body.page-buy-with-orion .buyer-next-steps h3{
+  margin:0 0 .4rem;
+  color:var(--editorial-gold-light);
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  font-weight:300;
+}
+
+body.page-buy-with-orion .buyer-next-steps__item{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:.55rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding-bottom:1rem;
+}
+
+body.page-buy-with-orion .buyer-next-steps__item span{
+  color:rgba(255,255,255,.42);
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  font-weight:300;
+  line-height:1;
+}
+
+body.page-buy-with-orion .buyer-next-steps p{
+  margin:0;
+  color:rgba(247,244,237,.72);
+  font-size:.9rem;
+  line-height:1.8;
+}
+
+body.page-buy-with-orion .buyer-next-steps > p:last-child{
+  padding-top:.5rem;
+  color:rgba(247,244,237,.62);
+}
+
+body.page-buy-with-orion .buyer-form{
+  --editorial-form-message-margin:1rem 0 0;
+}
+
+body.page-buy-with-orion .buyer-form__submit{
+  letter-spacing:.18em;
+}
+
+body.page-buy-with-orion .buyer-local-context{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+body.page-buy-with-orion .buyer-local-context__panel{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index:-1;
+  display:block;
+  width:38%;
+  border-left:1px solid rgba(12,26,61,.1);
+  background:rgba(247,244,237,.38);
+}
+
+body.page-buy-with-orion .buyer-local-context__grid{
+  display:grid;
+  grid-template-columns:.86fr 1.14fr;
+  gap:clamp(2.5rem,5vw,4rem);
+  align-items:stretch;
+}
+
+body.page-buy-with-orion .buyer-local-context__statement,
+body.page-buy-with-orion .buyer-local-context__copy{
+  border-top:1px solid rgba(12,26,61,.14);
+  border-bottom:1px solid rgba(12,26,61,.14);
+  padding:clamp(2rem,4vw,2.55rem) 0;
+}
+
+body.page-buy-with-orion .buyer-local-context__statement h2{
+  max-width:38rem;
+  margin-top:1.45rem;
+  font-size:clamp(2.15rem,3.7vw,3.85rem);
+  line-height:1.02;
+}
+
+body.page-buy-with-orion .buyer-local-context__copy{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 190px;
+  gap:1.75rem;
+}
+
+body.page-buy-with-orion .buyer-local-context__copy p{
+  max-width:42rem;
+  margin:0;
+  color:rgba(26,26,46,.67);
+  font-size:1rem;
+  line-height:1.9;
+}
+
+body.page-buy-with-orion .buyer-local-context__copy p + p{
+  margin-top:1.25rem;
+  color:rgba(26,26,46,.58);
+  font-size:.9rem;
+}
+
+body.page-buy-with-orion .buyer-local-context__aside{
+  align-self:end;
+  text-align:right;
+  --editorial-note-border-left:1px solid rgba(12,26,61,.14);
+  --editorial-note-padding-left:1.5rem;
+}
+
+body.page-buy-with-orion .buyer-local-context__aside p:first-child{
+  color:rgba(184,146,58,.6);
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  font-weight:300;
+  line-height:1;
+}
+
+body.page-buy-with-orion .buyer-local-context__aside p:nth-child(2){
+  margin-top:.75rem;
+  color:rgba(26,26,46,.42);
+  text-transform:uppercase;
+  font-size:.63rem;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+
+body.page-buy-with-orion .buyer-local-context__aside a{
+  display:inline-flex;
+  width:max-content;
+  margin-top:1.5rem;
+  --editorial-action-link-padding:.25rem 0;
+  --editorial-action-rule-color:transparent;
+  border-bottom:1px solid rgba(184,146,58,.7);
+}
+
+@media (max-width:980px){
+  body.page-buy-with-orion .buyer-hero__inner,
+  body.page-buy-with-orion .buyer-method__heading-row,
+  body.page-buy-with-orion .buyer-form-section__grid,
+  body.page-buy-with-orion .buyer-local-context__grid{
+    grid-template-columns:1fr;
+  }
+
+  body.page-buy-with-orion .buyer-hero__rail,
+  body.page-buy-with-orion .buyer-method__lens{
+    display:none;
+  }
+
+  body.page-buy-with-orion .buyer-hero__mobile-kicker{
+    display:flex;
+  }
+
+  body.page-buy-with-orion .buyer-method__rail{
+    display:flex;
+    justify-content:space-between;
+  }
+
+  body.page-buy-with-orion .buyer-method__grid{
+    grid-template-columns:1fr;
+  }
+
+  body.page-buy-with-orion .buyer-method__item{
+    min-height:0;
+  }
+
+  body.page-buy-with-orion .buyer-local-context__panel{
+    display:none;
+  }
+}
+
+@media (max-width:720px){
+  body.page-buy-with-orion .buyer-hero__inner{
+    min-height:auto;
+    padding-top:6.8rem;
+    padding-bottom:3.1rem;
+  }
+
+  body.page-buy-with-orion .buyer-hero h1{
+    font-size:clamp(3.05rem,17vw,4.4rem);
+  }
+
+  body.page-buy-with-orion .buyer-hero__deck,
+  body.page-buy-with-orion .buyer-form__grid,
+  body.page-buy-with-orion .buyer-local-context__copy{
+    grid-template-columns:1fr;
+  }
+
+  body.page-buy-with-orion .buyer-hero__deck p + p{
+    border-left:0;
+    border-top:1px solid rgba(212,170,90,.35);
+    padding:.95rem 0 0;
+  }
+
+  body.page-buy-with-orion .buyer-hero__actions{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  body.page-buy-with-orion .buyer-link-btn{
+    align-self:flex-start;
+  }
+
+  body.page-buy-with-orion .buyer-method__ghost{
+    display:none;
+  }
+
+  body.page-buy-with-orion .buyer-method__intro{
+    padding-right:0;
+  }
+
+  body.page-buy-with-orion .buyer-local-context__aside{
+    border-top:1px solid rgba(12,26,61,.14);
+    border-left:0;
+    padding:1.3rem 0 0;
+    text-align:left;
+  }
+}
