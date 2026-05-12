@@ -102,12 +102,12 @@
 
 .area-caption{
   margin-top:.72rem;
-  color:rgba(26, 26, 46, .48);
-  font-size:.66rem;
+  --editorial-caption-color:rgba(26, 26, 46, .48);
+  --editorial-caption-font-size:.66rem;
+  --editorial-caption-letter-spacing:.12em;
+  --editorial-caption-line-height:1.55;
+  --editorial-caption-text-transform:uppercase;
   font-weight:800;
-  letter-spacing:.12em;
-  line-height:1.55;
-  text-transform:uppercase;
 }
 
 .area-hero{
@@ -197,16 +197,13 @@
 .area-hero__note{
   align-self:end;
   max-width:300px;
-  padding-top:1rem;
-  border-top:1px solid rgba(212, 170, 90, .42);
-}
-
-.area-hero__note p{
-  color:rgba(247, 244, 237, .66);
-  font-size:.78rem;
-  letter-spacing:.04em;
-  line-height:1.52;
-  text-transform:uppercase;
+  --editorial-note-border-top:1px solid rgba(212, 170, 90, .42);
+  --editorial-note-padding-top:1rem;
+  --editorial-note-paragraph-color:rgba(247, 244, 237, .66);
+  --editorial-note-paragraph-font-size:.78rem;
+  --editorial-note-paragraph-letter-spacing:.04em;
+  --editorial-note-paragraph-line-height:1.52;
+  --editorial-note-paragraph-text-transform:uppercase;
 }
 
 .area-market-read{
@@ -379,17 +376,12 @@
 .area-article__close{
   max-width:720px;
   margin-top:clamp(2rem, 4.4vw, 3.8rem);
-  padding-top:1rem;
-  border-top:1px solid rgba(184, 146, 58, .42);
+  --editorial-pull-border-top:1px solid rgba(184, 146, 58, .42);
+  --editorial-pull-padding-top:1rem;
 }
 
 .area-article__close p{
-  color:var(--editorial-navy);
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:clamp(1.55rem, 2.6vw, 2.35rem);
-  font-weight:300;
-  letter-spacing:-.045em;
-  line-height:1.08;
+  margin:0;
 }
 
 .area-related-cta{

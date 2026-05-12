@@ -197,9 +197,9 @@ body.page-grand-junction-home-value .home-value-method__pricing-lens{
   justify-items:center;
   gap:.75rem;
   margin-top:2rem;
-  border-top:1px solid rgba(12,26,61,.14);
-  padding-top:1.25rem;
   text-align:center;
+  --editorial-note-border-top:1px solid rgba(12,26,61,.14);
+  --editorial-note-padding-top:1.25rem;
 }
 
 body.page-grand-junction-home-value .home-value-method__pricing-lens p{
@@ -471,9 +471,9 @@ body.page-grand-junction-home-value .home-value-local-context__copy p + p{
 
 body.page-grand-junction-home-value .home-value-local-context__aside{
   align-self:end;
-  border-left:1px solid rgba(12,26,61,.14);
-  padding-left:1.5rem;
   text-align:right;
+  --editorial-note-border-left:1px solid rgba(12,26,61,.14);
+  --editorial-note-padding-left:1.5rem;
 }
 
 body.page-grand-junction-home-value .home-value-local-context__aside p:first-child{

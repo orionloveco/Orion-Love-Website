@@ -320,6 +320,118 @@
   --editorial-label-line-height:1.5;
 }
 
+
+/* ==========================================================
+   Ownership boundary: Editorial note, pull, and caption primitives
+   - Owns low-level reusable callout typography, rules, and label treatment.
+   - Page-family CSS owns placement, sizing, sticky/rail behavior, and composition.
+   ========================================================== */
+
+.editorial-note{
+  border-top:var(--editorial-note-border-top,0);
+  border-left:var(--editorial-note-border-left,0);
+  padding-top:var(--editorial-note-padding-top,0);
+  padding-left:var(--editorial-note-padding-left,0);
+  color:var(--editorial-note-color,rgba(26,26,46,.58));
+  font-size:var(--editorial-note-font-size,.88rem);
+  letter-spacing:var(--editorial-note-letter-spacing,normal);
+  line-height:var(--editorial-note-line-height,1.72);
+  text-align:var(--editorial-note-text-align,inherit);
+  text-transform:var(--editorial-note-text-transform,none);
+}
+
+.editorial-note :where(p){
+  margin:var(--editorial-note-paragraph-margin,0);
+  color:var(--editorial-note-paragraph-color,currentColor);
+  font-size:var(--editorial-note-paragraph-font-size,inherit);
+  letter-spacing:var(--editorial-note-paragraph-letter-spacing,inherit);
+  line-height:var(--editorial-note-paragraph-line-height,inherit);
+  text-transform:var(--editorial-note-paragraph-text-transform,inherit);
+}
+
+.editorial-note :where(b,.editorial-note__label){
+  display:block;
+  margin-bottom:var(--editorial-note-label-margin-bottom,.65rem);
+  color:var(--editorial-note-label-color,var(--editorial-gold));
+  font-size:var(--editorial-note-label-font-size,.66rem);
+  font-weight:var(--editorial-note-label-font-weight,700);
+  letter-spacing:var(--editorial-note-label-letter-spacing,.18em);
+  line-height:var(--editorial-note-label-line-height,normal);
+  text-transform:uppercase;
+}
+
+.editorial-note--dark{
+  --editorial-note-color:rgba(255,255,255,.68);
+  --editorial-note-paragraph-color:rgba(247,244,237,.66);
+  --editorial-note-label-color:var(--editorial-gold-light);
+}
+
+.editorial-note--light{
+  --editorial-note-color:rgba(26,26,46,.58);
+  --editorial-note-label-color:var(--editorial-gold);
+}
+
+.editorial-note--rail{
+  --editorial-note-border-left:1px solid var(--editorial-note-rule-color,rgba(184,146,58,.48));
+  --editorial-note-padding-left:1rem;
+}
+
+.editorial-pull{
+  border-top:var(--editorial-pull-border-top,0);
+  border-left:var(--editorial-pull-border-left,0);
+  padding-top:var(--editorial-pull-padding-top,0);
+  padding-left:var(--editorial-pull-padding-left,0);
+  color:var(--editorial-pull-color,var(--editorial-navy));
+  font-family:var(--editorial-pull-font-family,'Cormorant Garamond',serif);
+  font-size:var(--editorial-pull-font-size,clamp(1.55rem,2.6vw,2.35rem));
+  font-weight:var(--editorial-pull-font-weight,300);
+  letter-spacing:var(--editorial-pull-letter-spacing,-.045em);
+  line-height:var(--editorial-pull-line-height,1.08);
+  text-align:var(--editorial-pull-text-align,left);
+  text-wrap:var(--editorial-pull-text-wrap,balance);
+}
+
+.editorial-pull--dark{
+  --editorial-pull-color:#fff;
+}
+
+.editorial-pull :where(span,.editorial-pull__label){
+  display:block;
+  margin-top:var(--editorial-pull-label-margin-top,.7rem);
+  color:var(--editorial-pull-label-color,var(--editorial-gold));
+  font-family:var(--editorial-pull-label-font-family,'Raleway',sans-serif);
+  font-size:var(--editorial-pull-label-font-size,.66rem);
+  font-weight:var(--editorial-pull-label-font-weight,700);
+  letter-spacing:var(--editorial-pull-label-letter-spacing,.18em);
+  line-height:var(--editorial-pull-label-line-height,normal);
+  text-transform:uppercase;
+}
+
+.editorial-caption{
+  border-top:var(--editorial-caption-border-top,0);
+  border-left:var(--editorial-caption-border-left,0);
+  padding-top:var(--editorial-caption-padding-top,0);
+  padding-left:var(--editorial-caption-padding-left,0);
+  color:var(--editorial-caption-color,rgba(26,26,46,.48));
+  font-size:var(--editorial-caption-font-size,.78rem);
+  letter-spacing:var(--editorial-caption-letter-spacing,normal);
+  line-height:var(--editorial-caption-line-height,1.5);
+  text-transform:var(--editorial-caption-text-transform,none);
+}
+
+.editorial-caption--dark{
+  --editorial-caption-color:rgba(247,244,237,.6);
+}
+
+.editorial-caption :where(p){
+  margin:var(--editorial-caption-paragraph-margin,0);
+  color:var(--editorial-caption-paragraph-color,currentColor);
+  font-size:var(--editorial-caption-paragraph-font-size,inherit);
+  letter-spacing:var(--editorial-caption-paragraph-letter-spacing,inherit);
+  line-height:var(--editorial-caption-paragraph-line-height,inherit);
+  text-transform:var(--editorial-caption-paragraph-text-transform,inherit);
+}
+
 /* ==========================================================
    Ownership boundary: Button/action primitives
    - Shared editorial buttons and action-link lists.
