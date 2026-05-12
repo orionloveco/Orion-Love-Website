@@ -182,22 +182,12 @@ body.page-contact .button-row + .consent-block {
 
 body.page-contact .editorial-btn.contact-submit,
 body.page-contact .form-submit.contact-submit {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  --editorial-btn-min-height: 52px;
+  --editorial-btn-padding: 0 30px;
+  --editorial-btn-radius: 2px;
+  --editorial-btn-font-weight: 850;
   width: auto;
-  min-height: 52px;
   margin: 0;
-  padding: 0 30px;
-  border-radius: 2px;
-  border: 1px solid var(--navy);
-  background: var(--navy);
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-weight: 850;
-  cursor: pointer;
-  box-shadow: none;
 }
 
 body.page-contact .editorial-btn.contact-submit::after,
@@ -211,9 +201,6 @@ body.page-contact .form-submit.contact-submit::after {
 
 body.page-contact .editorial-btn.contact-submit:hover,
 body.page-contact .form-submit.contact-submit:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--navy);
   transform: none;
 }
 
