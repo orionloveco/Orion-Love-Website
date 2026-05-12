@@ -17,14 +17,8 @@
 .li-eyebrow {
   display: inline-flex;
   margin: 0 0 1.15rem;
-  font-size: .66rem;
-  font-weight: 800;
-  letter-spacing: .18em;
-}
-
-.li-eyebrow::before {
-  width: 34px;
-  opacity: .7;
+  --editorial-eyebrow-font-weight:800;
+  --editorial-eyebrow-rule-opacity:.7;
 }
 
 .li-lead {
