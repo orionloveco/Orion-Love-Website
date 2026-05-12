@@ -163,17 +163,17 @@
 }
 
 .seller-premise__aside {
-  border-top: 1px solid var(--gold);
-  padding-top: 1.1rem;
   margin-top: 7rem;
+  --editorial-note-border-top: 1px solid var(--gold);
+  --editorial-note-padding-top: 1.1rem;
 }
 
 .seller-premise__aside p:last-child {
+  --editorial-note-paragraph-color: var(--navy);
+  margin-top: 0.9rem;
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
-  color: var(--navy);
   line-height: 1.08;
-  margin-top: 0.9rem;
 }
 
 .seller-before {
@@ -312,9 +312,12 @@
 .seller-response__pull {
   margin-top: 2rem;
   max-width: 760px;
-  padding-left: 1rem;
-  border-left: 1px solid rgba(212, 170, 90, 0.55);
-  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  --editorial-pull-border-left: 1px solid rgba(212, 170, 90, 0.55);
+  --editorial-pull-padding-left: 1rem;
+  --editorial-pull-font-size: clamp(1.9rem, 3vw, 2.7rem);
+  --editorial-pull-letter-spacing: .01em;
+  --editorial-pull-line-height: 1;
+  --editorial-pull-text-wrap: initial;
 }
 
 .seller-close__panel {
@@ -342,10 +345,13 @@
 }
 
 .seller-close__pull {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  padding-left: 1rem;
-  border-left: 1px solid var(--gold);
   max-width: 520px;
+  --editorial-pull-border-left: 1px solid var(--gold);
+  --editorial-pull-padding-left: 1rem;
+  --editorial-pull-font-size: clamp(1.7rem, 3vw, 2.3rem);
+  --editorial-pull-letter-spacing: .01em;
+  --editorial-pull-line-height: 1;
+  --editorial-pull-text-wrap: initial;
 }
 
 .seller-close__cta {
