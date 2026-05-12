@@ -128,44 +128,22 @@ body.page-contact .form-sheet-wrap {
   --editorial-form-grid-gap: 22px 24px;
   --editorial-form-field-gap: 9px;
   --editorial-form-field-margin-top: 0;
+  --editorial-form-message-margin: 0 0 18px;
+  --editorial-form-consent-margin: 0;
+  --editorial-form-consent-padding: 0;
+  --editorial-form-consent-border-top: 0;
+  --editorial-form-consent-size: 0.78rem;
+  --editorial-form-consent-line-height: 1.58;
+  --editorial-form-consent-color: rgba(26, 26, 46, 0.58);
 }
 
 body.page-contact .form-sheet {
   background-size: 38px 38px, 44px 44px, auto, auto;
 }
 
-body.page-contact .form-sheet .form-message {
-  margin-bottom: 18px;
-}
-
 body.page-contact .form-sheet form[data-lead-form="seller"] {
   display: grid;
   gap: 22px;
-}
-
-body.page-contact .consent-block {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-}
-
-body.page-contact .consent-block p {
-  margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.58;
-  color: rgba(26, 26, 46, 0.58);
-}
-
-body.page-contact .consent-block a {
-  color: var(--navy);
-  font-weight: 800;
-  text-underline-offset: 2px;
-}
-
-body.page-contact .consent-block a:hover {
-  color: var(--gold);
 }
 
 body.page-contact .button-row {
@@ -202,12 +180,6 @@ body.page-contact .form-submit.contact-submit::after {
 body.page-contact .editorial-btn.contact-submit:hover,
 body.page-contact .form-submit.contact-submit:hover {
   transform: none;
-}
-
-body.page-contact .form-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none !important;
 }
 
 body.page-contact .response-note {
