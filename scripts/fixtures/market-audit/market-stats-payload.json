@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-05-12T00:00:00.000Z",
+  "areas": {
+    "redlands": {
+      "medianPrice": 551000,
+      "averageDaysOnMarket": 88,
+      "totalListings": 235,
+      "newListings30d": 23,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "fruita": {
+      "medianPrice": 500000,
+      "averageDaysOnMarket": 68,
+      "totalListings": 202,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "palisade": {
+      "medianPrice": 575000,
+      "averageDaysOnMarket": 85,
+      "totalListings": 61,
+      "newListings": 0,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "orchard_mesa": {
+      "medianPrice": 415000,
+      "averageDaysOnMarket": 76,
+      "totalListings": 177,
+      "newListings": "not available",
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "clifton": {
+      "medianPrice": 280000,
+      "averageDaysOnMarket": 80,
+      "totalListings": 115,
+      "newListings30d": 0,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "downtown_grand_junction": {
+      "medianPrice": 385000,
+      "averageDaysOnMarket": 59,
+      "totalListings": 138,
+      "newListings": 17,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "north_grand_junction": {
+      "medianPrice": 541000,
+      "averageDaysOnMarket": 81,
+      "totalListings": 136,
+      "newListings": 21,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "northeast_grand_junction_fruitvale": {
+      "medianPrice": 395000,
+      "averageDaysOnMarket": 68,
+      "totalListings": 228,
+      "newListings": 31,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "northwest_grand_junction_appleton": {
+      "medianPrice": 425000,
+      "averageDaysOnMarket": 95,
+      "totalListings": 189,
+      "newListings": 22,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    },
+    "loma_mack": {
+      "medianPrice": 660000,
+      "averageDaysOnMarket": 105,
+      "totalListings": 22,
+      "newListings": 3,
+      "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
+    }
+  }
+}

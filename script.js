@@ -340,6 +340,10 @@ document.addEventListener('DOMContentLoaded', function () {
     return Number.isFinite(numericValue) ? numericValue : null;
   }
 
+  function isTrustedZeroMarketStat(statKey, sourceKey) {
+    return sourceKey === statKey || statKey !== 'newListings';
+  }
+
   function getMarketStatValue(areaData, statKey) {
     const sourceKeys = MARKET_STAT_SOURCE_KEYS[statKey] || [statKey];
 
@@ -347,7 +351,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!Object.prototype.hasOwnProperty.call(areaData, sourceKey)) continue;
 
       const numericValue = parseMarketStatValue(areaData[sourceKey]);
-      if (numericValue !== null) return numericValue;
+      if (numericValue === null) continue;
+      if (numericValue === 0 && !isTrustedZeroMarketStat(statKey, sourceKey)) continue;
+      return numericValue;
     }
 
     return null;
