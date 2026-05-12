@@ -1,3 +1,9 @@
+/* =========================================================
+   Ownership boundary: Rebuilt shared chrome
+   - Owns rebuilt header, navigation, mobile navigation, footer, and footer grid presentation.
+   - Page-specific editorial files must not override shared chrome directly.
+========================================================= */
+
 /* Shared editorial ownership layer (rebuilt system primitives).
    Owns: .main-header, .nav-menu presentation, mobile-nav presentation, .main-footer,
    .footer-grid presentation, and editorial-shell/tokens.
@@ -185,7 +191,9 @@
 }
 
 /* ==========================================================
-   Editorial Primitive System (composable only)
+   Ownership boundary: Editorial tokens
+   - Shared editorial variables mapped from styles.css brand tokens.
+   - Keep tokens primitive and page-family neutral.
    ========================================================== */
 
 :root{
@@ -218,6 +226,12 @@
   :root{--site-header-height:68px}
 }
 
+/* ==========================================================
+   Ownership boundary: Layout primitives
+   - Generic shell, section, cluster, stack, and split helpers only.
+   - Do not encode page-family composition here.
+   ========================================================== */
+
 .editorial-section{
   padding:clamp(4.9rem,8.4vw,5.8rem) 0;
 }
@@ -245,6 +259,11 @@
   gap:clamp(1.2rem,2.8vw,2rem);
 }
 
+/* ==========================================================
+   Ownership boundary: Typography/eyebrow primitives
+   - Reusable labels and editorial type accents shared across rebuilt pages.
+   ========================================================== */
+
 .editorial-eyebrow{
   display:flex;
   align-items:center;
@@ -267,6 +286,12 @@
 .editorial-eyebrow--dark{
   color:var(--editorial-gold);
 }
+
+/* ==========================================================
+   Ownership boundary: Button/action primitives
+   - Shared editorial buttons and action-link lists.
+   - Page-specific CTA layout remains in page-family CSS.
+   ========================================================== */
 
 .editorial-btn{
   display:inline-flex;
@@ -332,6 +357,12 @@
   transform:translateX(4px);
 }
 
+/* ==========================================================
+   Ownership boundary: Card/surface/image primitives
+   - Low-level surfaces, cards, and image frames only.
+   - Avoid broad generic grids that flatten editorial hierarchy.
+   ========================================================== */
+
 .editorial-card{
   border-top:var(--editorial-rule);
   border-bottom:var(--editorial-rule);
@@ -346,6 +377,12 @@
   border:1px solid rgba(12,26,61,.12);
   box-shadow:0 24px 70px rgba(12,26,61,.12);
 }
+
+/* ==========================================================
+   Ownership boundary: Form primitives
+   - Shared inputs, textareas, selects, form sheets, consent, and noscript support.
+   - Legacy form compatibility remains in styles.css until migrated.
+   ========================================================== */
 
 .editorial-input,
 .editorial-textarea,
@@ -505,6 +542,12 @@
 .editorial-form-noscript{
   margin-top:1rem;
 }
+
+/* ==========================================================
+   Ownership boundary: FAQ primitives
+   - Reusable editorial FAQ disclosure styles.
+   - Page-level FAQ support remains in styles.css until migrated.
+   ========================================================== */
 
 .editorial-faq details{
   border-top:var(--editorial-rule);

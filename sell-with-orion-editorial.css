@@ -1,3 +1,8 @@
+/* Page composition ownership boundary.
+   This file owns page or page-family composition only.
+   Reusable shared primitives belong in editorial-base.css.
+   Do not add legacy fallback systems here. */
+
 .sell-with-orion-editorial {
   background: var(--cream);
   color: var(--text);

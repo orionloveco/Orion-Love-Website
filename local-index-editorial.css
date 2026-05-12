@@ -1,3 +1,8 @@
+/* Page composition ownership boundary.
+   This file owns page or page-family composition only.
+   Reusable shared primitives belong in editorial-base.css.
+   Do not add legacy fallback systems here. */
+
 /* Areas index page — premium local editorial guide
    Page-scoped composition layer; shared editorial primitives and tokens live in editorial-base.css. */
 .local-index {

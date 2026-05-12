@@ -1,5 +1,11 @@
 /* ===== Original shared styles.css ===== */
 /* =========================================================
+   Ownership boundary: Global foundation / tokens
+   - Canonical brand variables and legacy token aliases live here.
+   - Editorial primitives map forward from these values in editorial-base.css.
+   - Do not add page-family composition rules to this foundation block.
+========================================================= */
+/* =========================================================
    Orion Love â€” Shared Base Styles
    Updated to match the redesigned page system:
    - Cormorant Garamond + Raleway typography
@@ -144,7 +150,9 @@
 }
 
 /* =========================
-   Reset & Base
+   Ownership boundary: Reset/base
+   - Browser reset, document defaults, core layout containers, and type defaults.
+   - Keep this generic and safe for every page in the site.
 ========================= */
 *, *::before, *::after {
   margin: 0;
@@ -166,6 +174,12 @@ body {
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
+
+/* =========================
+   Ownership boundary: Legacy compatibility
+   - Shared layout, typography, labels, reveal hooks, and older utility contracts.
+   - Preserve for existing static pages until each family is migrated.
+========================= */
 
 /* =========================
    Layout
@@ -328,6 +342,12 @@ p { color: var(--text); }
   flex-shrink: 0;
   opacity: 0.6;
 }
+
+/* =========================
+   Ownership boundary: Shared chrome compatibility
+   - Legacy/global header, navigation, dropdown, mobile-toggle, and footer fallbacks.
+   - Rebuilt shared chrome presentation belongs in editorial-base.css.
+========================= */
 
 /* =========================
    Navigation (legacy/global compatibility layer during rebuild)
@@ -548,7 +568,9 @@ p { color: var(--text); }
 }
 
 /* =========================
-   Buttons
+   Ownership boundary: Legacy buttons
+   - Retains the historical .btn family and older button variants.
+   - New editorial action primitives belong in editorial-base.css.
 ========================= */
 .btn {
   display: inline-flex;
@@ -658,6 +680,12 @@ p { color: var(--text); }
 :is(a.link-card, a.card-link, a.usp-card):focus-visible {
   border-radius: var(--radius-sm);
 }
+
+/* =========================
+   Ownership boundary: Legacy hero/support systems
+   - Older hero contracts, support heroes, and non-editorial hero variants.
+   - Page-family hero composition should live in the relevant editorial CSS file.
+========================= */
 
 /* =========================
    Hero (Photo)
@@ -1234,6 +1262,12 @@ a.card-base:hover {
 /* Centered hero variant (contact, faq, services) intentionally stays left-aligned. */
 
 /* =========================
+   Ownership boundary: Legacy section/card/grid systems
+   - Older grids, card bases, section headers, and scanning support patterns.
+   - Keep for compatibility; avoid expanding as a new generic component system.
+========================= */
+
+/* =========================
    USP / Value Cards
 ========================= */
 .usp-section { background: rgba(255, 255, 255, 0.5); }
@@ -1305,6 +1339,12 @@ a.card-base:hover {
   text-align: center;
   margin-top: 2.25rem;
 }
+
+/* =========================
+   Ownership boundary: Legacy CTA systems
+   - Historical CTA bands, close blocks, and shared call-to-action wrappers.
+   - Editorial page-specific CTA composition belongs in page-family files.
+========================= */
 
 /* =========================
    CTA Bands
@@ -1762,6 +1802,12 @@ a.card-base:hover {
 body.mobile-nav-open { overflow:hidden; }
 
 
+/* =========================
+   Ownership boundary: Neighborhood/area legacy support
+   - Seller-neighborhood and area compatibility selectors pending family migration.
+   - Keep local context visible in raw HTML; do not add JS-only critical content.
+========================= */
+
 /* ===== Neighborhood family: shared hero scaffold ===== */
 body.seller-neighborhood-page .hero.hero-neighborhood {background:linear-gradient(160deg,rgba(8,18,50,0.84) 0%,rgba(12,26,61,0.62) 55%,rgba(12,26,61,0.90) 100%),url("images/gj-landscape.jpg") center/cover no-repeat;}
 body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgba(184,146,58,0.22);}
@@ -1773,6 +1819,12 @@ body.seller-neighborhood-page .hero.hero-neighborhood {--hero-overlay-after: rgb
    Do not copy this pattern to new rebuilt pages; use shared variants in
    editorial-base.css when introducing new header behavior.
 */
+/* =========================
+   Ownership boundary: FAQ support styles
+   - FAQ page compatibility and migrated FAQ inline styles.
+   - New reusable FAQ primitives belong in editorial-base.css.
+========================= */
+
 /* ===== faq.html ===== */
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
@@ -2221,6 +2273,12 @@ body.page-grand-junction-home-value .cta-content {
 .js .reveal.reveal-delay-033 { transition-delay: 0.33s; }
 .js .reveal.reveal-delay-040 { transition-delay: 0.40s; }
 
+/* =========================
+   Ownership boundary: Pending migration sections
+   - Older section shells and page-family contracts retained for stability.
+   - Phase 2 should decide what remains legacy versus what graduates to primitives.
+========================= */
+
 /* Shared section shells */
 .section-shell-white {
   background: var(--white);
@@ -2399,6 +2457,12 @@ body.seller-neighborhood-page .dark-band.dark-band-full-process :is(.dark-band-i
   line-height: 1.8;
   margin-bottom: 2rem;
 }
+
+/* =========================
+   Ownership boundary: Form compatibility
+   - Legacy form shells, seller lead forms, and validation-friendly field contracts.
+   - Rebuilt form primitives belong in editorial-base.css.
+========================= */
 
 /* Canonical shared form section + shell contract */
 .form-section {
@@ -2729,6 +2793,11 @@ body.seller-neighborhood-page .local-area-quick-facts .fact-value {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* =========================
+   Ownership boundary: Privacy support styles
+   - privacy.html rules migrated from inline styles and kept page-scoped.
+========================= */
+
 /* Privacy page rules moved out of inline style block */
 body.page-privacy {
   background:
@@ -3055,6 +3124,11 @@ body.seller-neighborhood-page .area-faq-item p {
   color: var(--muted);
 }
 
+
+/* =========================
+   Ownership boundary: Pending migration sections
+   - Migrated inline styles and canonical systems awaiting final ownership decisions.
+========================= */
 
 /* ===== Migrated inline styles from page templates ===== */
 
@@ -3681,6 +3755,12 @@ body.tier-value :is(.card-base, .stat-box) {
   border-color: rgba(8, 18, 50, 0.14);
   box-shadow: 0 5px 14px rgba(8, 18, 50, 0.06);
 }
+
+/* =========================
+   Ownership boundary: Transitional homepage styles
+   - Legacy homepage selectors retained only while the rebuilt eh-* system owns composition.
+   - Current homepage ownership is editorial-home.css; do not add new fallback here.
+========================= */
 
 /* =========================================================
    Editorial Homepage System
