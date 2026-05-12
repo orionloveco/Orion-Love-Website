@@ -402,12 +402,12 @@ body.page-grand-junction-home-value .home-value-next-steps > p:last-child{
   color:rgba(247,244,237,.62);
 }
 
-body.page-grand-junction-home-value .home-value-form__submit{
-  letter-spacing:.18em;
+body.page-grand-junction-home-value .home-value-form{
+  --editorial-form-message-margin:1rem 0 0;
 }
 
-body.page-grand-junction-home-value .home-value-form .form-message{
-  margin-top:1rem;
+body.page-grand-junction-home-value .home-value-form__submit{
+  letter-spacing:.18em;
 }
 
 body.page-grand-junction-home-value .home-value-local-context{
