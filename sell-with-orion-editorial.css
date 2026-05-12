@@ -13,17 +13,6 @@
   margin: 0 auto;
 }
 
-.seller-kicker {
-  font-size: 0.67rem;
-  letter-spacing: 0.3em;
-  color: var(--gold-lt);
-  gap: 0.9rem;
-}
-
-.seller-kicker--dark {
-  color: var(--gold);
-}
-
 .seller-hero {
   position: relative;
   overflow: hidden;
@@ -111,15 +100,6 @@
   color: var(--navy);
   padding: 1.15rem;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-}
-
-.seller-note-label,
-.seller-side-label {
-  font-size: 0.67rem;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--gold);
-  font-weight: 700;
 }
 
 .seller-hero__note p:last-child {
@@ -412,7 +392,6 @@
     padding-top: 6.1rem;
     padding-bottom: 3.1rem;
   }
-
 
   .seller-hero__photo-bg {
     position: relative;

@@ -267,24 +267,57 @@
 .editorial-eyebrow{
   display:flex;
   align-items:center;
-  gap:.9rem;
-  font-size:.67rem;
-  letter-spacing:.3em;
+  gap:var(--editorial-eyebrow-gap,.9rem);
+  font-size:var(--editorial-eyebrow-font-size,.67rem);
+  letter-spacing:var(--editorial-eyebrow-letter-spacing,.3em);
+  line-height:var(--editorial-eyebrow-line-height,normal);
   text-transform:uppercase;
-  color:var(--editorial-gold-light);
-  font-weight:700;
+  color:var(--editorial-eyebrow-color,var(--editorial-gold-light));
+  font-weight:var(--editorial-eyebrow-font-weight,700);
 }
 
 .editorial-eyebrow::before{
   content:"";
   display:inline-block;
-  width:2.8rem;
+  width:var(--editorial-eyebrow-rule-width,2.8rem);
   height:1px;
   background:currentColor;
+  opacity:var(--editorial-eyebrow-rule-opacity,1);
 }
 
 .editorial-eyebrow--dark{
-  color:var(--editorial-gold);
+  --editorial-eyebrow-color:var(--editorial-gold);
+}
+
+.editorial-eyebrow--light{
+  --editorial-eyebrow-color:var(--editorial-gold-light);
+}
+
+.editorial-eyebrow--compact{
+  --editorial-eyebrow-gap:.85rem;
+  --editorial-eyebrow-font-size:.66rem;
+  --editorial-eyebrow-letter-spacing:.18em;
+  --editorial-eyebrow-rule-width:34px;
+}
+
+.editorial-eyebrow--no-rule::before{
+  content:none;
+}
+
+.editorial-label{
+  color:var(--editorial-label-color,var(--editorial-gold));
+  font-size:var(--editorial-label-font-size,.67rem);
+  font-weight:var(--editorial-label-font-weight,700);
+  letter-spacing:var(--editorial-label-letter-spacing,.28em);
+  line-height:var(--editorial-label-line-height,normal);
+  text-transform:uppercase;
+}
+
+.editorial-label--rail{
+  --editorial-label-font-size:.58rem;
+  --editorial-label-font-weight:800;
+  --editorial-label-letter-spacing:.17em;
+  --editorial-label-line-height:1.5;
 }
 
 /* ==========================================================
