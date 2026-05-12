@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const noteEl = blockEl.querySelector('[data-market-note]');
     if (noteEl) {
       const areaLabel = blockEl.dataset.marketAreaLabel || 'this neighborhood';
-      noteEl.textContent = `Market stats update monthly. Request a current seller briefing for the latest ${areaLabel} numbers.`;
+      noteEl.textContent = `Market stats update monthly. Request a current seller consultation for the latest ${areaLabel} numbers.`;
     }
   }
 
