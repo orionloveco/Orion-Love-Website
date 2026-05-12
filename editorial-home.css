@@ -1,3 +1,8 @@
+/* Page composition ownership boundary.
+   This file owns page or page-family composition only.
+   Reusable shared primitives belong in editorial-base.css.
+   Do not add legacy fallback systems here. */
+
 .page-index .editorial-homepage{--eh-navy:#0c1a3d;--eh-navy-2:#16275a;--eh-gold:#b8923a;--eh-gold-light:#d4aa5a;--eh-cream:#f7f4ed;--eh-ink:#1a1a2e;--eh-muted:rgba(26,26,46,.64);--eh-white:#fff;--eh-page:var(--editorial-page-width);--eh-rule:rgba(12,26,61,.14);--eh-rule-soft:rgba(12,26,61,.08);--eh-rule-dark:rgba(255,255,255,.16);background:var(--eh-cream);color:var(--eh-ink);font-family:'Raleway',sans-serif;line-height:1.72;letter-spacing:.01em;overflow-x:hidden}
 .page-index .editorial-homepage *{box-sizing:border-box}
 .page-index .editorial-homepage .eh-container{width:var(--eh-page);margin:0 auto}
