@@ -95,6 +95,10 @@ function parseMarketStatValue(value) {
   return Number.isFinite(numericValue) ? numericValue : null;
 }
 
+function isTrustedZeroMarketStat(statKey, sourceKey) {
+  return sourceKey === statKey || statKey !== 'newListings';
+}
+
 function getMarketStatValue(stats, statKey) {
   if (!stats || typeof stats !== 'object') return null;
 
@@ -103,7 +107,9 @@ function getMarketStatValue(stats, statKey) {
     if (!Object.prototype.hasOwnProperty.call(stats, sourceKey)) continue;
 
     const numericValue = parseMarketStatValue(stats[sourceKey]);
-    if (numericValue !== null) return numericValue;
+    if (numericValue === null) continue;
+    if (numericValue === 0 && !isTrustedZeroMarketStat(statKey, sourceKey)) continue;
+    return numericValue;
   }
 
   return null;
