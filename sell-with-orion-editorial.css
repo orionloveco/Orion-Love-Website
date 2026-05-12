@@ -376,16 +376,6 @@
   justify-self: start;
 }
 
-.sell-with-orion-editorial .btn.btn-primary {
-  color: #fff;
-  box-shadow: 0 16px 36px rgba(184, 146, 58, 0.28);
-}
-
-.sell-with-orion-editorial .btn.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(184, 146, 58, 0.3);
-}
-
 .seller-close__cta .btn {
   width: 100%;
   padding: 0.86rem 1.22rem;

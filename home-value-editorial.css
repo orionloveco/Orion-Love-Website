@@ -152,29 +152,19 @@ body.page-grand-junction-home-value .home-value-hero__actions{
 
 body.page-grand-junction-home-value .home-value-btn--primary,
 body.page-grand-junction-home-value .home-value-form__submit{
-  border:0;
-  background:var(--editorial-gold);
-  color:#fff;
-  box-shadow:0 18px 34px rgba(184,146,58,.2);
+  --editorial-btn-primary-shadow:0 18px 34px rgba(184,146,58,.2);
 }
 
 body.page-grand-junction-home-value .home-value-btn--primary{
-  padding:.8rem 1.55rem;
+  --editorial-btn-padding:.8rem 1.55rem;
 }
 
 body.page-grand-junction-home-value .home-value-link-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:44px;
-  border-bottom:1px solid rgba(212,170,90,.7);
-  padding:.45rem .15rem;
-  color:rgba(255,255,255,.82);
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:.72rem;
-  font-weight:800;
-  letter-spacing:.16em;
+  --editorial-btn-min-height:44px;
+  --editorial-btn-padding:.45rem .15rem;
+  --editorial-btn-outline-rule:rgba(212,170,90,.7);
+  --editorial-btn-letter-spacing:.16em;
+  --editorial-btn-font-weight:800;
 }
 
 body.page-grand-junction-home-value .home-value-link-btn:focus-visible,
