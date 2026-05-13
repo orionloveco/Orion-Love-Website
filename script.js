@@ -71,56 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 
-  const SHARED_CONVERSATION_CTA = {
-    href: '/contact',
-    label: 'Start the Conversation',
-  };
-
-  function resolveFeaturedAreasMountMode(value) {
-    if (value === 'inner' || value === 'disabled') return value;
-    return 'full';
-  }
-
-  function renderFeaturedAreasMarkup(mode) {
-    const mountMode = resolveFeaturedAreasMountMode(mode);
-
-    if (mountMode === 'disabled') {
-      return '';
-    }
-
-    if (mountMode === 'inner') {
-      return `<div class="cta-center"><a class="editorial-btn editorial-btn--primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>`;
-    }
-
-    return `
-<section class="nearby-area-shell">
-  <div class="container">
-    <div class="nearby-area-links-shell">
-      <div class="nearby-area-intro">
-        <div class="nearby-area-label"><span>Next Step</span></div>
-        <h2>Have Questions About Selling?</h2>
-        <p>Get direct guidance for your home, your timeline, and your Mesa County market.</p>
-      </div>
-      <div class="cta-center"><a class="editorial-btn editorial-btn--primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>
-    </div>
-  </div>
-</section>`;
-  }
-
-  function renderFeaturedAreas() {
-    const target = document.getElementById('featuredAreasLinks');
-    if (!target) return;
-
-    const mode = resolveFeaturedAreasMountMode(target.dataset.featuredAreasMount);
-    if (mode === 'disabled') {
-      target.innerHTML = '';
-      return;
-    }
-
-    target.innerHTML = renderFeaturedAreasMarkup(mode);
-  }
-
-  renderFeaturedAreas();
   syncSharedNavState(path);
 
   function syncSharedNavState(currentPath) {

@@ -1987,12 +1987,6 @@ body.page-faq .faq-hero {
   }
 }
 
-.nearby-area-shell .link-card span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--navy);
-}
-
 /* =========================================================
    CTA standardization layer
    Scoped to CTA structures only
@@ -2080,15 +2074,15 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
   --shared-cta-gap: 1rem;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) > .container {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) > .container {
   position: relative;
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) .section-header {
   margin-bottom: var(--shared-section-header-gap);
 }
 
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header.centered {
+body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) .section-header.centered {
   text-align: center;
 }
 
@@ -2116,7 +2110,7 @@ body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) 
 
 /* Shared shell wrapper spacing (additive, HTML-compatible) */
 
-:is(.section-shell-white, .section-shell-cream, .nearby-area-shell) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split) {
+:is(.section-shell-white, .section-shell-cream) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split) {
   margin-top: 0;
 }
 
@@ -2322,87 +2316,6 @@ form[data-lead-form="seller"] .form-message {
   margin-top: 2rem;
 }
 
-/* Shared nearby-area shell (canonical authority) */
-.nearby-area-shell {
-  background: var(--cream);
-  border-top: 1px solid var(--sand);
-  padding: clamp(3rem,5vw,4rem) 0;
-}
-
-.nearby-area-intro {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.nearby-area-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-bottom: 1.25rem;
-}
-
-.nearby-area-label::before,
-.nearby-area-label::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.nearby-area-label span {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-.nearby-area-intro h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: clamp(1.5rem,2.5vw,2.2rem);
-  margin-bottom: 0.55rem;
-}
-
-.nearby-area-intro p {
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.8;
-}
-
-.nearby-area-links-shell {
-  width: min(1040px, 100%);
-  margin: 0 auto;
-  border: 1px solid rgba(12, 26, 61, 0.08);
-  border-radius: clamp(16px, 2vw, 24px);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 16px 40px rgba(12, 26, 61, 0.06);
-  padding: clamp(1.25rem, 2.3vw, 2rem);
-}
-
-.nearby-area-links-shell #featuredAreasLinks {
-  min-height: clamp(220px, 28vw, 320px);
-  display: block;
-}
-
-.nearby-area-links-shell #featuredAreasLinks:empty::before {
-  content: "Nearby area comparisons are loading…";
-  display: grid;
-  place-items: center;
-  min-height: inherit;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(184, 146, 58, 0.07), rgba(12, 26, 61, 0.03));
-  color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .footer-brand-note {
   margin-top: var(--space-2);
   color: rgba(255, 255, 255, 0.7);
@@ -2416,11 +2329,6 @@ form[data-lead-form="seller"] .form-message {
   margin: 0 auto 3rem;
 }
 .mt-35 { margin-top: 3.5rem; }
-.nearby-area-shell.nearby-area-shell--white {
-  background: var(--white);
-}
-
-
 /* Potential duplicate with canonical reduced-motion reveal block at ~L1608.
    Kept intentionally for now because this block includes broader selectors
    beyond `.js .reveal` and may affect non-IntersectionObserver reveal helpers.
@@ -2436,14 +2344,6 @@ form[data-lead-form="seller"] .form-message {
     transition: none !important;
     animation: none !important;
   }
-}
-
-
-/* Nearby-area family contract
-   Canonical owner: .nearby-area-shell/.nearby-area-intro/.nearby-area-label/.nearby-area-copy
-*/
-.nearby-area-shell .nearby-area-copy {
-  color: var(--muted);
 }
 
 
