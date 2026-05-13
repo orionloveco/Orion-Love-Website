@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const AREA_NAV_GROUPS = [
     {
-      label: 'Grand Junction Areas',
+      label: 'Grand Junction',
       items: [
         { href: '/sell-redlands', label: 'Redlands' },
         { href: '/sell-orchard-mesa', label: 'Orchard Mesa' },
-        { href: '/sell-downtown-grand-junction', label: 'Downtown Grand Junction' },
+        { href: '/sell-downtown-grand-junction', label: 'Central GJ' },
         { href: '/sell-north-grand-junction', label: 'North GJ' },
         { href: '/sell-northeast-grand-junction', label: 'Northeast GJ' },
         { href: '/sell-northwest-grand-junction', label: 'Northwest GJ' },

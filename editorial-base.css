@@ -115,8 +115,10 @@
 }
 
 .main-header .nav-dropdown-menu--areas{
-  right:-.35rem;
-  left:auto;
+  top:calc(100% - 12px);
+  left:50%;
+  right:auto;
+  transform:translateX(-50%);
   width:clamp(270px,22vw,320px);
   min-width:clamp(270px,22vw,320px);
   max-width:min(320px,calc(100vw - 2rem));
