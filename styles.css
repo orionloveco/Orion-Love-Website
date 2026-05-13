@@ -487,7 +487,7 @@ p { color: var(--text); }
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% - 18px);
+  top: calc(100% - 8px);
   left: 50%;
   right: auto;
   transform: translateX(-50%);
@@ -583,12 +583,12 @@ p { color: var(--text); }
   display: block;
   padding: 0.24rem 0;
   color: rgba(247, 244, 237, 0.92);
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.08rem, 1.35vw, 1.2rem);
+  font-family: "Raleway", system-ui, sans-serif;
+  font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.015em;
-  line-height: 1.28;
-  text-transform: none;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
   text-align: center;
   transition: color 0.2s ease, transform 0.2s ease;
 }
