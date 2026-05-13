@@ -749,13 +749,14 @@ select.editorial-input{
   cursor:pointer;
 }
 
-.editorial-form-sheet .form-submit:disabled,
-.editorial-form-sheet [data-submit-button]:disabled{
+.editorial-form-sheet [data-submit-button]:disabled,
+.editorial-form-sheet .form-submit:disabled{
   opacity:.6;
   cursor:not-allowed;
   transform:none !important;
 }
 
+.editorial-form-sheet [data-form-message],
 .editorial-form-sheet .form-message{
   display:none;
   margin:var(--editorial-form-message-margin,1rem 0 0);
@@ -767,12 +768,14 @@ select.editorial-input{
   line-height:1.5;
 }
 
+.editorial-form-sheet [data-form-message].success,
 .editorial-form-sheet .form-message.success{
   border-color:rgba(24,121,78,.24);
   background:rgba(24,121,78,.08);
   color:#1f6b4b;
 }
 
+.editorial-form-sheet [data-form-message].error,
 .editorial-form-sheet .form-message.error{
   border-color:rgba(148,45,45,.24);
   background:rgba(148,45,45,.08);
