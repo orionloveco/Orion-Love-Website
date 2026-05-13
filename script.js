@@ -131,7 +131,23 @@ document.addEventListener('DOMContentLoaded', function () {
      ============================================================ */
   const header = document.getElementById('mainHeader');
   if (header) {
-    const hasHero = !!document.querySelector('.hero');
+    const pageHeroSelector = [
+      '[data-header-theme]',
+      '[data-hero]',
+      '.editorial-cover-hero',
+      '.eh-cover',
+      '.seller-hero',
+      '.profile-hero',
+      '.contact-hero',
+      '.home-value-hero',
+      '.li-cover',
+      '.area-hero',
+      '.buyer-hero',
+      '.support-cover',
+      '.faq-hero',
+      '.hero',
+    ].join(',');
+    const hasHero = !!document.querySelector(pageHeroSelector);
 
     const updateHeader = () => {
       const isScrolled = window.scrollY > 40;
