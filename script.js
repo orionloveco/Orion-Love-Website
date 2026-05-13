@@ -385,7 +385,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function showFormMsg(el, text, type) {
     if (!el) return;
     el.textContent = text;
-    el.className = `form-message ${type}`;
+    el.classList.remove('success', 'error');
+    if (type) el.classList.add(type);
     el.style.display = 'block';
   }
 
@@ -532,8 +533,16 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const btn = document.getElementById(submitBtnId);
-      const msg = document.getElementById(messageId);
+      // Prefer neutral data hooks; keep legacy class/id fallbacks during the form primitive migration.
+      const btn =
+        form.querySelector('[data-submit-button]') ||
+        document.getElementById(submitBtnId) ||
+        form.querySelector('.form-submit, button[type="submit"]');
+      const msg =
+        form.querySelector('[data-form-message]') ||
+        (messageId ? document.querySelector(`[data-form-message][id="${messageId}"]`) : null) ||
+        document.getElementById(messageId) ||
+        form.querySelector('.form-message');
 
       if (btn) {
         btn.disabled = true;
@@ -610,8 +619,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const initSellerLeadForm = (form) => {
     if (!form || form.dataset.initialized === 'true') return;
 
-    const submitBtn = form.querySelector('[data-submit-button], button[type="submit"]');
-    const msgEl = form.querySelector('.form-message');
+    // Prefer neutral data hooks; keep legacy class fallbacks until the broad CSS cleanup pass.
+    const submitBtn = form.querySelector('[data-submit-button], .form-submit, button[type="submit"]');
+    const msgEl = form.querySelector('[data-form-message], .form-message');
     const successMessage =
       form.dataset.successMessage || "Thank you! I'll be in touch within one business day.";
     const inquiry = form.dataset.inquiry || 'Home Value Request';
