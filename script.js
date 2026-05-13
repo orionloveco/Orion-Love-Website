@@ -48,25 +48,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const AREA_NAV_GROUPS = [
     {
-      label: 'Core Areas',
+      label: 'Grand Junction Areas',
       items: [
-        { href: '/areas', label: 'All Areas Index' },
-        { href: '/grand-junction-home-value', label: 'Grand Junction' },
-        { href: '/sell-clifton', label: 'Clifton' },
-        { href: '/sell-fruita', label: 'Fruita' },
-        { href: '/sell-palisade', label: 'Palisade' },
-        { href: '/sell-loma-mack', label: 'Loma / Mack' },
+        { href: '/sell-redlands', label: 'Redlands' },
+        { href: '/sell-orchard-mesa', label: 'Orchard Mesa' },
+        { href: '/sell-downtown-grand-junction', label: 'Downtown Grand Junction' },
+        { href: '/sell-north-grand-junction', label: 'North GJ' },
+        { href: '/sell-northeast-grand-junction', label: 'Northeast GJ' },
+        { href: '/sell-northwest-grand-junction', label: 'Northwest GJ' },
       ],
     },
     {
-      label: 'Grand Junction Neighborhoods',
+      label: 'Surrounding Areas',
       items: [
-        { href: '/sell-downtown-grand-junction', label: 'Downtown Grand Junction' },
-        { href: '/sell-north-grand-junction', label: 'North Grand Junction' },
-        { href: '/sell-northeast-grand-junction', label: 'Northeast Grand Junction' },
-        { href: '/sell-northwest-grand-junction', label: 'Northwest Grand Junction' },
-        { href: '/sell-orchard-mesa', label: 'Orchard Mesa' },
-        { href: '/sell-redlands', label: 'Redlands' },
+        { href: '/sell-fruita', label: 'Fruita' },
+        { href: '/sell-palisade', label: 'Palisade' },
+        { href: '/sell-clifton', label: 'Clifton' },
+        { href: '/sell-loma-mack', label: 'Loma / Mack' },
       ],
     },
   ];
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('#navMenu a, #mobileNavOverlay a').forEach((link) => {
       const isActive = normalizePath(link.getAttribute('href')) === normalizedCurrent;
-      const isAreaSubnavLink = !!link.closest('.nav-dropdown-menu, .mobile-nav-areas');
+      const isAreaSubnavLink = !!link.closest('.nav-dropdown-menu') || (!!link.closest('.mobile-nav-areas') && !link.classList.contains('mobile-nav-title'));
       const shouldShowActive = isActive && !link.classList.contains('btn-nav') && !(topLevelNavActive && isAreaSubnavLink);
       link.classList.toggle('active', shouldShowActive);
       if (shouldShowActive) link.setAttribute('aria-current', 'page');
@@ -209,11 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
         areaDropdown.classList.toggle('open', isOpen);
         areaToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       };
-
-      areaToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        syncAreaAria(!areaDropdown.classList.contains('open'));
-      });
 
       areaDropdown.addEventListener('mouseenter', () => syncAreaAria(true));
       areaDropdown.addEventListener('mouseleave', () => syncAreaAria(false));

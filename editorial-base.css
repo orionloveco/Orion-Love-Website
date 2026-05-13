@@ -64,7 +64,7 @@
 }
 
 .main-header .nav-menu{
-  gap:clamp(1.05rem,1.8vw,2.25rem);
+  gap:clamp(.72rem,1.25vw,1.45rem);
 }
 
 .main-header .nav-menu a,
@@ -115,14 +115,14 @@
 }
 
 .main-header .nav-dropdown-menu{
-  background:rgba(8,18,50,.97);
-  border-color:rgba(184,146,58,.26);
-  border-radius:16px;
+  background:rgba(8,18,50,.98);
+  border-color:rgba(184,146,58,.24);
+  border-radius:0;
 }
 
 .main-header .nav-dropdown-heading{
   color:rgba(212,170,90,.9);
-  letter-spacing:.13em;
+  letter-spacing:.16em;
 }
 
 .main-footer{
