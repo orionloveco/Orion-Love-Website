@@ -1,0 +1,210 @@
+/* ==========================================================
+   Ownership boundary: Support-page editorial composition
+   - Composes privacy.html and 404.html with shared editorial primitives.
+   - Does not define reusable primitives, shared chrome, or legacy support systems.
+   ========================================================== */
+
+body.page-support-editorial:where(.page-support-privacy,.page-support-404){
+  background:var(--editorial-cream);
+  color:var(--editorial-ink);
+}
+
+.support-page{
+  background:
+    radial-gradient(860px 420px at 50% 0%, rgba(184,146,58,.1), transparent 64%),
+    var(--editorial-cream);
+}
+
+.support-cover{
+  min-height:clamp(360px,42vw,500px);
+  padding-top:calc(var(--site-header-height) + clamp(4.6rem,8vw,6.8rem));
+  padding-bottom:clamp(4rem,7vw,5.7rem);
+  background:
+    linear-gradient(145deg, rgba(8,18,50,.97), rgba(12,26,61,.9)),
+    radial-gradient(600px 320px at 18% 22%, rgba(212,170,90,.18), transparent 62%);
+  color:#fff;
+}
+
+.support-cover__shell{
+  display:grid;
+}
+
+.support-cover__copy{
+  max-width:760px;
+  gap:var(--editorial-space-3);
+}
+
+.support-cover__copy h1{
+  margin:0;
+  color:#fff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.4rem,8vw,6.6rem);
+  font-weight:300;
+  letter-spacing:-.055em;
+  line-height:.9;
+  text-wrap:balance;
+}
+
+.support-cover__copy > p:not(.editorial-eyebrow){
+  max-width:640px;
+  margin:0;
+  color:rgba(247,244,237,.78);
+  font-size:clamp(1rem,1.45vw,1.14rem);
+  line-height:1.8;
+}
+
+.support-cover--centered{
+  min-height:clamp(520px,64vh,680px);
+  display:grid;
+  align-items:center;
+  text-align:center;
+}
+
+.support-cover--centered .support-cover__shell{
+  justify-items:center;
+}
+
+.support-cover--centered .support-cover__copy{
+  justify-items:center;
+}
+
+.support-cover--centered .editorial-eyebrow{
+  justify-content:center;
+}
+
+.support-cover--centered .support-cover__copy > p:not(.editorial-eyebrow){
+  max-width:560px;
+}
+
+.support-cover__actions{
+  justify-content:center;
+  margin-top:var(--editorial-space-1);
+}
+
+.support-content{
+  padding-top:clamp(3.2rem,6vw,5rem);
+  padding-bottom:clamp(4.6rem,8vw,6rem);
+}
+
+.support-content__shell{
+  max-width:980px;
+}
+
+.support-policy{
+  gap:clamp(2rem,4vw,3rem);
+}
+
+.support-policy__intro{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(1.2rem,3vw,2.4rem);
+  align-items:start;
+  padding-bottom:clamp(1.6rem,3vw,2.4rem);
+  border-bottom:var(--editorial-rule-strong);
+}
+
+.support-policy__intro p{
+  margin:0;
+  color:rgba(26,26,46,.66);
+  font-size:1rem;
+  line-height:1.85;
+}
+
+.support-policy__intro .support-policy__date{
+  justify-self:end;
+  white-space:nowrap;
+  color:var(--editorial-navy);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.16em;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+
+.support-policy__body{
+  display:grid;
+  gap:clamp(1.9rem,4vw,2.7rem);
+}
+
+.support-policy__section{
+  display:grid;
+  gap:.9rem;
+}
+
+.support-policy__section + .support-policy__section{
+  padding-top:clamp(1.2rem,2.6vw,1.9rem);
+  border-top:1px solid rgba(12,26,61,.1);
+}
+
+.support-policy__section h2{
+  margin:0;
+  color:var(--editorial-navy);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,3vw,2.35rem);
+  font-weight:400;
+  letter-spacing:-.035em;
+  line-height:1.08;
+}
+
+.support-policy__section p,
+.support-policy__section li{
+  color:rgba(26,26,46,.72);
+  font-size:.98rem;
+  line-height:1.78;
+}
+
+.support-policy__section p,
+.support-policy__section ul,
+.support-policy__section ol{
+  margin:0;
+}
+
+.support-policy__section ul,
+.support-policy__section ol{
+  padding-left:1.35rem;
+}
+
+.support-policy__section li + li{
+  margin-top:.55rem;
+}
+
+.support-policy__section strong{
+  color:var(--editorial-ink);
+  font-weight:700;
+}
+
+.support-policy__section a{
+  color:var(--editorial-navy);
+  text-decoration-color:rgba(184,146,58,.62);
+  text-underline-offset:.18em;
+}
+
+.support-policy__section a:hover{
+  color:var(--editorial-gold);
+}
+
+.support-policy__section.support-policy__contact{
+  margin-top:.4rem;
+  padding:clamp(1.5rem,3vw,2rem) 0 0;
+  border-top:1px solid rgba(184,146,58,.48);
+}
+
+@media (max-width:720px){
+  .support-cover{
+    min-height:auto;
+    padding-top:calc(var(--site-header-height) + 3.8rem);
+  }
+
+  .support-cover__copy h1{
+    font-size:clamp(3rem,16vw,4.5rem);
+  }
+
+  .support-policy__intro{
+    grid-template-columns:1fr;
+  }
+
+  .support-policy__intro .support-policy__date{
+    justify-self:start;
+    white-space:normal;
+  }
+}
