@@ -487,7 +487,7 @@ p { color: var(--text); }
 
 .nav-dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 8px);
   right: -0.35rem;
   transform: none;
   min-width: clamp(270px, 22vw, 320px);
@@ -570,7 +570,7 @@ p { color: var(--text); }
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247, 244, 237, 0.68);
+  color: rgba(212, 170, 90, 0.95);
   margin: 0 0 0.62rem 0;
   font-weight: 600;
   text-align: right;
