@@ -21,9 +21,10 @@
   <script src="https://unpkg.com/lucide@0.468.0" defer></script>
   <link href="styles.css" rel="stylesheet" />
   <link href="editorial-base.css" rel="stylesheet" />
+  <link href="support-editorial.css" rel="stylesheet" />
   <script defer src="script.js?v=20260512-market-zero-guard"></script>
 </head>
-<body>
+<body class="page-support-404 page-support-editorial">
   <header class="main-header" id="mainHeader">
   <nav>
     <a class="logo" href="/">
@@ -96,12 +97,19 @@
   </ul>
 </div>
 
-  <main class="site-section">
-    <div class="container">
-      <h1>Page Not Found</h1>
-      <p>The page you were looking for isn't available. Visit the homepage to continue.</p>
-      <p><a class="btn btn-primary" href="/">Return Home</a></p>
-    </div>
+  <main class="support-page support-page--404">
+    <section class="editorial-section support-cover support-cover--centered" aria-labelledby="not-found-title">
+      <div class="editorial-shell support-cover__shell">
+        <div class="editorial-stack support-cover__copy">
+          <p class="editorial-eyebrow editorial-eyebrow--light">404</p>
+          <h1 id="not-found-title">Page Not Found</h1>
+          <p>The page you were looking for isn't available. Visit the homepage to continue.</p>
+          <div class="editorial-cluster support-cover__actions">
+            <a class="editorial-btn editorial-btn--primary" href="/">Return Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="main-footer" id="siteFooter">
