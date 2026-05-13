@@ -1817,7 +1817,8 @@ body.mobile-nav-open { overflow:hidden; }
 */
 /* =========================
    Ownership boundary: FAQ support styles
-   - FAQ page compatibility and migrated FAQ inline styles.
+   - Retains only the shared FAQ page heading fallback.
+   - FAQ answer-hub composition belongs in faq-editorial.css.
    - New reusable FAQ primitives belong in editorial-base.css.
 ========================= */
 
@@ -1825,142 +1826,6 @@ body.mobile-nav-open { overflow:hidden; }
 body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-faq .faq-nav {background: var(--white);
-      border-bottom: 1px solid var(--sand);
-      position: sticky;
-      top: 72px;
-      z-index: 50;}
-body.page-faq .faq-nav-inner {display: flex;
-      gap: 0;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 2.5rem);}
-body.page-faq .faq-tab {display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 1.1rem 1.75rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      cursor: pointer;
-      border: none;
-      background: none;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-      font-family: "Raleway", sans-serif;}
-body.page-faq .faq-tab svg {width: 16px; height: 16px; stroke: currentColor;}
-body.page-faq .faq-tab:hover {color: var(--navy);}
-body.page-faq .faq-tab.active {color: var(--navy);
-      border-bottom-color: var(--gold);}
-body.page-faq .faq-section {padding-top: 80px;
-  padding-bottom: 80px;
-      background: var(--cream);}
-body.page-faq .faq-panel {display: none;}
-body.page-faq .faq-panel.active {display: block;}
-body.page-faq .faq-panel-header {display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: end;
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--sand);}
-body.page-faq .faq-panel-header h2 {font-size: clamp(2.1rem, 4.3vw, 3.25rem);
-      color: var(--navy);
-      font-weight: 300;}
-body.page-faq .faq-panel-header h2 em {font-style: italic; color: var(--gold);}
-body.page-faq .faq-panel-header p {color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.8;}
-body.page-faq .faq-accordion {display: flex;
-      flex-direction: column;
-      gap: 0.75rem;}
-body.page-faq .faq-item {background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: border-color 0.25s, box-shadow 0.25s;}
-body.page-faq .faq-item[open] {border-color: rgba(184,146,58,0.3);
-      box-shadow: var(--shadow-sm);}
-body.page-faq .faq-item summary {cursor: pointer;
-      padding: 1.35rem 1.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.25rem;
-      list-style: none;
-      -webkit-appearance: none;
-      user-select: none;}
-body.page-faq .faq-item summary::-webkit-details-marker {display: none;}
-body.page-faq .faq-item summary:focus-visible {outline: 2px solid var(--gold);
-      outline-offset: -2px;
-      border-radius: var(--radius-md);}
-body.page-faq .faq-q {font-family: "Cormorant Garamond", serif;
-      font-size: 1.08rem;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.3;
-      flex: 1;}
-body.page-faq .faq-chevron {width: 20px; height: 20px;
-      flex-shrink: 0;
-      stroke: var(--gold);
-      transition: transform 0.3s ease;}
-body.page-faq .faq-item[open] .faq-chevron {transform: rotate(180deg);}
-body.page-faq .faq-body {padding: 0 1.6rem 1.5rem;
-      border-top: 1px solid var(--sand);}
-body.page-faq .faq-body p {color: var(--muted);
-      font-size: 0.97rem;
-      line-height: 1.8;
-      padding-top: 1.25rem;}
-body.page-faq .faq-grid {display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      align-items: start;}
-body.page-faq .faq-item.full {grid-column: 1 / -1;}
-body.page-faq .faq-search-wrap {margin-bottom: 2rem;}
-body.page-faq .faq-search {width: 100%;
-      max-width: 560px;
-      padding: 0.85rem 1.25rem 0.85rem 3rem;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: 50px;
-      font-family: "Raleway", sans-serif;
-      font-size: 0.97rem;
-      color: var(--text);
-      transition: border-color 0.25s, box-shadow 0.25s;
-      appearance: none;}
-body.page-faq .faq-search:focus {outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(184,146,58,0.1);}
-body.page-faq .faq-search::placeholder {color: rgba(26,26,46,0.35);}
-body.page-faq .search-wrap-inner {position: relative;
-      display: inline-block;
-      width: 100%;
-      max-width: 560px;}
-body.page-faq .search-icon {position: absolute;
-      left: 1.1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px; height: 16px;
-      stroke: var(--muted);
-      pointer-events: none;}
-body.page-faq .faq-no-results {display: none;
-      padding: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1rem;
-      background: var(--white);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);}
-@media (max-width: 900px) {
-body.page-faq .faq-grid {grid-template-columns: 1fr;}
-body.page-faq .faq-item.full {grid-column: auto;}
-body.page-faq .faq-panel-header {grid-template-columns: 1fr; gap: 1.25rem;}
-}
-@media (max-width: 640px) {
-body.page-faq .faq-tab {padding: 1rem 1rem; font-size: 0.72rem;}
-}
 
 /* ===== grand-junction-home-value.html ===== */
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
@@ -2588,27 +2453,6 @@ form[data-lead-form="seller"] .form-message {
 ========================= */
 
 /* ===== Migrated inline styles from page templates ===== */
-
-/* faq.html migrated inline <style> */
-body.page-faq .faq-utility-header {
-  border-bottom: 1px solid rgba(184, 146, 58, 0.2);
-}
-body.page-faq .faq-help-row {
-  padding-top: 1rem;
-}
-body.page-faq .faq-help-row .faq-help-inner {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .85rem 1.15rem;
-  justify-content: space-between;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 16px;
-  padding: 1rem 1.15rem;
-}
-body.page-faq .faq-help-row p {
-  margin: 0;
-}
 
 /* === CANONICAL DARK BAND SYSTEM === */
 
@@ -3311,23 +3155,6 @@ body.page-faq .faq-help-row p {
     padding: 8px 16px;
   }
 
-  body.page-faq .faq-accordion,
-  body.page-faq .faq-grid {
-    gap: 16px;
-  }
-
-  body.page-faq .faq-item summary {
-    padding: 24px;
-    gap: 16px;
-  }
-
-  body.page-faq .faq-body {
-    padding: 0 24px 24px;
-  }
-
-  body.page-faq .faq-body p {
-    padding-top: 16px;
-  }
 
   .footer-grid {
     gap: 32px;
