@@ -44,6 +44,44 @@
     url('/images/gj-landscape.jpg') center/cover;
 }
 
+.faq-hero,
+.faq-hero h1{
+  color:var(--editorial-cream);
+}
+
+.faq-hero .editorial-eyebrow,
+.faq-hero .editorial-eyebrow--light{
+  color:var(--editorial-gold-light);
+}
+
+.faq-hero__lead,
+.faq-hero__rail,
+.faq-hero__rail p{
+  color:rgba(247,244,237,.78);
+}
+
+.faq-hero__rail-kicker span,
+.faq-hero__rail strong{
+  color:var(--editorial-gold-light);
+}
+
+.faq-hero__rail-kicker em{
+  color:rgba(247,244,237,.72);
+}
+
+.faq-hero .editorial-btn,
+.faq-hero .editorial-btn--primary{
+  --editorial-btn-color:var(--editorial-gold-light);
+  color:var(--editorial-gold-light);
+  border-color:currentColor;
+}
+
+.faq-hero .editorial-btn:hover,
+.faq-hero .editorial-btn--primary:hover{
+  --editorial-btn-color:var(--editorial-cream);
+  color:var(--editorial-cream);
+}
+
 .faq-hero__grid{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(290px,360px);
