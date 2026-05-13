@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (mountMode === 'inner') {
-      return `<div class="cta-center"><a class="btn btn-primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>`;
+      return `<div class="cta-center"><a class="editorial-btn editorial-btn--primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>`;
     }
 
     return `
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2>Have Questions About Selling?</h2>
         <p>Get direct guidance for your home, your timeline, and your Mesa County market.</p>
       </div>
-      <div class="cta-center"><a class="btn btn-primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>
+      <div class="cta-center"><a class="editorial-btn editorial-btn--primary" href="${SHARED_CONVERSATION_CTA.href}">${SHARED_CONVERSATION_CTA.label}</a></div>
     </div>
   </div>
 </section>`;
