@@ -159,6 +159,7 @@ body.page-contact .button-row + .consent-block {
 }
 
 body.page-contact .editorial-btn.contact-submit,
+body.page-contact [data-submit-button].contact-submit,
 body.page-contact .form-submit.contact-submit {
   --editorial-btn-min-height: 52px;
   --editorial-btn-padding: 0 30px;
@@ -169,6 +170,7 @@ body.page-contact .form-submit.contact-submit {
 }
 
 body.page-contact .editorial-btn.contact-submit::after,
+body.page-contact [data-submit-button].contact-submit::after,
 body.page-contact .form-submit.contact-submit::after {
   content: "→";
   margin-left: 12px;
@@ -178,6 +180,7 @@ body.page-contact .form-submit.contact-submit::after {
 }
 
 body.page-contact .editorial-btn.contact-submit:hover,
+body.page-contact [data-submit-button].contact-submit:hover,
 body.page-contact .form-submit.contact-submit:hover {
   transform: none;
 }
