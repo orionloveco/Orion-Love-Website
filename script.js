@@ -94,13 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     Icons
-     ============================================================ */
-  if (window.lucide) {
-    lucide.createIcons();
-  }
-
-  /* ============================================================
      Scroll reveal
      ============================================================ */
   const revealEls = document.querySelectorAll('.reveal');
@@ -241,9 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
      ============================================================ */
   const MARKET_STATS_URL =
     'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
-
-  const GJ_CITY_STATS_URL =
-    'https://grand-junction-city-stats.orion-love-co.workers.dev/api/grand-junction-stats';
 
   const PROXY_URL =
     'https://fub-contact-proxy.orion-love-co.workers.dev';
@@ -435,39 +425,6 @@ document.addEventListener('DOMContentLoaded', function () {
       marketBlocks.forEach((blockEl) => {
         setMarketFallbackState(blockEl);
       });
-    }
-  }
-
-  /* ============================================================
-     Grand Junction city stats loader
-     Uses separate worker for grand-junction-home-value page
-     ============================================================ */
-  async function loadGrandJunctionCityStats() {
-    try {
-      const res = await fetch(GJ_CITY_STATS_URL, {
-        headers: { Accept: 'application/json' },
-      });
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const data = await res.json();
-      const stats = data?.stats || {};
-
-      const medianEl = document.getElementById('gjMedianListPrice');
-      const domEl = document.getElementById('gjAvgDom');
-      const newEl = document.getElementById('gjNewListings');
-      const activeEl = document.getElementById('gjActiveListings');
-      const metaEl = document.getElementById('gjStatsMeta');
-
-      if (medianEl) medianEl.innerHTML = formatCurrencyHTML(stats.medianListPrice);
-      if (domEl) domEl.textContent = formatDays(stats.averageDaysOnMarket);
-      if (newEl) newEl.textContent = formatNumber(stats.newListings30d);
-      if (activeEl) activeEl.textContent = formatNumber(stats.activeListings);
-      if (metaEl) metaEl.textContent = formatUpdatedDate(data.generatedAt, 'Grand Junction');
-    } catch (err) {
-      console.error('Grand Junction city stats load failed:', err);
-      const metaEl = document.getElementById('gjStatsMeta');
-      if (metaEl) metaEl.textContent = 'Monthly snapshot temporarily unavailable';
     }
   }
 
@@ -665,15 +622,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  const hasGrandJunctionCityStats = () => {
-    return !!(
-      document.getElementById('gjMedianListPrice') ||
-      document.getElementById('gjAvgDom') ||
-      document.getElementById('gjNewListings') ||
-      document.getElementById('gjActiveListings')
-    );
-  };
-
   const runtimeFeatureInitializers = [
     {
       key: 'contact-form',
@@ -689,11 +637,6 @@ document.addEventListener('DOMContentLoaded', function () {
       key: 'seller-lead-forms',
       when: () => document.querySelector('form[data-lead-form="seller"]'),
       init: initSellerLeadForms,
-    },
-    {
-      key: 'grand-junction-city-stats',
-      when: hasGrandJunctionCityStats,
-      init: loadGrandJunctionCityStats,
     },
   ];
 
