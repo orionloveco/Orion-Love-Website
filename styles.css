@@ -195,19 +195,6 @@ section {
   padding-bottom: 80px;
 }
 
-.site-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.site-section.section-density-tight,
-.site-section.section-density-standard,
-.site-section.section-density-airy {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-
-
 /* =========================
    Typography
 ========================= */
@@ -226,94 +213,6 @@ h3 { font-size: clamp(1.2rem, 1.95vw, 1.52rem); line-height: 1.18; }
 p { color: var(--text); }
 
 /* Script accent (Allura) */
-
-/* =========================
-   Section Utilities
-========================= */
-.section-header { margin-bottom: 2rem; }
-.section-header.centered { text-align: center; }
-.section-header h2 { margin-bottom: 0.5rem; }
-
-.section-intro,
-.lead {
-  font-size: 1.02rem;
-  color: var(--muted);
-  margin-top: 0.6rem;
-  max-width: var(--measure-intro);
-  line-height: 1.8;
-}
-.section-header.centered .section-intro {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.measure-body { max-width: var(--measure-body); }
-.measure-intro { max-width: var(--measure-intro); }
-.measure-cta { max-width: var(--measure-cta); }
-
-/* Section label family contract
-   Canonical: .section-label, .section-label.centered, .section-label-accent
-*/
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.1rem;
-}
-.section-label::before {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-.section-label span {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-}
-.section-label.centered { justify-content: center; }
-.section-label.centered::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-
-
-/* Shared section-header/intro/label modifiers */
-.section-header-spacious {
-  margin-bottom: clamp(2rem, 4.5vw, 3rem);
-}
-
-.section-header-inline {
-  text-align: left;
-  margin-bottom: 0;
-}
-
-.section-header-inline .section-intro {
-  max-width: 50ch;
-  margin-bottom: 0;
-}
-
-
-.section-header-narrow {
-  max-width: 760px;
-}
-
-.section-header-intro-relaxed :is(.section-intro, .lead) {
-  margin-top: 0.85rem;
-}
-
-.section-label-spacious {
-  margin-bottom: 1.25rem;
-}
 
 /* Decorative diamond divider */
 .divider {
@@ -743,7 +642,7 @@ p { color: var(--text); }
   box-shadow: var(--btn-shadow), var(--btn-focus-ring);
 }
 
-:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, #mobileNavOverlay .mobile-nav-close, a.usp-card):focus-visible {
+:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, #mobileNavOverlay .mobile-nav-close):focus-visible {
   outline: none;
   border-radius: 999px;
   box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
@@ -756,170 +655,12 @@ p { color: var(--text); }
   text-align: center;
 }
 
-/* Split/Grid family contract
-   Canonical: .layout-split
-*/
-.layout-split {
-  display: grid;
-  grid-template-columns: var(--split-cols, 1fr 1fr);
-  gap: var(--split-gap, clamp(1.5rem, 4vw, 4rem));
-}
-
-
-.layout-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-}
-
 .tone-default { background: var(--white); }
 .tone-cream { background: var(--cream); }
 .tone-sand { background: var(--sand); }
 .tone-dark { background: var(--navy); color: var(--white); }
 
 /* Centered hero variant (contact, faq, services) intentionally stays left-aligned. */
-
-/* =========================
-   Ownership boundary: Legacy section/card/grid systems
-   - Older grids, card bases, section headers, and scanning support patterns.
-   - Keep for compatibility; avoid expanding as a new generic component system.
-========================= */
-
-/* =========================
-   USP / Value Cards
-========================= */
-.usp-section { background: rgba(255, 255, 255, 0.5); }
-
-.usp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.35rem;
-  margin-bottom: 2.25rem;
-}
-
-.usp-card {
-  box-shadow: var(--shadow-card);
-}
-
-/* Gold top shimmer on hover */
-.usp-card::before { content: none; }
-/* Ambient gold glow */
-.usp-card::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  background: radial-gradient(600px 200px at 50% -40%, rgba(184, 146, 58, 0.10), transparent 70%);
-  pointer-events: none;
-}
-
-.usp-card:hover {
-  box-shadow: var(--shadow-hover);
-}
-
-/* Icon badge */
-.usp-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(184, 146, 58, 0.1);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  transition: background 0.25s;
-  border: none;
-}
-.usp-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke: var(--gold);
-  stroke-width: 1.8;
-}
-.usp-card:hover .usp-icon { background: rgba(184, 146, 58, 0.18); }
-
-/* Centered icon variant */
-.usp-card.centered { text-align: center; }
-.usp-card.centered .usp-icon { margin-left: auto; margin-right: auto; }
-
-.usp-card h3 {
-  font-size: 1.2rem;
-  color: var(--navy);
-  margin-bottom: 0.7rem;
-  font-weight: 500;
-}
-.usp-card p {
-  color: var(--muted);
-  font-size: 0.97rem;
-  line-height: 1.8;
-}
-
-/* =========================
-   Process Steps
-========================= */
-.process-preview { background: rgba(255, 255, 255, 0.5); }
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.35rem;
-}
-
-.step {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(230, 224, 211, 0.9);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
-  position: relative;
-  overflow: hidden;
-}
-.step::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.28s;
-}
-.step:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(184, 146, 58, 0.22);
-}
-.step:hover::before { opacity: 1; }
-
-.step-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--gold);
-  border: 1px solid rgba(184, 146, 58, 0.35);
-  background: rgba(184, 146, 58, 0.08);
-  margin: 0 auto 1rem;
-  transition: background 0.25s, color 0.25s;
-}
-.step:hover .step-number {
-  background: var(--gold);
-  color: var(--white);
-  border-color: var(--gold);
-}
-
-.step h3 {
-  font-size: 1.15rem;
-  color: var(--navy);
-  margin-bottom: 0.6rem;
-  font-weight: 500;
-}
-.step p { color: var(--muted); line-height: 1.8; font-size: 0.96rem; }
 
 /* =========================
    About Page: How I Work (row layout)
@@ -1106,18 +847,11 @@ p { color: var(--text); }
     display: none;
   }
   .mobile-toggle { display: flex; }
-  .layout-split { grid-template-columns: 1fr; }
-
   .nav-dropdown-menu { display: none; }
 
   .footer-grid { grid-template-columns: 1fr; }
   .footer-support { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
-}
-
-@media (max-width: 640px) {
-  .process-steps { grid-template-columns: 1fr; }
-  .usp-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== Shared mobile overlay helper ===== */
@@ -1310,68 +1044,6 @@ body.page-faq .faq-hero {
 .js .reveal.reveal-delay-040 { transition-delay: 0.40s; }
 
 /* =========================
-   Ownership boundary: Pending migration sections
-   - Older section shells and page-family contracts retained for stability.
-   - Phase 2 should decide what remains legacy versus what graduates to primitives.
-========================= */
-
-/* Shared section shells */
-.section-shell-white {
-  background: var(--white);
-  border-top: 1px solid var(--sand);
-  border-bottom: 1px solid var(--sand);
-}
-
-.section-shell-cream {
-  background: var(--cream);
-}
-
-/* Shared section rhythm + layout contract (flagship/support/neighborhood) */
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) {
-  --shared-section-header-gap: clamp(2rem, 4vw, 2.75rem);
-  --shared-intro-max: 62ch;
-  --shared-split-gap: clamp(1.5rem, 4vw, 4rem);
-  --shared-grid-gap: 1.25rem;
-  --shared-cta-gap: 1rem;
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) > .container {
-  position: relative;
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) .section-header {
-  margin-bottom: var(--shared-section-header-gap);
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-shell-white, .section-shell-cream) .section-header.centered {
-  text-align: center;
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.section-intro, .lead) {
-  max-width: var(--shared-intro-max);
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) .section-header.centered :is(.section-intro, .lead) {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-split) {
-  gap: var(--shared-split-gap);
-}
-
-body:is(.page-family-flagship, .page-family-support, .page-family-neighborhood) :is(.layout-grid-4, .usp-grid, .link-grid) {
-  gap: var(--shared-grid-gap);
-}
-
-
-/* Shared shell wrapper spacing (additive, HTML-compatible) */
-
-:is(.section-shell-white, .section-shell-cream) .section-header + :is(.usp-grid,.process-steps,.promise-grid,.stats-grid,.link-grid,.intro-grid,.snapshot-inner,.identity-inner,.layout-split) {
-  margin-top: 0;
-}
-
-/* =========================
    Ownership boundary: Form compatibility
    - Legacy form shells, seller lead forms, and validation-friendly field contracts.
    - Rebuilt form primitives belong in editorial-base.css.
@@ -1506,10 +1178,6 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-.section-copy-narrow {
-  max-width: 640px;
-}
-
 .note-muted {
   color: var(--muted);
   font-size: 1.02rem;
@@ -1517,10 +1185,6 @@ form[data-lead-form="seller"] .form-message {
   line-height: 1.8;
 }
 
-
-.section-label-accent span {
-  color: var(--gold-lt);
-}
 
 .stats-updated-note {
   margin-top: 0.75rem;
@@ -1553,14 +1217,6 @@ form[data-lead-form="seller"] .form-message {
   text-decoration: none;
 }
 
-.section-action-top {
-  margin-top: 1rem;
-}
-
-.section-action-lg {
-  margin-top: 2rem;
-}
-
 .footer-brand-note {
   margin-top: var(--space-2);
   color: rgba(255, 255, 255, 0.7);
@@ -1568,11 +1224,6 @@ form[data-lead-form="seller"] .form-message {
 
 /* Additional cleanup utilities */
 .no-text-decoration { text-decoration: none; }
-.section-intro-center-wide {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 3rem;
-}
 .mt-35 { margin-top: 3.5rem; }
 /* Potential duplicate with canonical reduced-motion reveal block at ~L1608.
    Kept intentionally for now because this block includes broader selectors
@@ -1606,11 +1257,7 @@ form[data-lead-form="seller"] .form-message {
      - 1024 small desktop
      - 1440 desktop
      Existing breakpoint fragments are retained in this stabilization pass for low-risk compatibility. */
-  section,
-  .site-section,
-  .site-section.section-density-tight,
-  .site-section.section-density-standard,
-  .site-section.section-density-airy {
+  section {
     padding-top: 56px;
     padding-bottom: 56px;
   }
