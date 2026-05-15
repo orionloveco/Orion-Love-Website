@@ -330,34 +330,6 @@ p { color: var(--text); }
 }
 .btn-nav::after { display: none; }
 
-/* Mobile toggle */
-.mobile-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-.mobile-toggle span {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.25s ease;
-}
-
-/* Shared keyboard focus contract (core interactive controls) */
-
-:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, #mobileNavOverlay .mobile-nav-close):focus-visible {
-  outline: none;
-  border-radius: 999px;
-  box-shadow: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
-}
-
-
 /* Centered hero variant (contact, faq, services) intentionally stays left-aligned. */
 
 /* =========================
@@ -540,77 +512,10 @@ p { color: var(--text); }
    Responsive
 ========================= */
 @media (max-width: 968px) {
-  /* Shared mobile nav system uses #mobileNavOverlay */
-  .nav-menu {
-    display: none;
-  }
-  .mobile-toggle { display: flex; }
-  .nav-dropdown-menu { display: none; }
-
   .footer-grid { grid-template-columns: 1fr; }
   .footer-support { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
-
-/* ===== Shared mobile overlay helper ===== */
-#mobileNavOverlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(12, 26, 61, 0.98);
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-  z-index: 1400;
-  list-style: none;
-  margin: 0;
-  padding: 1.2rem 1.5rem 2rem;
-  overflow-y: auto;
-}
-#mobileNavOverlay.open { display: flex; }
-#mobileNavOverlay .mobile-nav-head {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding-bottom: 0.8rem;
-  margin-bottom: 0.2rem;
-}
-#mobileNavOverlay .mobile-nav-head p {
-  margin: 0;
-  color: rgba(212, 170, 90, 0.95);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-#mobileNavOverlay .mobile-nav-close {
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0;
-}
-#mobileNavOverlay .mobile-nav-list { list-style:none; width:100%; }
-#mobileNavOverlay > .mobile-nav-list > li { padding:0.4rem 0; border-bottom:1px solid rgba(255,255,255,0.08); }
-#mobileNavOverlay a { font-size:1.15rem; color:#ffffff; text-decoration:none; font-family:"Cormorant Garamond", serif; font-weight:400; letter-spacing:0.03em; display:block; padding:0.25rem 0; }
-#mobileNavOverlay li { list-style: none; }
-#mobileNavOverlay a:hover,
-#mobileNavOverlay a.active,
-#mobileNavOverlay a:focus-visible { color: var(--gold-lt); }
-#mobileNavOverlay .btn-nav { border:1px solid rgba(184,146,58,0.55); border-radius:999px; padding:0.65rem 1rem; color:#d4aa5a; display:inline-block; margin-top:0.25rem; }
-#mobileNavOverlay .mobile-nav-title { display:block; font-size:0.8rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(212,170,90,0.92); margin-bottom:0.55rem; font-weight:600; }
-#mobileNavOverlay .mobile-nav-group { margin-bottom:0.65rem; }
-#mobileNavOverlay .mobile-nav-group p { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.62); margin:0.4rem 0; font-weight:600; }
-#mobileNavOverlay .mobile-nav-group a { font-size:1rem; line-height:1.35; }
-body.mobile-nav-open { overflow:hidden; }
-
 
 /* =========================
    Ownership boundary: Neighborhood/area legacy support
