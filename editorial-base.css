@@ -160,15 +160,36 @@
 
 .main-header .btn-nav:hover{background:rgba(184,146,58,.28);color:#f7f4ed}
 
+/* Shared mobile navigation trigger: hidden until the mobile chrome breakpoint. */
 .main-header .mobile-toggle{
+  display:none;
+  flex-direction:column;
   gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
   padding:6px;
 }
 
 .main-header .mobile-toggle span{
+  display:block;
   width:24px;
   height:1.5px;
   background:#f7f4ed;
+  border-radius:2px;
+  transition:all .25s ease;
+}
+
+.main-header .mobile-toggle.active span{
+  background:#f7f4ed;
+}
+
+/* Shared keyboard focus contract (core interactive controls).
+   Exact focus treatment migrated from styles.css so shared chrome owns overlay focus affordances. */
+:is(.btn-nav, .nav-dropdown-toggle, .mobile-toggle, #mobileNavOverlay a, #mobileNavOverlay .mobile-nav-close):focus-visible{
+  outline:none;
+  border-radius:999px;
+  box-shadow:0 0 0 2px rgba(247,244,237,.95),0 0 0 4px rgba(184,146,58,.85);
 }
 
 .main-header .nav-dropdown-menu--areas{
@@ -278,6 +299,146 @@
 .main-header .nav-dropdown-menu--areas a.active{
   color:#d4aa5a;
   transform:translateY(-1px);
+}
+
+/* Shared mobile navigation overlay.
+   Mechanics: JS toggles #mobileNavOverlay.open, .mobile-toggle.active, and body.mobile-nav-open.
+   Presentation stays in shared chrome so rebuilt pages do not depend on legacy styles.css. */
+body.mobile-nav-open{
+  overflow:hidden;
+}
+
+#mobileNavOverlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  background:rgba(12,26,61,.98);
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:1rem;
+  z-index:1400;
+  list-style:none;
+  margin:0;
+  padding:1.2rem 1.5rem 2rem;
+  overflow-y:auto;
+}
+
+#mobileNavOverlay.open{
+  display:flex;
+}
+
+#mobileNavOverlay .mobile-nav-head{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  padding-bottom:.8rem;
+  margin-bottom:.2rem;
+}
+
+#mobileNavOverlay .mobile-nav-head p{
+  margin:0;
+  color:rgba(212,170,90,.95);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+#mobileNavOverlay .mobile-nav-close{
+  border:0;
+  background:transparent;
+  color:rgba(255,255,255,.9);
+  font-size:2rem;
+  line-height:1;
+  cursor:pointer;
+  padding:0;
+}
+
+#mobileNavOverlay .mobile-nav-list{
+  list-style:none;
+  width:100%;
+}
+
+#mobileNavOverlay > .mobile-nav-list > li{
+  padding:.4rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+#mobileNavOverlay li{
+  list-style:none;
+}
+
+#mobileNavOverlay a{
+  font-size:1.15rem;
+  color:#fff;
+  text-decoration:none;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  letter-spacing:.03em;
+  display:block;
+  padding:.25rem 0;
+}
+
+#mobileNavOverlay a:hover,
+#mobileNavOverlay a.active,
+#mobileNavOverlay a:focus-visible{
+  color:var(--gold-lt);
+}
+
+#mobileNavOverlay .btn-nav{
+  border:1px solid rgba(184,146,58,.55);
+  border-radius:999px;
+  padding:.65rem 1rem;
+  color:#d4aa5a;
+  display:inline-block;
+  margin-top:.25rem;
+}
+
+#mobileNavOverlay .mobile-nav-title{
+  display:block;
+  font-size:.8rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(212,170,90,.92);
+  margin-bottom:.55rem;
+  font-weight:600;
+}
+
+#mobileNavOverlay .mobile-nav-group{
+  margin-bottom:.65rem;
+}
+
+#mobileNavOverlay .mobile-nav-group p{
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.62);
+  margin:.4rem 0;
+  font-weight:600;
+}
+
+#mobileNavOverlay .mobile-nav-group a{
+  font-size:1rem;
+  line-height:1.35;
+}
+
+@media (max-width:968px){
+  .main-header .nav-menu{
+    display:none;
+  }
+
+  .main-header .mobile-toggle{
+    display:flex;
+  }
+
+  .main-header .nav-dropdown-menu{
+    display:none;
+  }
 }
 
 .main-footer{
