@@ -549,11 +549,6 @@ p { color: var(--text); }
   text-align: center;
 }
 
-.tone-default { background: var(--white); }
-.tone-cream { background: var(--cream); }
-.tone-sand { background: var(--sand); }
-.tone-dark { background: var(--navy); color: var(--white); }
-
 /* Centered hero variant (contact, faq, services) intentionally stays left-aligned. */
 
 /* =========================
@@ -1058,14 +1053,6 @@ form[data-lead-form="seller"] .form-message {
     grid-template-columns: 1fr;
   }
 }
-
-.note-muted {
-  color: var(--muted);
-  font-size: 1.02rem;
-  margin-top: 0.75rem;
-  line-height: 1.8;
-}
-
 
 .stats-updated-note {
   margin-top: 0.75rem;
