@@ -123,20 +123,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const header = document.getElementById('mainHeader');
   if (header) {
     const pageHeroSelector = [
-      '[data-header-theme]',
-      '[data-hero]',
-      '.editorial-cover-hero',
       '.eh-cover',
       '.seller-hero',
       '.profile-hero',
-      '.contact-hero',
+      '.contact-composition',
       '.home-value-hero',
       '.li-cover',
       '.area-hero',
       '.buyer-hero',
       '.support-cover',
       '.faq-hero',
-      '.hero',
     ].join(',');
     const hasHero = !!document.querySelector(pageHeroSelector);
 
