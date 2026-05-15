@@ -758,180 +758,6 @@ p { color: var(--text); }
   border-radius: var(--radius-sm);
 }
 
-/* =========================
-   Ownership boundary: Legacy hero/support systems
-   - Older hero contracts, support heroes, and non-editorial hero variants.
-   - Page-family hero composition should live in the relevant editorial CSS file.
-========================= */
-
-/* =========================
-   Hero (Photo)
-   Pages supply their own background-image.
-   This provides the shared structure.
-========================= */
-.hero {
-  position: relative;
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  color: var(--white);
-  --hero-inner-max: 1120px;
-  --hero-inner-align: left;
-  --hero-inner-top: clamp(64px, 8vw, 80px);
-  --hero-inner-bottom: clamp(32px, 5vw, 48px);
-  --hero-h1-size: clamp(2.3rem, 5vw, 4.3rem);
-  --hero-h1-line: 1.01;
-  --hero-h1-max: 16ch;
-  --hero-lead-max: 56ch;
-  --hero-lead-color: rgba(255, 255, 255, 0.78);
-  --hero-lead-space: 32px;
-  --hero-eyebrow-space: 16px;
-  --hero-eyebrow-justify: flex-start;
-  --hero-cta-justify: flex-start;
-  --hero-cta-gap: 16px;
-  --hero-heading-color: var(--white);
-  --hero-eyebrow-color: var(--gold-lt);
-  --hero-trust-color: rgba(255, 255, 255, 0.4);
-  --hero-overlay-before: none;
-  --hero-overlay-after: none;
-}
-/* Canonical hero contract:
-   .hero (core) + approved active variants: .hero-flagship and .hero-support/.hero-hub.
-   Area detail pages now use area-detail-editorial.css instead of the retired .hero-neighborhood variant.
-   Any transitional homepage treatment should map through these hero tokens to avoid parallel systems. */
-
-.hero::before,
-.hero::after {
-  position: absolute;
-  pointer-events: none;
-}
-
-.hero::before {
-  content: "";
-  inset: 0;
-  z-index: 0;
-  background: var(--hero-overlay-before);
-}
-
-.hero::after {
-  content: "";
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  z-index: 1;
-  background: var(--hero-overlay-after);
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: var(--hero-inner-max);
-  margin: 0 auto;
-  padding: var(--hero-inner-top) clamp(1.25rem, 4vw, 2.5rem) var(--hero-inner-bottom);
-  text-align: var(--hero-inner-align);
-}
-
-.hero .container > .hero-inner {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-content: var(--hero-eyebrow-justify);
-  margin-bottom: var(--hero-eyebrow-space);
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  content: "";
-  height: 1px;
-  width: 36px;
-  background: var(--gold);
-  opacity: 0.6;
-}
-.hero-eyebrow span {
-  font-size: 0.67rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--hero-eyebrow-color);
-  font-weight: 600;
-}
-/* Centered hero eyebrow variant */
-.hero-eyebrow.centered {
-  justify-content: center;
-}
-
-.hero-title {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
-  color: var(--hero-heading-color);
-  font-size: var(--hero-h1-size);
-  line-height: var(--hero-h1-line);
-  max-width: var(--hero-h1-max);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.01em;
-}
-.hero-title em {
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: var(--gold-lt);
-}
-
-.hero h1:not(.hero-title) {
-  font-family: "Cormorant Garamond", serif;
-  font-size: var(--hero-h1-size);
-  font-weight: 300;
-  color: var(--hero-heading-color);
-  line-height: var(--hero-h1-line);
-  max-width: var(--hero-h1-max);
-  margin-bottom: 1.25rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: var(--gold-lt);
-}
-
-.hero-lead {
-  font-size: clamp(0.98rem, 1.55vw, 1.06rem);
-  color: var(--hero-lead-color);
-  max-width: var(--hero-lead-max);
-  line-height: 1.8;
-  margin-bottom: var(--hero-lead-space);
-  font-weight: 300;
-}
-
-.hero .hero-inner > p:not([class]) {
-  font-size: clamp(0.98rem, 1.55vw, 1.06rem);
-  color: var(--hero-lead-color);
-  max-width: var(--hero-lead-max);
-  line-height: 1.8;
-  margin-bottom: var(--hero-lead-space);
-  font-weight: 300;
-}
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: var(--hero-cta-justify);
-  gap: var(--hero-cta-gap);
-  margin-bottom: 48px;
-}
-
-.hero-trust {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--hero-trust-color);
-}
-
 .card {
   border-radius: var(--radius-md);
   position: relative;
@@ -1798,9 +1624,6 @@ a.card-base:hover {
     display: none;
   }
   .mobile-toggle { display: flex; }
-
-  .hero-cta { flex-direction: column; align-items: flex-start; }
-  .hero.hero-support .hero-cta { align-items: center; }
   .layout-split { grid-template-columns: 1fr; }
 
   .nav-dropdown-menu { display: none; }
@@ -1908,10 +1731,6 @@ body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-fam
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-grand-junction-home-value .hero {background:
-        linear-gradient(160deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.65) 55%, rgba(12,26,61,0.90) 100%),
-        url("images/gj-landscape.jpg") center / cover no-repeat;}
-body.page-grand-junction-home-value .hero {--hero-overlay-after: rgba(184,146,58,0.22);}
 body.page-grand-junction-home-value .market-stats {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
 body.page-grand-junction-home-value .stats-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;}
 body.page-grand-junction-home-value .stat-item {padding: 2.25rem 1.5rem; text-align: center;
@@ -1963,70 +1782,10 @@ body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr
 body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
 }
 
-/* ===== Shared legacy hero variants ===== */
+/* Legacy .btn-hero-secondary remains for button compatibility/manual review. */
 
 .btn-hero-secondary {
   backdrop-filter: blur(1.5px);
-}
-
-.hero.hero-flagship {
-  min-height: clamp(640px, 92vh, 960px);
-  --hero-inner-max: 840px;
-  --hero-inner-top: clamp(64px, 9vw, 80px);
-  --hero-inner-bottom: clamp(32px, 5vw, 48px);
-  --hero-h1-size: clamp(3rem, 6vw, 5.45rem);
-  --hero-h1-line: 1.01;
-  --hero-h1-max: 14ch;
-  --hero-lead-max: 54ch;
-  --hero-lead-space: 32px;
-  --hero-eyebrow-space: 16px;
-  --hero-cta-gap: 16px;
-  --hero-overlay-before: linear-gradient(170deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 55%, rgba(12,26,61,0.9) 100%);
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.5), transparent);
-}
-
-.hero.hero-support,
-.hero.hero-hub {
-  min-height: clamp(430px, 62vh, 620px);
-  color: var(--navy);
-  --hero-inner-max: 860px;
-  --hero-inner-align: center;
-  --hero-inner-top: clamp(64px, 8vw, 80px);
-  --hero-inner-bottom: clamp(32px, 5vw, 48px);
-  --hero-h1-size: clamp(2.2rem, 4.75vw, 3.85rem);
-  --hero-h1-line: 1.05;
-  --hero-h1-max: 17ch;
-  --hero-lead-max: 60ch;
-  --hero-lead-space: 32px;
-  --hero-eyebrow-space: 16px;
-  --hero-eyebrow-justify: center;
-  --hero-cta-justify: center;
-  --hero-cta-gap: 16px;
-  --hero-heading-color: var(--navy);
-  --hero-eyebrow-color: var(--gold);
-  --hero-lead-color: rgba(12, 26, 61, 0.72);
-  --hero-trust-color: rgba(12, 26, 61, 0.56);
-  --hero-overlay-before:
-    radial-gradient(920px 420px at 50% 5%, rgba(184,146,58,0.12), transparent 73%),
-    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,244,237,0.94));
-  --hero-overlay-after: linear-gradient(90deg, transparent, rgba(184,146,58,0.35), transparent);
-}
-
-.hero.hero-support .btn-hero-secondary {
-  color: rgba(12, 26, 61, 0.8);
-  border-color: rgba(12, 26, 61, 0.28);
-}
-
-.hero.hero-support .btn-hero-secondary:hover {
-  color: var(--navy);
-  border-color: rgba(184,146,58,0.7);
-  background: rgba(184,146,58,0.08);
-}
-
-/* Centered support hero copy should stay visually centered at constrained measures. */
-.hero.hero-support :is(h1:not(.hero-title), .hero-title, .hero-lead, .hero-inner > p:not([class])) {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 body.page-faq .faq-hero {
@@ -2035,29 +1794,7 @@ body.page-faq .faq-hero {
     linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
 }
 
-@media (max-width: 968px) {
-  .hero.hero-flagship {
-    min-height: clamp(620px, 84vh, 840px);
-  }
-
-  .hero.hero-support,
-  .hero.hero-hub {
-    min-height: clamp(430px, 62vh, 620px);
-  }
-}
-
 @media (max-width: 640px) {
-  .hero {
-    --hero-inner-top: clamp(48px, 11vw, 64px);
-    --hero-inner-bottom: clamp(24px, 6vw, 32px);
-  }
-
-  .hero-cta {
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .hero-cta .btn,
   .btn-hero-secondary {
     width: 100%;
     max-width: 340px;
