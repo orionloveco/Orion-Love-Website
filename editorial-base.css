@@ -84,11 +84,68 @@
 .main-header .nav-menu a:not(.btn-nav)::after,
 .main-header .nav-dropdown-toggle::after{background:rgba(212,170,90,.75)}
 
+/* Shared desktop Areas dropdown mechanics.
+   Presentation for the rebuilt chrome also lives here so styles.css can remain
+   a legacy/global compatibility layer during cleanup. */
+.main-header .nav-dropdown{
+  position:relative;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+}
+
+.main-header .nav-dropdown-toggle{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  position:relative;
+}
+
+.main-header .nav-dropdown-toggle::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  height:1px;
+  width:0;
+  transition:width .25s ease;
+}
+
+.main-header .nav-dropdown-menu{
+  position:absolute;
+  top:calc(100% - 4px);
+  left:50%;
+  right:auto;
+  display:block;
+  overflow:visible;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateX(-50%) translateY(-.35rem);
+  transition:opacity .2s ease,visibility .2s ease,transform .2s ease;
+  z-index:1200;
+}
+
+.main-header .nav-dropdown:hover .nav-dropdown-menu,
+.main-header .nav-dropdown:focus-within .nav-dropdown-menu,
+.main-header .nav-dropdown.open .nav-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+
 .main-header .nav-menu a:hover,
 .main-header .nav-menu a.active,
+.main-header .nav-dropdown.active .nav-dropdown-toggle,
+.main-header .nav-dropdown.open .nav-dropdown-toggle,
 .main-header .nav-dropdown-toggle:hover,
-.main-header .nav-dropdown-toggle:focus-visible,
-.main-header .nav-dropdown.open .nav-dropdown-toggle{color:#d4aa5a}
+.main-header .nav-dropdown-toggle:focus-visible{color:#d4aa5a}
+
+.main-header .nav-dropdown.active .nav-dropdown-toggle::after,
+.main-header .nav-dropdown.open .nav-dropdown-toggle::after,
+.main-header .nav-dropdown-toggle:hover::after,
+.main-header .nav-dropdown-toggle:focus-visible::after{width:100%}
 
 .main-header .btn-nav{
   border:1px solid rgba(184,146,58,.62);
@@ -115,10 +172,6 @@
 }
 
 .main-header .nav-dropdown-menu--areas{
-  top:calc(100% - 8px);
-  left:50%;
-  right:auto;
-  transform:translateX(-50%);
   width:clamp(190px,15vw,220px);
   min-width:clamp(190px,15vw,220px);
   max-width:min(220px,calc(100vw - 2rem));
@@ -158,6 +211,34 @@
   z-index:1;
 }
 
+.main-header .nav-dropdown-section{
+  position:relative;
+  padding:.1rem 0 .9rem;
+}
+
+.main-header .nav-dropdown-section + .nav-dropdown-section{
+  border-top:0;
+  margin-top:.85rem;
+  padding-top:1.05rem;
+}
+
+.main-header .nav-dropdown-section + .nav-dropdown-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  width:min(76%,224px);
+  height:1px;
+}
+
+.main-header .nav-dropdown-section:last-child{
+  padding-bottom:.1rem;
+}
+
+.main-header .nav-dropdown-section ul,
+.main-header .nav-dropdown-group ul{
+  list-style:none;
+}
+
 .main-header .nav-dropdown-section + .nav-dropdown-section::before{
   left:50%;
   right:auto;
@@ -166,13 +247,21 @@
 }
 
 .main-header .nav-dropdown-heading{
+  font-family:'Raleway',sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  text-transform:uppercase;
+  margin:0 0 .62rem;
   color:rgba(212,170,90,.95);
   letter-spacing:.18em;
   text-align:center;
 }
 
 .main-header .nav-dropdown-menu--areas a{
+  display:block;
+  padding:.24rem 0;
   color:rgba(247,244,237,.92);
+  transition:color .2s ease,transform .2s ease;
   font-family:'Raleway',system-ui,sans-serif;
   font-size:.78rem;
   font-weight:500;
@@ -181,6 +270,8 @@
   text-transform:uppercase;
   text-align:center;
 }
+
+.main-header .nav-dropdown-menu a::after{display:none}
 
 .main-header .nav-dropdown-menu--areas a:hover,
 .main-header .nav-dropdown-menu--areas a:focus-visible,
