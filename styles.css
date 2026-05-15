@@ -543,12 +543,6 @@ p { color: var(--text); }
 }
 
 
-.stat-item,
-.stat-box,
-.snap-stat {
-  text-align: center;
-}
-
 /* Centered hero variant (contact, faq, services) intentionally stays left-aligned. */
 
 /* =========================
@@ -831,53 +825,6 @@ body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-fam
 body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
       font-weight: 400;
       line-height: 1.15;}
-body.page-grand-junction-home-value .market-stats {background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand);}
-body.page-grand-junction-home-value .stats-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;}
-body.page-grand-junction-home-value .stat-item {padding: 2.25rem 1.5rem; text-align: center;
-      border-right: 1px solid var(--sand);}
-body.page-grand-junction-home-value .stat-item:last-child {border-right: none;}
-body.page-grand-junction-home-value .stat-value {font-family: "Cormorant Garamond", serif; font-size: 2.8rem;
-      font-weight: 400; color: var(--navy); line-height: 1; margin-bottom: 0.4rem;}
-body.page-grand-junction-home-value .stat-value span {font-size: 1.5rem; color: var(--gold);}
-body.page-grand-junction-home-value .stat-label {font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600;}
-body.page-grand-junction-home-value .stat-note {font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem;}
-body.page-grand-junction-home-value .value-section {background: var(--cream);}
-body.page-grand-junction-home-value .value-intro {max-width: 64ch;}
-body.page-grand-junction-home-value .value-intro h2 {margin-bottom: 0.75rem;}
-body.page-grand-junction-home-value .value-intro p {color: var(--muted); font-size: 1.05rem; line-height: 1.8;}
-body.page-grand-junction-home-value .value-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .value-icon {width: 48px; height: 48px; border-radius: 12px;
-      background: rgba(184,146,58,0.1); display: flex; align-items: center;
-      justify-content: center; margin-bottom: 1.1rem;}
-body.page-grand-junction-home-value .value-icon svg {width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8;}
-body.page-grand-junction-home-value .valuation-section {background: var(--navy); position: relative; overflow: hidden;}
-body.page-grand-junction-home-value .valuation-section::before {content: ""; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(184,146,58,0.07), transparent 70%);
-      pointer-events: none;}
-body.page-grand-junction-home-value .valuation-inner {position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;}
-body.page-grand-junction-home-value .valuation-copy h2 {color: var(--white); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 300; margin-bottom: 1rem;}
-body.page-grand-junction-home-value .valuation-copy h2 em {font-style: italic; color: var(--gold-lt);}
-body.page-grand-junction-home-value .valuation-copy p {color: rgba(255,255,255,0.58); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;}
-body.page-grand-junction-home-value .valuation-bullets {list-style: none;}
-body.page-grand-junction-home-value .valuation-bullets li {display: flex; align-items: flex-start; gap: 0.75rem;
-      color: rgba(255,255,255,0.72); font-size: 0.95rem; margin-bottom: 0.9rem;}
-body.page-grand-junction-home-value .valuation-bullets li svg {width: 16px; height: 16px; stroke: var(--gold); stroke-width: 2; flex-shrink: 0; margin-top: 3px;}
-body.page-grand-junction-home-value .why-section {background: var(--cream);}
-body.page-grand-junction-home-value .why-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem;}
-body.page-grand-junction-home-value .why-num {font-family: "Cormorant Garamond", serif; font-size: 2.4rem;
-      color: rgba(184,146,58,0.25); line-height: 1; margin-bottom: 0.5rem;}
-@media (max-width: 968px) {
-body.page-grand-junction-home-value .stats-grid {grid-template-columns: repeat(2, 1fr);}
-body.page-grand-junction-home-value .stat-item:nth-child(2) {border-right: none;}
-body.page-grand-junction-home-value .stat-item:nth-child(1), body.page-grand-junction-home-value .stat-item:nth-child(2) {border-bottom: 1px solid var(--sand);}
-body.page-grand-junction-home-value .valuation-inner {grid-template-columns: 1fr; gap: 3rem;}
-}
-@media (max-width: 640px) {
-body.page-grand-junction-home-value .stats-grid {grid-template-columns: 1fr 1fr;}
-}
-
 body.page-faq .faq-hero {
   background:
     radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
@@ -1053,14 +1000,6 @@ form[data-lead-form="seller"] .form-message {
     grid-template-columns: 1fr;
   }
 }
-
-.stats-updated-note {
-  margin-top: 0.75rem;
-  text-align: center;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
 .call-link-block {
   margin-top: 1.5rem;
   padding: 1.5rem;
