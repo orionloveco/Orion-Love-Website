@@ -293,11 +293,6 @@ p { color: var(--text); }
 
 .nav-menu a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   transition: color 0.2s;
   position: relative;
 }
@@ -339,15 +334,9 @@ p { color: var(--text); }
 .nav-dropdown-toggle {
   border: 0;
   background: transparent;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   cursor: pointer;
   font-family: "Raleway", sans-serif;
   position: relative;
-  padding: 0.25rem 0;
 }
 
 .nav-dropdown-toggle::after {
@@ -461,25 +450,14 @@ p { color: var(--text); }
 .nav-dropdown-heading {
   font-family: "Raleway", sans-serif;
   font-size: 0.62rem;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(212, 170, 90, 0.95);
   margin: 0 0 0.62rem 0;
   font-weight: 600;
-  text-align: center;
 }
 
 .nav-dropdown-menu a {
   display: block;
   padding: 0.24rem 0;
-  color: rgba(247, 244, 237, 0.92);
-  font-family: "Raleway", system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.45;
-  text-transform: uppercase;
-  text-align: center;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -502,16 +480,7 @@ p { color: var(--text); }
 }
 
 .btn-nav {
-  background: transparent;
-  border: 1px solid rgba(184, 146, 58, 0.55);
-  color: var(--gold-lt);
-  padding: 0.5rem 1.3rem;
-  border-radius: 40px;
   transition: background 0.22s, border-color 0.22s;
-}
-.btn-nav:hover {
-  background: rgba(184, 146, 58, 0.12);
-  border-color: var(--gold-lt);
 }
 .btn-nav::after { display: none; }
 
