@@ -1,8 +1,8 @@
 {
   "areaKey": "north_grand_junction",
   "areaName": "North Grand Junction",
-  "generatedAt": "2026-04-15T08:00:40.460Z",
-  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "generatedAt": "2026-05-15T08:00:05.012Z",
+  "reportingPeriod": "2026-05-15T08:00:05.012Z",
   "stats": {
     "areaKey": "north_grand_junction",
     "zips": [
@@ -12,9 +12,9 @@
       "North Grand Junction"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 540000,
-    "averageDaysOnMarket": 80,
-    "newListings": 20,
-    "totalListings": 135
+    "medianPrice": 550000,
+    "averageDaysOnMarket": 78,
+    "newListings": 14,
+    "totalListings": 144
   }
 }

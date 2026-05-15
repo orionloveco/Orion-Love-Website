@@ -1,8 +1,8 @@
 {
   "areaKey": "redlands",
   "areaName": "Redlands",
-  "generatedAt": "2026-04-15T08:00:40.460Z",
-  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "generatedAt": "2026-05-15T08:00:05.012Z",
+  "reportingPeriod": "2026-05-15T08:00:05.012Z",
   "stats": {
     "areaKey": "redlands",
     "zips": [
@@ -12,9 +12,9 @@
       "Redlands"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 550000,
-    "averageDaysOnMarket": 87,
-    "newListings": 22,
-    "totalListings": 234
+    "medianPrice": 555000,
+    "averageDaysOnMarket": 81,
+    "newListings": 27,
+    "totalListings": 250
   }
 }

@@ -1,8 +1,8 @@
 {
   "areaKey": "palisade",
   "areaName": "Palisade",
-  "generatedAt": "2026-04-15T08:00:40.460Z",
-  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "generatedAt": "2026-05-15T08:00:05.012Z",
+  "reportingPeriod": "2026-05-15T08:00:05.012Z",
   "stats": {
     "areaKey": "palisade",
     "zips": [
@@ -12,9 +12,9 @@
       "Palisade"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 574900,
-    "averageDaysOnMarket": 84,
-    "newListings": 7,
-    "totalListings": 60
+    "medianPrice": 549000,
+    "averageDaysOnMarket": 74,
+    "newListings": 6,
+    "totalListings": 65
   }
 }

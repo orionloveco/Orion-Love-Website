@@ -1,8 +1,8 @@
 {
   "areaKey": "orchard_mesa",
   "areaName": "Orchard Mesa",
-  "generatedAt": "2026-04-15T08:00:40.460Z",
-  "reportingPeriod": "2026-04-15T08:00:40.460Z",
+  "generatedAt": "2026-05-15T08:00:05.012Z",
+  "reportingPeriod": "2026-05-15T08:00:05.012Z",
   "stats": {
     "areaKey": "orchard_mesa",
     "zips": [
@@ -12,9 +12,9 @@
       "Orchard Mesa"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 414900,
-    "averageDaysOnMarket": 75,
-    "newListings": 26,
-    "totalListings": 176
+    "medianPrice": 425000,
+    "averageDaysOnMarket": 69,
+    "newListings": 15,
+    "totalListings": 181
   }
 }
