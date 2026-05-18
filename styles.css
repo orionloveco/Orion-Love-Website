@@ -405,69 +405,12 @@ form[data-lead-form="seller"] {
   gap: 1rem;
 }
 
-form[data-lead-form="seller"] .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-form[data-lead-form="seller"] .form-group {
-  margin-bottom: 0;
-}
-
-form[data-lead-form="seller"] .form-group label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--navy);
-  font-weight: 700;
-  margin-bottom: 0.45rem;
-}
-
-form[data-lead-form="seller"] .form-group :is(input, select, textarea) {
-  width: 100%;
-  min-height: 48px;
-  padding: 0.8rem 1rem;
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  border-radius: var(--radius-sm);
-  font-family: "Raleway", sans-serif;
-  font-size: 0.97rem;
-  color: var(--text);
-  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-form[data-lead-form="seller"] .form-group :is(input, textarea)::placeholder {
-  color: rgba(26,26,46,0.35);
-}
-
-form[data-lead-form="seller"] .form-group :is(input, select, textarea):focus {
-  outline: none;
-  border-color: var(--gold);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(184,146,58,0.1);
-}
-
-form[data-lead-form="seller"] .form-group textarea {
-  resize: vertical;
-  min-height: 126px;
-  line-height: 1.6;
-}
-
 form[data-lead-form="seller"] [data-form-message],
 form[data-lead-form="seller"] .form-message {
   margin-top: 1rem;
   margin-bottom: 0;
 }
 
-@media (max-width: 640px) {
-  form[data-lead-form="seller"] .form-row {
-    grid-template-columns: 1fr;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .js .reveal,
@@ -505,14 +448,6 @@ form[data-lead-form="seller"] .form-message {
 @media (max-width: 768px) {
   form[data-lead-form="seller"] {
     gap: 16px;
-  }
-
-  form[data-lead-form="seller"] .form-row {
-    gap: 16px;
-  }
-
-  form[data-lead-form="seller"] .form-group label {
-    margin-bottom: 8px;
   }
 
   [data-submit-button],

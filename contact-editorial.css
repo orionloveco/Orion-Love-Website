@@ -241,7 +241,7 @@ body.page-contact .response-note {
     border-left-width: 5px;
   }
 
-  body.page-contact .form-sheet .form-row {
+  body.page-contact .form-sheet .editorial-form-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
