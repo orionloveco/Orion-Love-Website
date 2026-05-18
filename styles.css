@@ -337,142 +337,6 @@ p { color: var(--text); }
 ========================= */
 
 /* =========================
-   Footer (legacy/global compatibility layer during rebuild)
-   - Transitional ownership: rebuilt editorial pages rely on editorial-base.css for footer primitives.
-   - This block remains for legacy/unmigrated support and migration rollback safety.
-   - Do not remove until all dependent pages are confirmed migrated.
-   - Do not add rebuilt-page-specific footer variants here.
-========================= */
-.main-footer {
-  background: var(--navy-mid);
-  border-top: 1px solid rgba(184, 146, 58, 0.15);
-  padding: var(--space-6) 0 var(--space-4);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--space-5);
-  margin-bottom: var(--space-5);
-  align-items: start;
-}
-
-.logo-footer {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--white);
-  display: block;
-  margin-bottom: var(--space-2);
-}
-
-.footer-brand p {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.98rem;
-  line-height: 1.7;
-  margin-bottom: var(--space-2);
-}
-.footer-location {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 0.9rem;
-}
-
-.footer-links h4,
-.footer-contact h4 {
-  font-family: "Raleway", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: var(--space-2);
-}
-
-.footer-links ul,
-.footer-contact ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-links li,
-.footer-contact li { margin-bottom: var(--space-1); }
-
-.footer-links a,
-.footer-contact a {
-  color: rgba(255, 255, 255, 0.66);
-  text-decoration: none;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  transition: color 0.2s;
-}
-.footer-links a:hover,
-.footer-contact a:hover { color: var(--gold-lt); }
-
-.footer-support {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
-}
-
-.footer-contact li {
-  color: rgba(255, 255, 255, 0.66);
-  line-height: 1.55;
-}
-
-.footer-profiles {
-  margin-top: var(--space-1);
-}
-
-.footer-profiles__title {
-  font: var(--type-section-label);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold-lt);
-  margin-bottom: var(--space-2);
-}
-
-.footer-profiles__list {
-  list-style: none;
-  display: grid;
-  gap: var(--space-1);
-}
-
-.footer-profiles__list a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.66);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
-.footer-profiles__list a:hover {
-  color: var(--gold-lt);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  padding-top: var(--space-3);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-}
-.footer-bottom p {
-  color: rgba(255, 255, 255, 0.46);
-  font-size: 0.8rem;
-  line-height: 1.5;
-  margin: 0;
-}
-.footer-bottom a {
-  color: rgba(255, 255, 255, 0.52);
-  text-decoration: none;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-.footer-bottom a:hover { color: var(--gold-lt); }
-
-/* =========================
    Scroll Reveal
    Safe fallback: visible by default,
    enhanced when JS class applied.
@@ -506,15 +370,6 @@ p { color: var(--text); }
     transform: none !important;
     transition: none !important;
   }
-}
-
-/* =========================
-   Responsive
-========================= */
-@media (max-width: 968px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-support { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
 }
 
 /* =========================
@@ -744,10 +599,6 @@ form[data-lead-form="seller"] .form-message {
   text-decoration: none;
 }
 
-.footer-brand-note {
-  margin-top: var(--space-2);
-  color: rgba(255, 255, 255, 0.7);
-}
 
 /* Additional cleanup utilities */
 .no-text-decoration { text-decoration: none; }
@@ -825,17 +676,5 @@ form[data-lead-form="seller"] .form-message {
     padding: 8px 16px;
   }
 
-
-  .footer-grid {
-    gap: 32px;
-  }
-
-  .footer-support {
-    gap: 24px;
-  }
-
-  .footer-bottom {
-    gap: 16px;
-  }
 
 }
