@@ -388,47 +388,9 @@ body.page-faq .faq-hero {
 
 /* =========================
    Ownership boundary: Form compatibility
-   - Legacy form shells, seller lead forms, and validation-friendly field contracts.
+   - Seller lead forms and validation-friendly field contracts.
    - Rebuilt form primitives belong in editorial-base.css.
 ========================= */
-
-/* Canonical shared form section + shell contract */
-.form-section {
-  background: var(--cream);
-}
-
-.form-section .form-inner {
-  align-items: start;
-}
-
-.form-card {
-  background: var(--white);
-  border-radius: var(--radius-card);
-  padding: var(--space-card-padding);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--sand);
-}
-
-.form-card h3 {
-  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
-  color: var(--navy);
-  margin-bottom: 0.4rem;
-}
-
-.form-card :is(.form-sub, .form-card-sub) {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 1.75rem;
-  line-height: 1.65;
-}
-
-.form-card--contact {
-  padding: var(--space-card-padding);
-}
-
-.form-card--valuation {
-  border-color: transparent;
-}
 
 [data-submit-button],
 .form-submit {
@@ -495,20 +457,6 @@ form[data-lead-form="seller"] .form-group textarea {
   line-height: 1.6;
 }
 
-form[data-lead-form="seller"] .consent-note {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 0.35rem;
-  line-height: 1.55;
-  font-style: italic;
-}
-
-form[data-lead-form="seller"] .consent-note a {
-  color: var(--navy);
-  text-decoration: underline;
-  font-style: normal;
-}
-
 form[data-lead-form="seller"] [data-form-message],
 form[data-lead-form="seller"] .form-message {
   margin-top: 1rem;
@@ -565,10 +513,6 @@ form[data-lead-form="seller"] .form-message {
 
   form[data-lead-form="seller"] .form-group label {
     margin-bottom: 8px;
-  }
-
-  form[data-lead-form="seller"] .consent-note {
-    margin-top: 8px;
   }
 
   [data-submit-button],
