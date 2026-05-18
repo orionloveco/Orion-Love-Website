@@ -363,18 +363,6 @@ body.page-faq .faq-hero {
     linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
 }
 
-@media (max-width: 980px) {
-  body.page-services .service-block {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  body.page-services .service-block:nth-child(even) .service-meta,
-  body.page-services .service-block:nth-child(even) .service-details {
-    order: 0;
-  }
-}
-
 /* ============================================================
    Standardization pass
    Moved repeated inline HTML styles into shared classes/utilities
@@ -587,19 +575,5 @@ form[data-lead-form="seller"] .form-message {
   .form-submit {
     margin-top: 16px;
   }
-
-  body.page-areas .areas-orientation-grid,
-  body.page-areas .areas-jump-links {
-    gap: 16px;
-  }
-
-  body.page-areas .areas-jump-links {
-    margin-top: 16px;
-  }
-
-  body.page-areas .areas-jump-links a {
-    padding: 8px 16px;
-  }
-
 
 }
