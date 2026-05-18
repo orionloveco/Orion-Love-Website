@@ -388,6 +388,16 @@
   margin:0;
 }
 
+.area-detail .area-article__close.editorial-pull p{
+  max-width:860px;
+  color:var(--editorial-pull-color, var(--editorial-navy));
+  font-family:var(--editorial-pull-font-family, "Cormorant Garamond", Georgia, serif);
+  font-size:var(--editorial-pull-font-size, clamp(1.55rem, 2.25vw, 2.15rem));
+  font-weight:var(--editorial-pull-font-weight, 300);
+  letter-spacing:var(--editorial-pull-letter-spacing, -.04em);
+  line-height:var(--editorial-pull-line-height, 1.03);
+}
+
 .area-related-cta{
   padding:clamp(5.2rem, 8.4vw, 7.4rem) 0;
   background:
