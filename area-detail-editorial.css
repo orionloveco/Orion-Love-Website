@@ -373,11 +373,15 @@
   line-height:.72;
 }
 
-.area-article__close{
-  max-width:720px;
-  margin-top:clamp(2rem, 4.4vw, 3.8rem);
-  --editorial-pull-border-top:1px solid rgba(184, 146, 58, .42);
-  --editorial-pull-padding-top:1rem;
+.area-detail .area-article__close.editorial-pull{
+  max-width:860px;
+  margin-top:clamp(2.35rem, 4.8vw, 4.25rem);
+  --editorial-pull-border-top:1px solid rgba(184, 146, 58, .48);
+  --editorial-pull-padding-top:clamp(1.05rem, 1.8vw, 1.35rem);
+  --editorial-pull-color:var(--editorial-navy);
+  --editorial-pull-font-size:clamp(1.65rem, 2.45vw, 2.25rem);
+  --editorial-pull-letter-spacing:-.04em;
+  --editorial-pull-line-height:1.06;
 }
 
 .area-article__close p{
