@@ -36,6 +36,14 @@ function html(file) {
   return fs.readFileSync(path.join(tempRoot, file), 'utf8');
 }
 
+
+function note(file) {
+  const source = html(file);
+  const match = source.match(/<[^>]+data-market-note=["']true["'][^>]*>([\s\S]*?)<\/[^>]+>/);
+  assert.ok(match, `${file} should contain market note`);
+  return match[1].replace(/<[^>]+>/g, '').trim();
+}
+
 function stat(file, statKey) {
   const source = html(file);
   const pattern = new RegExp(`<[^>]+data-market-stat=["']${statKey}["'][^>]*>([\\s\\S]*?)<\\/[^>]+>`);
@@ -44,18 +52,42 @@ function stat(file, statKey) {
   return match[1].replace(/<[^>]+>/g, '').trim();
 }
 
-assert.equal(stat('sell-fruita.html', 'newListings'), '30', 'missing newListings preserves fallback');
+assert.equal(stat('sell-fruita.html', 'newListings'), '25', 'missing newListings preserves fallback');
 assert.equal(stat('sell-palisade.html', 'newListings'), '0', 'explicit canonical newListings: 0 renders 0');
 assert.equal(stat('sell-redlands.html', 'newListings'), '23', 'newListings30d alias maps when valid');
-assert.equal(stat('sell-orchard-mesa.html', 'newListings'), '26', 'invalid newListings preserves fallback');
+assert.equal(stat('sell-orchard-mesa.html', 'newListings'), '15', 'invalid newListings preserves fallback');
 assert.equal(stat('sell-downtown-grand-junction.html', 'newListings'), '17', 'valid fetched values update in place');
-assert.equal(stat('sell-clifton.html', 'newListings'), '10', 'alias default zero preserves fallback');
+assert.equal(stat('sell-clifton.html', 'newListings'), '8', 'alias default zero preserves fallback');
+assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: May 12, 2026.', 'market note synchronizes to source lastUpdatedDate');
 
 const palisadeJson = JSON.parse(fs.readFileSync(path.join(tempRoot, 'market-data/palisade-latest.json'), 'utf8'));
 assert.equal(palisadeJson.stats.newListings, 0, 'JSON preserves explicit canonical zero');
 
 const cliftonJson = JSON.parse(fs.readFileSync(path.join(tempRoot, 'market-data/clifton-latest.json'), 'utf8'));
-assert.equal(cliftonJson.stats.newListings, 10, 'JSON does not let alias default zero overwrite fallback');
+assert.equal(cliftonJson.stats.newListings, 8, 'JSON does not let alias default zero overwrite fallback');
+
+
+const invalidPayload = {
+  generatedAt: '2026-05-12T00:00:00.000Z',
+  areas: {
+    redlands: {
+      medianPrice: 551000,
+      averageDaysOnMarket: 88,
+      totalListings: 235,
+      newListings: 23,
+      lastUpdatedDate: 'not-a-date',
+    },
+  },
+};
+const invalidPayloadPath = path.join(tempRoot, 'invalid-payload.json');
+fs.writeFileSync(invalidPayloadPath, JSON.stringify(invalidPayload));
+assert.throws(() => {
+  execFileSync(process.execPath, [
+    path.join(root, 'scripts/update-market-snapshots.mjs'),
+    `--root=${tempRoot}`,
+    `--payload-file=${invalidPayloadPath}`,
+  ], { stdio: 'pipe' });
+}, /Invalid or missing lastUpdatedDate for redlands/);
 
 fs.rmSync(tempRoot, { recursive: true, force: true });
 console.log('market snapshot fallback tests passed');

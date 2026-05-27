@@ -263,7 +263,10 @@ for (const [file, key, label] of pages) {
     totalListings: getMarketStatValue(s, 'totalListings'),
     newListings: getMarketStatValue(s, 'newListings'),
   };
-  const reportingPeriod = s.lastUpdatedDate || generatedAt;
+  const reportingPeriod = s.lastUpdatedDate;
+  if (!parseValidDate(reportingPeriod)) {
+    throw new Error(`Invalid or missing lastUpdatedDate for ${key}; refusing to update fallback market note in ${file}`);
+  }
   const renderedStats = Object.fromEntries(Object.entries(statValues).map(([statKey, value]) => {
     const fallback = getExistingStat(html, key, statKey);
     return [statKey, MARKET_STAT_FORMATTERS[statKey](value, fallback)];
