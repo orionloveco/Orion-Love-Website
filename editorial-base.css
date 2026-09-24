@@ -74,6 +74,19 @@
   color:rgba(247,244,237,.95);
 }
 
+/* Logo: wordmark image + brokerage text (brokerage stays as visible text). */
+.main-header .logo-main{display:flex;align-items:center;gap:.85rem}
+.main-header .logo-wordmark{display:block;height:19px;width:auto}
+.main-header .logo-sep{display:none}
+.main-header .logo-brokerage{
+  padding-left:.85rem;
+  border-left:1px solid rgba(184,146,58,.55);
+  font-size:.6rem;
+  letter-spacing:.12em;
+  color:rgba(247,244,237,.82);
+  white-space:nowrap;
+}
+
 .main-header .nav-menu{
   gap:clamp(.72rem,1.25vw,1.45rem);
 }
@@ -506,6 +519,7 @@ body.mobile-nav-open{
   line-height:1.06;
   margin-bottom:.65rem;
 }
+.main-footer .logo-footer img{display:block;width:clamp(130px,14vw,160px);height:auto}
 
 .main-footer .footer-contact h4,
 .main-footer .footer-profiles__title{
@@ -567,9 +581,9 @@ body.mobile-nav-open{
 /* Phones: stack the brokerage under the name so the call and menu buttons fit.
    The brokerage stays visible (Colorado advertising rules); the raw text is unchanged. */
 @media (max-width:600px){
-  .main-header .logo-main{display:flex;flex-direction:column;gap:.18rem;line-height:1.2}
-  .main-header .logo-sep{display:none}
-  .main-header .logo-brokerage{font-size:.56rem;letter-spacing:.1em;color:rgba(247,244,237,.74)}
+  .main-header .logo-main{flex-direction:column;align-items:flex-start;gap:.32rem;line-height:1.2}
+  .main-header .logo-wordmark{height:16px}
+  .main-header .logo-brokerage{padding-left:0;border-left:0;font-size:.52rem;letter-spacing:.1em;color:rgba(247,244,237,.74)}
   .main-header nav{gap:.9rem}
 }
 
