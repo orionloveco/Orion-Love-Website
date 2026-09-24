@@ -127,3 +127,19 @@
   }
   .page-index .editorial-homepage .eh-cover-title{padding-top:0}
 }
+
+/* Closing section portrait: puts a face next to the consultation invitation. */
+.page-index .editorial-homepage .eh-closing-intro{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:clamp(1.6rem,3.5vw,3rem);align-items:end}
+.page-index .editorial-homepage .eh-closing-portrait{margin:0;position:relative;isolation:isolate}
+.page-index .editorial-homepage .eh-closing-portrait:before{content:"";position:absolute;inset:12px -12px auto 12px;aspect-ratio:4/5;border:1px solid rgba(184,146,58,.55);z-index:-1}
+.page-index .editorial-homepage .eh-closing-portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.page-index .editorial-homepage .eh-closing-portrait figcaption{margin-top:1.3rem;font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.2;color:var(--eh-navy,#0c1a3d)}
+.page-index .editorial-homepage .eh-closing-portrait figcaption span{display:block;margin-top:.3rem;font-family:'Raleway',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.5;color:var(--eh-muted,#5d6275)}
+@media (max-width:680px){
+  .page-index .editorial-homepage .eh-closing-intro{grid-template-columns:1fr;gap:2rem}
+  .page-index .editorial-homepage .eh-closing-portrait{max-width:200px}
+}
+@media (max-width:1020px){
+  /* The white/cream split is a desktop two-column device; stacked, it just cuts through content. */
+  .page-index .editorial-homepage .eh-closing{background:#fff}
+}
