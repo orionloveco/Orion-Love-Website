@@ -114,3 +114,16 @@
 @media (max-width:1020px){
     .page-index .editorial-homepage .eh-hero-actions{margin-left:0}
 }
+
+/* Phones/tablets: the cover stacks taller than one screen, so the fixed 100svh
+   height above made it overflow upward behind the fixed header. Let it grow and
+   start clear of the header. */
+@media (max-width:1020px){
+  .page-index .editorial-homepage .eh-cover,
+  .page-index .editorial-homepage .eh-cover-layout{height:auto;min-height:100svh}
+  .page-index .editorial-homepage .eh-cover-layout{
+    padding-top:2.5rem;
+    grid-template-rows:auto auto;
+  }
+  .page-index .editorial-homepage .eh-cover-title{padding-top:0}
+}
