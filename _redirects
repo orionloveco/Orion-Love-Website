@@ -2,6 +2,7 @@
 /areas.html /areas 301
 /blog.html /blog 301
 /blog-mortgage-rate-jump-mesa-county-sellers.html /blog-mortgage-rate-jump-mesa-county-sellers 301
+/blog-mesa-county-slower-sales-steady-prices.html /blog-mesa-county-slower-sales-steady-prices 301
 /buy-with-orion.html /buy-with-orion 301
 /contact.html /contact 301
 /faq.html /faq 301
@@ -49,3 +50,12 @@
 /loma-mack.html /sell-loma-mack 301
 
 /index.html / 301
+
+# Repo-internal files (docs, tooling) are deployed with the site; keep them off the public site.
+/README.md / 301
+/AGENTS.md / 301
+/BUSINESS_INFO.md / 301
+/validate_site.py / 301
+/images/README.md / 301
+/scripts/* / 301
+/.github/* / 301
