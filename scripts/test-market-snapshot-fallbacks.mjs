@@ -24,6 +24,15 @@ const filesToCopy = [
 for (const file of filesToCopy) {
   fs.copyFileSync(path.join(root, file), path.join(tempRoot, file));
 }
+
+// Fallback cases must keep whatever the page shows today, which changes every monthly refresh.
+const statIn = (source, statKey) => source.match(new RegExp(`data-market-stat=["']${statKey}["'][^>]*>([^<]*)<`))[1].trim();
+const originalNewListings = (file) => statIn(fs.readFileSync(path.join(root, file), 'utf8'), 'newListings');
+const before = {
+  fruita: originalNewListings('sell-fruita.html'),
+  orchardMesa: originalNewListings('sell-orchard-mesa.html'),
+  clifton: originalNewListings('sell-clifton.html'),
+};
 fs.mkdirSync(path.join(tempRoot, 'market-data'));
 
 execFileSync(process.execPath, [
@@ -52,19 +61,19 @@ function stat(file, statKey) {
   return match[1].replace(/<[^>]+>/g, '').trim();
 }
 
-assert.equal(stat('sell-fruita.html', 'newListings'), '25', 'missing newListings preserves fallback');
+assert.equal(stat('sell-fruita.html', 'newListings'), before.fruita, 'missing newListings preserves fallback');
 assert.equal(stat('sell-palisade.html', 'newListings'), '0', 'explicit canonical newListings: 0 renders 0');
 assert.equal(stat('sell-redlands.html', 'newListings'), '23', 'newListings30d alias maps when valid');
-assert.equal(stat('sell-orchard-mesa.html', 'newListings'), '15', 'invalid newListings preserves fallback');
+assert.equal(stat('sell-orchard-mesa.html', 'newListings'), before.orchardMesa, 'invalid newListings preserves fallback');
 assert.equal(stat('sell-downtown-grand-junction.html', 'newListings'), '17', 'valid fetched values update in place');
-assert.equal(stat('sell-clifton.html', 'newListings'), '8', 'alias default zero preserves fallback');
+assert.equal(stat('sell-clifton.html', 'newListings'), before.clifton, 'alias default zero preserves fallback');
 assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: May 12, 2026.', 'market note synchronizes to source lastUpdatedDate');
 
 const palisadeJson = JSON.parse(fs.readFileSync(path.join(tempRoot, 'market-data/palisade-latest.json'), 'utf8'));
 assert.equal(palisadeJson.stats.newListings, 0, 'JSON preserves explicit canonical zero');
 
 const cliftonJson = JSON.parse(fs.readFileSync(path.join(tempRoot, 'market-data/clifton-latest.json'), 'utf8'));
-assert.equal(cliftonJson.stats.newListings, 8, 'JSON does not let alias default zero overwrite fallback');
+assert.equal(cliftonJson.stats.newListings, Number(before.clifton), 'JSON does not let alias default zero overwrite fallback');
 
 
 const invalidPayload = {
