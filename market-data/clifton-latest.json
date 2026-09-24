@@ -1,8 +1,8 @@
 {
   "areaKey": "clifton",
   "areaName": "Clifton",
-  "generatedAt": "2026-05-15T08:00:05.012Z",
-  "reportingPeriod": "2026-05-15T08:00:05.012Z",
+  "generatedAt": "2026-09-15T08:00:37.158Z",
+  "reportingPeriod": "2026-09-15T08:00:37.158Z",
   "stats": {
     "areaKey": "clifton",
     "zips": [
@@ -12,9 +12,9 @@
       "Clifton"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 265000,
-    "averageDaysOnMarket": 84,
-    "newListings": 8,
-    "totalListings": 106
+    "medianPrice": 238000,
+    "averageDaysOnMarket": 63,
+    "newListings": 9,
+    "totalListings": 147
   }
 }
