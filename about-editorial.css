@@ -90,3 +90,9 @@
 @media (min-width: 1200px) {
   .profile-pull { white-space: nowrap; }
 }
+
+/* Closing portrait (black & white accent) beside the final headline. */
+.profile-close__portrait{--advisor-portrait-width:200px;margin:0;align-self:end}
+@media (min-width:1001px){
+  .profile-close__inner{max-width:1120px;grid-template-columns:200px 360px 480px;gap:clamp(1.6rem,3vw,2.6rem)}
+}

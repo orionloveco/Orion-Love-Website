@@ -529,3 +529,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Closing panel portrait: photo in its own column beside the consultation copy. */
+@media (min-width:900px){
+  .seller-close__panel{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:clamp(2rem,4vw,3.5rem);align-items:start}
+  .seller-close__panel > *{grid-column:2}
+  .seller-close__panel > .advisor-portrait{grid-column:1;grid-row:1 / span 4;margin:0}
+}

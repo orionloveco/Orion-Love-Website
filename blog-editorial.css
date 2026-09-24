@@ -313,3 +313,7 @@
   .blog-index__row{ grid-template-columns:1fr; gap:.5rem; }
   .post-article__body{ font-size:1.02rem; }
 }
+
+/* Author byline avatar */
+.post-hero__meta .post-hero__author{display:inline}
+.post-hero__meta .post-hero__author img{display:inline-block;vertical-align:middle;margin:-4px .5rem 0 0;width:28px;height:28px;border-radius:50%;object-fit:cover;border:1px solid rgba(184,146,58,.6)}
