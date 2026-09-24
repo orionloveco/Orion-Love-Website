@@ -1139,6 +1139,20 @@ select.editorial-input{
   color:#8a3030;
 }
 
+/* Lead forms submit only through script.js. If it never runs (JS off or failed
+   to load), html lacks .js and this note offers phone/email instead. */
+.form-nojs-note{
+  margin:0 0 1.2rem;
+  border-left:2px solid var(--editorial-gold);
+  padding:.7rem 1rem;
+  background:rgba(184,146,58,.08);
+  color:var(--editorial-ink);
+  font-size:.88rem;
+  line-height:1.5;
+}
+.form-nojs-note a{color:inherit;font-weight:600;text-decoration:underline}
+.js .form-nojs-note{display:none}
+
 .editorial-form-consent{
   margin:var(--editorial-form-consent-margin,1rem 0 0);
   border:var(--editorial-form-consent-border,0);
