@@ -175,7 +175,7 @@ function formatUpdatedDate(value) {
   const parsed = parseValidDate(value);
   if (!parsed) return null;
 
-  return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 }
 
 function buildMarketNote(reportingPeriod, fallback) {
@@ -263,7 +263,10 @@ for (const [file, key, label] of pages) {
     totalListings: getMarketStatValue(s, 'totalListings'),
     newListings: getMarketStatValue(s, 'newListings'),
   };
-  const reportingPeriod = s.lastUpdatedDate;
+  // The stats API currently sends lastUpdatedDate: null, so fall back to the payload's
+  // generatedAt (the same date script.js shows visitors). A present-but-garbled date still fails.
+  const hasSourceDate = s.lastUpdatedDate !== null && s.lastUpdatedDate !== undefined && s.lastUpdatedDate !== '';
+  const reportingPeriod = hasSourceDate ? s.lastUpdatedDate : payload.generatedAt;
   if (!parseValidDate(reportingPeriod)) {
     throw new Error(`Invalid or missing lastUpdatedDate for ${key}; refusing to update fallback market note in ${file}`);
   }

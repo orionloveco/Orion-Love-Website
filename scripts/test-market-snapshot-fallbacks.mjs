@@ -89,5 +89,20 @@ assert.throws(() => {
   ], { stdio: 'pipe' });
 }, /Invalid or missing lastUpdatedDate for redlands/);
 
+const nullDatePayload = {
+  generatedAt: '2026-09-15T08:00:00.000Z',
+  areas: {
+    redlands: { ...invalidPayload.areas.redlands, lastUpdatedDate: null },
+  },
+};
+const nullDatePayloadPath = path.join(tempRoot, 'null-date-payload.json');
+fs.writeFileSync(nullDatePayloadPath, JSON.stringify(nullDatePayload));
+execFileSync(process.execPath, [
+  path.join(root, 'scripts/update-market-snapshots.mjs'),
+  `--root=${tempRoot}`,
+  `--payload-file=${nullDatePayloadPath}`,
+], { stdio: 'pipe' });
+assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: September 15, 2026.', 'null lastUpdatedDate falls back to payload generatedAt');
+
 fs.rmSync(tempRoot, { recursive: true, force: true });
 console.log('market snapshot fallback tests passed');
