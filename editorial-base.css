@@ -438,7 +438,7 @@ body.mobile-nav-open{
   line-height:1.35;
 }
 
-@media (max-width:968px){
+@media (max-width:1120px){
   .main-header .nav-menu{
     display:none;
   }
