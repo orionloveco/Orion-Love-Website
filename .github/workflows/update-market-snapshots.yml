@@ -2,7 +2,7 @@ name: Update Market Snapshots
 
 on:
   schedule:
-    - cron: "0 16 15 * *"
+    - cron: "0 16 1,15 * *"
   workflow_dispatch:
 
 env:
