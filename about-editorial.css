@@ -91,10 +91,14 @@
   .profile-pull { white-space: nowrap; }
 }
 
-/* Closing portrait (black & white accent) beside the final headline. */
-.profile-close__portrait{--advisor-portrait-width:200px;margin:0;align-self:end}
+/* Closing portrait (black & white accent): photo left, headline + note stacked right. */
+.profile-close__portrait{--advisor-portrait-width:210px;margin:0}
+.profile-close__portrait figcaption{display:none}
 @media (min-width:1001px){
-  .profile-close__inner{max-width:1120px;grid-template-columns:minmax(150px,200px) minmax(0,360px) minmax(0,480px);gap:clamp(1.6rem,3vw,2.6rem);transform:none}
+  .profile-close__inner{max-width:920px;transform:none;grid-template-columns:210px minmax(0,1fr);grid-template-rows:auto auto;column-gap:clamp(2.6rem,5vw,4.4rem);row-gap:1.4rem;align-items:start;align-content:center}
+  .profile-close__portrait{grid-column:1;grid-row:1 / span 2;align-self:center}
+  .profile-close__inner > h2{grid-column:2;grid-row:1;justify-self:start;align-self:end;max-width:none}
+  .profile-close__note{grid-column:2;grid-row:2;align-self:start}
 }
 
 /* Profile story: read top to bottom in one column aligned under the statement
@@ -106,4 +110,8 @@
 @media (max-width:1000px){
   .profile-copy__article{grid-template-columns:1fr}
   .profile-copy__text{grid-column:1}
+}
+@media (max-width:1000px){
+  .profile-close__inner > h2{justify-self:start}
+  .profile-close__portrait{margin-bottom:1.6rem}
 }
