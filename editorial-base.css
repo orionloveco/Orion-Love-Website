@@ -510,8 +510,9 @@ body.mobile-nav-open{
 .main-footer .footer-profiles{padding-top:.35rem}
 .main-footer .footer-support{display:contents}
 .main-footer .footer-links{padding-top:.35rem}
-.main-footer .logo-footer{
+.main-footer .footer-brand .logo-footer{
   color:#fff;
+  letter-spacing:.01em;
   display:block;
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(1.9rem,3vw,2.35rem);
@@ -521,8 +522,8 @@ body.mobile-nav-open{
 }
 .main-footer .logo-footer img{display:block;width:clamp(130px,14vw,160px);height:auto}
 
-.main-footer .footer-contact h4,
-.main-footer .footer-links h4,
+.main-footer .footer-contact h2,
+.main-footer .footer-links h2,
 .main-footer .footer-profiles__title{
   color:#d4aa5a;
   font-family:'Cormorant Garamond',serif;

@@ -240,6 +240,7 @@
 .area-market-read__visual img{
   display:block;
   width:100%;
+  height:auto;
   aspect-ratio:16 / 9;
   object-fit:cover;
   box-shadow:0 22px 58px rgba(12, 26, 61, .12);
