@@ -570,3 +570,5 @@
 /* Plain-sentence market summary under the stat cards (quotable by search and AI answers). */
 .area-detail .area-market-summary{margin:1.1rem 0 .4rem;max-width:520px;color:rgba(26,26,46,.72);font-size:.9rem;line-height:1.65}
 .area-detail .area-market-summary:empty{display:none}
+.area-detail .area-market-compare{margin:.6rem 0 0;font-size:.82rem}
+.area-detail .area-market-compare a{color:var(--editorial-navy,#0c1a3d);text-decoration:underline;text-decoration-color:rgba(184,146,58,.6);text-underline-offset:.2em}

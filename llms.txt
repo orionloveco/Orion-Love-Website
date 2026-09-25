@@ -20,6 +20,10 @@
 - [Contact](https://orionlovehomes.com/contact): phone, email and contact form
 - [Buying with Orion](https://orionlovehomes.com/buy-with-orion): buyer conversations in Mesa County
 
+## Market numbers
+
+- [Grand Junction housing market by area](https://orionlovehomes.com/grand-junction-housing-market): median sale price, days on market and listings for all ten areas in one table, refreshed on the 1st and 15th of each month
+
 ## Area selling guides
 
 Each guide includes local selling advice and market statistics (median sale price, average days on market, active and new listings) from RentCast, refreshed on the 1st and 15th of each month.

@@ -19,6 +19,7 @@ const filesToCopy = [
   'sell-northeast-grand-junction.html',
   'sell-northwest-grand-junction.html',
   'sell-loma-mack.html',
+  'grand-junction-housing-market.html',
 ];
 
 for (const file of filesToCopy) {
@@ -129,6 +130,14 @@ assert.ok(!/data-market-stat="medianPrice"><\/strong>/.test(html('sell-redlands.
 const summaryMatch = html('sell-redlands.html').match(/data-market-summary="true"[^>]*>([^<]*)</);
 assert.ok(summaryMatch, 'area page has a market summary sentence');
 assert.equal(summaryMatch[1], 'As of September 15, 2026, the median sale price in the Redlands was $369,900, homes spent an average of 88 days on market, and there were 235 active listings, according to RentCast.', 'summary sentence uses the same figures as the stat cards');
+
+// County market page: every row filled, highlights sentence and date written.
+const marketHtml = html('grand-junction-housing-market.html');
+const redlandsRow = marketHtml.match(/data-market-area="redlands"[\s\S]*?data-market-stat="medianPrice"[^>]*>([^<]*)</);
+assert.ok(redlandsRow && /^\$[\d,]+$/.test(redlandsRow[1]), 'market page Redlands median price is filled in full dollars');
+assert.ok(/data-market-highlights="true">As of [A-Z][a-z]+ \d{1,2}, \d{4}, .+ had the highest median sale price/.test(marketHtml), 'market page highlights sentence is written');
+assert.ok(/data-market-page-note="true">Source: RentCast market data by ZIP code\. Last updated: /.test(marketHtml), 'market page note is written');
+assert.ok(marketHtml.includes('MARKET_DATASET_START: mesa-county'), 'market page Dataset JSON-LD is written');
 
 fs.rmSync(tempRoot, { recursive: true, force: true });
 console.log('market snapshot fallback tests passed');

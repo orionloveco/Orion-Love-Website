@@ -322,6 +322,63 @@ for (const [file, key, label] of pages) {
   results.push([file, `market-data/${key}-latest.json`, pageChanged, jsonChanged]);
 }
 
+// County-wide market page: one table row per area, a highlights sentence, and a Dataset.
+const MARKET_PAGE = 'grand-junction-housing-market.html';
+const marketPagePath = resolveFromRoot(MARKET_PAGE);
+if (fs.existsSync(marketPagePath)) {
+  let html = fs.readFileSync(marketPagePath, 'utf8');
+  const rowsForHighlights = [];
+  for (const [, key] of pages) {
+    const s = areas[key];
+    if (!s || typeof s !== 'object' || !hasMarketAreaBlock(html, key)) continue;
+    const nameMatch = html.match(new RegExp(`data-market-area=["']${escapeRegExp(key)}["'][^>]*data-market-area-name=["']([^"']+)["']`));
+    const rendered = {};
+    for (const statKey of Object.keys(MARKET_STAT_FORMATTERS)) {
+      rendered[statKey] = MARKET_STAT_FORMATTERS[statKey](getMarketStatValue(s, statKey), getExistingStat(html, key, statKey));
+      html = replaceAreaStat(html, key, statKey, rendered[statKey]);
+    }
+    rowsForHighlights.push({
+      name: nameMatch ? nameMatch[1] : key,
+      price: parseMarketStatValue(rendered.medianPrice),
+      days: parseMarketStatValue(rendered.averageDaysOnMarket),
+      priceText: rendered.medianPrice,
+      daysText: rendered.averageDaysOnMarket,
+    });
+  }
+
+  const reportingDate = formatUpdatedDate(generatedAt);
+  const priced = rowsForHighlights.filter((r) => r.price !== null);
+  const timed = rowsForHighlights.filter((r) => r.days !== null);
+  if (reportingDate && priced.length >= 2 && timed.length >= 2) {
+    const byPrice = [...priced].sort((a, b) => b.price - a.price);
+    const byDays = [...timed].sort((a, b) => a.days - b.days);
+    const count = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][rowsForHighlights.length] || String(rowsForHighlights.length);
+    const highlights = `As of ${reportingDate}, ${byPrice[0].name} had the highest median sale price of the ${count} areas (${byPrice[0].priceText}) and ${byPrice[byPrice.length - 1].name} the lowest (${byPrice[byPrice.length - 1].priceText}). Listings in ${byDays[0].name} spent the fewest days on market (${byDays[0].daysText} on average), and listings in ${byDays[byDays.length - 1].name} the most (${byDays[byDays.length - 1].daysText}).`;
+    html = html.replace(/(<[^>]+data-market-highlights=["']true["'][^>]*>)([\s\S]*?)(<\/[^>]+>)/, (_m, open, _old, close) => `${open}${highlights}${close}`);
+    html = html.replace(/(<[^>]+data-market-page-note=["']true["'][^>]*>)([\s\S]*?)(<\/[^>]+>)/, (_m, open, _old, close) => `${open}Source: RentCast market data by ZIP code. Last updated: ${reportingDate}.${close}`);
+  }
+
+  const dataset = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'Grand Junction and Mesa County housing market snapshot by area',
+    description: 'Median sale price, average days on market, active listings and new listings for ten areas of Grand Junction and Mesa County, Colorado, from RentCast market data.',
+    url: 'https://orionlovehomes.com/grand-junction-housing-market',
+    dateModified: generatedAt,
+    spatialCoverage: 'Mesa County, Colorado',
+    creator: { '@id': 'https://orionlovehomes.com/#orion-love-person' },
+    distribution: pages.map(([, key]) => ({
+      '@type': 'DataDownload',
+      encodingFormat: 'application/json',
+      contentUrl: `https://orionlovehomes.com/market-data/${key}-latest.json`,
+    })),
+    variableMeasured: DATASET_MEASUREMENTS.map(([, name]) => name),
+  };
+  html = updateDatasetJsonLd(html, 'mesa-county', dataset);
+
+  if (writeFileIfChanged(marketPagePath, html)) results.push([MARKET_PAGE, null, true, false]);
+}
+
 // Keep sitemap <lastmod> honest for area pages whose stats actually changed.
 const changedPages = results.filter(([, , pageChanged]) => pageChanged).map(([page]) => page);
 const sitemapPath = resolveFromRoot('sitemap.xml');
@@ -338,4 +395,4 @@ if (!dryRun && changedPages.length && fs.existsSync(sitemapPath)) {
 console.log(dryRun ? 'Dry run complete. No files written.' : 'Updated pages:');
 results.forEach(([page, , pageChanged]) => console.log(`- ${page}${dryRun ? '' : pageChanged ? '' : ' (unchanged)'}`));
 console.log(dryRun ? 'JSON files checked:' : 'Updated JSON:');
-results.forEach(([, jsonFile, , jsonChanged]) => console.log(`- ${jsonFile}${dryRun ? '' : jsonChanged ? '' : ' (unchanged)'}`));
+results.filter(([, jsonFile]) => jsonFile).forEach(([, jsonFile, , jsonChanged]) => console.log(`- ${jsonFile}${dryRun ? '' : jsonChanged ? '' : ' (unchanged)'}`));

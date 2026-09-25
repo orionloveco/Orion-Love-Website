@@ -8,7 +8,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 1. **Honesty:** no invented reviews, stats, sales history or personal details; no pronouns for Orion (see README §3).
 2. **Raw HTML is the source of truth.** Never make crawl-critical content JavaScript-only.
-3. **The footer is static HTML on every page** (brand, Quick Links, Contact, Verified Profiles). Change all 23 copies in one commit. Never reintroduce `renderSharedFooter()`.
+3. **The footer is static HTML on every page** (brand, Quick Links, Contact, Verified Profiles). Change all 24 copies in one commit. Never reintroduce `renderSharedFooter()`.
 4. **Business facts come only from `BUSINESS_INFO.md`**, identical everywhere.
 5. **Forms must keep working.** They are how leads arrive (see Forms below).
 6. **Fix systems, not symptoms.** Shared problems get shared fixes; no one-off overrides stacked at the end of a file.
@@ -28,7 +28,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 | Path | What it is |
 |---|---|
-| `*.html` | 23 static pages (index, about, sell-with-orion, grand-junction-home-value, buy-with-orion, contact, faq, areas, blog + posts, 10 `sell-<area>` guides, privacy, 404) |
+| `*.html` | 24 static pages (index, about, sell-with-orion, grand-junction-home-value, grand-junction-housing-market, buy-with-orion, contact, faq, areas, blog + posts, 10 `sell-<area>` guides, privacy, 404) |
 | `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is legacy/global; `editorial-base.css` owns shared chrome (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `about-editorial.css`, `blog-editorial.css`, etc.) owns page layout only |
 | `script.js` | Menu, header state, form submission, live market-stat refresh |
 | `images/` | Site photos (≤2000px), `brand/` (logos, favicons, share image), `portraits/` (photo library; see `images/README.md`) |
@@ -56,7 +56,7 @@ Contact, Home Value and Buyer forms post JSON from `script.js` to the `fub-conta
 ## Market stats pipeline
 
 1. Cloudflare Worker `orion-market-stats` (in Orion's Cloudflare account, not this repo) fetches RentCast data at **08:00 UTC on the 1st and 15th**.
-2. The GitHub Action runs `update-market-snapshots.mjs` at **16:00 UTC** the same days. It writes the stat cards, the "Last updated" note, the one-sentence market summary (`data-market-summary`), Dataset JSON-LD, `market-data/*.json`, and the sitemap `<lastmod>` for changed pages, then commits and deploys.
+2. The GitHub Action runs `update-market-snapshots.mjs` at **16:00 UTC** the same days. It fills the table, highlights sentence and Dataset on `grand-junction-housing-market.html` and, on each area guide, writes the stat cards, the "Last updated" note, the one-sentence market summary (`data-market-summary`), Dataset JSON-LD, `market-data/*.json`, and the sitemap `<lastmod>` for changed pages, then commits and deploys.
 3. `script.js` refreshes the cards and summary from the Worker when a visitor loads the page.
 
 Gotchas already hit once:

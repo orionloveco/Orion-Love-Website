@@ -364,7 +364,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (statValue === null) return;
 
       if (statKey === 'medianPrice') {
-        if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(statValue);
+        if (blockEl.dataset.marketCurrency === 'full') statEl.textContent = `$${Math.round(statValue).toLocaleString('en-US')}`;
+        else if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(statValue);
         else statEl.textContent = formatCurrency(statValue);
         return;
       }

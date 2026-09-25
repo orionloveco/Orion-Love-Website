@@ -1,0 +1,67 @@
+/* =========================================================
+   Page: Grand Junction housing market (market-page)
+   Owns: hero, area table, reading notes, closing invite.
+   Shared chrome, portraits and action links come from editorial-base.css.
+========================================================= */
+
+.market-page{background:var(--editorial-cream,#f7f4ed);color:var(--editorial-ink,#1a1a2e)}
+.market-page .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Hero */
+.market-hero{background:linear-gradient(160deg,#081232,#0c1a3d 55%,#16275a);color:#f7f4ed;padding:calc(var(--site-header-height,72px) + clamp(3rem,7vw,5.5rem)) 0 clamp(3.2rem,6vw,4.8rem)}
+.market-hero h1{max-width:15ch}
+.market-hero__deck{max-width:560px}
+.market-hero h1{margin:1rem 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.95;letter-spacing:-.03em;color:#f7f4ed}
+.market-hero h1 em{color:var(--editorial-gold-light,#d4aa5a);font-style:italic}
+.market-hero__deck{margin:1.4rem 0 0;max-width:560px;color:rgba(247,244,237,.8);font-size:clamp(1rem,1.3vw,1.12rem);line-height:1.7}
+.market-hero__meta{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:1.6rem 0 0;color:rgba(247,244,237,.6);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.market-hero__meta span+span::before{content:"·";margin-right:1.1rem;color:rgba(212,170,90,.7)}
+
+/* Table section */
+.market-table-section{padding:clamp(3.6rem,7vw,5.6rem) 0}
+.market-table-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.4rem,4vw,3.6rem);align-items:end;margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
+.market-table-intro h2,.market-notes h2,.market-close h2{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.02;letter-spacing:-.02em;color:var(--editorial-navy,#0c1a3d)}
+.market-highlights{margin:0;padding-top:1rem;border-top:1px solid rgba(184,146,58,.42);color:rgba(26,26,46,.74);font-size:1rem;line-height:1.7}
+.market-highlights:empty{display:none}
+
+.market-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.market-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.market-table thead th{padding:0 1rem .8rem 0;border-bottom:1px solid rgba(12,26,61,.22);color:var(--editorial-gold,#b8923a);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-align:right;text-transform:uppercase;white-space:nowrap}
+.market-table thead th:first-child{text-align:left}
+.market-table tbody th,.market-table tbody td{padding:1rem 1rem 1rem 0;border-bottom:1px solid rgba(12,26,61,.1)}
+.market-table tbody th{font-weight:400;text-align:left}
+.market-table tbody th a{color:var(--editorial-navy,#0c1a3d);font-family:'Cormorant Garamond',serif;font-size:1.25rem;text-decoration:none}
+.market-table tbody th a:hover{color:var(--editorial-gold,#b8923a)}
+.market-table tbody td{color:rgba(26,26,46,.8);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.market-table tbody tr:hover{background:rgba(232,225,208,.35)}
+.market-page-note{margin:1.1rem 0 0;color:rgba(26,26,46,.56);font-size:.8rem}
+
+/* Reading notes */
+.market-notes{padding:clamp(3.6rem,7vw,5.6rem) 0;background:#fff}
+.market-notes__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.6rem,5vw,4.4rem);align-items:start}
+.market-notes__body{max-width:640px}
+.market-notes__body p{margin:0 0 1.1rem;color:rgba(26,26,46,.72);font-size:1rem;line-height:1.8}
+
+/* Closing invite */
+.market-close{padding:clamp(3.6rem,7vw,5.6rem) 0}
+.market-close__grid{display:grid;grid-template-columns:210px minmax(0,640px);gap:clamp(2.2rem,5vw,4.4rem);align-items:center}
+.market-close__grid .advisor-portrait{margin:0;--advisor-portrait-width:210px}
+.market-close p{margin:1rem 0 0;color:rgba(26,26,46,.72);font-size:1rem;line-height:1.75}
+.market-close__links{margin-top:1.4rem}
+
+@media (max-width:860px){
+  .market-table-intro,.market-notes__grid,.market-close__grid{grid-template-columns:1fr}
+  .market-close__grid .advisor-portrait{margin-bottom:1rem}
+}
+/* Phones: each area becomes a small block with a labelled 2x2 grid of figures. */
+@media (max-width:640px){
+  .market-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .market-table,.market-table tbody{display:block}
+  .market-table tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1rem;padding:1.2rem 0;border-bottom:1px solid rgba(12,26,61,.12)}
+  .market-table tbody tr:hover{background:none}
+  .market-table tbody th,.market-table tbody td{display:block;padding:0;border:0;text-align:left}
+  .market-table tbody th{grid-column:1/-1}
+  .market-table tbody th a{font-size:1.3rem}
+  .market-table tbody td{font-size:1rem;color:var(--editorial-navy,#0c1a3d)}
+  .market-table tbody td::before{content:attr(data-label);display:block;margin-bottom:.2rem;color:var(--editorial-gold,#b8923a);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+}

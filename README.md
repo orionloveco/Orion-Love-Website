@@ -70,6 +70,7 @@ Principles:
 | About `/about` | Orion Love, Grand Junction real estate | Turn a researcher into someone who trusts Orion |
 | Area guides `/sell-<area>` | Selling a home in [area] | Local seller guidance plus current market numbers |
 | Areas `/areas` | Mesa County area guides | Route to the right area guide |
+| Housing Market `/grand-junction-housing-market` | Grand Junction housing market, median home price by area | All ten areas' numbers in one table; updates itself |
 | FAQ `/faq` | Seller questions | Answer real questions plainly |
 | Market Briefings `/blog`, `/blog-<slug>` | Timely local market questions | Show current, local judgment |
 | Buyers, Contact, Privacy | Supporting pages | |
