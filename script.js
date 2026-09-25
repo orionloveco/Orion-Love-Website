@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 1120) closeMenu();
+      if (window.innerWidth > 960) closeMenu();
     });
   }
 

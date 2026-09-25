@@ -8,7 +8,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 1. **Honesty:** no invented reviews, stats, sales history or personal details; no pronouns for Orion (see README §3).
 2. **Raw HTML is the source of truth.** Never make crawl-critical content JavaScript-only.
-3. **The footer is static HTML on every page.** Change all 23 copies in one commit. Never reintroduce `renderSharedFooter()`.
+3. **The footer is static HTML on every page** (brand, Quick Links, Contact, Verified Profiles). Change all 23 copies in one commit. Never reintroduce `renderSharedFooter()`.
 4. **Business facts come only from `BUSINESS_INFO.md`**, identical everywhere.
 5. **Forms must keep working.** They are how leads arrive (see Forms below).
 6. **Fix systems, not symptoms.** Shared problems get shared fixes; no one-off overrides stacked at the end of a file.
@@ -41,7 +41,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 ## Shared building blocks
 
-- **Header:** wordmark image + brokerage text (`.logo-wordmark`, `.logo-brokerage`); stacks under 600px. The full menu shows above **1120px**, the ☰ menu and tap-to-call (`.mobile-call`) below. The breakpoint lives in `editorial-base.css` *and* `script.js`: change both. The header turns solid navy on scroll (`.solid`).
+- **Header:** wordmark image + brokerage text (`.logo-wordmark`, `.logo-brokerage`); the brokerage stacks under the wordmark below 1200px. The top menu has six links (Sellers, Buyers, Home Value, Areas, About, Market Briefings) plus Contact; Home and FAQ live in the footer and phone menu. The full menu shows above **960px**, the ☰ menu and tap-to-call (`.mobile-call`) below. The breakpoint lives in `editorial-base.css` *and* `script.js`: change both. The header turns solid navy on scroll (`.solid`).
 - **Portraits:** `.advisor-portrait` (framed photo + name/brokerage caption). Variants: `--on-dark` (navy sections), `--end` (right-aligned), `--compact` (small photo beside caption, used on area pages). Don't reuse a photo already used elsewhere.
 - **Area guides:** fixed four-section structure (README §5). Keep every `data-market-*` attribute: the stats job depends on them.
 - **Forms fallback:** `.form-nojs-note` shows phone/email only when JavaScript fails (`html` lacks `.js`).
@@ -83,6 +83,7 @@ Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service
 
 1. Copy an existing `blog-<slug>.html`; update title (≈60 chars incl. " | Orion Love"), description (≤155), canonical, OG/Twitter tags, `WebPage`, `BlogPosting` (dates) and `BreadcrumbList`.
 2. Add it to `blog.html`, `sitemap.xml` (with `<lastmod>`), `llms.txt`, and a `/<slug>.html → /<slug>` line in `_redirects`.
+   Update the homepage's "Latest market briefing" link (`.eh-latest-briefing` in `index.html`) to point to it.
 3. Keep the author byline (`.post-hero__author`) and the static footer.
 4. Cite sources for every number.
 

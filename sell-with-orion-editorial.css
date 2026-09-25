@@ -536,3 +536,6 @@
   .seller-close__panel > *{grid-column:2}
   .seller-close__panel > .advisor-portrait{grid-column:1;grid-row:1 / span 4;margin:0}
 }
+
+.seller-close__more{margin-top:-.4rem;margin-bottom:1.6rem;color:rgba(26,26,46,.66);font-size:.95rem;line-height:1.7}
+.seller-close__more a{color:var(--navy,#0c1a3d);text-decoration:underline;text-decoration-color:rgba(184,146,58,.6);text-underline-offset:.2em}

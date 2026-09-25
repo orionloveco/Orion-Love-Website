@@ -465,7 +465,7 @@ body.mobile-nav-open{
 }
 .main-header .mobile-call:hover{background:rgba(184,146,58,.28);color:#d4aa5a}
 
-@media (max-width:1120px){
+@media (max-width:960px){
   .main-header .nav-menu{
     display:none;
   }
@@ -497,9 +497,9 @@ body.mobile-nav-open{
 .main-footer .container{max-width:1240px}
 .main-footer .footer-grid{
   display:grid;
-  grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);
+  grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));
   align-items:start;
-  gap:clamp(1.5rem,4vw,3.5rem);
+  gap:clamp(1.5rem,3.5vw,3rem);
   margin-bottom:clamp(1.4rem,2.8vw,2.6rem);
 }
 
@@ -509,7 +509,7 @@ body.mobile-nav-open{
 .main-footer .footer-contact,
 .main-footer .footer-profiles{padding-top:.35rem}
 .main-footer .footer-support{display:contents}
-.main-footer .footer-links{display:none}
+.main-footer .footer-links{padding-top:.35rem}
 .main-footer .logo-footer{
   color:#fff;
   display:block;
@@ -522,6 +522,7 @@ body.mobile-nav-open{
 .main-footer .logo-footer img{display:block;width:clamp(130px,14vw,160px);height:auto}
 
 .main-footer .footer-contact h4,
+.main-footer .footer-links h4,
 .main-footer .footer-profiles__title{
   color:#d4aa5a;
   font-family:'Cormorant Garamond',serif;
@@ -577,6 +578,13 @@ body.mobile-nav-open{
 @media (max-width:768px){
   .main-header nav{height:68px;min-height:68px}
   .main-header .logo-main{font-size:.68rem;letter-spacing:.11em}
+}
+
+/* Small laptops / landscape tablets: stack the brokerage under the wordmark so the
+   full menu fits down to the 960px menu breakpoint. */
+@media (max-width:1200px){
+  .main-header .logo-main{flex-direction:column;align-items:flex-start;gap:.3rem;line-height:1.2}
+  .main-header .logo-brokerage{padding-left:0;border-left:0;font-size:.56rem;letter-spacing:.1em}
 }
 
 /* Phones: stack the brokerage under the name so the call and menu buttons fit.

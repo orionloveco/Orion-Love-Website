@@ -143,3 +143,9 @@
   /* The white/cream split is a desktop two-column device; stacked, it just cuts through content. */
   .page-index .editorial-homepage .eh-closing{background:#fff}
 }
+
+/* Latest market briefing link inside the navy Market Reality section. */
+.page-index .editorial-homepage .eh-market-copy p.eh-latest-briefing{grid-column:1/-1;max-width:none;margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(247,244,237,.14);color:rgba(247,244,237,.82);font-size:.95rem;line-height:1.5}
+.page-index .editorial-homepage .eh-latest-briefing span{display:block;margin-bottom:.35rem;color:var(--eh-gold-light,#d4aa5a);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.page-index .editorial-homepage .eh-latest-briefing a{color:#f7f4ed;text-decoration:underline;text-decoration-color:rgba(212,170,90,.6);text-underline-offset:.2em}
+.page-index .editorial-homepage .eh-latest-briefing a:hover{color:#d4aa5a}
