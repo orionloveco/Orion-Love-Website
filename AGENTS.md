@@ -1,518 +1,108 @@
-# AGENTS.md
+# AGENTS.md: Working on the Orion Love site
 
-## Authority
+Practical rules for any AI agent (or person) editing this repo. **Read `README.md` first** for strategy, page intent, design and writing standards, and `BUSINESS_INFO.md` for approved facts. If this file and README conflict, README wins.
 
-This file governs AI agent behavior when editing, auditing, or refactoring the Orion Love website.
+Orion is not a developer: explain changes in plain language, preview before publishing, and ask before anything visible goes live.
 
-`README.md` is the source of truth for:
+## Non-negotiables
 
-- strategy
-- positioning
-- page intent
-- brand standards
-- visual direction
-- design philosophy
+1. **Honesty:** no invented reviews, stats, sales history or personal details; no pronouns for Orion (see README §3).
+2. **Raw HTML is the source of truth.** Never make crawl-critical content JavaScript-only.
+3. **The footer is static HTML on every page.** Change all 23 copies in one commit. Never reintroduce `renderSharedFooter()`.
+4. **Business facts come only from `BUSINESS_INFO.md`**, identical everywhere.
+5. **Forms must keep working.** They are how leads arrive (see Forms below).
+6. **Fix systems, not symptoms.** Shared problems get shared fixes; no one-off overrides stacked at the end of a file.
 
-If any conflict exists, `README.md` overrides `AGENTS.md`.
+## Workflow
 
-AGENTS.md exists to enforce that source of truth in code.
+1. `git pull` first: a GitHub Action commits stat updates on the 1st and 15th.
+2. Preview locally: `python3 -m http.server 8765`, then open `http://localhost:8765/<page>.html` (clean URLs only work on the live site).
+3. Check desktop and phone widths (320 / 375 / 768 / 1024 / 1280+): no sideways overflow, nothing hidden under the fixed header, columns aligned.
+4. Run the checks below, then show Orion the preview and get a yes.
+5. Commit with a clear message, `git push origin main`. **Pushing to `main` deploys**: Cloudflare Pages is live in about 1 minute.
+6. Verify on the live site with a cache-busting query (`?x=123`). Remember the 404 page contains Orion's name, so check for page-specific markup, not just "Orion Love".
 
----
+**Cache busting:** Cloudflare caches CSS/JS for 4 hours. When you change a stylesheet or `script.js`, bump its `?v=` on every page that loads it (e.g. `editorial-base.css?v=20260925…`). When replacing an image under the same filename, add `?v=2` to its `src`.
 
-## Non-Negotiable Brand Standard
+## Map of the repo
 
-This site must not drift toward:
+| Path | What it is |
+|---|---|
+| `*.html` | 23 static pages (index, about, sell-with-orion, grand-junction-home-value, buy-with-orion, contact, faq, areas, blog + posts, 10 `sell-<area>` guides, privacy, 404) |
+| `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is legacy/global; `editorial-base.css` owns shared chrome (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `about-editorial.css`, `blog-editorial.css`, etc.) owns page layout only |
+| `script.js` | Menu, header state, form submission, live market-stat refresh |
+| `images/` | Site photos (≤2000px), `brand/` (logos, favicons, share image), `portraits/` (photo library; see `images/README.md`) |
+| `market-data/*.json` | Latest stats per area (written by the stats job) |
+| `scripts/update-market-snapshots.mjs` | Writes stats into area pages; `scripts/test-market-snapshot-fallbacks.mjs` tests it |
+| `.github/workflows/update-market-snapshots.yml` | Runs the stats job 16:00 UTC on the 1st and 15th |
+| `sitemap.xml`, `robots.txt`, `llms.txt` | Crawl files; keep in sync when pages are added |
+| `_redirects`, `_headers` | Cloudflare Pages rules (`.html` → clean URLs; internal docs/scripts redirect to `/`) |
+| `validate_site.py` | Canonical, schema and footer checks |
 
-- a generic Realtor website
-- a generic SaaS landing page
-- a generic local business template
-- a lead-capture funnel with real estate copy pasted on top
-- a rigid component demo where every section has the same weight
+## Shared building blocks
 
-The intended design language is:
+- **Header:** wordmark image + brokerage text (`.logo-wordmark`, `.logo-brokerage`); stacks under 600px. The full menu shows above **1120px**, the ☰ menu and tap-to-call (`.mobile-call`) below. The breakpoint lives in `editorial-base.css` *and* `script.js`: change both. The header turns solid navy on scroll (`.solid`).
+- **Portraits:** `.advisor-portrait` (framed photo + name/brokerage caption). Variants: `--on-dark` (navy sections), `--end` (right-aligned), `--compact` (small photo beside caption, used on area pages). Don't reuse a photo already used elsewhere.
+- **Area guides:** fixed four-section structure (README §5). Keep every `data-market-*` attribute: the stats job depends on them.
+- **Forms fallback:** `.form-nojs-note` shows phone/email only when JavaScript fails (`html` lacks `.js`).
 
-- premium local editorial
-- Mesa County seller advisor
-- calm authority
-- magazine-like pacing
-- strategic, not salesy
-- polished, grounded, and human
+## Forms (leads)
 
-Every code, layout, CSS, content, and component decision must support that direction.
+Contact, Home Value and Buyer forms post JSON from `script.js` to the `fub-contact-proxy` Cloudflare Worker, which creates the lead in Follow Up Boss. The Worker is **not** in this repo.
 
-If a technically clean change makes the site feel more generic, more templated, louder, flatter, or less editorial, do not make it without calling that out.
+- **Never submit real test leads.** To test, override `window.fetch` in the browser, submit, and compare the captured payload before and after your change. It must be identical unless the change is intended.
+- Keep `method="post"` and the no-JS note on all three forms.
 
----
+## Market stats pipeline
 
-## AI / SEO Rendering Rule
+1. Cloudflare Worker `orion-market-stats` (in Orion's Cloudflare account, not this repo) fetches RentCast data at **08:00 UTC on the 1st and 15th**.
+2. The GitHub Action runs `update-market-snapshots.mjs` at **16:00 UTC** the same days. It writes the stat cards, the "Last updated" note, the one-sentence market summary (`data-market-summary`), Dataset JSON-LD, `market-data/*.json`, and the sitemap `<lastmod>` for changed pages, then commits and deploys.
+3. `script.js` refreshes the cards and summary from the Worker when a visitor loads the page.
 
-To protect AI discoverability, SEO visibility, crawlability, trust, and page meaning, all critical information must be visible in the raw HTML response.
+Gotchas already hit once:
+- GitHub **disables scheduled workflows after 60 days without repo activity.** If stats go stale, check the Actions tab.
+- Use **function replacers** in `String.replace` (a price like "$369,900" in a replacement string becomes a `$3` backreference).
+- The API currently returns `lastUpdatedDate: null`; the script falls back to `generatedAt`.
+- Tests must not hard-code a month's numbers. Read current page values instead.
 
-- Critical content must be present in raw HTML.
-- JavaScript is allowed for enhancements, animations, UI behavior, mobile menu behavior, progressive enhancement, and optional dynamic stats.
-- JavaScript must not be the only source for critical content.
-- If disabling JavaScript would cause an AI crawler, search engine, scraper, or link preview tool to miss or misunderstand the page, that content belongs in HTML.
-- HTML is the source of truth. JavaScript is the enhancement layer.
+Local run: `node scripts/update-market-snapshots.mjs --dry-run` (needs Node; `brew install node`).
 
-The following must not be JavaScript-only:
+## Structured data
 
-- main headings and body copy
-- local service area context
-- internal links and navigation
-- footer authority/profile links
-- contact information
-- canonical/meta/Open Graph tags
-- JSON-LD structured data
-- trust signals, credentials, brokerage info, and verified profile links
+Every page's JSON-LD `@graph` includes the shared entities, which must stay identical across pages:
 
-### Static Footer Maintenance Rule
+- `Person` `#orion-love-person`: includes image, description, `sameAs`, license credential (`hasCredential`), `knowsAbout`
+- `RealEstateAgent` `#orion-love`, `LocalBusiness` `#localbusiness`, `WebSite` `#website`
 
-The footer is intentionally duplicated in static HTML across all pages so AI crawlers, search engines, scrapers, and non-JS systems can read it directly from the raw HTML source.
+Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service`, `Dataset`). Rules:
+- Any node referenced by `@id` must be defined on that page (blog posts need `LocalBusiness` because it's the publisher).
+- `FAQPage` on `/faq` lists **all** visible questions with their exact answer text. If FAQ content changes, rebuild it from the page.
+- The Google Business Profile link is `https://www.google.com/search?kgmid=/g/11yw040cd8` (footer and `sameAs`).
 
-If footer content changes, update every footer instance in the same commit. Do not leave partial footer drift across pages.
+## Adding a Market Briefing (blog post)
 
-Do not reintroduce JavaScript footer rendering.
+1. Copy an existing `blog-<slug>.html`; update title (≈60 chars incl. " | Orion Love"), description (≤155), canonical, OG/Twitter tags, `WebPage`, `BlogPosting` (dates) and `BreadcrumbList`.
+2. Add it to `blog.html`, `sitemap.xml` (with `<lastmod>`), `llms.txt`, and a `/<slug>.html → /<slug>` line in `_redirects`.
+3. Keep the author byline (`.post-hero__author`) and the static footer.
+4. Cite sources for every number.
 
-Footer content that must remain present in raw HTML includes:
-
-- Orion Love identity
-- Keller Williams Colorado West Realty attribution
-- phone and email
-- service area language
-- internal footer links
-- verified profile links
-- brokerage/entity/trust signals
-
-Validation requirement:
-After any footer edit, verify:
-
-- no page contains `<div id="siteFooter"></div>`
-- every HTML page contains `<footer class="main-footer" id="siteFooter">`
-- `script.js` does not contain `renderSharedFooter()`
-- raw HTML source contains the verified profile links and contact information
-
-Suggested checks:
+## Checks to run before publishing
 
 ```bash
-rg -n "<div id=\"siteFooter\"></div>" *.html
-rg -n "<footer class=\"main-footer\" id=\"siteFooter\"" *.html
-rg -n "renderSharedFooter" script.js
-rg -n "Google Business Profile|Zillow|Realtor.com|LinkedIn|Keller Williams|mailto:orion.love.co@gmail.com|tel:9706446781" *.html
+python3 validate_site.py                              # canonicals, schema, footer
+node scripts/test-market-snapshot-fallbacks.mjs       # stats pipeline
+node --check script.js                                # JS syntax
 ```
 
----
-
-## Operational Scope
-
-AGENTS.md enforces implementation behavior. For strategy, positioning, page intent, design philosophy, content hierarchy, and visual target, follow `README.md`.
-
-### Enforcement Priorities
-
-1. Raw HTML source of truth for crawl-critical content.
-2. No JavaScript-only critical content.
-3. Static HTML footer across pages; never reintroduce `renderSharedFooter()`.
-4. Entity clarity: Orion Love, seller representation, Mesa County, Colorado.
-5. Mesa County seller-first positioning. Buyers are secondary.
-6. Premium local editorial design standard from `README.md`.
-7. System-first fixes without creating one-off patches.
-8. Visual hierarchy stronger than before the edit.
-9. No template drift.
-
----
-
-## Identity Rule
-
-Every page must clearly answer:
-
-- Who: Orion Love, real estate broker
-- What: seller representation
-- Where: Mesa County, Colorado
-
-This identity must appear consistently across:
-
-- page copy
-- headings
-- meta titles and descriptions
-- schema markup
-- internal links
-- footer/entity/trust blocks
-
-No variation in factual identity fields. Natural phrasing may vary in editorial copy.
-
-The identity should be clear without making the page feel stuffed, repetitive, or robotic.
-
----
-
-## Design System Intent
-
-When editing this site, preserve and strengthen the intended visual identity:
-
-A premium, editorial, seller-first real estate website for Orion Love in Mesa County, Colorado.
-
-The desired feel is:
-
-- local real estate magazine
-- trusted seller advisor
-- polished but grounded
-- strategic, calm, and confident
-- not flashy, gimmicky, or generic
-
-Do not redesign pages into generic landing-page patterns.
-
-Do not “clean up” the site into visual sameness.
-
-Do not use technical consistency as an excuse to flatten editorial hierarchy.
-
----
-
-## Visual Hierarchy Rules
-
-Every page must have clear editorial hierarchy.
-
-Avoid making every section visually equal.
-
-Pages should include a mix of:
-
-- flagship hero moments
-- quieter explanatory sections
-- editorial feature blocks
-- dark navy anchor sections
-- concise CTA moments
-- selective card grids
-- narrow readable text columns
-- pull quotes when a line deserves emphasis
-- local briefing or guide-style modules
-
-Do not solve every layout problem with another 3-card grid.
-
-Do not make every section follow the same pattern of eyebrow, headline, paragraph, cards, CTA.
-
-Before adding a new module, ask whether the page needs more content or simply stronger hierarchy.
-
----
-
-## Editorial Layout Direction
-
-Favor editorial layout decisions over generic web templates.
-
-Good patterns:
-
-- asymmetrical hero layouts
-- cover-like homepage hero composition
-- profile-spread treatment on the About page
-- seller-guide pacing on seller and home value pages
-- neighborhood-guide pacing on area pages
-- narrow text columns for longer copy
-- strong spacing between major ideas
-- feature sections with one dominant idea
-- pull quotes for key positioning lines
-- visual rhythm changes between sections
-- local guide or briefing-style modules
-
-Avoid:
-
-- repetitive centered sections
-- too many equal-weight cards
-- cramped mobile spacing
-- long walls of paragraph text
-- excessive button repetition
-- visually identical page sections
-- SaaS-style feature grids
-- generic real estate website-builder layouts
-- decorative dividers between every section
-- adding badges, icons, or effects just to fill space
-
----
-
-## Typography Direction
-
-The site uses a premium editorial type relationship.
-
-- Serif type should carry major headlines and editorial emphasis.
-- Sans-serif type should support clarity, labels, navigation, and body structure.
-- Headlines should feel intentional, not oversized by accident.
-- Avoid generic marketing headline patterns.
-- Use short, confident section labels sparingly.
-- Do not over-label every section.
-- Body copy should remain readable, calm, and spacious.
-
-If the page feels text-heavy, improve pacing before adding more visual noise.
-
-Useful fixes include:
-
-- shorter paragraphs
-- pull quotes
-- intro decks
-- side notes
-- feature captions
-- better spacing
-- stronger section contrast
-
----
-
-## Color Direction
-
-Preserve the core palette unless `README.md` is intentionally changed:
-
-- Navy: `#0c1a3d`
-- Mid Navy: `#16275a`
-- Gold: `#b8923a`
-- Light Gold: `#d4aa5a`
-- Cream: `#f7f4ed`
-- Sand: `#e8e1d0`
-- Text: `#1a1a2e`
-- White: `#ffffff`
-
-Use gold as an accent, not decoration everywhere.
-
-Dark navy sections should feel premium and anchoring, not heavy or overused.
-
-Do not introduce loud colors, gradient-heavy treatments, neon accents, or generic luxury-black-and-gold styling unless explicitly directed.
-
----
-
-## CTA Rules
-
-CTAs should be clear but not aggressive.
-
-Preferred language includes:
-
-- Start the Conversation
-- Request a Seller Briefing
-- Get a Clearer Read
-- Talk Through the Sale
-
-Avoid:
-
-- Get Started Now
-- Sell Fast
-- Claim Your Free Offer
-- Unlock Your Home Value
-- Schedule Now Before It’s Too Late
-- generic high-pressure lead-capture language
-
-CTA styling should vary by context:
-
-- hero buttons can be stronger
-- mid-page CTAs can be quieter
-- closing CTAs can feel like editorial cards
-- area pages may use seller-briefing contact cards
-
-Do not repeat the same button treatment too many times on one page.
-
-One primary CTA per page. Secondary actions may exist only when visually subordinate.
-
----
-
-## Card and Grid Rules
-
-Cards are allowed only when they improve scanning, hierarchy, or meaning.
-
-Cards are not the default solution.
-
-Avoid:
-
-- generic 3-up feature cards
-- repeated equal-height boxes
-- excessive icon cards
-- card grids that make all ideas feel equally important
-- using cards to avoid making a real editorial layout decision
-
-Use cards for:
-
-- concise comparison points
-- structured process summaries
-- related area links
-- small factual groupings
-- supporting details that should not dominate the page
-
-If a section contains the page’s strongest idea, it probably should not be a generic card grid.
-
----
-
-## Page-Family Principle
-
-Pages must belong to repeatable families, but not feel cloned.
-
-Each page family should define:
-
-- hero structure
-- section order logic
-- CTA placement
-- shared layout constraints
-- reusable components
-
-Within that system, each page still needs controlled variation:
-
-- different section rhythm
-- different local insights
-- different pull quote or feature moment
-- different emphasis based on the page’s purpose
-
-Avoid one-off page construction.
-
-Also avoid clone-like page construction.
-
-System consistency is not visual sameness.
-
----
-
-## System-First Rule
-
-Always determine whether an issue is system-level or local.
-
-- Fix systems before pages.
-- Do not patch repeat issues locally.
-- Do not create one-off layout/component patterns when a shared system should exist.
-- Do not stack CSS overrides at the end of the file.
-- Remove dead or legacy classes when safe.
-- Consolidate repeated patterns.
-- Preserve factual business information.
-
-A good fix should make future pages easier to maintain without making the current page feel more generic.
-
----
-
-## CSS and Layout Guardrails
-
-Before finalizing any non-trivial CSS/layout change, verify:
-
-- the change strengthens editorial hierarchy
-- spacing remains intentional and consistent with the design system
-- no new duplicate component system was introduced
-- CTA hierarchy is correct
-- layout alignment is consistent
-- mobile spacing feels spacious and deliberate
-- no visual drift toward generic template design was introduced
-- repeated problems were fixed at the system level where appropriate
-
-Do not treat the spacing scale as a reason to make every section identical.
-
-Variation is allowed when it supports editorial rhythm and still feels intentional.
-
----
-
-## Copy and Visual Relationship
-
-The copy is intentionally calm, strategic, and seller-focused.
-
-Design should support that tone.
-
-Do not make the site look louder than the copy.
-
-Avoid:
-
-- hype-driven visuals
-- urgency gimmicks
-- overuse of badges
-- generic “top agent” styling
-- stock real estate tropes
-- visual decorations that do not clarify meaning
-
-Favor:
-
-- decision clarity
-- local expertise
-- calm confidence
-- seller strategy
-- market perspective
-- trust through specificity
-
-If a visual treatment makes the copy feel salesy, replace the treatment.
-
----
-
-## Required Workflow
-
-For any non-trivial change:
-
-### Before editing
-
-1. Determine whether the issue is system-level or local.
-2. List all affected files.
-3. Identify the root cause, not just the symptom.
-4. Identify whether the change affects crawl-critical content.
-5. Identify whether the change affects the visual/editorial brand standard.
-
-### During editing
-
-1. Prefer shared-system fixes over local patches.
-2. Preserve raw HTML for critical content.
-3. Preserve seller-first Mesa County positioning.
-4. Preserve the navy/gold/cream visual system.
-5. Avoid adding new component patterns unless truly needed.
-6. Strengthen hierarchy before adding content.
-
-### After editing
-
-1. Summarize changes.
-2. Explain system-level reasoning, if applicable.
-3. List manual validation steps.
-4. Confirm crawl-critical content remains in raw HTML.
-5. Confirm the page feels at least as premium/editorial as before.
-
-Do not:
-
-- apply local fixes to repeat problems
-- introduce overrides instead of structural fixes
-- add generic layout modules to solve editorial hierarchy problems
-- weaken the brand feel for technical cleanliness
-
----
-
-## Agent QA Checklist
-
-Before completing any visual/layout change, verify:
-
-- Does this still feel premium and editorial?
-- Does this look like Orion Love’s brand, not a generic Realtor template?
-- Is the hierarchy stronger than before?
-- Is the page easier to scan?
-- Did we avoid unnecessary new cards?
-- Did we preserve the navy/gold/cream visual system?
-- Does mobile still feel spacious and intentional?
-- Are CTAs clear without feeling pushy?
-- Is the page more trustworthy, not just prettier?
-- Is crawl-critical content still visible in raw HTML?
-- Did we avoid JavaScript-only critical content?
-- Did we avoid creating a one-off system?
-
-If the answer to any of these is no, fix it before final output or explicitly call out why the tradeoff was necessary.
-
----
-
-## Success Criteria
-
-After any change:
-
-- the codebase is simpler or more coherent
-- patterns are easier to maintain
-- pages are easier to scale
-- design is more editorial and less templated
-- visual hierarchy is stronger
-- seller-first positioning is clearer
-- entity clarity is stronger across the site
-- crawl-critical content remains visible in raw HTML
-
-A successful edit should make the site feel more like a premium local seller guide, not merely cleaner code.
-
----
-
-## Final Standard
-
-The site should feel like:
-
-- a premium local editorial brand
-- a Mesa County seller guide
-- a calm, confident expert helping a homeowner make a major decision
-
-Not:
-
-- a template
-- a generic Realtor site
-- a marketing funnel
-- a SaaS landing page
-- a lead capture system
-- a collection of equal-weight cards
-
-When in doubt, choose clarity, hierarchy, local specificity, and editorial restraint.
+Also:
+- **JSON-LD parses** on every page (a quick Python `json.loads` loop over each `application/ld+json` block).
+- **Titles ≤ ~60 chars, descriptions ≤ ~155**, unique per page.
+- **After writing copy for several pages,** compare them: no 5-word phrase shared by 3+ pages (excluding place names), no repeated sentence openers or closing lines, no noun lists of 5+, none of the banned patterns in README §6.
+- **HTML tags balance** on edited pages (Python `html.parser`).
+
+## Don'ts
+
+- Don't bulk-delete branches, force-push, or rewrite history on `main`.
+- Don't add JS-rendered critical content, analytics code (Cloudflare injects it), or new tracking without asking.
+- Don't change `BUSINESS_INFO.md` facts or add personal details without Orion's confirmation.
+- Don't publish without showing Orion a preview when the change is visible.

@@ -54,6 +54,7 @@
 # Repo-internal files (docs, tooling) are deployed with the site; keep them off the public site.
 /README.md / 301
 /AGENTS.md / 301
+/CLAUDE.md / 301
 /BUSINESS_INFO.md / 301
 /validate_site.py / 301
 /images/README.md / 301
