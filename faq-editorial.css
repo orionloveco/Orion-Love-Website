@@ -631,7 +631,9 @@
 }
 
 @media (max-width:700px){
-  .faq-hero{
+  /* Needs .answer-hub .editorial-section's specificity or that rule's smaller padding wins
+     and the eyebrow slides under the fixed header. */
+  .answer-hub .faq-hero.editorial-section{
     min-height:auto;
     padding-top:calc(var(--site-header-height) + 3.4rem);
   }
