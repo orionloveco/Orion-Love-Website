@@ -62,3 +62,4 @@
 /scripts/* / 301
 /.github/* / 301
 /favicon.ico /images/brand/favicon-32.png 301
+/partials/* / 301

@@ -8,7 +8,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 1. **Honesty:** no invented reviews, stats, sales history or personal details; no pronouns for Orion (see README §3).
 2. **Raw HTML is the source of truth.** Never make crawl-critical content JavaScript-only.
-3. **The footer is static HTML on every page** (brand, Quick Links, Contact, Verified Profiles). Change all 24 copies in one commit. Never reintroduce `renderSharedFooter()`.
+3. **Shared parts are edited once, in `partials/`.** Header, phone menu, footer, head assets (fonts, `styles.css`, `editorial-base.css`, `script.js`) and favicons live in `partials/*.html`; the site-wide JSON-LD entities (Person, RealEstateAgent, LocalBusiness, WebSite) live in `partials/entities.json`. Run `node scripts/sync-shared.mjs` to copy them into every page between the `<!-- shared:NAME -->` markers. Never hand-edit those regions in a page, and never reintroduce JS-rendered footers (`renderSharedFooter()`).
 4. **Business facts come only from `BUSINESS_INFO.md`**, identical everywhere.
 5. **Forms must keep working.** They are how leads arrive (see Forms below).
 6. **Fix systems, not symptoms.** Shared problems get shared fixes; no one-off overrides stacked at the end of a file.
@@ -22,14 +22,16 @@ Orion is not a developer: explain changes in plain language, preview before publ
 5. Commit with a clear message, `git push origin main`. **Pushing to `main` deploys**: Cloudflare Pages is live in about 1 minute.
 6. Verify on the live site with a cache-busting query (`?x=123`). Remember the 404 page contains Orion's name, so check for page-specific markup, not just "Orion Love".
 
-**Cache busting:** Cloudflare caches CSS/JS for 4 hours. When you change a stylesheet or `script.js`, bump its `?v=` on every page that loads it (e.g. `editorial-base.css?v=20260925…`). When replacing an image under the same filename, add `?v=2` to its `src`.
+**Cache busting:** Cloudflare caches CSS/JS for 4 hours. For `styles.css`, `editorial-base.css` and `script.js`, bump the `?v=` in `partials/head-assets.html` and run the sync script. For a page stylesheet, bump its `?v=` on the pages that load it. When replacing an image under the same filename, add `?v=2` to its `src`.
 
 ## Map of the repo
 
 | Path | What it is |
 |---|---|
 | `*.html` | 24 static pages (index, about, sell-with-orion, grand-junction-home-value, grand-junction-housing-market, buy-with-orion, contact, faq, areas, blog + posts, 10 `sell-<area>` guides, privacy, 404) |
-| `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is legacy/global; `editorial-base.css` owns shared chrome (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `about-editorial.css`, `blog-editorial.css`, etc.) owns page layout only |
+| `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is the small site-wide foundation (tokens, reset, base headings, nav-link hover, reveal hooks, form layout); `editorial-base.css` owns shared components (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `market-editorial.css`, etc.) owns page layout only |
+| `partials/` | Master copies of shared page parts and site-wide JSON-LD entities (see Non-negotiables #3) |
+| `scripts/sync-shared.mjs` | Copies `partials/` into every page; `--check` fails if any page has drifted |
 | `script.js` | Menu, header state, form submission, live market-stat refresh |
 | `images/` | Site photos (≤2000px), `brand/` (logos, favicons, share image), `portraits/` (photo library; see `images/README.md`) |
 | `market-data/*.json` | Latest stats per area (written by the stats job) |
@@ -90,6 +92,7 @@ Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service
 ## Checks to run before publishing
 
 ```bash
+node scripts/sync-shared.mjs --check                  # shared parts identical on every page
 python3 validate_site.py                              # canonicals, schema, footer
 node scripts/test-market-snapshot-fallbacks.mjs       # stats pipeline
 node --check script.js                                # JS syntax
@@ -100,6 +103,7 @@ Also:
 - **Titles ≤ ~60 chars, descriptions ≤ ~155**, unique per page.
 - **After writing copy for several pages,** compare them: no 5-word phrase shared by 3+ pages (excluding place names), no repeated sentence openers or closing lines, no noun lists of 5+, none of the banned patterns in README §6.
 - **HTML tags balance** on edited pages (Python `html.parser`).
+- **Removing CSS?** Prove it's unused: snapshot the computed styles of every element on every page at 1280/768/375px before and after (iframes + `getComputedStyle`), and only keep removals with zero differences. Several "legacy" rules in `styles.css` turned out to be load-bearing.
 
 ## Don'ts
 

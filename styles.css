@@ -1,103 +1,14 @@
-/* ===== Original shared styles.css ===== */
 /* =========================================================
-   Ownership boundary: Global foundation / tokens
-   - Canonical brand variables and legacy token aliases live here.
-   - Editorial primitives map forward from these values in editorial-base.css.
-   - Do not add page-family composition rules to this foundation block.
+   styles.css: site-wide foundation (loaded first on every page)
+   - Brand color tokens still referenced by other stylesheets
+   - Reset and document defaults, base heading sizes, .container (footer width)
+   - Nav link hover/focus underline, scroll-reveal hooks, lead-form layout
+   Everything else lives in editorial-base.css (shared components) or the page stylesheets.
+   Cleaned September 2026: every removal was checked with a computed-style comparison
+   of all pages at 1280/768/375px. Before removing more, re-run that comparison.
 ========================================================= */
-/* =========================================================
-   Orion Love â€” Shared Base Styles
-   Updated to match the redesigned page system:
-   - Cormorant Garamond + Raleway typography
-   - Unified CSS variable naming
-   - Scroll reveal, nav, buttons, footer, utilities
-   - No color-mix(), no conflicting hero systems
-========================================================= */
-
-/* =========================
-   Design Tokens
-========================= */
-/* === DESIGN TOKENS — CANONICAL SYSTEM === */
-/* NOTE: editorial-base.css owns --editorial-* primitives and components.
-   Keep brand tokens here stable for legacy pages and for editorial token mapping. */
 :root {
-  /* Colors */
-  --brand-navy: #0c1a3d;
-  --brand-navy-soft: #16275a;
-  --brand-gold: #b8923a;
-  --brand-gold-light: #d4aa5a;
-  --brand-cream: #f7f4ed;
-  --brand-white: #ffffff;
-  --brand-ink: #1a1a2e;
-  --brand-sand: #e8e1d0;
-
-  --color-surface-primary: var(--brand-white);
-  --color-surface-secondary: var(--brand-cream);
-  --color-surface-dark: var(--brand-navy);
-  --color-text-primary: var(--brand-ink);
-  --color-text-muted: rgba(26, 26, 46, 0.62);
-  --color-border-soft: var(--brand-sand);
-  --color-accent: var(--brand-gold);
-  --color-accent-soft: rgba(184, 146, 58, 0.12);
-
-  /* Typography */
-  --font-family-serif: "Cormorant Garamond", serif;
-  --font-family-sans: "Raleway", sans-serif;
-
-  --font-size-body: 1rem;
-  --font-size-body-lg: 1.05rem;
-  --font-size-label: 0.78rem;
-  --font-size-heading-sm: 1.2rem;
-  --font-size-heading-md: clamp(1.8rem, 3.5vw, 2.8rem);
-  --font-size-display: clamp(2.4rem, 5vw, 4.2rem);
-
-  --line-height-tight: 1.15;
-  --line-height-heading: 1.2;
-  --line-height-body: 1.7;
-  --line-height-relaxed: 1.85;
-
-  --font-weight-serif-light: 300;
-  --font-weight-serif-regular: 400;
-  --font-weight-serif-medium: 500;
-  --font-weight-sans-regular: 400;
-  --font-weight-sans-medium: 500;
-  --font-weight-sans-semibold: 600;
-  --font-weight-sans-bold: 700;
-
-  --type-section-label: var(--font-weight-sans-semibold) var(--font-size-label) / 1.2 var(--font-family-sans);
-
-  /* Spacing */
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-  --space-7: 80px;
-  --space-section: var(--space-7);
-  --space-section-loose: var(--space-7);
-
-  --space-card-padding: var(--space-3);
-  --space-grid-gap: var(--space-4);
-  --space-container-gutter: var(--space-4);
-
-  /* Components */
-  --radius-card: 16px;
-  --radius-button: 999px;
-  --shadow-card-hover: 0 18px 46px rgba(12, 26, 61, 0.14);
-  --size-icon-md: 48px;
-  --focus-ring: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
-
-  /* Text measure */
-  --measure-body: 66ch;
-  --measure-intro: 62ch;
-  --measure-cta: 52ch;
-  --measure-cta-compact: 42ch;
-  --measure-cta-tight: 36ch;
-
-  /* Brand */
   --navy:     #0c1a3d;
-  --navy-mid: #16275a;
   --gold:     #b8923a;
   --gold-lt:  #d4aa5a;
   --cream:    #f7f4ed;
@@ -105,55 +16,9 @@
   --text:     #1a1a2e;
   --muted:    rgba(26, 26, 46, 0.62);
   --white:    #ffffff;
-
-  /* Legacy aliases â€” keeps old page references working */
-  --primary:    var(--navy);
-  --accent:     var(--gold);
-  --off-white:  var(--cream);
-  --light-gray: var(--sand);
-  --gray:       var(--muted);
-
-  /* Shadows */
-  --shadow-sm:   0 2px 12px rgba(12, 26, 61, 0.07);
-  --shadow-card: 0 6px 32px rgba(12, 26, 61, 0.10);
-  --shadow-md:   0 6px 32px rgba(12, 26, 61, 0.10);
-  --shadow-hover:0 18px 46px rgba(12, 26, 61, 0.14);
-  --shadow-lg:   0 20px 60px rgba(12, 26, 61, 0.13);
-
-  /* Dark band */
-  --dark-band-bg: var(--color-surface-dark);
-  --dark-band-bg-soft: var(--brand-navy-soft);
-  --dark-band-heading: var(--white);
-  --dark-band-body: rgba(255, 255, 255, 0.82);
-  --dark-band-muted: rgba(255, 255, 255, 0.72);
-  --dark-band-soft: rgba(255, 255, 255, 0.56);
-  --dark-band-border: rgba(255, 255, 255, 0.14);
-  --dark-band-card: rgba(255, 255, 255, 0.07);
-  --dark-band-card-strong: rgba(255, 255, 255, 0.1);
-  --dark-band-overlay: radial-gradient(ellipse 85% 75% at 50% 0%, rgba(184, 146, 58, 0.1), transparent 68%);
-  --dark-band-gap: clamp(1.15rem, 2.2vw, 1.75rem);
-
-  /* Radii */
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 28px;
-
-  /* Shared CTA button system */
-  --btn-radius: 999px;
-  --btn-pad-y: var(--space-2);
-  --btn-pad-x: var(--space-3);
-  --btn-lift: -2px;
-  --btn-transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
-  --btn-shadow: 0 6px 20px rgba(12, 26, 61, 0.12);
-  --btn-shadow-hover: 0 12px 28px rgba(12, 26, 61, 0.16);
-  --btn-focus-ring: 0 0 0 2px rgba(247, 244, 237, 0.95), 0 0 0 4px rgba(184, 146, 58, 0.85);
 }
 
-/* =========================
-   Ownership boundary: Reset/base
-   - Browser reset, document defaults, core layout containers, and type defaults.
-   - Keep this generic and safe for every page in the site.
-========================= */
+/* ---------- Reset and document defaults ---------- */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -175,15 +40,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
-/* =========================
-   Ownership boundary: Legacy compatibility
-   - Shared layout, typography, labels, reveal hooks, and older utility contracts.
-   - Preserve for existing static pages until each family is migrated.
-========================= */
-
-/* =========================
-   Layout
-========================= */
+/* ---------- Layout: .container sets the footer width; section padding is relied on by several page heroes ---------- */
 .container {
   max-width: 1120px;
   margin: 0 auto;
@@ -195,9 +52,7 @@ section {
   padding-bottom: 80px;
 }
 
-/* =========================
-   Typography
-========================= */
+/* ---------- Base headings (several pages rely on these sizes) ---------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -212,44 +67,10 @@ h3 { font-size: clamp(1.2rem, 1.95vw, 1.52rem); line-height: 1.18; }
 
 p { color: var(--text); }
 
+/* ---------- Nav links: layout, hover/focus underline (header layout itself is in editorial-base.css) ---------- */
 
-/* =========================
-   Ownership boundary: Shared chrome compatibility
-   - Legacy/global header, navigation, dropdown, mobile-toggle, and footer fallbacks.
-   - Rebuilt shared chrome presentation belongs in editorial-base.css.
-========================= */
-
-/* =========================
-   Navigation (legacy/global compatibility layer during rebuild)
-   - Transitional ownership: rebuilt editorial pages load editorial-base.css after this file.
-   - Duplicate selectors with editorial-base.css are currently intentional for migration safety.
-   - Keep this block fallback-friendly; avoid adding new visual authority here for rebuilt pages.
-   - New shared header/nav primitive work belongs in editorial-base.css.
-========================= */
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: background 0.35s, box-shadow 0.35s;
-}
-
-/* Header visual authority, including .scrolled/.solid states, lives in editorial-base.css. */
-
-.main-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.4rem;
-  height: 72px;
-}
 
 .logo { text-decoration: none; flex-shrink: 0; }
-
-.logo-main {
-  transition: color 0.2s;
-}
 
 .nav-menu {
   display: flex;
@@ -291,17 +112,12 @@ p { color: var(--text); }
   width: 100%;
 }
 
-
 .btn-nav {
   transition: background 0.22s, border-color 0.22s;
 }
 .btn-nav::after { display: none; }
 
-/* =========================
-   Scroll Reveal
-   Safe fallback: visible by default,
-   enhanced when JS class applied.
-========================= */
+/* ---------- Scroll reveal: visible by default, animated only when script.js adds .js ---------- */
 .reveal { opacity: 1; transform: none; }
 
 .js .reveal {
@@ -314,75 +130,24 @@ p { color: var(--text); }
   transform: translateY(0);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ---------- Page-scoped overrides still in effect ---------- */
+
+/* These page-scoped heading rules outrank the page stylesheets' own heading weights; removing them
+   visibly changes the FAQ and Home Value headlines (verified with a computed-style audit). */
+body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4,
+body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  line-height: 1.15;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .js .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-/* =========================
-   Ownership boundary: FAQ support styles
-   - Retains only the shared FAQ page heading fallback.
-   - FAQ answer-hub composition belongs in faq-editorial.css.
-   - New reusable FAQ primitives belong in editorial-base.css.
-========================= */
-
-/* ===== faq.html ===== */
-body.page-faq h1, body.page-faq h2, body.page-faq h3, body.page-faq h4 {font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-      line-height: 1.15;}
-
-/* ===== grand-junction-home-value.html ===== */
-body.page-grand-junction-home-value h1, body.page-grand-junction-home-value h2, body.page-grand-junction-home-value h3, body.page-grand-junction-home-value h4 {font-family: "Cormorant Garamond", serif;
-      font-weight: 400;
-      line-height: 1.15;}
 body.page-faq .faq-hero {
   background:
     radial-gradient(1050px 420px at 62% -8%, rgba(184,146,58,0.18), transparent 68%),
     linear-gradient(165deg, rgba(8,18,50,0.84) 0%, rgba(12,26,61,0.64) 50%, rgba(8,18,50,0.88) 100%);
 }
 
-/* ============================================================
-   Standardization pass
-   Moved repeated inline HTML styles into shared classes/utilities
-   ============================================================ */
-
-/* Delay utilities replacing inline transition-delay styles */
-.js .reveal.reveal-delay-005 { transition-delay: 0.05s; }
-.js .reveal.reveal-delay-010 { transition-delay: 0.10s; }
-.js .reveal.reveal-delay-012 { transition-delay: 0.12s; }
-.js .reveal.reveal-delay-013 { transition-delay: 0.13s; }
-.js .reveal.reveal-delay-014 { transition-delay: 0.14s; }
-.js .reveal.reveal-delay-015 { transition-delay: 0.15s; }
-.js .reveal.reveal-delay-019 { transition-delay: 0.19s; }
-.js .reveal.reveal-delay-020 { transition-delay: 0.20s; }
-.js .reveal.reveal-delay-021 { transition-delay: 0.21s; }
-.js .reveal.reveal-delay-023 { transition-delay: 0.23s; }
-.js .reveal.reveal-delay-025 { transition-delay: 0.25s; }
-.js .reveal.reveal-delay-026 { transition-delay: 0.26s; }
-.js .reveal.reveal-delay-029 { transition-delay: 0.29s; }
-.js .reveal.reveal-delay-030 { transition-delay: 0.30s; }
-.js .reveal.reveal-delay-033 { transition-delay: 0.33s; }
-.js .reveal.reveal-delay-040 { transition-delay: 0.40s; }
-
-/* =========================
-   Ownership boundary: Form compatibility
-   - Seller lead forms and validation-friendly field contracts.
-   - Rebuilt form primitives belong in editorial-base.css.
-========================= */
+/* ---------- Lead form layout (Contact, Home Value, Buyer) ---------- */
 
 [data-submit-button],
 .form-submit {
@@ -407,7 +172,6 @@ form[data-lead-form="seller"] .form-message {
   .reveal,
   .js .reveal,
   .reveal.visible,
-  [class*="reveal-delay-"],
   [class*="reveal-d"] {
     opacity: 1 !important;
     transform: none !important;
@@ -416,21 +180,9 @@ form[data-lead-form="seller"] .form-message {
   }
 }
 
-
-/* =========================
-   Ownership boundary: Pending migration sections
-   - Migrated inline styles awaiting final ownership decisions.
-========================= */
-
-/* ===== Migrated inline styles from page templates ===== */
+/* ---------- Tablet and phone adjustments ---------- */
 
 @media (max-width: 768px) {
-  /* Breakpoint normalization target for future consolidation:
-     - 390/430 mobile QA
-     - 768 tablet
-     - 1024 small desktop
-     - 1440 desktop
-     Existing breakpoint fragments are retained in this stabilization pass for low-risk compatibility. */
   section {
     padding-top: 56px;
     padding-bottom: 56px;
