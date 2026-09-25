@@ -126,6 +126,9 @@ execFileSync(process.execPath, [
 ], { stdio: 'pipe' });
 assert.equal(stat('sell-redlands.html', 'medianPrice'), '$369,900', 'dollar-prefixed prices are written literally');
 assert.ok(!/data-market-stat="medianPrice"><\/strong>/.test(html('sell-redlands.html')), 'no empty/broken median price tag');
+const summaryMatch = html('sell-redlands.html').match(/data-market-summary="true"[^>]*>([^<]*)</);
+assert.ok(summaryMatch, 'area page has a market summary sentence');
+assert.equal(summaryMatch[1], 'As of September 15, 2026, the median sale price in the Redlands was $369,900, homes spent an average of 88 days on market, and there were 235 active listings, according to RentCast.', 'summary sentence uses the same figures as the stat cards');
 
 fs.rmSync(tempRoot, { recursive: true, force: true });
 console.log('market snapshot fallback tests passed');

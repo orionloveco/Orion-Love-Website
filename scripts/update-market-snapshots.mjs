@@ -185,6 +185,27 @@ function buildMarketNote(reportingPeriod, fallback) {
   return formattedDate ? `Source: RentCast market data. Last updated: ${formattedDate}.` : fallback;
 }
 
+function getSummaryArea(html, areaKey) {
+  const key = escapeRegExp(areaKey);
+  const match = html.match(new RegExp(`<[^>]+data-market-area=["']${key}["'][^>]*>[\\s\\S]*?<[^>]+data-market-summary=["']true["'][^>]*data-market-summary-area=["']([^"']+)["']`));
+  return match ? match[1] : null;
+}
+
+// One plain sentence AI answers and search snippets can quote; built only when every figure is present.
+function buildMarketSummary(area, renderedStats, reportingPeriod) {
+  const date = formatUpdatedDate(reportingPeriod);
+  const { medianPrice, averageDaysOnMarket, totalListings } = renderedStats;
+  if (!area || !date || [medianPrice, averageDaysOnMarket, totalListings].some((v) => parseMarketStatValue(v) === null)) return null;
+  return `As of ${date}, the median sale price in ${area} was ${medianPrice}, homes spent an average of ${averageDaysOnMarket} on market, and there were ${totalListings} active listings, according to RentCast.`;
+}
+
+function replaceAreaSummary(html, areaKey, value) {
+  const key = escapeRegExp(areaKey);
+  const pattern = new RegExp(`(<[^>]+data-market-area=["']${key}["'][^>]*>[\\s\\S]*?<[^>]+data-market-summary=["']true["'][^>]*>)([\\s\\S]*?)(<\\/[^>]+>)`);
+  if (!pattern.test(html)) return html;
+  return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
+}
+
 function getDatasetJson(label, file, areaKey, generatedAt, alt, renderedStats) {
   return {
     '@context': 'https://schema.org',
@@ -283,6 +304,8 @@ for (const [file, key, label] of pages) {
 
   const existingNote = getExistingNote(html, key);
   html = replaceAreaNote(html, key, buildMarketNote(reportingPeriod, existingNote));
+  const summary = buildMarketSummary(getSummaryArea(html, key), renderedStats, reportingPeriod);
+  if (summary) html = replaceAreaSummary(html, key, summary);
 
   const alt = `/market-data/${key}-latest.json`;
   html = addAlternateJsonLink(html, alt);
@@ -297,6 +320,19 @@ for (const [file, key, label] of pages) {
   const pageChanged = writeFileIfChanged(pagePath, html);
   const jsonChanged = writeFileIfChanged(jsonPath, jsonOutput);
   results.push([file, `market-data/${key}-latest.json`, pageChanged, jsonChanged]);
+}
+
+// Keep sitemap <lastmod> honest for area pages whose stats actually changed.
+const changedPages = results.filter(([, , pageChanged]) => pageChanged).map(([page]) => page);
+const sitemapPath = resolveFromRoot('sitemap.xml');
+if (!dryRun && changedPages.length && fs.existsSync(sitemapPath)) {
+  const today = new Date().toISOString().slice(0, 10);
+  let sitemap = fs.readFileSync(sitemapPath, 'utf8');
+  for (const page of changedPages) {
+    const loc = escapeRegExp(`https://orionlovehomes.com/${page.replace(/\.html$/, '')}`);
+    sitemap = sitemap.replace(new RegExp(`(<loc>${loc}</loc><lastmod>)[^<]*(</lastmod>)`), (_m, open, close) => `${open}${today}${close}`);
+  }
+  writeFileIfChanged(sitemapPath, sitemap);
 }
 
 console.log(dryRun ? 'Dry run complete. No files written.' : 'Updated pages:');

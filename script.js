@@ -379,10 +379,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+    const updated = areaData.lastUpdatedDate || generatedAt;
+
+    // Keep the plain-sentence summary in step with the live figures (same wording as the snapshot script).
+    const summaryEl = blockEl.querySelector('[data-market-summary]');
+    const price = getMarketStatValue(areaData, 'medianPrice');
+    const days = getMarketStatValue(areaData, 'averageDaysOnMarket');
+    const listings = getMarketStatValue(areaData, 'totalListings');
+    const updatedDate = updated ? new Date(updated) : null;
+    if (summaryEl && summaryEl.dataset.marketSummaryArea && price !== null && days !== null && listings !== null && updatedDate && !Number.isNaN(updatedDate.getTime())) {
+      const dateText = updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+      summaryEl.textContent = `As of ${dateText}, the median sale price in ${summaryEl.dataset.marketSummaryArea} was $${Math.round(price).toLocaleString('en-US')}, homes spent an average of ${formatDays(days)} on market, and there were ${formatNumber(listings)} active listings, according to RentCast.`;
+    }
+
     const noteEl = blockEl.querySelector('[data-market-note]');
     if (!noteEl) return;
 
-    const updated = areaData.lastUpdatedDate || generatedAt;
     noteEl.textContent = formatUpdatedDate(updated);
   }
 
