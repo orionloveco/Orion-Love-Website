@@ -142,26 +142,6 @@ function replaceAreaStat(html, areaKey, statKey, value) {
   return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
 }
 
-function getExistingNote(html, areaKey, fallback = '') {
-  const key = escapeRegExp(areaKey);
-  const pattern = new RegExp(`(<[^>]+data-market-area=["']${key}["'][^>]*>[\\s\\S]*?<[^>]+data-market-note=["']true["'][^>]*>)([\\s\\S]*?)(<\\/[^>]+>)`);
-  const match = html.match(pattern);
-  return match ? match[2].trim() : fallback;
-}
-
-function replaceAreaNote(html, areaKey, value) {
-  const key = escapeRegExp(areaKey);
-  const pattern = new RegExp(`(<[^>]+data-market-area=["']${key}["'][^>]*>[\\s\\S]*?<[^>]+data-market-note=["']true["'][^>]*>)([\\s\\S]*?)(<\\/[^>]+>)`);
-
-  if (!pattern.test(html)) {
-    console.warn(`Missing data-market-note="true" inside data-market-area="${areaKey}"; preserving note`);
-    return html;
-  }
-
-  // Function replacer: a price like "$369,900" in a replacement string would be read as a $3 backreference.
-  return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
-}
-
 function parseValidDate(value) {
   if (!value) return null;
 
@@ -178,11 +158,6 @@ function formatUpdatedDate(value) {
   if (!parsed) return null;
 
   return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
-}
-
-function buildMarketNote(reportingPeriod, fallback) {
-  const formattedDate = formatUpdatedDate(reportingPeriod);
-  return formattedDate ? `Source: RentCast market data. Last updated: ${formattedDate}.` : fallback;
 }
 
 function getSummaryArea(html, areaKey) {
@@ -302,8 +277,6 @@ for (const [file, key, label] of pages) {
     html = replaceAreaStat(html, key, statKey, renderedValue);
   }
 
-  const existingNote = getExistingNote(html, key);
-  html = replaceAreaNote(html, key, buildMarketNote(reportingPeriod, existingNote));
   const summary = buildMarketSummary(getSummaryArea(html, key), renderedStats, reportingPeriod);
   if (summary) html = replaceAreaSummary(html, key, summary);
 

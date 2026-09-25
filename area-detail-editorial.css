@@ -292,11 +292,6 @@
   text-transform:uppercase;
 }
 
-.area-market-note{
-  color:rgba(26, 26, 46, .52);
-  font-size:.78rem;
-  line-height:1.55;
-}
 
 .area-local-details{
   padding:clamp(5.8rem, 9vw, 8.2rem) 0;

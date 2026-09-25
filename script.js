@@ -304,29 +304,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return null;
   }
 
-  function setMarketFallbackState(blockEl) {
-    if (!blockEl) return;
-
-    const noteEl = blockEl.querySelector('[data-market-note]');
-    if (noteEl) {
-      const areaLabel = blockEl.dataset.marketAreaLabel || 'this neighborhood';
-      noteEl.textContent = `Market stats update monthly. Request a current seller consultation for the latest ${areaLabel} numbers.`;
-    }
-  }
-
-  function formatUpdatedDate(value) {
-    if (!value) return 'Source: RentCast market data.';
-
-    const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return 'Source: RentCast market data.';
-
-    return `Source: RentCast market data. Last updated: ${parsed.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    })}.`;
-  }
-
   function showFormMsg(el, text, type) {
     if (!el) return;
     el.textContent = text;
@@ -392,11 +369,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const dateText = updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
       summaryEl.textContent = `As of ${dateText}, the median sale price in ${summaryEl.dataset.marketSummaryArea} was $${Math.round(price).toLocaleString('en-US')}, homes spent an average of ${formatDays(days)} on market, and there were ${formatNumber(listings)} active listings, according to RentCast.`;
     }
-
-    const noteEl = blockEl.querySelector('[data-market-note]');
-    if (!noteEl) return;
-
-    noteEl.textContent = formatUpdatedDate(updated);
   }
 
   async function loadMarketStatsBlocks() {
@@ -423,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!areaData) {
           console.error(`Market stats area not found: ${areaKey}`);
-          setMarketFallbackState(blockEl);
           return;
         }
 
@@ -431,9 +402,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } catch (err) {
       console.error('Market stats load failed:', err);
-      marketBlocks.forEach((blockEl) => {
-        setMarketFallbackState(blockEl);
-      });
     }
   }
 

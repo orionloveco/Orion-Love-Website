@@ -47,11 +47,11 @@ function html(file) {
 }
 
 
-function note(file) {
-  const source = html(file);
-  const match = source.match(/<[^>]+data-market-note=["']true["'][^>]*>([\s\S]*?)<\/[^>]+>/);
-  assert.ok(match, `${file} should contain market note`);
-  return match[1].replace(/<[^>]+>/g, '').trim();
+// The reporting date now lives only in the one-sentence market summary ("As of <date>, ...").
+function summaryDate(file) {
+  const match = html(file).match(/data-market-summary="true"[^>]*>As of ([^,]+, \d{4}),/);
+  assert.ok(match, `${file} should contain a dated market summary`);
+  return match[1];
 }
 
 function stat(file, statKey) {
@@ -68,7 +68,7 @@ assert.equal(stat('sell-redlands.html', 'newListings'), '23', 'newListings30d al
 assert.equal(stat('sell-orchard-mesa.html', 'newListings'), before.orchardMesa, 'invalid newListings preserves fallback');
 assert.equal(stat('sell-downtown-grand-junction.html', 'newListings'), '17', 'valid fetched values update in place');
 assert.equal(stat('sell-clifton.html', 'newListings'), before.clifton, 'alias default zero preserves fallback');
-assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: May 12, 2026.', 'market note synchronizes to source lastUpdatedDate');
+assert.equal(summaryDate('sell-redlands.html'), 'May 12, 2026', 'summary date synchronizes to source lastUpdatedDate');
 
 const palisadeJson = JSON.parse(fs.readFileSync(path.join(tempRoot, 'market-data/palisade-latest.json'), 'utf8'));
 assert.equal(palisadeJson.stats.newListings, 0, 'JSON preserves explicit canonical zero');
@@ -112,7 +112,7 @@ execFileSync(process.execPath, [
   `--root=${tempRoot}`,
   `--payload-file=${nullDatePayloadPath}`,
 ], { stdio: 'pipe' });
-assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: September 15, 2026.', 'null lastUpdatedDate falls back to payload generatedAt');
+assert.equal(summaryDate('sell-redlands.html'), 'September 15, 2026', 'null lastUpdatedDate falls back to payload generatedAt');
 
 // Prices starting with $1-$3 must not be read as regex backreferences ("$369,900" once became "</strong>69,900").
 const dollarPayloadPath = path.join(tempRoot, 'dollar-payload.json');
