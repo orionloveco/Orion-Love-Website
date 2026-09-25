@@ -206,6 +206,10 @@
   --editorial-note-paragraph-text-transform:uppercase;
 }
 
+/* `.area-detail p` (muted ink) outranks the note's :where(p) colour, which left
+   this note dark-on-navy and unreadable; restore the note colour on the hero. */
+.area-detail .area-hero__note p{color:var(--editorial-note-paragraph-color)}
+
 .area-market-read{
   padding:clamp(4.8rem, 7.8vw, 6.8rem) 0;
   background:var(--editorial-paper);

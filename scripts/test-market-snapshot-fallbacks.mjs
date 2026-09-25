@@ -113,5 +113,19 @@ execFileSync(process.execPath, [
 ], { stdio: 'pipe' });
 assert.equal(note('sell-redlands.html'), 'Source: RentCast market data. Last updated: September 15, 2026.', 'null lastUpdatedDate falls back to payload generatedAt');
 
+// Prices starting with $1-$3 must not be read as regex backreferences ("$369,900" once became "</strong>69,900").
+const dollarPayloadPath = path.join(tempRoot, 'dollar-payload.json');
+fs.writeFileSync(dollarPayloadPath, JSON.stringify({
+  generatedAt: '2026-09-15T08:00:00.000Z',
+  areas: { redlands: { ...invalidPayload.areas.redlands, medianPrice: 369900, lastUpdatedDate: null } },
+}));
+execFileSync(process.execPath, [
+  path.join(root, 'scripts/update-market-snapshots.mjs'),
+  `--root=${tempRoot}`,
+  `--payload-file=${dollarPayloadPath}`,
+], { stdio: 'pipe' });
+assert.equal(stat('sell-redlands.html', 'medianPrice'), '$369,900', 'dollar-prefixed prices are written literally');
+assert.ok(!/data-market-stat="medianPrice"><\/strong>/.test(html('sell-redlands.html')), 'no empty/broken median price tag');
+
 fs.rmSync(tempRoot, { recursive: true, force: true });
 console.log('market snapshot fallback tests passed');

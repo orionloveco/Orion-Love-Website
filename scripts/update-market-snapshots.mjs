@@ -138,7 +138,8 @@ function replaceAreaStat(html, areaKey, statKey, value) {
     return html;
   }
 
-  return html.replace(pattern, `$1${value}$3`);
+  // Function replacer: a price like "$369,900" in a replacement string would be read as a $3 backreference.
+  return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
 }
 
 function getExistingNote(html, areaKey, fallback = '') {
@@ -157,7 +158,8 @@ function replaceAreaNote(html, areaKey, value) {
     return html;
   }
 
-  return html.replace(pattern, `$1${value}$3`);
+  // Function replacer: a price like "$369,900" in a replacement string would be read as a $3 backreference.
+  return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
 }
 
 function parseValidDate(value) {
@@ -208,8 +210,8 @@ function updateDatasetJsonLd(html, areaKey, dataset) {
   const dsEnd = `<!-- MARKET_DATASET_END: ${areaKey} -->`;
   const ds = `${dsStart}\n<script type="application/ld+json">${JSON.stringify(dataset)}</script>\n${dsEnd}`;
 
-  if (html.includes(dsStart)) return html.replace(new RegExp(`${escapeRegExp(dsStart)}[\\s\\S]*?${escapeRegExp(dsEnd)}`), ds);
-  return html.replace('</head>', `${ds}\n</head>`);
+  if (html.includes(dsStart)) return html.replace(new RegExp(`${escapeRegExp(dsStart)}[\\s\\S]*?${escapeRegExp(dsEnd)}`), () => ds);
+  return html.replace('</head>', () => `${ds}\n</head>`);
 }
 
 function addAlternateJsonLink(html, alt) {
