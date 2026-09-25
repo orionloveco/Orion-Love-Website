@@ -11,6 +11,7 @@
   --navy:     #0c1a3d;
   --gold:     #b8923a;
   --gold-lt:  #d4aa5a;
+  --gold-ink: #7a5c1f; /* gold for small text on cream/white/sand: meets WCAG AA contrast (#b8923a does not) */
   --cream:    #f7f4ed;
   --sand:     #e8e1d0;
   --text:     #1a1a2e;

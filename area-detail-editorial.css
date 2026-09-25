@@ -102,7 +102,7 @@
 
 .area-caption{
   margin-top:.72rem;
-  --editorial-caption-color:rgba(26, 26, 46, .48);
+  --editorial-caption-color:rgba(26, 26, 46, .66);
   --editorial-caption-font-size:.66rem;
   --editorial-caption-letter-spacing:.12em;
   --editorial-caption-line-height:1.55;
@@ -129,7 +129,7 @@
   background:
     linear-gradient(90deg, rgba(8, 18, 50, .98) 0%, rgba(12, 26, 61, .92) 42%, rgba(12, 26, 61, .45) 72%, rgba(12, 26, 61, .82) 100%),
     linear-gradient(180deg, rgba(8, 18, 50, .1), rgba(8, 18, 50, .66)),
-    url('/images/gj-monument.jpg') center / cover no-repeat;
+    url('/images/gj-monument.webp') center / cover no-repeat;
 }
 
 .area-detail--palisade .area-hero::before{
@@ -140,7 +140,7 @@
   background:
     linear-gradient(90deg, rgba(8, 18, 50, .96) 0%, rgba(12, 26, 61, .9) 43%, rgba(12, 26, 61, .42) 72%, rgba(12, 26, 61, .78) 100%),
     linear-gradient(180deg, rgba(8, 18, 50, .08), rgba(8, 18, 50, .62)),
-    url('/images/gj-landscape.jpg') center 42% / cover no-repeat;
+    url('/images/gj-landscape.webp') center 42% / cover no-repeat;
 }
 
 .area-hero::after{
@@ -283,7 +283,7 @@
 .area-stat > span{
   display:block;
   margin-top:.68rem;
-  color:rgba(26, 26, 46, .54);
+  color:rgba(26, 26, 46, .7);
   font-size:.6rem;
   font-weight:800;
   letter-spacing:.14em;
@@ -331,7 +331,7 @@
 .area-article__rail p{
   max-width:155px;
   margin-inline:auto;
-  color:rgba(26, 26, 46, .54);
+  color:rgba(26, 26, 46, .7);
   font-size:.76rem;
   font-weight:500;
   letter-spacing:.02em;
@@ -450,7 +450,7 @@
 }
 
 .area-related-cta .editorial-eyebrow{
-  color:var(--editorial-gold);
+  color:var(--editorial-gold-ink);
 }
 
 .area-related-cta__actions{

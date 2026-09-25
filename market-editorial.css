@@ -26,7 +26,7 @@
 
 .market-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .market-table{width:100%;border-collapse:collapse;font-size:.95rem}
-.market-table thead th{padding:0 1rem .8rem 0;border-bottom:1px solid rgba(12,26,61,.22);color:var(--editorial-gold,#b8923a);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-align:right;text-transform:uppercase;white-space:nowrap}
+.market-table thead th{padding:0 1rem .8rem 0;border-bottom:1px solid rgba(12,26,61,.22);color:var(--editorial-gold-ink,#7a5c1f);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-align:right;text-transform:uppercase;white-space:nowrap}
 .market-table thead th:first-child{text-align:left}
 .market-table tbody th,.market-table tbody td{padding:1rem 1rem 1rem 0;border-bottom:1px solid rgba(12,26,61,.1)}
 .market-table tbody th{font-weight:400;text-align:left}
@@ -34,7 +34,7 @@
 .market-table tbody th a:hover{color:var(--editorial-gold,#b8923a)}
 .market-table tbody td{color:rgba(26,26,46,.8);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 .market-table tbody tr:hover{background:rgba(232,225,208,.35)}
-.market-page-note{margin:1.1rem 0 0;color:rgba(26,26,46,.56);font-size:.8rem}
+.market-page-note{margin:1.1rem 0 0;color:rgba(26,26,46,.7);font-size:.8rem}
 
 /* Reading notes */
 .market-notes{padding:clamp(3.6rem,7vw,5.6rem) 0;background:#fff}

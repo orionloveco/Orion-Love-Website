@@ -115,11 +115,11 @@ Each guide must have **its own angle** and at least one observation only someone
 
 **Palette** (don't add colors without a documented reason):
 
-| Navy | Mid Navy | Gold | Light Gold | Cream | Sand | Text | White |
-|---|---|---|---|---|---|---|---|
-| `#0c1a3d` | `#16275a` | `#b8923a` | `#d4aa5a` | `#f7f4ed` | `#e8e1d0` | `#1a1a2e` | `#ffffff` |
+| Navy | Mid Navy | Gold | Light Gold | Gold Ink | Cream | Sand | Text | White |
+|---|---|---|---|---|---|---|---|---|
+| `#0c1a3d` | `#16275a` | `#b8923a` | `#d4aa5a` | `#7a5c1f` | `#f7f4ed` | `#e8e1d0` | `#1a1a2e` | `#ffffff` |
 
-Gold is punctuation, not paint.
+Gold is punctuation, not paint. **Readable contrast (WCAG AA):** gold `#b8923a` is too faint for text on cream, white or sand, so small gold text on light backgrounds uses **Gold Ink** (`--gold-ink` / `--editorial-gold-ink`). Gold and Light Gold stay for text on navy, rules and fills. Buttons are gold with navy text. Gray body text on light backgrounds stays at `rgba(26,26,46,.66)` or darker.
 
 **Type:** Cormorant Garamond (serif) for headlines, pull quotes and emphasis; Raleway (sans) for body, labels and navigation. Few labels; headlines sized on purpose.
 

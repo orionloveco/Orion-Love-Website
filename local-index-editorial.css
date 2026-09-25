@@ -59,7 +59,7 @@
   background:
     linear-gradient(90deg, rgba(8,18,50,.62), rgba(8,18,50,.08) 46%, rgba(8,18,50,.6)),
     linear-gradient(180deg, rgba(8,18,50,.06), rgba(8,18,50,.62)),
-    url('/images/gj-monument.jpg') 38% center / cover no-repeat;
+    url('/images/gj-monument.webp') 38% center / cover no-repeat;
   opacity: .82;
   filter: saturate(.9) contrast(1.05);
 }
@@ -224,7 +224,7 @@
 .li-context-signal p {
   max-width: 56ch;
   margin-top: 0;
-  color: rgba(26,26,46,.58);
+  color: rgba(26,26,46,.7);
   font-size: .86rem;
   line-height: 1.5;
 }
@@ -233,7 +233,7 @@
   max-width: 560px;
   --editorial-note-border-top: 1px solid rgba(184,146,58,.42);
   --editorial-note-padding-top: .9rem;
-  --editorial-note-paragraph-color: rgba(26,26,46,.58);
+  --editorial-note-paragraph-color: rgba(26,26,46,.7);
   --editorial-note-paragraph-font-size: .86rem;
   --editorial-note-paragraph-line-height: 1.64;
 }
@@ -282,7 +282,7 @@
 
 .li-index-title {
   margin: 0;
-  color: var(--editorial-gold);
+  color: var(--editorial-gold-ink);
   font-size: .58rem;
   font-weight: 800;
   letter-spacing: .18em;

@@ -41,7 +41,7 @@
   background:
     linear-gradient(90deg,rgba(8,18,50,.96) 0%,rgba(12,26,61,.9) 44%,rgba(12,26,61,.7) 100%),
     radial-gradient(620px 320px at 82% 28%,rgba(184,146,58,.18),transparent 62%),
-    url('/images/gj-landscape.jpg') center/cover;
+    url('/images/gj-landscape.webp') center/cover;
 }
 
 .faq-hero,

@@ -103,6 +103,8 @@ Also:
 - **Titles ≤ ~60 chars, descriptions ≤ ~155**, unique per page.
 - **After writing copy for several pages,** compare them: no 5-word phrase shared by 3+ pages (excluding place names), no repeated sentence openers or closing lines, no noun lists of 5+, none of the banned patterns in README §6.
 - **HTML tags balance** on edited pages (Python `html.parser`).
+- **Color contrast** after any color change: run axe-core's `color-contrast` rule on the changed pages at 1280 and 375px. Only decorative numerals marked `aria-hidden="true"` may fail.
+- **Photos:** serve site photos as WebP sized to how they display (keep the original JPG for social share images).
 - **Removing CSS?** Prove it's unused: snapshot the computed styles of every element on every page at 1280/768/375px before and after (iframes + `getComputedStyle`), and only keep removals with zero differences. Several "legacy" rules in `styles.css` turned out to be load-bearing.
 
 ## Don'ts

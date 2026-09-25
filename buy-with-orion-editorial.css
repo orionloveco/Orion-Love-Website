@@ -28,7 +28,7 @@ body.page-buy-with-orion .buyer-hero__overlay{
 
 body.page-buy-with-orion .buyer-hero__media{
   z-index:-3;
-  background:url('images/gj-valley.jpg') center 46%/cover no-repeat;
+  background:url('images/gj-valley.webp') center 46%/cover no-repeat;
   opacity:.82;
 }
 
@@ -91,7 +91,7 @@ body.page-buy-with-orion .buyer-hero__rail p{
 }
 
 body.page-buy-with-orion .buyer-hero__rail div{
-  color:rgba(255,255,255,.45);
+  color:rgba(255,255,255,.62);
   line-height:1.7;
 }
 
@@ -181,7 +181,7 @@ body.page-buy-with-orion .buyer-method__heading-row{
 }
 
 body.page-buy-with-orion .buyer-method__rail .editorial-eyebrow{
-  color:var(--editorial-gold);
+  color:var(--editorial-gold-ink);
   font-size:.63rem;
   letter-spacing:.24em;
 }
@@ -202,7 +202,7 @@ body.page-buy-with-orion .buyer-method__lens p{
 
 body.page-buy-with-orion .buyer-method__lens p:last-child{
   max-width:8.75rem;
-  color:rgba(26,26,46,.46);
+  color:rgba(26,26,46,.7);
   font-size:.72rem;
   line-height:1.8;
 }
@@ -270,7 +270,7 @@ body.page-buy-with-orion .buyer-method__item{
 
 body.page-buy-with-orion .buyer-method__number{
   margin:0;
-  color:var(--editorial-gold);
+  color:var(--editorial-gold-ink);
   font-family:'Cormorant Garamond',serif;
   font-size:3.15rem;
   font-weight:300;
@@ -431,7 +431,7 @@ body.page-buy-with-orion .buyer-local-context__copy p{
 
 body.page-buy-with-orion .buyer-local-context__copy p + p{
   margin-top:1.25rem;
-  color:rgba(26,26,46,.58);
+  color:rgba(26,26,46,.7);
   font-size:.9rem;
 }
 
@@ -443,7 +443,7 @@ body.page-buy-with-orion .buyer-local-context__aside{
 }
 
 body.page-buy-with-orion .buyer-local-context__aside p:first-child{
-  color:rgba(184,146,58,.6);
+  color:var(--editorial-gold-ink);
   font-family:'Cormorant Garamond',serif;
   font-size:3rem;
   font-weight:300;
@@ -452,7 +452,7 @@ body.page-buy-with-orion .buyer-local-context__aside p:first-child{
 
 body.page-buy-with-orion .buyer-local-context__aside p:nth-child(2){
   margin-top:.75rem;
-  color:rgba(26,26,46,.42);
+  color:rgba(26,26,46,.7);
   text-transform:uppercase;
   font-size:.63rem;
   font-weight:800;
