@@ -626,8 +626,17 @@ body.mobile-nav-open{
   --editorial-gold:var(--gold, #b8923a);
   --editorial-gold-light:var(--gold-lt, #d4aa5a);
   --editorial-gold-ink:var(--gold-ink, #7a5c1f);
+  /* Full-bleed hero photo tint (the Buyers/Home Value look): darker on the left for text, photo visible across. */
+  --hero-photo-overlay:
+    linear-gradient(90deg,rgba(8,18,50,.88) 0%,rgba(12,26,61,.66) 36%,rgba(12,26,61,.32) 64%,rgba(12,26,61,.48) 100%),
+    linear-gradient(180deg,rgba(8,18,50,.4) 0%,rgba(12,26,61,.2) 42%,rgba(12,26,61,.76) 100%);
   --editorial-cream:var(--cream, #f7f4ed);
   --editorial-sand:var(--sand, #e8e1d0);
+}
+
+@media (max-width:720px){
+  /* On phones the text spans the full width, so the hero photo tint is even rather than left-weighted. */
+  :root{--hero-photo-overlay:linear-gradient(180deg,rgba(8,18,50,.72) 0%,rgba(12,26,61,.66) 45%,rgba(12,26,61,.84) 100%)}
 }
 
 @media (max-width:900px){

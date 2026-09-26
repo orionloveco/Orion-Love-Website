@@ -129,8 +129,7 @@
   inset:0;
   z-index:-2;
   background:
-    linear-gradient(90deg, rgba(8, 18, 50, .97) 0%, rgba(12, 26, 61, .91) 42%, rgba(12, 26, 61, .45) 72%, rgba(12, 26, 61, .8) 100%),
-    linear-gradient(180deg, rgba(8, 18, 50, .1), rgba(8, 18, 50, .64)),
+    var(--hero-photo-overlay),
     var(--area-hero-photo, none) var(--area-hero-position, center) / cover no-repeat;
 }
 
