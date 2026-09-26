@@ -59,7 +59,7 @@
   background:
     linear-gradient(90deg, rgba(8,18,50,.62), rgba(8,18,50,.08) 46%, rgba(8,18,50,.6)),
     linear-gradient(180deg, rgba(8,18,50,.06), rgba(8,18,50,.62)),
-    url('/images/gj-monument.webp') 38% center / cover no-repeat;
+    url('/images/valley/winding-road-book-cliffs.webp') center / cover no-repeat;
   opacity: .82;
   filter: saturate(.9) contrast(1.05);
 }

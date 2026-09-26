@@ -30,7 +30,7 @@ body.page-grand-junction-home-value .home-value-hero__overlay{
 
 body.page-grand-junction-home-value .home-value-hero__media{
   z-index:-3;
-  background:url('images/gj-valley.webp') center 46%/cover no-repeat;
+  background:url('/images/valley/colorado-river-valley-vineyards.webp') center 55%/cover no-repeat;
   opacity:.86;
 }
 

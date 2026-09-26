@@ -28,7 +28,7 @@ body.page-buy-with-orion .buyer-hero__overlay{
 
 body.page-buy-with-orion .buyer-hero__media{
   z-index:-3;
-  background:url('images/gj-valley.webp') center 46%/cover no-repeat;
+  background:url('/images/valley/golden-hour-town-book-cliffs.webp') center 60%/cover no-repeat;
   opacity:.82;
 }
 

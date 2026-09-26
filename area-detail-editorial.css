@@ -121,27 +121,25 @@
   background:var(--editorial-navy);
 }
 
-.area-detail--redlands .area-hero::before{
+/* Hero background photo: set --area-hero-photo per area (Canva photos in images/valley/, 848x565 max by license).
+   The navy gradients keep text readable and hide the softness of the small source files. */
+.area-hero::before{
   content:"";
   position:absolute;
   inset:0;
   z-index:-2;
   background:
-    linear-gradient(90deg, rgba(8, 18, 50, .98) 0%, rgba(12, 26, 61, .92) 42%, rgba(12, 26, 61, .45) 72%, rgba(12, 26, 61, .82) 100%),
-    linear-gradient(180deg, rgba(8, 18, 50, .1), rgba(8, 18, 50, .66)),
-    url('/images/gj-monument.webp') center / cover no-repeat;
+    linear-gradient(90deg, rgba(8, 18, 50, .97) 0%, rgba(12, 26, 61, .91) 42%, rgba(12, 26, 61, .45) 72%, rgba(12, 26, 61, .8) 100%),
+    linear-gradient(180deg, rgba(8, 18, 50, .1), rgba(8, 18, 50, .64)),
+    var(--area-hero-photo, none) var(--area-hero-position, center) / cover no-repeat;
 }
 
-.area-detail--palisade .area-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-    linear-gradient(90deg, rgba(8, 18, 50, .96) 0%, rgba(12, 26, 61, .9) 43%, rgba(12, 26, 61, .42) 72%, rgba(12, 26, 61, .78) 100%),
-    linear-gradient(180deg, rgba(8, 18, 50, .08), rgba(8, 18, 50, .62)),
-    url('/images/gj-landscape.webp') center 42% / cover no-repeat;
-}
+.area-detail--redlands{--area-hero-photo:url('/images/valley/colorado-national-monument-sunset.webp')}
+.area-detail--palisade{--area-hero-photo:url('/images/valley/palisade-orchard-mount-garfield.webp')}
+.area-detail--clifton{--area-hero-photo:url('/images/valley/book-cliffs-night.webp')}
+.area-detail--orchard-mesa{--area-hero-photo:url('/images/valley/orchard-blossoms.webp')}
+.area-detail--fruita{--area-hero-photo:url('/images/valley/desert-trail-steps.webp')}
+.area-detail--loma-mack{--area-hero-photo:url('/images/valley/river-sunset-reflection.webp')}
 
 .area-hero::after{
   content:"";
