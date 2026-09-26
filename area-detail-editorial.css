@@ -424,7 +424,17 @@
 
 .area-related-cta__intro{
   row-gap:1.6rem;
-  align-items:start;
+  align-items:end; /* the heading's last line sits level with the bottom of Orion's photo */
+}
+
+.area-related-cta__intro h2{margin-bottom:0}
+
+/* Desktop: the heading block is right-aligned so it ends at the same edge as the
+   "Related seller guides" list below it. */
+@media (min-width:1001px){
+  .area-related-cta__intro > div:first-child{text-align:right}
+  .area-related-cta__intro > div:first-child .editorial-eyebrow{justify-content:flex-end}
+  .area-related-cta__intro h2{margin-left:auto}
 }
 
 .area-related-cta__side{

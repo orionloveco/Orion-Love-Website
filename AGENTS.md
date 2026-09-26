@@ -44,6 +44,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 ## Shared building blocks
 
 - **Header:** wordmark image + brokerage text (`.logo-wordmark`, `.logo-brokerage`); the brokerage stacks under the wordmark below 1200px. The top menu has six links (Sellers, Buyers, Home Value, Areas, About, Market Briefings) plus Contact; Home and FAQ live in the footer and phone menu. The full menu shows above **960px**, the ☰ menu and tap-to-call (`.mobile-call`) below. The breakpoint lives in `editorial-base.css` *and* `script.js`: change both. The header turns solid navy on scroll (`.solid`).
+- **Cover hero:** every main page, area guide and blog page opens with `.cover-hero` (in `editorial-base.css`): a photo band with the headline, then a cream strip with the intro (+ buttons), optional tags and an optional quote. Set the photo with `--cover-photo` (inline `style` on the section; area guides use their `--area-hero-photo`). Use `.cover-hero--long` for long headlines. No kicker line above the headline. About, Contact and Privacy keep their own openers.
 - **Portraits:** `.advisor-portrait` (framed photo + name/brokerage caption). Variants: `--on-dark` (navy sections), `--end` (right-aligned), `--compact` (small photo beside caption, used on area pages). Don't reuse a photo already used elsewhere.
 - **Area guides:** fixed four-section structure (README §5). Keep every `data-market-*` attribute: the stats job depends on them.
 - **Forms fallback:** `.form-nojs-note` shows phone/email only when JavaScript fails (`html` lacks `.js`).
