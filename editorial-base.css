@@ -1304,6 +1304,6 @@ select.editorial-input{
   .advisor-portrait{--advisor-portrait-width:180px}
 }
 /* Compact variant: small photo beside the caption (area page next-step groups). */
-.advisor-portrait--compact{display:grid;grid-template-columns:84px minmax(0,1fr);gap:1.1rem;align-items:center;max-width:none;margin:0 0 1.4rem}
-.advisor-portrait--compact:before{left:6px;right:auto;top:6px;width:84px}
+.advisor-portrait--compact{--portrait-compact-size:clamp(150px,17vw,210px);display:grid;grid-template-columns:var(--portrait-compact-size) minmax(0,1fr);gap:clamp(1.1rem,2.4vw,1.8rem);align-items:end;max-width:none;margin:0 0 1.4rem}
+.advisor-portrait--compact:before{left:8px;right:auto;top:8px;width:var(--portrait-compact-size)}
 .advisor-portrait--compact figcaption{margin-top:0}
