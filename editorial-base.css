@@ -6,13 +6,13 @@
 
 /* Shared editorial ownership layer (rebuilt system primitives).
    Owns: .main-header, .nav-menu presentation, mobile-nav presentation, .main-footer,
-   .footer-grid presentation, and editorial-shell/tokens.
+   footer layout (.footer-top, .footer-columns), and editorial-shell/tokens.
 
    Rebuild boundary:
    - styles.css may retain temporary duplicate selectors for legacy compatibility.
    - rebuilt pages should rely on this file as the source of truth for shared primitives.
    - new page CSS must not add page-scoped overrides for .main-header, .nav-menu,
-     .main-footer, or .footer-grid; add shared variants here instead.
+     .main-footer or its footer layout; add shared variants here instead.
 */
 
 .main-header{
@@ -495,36 +495,34 @@ body.mobile-nav-open{
 
 .main-footer::before{display:none}
 .main-footer .container{max-width:1240px}
-.main-footer .footer-grid{
+
+/* Footer layout: brand + contact on top, four equal link columns, then the legal line. */
+.main-footer .footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:2rem;
+  padding-bottom:clamp(1.4rem,2.6vw,2rem);
+  border-bottom:1px solid rgba(247,244,237,.09);
+}
+.main-footer .footer-brand .logo-footer{margin:0 0 .55rem;line-height:0}
+.main-footer .logo-footer img{display:block;width:clamp(170px,16vw,210px);height:auto}
+.main-footer .footer-brand-line{margin:0;color:rgba(247,244,237,.72);font-size:.82rem;line-height:1.55}
+.main-footer .footer-contact{text-align:right}
+.main-footer .footer-contact .footer-heading{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.main-footer .footer-contact__list{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem 1.6rem}
+.main-footer .footer-contact__list li{margin:0}
+.main-footer .footer-contact__list li:last-child{flex-basis:100%}
+
+.main-footer .footer-columns{
   display:grid;
-  grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));
-  align-items:start;
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:clamp(1.5rem,3.5vw,3rem);
-  margin-bottom:clamp(1.4rem,2.8vw,2.6rem);
+  padding:clamp(1.6rem,3vw,2.4rem) 0;
 }
+.main-footer .footer-area p{margin:0;color:rgba(247,244,237,.72);line-height:1.7}
 
-.main-footer .footer-brand{max-width:440px}
-.main-footer .footer-brand p{margin-bottom:1rem}
-.main-footer .footer-brand-note{margin-top:1rem;color:rgba(247,244,237,.72)}
-.main-footer .footer-contact,
-.main-footer .footer-profiles{padding-top:.35rem}
-.main-footer .footer-support{display:contents}
-.main-footer .footer-links{padding-top:.35rem}
-.main-footer .footer-brand .logo-footer{
-  color:#fff;
-  letter-spacing:.01em;
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.9rem,3vw,2.35rem);
-  font-weight:400;
-  line-height:1.06;
-  margin-bottom:.65rem;
-}
-.main-footer .logo-footer img{display:block;width:clamp(130px,14vw,160px);height:auto}
-
-.main-footer .footer-contact h2,
-.main-footer .footer-links h2,
-.main-footer .footer-profiles__title{
+.main-footer .footer-heading{
   color:#d4aa5a;
   font-family:'Cormorant Garamond',serif;
   font-size:1.18rem;
@@ -532,7 +530,7 @@ body.mobile-nav-open{
   letter-spacing:.015em;
   line-height:1.2;
   text-transform:none;
-  margin:0 0 .65rem;
+  margin:0 0 .75rem;
 }
 
 .main-footer ul{
@@ -541,14 +539,13 @@ body.mobile-nav-open{
   padding:0;
 }
 
-.main-footer li{margin-bottom:.5rem}
+.main-footer li{margin-bottom:.45rem}
 .main-footer a{text-decoration:none;transition:color .2s ease}
 .main-footer p,
 .main-footer li,
 .main-footer a{color:rgba(247,244,237,.87);font-size:.91rem;line-height:1.6}
 .main-footer a:hover,
 .main-footer a:focus-visible{color:#d4aa5a}
-.main-footer .footer-profiles__list{display:grid;gap:0}
 
 .main-footer .footer-bottom{
   border-top:1px solid rgba(247,244,237,.09);
@@ -567,13 +564,15 @@ body.mobile-nav-open{
 
 @media (max-width:900px){
   .main-header nav{height:70px;min-height:70px}
-  .main-footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem 1.5rem}
-  .main-footer .footer-brand{grid-column:1/-1}
+  .main-footer .footer-top{flex-direction:column;align-items:flex-start}
+  .main-footer .footer-contact{text-align:left}
+  .main-footer .footer-contact__list{justify-content:flex-start}
+  .main-footer .footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.8rem 1.5rem}
   .main-footer .footer-bottom{flex-direction:column;align-items:flex-start}
 }
 
 @media (max-width:560px){
-  .main-footer .footer-grid{grid-template-columns:1fr;gap:1.75rem}
+  .main-footer .footer-contact__list{gap:.2rem 1.2rem}
 }
 
 @media (max-width:768px){
