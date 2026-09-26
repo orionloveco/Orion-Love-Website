@@ -181,13 +181,21 @@ function replaceAreaSummary(html, areaKey, value) {
   return html.replace(pattern, (_match, open, _old, close) => `${open}${value}${close}`);
 }
 
+const DATASET_LICENSE = 'https://www.rentcast.io/terms';
+
 function getDatasetJson(label, file, areaKey, generatedAt, alt, renderedStats) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: `${label} housing market snapshot`,
+    description: `Median sale price, average days on market, active listings and new listings for ${label}, Mesa County, Colorado, from RentCast market data. Updated on the 1st and 15th of each month.`,
     url: `https://orionlovehomes.com/${file.replace('.html', '')}`,
     dateModified: toIsoString(generatedAt),
+    spatialCoverage: `${label}, Mesa County, Colorado`,
+    creator: { '@id': 'https://orionlovehomes.com/#orion-love-person' },
+    // The figures come from RentCast, so their terms govern reuse (Google recommends a license URL).
+    license: DATASET_LICENSE,
+    isAccessibleForFree: true,
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'application/json',
@@ -340,6 +348,8 @@ if (fs.existsSync(marketPagePath)) {
     dateModified: generatedAt,
     spatialCoverage: 'Mesa County, Colorado',
     creator: { '@id': 'https://orionlovehomes.com/#orion-love-person' },
+    license: DATASET_LICENSE,
+    isAccessibleForFree: true,
     distribution: pages.map(([, key]) => ({
       '@type': 'DataDownload',
       encodingFormat: 'application/json',
