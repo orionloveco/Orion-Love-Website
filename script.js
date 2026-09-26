@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const header = document.getElementById('mainHeader');
   if (header) {
     const pageHeroSelector = [
-      '.cover-hero',
       '.eh-cover',
       '.seller-hero',
       '.profile-hero',
