@@ -31,7 +31,7 @@
 .post-hero{
   position:relative;
   padding:clamp(6.2rem, 11vw, 8.6rem) 0 clamp(3.2rem, 6vw, 4.4rem);
-  background:var(--blog-navy);
+  background:var(--hero-photo-overlay),url('/images/valley/irrigation-canal-mount-garfield.webp') center 45%/cover no-repeat,var(--blog-navy);
   color:#fff;
 }
 
@@ -251,12 +251,13 @@
   margin:0 auto;
   padding:1.6rem 0 0;
   border-top:1px solid rgba(12,26,61,.14);
-  color:rgba(26,26,46,.58);
+  color:rgba(26,26,46,.7);
   font-size:.82rem;
   line-height:1.6;
 }
 
-.post-sources p{ margin:0 0 .4rem; }
+.post-sources p{ margin:0 0 .4rem; max-width:72ch; }
+.post-author p{ max-width:68ch; }
 
 .post-author{
   width:var(--blog-article);

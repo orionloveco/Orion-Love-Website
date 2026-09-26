@@ -208,3 +208,7 @@ body.page-support-editorial:where(.page-support-privacy,.page-support-404){
     white-space:normal;
   }
 }
+
+/* Comfortable reading width for long policy text (about 70 characters per line). */
+.support-policy__body p,
+.support-policy__body li{max-width:70ch}

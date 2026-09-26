@@ -625,6 +625,8 @@ body.mobile-nav-open{
   --editorial-gold:var(--gold, #b8923a);
   --editorial-gold-light:var(--gold-lt, #d4aa5a);
   --editorial-gold-ink:var(--gold-ink, #7a5c1f);
+  /* Space above and below content sections (about 56px on phones, ~100px on laptops). */
+  --section-space:clamp(3.5rem,8vw,6.75rem);
   /* Full-bleed hero photo tint (the Buyers/Home Value look): darker on the left for text, photo visible across. */
   --hero-photo-overlay:
     linear-gradient(90deg,rgba(8,18,50,.88) 0%,rgba(12,26,61,.66) 36%,rgba(12,26,61,.32) 64%,rgba(12,26,61,.48) 100%),

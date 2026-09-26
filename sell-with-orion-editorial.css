@@ -516,3 +516,8 @@
 
 .seller-close__more{margin-top:-.4rem;margin-bottom:1.6rem;color:rgba(26,26,46,.66);font-size:.95rem;line-height:1.7}
 .seller-close__more a{color:var(--navy,#0c1a3d);text-decoration:underline;text-decoration-color:rgba(184,146,58,.6);text-underline-offset:.2em}
+
+/* Phones: taller tap area for the call link. */
+@media (max-width: 720px) {
+  .seller-close__phone { display: inline-block; padding: .6rem 0; }
+}

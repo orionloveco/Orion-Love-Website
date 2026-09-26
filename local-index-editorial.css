@@ -122,7 +122,7 @@
 }
 
 .li-opening {
-  padding: clamp(5.2rem, 8vw, 7.6rem) 0;
+  padding: var(--section-space) 0;
   background: var(--paper);
 }
 
@@ -238,7 +238,7 @@
 }
 
 .li-local-map {
-  padding: clamp(5.8rem, 8.6vw, 8rem) 0;
+  padding: var(--section-space) 0;
   background: #fff;
 }
 
@@ -321,7 +321,7 @@
 .li-local-link:hover strong { color: var(--editorial-gold); }
 
 .li-close {
-  padding: clamp(4.8rem, 7.6vw, 6.8rem) 0 clamp(5.8rem, 9vw, 8rem);
+  padding: var(--section-space) 0;
   background:
     linear-gradient(90deg, var(--editorial-sand) 0 38%, var(--paper) 38% 100%);
 }

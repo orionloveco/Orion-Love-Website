@@ -8,7 +8,7 @@
 .market-page .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* Hero */
-.market-hero{background:linear-gradient(160deg,#081232,#0c1a3d 55%,#16275a);color:#f7f4ed;padding:calc(var(--site-header-height,72px) + clamp(3rem,7vw,5.5rem)) 0 clamp(3.2rem,6vw,4.8rem)}
+.market-hero{background:var(--hero-photo-overlay),url('/images/valley/vineyard-rows-book-cliffs.webp') center 40%/cover no-repeat,#0c1a3d;color:#f7f4ed;padding:calc(var(--site-header-height,72px) + clamp(3rem,7vw,5.5rem)) 0 clamp(3.2rem,6vw,4.8rem)}
 .market-hero h1{max-width:15ch}
 .market-hero__deck{max-width:560px}
 .market-hero h1{margin:1rem 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.95;letter-spacing:-.03em;color:#f7f4ed}
@@ -65,3 +65,6 @@
   .market-table tbody td{font-size:1rem;color:var(--editorial-navy,#0c1a3d)}
   .market-table tbody td::before{content:attr(data-label);display:block;margin-bottom:.2rem;color:var(--editorial-gold,#b8923a);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 }
+
+/* Phones: taller tap area for the area links in the stacked table. */
+@media (max-width:720px){.market-table tbody th a{display:inline-block;padding:.45rem 0}}

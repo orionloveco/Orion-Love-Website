@@ -215,7 +215,7 @@
 .area-detail .area-hero__note p{color:var(--editorial-note-paragraph-color)}
 
 .area-market-read{
-  padding:clamp(4.8rem, 7.8vw, 6.8rem) 0;
+  padding:var(--section-space) 0;
   background:var(--editorial-paper);
 }
 
@@ -298,7 +298,7 @@
 
 
 .area-local-details{
-  padding:clamp(5.8rem, 9vw, 8.2rem) 0;
+  padding:var(--section-space) 0;
   background:#fff;
 }
 
@@ -403,7 +403,7 @@
 }
 
 .area-related-cta{
-  padding:clamp(5.2rem, 8.4vw, 7.4rem) 0;
+  padding:var(--section-space) 0;
   background:var(--editorial-paper, #fbf8f1);
   color:var(--editorial-ink, #1a1a2e);
 }
