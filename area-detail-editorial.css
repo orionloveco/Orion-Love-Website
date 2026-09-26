@@ -139,6 +139,7 @@
 .area-detail--clifton{--area-hero-photo:url('/images/valley/book-cliffs-night.webp')}
 .area-detail--orchard-mesa{--area-hero-photo:url('/images/valley/orchard-blossoms.webp')}
 .area-detail--fruita{--area-hero-photo:url('/images/valley/desert-trail-steps.webp')}
+.area-detail--loma-mack{--area-hero-photo:url('/images/valley/lake-sunset-reflection.webp')}
 
 .area-hero::after{
   content:"";
