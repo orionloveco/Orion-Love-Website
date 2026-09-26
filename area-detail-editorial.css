@@ -223,7 +223,7 @@
   display:grid;
   grid-template-columns:minmax(280px, .4fr) minmax(0, .6fr);
   gap:clamp(2rem, 5vw, 5rem);
-  align-items:end;
+  align-items:center;
 }
 
 .area-market-read__copy p:not(.editorial-eyebrow){
@@ -237,8 +237,8 @@
 }
 
 .area-market-read__visual{
-  width:min(520px, 100%);
-  margin:0 0 0 auto;
+  width:100%;
+  margin:0;
 }
 
 .area-market-read__visual img{
@@ -498,10 +498,6 @@
 
   .area-hero__note{
     max-width:520px;
-  }
-
-  .area-market-read__visual{
-    margin-left:0;
   }
 
   .area-stat-grid{
