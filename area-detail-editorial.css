@@ -139,6 +139,12 @@
 .area-detail--orchard-mesa{--area-hero-photo:url('/images/valley/vineyard-mount-garfield.webp')}
 .area-detail--fruita{--area-hero-photo:url('/images/valley/desert-trail-steps.webp')}
 .area-detail--loma-mack{--area-hero-photo:url('/images/valley/lake-sunset-reflection.webp')}
+.area-detail--north-grand-junction{--area-hero-photo:url('/images/valley/interstate-mount-garfield.webp')}
+.area-detail--northeast-grand-junction{--area-hero-photo:url('/images/valley/neighborhoods-canal-storm.webp')}
+.area-detail--northwest-grand-junction{--area-hero-photo:url('/images/valley/valley-farmland-neighborhoods.webp')}
+
+/* Hero labels sit on navy: regular gold reads well there (gold ink is only for light backgrounds). */
+.area-hero .editorial-eyebrow{--editorial-eyebrow-color:var(--editorial-gold)}
 
 .area-hero::after{
   content:"";
