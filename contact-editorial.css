@@ -37,7 +37,7 @@ body.page-contact #contact-title {
 
 body.page-contact .intro-copy {
   max-width: 570px;
-  margin: 20px 0 0;
+  margin: 20px 0 clamp(28px, 3.5vw, 40px);
   font-size: clamp(1.02rem, 1.55vw, 1.15rem);
   line-height: 1.72;
   color: var(--muted);
@@ -199,14 +199,29 @@ body.page-contact .response-note {
     grid-template-columns: 1fr;
   }
 
+  /* Tablet: portrait on the left, heading and direct details stacked beside it. */
   body.page-contact .contact-aside {
     position: static;
     display: grid;
-    grid-template-columns: minmax(0, 0.75fr) minmax(240px, 0.55fr);
-    gap: 26px;
+    grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(28px, 5vw, 48px);
+    row-gap: 18px;
+    align-items: start;
     padding-top: 0;
     order: 2;
     text-align: left;
+  }
+
+  body.page-contact .contact-aside .advisor-portrait {
+    grid-row: 1 / span 2;
+    margin: 0;
+    text-align: left;
+  }
+
+  body.page-contact .contact-aside .advisor-portrait:before {
+    left: 12px;
+    right: -12px;
   }
 
   body.page-contact .aside-copy {
@@ -230,7 +245,12 @@ body.page-contact .response-note {
 
   body.page-contact .contact-aside {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
     gap: 18px;
+  }
+
+  body.page-contact .contact-aside .advisor-portrait {
+    grid-row: auto;
   }
 
   body.page-contact .form-sheet-wrap {
