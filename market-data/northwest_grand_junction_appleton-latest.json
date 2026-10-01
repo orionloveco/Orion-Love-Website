@@ -1,8 +1,8 @@
 {
   "areaKey": "northwest_grand_junction_appleton",
   "areaName": "Northwest Grand Junction",
-  "generatedAt": "2026-09-15T08:00:37.158Z",
-  "reportingPeriod": "2026-09-15T08:00:37.158Z",
+  "generatedAt": "2026-10-01T08:00:25.323Z",
+  "reportingPeriod": "2026-10-01T08:00:25.323Z",
   "stats": {
     "areaKey": "northwest_grand_junction_appleton",
     "zips": [
@@ -12,9 +12,9 @@
       "Northwest Grand Junction / Appleton"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 449900,
-    "averageDaysOnMarket": 90,
-    "newListings": 9,
-    "totalListings": 214
+    "medianPrice": 459900,
+    "averageDaysOnMarket": 88,
+    "newListings": 0,
+    "totalListings": 227
   }
 }

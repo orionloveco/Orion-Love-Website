@@ -1,8 +1,8 @@
 {
   "areaKey": "downtown_grand_junction",
   "areaName": "Downtown Grand Junction",
-  "generatedAt": "2026-09-15T08:00:37.158Z",
-  "reportingPeriod": "2026-09-15T08:00:37.158Z",
+  "generatedAt": "2026-10-01T08:00:25.323Z",
+  "reportingPeriod": "2026-10-01T08:00:25.323Z",
   "stats": {
     "areaKey": "downtown_grand_junction",
     "zips": [
@@ -12,9 +12,9 @@
       "Central Grand Junction / Downtown"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 369900,
-    "averageDaysOnMarket": 66,
-    "newListings": 18,
-    "totalListings": 190
+    "medianPrice": 378000,
+    "averageDaysOnMarket": 70,
+    "newListings": 0,
+    "totalListings": 192
   }
 }

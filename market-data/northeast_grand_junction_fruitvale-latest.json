@@ -1,8 +1,8 @@
 {
   "areaKey": "northeast_grand_junction_fruitvale",
   "areaName": "Northeast Grand Junction",
-  "generatedAt": "2026-09-15T08:00:37.158Z",
-  "reportingPeriod": "2026-09-15T08:00:37.158Z",
+  "generatedAt": "2026-10-01T08:00:25.323Z",
+  "reportingPeriod": "2026-10-01T08:00:25.323Z",
   "stats": {
     "areaKey": "northeast_grand_junction_fruitvale",
     "zips": [
@@ -12,9 +12,9 @@
       "Northeast Grand Junction / Fruitvale"
     ],
     "lastUpdatedDate": null,
-    "medianPrice": 392750,
-    "averageDaysOnMarket": 64,
-    "newListings": 29,
-    "totalListings": 289
+    "medianPrice": 389900,
+    "averageDaysOnMarket": 69,
+    "newListings": 0,
+    "totalListings": 292
   }
 }
