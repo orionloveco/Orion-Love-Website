@@ -273,7 +273,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const MARKET_STAT_SOURCE_KEYS = {
     medianPrice: ['medianPrice', 'medianSalePrice', 'medianListPrice'],
     averageDaysOnMarket: ['averageDaysOnMarket', 'avgDaysOnMarket', 'averageDom'],
-    newListings: ['newListings', 'newListings30d', 'newListings30Days'],
     totalListings: ['totalListings', 'activeListings'],
   };
 
@@ -285,10 +284,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return Number.isFinite(numericValue) ? numericValue : null;
   }
 
-  function isTrustedZeroMarketStat(statKey, sourceKey) {
-    return sourceKey === statKey || statKey !== 'newListings';
-  }
-
   function getMarketStatValue(areaData, statKey) {
     const sourceKeys = MARKET_STAT_SOURCE_KEYS[statKey] || [statKey];
 
@@ -297,7 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const numericValue = parseMarketStatValue(areaData[sourceKey]);
       if (numericValue === null) continue;
-      if (numericValue === 0 && !isTrustedZeroMarketStat(statKey, sourceKey)) continue;
       return numericValue;
     }
 
@@ -364,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      if (statKey === 'newListings' || statKey === 'totalListings') {
+      if (statKey === 'totalListings') {
         statEl.textContent = formatNumber(statValue);
       }
     });

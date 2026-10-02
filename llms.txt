@@ -34,7 +34,7 @@
 
 ## Area selling guides
 
-Each guide includes local selling advice and market statistics (median sale price, average days on market, active and new listings) from RentCast, refreshed on the 1st and 15th of each month.
+Each guide includes local selling advice and market statistics (median sale price, average days on market and active listings) from RentCast, refreshed on the 1st and 15th of each month.
 
 - [Mesa County areas overview](https://orionlovehomes.com/areas)
 - [Selling in the Redlands](https://orionlovehomes.com/sell-redlands)

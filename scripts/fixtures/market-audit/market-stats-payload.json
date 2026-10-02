@@ -4,13 +4,12 @@
     "redlands": {
       "medianPrice": 551000,
       "averageDaysOnMarket": 88,
-      "totalListings": 235,
+      "activeListings": 235,
       "newListings30d": 23,
       "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
     },
     "fruita": {
       "medianPrice": 500000,
-      "averageDaysOnMarket": 68,
       "totalListings": 202,
       "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
     },
@@ -23,16 +22,14 @@
     },
     "orchard_mesa": {
       "medianPrice": 415000,
-      "averageDaysOnMarket": 76,
+      "averageDaysOnMarket": "not available",
       "totalListings": 177,
-      "newListings": "not available",
       "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
     },
     "clifton": {
       "medianPrice": 280000,
       "averageDaysOnMarket": 80,
       "totalListings": 115,
-      "newListings30d": 0,
       "lastUpdatedDate": "2026-05-12T00:00:00.000Z"
     },
     "downtown_grand_junction": {

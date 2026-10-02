@@ -259,7 +259,7 @@
 
 .area-stat-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(3, 1fr);
   border-top:1px solid rgba(12, 26, 61, .12);
   border-bottom:1px solid rgba(12, 26, 61, .12);
 }
@@ -508,18 +508,6 @@
 
   .area-hero__note{
     max-width:520px;
-  }
-
-  .area-stat-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-
-  .area-stat:nth-child(2){
-    border-right:0;
-  }
-
-  .area-stat:nth-child(-n+2){
-    border-bottom:1px solid rgba(12, 26, 61, .12);
   }
 
   .area-related-cta__intro,

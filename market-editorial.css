@@ -53,11 +53,11 @@
   .market-table-intro,.market-notes__grid,.market-close__grid{grid-template-columns:1fr}
   .market-close__grid .advisor-portrait{margin-bottom:1rem}
 }
-/* Phones: each area becomes a small block with a labelled 2x2 grid of figures. */
+/* Phones: each area becomes a small block with a labelled row of three figures. */
 @media (max-width:640px){
   .market-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .market-table,.market-table tbody{display:block}
-  .market-table tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1rem;padding:1.2rem 0;border-bottom:1px solid rgba(12,26,61,.12)}
+  .market-table tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem 1rem;padding:1.2rem 0;border-bottom:1px solid rgba(12,26,61,.12)}
   .market-table tbody tr:hover{background:none}
   .market-table tbody th,.market-table tbody td{display:block;padding:0;border:0;text-align:left}
   .market-table tbody th{grid-column:1/-1}

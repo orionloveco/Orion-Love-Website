@@ -10,7 +10,6 @@ const pages = [['sell-redlands.html','redlands','Redlands'],['sell-orchard-mesa.
 const MARKET_STAT_SOURCE_KEYS = {
   medianPrice: ['medianPrice', 'medianSalePrice', 'medianListPrice'],
   averageDaysOnMarket: ['averageDaysOnMarket', 'avgDaysOnMarket', 'averageDom'],
-  newListings: ['newListings', 'newListings30d', 'newListings30Days'],
   totalListings: ['totalListings', 'activeListings'],
 };
 
@@ -18,14 +17,12 @@ const MARKET_STAT_FORMATTERS = {
   medianPrice: (value, fallback = 'Unavailable') => Number.isFinite(value) ? `$${Math.round(value).toLocaleString()}` : fallback,
   averageDaysOnMarket: (value, fallback = 'Unavailable') => Number.isFinite(value) ? `${Math.round(value)} days` : fallback,
   totalListings: (value, fallback = 'Unavailable') => Number.isFinite(value) ? Math.round(value).toLocaleString() : fallback,
-  newListings: (value, fallback = 'Unavailable') => Number.isFinite(value) ? Math.round(value).toLocaleString() : fallback,
 };
 
 const DATASET_MEASUREMENTS = [
   ['medianPrice', 'Median Sale Price'],
   ['averageDaysOnMarket', 'Average Days on Market'],
   ['totalListings', 'Active Listings'],
-  ['newListings', 'New Listings (30 Days)'],
 ];
 
 const args = new Set(process.argv.slice(2));
@@ -95,10 +92,6 @@ function parseMarketStatValue(value) {
   return Number.isFinite(numericValue) ? numericValue : null;
 }
 
-function isTrustedZeroMarketStat(statKey, sourceKey) {
-  return sourceKey === statKey || statKey !== 'newListings';
-}
-
 function getMarketStatValue(stats, statKey) {
   if (!stats || typeof stats !== 'object') return null;
 
@@ -108,7 +101,6 @@ function getMarketStatValue(stats, statKey) {
 
     const numericValue = parseMarketStatValue(stats[sourceKey]);
     if (numericValue === null) continue;
-    if (numericValue === 0 && !isTrustedZeroMarketStat(statKey, sourceKey)) continue;
     return numericValue;
   }
 
@@ -188,7 +180,7 @@ function getDatasetJson(label, file, areaKey, generatedAt, alt, renderedStats) {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: `${label} housing market snapshot`,
-    description: `Median sale price, average days on market, active listings and new listings for ${label}, Mesa County, Colorado, from RentCast market data. Updated on the 1st and 15th of each month.`,
+    description: `Median sale price, average days on market and active listings for ${label}, Mesa County, Colorado, from RentCast market data. Updated on the 1st and 15th of each month.`,
     url: `https://orionlovehomes.com/${file.replace('.html', '')}`,
     dateModified: toIsoString(generatedAt),
     spatialCoverage: `${label}, Mesa County, Colorado`,
@@ -267,7 +259,6 @@ for (const [file, key, label] of pages) {
     medianPrice: getMarketStatValue(s, 'medianPrice'),
     averageDaysOnMarket: getMarketStatValue(s, 'averageDaysOnMarket'),
     totalListings: getMarketStatValue(s, 'totalListings'),
-    newListings: getMarketStatValue(s, 'newListings'),
   };
   // The stats API currently sends lastUpdatedDate: null, so fall back to the payload's
   // generatedAt (the same date script.js shows visitors). A present-but-garbled date still fails.
@@ -295,7 +286,9 @@ for (const [file, key, label] of pages) {
 
   const renderedStatValues = Object.fromEntries(Object.entries(renderedStats).map(([statKey, value]) => [statKey, parseMarketStatValue(value)]));
   const snapshotStats = Object.fromEntries(Object.entries(renderedStatValues).filter(([, value]) => value !== null));
-  const jsonOutput = JSON.stringify({ areaKey: key, areaName: label, generatedAt, reportingPeriod, stats: { ...s, ...snapshotStats } }, null, 2);
+  // RentCast's newListings counts only the current calendar month (0 on the 1st), so the site no longer shows or republishes it.
+  const { newListings: _newListings, ...sourceStats } = s;
+  const jsonOutput = JSON.stringify({ areaKey: key, areaName: label, generatedAt, reportingPeriod, stats: { ...sourceStats, ...snapshotStats } }, null, 2);
   const jsonPath = resolveFromRoot(path.join('market-data', `${key}-latest.json`));
 
   const pageChanged = writeFileIfChanged(pagePath, html);
@@ -343,7 +336,7 @@ if (fs.existsSync(marketPagePath)) {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: 'Grand Junction and Mesa County housing market snapshot by area',
-    description: 'Median sale price, average days on market, active listings and new listings for ten areas of Grand Junction and Mesa County, Colorado, from RentCast market data.',
+    description: 'Median sale price, average days on market and active listings for ten areas of Grand Junction and Mesa County, Colorado, from RentCast market data.',
     url: 'https://orionlovehomes.com/grand-junction-housing-market',
     dateModified: generatedAt,
     spatialCoverage: 'Mesa County, Colorado',
