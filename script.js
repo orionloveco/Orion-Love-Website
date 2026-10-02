@@ -312,6 +312,18 @@ document.addEventListener('DOMContentLoaded', function () {
     el.style.display = 'block';
   }
 
+  // Tells Google Analytics a form was sent successfully. Sends only the form's name and the page;
+  // never the visitor's name, email, phone or message. Must never interfere with the form itself.
+  function trackLead(formName) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', { form_name: formName, page_path: window.location.pathname });
+      }
+    } catch (_err) {
+      /* analytics must not break lead capture */
+    }
+  }
+
   async function submitToProxy(formData) {
     const res = await fetch(PROXY_URL, {
       method: 'POST',
@@ -450,6 +462,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         await submitToProxy(payloadBuilder());
+        trackLead(formId);
         showFormMsg(msg, successMessage, 'success');
         form.reset();
       } catch (err) {
@@ -551,6 +564,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (property) payload.property = property;
 
         await submitToProxy(payload);
+        trackLead(form.id || inquiry);
 
         showFormMsg(msgEl, successMessage, 'success');
         form.reset();

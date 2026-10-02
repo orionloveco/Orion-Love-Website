@@ -52,6 +52,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 Contact, Home Value and Buyer forms post JSON from `script.js` to the `fub-contact-proxy` Cloudflare Worker, which creates the lead in Follow Up Boss. The Worker is **not** in this repo.
 
+- After a successful send, `script.js` fires a Google Analytics `generate_lead` event with only the form's id and the page path. Never add names, emails, phone numbers or message text to analytics events.
 - **Never submit real test leads.** To test, override `window.fetch` in the browser, submit, and compare the captured payload before and after your change. It must be identical unless the change is intended.
 - Keep `method="post"` and the no-JS note on all three forms.
 
@@ -110,6 +111,6 @@ Also:
 ## Don'ts
 
 - Don't bulk-delete branches, force-push, or rewrite history on `main`.
-- Don't add JS-rendered critical content, analytics code (Cloudflare injects it), or new tracking without asking.
+- Don't add JS-rendered critical content or new tracking without asking. Analytics already in place: Cloudflare Web Analytics (injected by Cloudflare) and Google Analytics 4 (`G-EX71Z7SG72`, in `partials/head-assets.html`, added at Orion's request in October 2026).
 - Don't change `BUSINESS_INFO.md` facts or add personal details without Orion's confirmation.
 - Don't publish without showing Orion a preview when the change is visible.
