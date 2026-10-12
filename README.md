@@ -38,7 +38,7 @@ If a change is technically cleaner but makes the site feel more generic, call th
 
 These come before style.
 
-- **No fake proof.** No invented reviews, testimonials, statistics or sales history. Orion is newly licensed with no closed sales yet: never write "my clients", "sellers I've helped", "years of experience", "track record" or similar until it is true.
+- **No fake proof.** No invented reviews, testimonials, statistics or sales history. Orion is newly licensed with no closed sales yet: never write "sellers I've helped", "years of experience", "track record", sales counts or similar until it is true. Orion has clients, so "my clients" is fine (confirmed by Orion, October 2026).
 - **Real reviews only**, with the client's permission, once they exist.
 - **Only confirmed personal facts.** Orion's background is limited to what's in `BUSINESS_INFO.md`. Ask before adding anything new.
 - **Pronouns:** not stated. Use "Orion" or first person ("I"); never "he" or "she".
