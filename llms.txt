@@ -30,11 +30,11 @@
 
 ## Market numbers
 
-- [Grand Junction housing market by area](https://orionlovehomes.com/grand-junction-housing-market): median sale price, days on market and listings for all ten areas in one table, refreshed on the 1st and 15th of each month
+- [Grand Junction housing market by area](https://orionlovehomes.com/grand-junction-housing-market): median sold price, months of supply, days on market and homes for sale for Mesa County, by area and by price range, updated every Monday from local MLS data
 
 ## Area selling guides
 
-Each guide includes local selling advice and market statistics (median sale price, average days on market and active listings) from RentCast, refreshed on the 1st and 15th of each month.
+Each guide includes local selling advice and market statistics (median sold price, median days on market and homes for sale) from local MLS data, updated every Monday.
 
 - [Mesa County areas overview](https://orionlovehomes.com/areas)
 - [Selling in the Redlands](https://orionlovehomes.com/sell-redlands)

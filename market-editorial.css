@@ -1,6 +1,7 @@
 /* =========================================================
    Page: Grand Junction housing market (market-page)
-   Owns: hero, area table, reading notes, closing invite.
+   Owns: hero, county numbers, price-range and area tables, seller notes, closing invite.
+   Everything between the mls: markers in the page is written by scripts/update-market-from-mls.mjs.
    Shared chrome, portraits and action links come from editorial-base.css.
 ========================================================= */
 
@@ -20,7 +21,7 @@
 /* Table section */
 .market-table-section{padding:clamp(3.6rem,7vw,5.6rem) 0}
 .market-table-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.4rem,4vw,3.6rem);align-items:end;margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
-.market-table-intro h2,.market-notes h2,.market-close h2{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.02;letter-spacing:-.02em;color:var(--editorial-navy,#0c1a3d)}
+.market-table-intro h2,.market-bands h2,.market-close h2{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,3.8vw,3.1rem);line-height:1.02;letter-spacing:-.02em;color:var(--editorial-navy,#0c1a3d)}
 .market-highlights{margin:0;padding-top:1rem;border-top:1px solid rgba(184,146,58,.42);color:rgba(26,26,46,.74);font-size:1rem;line-height:1.7}
 .market-highlights:empty{display:none}
 
@@ -30,17 +31,43 @@
 .market-table thead th:first-child{text-align:left}
 .market-table tbody th,.market-table tbody td{padding:1rem 1rem 1rem 0;border-bottom:1px solid rgba(12,26,61,.1)}
 .market-table tbody th{font-weight:400;text-align:left}
-.market-table tbody th a{color:var(--editorial-navy,#0c1a3d);font-family:'Cormorant Garamond',serif;font-size:1.25rem;text-decoration:none}
+.market-table tbody th a,.market-table tbody th span{color:var(--editorial-navy,#0c1a3d);font-family:'Cormorant Garamond',serif;font-size:1.25rem;text-decoration:none}
 .market-table tbody th a:hover{color:var(--editorial-gold,#b8923a)}
 .market-table tbody td{color:rgba(26,26,46,.8);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
 .market-table tbody tr:hover{background:rgba(232,225,208,.35)}
 .market-page-note{margin:1.1rem 0 0;color:rgba(26,26,46,.7);font-size:.8rem}
 
-/* Reading notes */
-.market-notes{padding:clamp(3.6rem,7vw,5.6rem) 0;background:#fff}
-.market-notes__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.6rem,5vw,4.4rem);align-items:start}
-.market-notes__body{max-width:640px}
-.market-notes__body p{margin:0 0 1.1rem;color:rgba(26,26,46,.72);font-size:1rem;line-height:1.8}
+/* Area groups inside the table */
+.market-table tbody tr.market-table__group th{padding:1.8rem 0 .7rem;border-bottom:1px solid rgba(12,26,61,.22);color:var(--editorial-gold-ink,#7a5c1f);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.market-table tbody:first-of-type tr.market-table__group th{padding-top:1.2rem}
+.market-table tbody tr.market-table__group:hover{background:none}
+
+/* County numbers */
+.market-pulse{padding:clamp(3.6rem,7vw,5.6rem) 0 clamp(2.4rem,5vw,3.6rem)}
+.market-pulse__grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(12,26,61,.12);border-bottom:1px solid rgba(12,26,61,.12)}
+.market-pulse__stat{padding:1.4rem 1rem 1.4rem 1.2rem;border-right:1px solid rgba(12,26,61,.12)}
+.market-pulse__stat:first-child{padding-left:0}
+.market-pulse__stat:last-child{border-right:0}
+.market-pulse__stat strong{display:block;white-space:nowrap;color:var(--editorial-navy,#0c1a3d);font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;letter-spacing:-.04em;line-height:.95}
+.market-pulse__stat span{display:block;margin-top:.8rem;color:rgba(26,26,46,.74);font-size:.62rem;font-weight:800;letter-spacing:.14em;line-height:1.45;text-transform:uppercase}
+.market-pulse__stat em{display:block;margin-top:.45rem;color:rgba(26,26,46,.7);font-size:.86rem;font-style:normal;line-height:1.45}
+
+/* Price ranges */
+.market-bands{padding:clamp(3.6rem,7vw,5.6rem) 0;background:#fff}
+.market-bands__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.6rem,5vw,4.4rem);align-items:start}
+.market-bands__read{margin:1.2rem 0 0;max-width:34ch;color:rgba(26,26,46,.74);font-size:1rem;line-height:1.7}
+
+/* Seller notes and footnote */
+.market-sellers{padding:clamp(3.6rem,7vw,5.6rem) 0;background:var(--editorial-sand,#e8e1d0)}
+.market-sellers__list{max-width:760px}
+.market-seller-note{padding:1.3rem 0;border-top:1px solid rgba(12,26,61,.16)}
+.market-seller-note:first-child{padding-top:0;border-top:0}
+.market-seller-note:last-child{padding-bottom:0}
+.market-seller-note h3{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.3rem,2vw,1.55rem);line-height:1.2;color:var(--editorial-navy,#0c1a3d)}
+.market-seller-note p{margin:.6rem 0 0;color:rgba(26,26,46,.8);font-size:1rem;line-height:1.75}
+.market-seller-note a{color:var(--editorial-navy,#0c1a3d);text-decoration:underline;text-decoration-color:rgba(184,146,58,.7);text-underline-offset:3px}
+.market-footnote{padding:1.8rem 0 0}
+.market-footnote p{margin:0 0 .5rem;max-width:86ch;color:rgba(26,26,46,.7);font-size:.8rem;line-height:1.6}
 
 /* Closing invite */
 .market-close{padding:clamp(3.6rem,7vw,5.6rem) 0}
@@ -50,10 +77,15 @@
 .market-close__links{margin-top:1.4rem}
 
 @media (max-width:860px){
-  .market-table-intro,.market-notes__grid,.market-close__grid{grid-template-columns:1fr}
+  .market-table-intro,.market-bands__grid,.market-close__grid{grid-template-columns:1fr}
   .market-close__grid .advisor-portrait{margin-bottom:1rem}
+  .market-bands__read{max-width:none}
+  .market-pulse__grid{grid-template-columns:repeat(2,1fr)}
+  .market-pulse__stat:nth-child(2){border-right:0}
+  .market-pulse__stat:nth-child(-n+2){border-bottom:1px solid rgba(12,26,61,.12)}
+  .market-pulse__stat:nth-child(3){padding-left:0}
 }
-/* Phones: each area becomes a small block with a labelled row of three figures. */
+/* Phones: each row becomes a small block with its figures labelled. */
 @media (max-width:640px){
   .market-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .market-table,.market-table tbody{display:block}
@@ -61,9 +93,17 @@
   .market-table tbody tr:hover{background:none}
   .market-table tbody th,.market-table tbody td{display:block;padding:0;border:0;text-align:left}
   .market-table tbody th{grid-column:1/-1}
-  .market-table tbody th a{font-size:1.3rem}
+  .market-table tbody th a,.market-table tbody th span{font-size:1.3rem}
+  .market-table--bands tbody tr{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .market-table tbody tr.market-table__group{padding:1.4rem 0 .6rem}
+  .market-table tbody tr.market-table__group th{padding:0;border:0}
   .market-table tbody td{font-size:1rem;color:var(--editorial-navy,#0c1a3d)}
-  .market-table tbody td::before{content:attr(data-label);display:block;margin-bottom:.2rem;color:var(--editorial-gold,#b8923a);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .market-table tbody td::before{content:attr(data-label);display:block;margin-bottom:.2rem;color:var(--editorial-gold-ink,#7a5c1f);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+}
+@media (max-width:420px){
+  .market-pulse__grid{grid-template-columns:1fr}
+  .market-pulse__stat{padding-left:0;border-right:0;border-bottom:1px solid rgba(12,26,61,.12)}
+  .market-pulse__stat:last-child{border-bottom:0}
 }
 
 /* Phones: taller tap area for the area links in the stacked table. */

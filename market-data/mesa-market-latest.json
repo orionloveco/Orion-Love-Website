@@ -1,0 +1,229 @@
+{
+  "source": "GJARA Paragon MLS, Mesa County Weekly Market Pulse",
+  "scope": "Mesa County residential: single-family, condo, townhome",
+  "generatedAt": "2026-10-13T16:24:19Z",
+  "periodText": "4-week period: September 14, 2026 through October 11, 2026. 13-week period: July 13, 2026 through October 11, 2026. Active listings counted on October 13, 2026.",
+  "period": {
+    "fourWeekStart": "2026-09-14",
+    "fourWeekEnd": "2026-10-11",
+    "thirteenWeekStart": "2026-07-13",
+    "thirteenWeekEnd": "2026-10-11",
+    "activeCountedOn": "2026-10-13"
+  },
+  "county": [
+    {
+      "metric": "Closings (4 weeks)",
+      "value": "192",
+      "samePeriodLastYear": "221"
+    },
+    {
+      "metric": "Median sold price (4 weeks)",
+      "value": "$418,500",
+      "samePeriodLastYear": "$400,000"
+    },
+    {
+      "metric": "Median days on market (4 weeks)",
+      "value": "70",
+      "samePeriodLastYear": "67"
+    },
+    {
+      "metric": "Sold-to-list ratio, median per sale (4 weeks)",
+      "value": "99.1%",
+      "samePeriodLastYear": "99.2%"
+    },
+    {
+      "metric": "Median sold price per sq ft (4 weeks)",
+      "value": "$272",
+      "samePeriodLastYear": "$269"
+    },
+    {
+      "metric": "Sales with a seller concession (4 weeks)",
+      "value": "87",
+      "samePeriodLastYear": "96"
+    },
+    {
+      "metric": "Share of sales with a seller concession (4 weeks)",
+      "value": "45.3%",
+      "samePeriodLastYear": "43.4%"
+    },
+    {
+      "metric": "Median seller concession (4 weeks)",
+      "value": "$7,000",
+      "samePeriodLastYear": "$6,974"
+    },
+    {
+      "metric": "Active listings",
+      "value": "1,107",
+      "samePeriodLastYear": "n/a"
+    },
+    {
+      "metric": "Months of supply",
+      "value": "5.0",
+      "samePeriodLastYear": "n/a"
+    },
+    {
+      "metric": "Share of active listings on market more than 90 days",
+      "value": "35.9%",
+      "samePeriodLastYear": "n/a"
+    },
+    {
+      "metric": "Price reductions (past 7 days)",
+      "value": "98",
+      "samePeriodLastYear": "n/a"
+    },
+    {
+      "metric": "Median price cut from original list (past 7 days)",
+      "value": "3.7%",
+      "samePeriodLastYear": "n/a"
+    }
+  ],
+  "priceBands": [
+    {
+      "priceBand": "Under $300k",
+      "activeListings": "152",
+      "monthsOfSupply": "4.4"
+    },
+    {
+      "priceBand": "$300–400k",
+      "activeListings": "249",
+      "monthsOfSupply": "4.3"
+    },
+    {
+      "priceBand": "$400–500k",
+      "activeListings": "206",
+      "monthsOfSupply": "3.8"
+    },
+    {
+      "priceBand": "$500–750k",
+      "activeListings": "274",
+      "monthsOfSupply": "5.6"
+    },
+    {
+      "priceBand": "$750k+",
+      "activeListings": "226",
+      "monthsOfSupply": "7.8"
+    }
+  ],
+  "areas": [
+    {
+      "area": "Redlands",
+      "activeListings": "139",
+      "closings4wk": "27",
+      "medianSold4wk": "$660,000",
+      "medianDays4wk": "64",
+      "closings13wk": "85",
+      "medianSold13wk": "$630,000",
+      "medianDays13wk": "73"
+    },
+    {
+      "area": "Orchard Mesa",
+      "activeListings": "100",
+      "closings4wk": "17",
+      "medianSold4wk": "$448,200",
+      "medianDays4wk": "65",
+      "closings13wk": "64",
+      "medianSold13wk": "$412,000",
+      "medianDays13wk": "77"
+    },
+    {
+      "area": "Grand Junction City",
+      "activeListings": "119",
+      "closings4wk": "21",
+      "medianSold4wk": "$369,900",
+      "medianDays4wk": "51",
+      "closings13wk": "73",
+      "medianSold13wk": "$340,000",
+      "medianDays13wk": "51"
+    },
+    {
+      "area": "North Grand Junction",
+      "activeListings": "176",
+      "closings4wk": "32",
+      "medianSold4wk": "$457,500",
+      "medianDays4wk": "92",
+      "closings13wk": "97",
+      "medianSold13wk": "$480,000",
+      "medianDays13wk": "74"
+    },
+    {
+      "area": "NE Grand Junction",
+      "activeListings": "106",
+      "closings4wk": "23",
+      "medianSold4wk": "$379,800",
+      "medianDays4wk": "61",
+      "closings13wk": "80",
+      "medianSold13wk": "$396,250",
+      "medianDays13wk": "61"
+    },
+    {
+      "area": "SE Grand Junction",
+      "activeListings": "85",
+      "closings4wk": "18",
+      "medianSold4wk": "$339,000",
+      "medianDays4wk": "66",
+      "closings13wk": "59",
+      "medianSold13wk": "$350,000",
+      "medianDays13wk": "59"
+    },
+    {
+      "area": "NW Grand Junction",
+      "activeListings": "44",
+      "closings4wk": "6",
+      "medianSold4wk": "$409,900",
+      "medianDays4wk": "85",
+      "closings13wk": "26",
+      "medianSold13wk": "$494,950",
+      "medianDays13wk": "84"
+    },
+    {
+      "area": "Fruita",
+      "activeListings": "138",
+      "closings4wk": "24",
+      "medianSold4wk": "$439,564",
+      "medianDays4wk": "87",
+      "closings13wk": "89",
+      "medianSold13wk": "$460,000",
+      "medianDays13wk": "74"
+    },
+    {
+      "area": "Loma / Mack",
+      "activeListings": "23",
+      "closings4wk": "1",
+      "medianSold4wk": "n/a",
+      "medianDays4wk": "n/a",
+      "closings13wk": "15",
+      "medianSold13wk": "$730,000",
+      "medianDays13wk": "87"
+    },
+    {
+      "area": "Palisade",
+      "activeListings": "32",
+      "closings4wk": "7",
+      "medianSold4wk": "$430,000",
+      "medianDays4wk": "69",
+      "closings13wk": "20",
+      "medianSold13wk": "$407,500",
+      "medianDays13wk": "63"
+    },
+    {
+      "area": "Clifton",
+      "activeListings": "65",
+      "closings4wk": "10",
+      "medianSold4wk": "$357,000",
+      "medianDays4wk": "98",
+      "closings13wk": "42",
+      "medianSold13wk": "$325,250",
+      "medianDays13wk": "61"
+    },
+    {
+      "area": "Other Mesa County",
+      "activeListings": "80",
+      "closings4wk": "6",
+      "medianSold4wk": "$340,250",
+      "medianDays4wk": "100",
+      "closings13wk": "20",
+      "medianSold13wk": "$438,150",
+      "medianDays13wk": "71"
+    }
+  ]
+}

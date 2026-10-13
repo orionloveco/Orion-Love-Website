@@ -42,7 +42,7 @@ These come before style.
 - **Real reviews only**, with the client's permission, once they exist.
 - **Only confirmed personal facts.** Orion's background is limited to what's in `BUSINESS_INFO.md`. Ask before adding anything new.
 - **Pronouns:** not stated. Use "Orion" or first person ("I"); never "he" or "she".
-- **Local facts must be well known and checkable** (e.g. 18 Road trails near Fruita, Colorado National Monument above the Redlands). No invented neighborhood statistics; market numbers come only from the RentCast pipeline.
+- **Local facts must be well known and checkable** (e.g. 18 Road trails near Fruita, Colorado National Monument above the Redlands). No invented neighborhood statistics; market numbers come only from the weekly MLS update (see `AGENTS.md`), published as totals with the GJARA notice.
 - **Licensing language:** "Colorado Associate Broker License #FA.100110841", brokerage "Keller Williams Colorado West Realty". Orion is a National Association of Realtors member, so "Realtor" is allowed.
 
 ## 4. Findability (AI first, then search)
@@ -70,7 +70,7 @@ Principles:
 | About `/about` | Orion Love, Grand Junction real estate | Turn a researcher into someone who trusts Orion |
 | Area guides `/sell-<area>` | Selling a home in [area] | Local seller guidance plus current market numbers |
 | Areas `/areas` | Mesa County area guides | Route to the right area guide |
-| Housing Market `/grand-junction-housing-market` | Grand Junction housing market, median home price by area | All ten areas' numbers in one table; updates itself |
+| Housing Market `/grand-junction-housing-market` | Grand Junction housing market, median home price by area | County numbers, price ranges and every area in one place; updates itself from the weekly MLS pull |
 | FAQ `/faq` | Seller questions | Answer real questions plainly |
 | Market Briefings `/blog`, `/blog-<slug>` | Timely local market questions | Show current, local judgment |
 | Buyers, Contact, Privacy | Supporting pages | |
@@ -85,7 +85,7 @@ Principles:
 
 **About page.** Meeting Orion, not reading a résumé. Profile hero, Orion's story in first person (Delta, the valley since 2010, cabinetry, why sellers), grounding details (license, brokerage, profiles), a soft closing invitation.
 
-**Area guides (10 pages).** Neighborhood seller guides, not data dashboards. Four sections: **Hero** (`Selling in <em>Area</em>.` headline, one-line deck, three short tags, a note) → **Market Read** (the area's defining point, photo, stat cards, a one-sentence market summary, source note) → **Local Details** (Orion's first-person rail note, a lead heading, four short paragraphs, a closing line) → **Compare & Continue** (links to two nearby guides, Orion's photo, next steps to Home Value and Contact).
+**Area guides (10 pages).** Neighborhood seller guides, not data dashboards. Four sections: **Hero** (`Selling in <em>Area</em>.` headline, one-line deck, three short tags, a note) → **Market Read** (the area's defining point, photo, stat cards, a market summary sentence, the MLS notice) → **Local Details** (Orion's first-person rail note, a lead heading, four short paragraphs, a closing line) → **Compare & Continue** (links to two nearby guides, Orion's photo, next steps to Home Value and Contact).
 Each guide must have **its own angle** and at least one observation only someone local would make. Read a new or edited guide next to two others: if the insights or sentences are interchangeable, rewrite it.
 
 **Market Briefings.** One local question per post, answered plainly with sourced numbers. Short title (≈60 characters with " | Orion Love").
@@ -137,8 +137,8 @@ Gold is punctuation, not paint. **Readable contrast (WCAG AA):** gold `#b8923a` 
 
 ## 8. Keeping the site healthy
 
-- **Automatic:** area stats, summary sentences and sitemap dates refresh on the 1st and 15th of each month.
-- **Monthly:** publish one Market Briefing (the fresh numbers on the 1st/15th are a natural prompt).
+- **Weekly:** the Monday MLS pull refreshes the housing market page, the area stats and their summary sentences once the market update is run and published.
+- **Weekly:** publish a Market Briefing (each Monday's fresh numbers are a natural prompt).
 - **Every few months:** review Google Search Console and Cloudflare Web Analytics; reread the area guides for anything out of date.
 - **Once a year:** review this guide end to end.
 

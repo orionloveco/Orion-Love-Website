@@ -228,75 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ============================================================
      Shared helpers
      ============================================================ */
-  const MARKET_STATS_URL =
-    'https://orion-market-stats.orion-love-co.workers.dev/api/market-stats';
-
   const PROXY_URL =
     'https://fub-contact-proxy.orion-love-co.workers.dev';
-
-  function formatCurrency(value) {
-    if (!Number.isFinite(value)) return '$--';
-    if (value >= 1000000) {
-      return '$' + (value / 1000000).toFixed(2).replace(/\.00$/, '') + 'M';
-    }
-    if (value >= 1000) {
-      return '$' + Math.round(value / 1000) + 'K';
-    }
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    }).format(value);
-  }
-
-  function formatCurrencyHTML(value) {
-    if (!Number.isFinite(value)) return '<span>$</span>--';
-    const rounded = Math.round(value);
-
-    if (rounded >= 1000000) {
-      return '<span>$</span>' + (rounded / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-    }
-    if (rounded >= 1000) {
-      return '<span>$</span>' + Math.round(rounded / 1000) + 'K';
-    }
-    return '<span>$</span>' + rounded.toLocaleString();
-  }
-
-  function formatDays(value) {
-    return Number.isFinite(value) ? `${Math.round(value)} days` : 'Stats update monthly';
-  }
-
-  function formatNumber(value) {
-    return Number.isFinite(value) ? Math.round(value).toLocaleString() : 'Monthly snapshot';
-  }
-
-  const MARKET_STAT_SOURCE_KEYS = {
-    medianPrice: ['medianPrice', 'medianSalePrice', 'medianListPrice'],
-    averageDaysOnMarket: ['averageDaysOnMarket', 'avgDaysOnMarket', 'averageDom'],
-    totalListings: ['totalListings', 'activeListings'],
-  };
-
-  function parseMarketStatValue(value) {
-    if (typeof value === 'number') return Number.isFinite(value) ? value : null;
-    if (typeof value !== 'string' || value.trim() === '') return null;
-
-    const numericValue = Number(value.replace(/[$,]/g, '').replace(/\s*days?$/i, '').trim());
-    return Number.isFinite(numericValue) ? numericValue : null;
-  }
-
-  function getMarketStatValue(areaData, statKey) {
-    const sourceKeys = MARKET_STAT_SOURCE_KEYS[statKey] || [statKey];
-
-    for (const sourceKey of sourceKeys) {
-      if (!Object.prototype.hasOwnProperty.call(areaData, sourceKey)) continue;
-
-      const numericValue = parseMarketStatValue(areaData[sourceKey]);
-      if (numericValue === null) continue;
-      return numericValue;
-    }
-
-    return null;
-  }
 
   function showFormMsg(el, text, type) {
     if (!el) return;
@@ -337,80 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ============================================================
      Shared neighborhood stats loader
      ============================================================ */
-  function renderMarketAreaBlock(blockEl, areaData, generatedAt) {
-    const useHtmlCurrency = blockEl.dataset.marketCurrency === 'html';
-
-    blockEl.querySelectorAll('[data-market-stat]').forEach((statEl) => {
-      const statKey = statEl.dataset.marketStat;
-      const statValue = getMarketStatValue(areaData, statKey);
-
-      if (statValue === null) return;
-
-      if (statKey === 'medianPrice') {
-        if (blockEl.dataset.marketCurrency === 'full') statEl.textContent = `$${Math.round(statValue).toLocaleString('en-US')}`;
-        else if (useHtmlCurrency) statEl.innerHTML = formatCurrencyHTML(statValue);
-        else statEl.textContent = formatCurrency(statValue);
-        return;
-      }
-
-      if (statKey === 'averageDaysOnMarket') {
-        statEl.textContent = formatDays(statValue);
-        return;
-      }
-
-      if (statKey === 'totalListings') {
-        statEl.textContent = formatNumber(statValue);
-      }
-    });
-
-    const updated = areaData.lastUpdatedDate || generatedAt;
-
-    // Keep the plain-sentence summary in step with the live figures (same wording as the snapshot script).
-    const summaryEl = blockEl.querySelector('[data-market-summary]');
-    const price = getMarketStatValue(areaData, 'medianPrice');
-    const days = getMarketStatValue(areaData, 'averageDaysOnMarket');
-    const listings = getMarketStatValue(areaData, 'totalListings');
-    const updatedDate = updated ? new Date(updated) : null;
-    if (summaryEl && summaryEl.dataset.marketSummaryArea && price !== null && days !== null && listings !== null && updatedDate && !Number.isNaN(updatedDate.getTime())) {
-      const dateText = updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
-      summaryEl.textContent = `As of ${dateText}, the median sale price in ${summaryEl.dataset.marketSummaryArea} was $${Math.round(price).toLocaleString('en-US')}, homes spent an average of ${formatDays(days)} on market, and there were ${formatNumber(listings)} active listings, according to RentCast.`;
-    }
-  }
-
-  async function loadMarketStatsBlocks() {
-    const marketBlocks = [...document.querySelectorAll('[data-market-area]')];
-    if (!marketBlocks.length) return;
-
-    try {
-      const controller = new AbortController();
-      const timeoutId = window.setTimeout(() => controller.abort(), 5000);
-
-      const res = await fetch(MARKET_STATS_URL, {
-        headers: { Accept: 'application/json' },
-        signal: controller.signal,
-      });
-      window.clearTimeout(timeoutId);
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const data = await res.json();
-
-      marketBlocks.forEach((blockEl) => {
-        const areaKey = blockEl.dataset.marketArea;
-        const areaData = data?.areas?.[areaKey];
-
-        if (!areaData) {
-          console.error(`Market stats area not found: ${areaKey}`);
-          return;
-        }
-
-        renderMarketAreaBlock(blockEl, areaData, data.generatedAt);
-      });
-    } catch (err) {
-      console.error('Market stats load failed:', err);
-    }
-  }
-
   /* ============================================================
      Page initializers
      ============================================================ */
@@ -612,11 +471,6 @@ document.addEventListener('DOMContentLoaded', function () {
       key: 'contact-form',
       when: () => !!document.getElementById('contactForm'),
       init: initContactForm,
-    },
-    {
-      key: 'market-stats-blocks',
-      when: () => document.querySelector('[data-market-area]'),
-      init: loadMarketStatsBlocks,
     },
     {
       key: 'seller-lead-forms',

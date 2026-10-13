@@ -15,7 +15,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 ## Workflow
 
-1. `git pull` first: a GitHub Action commits stat updates on the 1st and 15th.
+1. `git pull` first: posts and stat updates are sometimes committed from other sessions.
 2. Preview locally: `python3 -m http.server 8765`, then open `http://localhost:8765/<page>.html` (clean URLs only work on the live site).
 3. Check desktop and phone widths (320 / 375 / 768 / 1024 / 1280+): no sideways overflow, nothing hidden under the fixed header, columns aligned.
 4. Run the checks below, then show Orion the preview and get a yes.
@@ -32,11 +32,10 @@ Orion is not a developer: explain changes in plain language, preview before publ
 | `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is the small site-wide foundation (tokens, reset, base headings, nav-link hover, reveal hooks, form layout); `editorial-base.css` owns shared components (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `market-editorial.css`, etc.) owns page layout only |
 | `partials/` | Master copies of shared page parts and site-wide JSON-LD entities (see Non-negotiables #3) |
 | `scripts/sync-shared.mjs` | Copies `partials/` into every page; `--check` fails if any page has drifted |
-| `script.js` | Menu, header state, form submission, live market-stat refresh |
+| `script.js` | Menu, header state, form submission |
 | `images/` | Site photos (≤2000px), `brand/` (logos, favicons, share image), `portraits/` (photo library; see `images/README.md`) |
-| `market-data/*.json` | Latest stats per area (written by the stats job) |
-| `scripts/update-market-snapshots.mjs` | Writes stats into area pages; `scripts/test-market-snapshot-fallbacks.mjs` tests it |
-| `.github/workflows/update-market-snapshots.yml` | Runs the stats job 16:00 UTC on the 1st and 15th |
+| `market-data/mesa-market-latest.json` | This week's MLS numbers, written every Monday by Orion's "Mesa County Weekly Market Pulse" task; `market-data/history/` keeps past weeks. Not served publicly (`_redirects`) |
+| `scripts/update-market-from-mls.mjs` | Writes those numbers into the housing market page and the area guides; `scripts/test-market-from-mls.mjs` tests it |
 | `sitemap.xml`, `robots.txt`, `llms.txt` | Crawl files; keep in sync when pages are added |
 | `_redirects`, `_headers` | Cloudflare Pages rules (`.html` → clean URLs; internal docs/scripts redirect to `/`) |
 | `validate_site.py` | Canonical, schema and footer checks |
@@ -45,7 +44,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 - **Header:** wordmark image + brokerage text (`.logo-wordmark`, `.logo-brokerage`); the brokerage stacks under the wordmark below 1200px. The top menu has six links (Sellers, Buyers, Home Value, Areas, About, Market Briefings) plus Contact; Home and FAQ live in the footer and phone menu. The full menu shows above **960px**, the ☰ menu and tap-to-call (`.mobile-call`) below. The breakpoint lives in `editorial-base.css` *and* `script.js`: change both. The header turns solid navy on scroll (`.solid`).
 - **Portraits:** `.advisor-portrait` (framed photo + name/brokerage caption). Variants: `--on-dark` (navy sections), `--end` (right-aligned), `--compact` (small photo beside caption, used on area pages). Don't reuse a photo already used elsewhere.
-- **Area guides:** fixed four-section structure (README §5). Keep every `data-market-*` attribute: the stats job depends on them.
+- **Area guides:** fixed four-section structure (README §5). Never edit between the `<!-- mls:area-stats -->` markers: the market update owns that block.
 - **Forms fallback:** `.form-nojs-note` shows phone/email only when JavaScript fails (`html` lacks `.js`).
 
 ## Forms (leads)
@@ -58,17 +57,20 @@ Contact, Home Value and Buyer forms post JSON from `script.js` to the `fub-conta
 
 ## Market stats pipeline
 
-1. Cloudflare Worker `orion-market-stats` (in Orion's Cloudflare account, not this repo) fetches RentCast data at **08:00 UTC on the 1st and 15th**.
-2. The GitHub Action runs `update-market-snapshots.mjs` at **16:00 UTC** the same days. It fills the table, highlights sentence and Dataset on `grand-junction-housing-market.html` and, on each area guide, writes the stat cards, the one-sentence market summary (`data-market-summary`, which carries the "As of" date and the RentCast source), Dataset JSON-LD, `market-data/*.json`, and the sitemap `<lastmod>` for changed pages, then commits and deploys.
-3. `script.js` refreshes the cards and summary from the Worker when a visitor loads the page.
+The numbers come from the GJARA MLS (Paragon), not from an API.
 
-Gotchas already hit once:
-- GitHub **disables scheduled workflows after 60 days without repo activity.** If stats go stale, check the Actions tab.
-- Use **function replacers** in `String.replace` (a price like "$369,900" in a replacement string becomes a `$3` backreference).
-- The API currently returns `lastUpdatedDate: null`; the script falls back to `generatedAt`.
-- Tests must not hard-code a month's numbers. Read current page values instead.
+1. Every **Monday**, Orion's scheduled "Mesa County Weekly Market Pulse" task (it runs outside this repo) pulls residential sales for Mesa County and overwrites `market-data/mesa-market-latest.json`, keeping a dated copy in `market-data/history/`.
+2. `node scripts/update-market-from-mls.mjs` reads that file and rewrites everything between the `<!-- mls:... -->` markers: on `grand-junction-housing-market.html` the hero date, county numbers, price-range table, area table, seller notes and footnote; on each area guide the stat cards, summary sentence and MLS notice. It also bumps the sitemap `<lastmod>` for changed pages.
+3. Commit and push (after Orion's OK, as with any visible change).
 
-Local run: `node scripts/update-market-snapshots.mjs --dry-run` (needs Node; `brew install node`).
+Rules:
+- **Every number and every sentence built on a number is generated by the script.** Change wording in the script's templates, never in the pages, or the next update will overwrite it. Headlines such as "Nearly half of sales..." are chosen from the data so they stay true.
+- **MLS rules (GJARA Section 13):** publish aggregate statistics only, never individual properties, and keep the "Based on information from the Grand Junction Area REALTOR® Association MLS for the period ... through ..." notice on every page that shows them.
+- **Bad data stops the run.** A missing or renamed area, a non-numeric value or a bad date exits with an error before any page is written. Area names must match the MLS names in the script's `AREAS` list exactly.
+- **Windows:** county figures cover four weeks ("the past month"); area medians cover thirteen weeks ("three months"); homes for sale are a count on the report day. An area with fewer than 3 sales in thirteen weeks shows no median.
+- SE Grand Junction and Other Mesa County appear in the market table but have no area guide.
+
+Local check: `node scripts/update-market-from-mls.mjs --check` fails if any page is out of date with the data file (needs Node; `brew install node`).
 
 ## Structured data
 
@@ -77,7 +79,7 @@ Every page's JSON-LD `@graph` includes the shared entities, which must stay iden
 - `Person` `#orion-love-person`: includes image, description, `sameAs`, license credential (`hasCredential`), `knowsAbout`
 - `RealEstateAgent` `#orion-love`, `LocalBusiness` `#localbusiness`, `WebSite` `#website`
 
-Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service`, `Dataset`). Rules:
+Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service`). There is no `Dataset` markup: the MLS figures are not ours to license. Rules:
 - Any node referenced by `@id` must be defined on that page (blog posts need `LocalBusiness` because it's the publisher).
 - `FAQPage` on `/faq` lists **all** visible questions with their exact answer text. If FAQ content changes, rebuild it from the page.
 - The Google Business Profile link is `https://www.google.com/search?kgmid=/g/11yw040cd8` (footer and `sameAs`).
@@ -95,7 +97,8 @@ Plus page nodes (`WebPage`, `BreadcrumbList`, `FAQPage`, `BlogPosting`, `Service
 ```bash
 node scripts/sync-shared.mjs --check                  # shared parts identical on every page
 python3 validate_site.py                              # canonicals, schema, footer
-node scripts/test-market-snapshot-fallbacks.mjs       # stats pipeline
+node scripts/test-market-from-mls.mjs                 # market update
+node scripts/update-market-from-mls.mjs --check        # pages match this week's data file
 node --check script.js                                # JS syntax
 ```
 

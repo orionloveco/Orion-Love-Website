@@ -62,6 +62,7 @@
 /validate_site.py / 301
 /images/README.md / 301
 /scripts/* / 301
+/market-data/* / 301
 /.github/* / 301
 /favicon.ico /images/brand/favicon-32.png 301
 /partials/* / 301
