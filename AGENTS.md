@@ -111,6 +111,6 @@ Also:
 ## Don'ts
 
 - Don't bulk-delete branches, force-push, or rewrite history on `main`.
-- Don't add JS-rendered critical content or new tracking without asking. Analytics already in place: Cloudflare Web Analytics (injected by Cloudflare) and Google Analytics 4 (`G-EX71Z7SG72`, in `partials/head-assets.html`, added at Orion's request in October 2026).
+- Don't add JS-rendered critical content or new tracking without asking. Analytics already in place: Cloudflare Web Analytics (injected by Cloudflare) and Google Analytics 4 (`G-EX71Z7SG72`, in `partials/head-assets.html`, added at Orion's request in October 2026). The GA snippet switches itself off on any host other than orionlovehomes.com, so local previews and the pages.dev copy are not counted.
 - Don't change `BUSINESS_INFO.md` facts or add personal details without Orion's confirmation.
 - Don't publish without showing Orion a preview when the change is visible.
