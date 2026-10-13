@@ -85,7 +85,7 @@ Principles:
 
 **About page.** Meeting Orion, not reading a résumé. Profile hero, Orion's story in first person (Delta, the valley since 2010, cabinetry, why sellers), grounding details (license, brokerage, profiles), a soft closing invitation.
 
-**Area guides (10 pages).** Neighborhood seller guides, not data dashboards. Four sections: **Hero** (`Selling in <em>Area</em>.` headline, one-line deck, three short tags, a note) → **Market Read** (the area's defining point, photo, stat cards, a market summary sentence, the MLS notice) → **Local Details** (Orion's first-person rail note, a lead heading, four short paragraphs, a closing line) → **Compare & Continue** (links to two nearby guides, Orion's photo, next steps to Home Value and Contact).
+**Area guides (11 pages).** Neighborhood seller guides, not data dashboards. Four sections: **Hero** (`Selling in <em>Area</em>.` headline, one-line deck, three short tags, a note) → **Market Read** (the area's defining point, photo, stat cards, a market summary sentence, the MLS notice) → **Local Details** (Orion's first-person rail note, a lead heading, four short paragraphs, a closing line) → **Compare & Continue** (links to two nearby guides, Orion's photo, next steps to Home Value and Contact).
 Each guide must have **its own angle** and at least one observation only someone local would make. Read a new or edited guide next to two others: if the insights or sentences are interchangeable, rewrite it.
 
 **Market Briefings.** One local question per post, answered plainly with sourced numbers. Short title (≈60 characters with " | Orion Love").

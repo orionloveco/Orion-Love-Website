@@ -9,7 +9,7 @@ import path from 'node:path';
 const root = process.cwd();
 const script = path.join(root, 'scripts/update-market-from-mls.mjs');
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'orion-mls-market-'));
-const areaPages = ['sell-redlands', 'sell-orchard-mesa', 'sell-downtown-grand-junction', 'sell-north-grand-junction', 'sell-northeast-grand-junction', 'sell-northwest-grand-junction', 'sell-fruita', 'sell-loma-mack', 'sell-palisade', 'sell-clifton'];
+const areaPages = ['sell-redlands', 'sell-orchard-mesa', 'sell-downtown-grand-junction', 'sell-north-grand-junction', 'sell-northeast-grand-junction', 'sell-southeast-grand-junction', 'sell-northwest-grand-junction', 'sell-fruita', 'sell-loma-mack', 'sell-palisade', 'sell-clifton'];
 const pages = ['grand-junction-housing-market', ...areaPages].map((p) => `${p}.html`);
 for (const file of [...pages, 'sitemap.xml']) fs.copyFileSync(path.join(root, file), path.join(temp, file));
 

@@ -30,7 +30,7 @@ const AREAS = [
   { mls: 'Grand Junction City', label: 'Central Grand Junction', name: 'central Grand Junction', group: 'city', page: 'sell-downtown-grand-junction' },
   { mls: 'North Grand Junction', label: 'North Grand Junction', name: 'North Grand Junction', group: 'city', page: 'sell-north-grand-junction' },
   { mls: 'NE Grand Junction', label: 'NE Grand Junction', name: 'Northeast Grand Junction', group: 'city', page: 'sell-northeast-grand-junction' },
-  { mls: 'SE Grand Junction', label: 'SE Grand Junction', name: 'Southeast Grand Junction', group: 'city', page: null },
+  { mls: 'SE Grand Junction', label: 'SE Grand Junction', name: 'Southeast Grand Junction', group: 'city', page: 'sell-southeast-grand-junction' },
   { mls: 'NW Grand Junction', label: 'NW Grand Junction', name: 'Northwest Grand Junction', group: 'city', page: 'sell-northwest-grand-junction' },
   { mls: 'Fruita', label: 'Fruita', name: 'Fruita', group: 'surrounding', page: 'sell-fruita' },
   { mls: 'Loma / Mack', label: 'Loma &amp; Mack', name: 'Loma and Mack', group: 'surrounding', page: 'sell-loma-mack' },
@@ -340,7 +340,9 @@ function fillMarker(html, name, content, file) {
   const start = html.indexOf(open);
   const end = html.indexOf(close);
   if (start === -1 || end === -1 || end < start) fail(`Marker "${name}" not found in ${file}`);
-  return `${html.slice(0, start + open.length)}\n${content}\n${html.slice(end)}`;
+  const indent = html.slice(html.lastIndexOf('\n', end) + 1, end);
+  const closeIndent = /^[ \t]*$/.test(indent) ? indent : '';
+  return `${html.slice(0, start + open.length)}\n${content}\n${closeIndent}${html.slice(end)}`;
 }
 
 function run() {

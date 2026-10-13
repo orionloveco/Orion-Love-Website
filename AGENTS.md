@@ -28,7 +28,7 @@ Orion is not a developer: explain changes in plain language, preview before publ
 
 | Path | What it is |
 |---|---|
-| `*.html` | 24 static pages (index, about, sell-with-orion, grand-junction-home-value, grand-junction-housing-market, buy-with-orion, contact, faq, areas, blog + posts, 10 `sell-<area>` guides, privacy, 404) |
+| `*.html` | 24 static pages (index, about, sell-with-orion, grand-junction-home-value, grand-junction-housing-market, buy-with-orion, contact, faq, areas, blog + posts, 11 `sell-<area>` guides, privacy, 404) |
 | `styles.css` → `editorial-base.css` → page CSS | Load order on every page. `styles.css` is the small site-wide foundation (tokens, reset, base headings, nav-link hover, reveal hooks, form layout); `editorial-base.css` owns shared components (header, nav, footer, forms, portraits, tokens); page CSS (`editorial-home.css`, `area-detail-editorial.css`, `market-editorial.css`, etc.) owns page layout only |
 | `partials/` | Master copies of shared page parts and site-wide JSON-LD entities (see Non-negotiables #3) |
 | `scripts/sync-shared.mjs` | Copies `partials/` into every page; `--check` fails if any page has drifted |
@@ -68,7 +68,7 @@ Rules:
 - **MLS rules (GJARA Section 13):** publish aggregate statistics only, never individual properties, and keep the "Based on information from the Grand Junction Area REALTOR® Association MLS for the period ... through ..." notice on every page that shows them.
 - **Bad data stops the run.** A missing or renamed area, a non-numeric value or a bad date exits with an error before any page is written. Area names must match the MLS names in the script's `AREAS` list exactly.
 - **Windows:** county figures cover four weeks ("the past month"); area medians cover thirteen weeks ("three months"); homes for sale are a count on the report day. An area with fewer than 3 sales in thirteen weeks shows no median.
-- SE Grand Junction and Other Mesa County appear in the market table but have no area guide.
+- Other Mesa County appears in the market table but has no area guide.
 
 Local check: `node scripts/update-market-from-mls.mjs --check` fails if any page is out of date with the data file (needs Node; `brew install node`).
 

@@ -28,7 +28,7 @@ The only source for identity details used in page copy, footers, schema, `llms.t
 
 - **Primary:** Mesa County, Colorado
 - **Core markets:** Grand Junction, Fruita, Palisade, Clifton
-- **Areas with guides:** Redlands, Orchard Mesa, Central/Downtown Grand Junction, North Grand Junction, Northeast Grand Junction (incl. Fruitvale), Northwest Grand Junction (incl. Appleton), Fruita, Palisade, Clifton, Loma & Mack
+- **Areas with guides:** Redlands, Orchard Mesa, Central/Downtown Grand Junction, North Grand Junction, Northeast Grand Junction (incl. Fruitvale), Southeast Grand Junction (Pear Park), Northwest Grand Junction (incl. Appleton), Fruita, Palisade, Clifton, Loma & Mack
 - **Audience:** home sellers first; buyers welcome
 
 ## Verified profiles (footer and schema `sameAs`)
